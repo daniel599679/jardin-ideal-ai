@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brief Maestro — Google Ads System | Jardín Ideal</title>
+<style>
+:root {
+  --vf: #1E3A20;
+  --vm: #3D6B42;
+  --or: #C8A45A;
+  --or-clair: #E8C97A;
+  --cr: #F5F2EB;
+  --cr-fonce: #EDE9E0;
+  --w: #FFFFFF;
+  --n: #0D0E0B;
+  --gf: #2A2B28;
+  --g: #6B6B63;
+  --gc: #B8B8B0;
+  --r: #B83232;
+  --rc: #F5E8E8;
+  --j: #C8850A;
+  --jc: #FEF5E4;
+  --vb: #EAF2EB;
+  --fd: Georgia, 'Times New Roman', serif;
+  --fb: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --fm: 'Courier New', Courier, monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--fb);
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+
+/* ── COVER ── */
+.cover {
+  background: var(--vf);
+  min-height: 380px;
+  padding: 56px 60px 52px;
+  position: relative;
+  overflow: hidden;
+}
+.cover-watermark {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  font-family: var(--fd);
+  font-size: 220px;
+  font-weight: 700;
+  color: rgba(200,164,90,0.07);
+  line-height: 1;
+  user-select: none;
+  letter-spacing: -8px;
+}
+.cover-eyebrow {
+  font-family: var(--fm);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 20px;
+}
+.cover h1 {
+  font-family: var(--fd);
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  max-width: 660px;
+  margin-bottom: 8px;
+}
+.cover h1 em { color: var(--or); font-style: italic; }
+.cover-sub {
+  font-family: var(--fm);
+  font-size: 11px;
+  color: var(--gc);
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 20px;
+  margin-top: 8px;
+}
+.cm-item .lbl {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gc);
+  display: block;
+  margin-bottom: 3px;
+}
+.cm-item .val {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--w);
+}
+.score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(200,164,90,0.15);
+  border: 1px solid rgba(200,164,90,0.35);
+  border-radius: 4px;
+  padding: 6px 16px;
+  margin-top: 24px;
+}
+.score-badge .score-num {
+  font-family: var(--fd);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--or);
+  line-height: 1;
+}
+.score-badge .score-label {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gc);
+  line-height: 1.4;
+}
+
+/* ── ALERT BAND ── */
+.alert-band {
+  background: var(--r);
+  color: var(--w);
+  padding: 11px 60px;
+  font-family: var(--fm);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── NAV TOC ── */
+.toc-bar {
+  background: var(--gf);
+  padding: 0 60px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+}
+.toc-bar a {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gc);
+  text-decoration: none;
+  padding: 14px 20px;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.toc-bar a:hover { color: var(--or); border-bottom-color: var(--or); }
+
+/* ── MAIN CONTAINER ── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px 100px;
+}
+
+/* ── SECTION HEADERS ── */
+.section {
+  margin-top: 64px;
+}
+.section-eyebrow {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 6px;
+  display: block;
+}
+.section h2 {
+  font-family: var(--fd);
+  font-size: clamp(20px, 2.8vw, 32px);
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+.section-rule {
+  height: 2px;
+  background: linear-gradient(90deg, var(--vf) 0%, rgba(30,58,32,0.1) 60%, transparent 100%);
+  margin: 14px 0 28px;
+}
+
+/* ── GRID 2 COL ── */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+@media(max-width: 768px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+
+/* ── CARDS ── */
+.card {
+  background: var(--w);
+  border: 1px solid var(--cr-fonce);
+  border-radius: 6px;
+  padding: 24px;
+}
+.card-title {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 10px;
+  display: block;
+}
+.card-value {
+  font-family: var(--fd);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.card-unit {
+  font-size: 12px;
+  color: var(--g);
+  font-family: var(--fm);
+}
+.card-sub {
+  font-size: 12px;
+  color: var(--g);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.card.accent-border { border-left: 4px solid var(--or); }
+.card.danger-border { border-left: 4px solid var(--r); }
+.card.warn-border  { border-left: 4px solid var(--j); }
+.card.ok-border    { border-left: 4px solid var(--vm); }
+
+/* ── TABLES ── */
+.table-wrap { overflow-x: auto; margin: 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+thead th {
+  background: var(--vf);
+  color: var(--w);
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 14px;
+  text-align: left;
+  white-space: nowrap;
+}
+tbody tr { border-bottom: 1px solid var(--cr-fonce); }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: var(--vb); }
+tbody td { padding: 11px 14px; vertical-align: middle; }
+.td-mono { font-family: var(--fm); font-size: 12px; }
+.td-bold { font-weight: 600; }
+.paused-row td { color: var(--gc); }
+.best-row td { background: var(--vb); }
+.worst-row td { background: var(--rc); }
+
+/* ── BADGES ── */
+.badge {
+  display: inline-block;
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.badge-green  { background: var(--vb);  color: var(--vf); }
+.badge-red    { background: var(--rc);  color: var(--r); }
+.badge-gold   { background: var(--jc);  color: var(--j); }
+.badge-gray   { background: var(--cr-fonce); color: var(--g); }
+.badge-dark   { background: var(--vf);  color: var(--w); }
+.badge-pause  { background: #EEE; color: #888; }
+
+/* ── ALERT BLOCKS ── */
+.alert {
+  display: flex;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 5px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+}
+.alert-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.alert-body { flex: 1; }
+.alert-title {
+  font-family: var(--fm);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.alert-text { font-size: 13.5px; line-height: 1.6; }
+.alert.crit  { background: var(--rc);  border-left: 3px solid var(--r); }
+.alert.high  { background: #FFF3E0;    border-left: 3px solid var(--j); }
+.alert.med   { background: #FFFDE7;    border-left: 3px solid #E8C200; }
+.alert.ok    { background: var(--vb);  border-left: 3px solid var(--vm); }
+.alert.crit .alert-title  { color: var(--r); }
+.alert.high .alert-title  { color: var(--j); }
+.alert.med .alert-title   { color: #9A8000; }
+.alert.ok .alert-title    { color: var(--vm); }
+
+/* ── PRIORITY BADGES ── */
+.p-crit  { font-size: 11px; }
+.p-high  { font-size: 11px; }
+.p-med   { font-size: 11px; }
+.p-low   { font-size: 11px; }
+
+/* ── TIMELINE / ROADMAP ── */
+.roadmap { position: relative; padding-left: 36px; }
+.roadmap::before {
+  content: "";
+  position: absolute;
+  left: 10px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--vf) 0%, var(--vm) 50%, var(--or) 100%);
+}
+.rm-phase { position: relative; margin-bottom: 40px; }
+.rm-dot {
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--vf);
+  border: 3px solid var(--or);
+}
+.rm-phase-label {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 6px;
+}
+.rm-phase h3 {
+  font-family: var(--fd);
+  font-size: 18px;
+  color: var(--vf);
+  margin-bottom: 14px;
+}
+.rm-items { display: flex; flex-direction: column; gap: 10px; }
+.rm-item {
+  background: var(--w);
+  border: 1px solid var(--cr-fonce);
+  border-radius: 5px;
+  padding: 14px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.rm-item-num {
+  font-family: var(--fm);
+  font-size: 11px;
+  color: var(--gc);
+  flex-shrink: 0;
+  min-width: 22px;
+}
+.rm-item-body { flex: 1; }
+.rm-item-title {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--n);
+  margin-bottom: 3px;
+}
+.rm-item-detail { font-size: 12.5px; color: var(--g); line-height: 1.55; }
+.rm-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+/* ── KPI TABLE SPECIAL ── */
+.kpi-level {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--or);
+  text-transform: uppercase;
+  padding: 18px 0 6px;
+  display: block;
+}
+
+/* ── CAMPAIGN STRUCTURE ── */
+.camp-grid { display: flex; flex-direction: column; gap: 12px; }
+.camp-card {
+  background: var(--w);
+  border: 1px solid var(--cr-fonce);
+  border-radius: 6px;
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+@media(max-width: 700px) { .camp-card { grid-template-columns: 1fr; } }
+.camp-name { font-weight: 600; font-size: 13.5px; color: var(--n); }
+.camp-type { font-family: var(--fm); font-size: 10px; color: var(--g); margin-top: 2px; }
+.camp-details { font-size: 12.5px; color: var(--g); }
+.camp-budget {
+  font-family: var(--fm);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--vf);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── FOLDER STRUCTURE ── */
+.folder-tree {
+  background: var(--gf);
+  color: #C8D8C9;
+  font-family: var(--fm);
+  font-size: 12.5px;
+  line-height: 2;
+  padding: 28px 32px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+.folder-tree .dir { color: var(--or); font-weight: 700; }
+.folder-tree .file { color: #9CBFA0; }
+.folder-tree .comment { color: #556B57; }
+
+/* ── TWO-COLUMN VERDICT ── */
+.verdict-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 8px;
+}
+@media(max-width: 700px) { .verdict-grid { grid-template-columns: 1fr; } }
+.verdict-col h4 {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+.verdict-col.pos h4 { background: var(--vb); color: var(--vf); }
+.verdict-col.neg h4 { background: var(--rc); color: var(--r); }
+.verdict-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.verdict-list li {
+  font-size: 13px;
+  line-height: 1.55;
+  padding-left: 18px;
+  position: relative;
+  color: var(--gf);
+}
+.verdict-col.pos .verdict-list li::before { content: "✓"; position: absolute; left: 0; color: var(--vm); font-weight: 700; }
+.verdict-col.neg .verdict-list li::before { content: "✗"; position: absolute; left: 0; color: var(--r); font-weight: 700; }
+
+/* ── MISSING DATA CHIPS ── */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip {
+  font-family: var(--fm);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.chip-miss  { border-color: var(--r);  color: var(--r);  background: var(--rc); }
+.chip-opp   { border-color: var(--or); color: var(--j);  background: var(--jc); }
+
+/* ── OPPORTUNITY CARDS ── */
+.opp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 8px; }
+.opp-card {
+  background: var(--w);
+  border: 1px solid var(--cr-fonce);
+  border-top: 3px solid var(--or);
+  border-radius: 5px;
+  padding: 18px 18px 16px;
+}
+.opp-label {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--or);
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+.opp-title { font-weight: 700; font-size: 13.5px; color: var(--vf); margin-bottom: 6px; }
+.opp-desc  { font-size: 12.5px; color: var(--g); line-height: 1.55; }
+.opp-impact {
+  font-family: var(--fm);
+  font-size: 10px;
+  color: var(--vm);
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--cr-fonce);
+}
+
+/* ── GEO TABLE COLORS ── */
+.geo-best   { background: var(--vb); }
+.geo-worst  { background: var(--rc); }
+.geo-warn   { background: var(--jc); }
+.geo-dead   { background: #F5F5F5; color: var(--gc); }
+
+/* ── ERROR CALLOUT ── */
+.error-box {
+  background: var(--rc);
+  border: 1px solid rgba(184,50,50,0.2);
+  border-radius: 5px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+.error-num {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--r);
+  margin-bottom: 5px;
+}
+.error-title { font-weight: 700; font-size: 13.5px; color: var(--r); margin-bottom: 5px; }
+.error-text  { font-size: 13px; color: var(--gf); line-height: 1.6; }
+
+/* ── AUTO ALERTS TABLE ── */
+.alerts-table td:first-child { font-family: var(--fm); font-size: 11px; color: var(--g); }
+.alerts-table td:last-child  { font-size: 12.5px; }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--gf);
+  padding: 24px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 60px;
+}
+.footer-brand {
+  font-family: var(--fd);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--or);
+}
+.footer-meta {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gc);
+}
+
+/* ── PRINT ── */
+@media print {
+  .toc-bar, .alert-band { display: none; }
+  .cover { min-height: auto; }
+  body { font-size: 12px; }
+}
+@media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     COVER
+══════════════════════════════════════════════════════ -->
+<header class="cover">
+  <div class="cover-watermark" aria-hidden="true">7.5</div>
+  <p class="cover-eyebrow">Jardín Ideal — Système Google Ads</p>
+  <h1>Brief Maestro —<br><em>Google Ads System</em></h1>
+  <p class="cover-sub">Audit complet · Leçons · Structure · Roadmap</p>
+  <div class="score-badge" role="img" aria-label="Qualité du rapport analysé: 7.5 sur 10">
+    <span class="score-num">7.5</span>
+    <span class="score-label">Qualité du rapport<br>analysé / 10</span>
+  </div>
+  <div class="cover-meta">
+    <div class="cm-item">
+      <span class="lbl">Compte Google Ads</span>
+      <span class="val">600-260-6454</span>
+    </div>
+    <div class="cm-item">
+      <span class="lbl">Période analysée</span>
+      <span class="val">23 mai – 21 juin 2026</span>
+    </div>
+    <div class="cm-item">
+      <span class="lbl">Budget actuel</span>
+      <span class="val">CA$16.76/jour · ~CA$510/mois</span>
+    </div>
+    <div class="cm-item">
+      <span class="lbl">Campagnes actives</span>
+      <span class="val">2 de 5</span>
+    </div>
+    <div class="cm-item">
+      <span class="lbl">Document</span>
+      <span class="val">Brief Maestro v1.0</span>
+    </div>
+    <div class="cm-item">
+      <span class="lbl">Date</span>
+      <span class="val">22 Juin 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- ALERT BAND -->
+<div class="alert-band" role="alert">
+  ⚠ Le CPL CA$4.39 présenté dans le résumé exécutif est fictif — les conversions sont non vérifiées. Lire Phase 1 avant toute décision budgétaire.
+</div>
+
+<!-- TOC NAV -->
+<nav class="toc-bar" aria-label="Table des matières">
+  <a href="#metriques">Métriques</a>
+  <a href="#audit">Phase 1 — Audit</a>
+  <a href="#lecons">Phase 2 — Leçons</a>
+  <a href="#brief">Phase 3 — Brief</a>
+  <a href="#roadmap">Phase 4 — Roadmap</a>
+  <a href="#kpis">KPIs</a>
+  <a href="#alertes">Alertes</a>
+</nav>
+
+<main class="container">
+
+<!-- ══════════════════════════════════════════════════════
+     MÉTRIQUES GLOBALES
+══════════════════════════════════════════════════════ -->
+<section class="section" id="metriques">
+  <span class="section-eyebrow">Vue d'ensemble · 23 mai – 21 juin 2026</span>
+  <h2>Métriques Globales du Compte</h2>
+  <div class="section-rule"></div>
+
+  <div class="grid3">
+    <div class="card ok-border">
+      <span class="card-title">Impressions</span>
+      <div class="card-value">37,534</div>
+      <div class="card-sub">2 campagnes actives sur 5</div>
+    </div>
+    <div class="card ok-border">
+      <span class="card-title">Clics</span>
+      <div class="card-value">681</div>
+      <div class="card-sub">CTR global: 1.81%</div>
+    </div>
+    <div class="card accent-border">
+      <span class="card-title">CPC moyen</span>
+      <div class="card-value">CA$0.66</div>
+      <div class="card-sub">Coût total: CA$451.53</div>
+    </div>
+    <div class="card danger-border">
+      <span class="card-title">Conv. déclarées</span>
+      <div class="card-value">102.95</div>
+      <div class="card-sub"><strong>Anomalie:</strong> les décimales indiquent un tracking non vérifié — conversions pondérées ou cross-device</div>
+    </div>
+    <div class="card danger-border">
+      <span class="card-title">CPL déclaré</span>
+      <div class="card-value">CA$4.39</div>
+      <div class="card-sub"><strong>Non fiable</strong> — basé sur conversions non vérifiées. CPL réel inconnu.</div>
+    </div>
+    <div class="card warn-border">
+      <span class="card-title">Optimization Score</span>
+      <div class="card-value">70.5%</div>
+      <div class="card-sub">Objectif minimum: 80%. Potentiel d'amélioration: 9.5 pts</div>
+    </div>
+  </div>
+
+  <!-- Campaigns Table -->
+  <h3 style="font-family:var(--fd);font-size:18px;color:var(--vf);margin:36px 0 14px;">Statut des 5 Campagnes</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Campagne</th>
+          <th>Type</th>
+          <th>Statut</th>
+          <th>Budget/Jour</th>
+          <th>Impressions</th>
+          <th>Clics</th>
+          <th>CTR</th>
+          <th>Conv.</th>
+          <th>CPL</th>
+          <th>Stratégie</th>
+          <th>Alerte</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="best-row">
+          <td class="td-bold">Service d'aménagement paysager</td>
+          <td><span class="badge badge-dark">Smart</span></td>
+          <td><span class="badge badge-green">Activa</span></td>
+          <td class="td-mono">CA$9.20</td>
+          <td class="td-mono">35,333</td>
+          <td class="td-mono">587</td>
+          <td class="td-mono">1.66%</td>
+          <td class="td-mono">89.40</td>
+          <td class="td-mono">CA$3.11</td>
+          <td>Maximize Clicks<sup>*</sup></td>
+          <td><span class="badge badge-gold">Vérifier stratégie</span></td>
+        </tr>
+        <tr>
+          <td class="td-bold">Tonte – Recherche – 2026</td>
+          <td><span class="badge badge-dark">Search</span></td>
+          <td><span class="badge badge-green">Activa</span></td>
+          <td class="td-mono">CA$7.56</td>
+          <td class="td-mono">2,201</td>
+          <td class="td-mono">94</td>
+          <td class="td-mono">4.27%</td>
+          <td class="td-mono">13.55</td>
+          <td class="td-mono">CA$12.79</td>
+          <td>Max. Conv. CPA:CA$15.45</td>
+          <td><span class="badge badge-red">Budget limité</span></td>
+        </tr>
+        <tr class="paused-row">
+          <td>piscine</td>
+          <td><span class="badge badge-pause">Smart</span></td>
+          <td><span class="badge badge-gray">Pausée</span></td>
+          <td class="td-mono">CA$35.30</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td>—</td>
+          <td><span class="badge badge-gold">Saisonnière</span></td>
+        </tr>
+        <tr class="paused-row">
+          <td>Aménagement paysager</td>
+          <td><span class="badge badge-pause">Search</span></td>
+          <td><span class="badge badge-gray">Pausée</span></td>
+          <td class="td-mono">CA$30.00</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td>—</td>
+          <td><span class="badge badge-gold">Budget dispo.</span></td>
+        </tr>
+        <tr class="paused-row">
+          <td>Déneigement Résidentiel</td>
+          <td><span class="badge badge-pause">Smart</span></td>
+          <td><span class="badge badge-gray">Pausée</span></td>
+          <td class="td-mono">CA$1.50</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">—</td>
+          <td>—</td>
+          <td><span class="badge badge-gray">Sept–Nov</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-family:var(--fm);font-size:10px;color:var(--g);margin-top:8px;"><sup>*</sup> Les campagnes Smart utilisent Maximize Conversions par défaut — l'attribution «Maximize Clicks» peut être incorrecte dans le rapport source.</p>
+
+  <!-- Geo Table -->
+  <h3 style="font-family:var(--fd);font-size:18px;color:var(--vf);margin:36px 0 14px;">Données Géographiques — Tonte Recherche</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Zone</th>
+          <th>CPL</th>
+          <th>Taux de conv.</th>
+          <th>Verdict</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="geo-best">
+          <td class="td-bold">Saint-Léonard</td>
+          <td class="td-mono">CA$3.49</td>
+          <td class="td-mono">56.88%</td>
+          <td><span class="badge badge-green">Zone anchor — priorité max</span></td>
+        </tr>
+        <tr>
+          <td>Montréal-Nord</td>
+          <td class="td-mono">CA$6.37</td>
+          <td class="td-mono">30.77%</td>
+          <td><span class="badge badge-green">Maintenir</span></td>
+        </tr>
+        <tr>
+          <td>Rivière-des-Prairies</td>
+          <td class="td-mono">CA$5.94</td>
+          <td class="td-mono">25.00%</td>
+          <td><span class="badge badge-green">Maintenir</span></td>
+        </tr>
+        <tr class="geo-warn">
+          <td>Anjou</td>
+          <td class="td-mono">CA$11.00</td>
+          <td class="td-mono">25.00%</td>
+          <td><span class="badge badge-gold">Surveiller — baisser bid</span></td>
+        </tr>
+        <tr class="geo-warn">
+          <td>Ahuntsic</td>
+          <td class="td-mono">CA$16.93</td>
+          <td class="td-mono">10.00%</td>
+          <td><span class="badge badge-red">Réduire bid –30%</span></td>
+        </tr>
+        <tr class="geo-worst">
+          <td class="td-bold">Le Plateau</td>
+          <td class="td-mono">CA$70.61</td>
+          <td class="td-mono">2.38%</td>
+          <td><span class="badge badge-red">Exclure — hors marché</span></td>
+        </tr>
+        <tr class="geo-dead">
+          <td>Mercier</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">0%</td>
+          <td><span class="badge badge-gray">Exclure — 0 conversions</span></td>
+        </tr>
+        <tr class="geo-dead">
+          <td>Villeray</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">0%</td>
+          <td><span class="badge badge-gray">Exclure — 0 conversions</span></td>
+        </tr>
+        <tr class="geo-dead">
+          <td>Rosemont</td>
+          <td class="td-mono">—</td>
+          <td class="td-mono">0%</td>
+          <td><span class="badge badge-gray">Exclure — 0 conversions</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PHASE 1 — AUDIT DU RAPPORT
+══════════════════════════════════════════════════════ -->
+<section class="section" id="audit">
+  <span class="section-eyebrow">Phase 1 — Audit</span>
+  <h2>Audit du Rapport Analysé</h2>
+  <div class="section-rule"></div>
+
+  <!-- Score global -->
+  <div class="card accent-border" style="margin-bottom:28px;">
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+      <div>
+        <span class="card-title">Score global du rapport</span>
+        <div style="display:flex;align-items:baseline;gap:6px;">
+          <span style="font-family:var(--fd);font-size:56px;font-weight:700;color:var(--vf);line-height:1;">7.5</span>
+          <span style="font-family:var(--fm);font-size:14px;color:var(--g);">/ 10</span>
+        </div>
+      </div>
+      <div style="flex:1;min-width:260px;">
+        <p style="font-size:13.5px;color:var(--gf);line-height:1.65;">Le rapport établit une base solide avec une bonne structure et une analyse géographique pertinente. Il manque cependant les métriques fondamentales (Impression Share, Quality Score, décomposition mobile/desktop) nécessaires à une vraie optimisation, et présente plusieurs inexactitudes à corriger avant toute décision.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Strengths / Weaknesses -->
+  <div class="verdict-grid">
+    <div class="verdict-col pos">
+      <h4>Points Forts</h4>
+      <ul class="verdict-list">
+        <li>Structure claire avec sections distinctes et résumé exécutif</li>
+        <li>Analyse géographique granulaire — différence 20x entre Saint-Léonard (CA$3.49) et Le Plateau (CA$70.61)</li>
+        <li>Identification correcte du problème de budget limité sur la campagne Tonte Search</li>
+        <li>Recommandation de séparer les ad groups par thème</li>
+        <li>Alerte sur les conversions non vérifiées (mentionnée plus bas dans le document)</li>
+        <li>Identification des zones géographiques déficitaires à exclure</li>
+      </ul>
+    </div>
+    <div class="verdict-col neg">
+      <h4>Points Faibles</h4>
+      <ul class="verdict-list">
+        <li>Impression Share absent — impossible de savoir quelle part du marché on capture</li>
+        <li>Quality Score par keyword manquant — base de toute optimisation</li>
+        <li>Aucune décomposition mobile vs. desktop (&gt;65% du trafic paysagisme est mobile)</li>
+        <li>Aucune analyse par heure/jour (pics lun-ven 7-9h et 17-19h)</li>
+        <li>Auction Insights absent — qui nous surpasse et où?</li>
+        <li>Pas de calcul d'impact économique des problèmes identifiés</li>
+        <li>Historique mois précédent absent — impossible de détecter les tendances</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Errors section -->
+  <h3 style="font-family:var(--fd);font-size:20px;color:var(--vf);margin:36px 0 16px;">Erreurs à Corriger dans le Rapport</h3>
+
+  <div class="error-box">
+    <div class="error-num">Erreur 01 — Contradiction Critique</div>
+    <div class="error-title">CPL CA$4.39 présenté sans mise en garde immédiate</div>
+    <div class="error-text">Le résumé exécutif affiche un CPL CA$4.39 sans préciser qu'il repose sur des conversions non vérifiées. L'alerte n'apparaît que plusieurs paragraphes plus loin. Un lecteur pressé (Daniel à 9h00) prendra une décision budgétaire sur une donnée fictive. La correction: mettre l'astérisque et la note directement sous le chiffre en couverture.</div>
+  </div>
+
+  <div class="error-box">
+    <div class="error-num">Erreur 02 — Anomalie Mathématique</div>
+    <div class="error-title">102.95 conversions — les décimales révèlent un problème de tracking</div>
+    <div class="error-text">Des conversions avec décimales indiquent des conversions pondérées (cross-device) ou une configuration de valeur fractionnaire dans Google Ads. Un lead réel n'est pas 0.55 leads — soit le tracking compte des micro-conversions (scrolls, clics sur téléphone, vues de page) soit il y a une pondération multi-touch. Le rapport traite ce chiffre comme réel sans l'analyser.</div>
+  </div>
+
+  <div class="error-box">
+    <div class="error-num">Erreur 03 — Attribution Stratégie Incorrecte</div>
+    <div class="error-title">«Maximize Clicks» attribué à la campagne Smart</div>
+    <div class="error-text">Les campagnes Smart (anciennement Smart Display / Local) utilisent Maximize Conversions par défaut — elles n'offrent pas Maximize Clicks. Si la campagne «Service d'aménagement paysager» est bien une Smart campaign, la stratégie déclarée est erronée. Cela change l'analyse: une Smart campaign sur Maximize Conversions avec des conversions non vérifiées dépense le budget de manière optimisée pour des faux leads.</div>
+  </div>
+
+  <div class="error-box">
+    <div class="error-num">Erreur 04 — Absence d'Impact Économique Chiffré</div>
+    <div class="error-title">Les problèmes sont identifiés sans coût d'opportunité</div>
+    <div class="error-text">Le rapport identifie correctement Le Plateau (CPL CA$70.61) mais ne calcule pas: combien de budget est gaspillé par jour/mois sur cette zone? Avec CA$7.56/jour sur Tonte et Le Plateau qui consomme une fraction disproportionnée, l'impact est probablement CA$30-50/mois redirigés vers des zones sans prospect. Chiffrer chaque problème est obligatoire pour prioriser.</div>
+  </div>
+
+  <div class="error-box">
+    <div class="error-num">Erreur 05 — Recommandation Piscine Simpliste</div>
+    <div class="error-title">Budget piscine CA$35.30/jour ne peut pas «simplement être redistribué»</div>
+    <div class="error-text">La campagne piscine est pausée avec CA$35.30/jour de budget configuré. Ce n'est pas du budget «disponible» à redistribuer librement — la piscine est un service saisonnier (mai–août = pic actuel) avec un cycle de vente et un ticket moyen différents. Réactiver piscine maintenant avec la bonne configuration pourrait générer des leads à CA$50,000+ de ticket. La décision requiert une analyse séparée, pas une simple réallocation.</div>
+  </div>
+
+  <!-- Missing data -->
+  <h3 style="font-family:var(--fd);font-size:20px;color:var(--vf);margin:36px 0 14px;">Données Manquantes Critiques</h3>
+  <p style="font-size:13.5px;color:var(--g);margin-bottom:14px;">Ces métriques sont absentes du rapport analysé. Sans elles, toute optimisation est aveugle.</p>
+  <div class="chips">
+    <span class="chip chip-miss">Impression Share (%)</span>
+    <span class="chip chip-miss">IS Perdue — Budget</span>
+    <span class="chip chip-miss">IS Perdue — Qualité</span>
+    <span class="chip chip-miss">Quality Score / keyword</span>
+    <span class="chip chip-miss">Auction Insights</span>
+    <span class="chip chip-miss">Mobile vs. Desktop</span>
+    <span class="chip chip-miss">Analyse Heure/Jour</span>
+    <span class="chip chip-miss">Historique mois préc.</span>
+    <span class="chip chip-miss">Config. tracking exacte</span>
+    <span class="chip chip-miss">Leads vérifiés (CRM)</span>
+    <span class="chip chip-miss">ROAS / Revenue</span>
+    <span class="chip chip-miss">Ticket moyen / service</span>
+  </div>
+
+  <!-- Missed opportunities -->
+  <h3 style="font-family:var(--fd);font-size:20px;color:var(--vf);margin:36px 0 14px;">Opportunités Non Identifiées dans le Rapport</h3>
+  <div class="opp-grid">
+    <div class="opp-card">
+      <div class="opp-label">Opportunité 01</div>
+      <div class="opp-title">Google Local Services Ads (LSA)</div>
+      <div class="opp-desc">Pour les contractors au Québec, les LSA apparaissent <em>au-dessus</em> des annonces Search normales. Paiement au lead vérifié. Sceau «Google Garantizado». Non mentionné dans le rapport.</div>
+      <div class="opp-impact">Impact potentiel: CPL –40% + position dominante</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-label">Opportunité 02</div>
+      <div class="opp-title">Performance Max</div>
+      <div class="opp-desc">Alternative moderne aux Smart campaigns avec plus de contrôle, transparence sur la distribution du budget, et assets IA. Remplace avantageusement la Smart actuelle.</div>
+      <div class="opp-impact">Impact potentiel: +25% conversion rate</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-label">Opportunité 03</div>
+      <div class="opp-title">Lead Form Extensions</div>
+      <div class="opp-desc">Capture de leads directement dans la SERP sans landing page. Élimine la friction du clic. Particulièrement efficace sur mobile.</div>
+      <div class="opp-impact">Impact potentiel: CPL –30 à –40%</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-label">Opportunité 04</div>
+      <div class="opp-title">Remarketing / RLSA</div>
+      <div class="opp-desc">Les visiteurs du site sans conversion forment une audience chaude. Bid +50% sur RLSA pour les requêtes de retargeting. Non configuré actuellement.</div>
+      <div class="opp-impact">Impact potentiel: CPL –35% sur audience chaude</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-label">Opportunité 05</div>
+      <div class="opp-title">Call-Only Campaigns</div>
+      <div class="opp-desc">Pour les recherches mobiles à intention immédiate («paysagiste près de moi»). L'annonce affiche uniquement un bouton d'appel. Idéal en semaine 7h–9h.</div>
+      <div class="opp-impact">Impact potentiel: leads immédiats sans landing page</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-label">Opportunité 06</div>
+      <div class="opp-title">Ajustements Saisonniers</div>
+      <div class="opp-desc">Juin–août = pic absolu. Les bids doivent être multipliés. Septembre–novembre = préparation déneigement. Les bid adjustments automatiques ne sont pas configurés.</div>
+      <div class="opp-impact">Impact potentiel: IS +15% en haute saison</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-label">Opportunité 07</div>
+      <div class="opp-title">Customer Match</div>
+      <div class="opp-desc">Si une liste de clients existants est disponible, on peut exclure les doublons ou cibler les similaires (Similar Audiences). Requiert liste CRM nettoyée.</div>
+      <div class="opp-impact">Impact potentiel: Lookalike audience qualifiée</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-label">Opportunité 08</div>
+      <div class="opp-title">Responsive Display Ads</div>
+      <div class="opp-desc">Remarketing visuel pour visiteurs de /pave-uni et /cour-avant. Affichage sur le réseau Display Google avec photos de réalisations de Jardín Ideal.</div>
+      <div class="opp-impact">Impact potentiel: notoriété + reconversion</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-label">Opportunité 09</div>
+      <div class="opp-title">Keyword Planner Projections</div>
+      <div class="opp-desc">Aucun volume mensuel estimé pour les keywords recommandées. Sans cela, impossible de planifier le budget nécessaire pour capturer X% du marché disponible.</div>
+      <div class="opp-impact">Impact potentiel: planification budgétaire fondée</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PHASE 2 — LEÇONS APPRISES
+══════════════════════════════════════════════════════ -->
+<section class="section" id="lecons">
+  <span class="section-eyebrow">Phase 2 — Leçons Apprises</span>
+  <h2>Ce qui Fonctionne, ce qu'on Élimine, ce qu'on Améliore</h2>
+  <div class="section-rule"></div>
+
+  <div class="alert ok" style="margin-bottom:24px;">
+    <span class="alert-icon">✓</span>
+    <div class="alert-body">
+      <div class="alert-title">Ce qui fonctionne — À conserver et amplifier</div>
+    </div>
+  </div>
+  <div class="grid2" style="margin-bottom:36px;">
+    <div class="card ok-border">
+      <span class="card-title">Campagne Search + Maximize Conversions</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;">Tonte Recherche 2026 prouve le modèle: CTR 4.27% + stratégie orientée conversion = la combinaison correcte. Le problème n'est pas la structure, c'est le budget plafonné à CA$7.56/jour.</p>
+    </div>
+    <div class="card ok-border">
+      <span class="card-title">Saint-Léonard comme Zone Anchor</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;">CPL CA$3.49 vs. CA$70.61 au Plateau — facteur 20x. Le territoire naturel (6712 Av. Paul-Émile-Lamarche) est la zone la plus rentable. Concentrer le budget ici en priorité.</p>
+    </div>
+    <div class="card ok-border">
+      <span class="card-title">Ciblage Géographique Granulaire</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;">La segmentation par arrondissement révèle des différences critiques invisibles au niveau agrégé. À maintenir et étendre à toutes les campagnes.</p>
+    </div>
+    <div class="card ok-border">
+      <span class="card-title">CTR Search 4.27% = Copies Efficaces</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;">Un CTR &gt;4% sur une campagne Search indique que les annonces trouvent leur audience. Le creative fonctionne — le problème est opérationnel (budget, structure, tracking).</p>
+    </div>
+  </div>
+
+  <div class="alert crit" style="margin-bottom:24px;">
+    <span class="alert-icon">✗</span>
+    <div class="alert-body">
+      <div class="alert-title">Ce qu'on Élimine — Sans discussion</div>
+    </div>
+  </div>
+  <div class="grid2" style="margin-bottom:36px;">
+    <div class="card danger-border">
+      <span class="card-title">Smart Campaigns sans Conversions Vérifiées</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;">Une Smart campaign optimise pour des conversions. Si les conversions sont non vérifiées (micro-conversions, clics sur téléphone comptés comme leads), l'algorithme dépense CA$9.20/jour pour rien. Cible: conversion = formulaire soumis confirmé en CRM.</p>
+    </div>
+    <div class="card danger-border">
+      <span class="card-title">Budget sur Le Plateau / Rosemont / Villeray / Mercier</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;">0 conversions dans ces zones. Le Plateau: CPL CA$70.61 pour 2.38% de taux de conv. Ces arrondissements sont hors du territoire opérationnel de Jardín Ideal et présentent une démographie incompatible avec les services proposés.</p>
+    </div>
+    <div class="card danger-border">
+      <span class="card-title">Keywords Informationnelles dans Campagnes de Service</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;">«Aération», «fertilisation», «engrais gazon» sont des requêtes d'information — l'intention d'achat est faible ou nulle. Ces mots-clés consomment du budget sans générer de leads de qualité pour des services à CA$200–20,000.</p>
+    </div>
+    <div class="card danger-border">
+      <span class="card-title">Structure 1 Ad Group / 19 Keywords</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;">«Tonte gazon» et «taille haies» sont des intentions différentes avec des audiences, des pages de destination et des messages différents. Un seul ad group force des annonces génériques, pénalise le Quality Score, et interdit tout A/B test propre.</p>
+    </div>
+  </div>
+
+  <div class="alert high" style="margin-bottom:24px;">
+    <span class="alert-icon">↑</span>
+    <div class="alert-body">
+      <div class="alert-title">Ce qu'on Améliore — Chantiers prioritaires</div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card warn-border">
+      <span class="card-title">Conversion Tracking — Vérification Urgente</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;margin-bottom:8px;">Confirmer quel événement déclenche une «conversion». Objectif: conversion = formulaire soumis avec numéro de téléphone valide, confirmé reçu dans le CRM. Si call tracking actif: uniquement appels &gt;60 secondes.</p>
+      <span class="badge badge-red">Impact: toutes les métriques changent</span>
+    </div>
+    <div class="card warn-border">
+      <span class="card-title">Budget CA$510/mois → CA$2,000–5,000/mois</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;margin-bottom:8px;">Pour le pavé-uni (ticket moyen CA$20,000), un CPL de CA$100 = ROI 200x. Le marché existe. Le budget actuel ne permet pas de le capturer. Phase 1 immédiate: CA$70/jour. Phase 2 (30j): CA$150/jour.</p>
+      <span class="badge badge-gold">Décision stratégique pour Daniel</span>
+    </div>
+    <div class="card warn-border">
+      <span class="card-title">Landing Pages Spécifiques par Service</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;margin-bottom:8px;">Une même page d'accueil pour toutes les campagnes dilue la pertinence et pénalise le Quality Score. Créer: /pave-uni-montreal, /tonte-pelouse-montreal, /cour-avant-montreal avec formulaire visible au premier scroll.</p>
+      <span class="badge badge-gold">QS +2 pts estimé = CPC –20%</span>
+    </div>
+    <div class="card warn-border">
+      <span class="card-title">Negative Keywords — 50 Termes Minimum</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.6;margin-bottom:8px;">Sans liste de mots négatifs robuste, les annonces apparaissent pour «tonte gazon soi-même», «prix pelouse DIY», «formation aménagement paysager». Économies estimées: 25–40% du budget actuel gaspillé.</p>
+      <span class="badge badge-gold">Impact: CA$100–200/mois récupérés</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PHASE 3 — BRIEF MAESTRO
+══════════════════════════════════════════════════════ -->
+<section class="section" id="brief">
+  <span class="section-eyebrow">Phase 3 — Brief Maestro</span>
+  <h2>Structure du Système Google Ads</h2>
+  <div class="section-rule"></div>
+
+  <!-- Folder structure -->
+  <h3 style="font-family:var(--fd);font-size:20px;color:var(--vf);margin-bottom:14px;">Architecture des Dossiers</h3>
+  <div class="folder-tree">
+    <span class="dir">GOOGLE_ADS_SYSTEM/</span><br>
+    ├── <span class="dir">00_CONFIGURACION/</span><br>
+    │   ├── <span class="file">account_structure.md</span>     <span class="comment">— Arborescence complète des campagnes</span><br>
+    │   ├── <span class="file">conversion_tracking_setup.md</span> <span class="comment">— Événements, valeurs, CRM link</span><br>
+    │   ├── <span class="file">negative_keywords_master.csv</span> <span class="comment">— 200+ termes négatifs partagés</span><br>
+    │   └── <span class="file">budget_calculator.xlsx</span>    <span class="comment">— ROI par service, CPA max acceptable</span><br>
+    ├── <span class="dir">01_CAMPANAS/</span><br>
+    │   ├── <span class="dir">PAVE_UNI/</span>                  <span class="comment">— 3 ad groups: Pose, Prix, Comparaison</span><br>
+    │   ├── <span class="dir">COUR_AVANT/</span>               <span class="comment">— Cour avant + allée latérale</span><br>
+    │   ├── <span class="dir">TONTE/</span>                    <span class="comment">— 4 ad groups: Tonte, Entretien, Taille, Engrais</span><br>
+    │   ├── <span class="dir">AMENAGEMENT/</span>              <span class="comment">— Cour arrière, aménagement général</span><br>
+    │   ├── <span class="dir">PISCINE/</span>                  <span class="comment">— Saisonnier mai–août</span><br>
+    │   ├── <span class="dir">DENEIGEMENT/</span>              <span class="comment">— Saisonnier sept–nov</span><br>
+    │   └── <span class="dir">REMARKETING/</span>              <span class="comment">— Display + RLSA + Customer Match</span><br>
+    ├── <span class="dir">02_ANUNCIOS/</span><br>
+    │   ├── <span class="file">headlines_bank.md</span>         <span class="comment">— 100+ headlines par service</span><br>
+    │   ├── <span class="file">descriptions_bank.md</span><br>
+    │   └── <span class="file">extensions_library.md</span>     <span class="comment">— Sitelinks, callouts, structured snippets</span><br>
+    ├── <span class="dir">03_REPORTES/</span><br>
+    │   ├── <span class="dir">DIARIO/</span>                   <span class="comment">— Rapport 7h00 avant réunion 9h00</span><br>
+    │   ├── <span class="dir">SEMANAL/</span>                  <span class="comment">— Lundi 7h00</span><br>
+    │   └── <span class="dir">MENSUAL/</span>                   <span class="comment">— 1er du mois</span><br>
+    ├── <span class="dir">04_DASHBOARDS/</span>                 <span class="comment">— Looker Studio connecté</span><br>
+    └── <span class="dir">05_AUDITORIA/</span>                  <span class="comment">— Audits trimestriels + Auction Insights</span>
+  </div>
+
+  <!-- Campaign structure Phase 1 -->
+  <h3 style="font-family:var(--fd);font-size:20px;color:var(--vf);margin:36px 0 14px;">Structure de Campagnes Recommandée</h3>
+
+  <span class="section-eyebrow" style="margin-bottom:10px;display:block;">Phase 1 — Immédiat (Semaine 1)</span>
+  <div class="camp-grid" style="margin-bottom:24px;">
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Pavé-Uni [Search]</div>
+        <div class="camp-type">3 Ad Groups: Pose · Prix · Comparaison</div>
+      </div>
+      <div class="camp-details">
+        Stratégie: Maximize Conv. Target CPA CA$80<br>
+        Keywords: pavé uni, pose pavé, entrepreneur pavé, allée pavé, prix pavé<br>
+        Zones: Saint-Léonard, Montréal-Nord, RDP, Anjou
+      </div>
+      <div>
+        <div class="camp-budget">CA$30/jour</div>
+        <span class="badge badge-red" style="font-size:9px;">Service ticket le plus élevé</span>
+      </div>
+    </div>
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Tonte + Entretien [Search]</div>
+        <div class="camp-type">4 Ad Groups: Tonte · Entretien · Taille · Gazon</div>
+      </div>
+      <div class="camp-details">
+        Stratégie: Maximize Conv. (existant — augmenter budget)<br>
+        Conserver la structure existante + restructurer ad groups<br>
+        Exclure: Plateau, Rosemont, Villeray, Mercier
+      </div>
+      <div>
+        <div class="camp-budget">CA$15/jour</div>
+        <span class="badge badge-green" style="font-size:9px;">Doublement du budget</span>
+      </div>
+    </div>
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Aménagement Paysager [Search]</div>
+        <div class="camp-type">3 Ad Groups: Cour avant · Cour arrière · Général</div>
+      </div>
+      <div class="camp-details">
+        Stratégie: Maximize Conv.<br>
+        Campagne pausée à réactiver avec nouvelle structure<br>
+        Landing pages spécifiques requises avant activation
+      </div>
+      <div>
+        <div class="camp-budget">CA$20/jour</div>
+        <span class="badge badge-gold" style="font-size:9px;">Réactiver avec LP dédiée</span>
+      </div>
+    </div>
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Remarketing [Display]</div>
+        <div class="camp-type">Audiences: Visiteurs site · Vue /pave-uni · Cart abandonment</div>
+      </div>
+      <div class="camp-details">
+        Bid +50% sur visiteurs /pave-uni sans conversion<br>
+        Responsive Display Ads avec photos de réalisations<br>
+        Fréquence cap: 15 impressions/utilisateur/30j
+      </div>
+      <div>
+        <div class="camp-budget">CA$5/jour</div>
+        <span class="badge badge-green" style="font-size:9px;">Lancer dès pixel actif</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="section-eyebrow" style="margin-bottom:10px;display:block;">Phase 2 — 30 jours</span>
+  <div class="camp-grid" style="margin-bottom:24px;">
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Cour Avant + Entrée [Search]</div>
+        <div class="camp-type">2 Ad Groups: Cour avant · Allée latérale</div>
+      </div>
+      <div class="camp-details">Stratégie: Maximize Conv. LP dédiée /cour-avant-montreal</div>
+      <div><div class="camp-budget">CA$15/jour</div></div>
+    </div>
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Murs + Escaliers [Search]</div>
+        <div class="camp-type">2 Ad Groups: Murs de soutènement · Escaliers</div>
+      </div>
+      <div class="camp-details">Services à fort ticket — CPL cible CA$60–80</div>
+      <div><div class="camp-budget">CA$10/jour</div></div>
+    </div>
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">LSA — Google Garantizado</div>
+        <div class="camp-type">Local Services Ads — Contractors Québec</div>
+      </div>
+      <div class="camp-details">Position au-dessus des Search Ads. Paiement au lead vérifié. Requiert vérification Google.</div>
+      <div><div class="camp-budget">Pay/Lead</div><span class="badge badge-red" style="font-size:9px;margin-top:4px;display:block;">Priorité absolue</span></div>
+    </div>
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Performance Max</div>
+        <div class="camp-type">Tous les canaux Google — Search + Display + YouTube + Maps</div>
+      </div>
+      <div class="camp-details">Assets: photos réalisations + vidéo + copy par service. Remplacer Smart campaign actuelle.</div>
+      <div><div class="camp-budget">CA$25/jour</div></div>
+    </div>
+  </div>
+
+  <span class="section-eyebrow" style="margin-bottom:10px;display:block;">Phase 3 — 90 jours</span>
+  <div class="camp-grid">
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Piscine [Search Saisonnier]</div>
+        <div class="camp-type">Actif: mai–août uniquement</div>
+      </div>
+      <div class="camp-details">Keywords: piscine creusée, prix piscine, entrepreneur piscine Montréal</div>
+      <div><div class="camp-budget">CA$25/jour</div></div>
+    </div>
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Déneigement [Search Saisonnier]</div>
+        <div class="camp-type">Actif: septembre–novembre</div>
+      </div>
+      <div class="camp-details">Lancer campagne en septembre. Zones: toute l'île de Montréal.</div>
+      <div><div class="camp-budget">CA$20/jour</div></div>
+    </div>
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Call-Only Mobile</div>
+        <div class="camp-type">Annonces mobiles — appel direct uniquement</div>
+      </div>
+      <div class="camp-details">Heures: lun–ven 7h–9h et 17h–19h. Keywords intent haute: «paysagiste près de moi»</div>
+      <div><div class="camp-budget">CA$10/jour</div></div>
+    </div>
+    <div class="camp-card">
+      <div>
+        <div class="camp-name">Customer Match Remarketing</div>
+        <div class="camp-type">Upload liste CRM clients existants</div>
+      </div>
+      <div class="camp-details">Exclure des prospecting campaigns. Cibler Similar Audiences. Bid +100% sur anciens clients pour services complémentaires.</div>
+      <div><div class="camp-budget">Inclus RLSA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     KPIs
+══════════════════════════════════════════════════════ -->
+<section class="section" id="kpis">
+  <span class="section-eyebrow">Phase 3 — Brief Maestro</span>
+  <h2>KPIs Obligatoires par Niveau</h2>
+  <div class="section-rule"></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Niveau</th>
+          <th>KPI</th>
+          <th>Définition</th>
+          <th>Seuil OK</th>
+          <th>Seuil Alerte</th>
+          <th>Fréquence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="6"><span class="kpi-level">Compte</span></td></tr>
+        <tr>
+          <td><span class="badge badge-dark">Compte</span></td>
+          <td class="td-bold">CPL Réel</td>
+          <td>Leads vérifiés en CRM / coût total</td>
+          <td class="td-mono">&lt; CA$50</td>
+          <td class="td-mono">&gt; CA$80</td>
+          <td>Quotidien</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-dark">Compte</span></td>
+          <td class="td-bold">Impression Share</td>
+          <td>% du marché disponible capturé</td>
+          <td class="td-mono">&gt; 60%</td>
+          <td class="td-mono">&lt; 40%</td>
+          <td>Hebdo</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-dark">Compte</span></td>
+          <td class="td-bold">Budget Utilization</td>
+          <td>% du budget journalier dépensé</td>
+          <td class="td-mono">85–100%</td>
+          <td class="td-mono">&lt; 70%</td>
+          <td>Quotidien</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-dark">Compte</span></td>
+          <td class="td-bold">QS Moyen</td>
+          <td>Quality Score agrégé compte</td>
+          <td class="td-mono">&gt; 7/10</td>
+          <td class="td-mono">&lt; 5/10</td>
+          <td>Hebdo</td>
+        </tr>
+        <tr><td colspan="6"><span class="kpi-level">Campagne</span></td></tr>
+        <tr>
+          <td><span class="badge badge-green">Campagne</span></td>
+          <td class="td-bold">CTR Search</td>
+          <td>Clics / Impressions</td>
+          <td class="td-mono">&gt; 4%</td>
+          <td class="td-mono">&lt; 2%</td>
+          <td>Quotidien</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-green">Campagne</span></td>
+          <td class="td-bold">Conv. Rate</td>
+          <td>Conversions vérifiées / Clics</td>
+          <td class="td-mono">&gt; 10%</td>
+          <td class="td-mono">&lt; 3%</td>
+          <td>Hebdo</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-green">Campagne</span></td>
+          <td class="td-bold">CPL / Service</td>
+          <td>Coût par lead par type de service</td>
+          <td>Voir tableau CPL cibles</td>
+          <td>Voir tableau CPL cibles</td>
+          <td>Hebdo</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-green">Campagne</span></td>
+          <td class="td-bold">IS Budget Perdue</td>
+          <td>% impressions perdues par budget insuffisant</td>
+          <td class="td-mono">&lt; 15%</td>
+          <td class="td-mono">&gt; 30%</td>
+          <td>Hebdo</td>
+        </tr>
+        <tr><td colspan="6"><span class="kpi-level">Ad Group / Keyword</span></td></tr>
+        <tr>
+          <td><span class="badge badge-gold">Ad Group</span></td>
+          <td class="td-bold">Quality Score</td>
+          <td>Score 1–10 par keyword (CTR attendu + pertinence + LP)</td>
+          <td class="td-mono">&gt; 7</td>
+          <td class="td-mono">&lt; 5</td>
+          <td>Hebdo</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-gold">Keyword</span></td>
+          <td class="td-bold">Coût sans conv.</td>
+          <td>Keyword ayant dépensé &gt;CA$20 sans conversion</td>
+          <td class="td-mono">CA$0</td>
+          <td class="td-mono">&gt; CA$20</td>
+          <td>Quotidien</td>
+        </tr>
+        <tr><td colspan="6"><span class="kpi-level">Landing Page</span></td></tr>
+        <tr>
+          <td><span class="badge badge-gray">LP</span></td>
+          <td class="td-bold">Bounce Rate</td>
+          <td>Visiteurs quittant sans interaction</td>
+          <td class="td-mono">&lt; 45%</td>
+          <td class="td-mono">&gt; 65%</td>
+          <td>Hebdo</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-gray">LP</span></td>
+          <td class="td-bold">Form Completion</td>
+          <td>% visiteurs complétant le formulaire</td>
+          <td class="td-mono">&gt; 8%</td>
+          <td class="td-mono">&lt; 3%</td>
+          <td>Hebdo</td>
+        </tr>
+        <tr><td colspan="6"><span class="kpi-level">Google Business Profile</span></td></tr>
+        <tr>
+          <td><span class="badge badge-gray">GBP</span></td>
+          <td class="td-bold">Local Pack Ranking</td>
+          <td>Position dans le pack 3 Google Maps</td>
+          <td class="td-mono">Top 3</td>
+          <td class="td-mono">&gt; 5</td>
+          <td>Mensuel</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-gray">GBP</span></td>
+          <td class="td-bold">Nombre de Reseñas</td>
+          <td>Avis Google vérifiés</td>
+          <td class="td-mono">&gt; 50</td>
+          <td class="td-mono">&lt; 20</td>
+          <td>Mensuel</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CPL cibles par service -->
+  <h3 style="font-family:var(--fd);font-size:20px;color:var(--vf);margin:36px 0 14px;">CPL Cibles par Service — Calcul ROI</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Ticket Moyen</th>
+          <th>CPL Max Acceptable</th>
+          <th>ROI à CPL Max</th>
+          <th>Priorité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-bold">Pavé-Uni complet</td>
+          <td class="td-mono">CA$20,000</td>
+          <td class="td-mono">CA$200</td>
+          <td class="td-mono">100x</td>
+          <td><span class="badge badge-red">Critique</span></td>
+        </tr>
+        <tr>
+          <td class="td-bold">Cour Avant + Entrée</td>
+          <td class="td-mono">CA$12,000</td>
+          <td class="td-mono">CA$120</td>
+          <td class="td-mono">100x</td>
+          <td><span class="badge badge-red">Critique</span></td>
+        </tr>
+        <tr>
+          <td class="td-bold">Aménagement Paysager</td>
+          <td class="td-mono">CA$8,000</td>
+          <td class="td-mono">CA$80</td>
+          <td class="td-mono">100x</td>
+          <td><span class="badge badge-gold">Haut</span></td>
+        </tr>
+        <tr>
+          <td class="td-bold">Murs de Soutènement</td>
+          <td class="td-mono">CA$6,000</td>
+          <td class="td-mono">CA$60</td>
+          <td class="td-mono">100x</td>
+          <td><span class="badge badge-gold">Haut</span></td>
+        </tr>
+        <tr>
+          <td class="td-bold">Piscine</td>
+          <td class="td-mono">CA$50,000</td>
+          <td class="td-mono">CA$400</td>
+          <td class="td-mono">125x</td>
+          <td><span class="badge badge-gold">Haut — Saisonnier</span></td>
+        </tr>
+        <tr>
+          <td class="td-bold">Tonte / Entretien</td>
+          <td class="td-mono">CA$600/saison</td>
+          <td class="td-mono">CA$30</td>
+          <td class="td-mono">20x</td>
+          <td><span class="badge badge-green">Moyen — Volume</span></td>
+        </tr>
+        <tr>
+          <td class="td-bold">Déneigement</td>
+          <td class="td-mono">CA$800/saison</td>
+          <td class="td-mono">CA$40</td>
+          <td class="td-mono">20x</td>
+          <td><span class="badge badge-gray">Saisonnier Sept–Nov</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ALERTES AUTOMATIQUES
+══════════════════════════════════════════════════════ -->
+<section class="section" id="alertes">
+  <span class="section-eyebrow">Phase 3 — Système d'Alertes</span>
+  <h2>Alertes Automatiques Requises</h2>
+  <div class="section-rule"></div>
+
+  <div class="grid2" style="margin-bottom:32px;">
+    <div>
+      <div class="alert crit">
+        <span class="alert-icon">🔴</span>
+        <div class="alert-body">
+          <div class="alert-title">CPL &gt; CA$50 → Pause + Révision Immédiate</div>
+          <div class="alert-text">Dépasser CA$50/lead sur n'importe quelle campagne déclenche une révision manuelle obligatoire avant la prochaine dépense. Notifier Daniel par SMS.</div>
+        </div>
+      </div>
+      <div class="alert crit">
+        <span class="alert-icon">🔴</span>
+        <div class="alert-body">
+          <div class="alert-title">0 Conversions en 48h → Alerte Urgente</div>
+          <div class="alert-text">Zéro lead sur 48 heures glissantes = problème technique ou marché. Vérifier tracking, landing page, statut campagnes.</div>
+        </div>
+      </div>
+      <div class="alert crit">
+        <span class="alert-icon">🔴</span>
+        <div class="alert-body">
+          <div class="alert-title">Keyword &gt; CA$20 sans conversion → Pause Auto</div>
+          <div class="alert-text">Tout mot-clé ayant dépensé CA$20 sans générer une seule conversion est mis en pause automatiquement en attente de révision.</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="alert high">
+        <span class="alert-icon">🟠</span>
+        <div class="alert-body">
+          <div class="alert-title">CTR Search &lt; 2% → Revoir les Annonces</div>
+          <div class="alert-text">Un CTR inférieur à 2% sur une campagne Search indique que le message ne résonne pas ou que les keywords sont trop larges. Révision des copies requise.</div>
+        </div>
+      </div>
+      <div class="alert high">
+        <span class="alert-icon">🟠</span>
+        <div class="alert-body">
+          <div class="alert-title">IS &lt; 50% sur campagnes principales → Augmenter budget</div>
+          <div class="alert-text">Si l'Impression Share des campagnes Pavé-Uni ou Tonte descend sous 50%, le budget est insuffisant par rapport à la demande disponible. Augmenter immédiatement.</div>
+        </div>
+      </div>
+      <div class="alert high">
+        <span class="alert-icon">🟠</span>
+        <div class="alert-body">
+          <div class="alert-title">QS &lt; 5 sur une keyword → Réviser</div>
+          <div class="alert-text">Quality Score &lt; 5 = CPC 40–60% plus élevé que nécessaire. Vérifier pertinence annonce + landing page + CTR attendu pour la requête.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert med">
+    <span class="alert-icon">🟡</span>
+    <div class="alert-body">
+      <div class="alert-title">Budget épuisé avant 15h00 → Redistribution</div>
+      <div class="alert-text">Si le budget journalier est consommé avant 15h00, les annonces ne tournent pas pendant les heures de pointe (17h–19h). Revoir la distribution ou augmenter le budget du lendemain.</div>
+    </div>
+  </div>
+
+  <!-- Rapports automatiques -->
+  <h3 style="font-family:var(--fd);font-size:20px;color:var(--vf);margin:36px 0 14px;">Rapports Automatiques</h3>
+  <div class="grid3">
+    <div class="card accent-border">
+      <span class="card-title">Rapport Quotidien — 7h00</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.65;margin-bottom:10px;">Livré avant la réunion de 9h00. Contenu obligatoire:</p>
+      <ul style="font-size:12.5px;color:var(--g);line-height:1.8;padding-left:16px;">
+        <li>Dépense vs. budget (% utilisé)</li>
+        <li>CPL dernières 24h par campagne</li>
+        <li>Nombre de leads reçus (CRM)</li>
+        <li>Alertes actives en cours</li>
+        <li>1 recommandation actionnable</li>
+      </ul>
+    </div>
+    <div class="card accent-border">
+      <span class="card-title">Rapport Hebdomadaire — Lundi 7h00</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.65;margin-bottom:10px;">Analyse semaine vs. semaine précédente:</p>
+      <ul style="font-size:12.5px;color:var(--g);line-height:1.8;padding-left:16px;">
+        <li>Top 5 keywords gagnantes / perdantes</li>
+        <li>CTR par annonce (A/B test results)</li>
+        <li>CPL par zone géographique</li>
+        <li>IS % et IS Perdue (budget/qualité)</li>
+        <li>Décisions: augmenter / pauser / réviser</li>
+      </ul>
+    </div>
+    <div class="card accent-border">
+      <span class="card-title">Rapport Mensuel — 1er du Mois</span>
+      <p style="font-size:13px;color:var(--gf);line-height:1.65;margin-bottom:10px;">Analyse ROI et planification:</p>
+      <ul style="font-size:12.5px;color:var(--g);line-height:1.8;padding-left:16px;">
+        <li>CPL réel / service vs. ticket moyen (ROI)</li>
+        <li>Quality Score évolution</li>
+        <li>Auction Insights — suivi concurrents</li>
+        <li>Landing page performance</li>
+        <li>Budget recommandé mois suivant</li>
+        <li>Projections et objectifs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PHASE 4 — ROADMAP
+══════════════════════════════════════════════════════ -->
+<section class="section" id="roadmap">
+  <span class="section-eyebrow">Phase 4 — Roadmap</span>
+  <h2>Plan d'Action — 90 Jours</h2>
+  <div class="section-rule"></div>
+
+  <div class="roadmap">
+    <!-- 7 jours -->
+    <div class="rm-phase">
+      <div class="rm-dot"></div>
+      <div class="rm-phase-label">Semaine 1 — Critique</div>
+      <h3>7 Jours: Fondations et Corrections d'Urgence</h3>
+      <div class="rm-items">
+        <div class="rm-item">
+          <span class="rm-item-num">01</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Auditer la configuration des conversions</div>
+            <div class="rm-item-detail">Confirmer quel événement déclenche une «conversion» dans Google Ads. Objectif: conversion = formulaire soumis avec lead reçu dans CRM. Vérifier les conversions décimales (102.95). Documenter la configuration dans 00_CONFIGURACION/conversion_tracking_setup.md</div>
+            <div class="rm-item-meta">
+              <span class="p-crit">🔴 CRITIQUE</span>
+              <span class="badge badge-gray">Responsable: Daniel + Agence</span>
+              <span class="badge badge-green">Difficulté: Moyenne</span>
+              <span class="badge badge-dark">Impact: Toutes les métriques</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">02</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Construire la liste de mots-clés négatifs — 50 termes minimum</div>
+            <div class="rm-item-detail">Éliminer les requêtes DIY, informationnelles, hors-géographie. Exemples: «faire soi-même», «formation», «location», «cours», «comment», «débutant», «Laval», «Longueuil», «Brossard». Économies estimées: 25–40% du budget actuel.</div>
+            <div class="rm-item-meta">
+              <span class="p-crit">🔴 CRITIQUE</span>
+              <span class="badge badge-gray">Responsable: Agence</span>
+              <span class="badge badge-green">Difficulté: Basse</span>
+              <span class="badge badge-gold">Impact: CA$100–200/mois récupérés</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">03</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Exclure les zones déficitaires des campagnes actives</div>
+            <div class="rm-item-detail">Supprimer du ciblage: Le Plateau (CPL CA$70.61), Rosemont (0 conv.), Villeray (0 conv.), Mercier (0 conv.). Renforcer les bids sur Saint-Léonard +20%. Action dans l'interface Google Ads — 30 minutes de travail.</div>
+            <div class="rm-item-meta">
+              <span class="p-crit">🔴 CRITIQUE</span>
+              <span class="badge badge-gray">Responsable: Agence</span>
+              <span class="badge badge-green">Difficulté: Basse</span>
+              <span class="badge badge-gold">Impact: CA$30–40/mois redirigés</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">04</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Créer campagne Pavé-Uni Search avec 3 ad groups</div>
+            <div class="rm-item-detail">Lancer la campagne pour le service à plus fort ticket. 3 ad groups: (1) Pose pavé uni — intent achat, (2) Prix / devis — intent comparaison, (3) Comparaison entrepreneurs — intent décision. Budget initial: CA$15/jour. Stratégie: Maximize Conversions. Landing page: /pave-uni-montreal (créer en parallèle).</div>
+            <div class="rm-item-meta">
+              <span class="p-high">🟠 HAUT</span>
+              <span class="badge badge-gray">Responsable: Agence + Daniel</span>
+              <span class="badge badge-gold">Difficulté: Moyenne</span>
+              <span class="badge badge-dark">Impact: Ouvre service CA$20,000/ticket</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">05</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Augmenter budget Tonte Search de CA$7.56 → CA$15/jour</div>
+            <div class="rm-item-detail">La campagne Tonte est limitée par le budget — c'est la seule campagne Search confirmée qui fonctionne (CTR 4.27%, stratégie Maximize Conv.). Doubler le budget immédiatement. Vérifier que le CPA cible CA$15.45 est maintenu après l'augmentation.</div>
+            <div class="rm-item-meta">
+              <span class="p-high">🟠 HAUT</span>
+              <span class="badge badge-gray">Responsable: Agence</span>
+              <span class="badge badge-green">Difficulté: Basse</span>
+              <span class="badge badge-green">Impact: +80% de leads Tonte</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 30 jours -->
+    <div class="rm-phase">
+      <div class="rm-dot"></div>
+      <div class="rm-phase-label">Mois 1 — Impact Élevé</div>
+      <h3>30 Jours: Optimisation Structurelle</h3>
+      <div class="rm-items">
+        <div class="rm-item">
+          <span class="rm-item-num">06</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Restructurer Tonte en 4 Ad Groups thématiques</div>
+            <div class="rm-item-detail">Séparer les 19 keywords actuels en: (1) Tonte gazon, (2) Entretien pelouse, (3) Taille haies, (4) Engrais / fertilisation. Chaque groupe = annonces spécifiques + landing page pointant vers la section appropriée du site. Résultat attendu: QS +2 pts, CPC –20%.</div>
+            <div class="rm-item-meta">
+              <span class="p-high">🟠 HAUT</span>
+              <span class="badge badge-gold">Difficulté: Moyenne</span>
+              <span class="badge badge-green">Impact: QS +2, CPC –20%</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">07</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Créer 3 landing pages dédiées par service</div>
+            <div class="rm-item-detail">Pages requises: /pave-uni-montreal, /tonte-pelouse-montreal, /cour-avant-montreal. Chaque page: headline de service, galerie photos réalisations, formulaire visible above the fold (3 champs max: nom, téléphone, type de projet), témoignage client, CTA «Obtenir un devis gratuit».</div>
+            <div class="rm-item-meta">
+              <span class="p-high">🟠 HAUT</span>
+              <span class="badge badge-gold">Difficulté: Élevée</span>
+              <span class="badge badge-dark">Impact: Conv. Rate × 2</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">08</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Configurer Call Tracking + Lead Form Extensions</div>
+            <div class="rm-item-detail">Numéro de suivi Google (call tracking) pour mesurer les appels générés par les annonces. Lead Form Extensions sur toutes les campagnes Search pour capturer des leads directement dans la SERP sans click. Économie de landing page pour les requêtes mobiles à haute intention.</div>
+            <div class="rm-item-meta">
+              <span class="p-high">🟠 HAUT</span>
+              <span class="badge badge-gold">Difficulté: Moyenne</span>
+              <span class="badge badge-green">Impact: CPL –30% mobile</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">09</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Lancer campagne Remarketing Display</div>
+            <div class="rm-item-detail">Créer audiences: visiteurs /pave-uni (30j), visiteurs site sans conversion (14j). Responsive Display Ads avec photos de réalisations de Jardín Ideal. Fréquence cap 15 imp/utilisateur/30j. Budget: CA$5/jour. Dépend de la pose du pixel de remarketing.</div>
+            <div class="rm-item-meta">
+              <span class="p-high">🟠 HAUT</span>
+              <span class="badge badge-green">Difficulté: Moyenne</span>
+              <span class="badge badge-gold">Impact: Reconversion audience chaude</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">10</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Appliquer pour Local Services Ads (Google Garantizado)</div>
+            <div class="rm-item-detail">Démarrer le processus de vérification Google pour contractors au Québec. La vérification prend 2–4 semaines. Requiert: licence d'entrepreneur, assurance, vérification d'identité. Une fois actif, les LSA apparaissent au-dessus de tout autre annonce Google.</div>
+            <div class="rm-item-meta">
+              <span class="p-crit">🔴 CRITIQUE</span>
+              <span class="badge badge-gold">Difficulté: Moyenne (délai vérification)</span>
+              <span class="badge badge-dark">Impact: Position 0 dans les résultats</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">11</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">GBP: Lancer la campagne de collecte de 30 avis</div>
+            <div class="rm-item-detail">Envoyer lien Google Review à tous les clients ayant complété un projet depuis janvier 2026. Template de message SMS/email à créer. Objectif: 30 avis en 30 jours. Impact sur le Local Pack = apparition dans les 3 premiers résultats Google Maps pour «paysagiste Saint-Léonard».</div>
+            <div class="rm-item-meta">
+              <span class="p-high">🟠 HAUT</span>
+              <span class="badge badge-green">Difficulté: Basse</span>
+              <span class="badge badge-dark">Impact: Local Pack + notoriété organique</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 90 jours -->
+    <div class="rm-phase">
+      <div class="rm-dot" style="background:var(--or);border-color:var(--vf);"></div>
+      <div class="rm-phase-label">Mois 2–3 — Croissance</div>
+      <h3>90 Jours: Expansion et Automatisation</h3>
+      <div class="rm-items">
+        <div class="rm-item">
+          <span class="rm-item-num">12</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Lancer Performance Max pour les services principaux</div>
+            <div class="rm-item-detail">Migrer ou compléter la Smart campaign actuelle avec Performance Max. Requiert: 20+ images de réalisations, 5+ vidéos ou clips, headlines et descriptions validés par service. Remplace la Smart campaign «boîte noire» avec un format plus transparent.</div>
+            <div class="rm-item-meta">
+              <span class="p-high">🟠 HAUT</span>
+              <span class="badge badge-gold">Difficulté: Élevée</span>
+              <span class="badge badge-green">Impact: +25% conv. rate estimé</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">13</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Dashboard Looker Studio automatisé</div>
+            <div class="rm-item-detail">Connecter Google Ads + Google Analytics + Google Search Console dans Looker Studio. Dashboard en temps réel: CPL par service, IS, QS, géolocalisation, tendances. Accessible depuis mobile pour Daniel avant 9h00. Partager avec l'agence.</div>
+            <div class="rm-item-meta">
+              <span class="p-med">🟡 MOYEN</span>
+              <span class="badge badge-green">Difficulté: Moyenne</span>
+              <span class="badge badge-gold">Impact: Décisions data-driven en 2 min</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">14</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Implémenter ROAS Tracking (CRM → Google Ads)</div>
+            <div class="rm-item-detail">Connecter les leads fermés dans le CRM avec les conversions Google Ads pour calculer le ROAS réel par service. Exemple: lead Pavé-Uni cliqué sur annonce → projet fermé CA$22,000 → ROAS = 22,000 / coût annonce = 150x. Permet d'optimiser l'algorithme sur la valeur réelle, pas sur des leads de toutes catégories.</div>
+            <div class="rm-item-meta">
+              <span class="p-high">🟠 HAUT</span>
+              <span class="badge badge-gold">Difficulté: Élevée</span>
+              <span class="badge badge-dark">Impact: Optimisation par ROI réel</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">15</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">Préparer et lancer campagne Déneigement (Septembre)</div>
+            <div class="rm-item-detail">Les clients de déneigement signent en août–octobre pour la saison. Lancer la campagne 6 semaines avant les premières neiges. Keywords: déneigement résidentiel, soufflage neige, contrat déneigement Montréal. Budget: CA$20/jour pendant 8 semaines.</div>
+            <div class="rm-item-meta">
+              <span class="p-high">🟠 HAUT</span>
+              <span class="badge badge-green">Difficulté: Basse</span>
+              <span class="badge badge-gold">Impact: Revenue complémentaire automne</span>
+            </div>
+          </div>
+        </div>
+        <div class="rm-item">
+          <span class="rm-item-num">16</span>
+          <div class="rm-item-body">
+            <div class="rm-item-title">A/B Testing: formulaire 3 champs vs. 5 champs sur landing pages</div>
+            <div class="rm-item-detail">Tester si un formulaire court (Nom, Téléphone, Service) convertit mieux qu'un formulaire complet (+ Adresse, Description du projet). Hypothèse: le formulaire court réduit la friction mobile et augmente le volume de leads au détriment de la qualification. Durée du test: minimum 100 conversions par variante.</div>
+            <div class="rm-item-meta">
+              <span class="p-med">🟡 MOYEN</span>
+              <span class="badge badge-green">Difficulté: Basse</span>
+              <span class="badge badge-gold">Impact: Conv. Rate +15–30%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Budget projection -->
+  <h3 style="font-family:var(--fd);font-size:20px;color:var(--vf);margin:36px 0 14px;">Projection Budgétaire par Phase</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Période</th>
+          <th>Budget/Jour</th>
+          <th>Budget/Mois</th>
+          <th>Campagnes Actives</th>
+          <th>CPL Cible</th>
+          <th>Leads Estimés/Mois</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-red">Actuel</span></td>
+          <td>Juin 2026</td>
+          <td class="td-mono">CA$16.76</td>
+          <td class="td-mono">CA$510</td>
+          <td>2 / 5</td>
+          <td class="td-mono">Inconnu*</td>
+          <td class="td-mono">Inconnu*</td>
+        </tr>
+        <tr class="best-row">
+          <td><span class="badge badge-gold">Phase 1</span></td>
+          <td>Juil 2026</td>
+          <td class="td-mono">CA$70</td>
+          <td class="td-mono">CA$2,100</td>
+          <td>4 / 6</td>
+          <td class="td-mono">CA$30–50</td>
+          <td class="td-mono">40–70</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-gold">Phase 2</span></td>
+          <td>Août 2026</td>
+          <td class="td-mono">CA$150</td>
+          <td class="td-mono">CA$4,500</td>
+          <td>7 / 9</td>
+          <td class="td-mono">CA$25–40</td>
+          <td class="td-mono">110–180</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-dark">Phase 3</span></td>
+          <td>Sept 2026</td>
+          <td class="td-mono">CA$200</td>
+          <td class="td-mono">CA$6,000</td>
+          <td>10 / 12</td>
+          <td class="td-mono">CA$20–35</td>
+          <td class="td-mono">170–300</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-family:var(--fm);font-size:10px;color:var(--g);margin-top:8px;">* CPL et leads réels inconnus jusqu'à vérification du conversion tracking (Action #01)</p>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     RÉSUMÉ EXÉCUTIF
+══════════════════════════════════════════════════════ -->
+<section class="section">
+  <span class="section-eyebrow">Résumé de Direction</span>
+  <h2>Les 5 Décisions Que Daniel Doit Prendre Cette Semaine</h2>
+  <div class="section-rule"></div>
+
+  <div style="display:flex;flex-direction:column;gap:14px;">
+    <div class="alert crit">
+      <span class="alert-icon">1</span>
+      <div class="alert-body">
+        <div class="alert-title">Vérifier le tracking — Avant tout le reste</div>
+        <div class="alert-text">Appeler l'agence aujourd'hui. Demander: «Quel événement exactement déclenche une conversion dans notre compte Google Ads?» La réponse change tout ce qui suit. Sans cela, chaque CA$ dépensé est dans l'obscurité.</div>
+      </div>
+    </div>
+    <div class="alert high">
+      <span class="alert-icon">2</span>
+      <div class="alert-body">
+        <div class="alert-title">Valider l'augmentation budgétaire Phase 1: CA$510 → CA$2,100/mois</div>
+        <div class="alert-text">Le budget actuel est structurellement insuffisant pour le marché visé (CA$20,000 de ticket pour Pavé-Uni). Confirmer ou infirmer la direction budgétaire avant que l'agence construise les nouvelles campagnes.</div>
+      </div>
+    </div>
+    <div class="alert high">
+      <span class="alert-icon">3</span>
+      <div class="alert-body">
+        <div class="alert-title">Approuver les exclusions géographiques immédiates</div>
+        <div class="alert-text">Exclure Le Plateau, Rosemont, Villeray, Mercier. Action de 30 minutes pour l'agence. Économise CA$30–40/mois et améliore la qualité des leads restants. Aucun risque commercial — Jardín Ideal n'opère pas dans ces zones.</div>
+      </div>
+    </div>
+    <div class="alert high">
+      <span class="alert-icon">4</span>
+      <div class="alert-body">
+        <div class="alert-title">Décision sur la campagne Piscine saisonnière</div>
+        <div class="alert-text">Juin–juillet = pic de la demande piscine. La campagne est pausée avec CA$35.30/jour configuré. Avec un ticket moyen de CA$50,000, un CPL de CA$400 = ROI 125x. Réactiver ou non? Décision stratégique, pas opérationnelle.</div>
+      </div>
+    </div>
+    <div class="alert ok">
+      <span class="alert-icon">5</span>
+      <div class="alert-body">
+        <div class="alert-title">Démarrer la collecte de 30 avis Google cette semaine</div>
+        <div class="alert-text">Faible effort, impact élevé. Envoyer le lien Google Review aux clients des 6 derniers mois. 30 avis = entrée dans le Local Pack Google Maps = visibilité organique gratuite en plus des annonces payantes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-brand">Jardín Ideal</span>
+  <span class="footer-meta">Brief Maestro Google Ads · Compte 600-260-6454 · Juin 2026</span>
+  <span class="footer-meta">6712 Av. Paul-Émile-Lamarche, Saint-Léonard, QC</span>
+</footer>
+
+</body>
+</html>
