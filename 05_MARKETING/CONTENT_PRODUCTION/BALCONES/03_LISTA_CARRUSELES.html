@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carruseles Balcones — Jardín Ideal 2026</title>
+<style>
+  :root {
+    --vf: #1E3A20;
+    --or: #C8A45A;
+    --cr: #F5F2EB;
+    --vf-light: #2d5230;
+    --vf-pale: #eef3ee;
+    --or-pale: #fdf8ee;
+    --or-light: #e8c87a;
+    --gris: #6b7280;
+    --gris-light: #f3f4f6;
+    --border: #d9d3c5;
+    --text: #1a1a18;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--cr);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0 0 60px;
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    background: var(--vf);
+    color: var(--white);
+    padding: 36px 40px 28px;
+    border-bottom: 4px solid var(--or);
+  }
+  .site-header .eyebrow {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 8px;
+  }
+  .site-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: normal;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .site-header .meta-row {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.72);
+  }
+  .site-header .meta-row span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .badge-format {
+    display: inline-block;
+    background: var(--or);
+    color: var(--vf);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+
+  /* ─── INTRO STRIP ─── */
+  .intro-strip {
+    background: var(--or-pale);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 32px;
+    font-size: 13px;
+    color: var(--gris);
+  }
+  .intro-strip strong { color: var(--text); }
+
+  /* ─── MAIN LAYOUT ─── */
+  .page-wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 36px 24px 0;
+  }
+
+  /* ─── INDEX BAR ─── */
+  .index-bar {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .index-bar .index-label {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-right: 4px;
+  }
+  .index-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    background: var(--vf-pale);
+    border: 1px solid #c6d6c7;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--vf);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.15s;
+  }
+  .index-link:hover { background: #d8e8d9; }
+  .index-link .code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    font-weight: bold;
+    background: var(--vf);
+    color: var(--or);
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+
+  /* ─── CAROUSEL CARD ─── */
+  .carousel-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 48px;
+    box-shadow: 0 2px 12px rgba(30,58,32,0.07);
+  }
+
+  .card-header {
+    background: var(--vf);
+    padding: 22px 28px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .card-id {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+    color: var(--or);
+    background: rgba(200,164,90,0.15);
+    border: 1px solid rgba(200,164,90,0.3);
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .card-title-block { flex: 1; }
+  .card-title-block h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: normal;
+    color: var(--white);
+    line-height: 1.25;
+  }
+  .card-badges {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chip {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: system-ui, sans-serif;
+  }
+  .chip-slides { background: rgba(200,164,90,0.2); color: var(--or-light); border: 1px solid rgba(200,164,90,0.3); }
+  .chip-semana { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.15); }
+  .chip-ratio  { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.1); font-family: "Courier New", Courier, monospace; font-size: 10px; }
+
+  /* ─── FIELDS GRID ─── */
+  .fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  @media (max-width: 680px) {
+    .fields-grid { grid-template-columns: 1fr; }
+  }
+
+  .field {
+    padding: 18px 24px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .field:nth-child(even) { border-right: none; }
+  .field.full-width {
+    grid-column: 1 / -1;
+    border-right: none;
+  }
+
+  .field-label {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .field-label::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 11px;
+    background: var(--or);
+    border-radius: 2px;
+  }
+  .field-value {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .field-value strong { color: var(--vf); }
+  .field-value em {
+    font-style: normal;
+    color: var(--gris);
+    font-size: 13px;
+  }
+
+  /* Hook box */
+  .hook-box {
+    background: var(--vf-pale);
+    border-left: 3px solid var(--vf);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    color: var(--vf);
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  /* CTA box */
+  .cta-box {
+    background: var(--or-pale);
+    border-left: 3px solid var(--or);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    color: var(--vf);
+    line-height: 1.4;
+  }
+
+  /* ─── SLIDES SECTION ─── */
+  .slides-section {
+    padding: 0;
+  }
+  .slides-header {
+    padding: 16px 24px 12px;
+    background: var(--vf-pale);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .slides-header-label {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--vf);
+    font-weight: bold;
+  }
+  .slides-count-badge {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    background: var(--vf);
+    color: var(--or);
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  .slides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .slide-item {
+    background: var(--white);
+    padding: 18px 20px;
+  }
+  .slide-item.is-cover {
+    background: linear-gradient(135deg, var(--vf-pale) 0%, var(--white) 100%);
+  }
+  .slide-item.is-cta {
+    background: linear-gradient(135deg, var(--or-pale) 0%, var(--white) 100%);
+  }
+
+  .slide-num-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .slide-num {
+    width: 26px;
+    height: 26px;
+    background: var(--vf);
+    color: var(--or);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .slide-item.is-cover .slide-num { background: var(--vf); }
+  .slide-item.is-cta .slide-num  { background: var(--or); color: var(--vf); }
+  .slide-type-tag {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: var(--gris-light);
+    color: var(--gris);
+  }
+  .slide-item.is-cover .slide-type-tag { background: rgba(30,58,32,0.1); color: var(--vf); }
+  .slide-item.is-cta .slide-type-tag   { background: rgba(200,164,90,0.2); color: #8a6a20; }
+
+  .slide-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    color: var(--vf);
+    font-weight: bold;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .slide-content {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .slide-content ul {
+    margin: 4px 0 0 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .slide-content ul li {
+    padding: 1px 0 1px 14px;
+    position: relative;
+    font-size: 13px;
+  }
+  .slide-content ul li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--or);
+    font-weight: bold;
+  }
+  .slide-visual {
+    margin-top: 8px;
+    padding: 7px 10px;
+    background: var(--gris-light);
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--gris);
+    font-style: italic;
+    border-left: 2px solid var(--border);
+  }
+  .slide-visual::before {
+    content: "Visual: ";
+    font-style: normal;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 11px;
+    display: block;
+    margin-bottom: 2px;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ─── VISUELS SECTION ─── */
+  .visuels-section {
+    padding: 18px 24px;
+    background: var(--gris-light);
+    border-top: 1px solid var(--border);
+  }
+  .visuels-label {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-bottom: 10px;
+  }
+  .visuels-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .visuel-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--text);
+  }
+  .visuel-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  /* Briefing ref */
+  .ref-section {
+    padding: 12px 24px 16px;
+    background: var(--vf-pale);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .ref-label {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--vf);
+  }
+  .ref-tag {
+    display: inline-block;
+    background: var(--vf);
+    color: var(--or);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+  .ref-note {
+    font-size: 12px;
+    color: var(--gris);
+  }
+
+  /* ─── SECTION DIVIDER ─── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 20px;
+  }
+  .section-divider .divider-label {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gris);
+    white-space: nowrap;
+  }
+  .section-divider::before, .section-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── FOOTER ─── */
+  .page-footer {
+    max-width: 1060px;
+    margin: 40px auto 0;
+    padding: 20px 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    color: var(--gris);
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     HEADER
+════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="eyebrow">Jardín Ideal — Campagne Balcons 2026 — Formato #2</div>
+  <h1>Liste des Carousels — Balcons</h1>
+  <div class="meta-row">
+    <span><span class="badge-format">Carousel</span></span>
+    <span>4 carousels &nbsp;·&nbsp; 27 slides total</span>
+    <span>Facebook + Instagram Feed</span>
+    <span>Ratio 1:1 · 1080 × 1080 px</span>
+    <span>Génèrent 3× plus de temps de visionnage</span>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════
+     INTRO STRIP
+════════════════════════════════════════ -->
+<div class="intro-strip">
+  <span><strong>Formats :</strong> 5–8 slides par carousel, max 10 slides (Meta)</span>
+  <span><strong>Texte :</strong> &lt;20% par slide · Titre &lt;40 car · Texte principal &lt;125 car</span>
+  <span><strong>Objectif global :</strong> Éduquer → Qualifier → Convertir</span>
+  <span><strong>Mise à jour :</strong> 22 juin 2026</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     INDEX
+════════════════════════════════════════ -->
+<div class="page-wrapper">
+  <div class="index-bar">
+    <span class="index-label">Index</span>
+    <a class="index-link" href="#B-C01">
+      <span class="code">B-C01</span>
+      Bois traité vs Composite
+    </a>
+    <a class="index-link" href="#B-C02">
+      <span class="code">B-C02</span>
+      Étapes d'un remplacement
+    </a>
+    <a class="index-link" href="#B-C03">
+      <span class="code">B-C03</span>
+      5 Réalisations préférées
+    </a>
+    <a class="index-link" href="#B-C04">
+      <span class="code">B-C04</span>
+      Prix d'un balcon 2026
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       B-C01 — BOIS TRAITÉ VS COMPOSITE
+  ════════════════════════════════════════ -->
+  <div class="section-divider">
+    <span class="divider-label">Carousel 01 / 04</span>
+  </div>
+
+  <div class="carousel-card" id="B-C01">
+    <div class="card-header">
+      <div class="card-id">B-C01</div>
+      <div class="card-title-block">
+        <h2>Bois traité vs Composite — Le guide comparatif</h2>
+        <div class="card-badges">
+          <span class="chip chip-slides">7 slides</span>
+          <span class="chip chip-semana">Semaine 2</span>
+          <span class="chip chip-ratio">1:1 · 1080 px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fields -->
+    <div class="fields-grid">
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          Positionner Jardín Ideal comme <strong>expert-conseil en matériaux de balcon</strong>.
+          Aider le client à comprendre les différences entre bois traité et composite avant de prendre une décision.
+          Générer des demandes de soumission qualifiées (clients qui savent ce qu'ils veulent).
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires de maison unifamiliale ou duplex à Montréal / Laval / Rive-Sud,
+          <strong>35–60 ans</strong>, qui envisagent un remplacement ou premier balcon.
+          Profil : cherchent à comparer les options avant de contacter un entrepreneur.
+          <em>Interêts : rénovation extérieure, jardinage, valeur de revente.</em>
+        </div>
+      </div>
+      <div class="field full-width">
+        <div class="field-label">Gancho — Slide 1 (portada)</div>
+        <div class="hook-box">
+          «&nbsp;Bois traité ou composite pour votre balcon ?<br>
+          La vraie différence — résumée en 6 slides.&nbsp;»
+        </div>
+      </div>
+      <div class="field full-width">
+        <div class="field-label">CTA — Dernier slide (texte exact)</div>
+        <div class="cta-box">
+          «&nbsp;Prêt à choisir ? On vous guide gratuitement.<br>
+          <strong>Demandez votre soumission sans engagement — réponse en 48h.</strong>&nbsp;»<br>
+          <em style="font-size:12px; color:var(--gris);">Bouton Meta : Obtenir une soumission</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slides -->
+    <div class="slides-section">
+      <div class="slides-header">
+        <span class="slides-header-label">Structure des slides</span>
+        <span class="slides-count-badge">7 slides</span>
+      </div>
+      <div class="slides-grid">
+
+        <div class="slide-item is-cover">
+          <div class="slide-num-row">
+            <div class="slide-num">1</div>
+            <span class="slide-type-tag">Couverture</span>
+          </div>
+          <div class="slide-title">Bois traité ou composite pour votre balcon ?</div>
+          <div class="slide-content">
+            La vraie différence — résumée en 6 slides.<br>
+            <em style="font-size:12px; color:var(--gris);">Sous-titre : Guide Jardín Ideal 2026</em>
+          </div>
+          <div class="slide-visual">Photo grand format d'un balcon composite moderne (gris anthracite) côte à côte avec un balcon en bois naturel. Logo Jardín Ideal en bas à droite. Fond blanc cassé.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">2</div>
+            <span class="slide-type-tag">Comparaison</span>
+          </div>
+          <div class="slide-title">Durabilité &amp; entretien</div>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Bois traité :</strong> 15–20 ans · ponçage + teinture tous les 2 ans</li>
+              <li><strong>Composite :</strong> 25–35 ans · nettoyage annuel seulement</li>
+              <li>Vainqueur pour entretien minimal : <strong>Composite</strong></li>
+            </ul>
+          </div>
+          <div class="slide-visual">Icônes simples : calendrier + balai. Palette verte foncée (#1E3A20) et crème (#F5F2EB). Fond blanc.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">3</div>
+            <span class="slide-type-tag">Comparaison</span>
+          </div>
+          <div class="slide-title">Coût initial vs coût total</div>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Bois traité :</strong> 4 000–8 000 $ · coût initial plus bas</li>
+              <li><strong>Composite :</strong> 8 000–18 000 $ · investissement à long terme</li>
+              <li>Sur 25 ans : les coûts s'équilibrent grâce à l'entretien réduit</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Graphique à barres simple côte à côte (couleurs de marque). Chiffres en grand, style épuré.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">4</div>
+            <span class="slide-type-tag">Comparaison</span>
+          </div>
+          <div class="slide-title">Résistance aux hivers québécois</div>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Bois traité :</strong> sensible aux cycles gel-dégel · peut gauchir</li>
+              <li><strong>Composite :</strong> conçu pour -40 °C · aucune absorption d'eau</li>
+              <li>Pour Montréal : <strong>avantage net au composite</strong></li>
+            </ul>
+          </div>
+          <div class="slide-visual">Photo d'un balcon enneigé à Montréal + icône flocon. Contraste visuel fort.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">5</div>
+            <span class="slide-type-tag">Comparaison</span>
+          </div>
+          <div class="slide-title">Esthétique &amp; personnalisation</div>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Bois traité :</strong> chaleureux, naturel, teinte au choix</li>
+              <li><strong>Composite :</strong> 20+ coloris, imite le bois sans les inconvénients</li>
+              <li>Préférence personnelle : les deux gagnent selon le style</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Grille de 4 photos : 2 balcons bois (brun naturel / peint blanc) + 2 balcons composite (gris anthracite / brun cappuccino).</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">6</div>
+            <span class="slide-type-tag">Synthèse</span>
+          </div>
+          <div class="slide-title">Notre recommandation</div>
+          <div class="slide-content">
+            <ul>
+              <li>Budget serré → <strong>Bois traité</strong> + plan d'entretien</li>
+              <li>Investissement long terme → <strong>Composite</strong> Trex ou TimberTech</li>
+              <li>Les deux peuvent durer 25+ ans avec une <strong>pose professionnelle</strong></li>
+            </ul>
+          </div>
+          <div class="slide-visual">Tableau récapitulatif simple 3 lignes × 2 colonnes. Fond crème (#F5F2EB), accents dorés (#C8A45A).</div>
+        </div>
+
+        <div class="slide-item is-cta">
+          <div class="slide-num-row">
+            <div class="slide-num">7</div>
+            <span class="slide-type-tag">CTA Final</span>
+          </div>
+          <div class="slide-title">Prêt à choisir ?</div>
+          <div class="slide-content">
+            On vous guide gratuitement selon votre budget et vos besoins.<br>
+            <strong>Demandez votre soumission sans engagement — réponse en 48h.</strong>
+          </div>
+          <div class="slide-visual">Fond vert foncé (#1E3A20). Texte blanc. Logo Jardín Ideal centré. Flèche dorée vers le bas. Bouton CTA doré.</div>
+        </div>
+
+      </div><!-- /slides-grid -->
+    </div><!-- /slides-section -->
+
+    <!-- Visuels -->
+    <div class="visuels-section">
+      <div class="visuels-label">Visuels recommandés — Canva</div>
+      <div class="visuels-grid">
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#1E3A20;"></span>Fond #1E3A20 (slides CTA)</div>
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#F5F2EB;"></span>Fond #F5F2EB (slides contenu)</div>
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#C8A45A;"></span>Accents #C8A45A (titres, icônes)</div>
+        <div class="visuel-pill">Photos : balcon composite gris + bois naturel</div>
+        <div class="visuel-pill">Template : Canva carrousel minimaliste</div>
+        <div class="visuel-pill">Icônes : flat design, monochromes</div>
+        <div class="visuel-pill">Typographie : Georgia pour titres, System UI pour corps</div>
+      </div>
+    </div>
+
+    <!-- Ref -->
+    <div class="ref-section">
+      <span class="ref-label">Références Briefing</span>
+      <span class="ref-tag">Format #2 — Carousel</span>
+      <span class="ref-tag">Formule 5 — Éducative</span>
+      <span class="ref-tag">Balcons — Semaine 2</span>
+      <span class="ref-note">Campagne Balcons 2026 · Facebook + Instagram Feed · 1080 × 1080 px</span>
+    </div>
+  </div><!-- /B-C01 -->
+
+
+  <!-- ═══════════════════════════════════════
+       B-C02 — ÉTAPES D'UN REMPLACEMENT
+  ════════════════════════════════════════ -->
+  <div class="section-divider">
+    <span class="divider-label">Carousel 02 / 04</span>
+  </div>
+
+  <div class="carousel-card" id="B-C02">
+    <div class="card-header">
+      <div class="card-id">B-C02</div>
+      <div class="card-title-block">
+        <h2>Les étapes d'un remplacement de balcon</h2>
+        <div class="card-badges">
+          <span class="chip chip-slides">8 slides</span>
+          <span class="chip chip-semana">Semaine 3</span>
+          <span class="chip chip-ratio">1:1 · 1080 px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fields -->
+    <div class="fields-grid">
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          <strong>Réduire l'anxiété du processus</strong> chez les clients qui ne savent pas comment se déroule un chantier.
+          Démontrer le professionnalisme et la rigueur de Jardín Ideal.
+          Qualifier les leads en montrant la réalité du projet (timeline, étapes, ce que le client doit faire).
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires avec un <strong>balcon existant dégradé</strong> ou vieillissant.
+          Clientèle 40–65 ans, première rénovation de balcon, à Montréal île et Rive-Sud.
+          <em>Profil : prudent, veut comprendre avant de s'engager, cherche la transparence.</em>
+        </div>
+      </div>
+      <div class="field full-width">
+        <div class="field-label">Gancho — Slide 1 (portada)</div>
+        <div class="hook-box">
+          «&nbsp;Vous ne savez pas comment ça se passe, un remplacement de balcon ?<br>
+          Voici nos 7 étapes — de la première visite à la livraison finale.&nbsp;»
+        </div>
+      </div>
+      <div class="field full-width">
+        <div class="field-label">CTA — Dernier slide (texte exact)</div>
+        <div class="cta-box">
+          «&nbsp;Votre projet commence par une visite gratuite.<br>
+          <strong>On évalue votre balcon actuel et on vous remet une soumission détaillée — sans surprise.</strong>&nbsp;»<br>
+          <em style="font-size:12px; color:var(--gris);">Bouton Meta : Nous contacter</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slides -->
+    <div class="slides-section">
+      <div class="slides-header">
+        <span class="slides-header-label">Structure des slides</span>
+        <span class="slides-count-badge">8 slides</span>
+      </div>
+      <div class="slides-grid">
+
+        <div class="slide-item is-cover">
+          <div class="slide-num-row">
+            <div class="slide-num">1</div>
+            <span class="slide-type-tag">Couverture</span>
+          </div>
+          <div class="slide-title">Comment ça se passe, un remplacement de balcon ?</div>
+          <div class="slide-content">
+            Nos 7 étapes — de la première visite à la livraison finale.<br>
+            <em style="font-size:12px; color:var(--gris);">Badge : Guide Jardín Ideal 2026</em>
+          </div>
+          <div class="slide-visual">Photo chantier en cours : équipe Jardín Ideal en train de poser des planches de composite. Casques et vêtements de travail. Ambiance professionnelle.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">2</div>
+            <span class="slide-type-tag">Étape 1</span>
+          </div>
+          <div class="slide-title">Étape 1 — Visite d'évaluation gratuite</div>
+          <div class="slide-content">
+            <ul>
+              <li>Un conseiller se déplace chez vous (30–45 min)</li>
+              <li>Évaluation de l'état structurel du balcon actuel</li>
+              <li>Discussion de vos besoins, style et budget</li>
+              <li>Délai : sous 5 jours ouvrables</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Photo : conseiller avec tablette sur un balcon, conversation avec propriétaire. Numéro «01» en grand en arrière-plan (couleur crème #F5F2EB).</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">3</div>
+            <span class="slide-type-tag">Étape 2</span>
+          </div>
+          <div class="slide-title">Étape 2 — Soumission détaillée</div>
+          <div class="slide-content">
+            <ul>
+              <li>Devis écrit remis sous 48h après la visite</li>
+              <li>Détail : matériaux, main-d'œuvre, délais</li>
+              <li>Aucun frais caché — prix fixe garanti</li>
+              <li>Validité : 30 jours</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Maquette stylisée d'un document de soumission (PDF) avec logo Jardín Ideal. Icône stylo / signature. Fond blanc.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">4</div>
+            <span class="slide-type-tag">Étape 3</span>
+          </div>
+          <div class="slide-title">Étape 3 — Choix des matériaux</div>
+          <div class="slide-content">
+            <ul>
+              <li>Sélection du matériau : bois traité ou composite</li>
+              <li>Choix de la couleur, de la finition, des garde-corps</li>
+              <li>Nos fournisseurs : Trex, TimberTech, UltraDeck</li>
+              <li>Échantillons physiques disponibles sur demande</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Grille de swatches de couleurs de composite (gris, cappuccino, cèdre). Style catalogue élégant.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">5</div>
+            <span class="slide-type-tag">Étape 4</span>
+          </div>
+          <div class="slide-title">Étape 4 — Démolition &amp; préparation</div>
+          <div class="slide-content">
+            <ul>
+              <li>Retrait de l'ancien balcon (demi-journée à 1 jour)</li>
+              <li>Inspection de la structure porteuse</li>
+              <li>Réparation si nécessaire (inclus dans la soumission)</li>
+              <li>Nettoyage complet du site avant la pose</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Photo avant/après démolition : balcon pourri retiré, fondations nettoyées. Accent sur la propreté du chantier.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">6</div>
+            <span class="slide-type-tag">Étape 5</span>
+          </div>
+          <div class="slide-title">Étape 5 — Construction &amp; pose</div>
+          <div class="slide-content">
+            <ul>
+              <li>Pose de la structure (poutres, solives, poteaux)</li>
+              <li>Installation des planches ou lames de composite</li>
+              <li>Pose des garde-corps (code RBQ respecté)</li>
+              <li>Durée : 2 à 4 jours selon la superficie</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Série de 3 photos de chantier en progression (structure, planches, finition). Mise en page 3 cases dans le slide.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">7</div>
+            <span class="slide-type-tag">Étape 6 &amp; 7</span>
+          </div>
+          <div class="slide-title">Étapes 6 &amp; 7 — Inspection finale &amp; livraison</div>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Inspection finale</strong> avec le propriétaire présent</li>
+              <li>Correction immédiate de tout défaut constaté</li>
+              <li><strong>Livraison officielle</strong> + remise de la garantie écrite</li>
+              <li>Suivi 30 jours post-installation inclus</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Photo : propriétaire souriant sur son nouveau balcon composite, poignée de main avec le chef de chantier. Lumière dorée d'été.</div>
+        </div>
+
+        <div class="slide-item is-cta">
+          <div class="slide-num-row">
+            <div class="slide-num">8</div>
+            <span class="slide-type-tag">CTA Final</span>
+          </div>
+          <div class="slide-title">Votre projet commence par une visite gratuite.</div>
+          <div class="slide-content">
+            On évalue votre balcon actuel et on vous remet une soumission détaillée — <strong>sans surprise.</strong>
+          </div>
+          <div class="slide-visual">Fond vert foncé (#1E3A20). Texte blanc et doré. Logo Jardín Ideal. Icône maison + balcon. Bouton CTA doré en bas.</div>
+        </div>
+
+      </div><!-- /slides-grid -->
+    </div><!-- /slides-section -->
+
+    <!-- Visuels -->
+    <div class="visuels-section">
+      <div class="visuels-label">Visuels recommandés — Canva</div>
+      <div class="visuels-grid">
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#1E3A20;"></span>Couleur principale #1E3A20</div>
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#C8A45A;"></span>Numéros étapes #C8A45A</div>
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#F5F2EB;"></span>Fond contenu #F5F2EB</div>
+        <div class="visuel-pill">Photos chantier réelles (équipe Jardín Ideal)</div>
+        <div class="visuel-pill">Numérotation étapes : 01–07 en grand</div>
+        <div class="visuel-pill">Icônes process : ligne + cercles connectés</div>
+        <div class="visuel-pill">Style : épuré, professionnel, sans fioritures</div>
+      </div>
+    </div>
+
+    <!-- Ref -->
+    <div class="ref-section">
+      <span class="ref-label">Références Briefing</span>
+      <span class="ref-tag">Format #2 — Carousel</span>
+      <span class="ref-tag">Formule 5 — Éducative</span>
+      <span class="ref-tag">Balcons — Processus</span>
+      <span class="ref-note">Campagne Balcons 2026 · Réduction d'anxiété + preuve de professionnalisme</span>
+    </div>
+  </div><!-- /B-C02 -->
+
+
+  <!-- ═══════════════════════════════════════
+       B-C03 — NOS 5 RÉALISATIONS PRÉFÉRÉES
+  ════════════════════════════════════════ -->
+  <div class="section-divider">
+    <span class="divider-label">Carousel 03 / 04</span>
+  </div>
+
+  <div class="carousel-card" id="B-C03">
+    <div class="card-header">
+      <div class="card-id">B-C03</div>
+      <div class="card-title-block">
+        <h2>Nos 5 réalisations balcon préférées — Été 2026</h2>
+        <div class="card-badges">
+          <span class="chip chip-slides">6 slides</span>
+          <span class="chip chip-semana">Semaine 4</span>
+          <span class="chip chip-ratio">4:5 ou 1:1</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fields -->
+    <div class="fields-grid">
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          <strong>Galerie portfolio</strong> pour générer du désir et de l'aspiration.
+          Montrer la variété des réalisations (style, matériaux, budget, localisation).
+          Preuve sociale visuelle : si d'autres familles l'ont fait, pourquoi pas moi ?
+          Générer des leads chauds via l'identification au projet présenté.
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Large : propriétaires <strong>35–65 ans</strong> Grand Montréal.
+          Retargeting (visiteurs du site web) + audiences similaires de clients actuels.
+          <em>Profil : inspiré, cherche des idées, a un projet vague mais pas encore de devis.</em>
+        </div>
+      </div>
+      <div class="field full-width">
+        <div class="field-label">Gancho — Slide 1 (portada)</div>
+        <div class="hook-box">
+          «&nbsp;Nos 5 réalisations balcon préférées de l'été 2026.<br>
+          Chacune raconte une histoire différente — laquelle ressemble à la vôtre ?&nbsp;»
+        </div>
+      </div>
+      <div class="field full-width">
+        <div class="field-label">CTA — Dernier slide (texte exact)</div>
+        <div class="cta-box">
+          «&nbsp;Votre balcon de rêve est à un appel.<br>
+          <strong>Soumission gratuite — On se déplace chez vous sous 5 jours.</strong>&nbsp;»<br>
+          <em style="font-size:12px; color:var(--gris);">Bouton Meta : En savoir plus</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slides -->
+    <div class="slides-section">
+      <div class="slides-header">
+        <span class="slides-header-label">Structure des slides</span>
+        <span class="slides-count-badge">6 slides</span>
+      </div>
+      <div class="slides-grid">
+
+        <div class="slide-item is-cover">
+          <div class="slide-num-row">
+            <div class="slide-num">1</div>
+            <span class="slide-type-tag">Couverture</span>
+          </div>
+          <div class="slide-title">Nos 5 réalisations balcon préférées — Été 2026</div>
+          <div class="slide-content">
+            Laquelle ressemble à la vôtre ?<br>
+            <em style="font-size:12px; color:var(--gris);">Swipe pour découvrir →</em>
+          </div>
+          <div class="slide-visual">Collage 2×2 de photos de balcons (composite gris, bois brun, blanc classique, vert moderne). Titre en overlay blanc sur fond semi-transparent. Très visuel.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">2</div>
+            <span class="slide-type-tag">Réalisation 1</span>
+          </div>
+          <div class="slide-title">Le balcon urbain — Rosemont</div>
+          <div class="slide-content">
+            <ul>
+              <li>Composite TimberTech, coloris Antique Leather</li>
+              <li>Garde-corps acier inoxydable brossé</li>
+              <li>Superficie : 18 m² · Durée : 3 jours</li>
+              <li>Budget : 14 500 $ · «&nbsp;Exactement ce qu'on voulait.&nbsp;»</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Photo après : balcon Rosemont ensoleillé avec plantes. Badge «Réalisation #1» en haut à gauche (doré #C8A45A). Lieu et date en bas.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">3</div>
+            <span class="slide-type-tag">Réalisation 2</span>
+          </div>
+          <div class="slide-title">Le balcon classique — Laval</div>
+          <div class="slide-content">
+            <ul>
+              <li>Bois traité peint blanc, style traditionnel québécois</li>
+              <li>Garde-corps bois tournés, balustrades classiques</li>
+              <li>Superficie : 24 m² · Durée : 4 jours</li>
+              <li>Budget : 8 200 $ · «&nbsp;Nos voisins veulent le même !&nbsp;»</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Photo : grande maison de banlieue Laval avec balcon blanc impeccable. Avant/après en split (50/50). Badge «Réalisation #2».</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">4</div>
+            <span class="slide-type-tag">Réalisation 3</span>
+          </div>
+          <div class="slide-title">Le balcon naturel — Brossard</div>
+          <div class="slide-content">
+            <ul>
+              <li>Composite Trex Select, coloris Saddle (brun naturel)</li>
+              <li>Pergola intégrée + éclairage encastré LED</li>
+              <li>Superficie : 32 m² · Durée : 5 jours</li>
+              <li>Budget : 19 800 $ · «&nbsp;On l'utilise tous les soirs.&nbsp;»</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Photo au coucher de soleil : éclairage LED allumé, verre de vin sur la balustrade. Très aspirationnel. Badge «Réalisation #3» en doré.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">5</div>
+            <span class="slide-type-tag">Réalisations 4 &amp; 5</span>
+          </div>
+          <div class="slide-title">Deux autres coups de cœur</div>
+          <div class="slide-content">
+            <strong>Réalisation #4 — Longueuil</strong><br>
+            Composite anthracite, balcon 2e étage, 12 m², 7 500 $<br><br>
+            <strong>Réalisation #5 — Mont-Royal</strong><br>
+            Bois IPE huilé, design contemporain, 28 m², 22 000 $
+          </div>
+          <div class="slide-visual">Mise en page 2 photos côte à côte (format paysage chacune). Fond blanc. Texte descriptif sous chaque photo. Badges «#4» et «#5».</div>
+        </div>
+
+        <div class="slide-item is-cta">
+          <div class="slide-num-row">
+            <div class="slide-num">6</div>
+            <span class="slide-type-tag">CTA Final</span>
+          </div>
+          <div class="slide-title">Votre balcon de rêve est à un appel.</div>
+          <div class="slide-content">
+            Soumission gratuite — <strong>On se déplace chez vous sous 5 jours.</strong>
+          </div>
+          <div class="slide-visual">Fond vert foncé (#1E3A20). Montage des 5 balcons en strip horizontal en bas. Texte blanc centré, logo, bouton CTA doré.</div>
+        </div>
+
+      </div><!-- /slides-grid -->
+    </div><!-- /slides-section -->
+
+    <!-- Visuels -->
+    <div class="visuels-section">
+      <div class="visuels-label">Visuels recommandés — Canva</div>
+      <div class="visuels-grid">
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#1E3A20;"></span>Accents verts pour badges</div>
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#C8A45A;"></span>Badges numérotés dorés</div>
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#ffffff; border:1px solid #ddd;"></span>Fond blanc pour les photos</div>
+        <div class="visuel-pill">Photos haute qualité des 5 chantiers réels</div>
+        <div class="visuel-pill">Split avant/après pour réalisation #2</div>
+        <div class="visuel-pill">Photo crépuscule pour réalisation #3</div>
+        <div class="visuel-pill">Ratio 4:5 recommandé (plus grand sur le feed mobile)</div>
+      </div>
+    </div>
+
+    <!-- Ref -->
+    <div class="ref-section">
+      <span class="ref-label">Références Briefing</span>
+      <span class="ref-tag">Format #2 — Carousel</span>
+      <span class="ref-tag">Formule 2 — Résultat Direct</span>
+      <span class="ref-tag">Formule 4 — Témoignage</span>
+      <span class="ref-note">Portfolio Balcons 2026 · Preuve sociale visuelle · Retargeting + Lookalike</span>
+    </div>
+  </div><!-- /B-C03 -->
+
+
+  <!-- ═══════════════════════════════════════
+       B-C04 — PRIX D'UN BALCON 2026
+  ════════════════════════════════════════ -->
+  <div class="section-divider">
+    <span class="divider-label">Carousel 04 / 04</span>
+  </div>
+
+  <div class="carousel-card" id="B-C04">
+    <div class="card-header">
+      <div class="card-id">B-C04</div>
+      <div class="card-title-block">
+        <h2>Prix d'un balcon à Montréal — Guide complet 2026</h2>
+        <div class="card-badges">
+          <span class="chip chip-slides">6 slides</span>
+          <span class="chip chip-semana">Semaine 5</span>
+          <span class="chip chip-ratio">1:1 · 1080 px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fields -->
+    <div class="fields-grid">
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          <strong>Transparence sur les prix</strong> pour qualifier les leads et éliminer les prospects hors budget avant la soumission.
+          Positionner Jardín Ideal comme un entrepreneur honnête et sans surprise.
+          Attirer des clients qui ont un budget réel et sérieux (meilleur CPL).
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires en phase de <strong>recherche active</strong> de prix, Montréal + Laval + Rive-Sud.
+          40–65 ans, revenus intermédiaires à élevés.
+          <em>Profil : a déjà l'idée de faire un balcon, cherche à valider son budget avant de contacter un entrepreneur.</em>
+        </div>
+      </div>
+      <div class="field full-width">
+        <div class="field-label">Gancho — Slide 1 (portada)</div>
+        <div class="hook-box">
+          «&nbsp;Combien coûte un balcon à Montréal en 2026 ?<br>
+          On vous donne les vrais chiffres — sans détour.&nbsp;»
+        </div>
+      </div>
+      <div class="field full-width">
+        <div class="field-label">CTA — Dernier slide (texte exact)</div>
+        <div class="cta-box">
+          «&nbsp;Vous connaissez les prix. Il reste une seule étape.<br>
+          <strong>Demandez votre soumission personnalisée — gratuite, détaillée, sans engagement.</strong>&nbsp;»<br>
+          <em style="font-size:12px; color:var(--gris);">Bouton Meta : Obtenir une soumission</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slides -->
+    <div class="slides-section">
+      <div class="slides-header">
+        <span class="slides-header-label">Structure des slides</span>
+        <span class="slides-count-badge">6 slides</span>
+      </div>
+      <div class="slides-grid">
+
+        <div class="slide-item is-cover">
+          <div class="slide-num-row">
+            <div class="slide-num">1</div>
+            <span class="slide-type-tag">Couverture</span>
+          </div>
+          <div class="slide-title">Combien coûte un balcon à Montréal en 2026 ?</div>
+          <div class="slide-content">
+            On vous donne les vrais chiffres — sans détour.<br>
+            <em style="font-size:12px; color:var(--gris);">Guide officiel Jardín Ideal 2026</em>
+          </div>
+          <div class="slide-visual">Fond vert foncé (#1E3A20) avec chiffre «$» stylisé en grand et doré (#C8A45A). Sous-titre en blanc. Très lisible même en petit format.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">2</div>
+            <span class="slide-type-tag">Prix de base</span>
+          </div>
+          <div class="slide-title">Les fourchettes de prix selon le matériau</div>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Bois traité :</strong> 150–280 $/m² posé</li>
+              <li><strong>Composite entrée de gamme :</strong> 280–380 $/m²</li>
+              <li><strong>Composite premium (Trex, TimberTech) :</strong> 380–550 $/m²</li>
+              <li><strong>Bois exotique (IPE, cèdre) :</strong> 400–600 $/m²</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Tableau simple 4 lignes avec barres de prix colorées (gradient du plus bas au plus élevé). Fond blanc. Icônes matériaux à gauche.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">3</div>
+            <span class="slide-type-tag">Exemples réels</span>
+          </div>
+          <div class="slide-title">Exemples de projets réels — Ce que nos clients ont payé</div>
+          <div class="slide-content">
+            <ul>
+              <li>Balcon 12 m², bois traité → <strong>4 200 $</strong></li>
+              <li>Balcon 18 m², composite standard → <strong>7 800 $</strong></li>
+              <li>Balcon 25 m², composite premium → <strong>13 500 $</strong></li>
+              <li>Balcon 32 m² + pergola, composite + LED → <strong>22 000 $</strong></li>
+            </ul>
+          </div>
+          <div class="slide-visual">4 cartes visuelles disposées en 2×2 : photo de projet + montant en grand doré. Style «prix étiquette». Très scannable.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">4</div>
+            <span class="slide-type-tag">Ce qui influence</span>
+          </div>
+          <div class="slide-title">Ce qui fait monter (ou baisser) le prix</div>
+          <div class="slide-content">
+            <strong>Fait monter :</strong>
+            <ul>
+              <li>Matériaux premium (composite haut de gamme)</li>
+              <li>Superficie &gt; 25 m²</li>
+              <li>Étage supérieur (échafaudage requis)</li>
+              <li>Pergola, éclairage, garde-corps sur mesure</li>
+            </ul>
+            <strong style="margin-top:6px; display:block;">Fait baisser :</strong>
+            <ul>
+              <li>Bois traité standard</li>
+              <li>Structure existante réutilisable</li>
+              <li>Projet réservé hors saison (oct–mars)</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Deux colonnes : flèche vers le haut (rouge/orange) et flèche vers le bas (verte). Liste à puces. Fond blanc. Lisibilité maximale.</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">5</div>
+            <span class="slide-type-tag">Ce qui est inclus</span>
+          </div>
+          <div class="slide-title">Ce qui est inclus chez Jardín Ideal</div>
+          <div class="slide-content">
+            <ul>
+              <li>Visite et soumission <strong>gratuite</strong></li>
+              <li>Démolition de l'ancien balcon incluse</li>
+              <li>Matériaux, main-d'œuvre et nettoyage</li>
+              <li>Garantie 5 ans sur la pose</li>
+              <li>Respect du Code RBQ (permis si requis)</li>
+              <li>Aucun frais caché — prix fixe contractuel</li>
+            </ul>
+          </div>
+          <div class="slide-visual">Liste à coches vertes (checkmark #1E3A20) sur fond crème (#F5F2EB). Logo Jardín Ideal en bas. Style «ce que vous obtenez».</div>
+        </div>
+
+        <div class="slide-item is-cta">
+          <div class="slide-num-row">
+            <div class="slide-num">6</div>
+            <span class="slide-type-tag">CTA Final</span>
+          </div>
+          <div class="slide-title">Vous connaissez les prix. Il reste une seule étape.</div>
+          <div class="slide-content">
+            Demandez votre soumission personnalisée — <strong>gratuite, détaillée, sans engagement.</strong>
+          </div>
+          <div class="slide-visual">Fond vert foncé (#1E3A20). Texte blanc et doré. Logo Jardín Ideal. Phrase d'accroche : «Réponse garantie en 48h». Bouton doré CTA centré.</div>
+        </div>
+
+      </div><!-- /slides-grid -->
+    </div><!-- /slides-section -->
+
+    <!-- Visuels -->
+    <div class="visuels-section">
+      <div class="visuels-label">Visuels recommandés — Canva</div>
+      <div class="visuels-grid">
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#1E3A20;"></span>Fond slide 1 et 6 : #1E3A20</div>
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#C8A45A;"></span>Chiffres et montants en #C8A45A</div>
+        <div class="visuel-pill"><span class="visuel-swatch" style="background:#F5F2EB;"></span>Fond slides contenu : #F5F2EB</div>
+        <div class="visuel-pill">Style : données claires, chiffres en grand</div>
+        <div class="visuel-pill">Icônes : dollar, maison, flèches up/down</div>
+        <div class="visuel-pill">Photos réelles de projets (slides 3)</div>
+        <div class="visuel-pill">Checkmarks verts pour slide 5</div>
+      </div>
+    </div>
+
+    <!-- Ref -->
+    <div class="ref-section">
+      <span class="ref-label">Références Briefing</span>
+      <span class="ref-tag">Format #2 — Carousel</span>
+      <span class="ref-tag">Formule 5 — Éducative</span>
+      <span class="ref-tag">Transparence Prix</span>
+      <span class="ref-note">Campagne Balcons 2026 · Qualification de leads · Audience : recherche active</span>
+    </div>
+  </div><!-- /B-C04 -->
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="page-footer">
+    <span>Jardín Ideal — Campagne Balcons 2026</span>
+    <span>03_LISTA_CARRUSELES · 4 carousels · 27 slides</span>
+    <span>Mis à jour : 22 juin 2026</span>
+  </footer>
+
+</div><!-- /page-wrapper -->
+
+</body>
+</html>

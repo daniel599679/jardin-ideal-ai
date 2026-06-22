@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BALCONES — Lista Reels · Jardín Ideal 2026</title>
+<style>
+  /* ═══════════════════════════════════════════════════════
+     DESIGN TOKENS — Jardín Ideal System
+     Source: plan_contenido_balcons_cour_arriere.html
+  ═══════════════════════════════════════════════════════ */
+  :root {
+    --vert-fonce:  #1E3A20;
+    --vert:        #2C4A2E;
+    --vert-med:    #3D6B42;
+    --vert-clair:  #5A8F62;
+    --or:          #C8A45A;
+    --or-clair:    #E8C97A;
+    --or-dim:      rgba(200,164,90,0.15);
+    --or-border:   rgba(200,164,90,0.35);
+    --noir:        #0D0E0B;
+    --gris-fonce:  #2A2B28;
+    --gris:        #6B6B63;
+    --gris-clair:  #B8B8B0;
+    --creme:       #F5F2EB;
+    --creme-fonce: #EDE9E0;
+    --blanc:       #FFFFFF;
+    --rouge:       #B83232;
+    --rouge-clair: #F5E8E8;
+    --jaune:       #C8850A;
+    --jaune-clair: #FEF5E4;
+    --vert-bg:     #EAF2EB;
+    --bleu:        #2A4A6E;
+    --bleu-clair:  #EAF0F8;
+
+    /* BALCON campaign accent — warm gold stripe, darker shift */
+    --balcon-bg:   #2A1E0A;
+
+    --font-display: Georgia, 'Times New Roman', serif;
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Courier New', Courier, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--creme);
+    color: var(--noir);
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+
+  /* ═══════════════ COVER ═══════════════ */
+  .cover {
+    background: var(--vert-fonce);
+    min-height: 320px;
+    padding: 52px 60px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Aesthetic risk: a tight video-frame crop mark in the corner,
+     referencing the 9:16 Reel format that anchors this entire doc */
+  .cover::before {
+    content: "";
+    position: absolute;
+    right: 52px; top: 40px;
+    width: 54px; height: 96px;
+    border: 2px solid rgba(200,164,90,0.30);
+    border-radius: 6px;
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    right: 64px; top: 52px;
+    width: 30px; height: 72px;
+    border-radius: 3px;
+    background: rgba(200,164,90,0.06);
+  }
+  .cover-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 18px;
+  }
+  .cover h1 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 4vw, 46px);
+    font-weight: 700;
+    color: var(--blanc);
+    line-height: 1.08;
+    max-width: 680px;
+    margin-bottom: 10px;
+  }
+  .cover h1 em { color: var(--or); font-style: italic; }
+  .cover-sub {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: rgba(245,242,235,0.70);
+    max-width: 560px;
+    margin-bottom: 28px;
+    line-height: 1.55;
+  }
+  .cover-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--or-dim);
+    border: 1px solid var(--or-border);
+    color: var(--or-clair);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 13px;
+  }
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    padding-top: 20px;
+    margin-top: 4px;
+  }
+  .cover-meta-item .lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .cover-meta-item .val {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blanc);
+  }
+
+  /* ═══════════════ CAMPAIGN BAND ═══════════════ */
+  .camp-band {
+    padding: 14px 60px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--balcon-bg);
+    color: var(--or);
+    border-left: 6px solid var(--or);
+  }
+  .camp-band-right {
+    margin-left: auto;
+    font-size: 9px;
+    color: rgba(200,164,90,0.55);
+    letter-spacing: 1px;
+  }
+
+  /* ═══════════════ CONTAINER ═══════════════ */
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 40px 100px; }
+
+  /* ═══════════════ SECTION HEADERS ═══════════════ */
+  .section {
+    padding-top: 52px;
+    margin-top: 52px;
+    border-top: 1.5px solid var(--vert-med);
+  }
+  .section.first { border-top: none; margin-top: 0; }
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--creme-fonce);
+    max-width: 100px;
+  }
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.8vw, 30px);
+    font-weight: 700;
+    color: var(--vert-fonce);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  h3 {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--vert-med);
+    margin: 20px 0 8px;
+  }
+  p {
+    margin-bottom: 10px;
+    color: var(--gris-fonce);
+  }
+  strong { font-weight: 600; color: var(--noir); }
+  ul { padding-left: 20px; margin-bottom: 10px; }
+  li { color: var(--gris-fonce); margin-bottom: 4px; font-size: 13.5px; }
+
+  /* ═══════════════ BRIEFING CONTEXT GRID ═══════════════ */
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    margin: 20px 0;
+    background: var(--vert-fonce);
+    border: 2px solid var(--vert-fonce);
+  }
+  .brief-cell {
+    background: var(--blanc);
+    padding: 20px 20px;
+  }
+  .brief-cell.dark {
+    background: var(--vert-fonce);
+  }
+  .brief-lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 8px;
+  }
+  .brief-cell.dark .brief-lbl { color: rgba(200,164,90,0.65); }
+  .brief-val {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    line-height: 1.25;
+  }
+  .brief-cell.dark .brief-val { color: var(--blanc); }
+  .brief-note {
+    font-size: 12px;
+    color: var(--gris);
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+  .brief-cell.dark .brief-note { color: rgba(200,220,205,0.70); }
+  @media(max-width:720px) { .brief-grid { grid-template-columns: 1fr 1fr; } }
+  @media(max-width:480px) { .brief-grid { grid-template-columns: 1fr; } }
+
+  /* ═══════════════ KPI CHIPS ═══════════════ */
+  .kpi-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .kpi-chip {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+  .kpi-chip.red  { background: var(--rouge-clair); color: var(--rouge); }
+  .kpi-chip.grn  { background: var(--vert-bg);     color: var(--vert-med); }
+  .kpi-chip.yel  { background: var(--jaune-clair); color: var(--jaune); }
+  .kpi-chip.dark { background: var(--vert-fonce);  color: var(--or); }
+  .kpi-chip.blue { background: var(--bleu-clair);  color: var(--bleu); }
+
+  /* ═══════════════ REEL CARD ═══════════════ */
+  .reel-card {
+    border: 1.5px solid var(--vert-fonce);
+    background: var(--blanc);
+    margin: 36px 0;
+    overflow: hidden;
+  }
+
+  /* Reel card header */
+  .reel-head {
+    background: var(--vert-fonce);
+    padding: 18px 26px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+  }
+  /* Subtle 9:16 icon in header */
+  .reel-head::after {
+    content: "9:16";
+    position: absolute;
+    right: 18px;
+    bottom: 12px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: rgba(200,164,90,0.40);
+    letter-spacing: 2px;
+  }
+  .reel-id {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--or);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .reel-title {
+    font-family: var(--font-display);
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--blanc);
+    line-height: 1.2;
+  }
+  .reel-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .reel-dur {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--or);
+    text-transform: uppercase;
+    background: rgba(200,164,90,0.12);
+    border: 1px solid var(--or-border);
+    padding: 3px 10px;
+  }
+  .reel-phase {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(245,242,235,0.50);
+    text-transform: uppercase;
+  }
+
+  /* Reel meta row */
+  .reel-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--creme-fonce);
+    background: #FAFAF7;
+  }
+  .reel-meta-cell {
+    padding: 14px 20px;
+    border-right: 1px solid var(--creme-fonce);
+  }
+  .reel-meta-cell:last-child { border-right: none; }
+  .rml {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .rmv {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--vert-fonce);
+    line-height: 1.4;
+  }
+  @media(max-width:600px) {
+    .reel-meta { grid-template-columns: 1fr; }
+    .reel-meta-cell { border-right: none; border-bottom: 1px solid var(--creme-fonce); }
+  }
+
+  /* Hook block — the aesthetic accent within each card */
+  .hook-block {
+    background: var(--balcon-bg);
+    border-left: 4px solid var(--or);
+    padding: 18px 22px;
+    margin: 0;
+  }
+  .hook-lbl {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(200,164,90,0.60);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .hook-text {
+    font-family: var(--font-display);
+    font-size: clamp(15px, 2vw, 20px);
+    font-weight: 700;
+    color: var(--or-clair);
+    line-height: 1.35;
+    font-style: italic;
+  }
+  .hook-note {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(200,164,90,0.55);
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  /* Guion / Script */
+  .script-wrap {
+    border-top: 1px solid var(--creme-fonce);
+  }
+  .script-section-head {
+    background: var(--creme-fonce);
+    padding: 8px 22px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vert-fonce);
+    font-weight: 700;
+    border-bottom: 1px solid #DDD8CE;
+  }
+  .scene {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    border-bottom: 1px solid #EDE9E0;
+  }
+  .scene:last-child { border-bottom: none; }
+  .scene-time {
+    background: var(--creme-fonce);
+    padding: 16px 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    text-align: center;
+    border-right: 2px solid var(--vert-fonce);
+  }
+  .scene-time .beat {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--or);
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .scene-content {
+    padding: 16px 20px;
+  }
+  .screen-text {
+    display: inline-block;
+    background: var(--vert-fonce);
+    color: var(--or);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 5px 11px;
+    margin-bottom: 7px;
+    line-height: 1.5;
+  }
+  .screen-text.full { display: block; max-width: none; }
+  .visual {
+    font-size: 13px;
+    color: var(--gris-fonce);
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .instruction {
+    font-size: 12px;
+    color: var(--vert-med);
+    font-weight: 600;
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+
+  /* CTA block */
+  .cta-block {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 22px;
+    background: var(--vert-bg);
+    border-top: 2px solid var(--vert-med);
+    flex-wrap: wrap;
+  }
+  .cta-lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vert-med);
+    flex-shrink: 0;
+  }
+  .cta-text {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    font-style: italic;
+    flex: 1;
+    min-width: 180px;
+  }
+  .cta-button-sample {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--vert-fonce);
+    color: var(--or);
+    padding: 7px 16px;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Visuels block */
+  .visuels-block {
+    padding: 16px 22px;
+    border-top: 1px solid var(--creme-fonce);
+    background: #FAFAF7;
+  }
+  .visuels-lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-bottom: 10px;
+  }
+  .visuels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+  }
+  .visuel-item {
+    background: var(--blanc);
+    border: 1px solid #DDD8CE;
+    padding: 11px 14px;
+  }
+  .visuel-item .vi-head {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 4px;
+  }
+  .visuel-item p {
+    font-size: 12.5px;
+    color: var(--gris-fonce);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Ref briefing */
+  .ref-block {
+    padding: 11px 22px;
+    border-top: 1px solid var(--creme-fonce);
+    background: var(--blanc);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .ref-lbl {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    flex-shrink: 0;
+  }
+  .ref-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ref-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--bleu);
+    background: var(--bleu-clair);
+    padding: 2px 8px;
+    border-radius: 1px;
+  }
+
+  /* ═══════════════ SUMMARY TABLE ═══════════════ */
+  .tbl-wrap { overflow-x: auto; margin: 18px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 600px; }
+  thead tr { background: var(--vert-fonce); }
+  thead th {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blanc);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 700;
+  }
+  tbody tr { border-bottom: 1px solid #E0DDD5; }
+  tbody tr:nth-child(even) { background: #F9F7F2; }
+  tbody td { padding: 10px 14px; vertical-align: top; color: var(--gris-fonce); }
+  tbody td:first-child { font-weight: 700; color: var(--vert-fonce); font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; }
+  .td-or  { color: #9A7A30; font-weight: 700; }
+  .td-grn { color: var(--vert-med); font-weight: 700; }
+  .td-red { color: var(--rouge); font-weight: 700; }
+
+  /* ═══════════════ NEXT STEPS ═══════════════ */
+  .step-list { list-style: none; padding: 0; }
+  .step-list li {
+    display: flex;
+    gap: 0;
+    margin-bottom: 6px;
+    border: 1px solid #DDD8CE;
+  }
+  .step-bar {
+    width: 6px;
+    flex-shrink: 0;
+  }
+  .step-bar.red  { background: var(--rouge); }
+  .step-bar.yel  { background: var(--jaune); }
+  .step-bar.grn  { background: var(--vert-med); }
+  .step-inner {
+    background: var(--blanc);
+    padding: 11px 18px;
+    flex: 1;
+  }
+  .step-inner strong {
+    font-size: 13.5px;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .step-inner span {
+    font-size: 12.5px;
+    color: var(--gris);
+  }
+
+  /* ═══════════════ FOOTER ═══════════════ */
+  .doc-footer {
+    background: var(--vert-fonce);
+    padding: 28px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 60px;
+  }
+  .doc-footer .brand {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--blanc);
+  }
+  .doc-footer .brand em { color: var(--or); font-style: italic; }
+  .doc-footer .doc-id {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(200,164,90,0.55);
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════ RESPONSIVE ═══════════════ */
+  @media(max-width:700px) {
+    .cover { padding: 40px 24px 32px; }
+    .camp-band { padding: 12px 24px; }
+    .container { padding: 0 20px 80px; }
+    .reel-head { padding: 16px 18px 14px; }
+    .doc-footer { padding: 24px 24px; }
+  }
+  @media(max-width:500px) {
+    .scene { grid-template-columns: 68px 1fr; }
+  }
+
+  /* ═══════════════ REDUCED MOTION ═══════════════ */
+  @media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  /* ═══════════════ FOCUS ═══════════════ */
+  :focus-visible { outline: 2px solid var(--or); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     COVER
+═══════════════════════════════════════════ -->
+<header class="cover" role="banner">
+  <p class="cover-eyebrow">Jardín Ideal · Campagne BALCONES · Saison 2026</p>
+  <h1>Production Reels —<br><em>Avant/Après Balcons</em></h1>
+  <p class="cover-sub">4 Reels prêts à tourner. Format gagnant identifié : vidéo 9:16, structure Jour 1 vs Jour 5. La concurrence n'utilise pas la vidéo en payant — c'est le vide à occuper maintenant.</p>
+  <div class="cover-pills">
+    <span class="pill">Format 9:16 · Reels</span>
+    <span class="pill">30–60 secondes</span>
+    <span class="pill">4 pièces · Phase 1</span>
+    <span class="pill">Cible Seg. A · Laval/Rive-Nord</span>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="lbl">KPI Phase 1</span>
+      <span class="val">CPL &lt; $80 CAD</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">CTR cible</span>
+      <span class="val">&gt; 3% pour booster</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Référence trafic</span>
+      <span class="val">$0.45/clic · K-1815</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Vides à combler</span>
+      <span class="val">$65+ statique → 0 leads</span>
+    </div>
+  </div>
+</header>
+
+<div class="camp-band" role="note" aria-label="Campagne active">
+  <span>CAMP-BALCON-2026</span>
+  <span>·</span>
+  <span>Relance — 4 Reels prioritaires</span>
+  <span class="camp-band-right">Audience primaire : 35–55 ans · $10K–$20K budget · Laval / Rive-Nord</span>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CONTAINER PRINCIPAL
+═══════════════════════════════════════════ -->
+<main class="container">
+
+  <!-- CONTEXTE STRATÉGIQUE -->
+  <section class="section first" aria-labelledby="ctx-h2">
+    <p class="section-tag">Contexte stratégique</p>
+    <h2 id="ctx-h2">Pourquoi on passe au Reel maintenant</h2>
+    <p>Quatre annonces image statique diffusées à $65+ par résultat : zéro lead. Le problème n'est pas le budget — c'est le format. Le Reel avant/après crée l'évidence visuelle que l'image statique ne peut pas produire. Et la concurrence directe (Laval/Rive-Nord) n'utilise pas la vidéo en publicité payante. Ce n'est pas un risque à prendre — c'est un vide à occuper.</p>
+
+    <div class="brief-grid" role="list">
+      <div class="brief-cell" role="listitem">
+        <p class="brief-lbl">Format retenu</p>
+        <p class="brief-val">Reel 30–60s · 9:16</p>
+        <p class="brief-note">Structure Jour 1 vs Jour 5. Hook visible dans les 3 premières secondes sans son.</p>
+      </div>
+      <div class="brief-cell" role="listitem">
+        <p class="brief-lbl">Vide compétitif</p>
+        <p class="brief-val">0 concurrent en vidéo payante</p>
+        <p class="brief-note">Laval/Rive-Nord : aucun paysagiste ne fait de vidéo sponsorisée. Fenêtre ouverte.</p>
+      </div>
+      <div class="brief-cell dark" role="listitem">
+        <p class="brief-lbl">Référence de performance</p>
+        <p class="brief-val">K-1815 · 2 122 vues · $0.45/clic</p>
+        <p class="brief-note">Projet Terrebonne. Baseline pour estimer budget de test Phase 1.</p>
+      </div>
+      <div class="brief-cell" role="listitem">
+        <p class="brief-lbl">Messages clés</p>
+        <p class="brief-val">Transformation + Urgence + Prix</p>
+        <p class="brief-note">Transformation visible · Urgence saisonnière · Transparence sur les coûts.</p>
+      </div>
+      <div class="brief-cell" role="listitem">
+        <p class="brief-lbl">Audience primaire</p>
+        <p class="brief-val">Segment A · 35–55 ans</p>
+        <p class="brief-note">Propriétaires Laval / Rive-Nord. Budget balcon $10K–$20K. Décision familiale.</p>
+      </div>
+      <div class="brief-cell dark" role="listitem">
+        <p class="brief-lbl">KPI Phase 1</p>
+        <p class="brief-val">CPL &lt; $80 CAD · CTR &gt; 3%</p>
+        <p class="brief-note">Si CTR &lt; 3% à 1 000 impressions : revoir le hook, pas le budget.</p>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <span class="kpi-chip dark">B-R01 · Lancement prioritaire</span>
+      <span class="kpi-chip yel">B-R02 · Prix transparents</span>
+      <span class="kpi-chip grn">B-R03 · Éducatif</span>
+      <span class="kpi-chip blue">B-R04 · Volume/Preuve</span>
+    </div>
+  </section>
+
+  <!-- SOMMAIRE -->
+  <section class="section" aria-labelledby="summ-h2">
+    <p class="section-tag">Vue d'ensemble · 4 Reels</p>
+    <h2 id="summ-h2">Tableau récapitulatif de production</h2>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Durée</th>
+            <th>Objectif</th>
+            <th>Cible primaire</th>
+            <th>Priorité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B-R01</td>
+            <td>Avant/Après — 4 jours</td>
+            <td>60 s</td>
+            <td>Lead direct · Soumission gratuite</td>
+            <td>Seg. A · Propriétaires 35–55</td>
+            <td class="td-red">P1 — Lancer en premier</td>
+          </tr>
+          <tr>
+            <td>B-R02</td>
+            <td>Combien coûte un balcon composite ?</td>
+            <td>45 s</td>
+            <td>Lead informé · Prospect chaud</td>
+            <td>Seg. A/B · Recherche active</td>
+            <td class="td-or">P2 — Semaine 2</td>
+          </tr>
+          <tr>
+            <td>B-R03</td>
+            <td>Bois pourri vs composite — 5 ans après</td>
+            <td>40 s</td>
+            <td>Éducation · Repositionnement composite</td>
+            <td>Seg. B · Balcon existant bois</td>
+            <td class="td-or">P3 — Retargeting</td>
+          </tr>
+          <tr>
+            <td>B-R04</td>
+            <td>L'équipe Jardín Ideal — 3 balcons en 1 semaine</td>
+            <td>50 s</td>
+            <td>Confiance · Preuve de volume</td>
+            <td>Seg. A/C · Hésitants</td>
+            <td class="td-grn">P4 — Lookalike/Retargeting</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       B-R01
+  ═══════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="r01-h2">
+    <p class="section-tag">Reel 01 / 04</p>
+    <h2 id="r01-h2">Guion complet — B-R01</h2>
+
+    <article class="reel-card" aria-label="Reel B-R01">
+      <header class="reel-head">
+        <div>
+          <span class="reel-id">B-R01</span>
+          <h3 class="reel-title" style="margin:0; font-size:clamp(16px,2vw,22px);">"Avant/Après — 4 jours"</h3>
+        </div>
+        <div class="reel-badges">
+          <span class="reel-dur">60 secondes</span>
+          <span class="reel-phase">Pièce maîtresse · Phase 1 · Lancement</span>
+        </div>
+      </header>
+
+      <div class="reel-meta" role="list">
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Objectif</span>
+          <span class="rmv">Générer des soumissions directes. Le viewer doit voir la transformation et cliquer "Obtenir une soumission".</span>
+        </div>
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Public cible</span>
+          <span class="rmv">Segment A principal : propriétaires 35–55 ans, Laval / Rive-Nord, budget balcon $10K–$20K. Décision prise en couple.</span>
+        </div>
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Format & specs</span>
+          <span class="rmv">9:16 · 1080×1920 px · 60 s · Zone safe centrale · Sous-titres obligatoires (85% visionnage sans son)</span>
+        </div>
+      </div>
+
+      <div class="hook-block" role="note" aria-label="Hook — 3 premières secondes">
+        <span class="hook-lbl">Hook · 0–3 secondes · Texte à l'écran</span>
+        <p class="hook-text">« Ce balcon a 4 jours. »</p>
+        <p class="hook-note">Plan serré sur le composite neuf, soleil rasant. Sous-titre en blanc gras centré. SANS son obligatoire pour le scroll silent.</p>
+      </div>
+
+      <div class="script-wrap">
+        <div class="script-section-head">Guion scène par scène — 60 secondes</div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>0–3 s</span>
+            <span class="beat">Hook</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Ce balcon a 4 jours. »</span>
+            <p class="visual">Plan ultra serré sur la surface du composite neuf : grain, texture, reflet. Pas encore de contexte — juste la matière.</p>
+            <p class="instruction">CAM : macro ou 50 mm serré. Lumière dorée fin d'après-midi (17h+). Pas de mouvement — image fixe pendant 1 seconde, puis lent recul.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>3–8 s</span>
+            <span class="beat">Avant</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Voici ce qu'il y avait avant. »</span>
+            <p class="visual">Photo ou court clip de l'état avant : planches grises, bois gonflé, clous qui ressortent. Contraste fort avec la scène précédente.</p>
+            <p class="instruction">Photo fixe acceptable si pas de vidéo avant. Cadrage identique à la vue finale pour que le cerveau fasse le rapprochement. Durée : 4 secondes max, ne pas s'attarder.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>8–22 s</span>
+            <span class="beat">Process</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Jour 1. »</span>
+            <p class="visual">Time-lapse ou coupes accélérées : dépose des vieilles planches, installation des solives, premiers panneaux composite posés. Équipe en action.</p>
+            <p class="instruction">3 à 4 coupes de 3 secondes chacune. Rythme soutenu. Musique instrumentale légère démarre ici. Montrer des mains qui travaillent, des outils, le matériau composite dans les bras de l'équipe.</p>
+            <span class="screen-text" style="margin-top:8px;">« Jour 2. Jour 3. »</span>
+            <p class="visual">Progression visible frame par frame. Balcon qui prend forme. Un des installateurs peut regarder brièvement la caméra — moment humain.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>22–38 s</span>
+            <span class="beat">Révélation</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Jour 4. »</span>
+            <p class="visual">Grand recul depuis l'intérieur de la maison vers l'extérieur. Le balcon fini apparaît dans toute sa largeur. Si possible, client (ou membre de l'équipe) pose un café sur la balustrade.</p>
+            <p class="instruction">Ce plan est le PIVOT du Reel. Ralentir ici : 6 à 8 secondes sur ce plan. Lumière naturelle. Filmer tôt le matin ou fin d'après-midi. La caméra fait un mouvement doux vers l'avant (dolly ou stabilisateur).</p>
+            <span class="screen-text" style="margin-top:8px;">« Composite Trex. Garantie 25 ans. »</span>
+            <p class="visual">Insert texte en bas de cadre. Pas d'autre élément graphique qui concurrence.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>38–50 s</span>
+            <span class="beat">Preuve</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Plus de 80 balcons réalisés au Québec. »</span>
+            <p class="visual">Montage rapide de 3 balcons différents : une teinte claire, une foncée, un projet de grande dimension. 3 secondes chacun. Diversité de styles.</p>
+            <p class="instruction">Ces images peuvent être des archives de projets existants. Cadrer de façon identique (angle légèrement surélevé, même heure dorée) pour que la séquence soit cohérente visuellement.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>50–60 s</span>
+            <span class="beat">CTA</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Votre balcon peut ressembler à ça. »</span>
+            <p class="visual">Retour sur le projet principal — plan large sur le balcon fini. Logo Jardín Ideal en bas à gauche, discret.</p>
+            <span class="screen-text" style="margin-top:8px;">« Soumission gratuite — réponse en 48h. »</span>
+            <p class="instruction">Dernier plan : 6–8 secondes, statique. Musique en fondu. Le numéro ou le lien ne s'affiche pas à l'écran — Meta ajoute le bouton CTA par dessus. Ne pas dupliquer l'information dans la vidéo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <span class="cta-lbl">CTA Meta Ads</span>
+        <span class="cta-text">« Obtenez votre soumission gratuite — on répond en 48h. »</span>
+        <span class="cta-button-sample">Obtenir un devis</span>
+      </div>
+
+      <div class="visuels-block">
+        <p class="visuels-lbl">Visuels recommandés — liste de tournage</p>
+        <div class="visuels-grid">
+          <div class="visuel-item">
+            <p class="vi-head">Angle d'ouverture</p>
+            <p>Macro sur grain composite · 50 mm ou plus · lumière rasante 17h · pas de mouvement les 2 premières secondes</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Photo avant</p>
+            <p>Même cadrage que la vue finale · bois gris, clous apparents · éclairage neutre · 4 sec max à l'écran</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Process</p>
+            <p>Mains qui posent les lames · vue de dessus sur les solives · composite encore dans l'emballage · outils au sol</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Plan révélation</p>
+            <p>Dolly ou stabilisateur depuis l'intérieur vers l'extérieur · ratio 16:9 recadré en 9:16 · heure dorée obligatoire</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Archives balcons</p>
+            <p>3 projets différents · angle surélevé 30° · même heure de lumière · diversité teintes Trex</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Plan final</p>
+            <p>Large, statique, tout le balcon dans le cadre · logo discret bas gauche · 6–8 sec · musique en fondu</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-block">
+        <span class="ref-lbl">Références briefing</span>
+        <div class="ref-tags">
+          <span class="ref-tag">Format #1 · Reel 30–60 s</span>
+          <span class="ref-tag">Ref. K-1815 Terrebonne</span>
+          <span class="ref-tag">Message : transformation visible</span>
+          <span class="ref-tag">Vide compétitif vidéo payante</span>
+          <span class="ref-tag">KPI CPL &lt;$80</span>
+          <span class="ref-tag">Seg. A 35–55 Laval</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       B-R02
+  ═══════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="r02-h2">
+    <p class="section-tag">Reel 02 / 04</p>
+    <h2 id="r02-h2">Guion complet — B-R02</h2>
+
+    <article class="reel-card" aria-label="Reel B-R02">
+      <header class="reel-head">
+        <div>
+          <span class="reel-id">B-R02</span>
+          <h3 class="reel-title" style="margin:0; font-size:clamp(16px,2vw,22px);">"Combien coûte un balcon composite ?"</h3>
+        </div>
+        <div class="reel-badges">
+          <span class="reel-dur">45 secondes</span>
+          <span class="reel-phase">Transparence prix · Prospect chaud</span>
+        </div>
+      </header>
+
+      <div class="reel-meta" role="list">
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Objectif</span>
+          <span class="rmv">Qualifier le lead avant le clic. Le viewer sait à quoi s'attendre : moins de friction, meilleure qualité de lead.</span>
+        </div>
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Public cible</span>
+          <span class="rmv">Seg. A/B : propriétaires 35–55 en recherche active. Ont déjà cherché "balcon composite prix Laval". Prêts à appeler si le prix est dans leur budget.</span>
+        </div>
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Format & specs</span>
+          <span class="rmv">9:16 · 1080×1920 px · 45 s · Textes en gras centré · Rythme soutenu · Sous-titres obligatoires</span>
+        </div>
+      </div>
+
+      <div class="hook-block" role="note">
+        <span class="hook-lbl">Hook · 0–3 secondes · Texte à l'écran</span>
+        <p class="hook-text">« Un balcon composite à Laval : à partir de combien ? »</p>
+        <p class="hook-note">Texte seul sur fond sombre ou plan du balcon en arrière-plan flouté. La question suffit — pas besoin d'explication. La curiosité fait le travail.</p>
+      </div>
+
+      <div class="script-wrap">
+        <div class="script-section-head">Guion scène par scène — 45 secondes</div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>0–3 s</span>
+            <span class="beat">Hook</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Un balcon composite à Laval : à partir de combien ? »</span>
+            <p class="visual">Plan sur un beau balcon Trex composite, caméra qui s'approche lentement. Texte question en grand, centré, fond semi-transparent.</p>
+            <p class="instruction">Texte : police blanche, gras, 2 lignes max. L'arrière-plan est le balcon lui-même pour ancrer la question dans le réel immédiatement.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>3–14 s</span>
+            <span class="beat">Fourchettes</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Ça dépend de 3 choses. »</span>
+            <p class="visual">Split en 3 blocs visuels rapides, chacun 3 secondes :</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">1. La superficie — « 150 pi² vs 400 pi² »</span>
+            <p class="visual">Plan aérien ou grand angle d'un petit balcon puis d'un grand.</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">2. Le composite choisi — « Trex Enhance vs Trex Transcend »</span>
+            <p class="visual">Main qui tient deux lames différentes côte à côte.</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">3. La structure existante — « Bois vs métal »</span>
+            <p class="visual">Gros plan sur des solives métalliques et des solives en bois.</p>
+            <p class="instruction">Chaque bloc : 3 secondes. Pas de transition élaborée — coupe directe. Le texte apparaît 0.5 s après le plan pour ne pas distraire.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>14–28 s</span>
+            <span class="beat">Prix réels</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Pour vous donner une idée réelle : »</span>
+            <p class="visual">Fond sombre (vert foncé Jardín Ideal), chiffres en blanc-or qui s'affichent un à un.</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">« Petit balcon · 150–200 pi² : ~$8 000–$12 000 »</span>
+            <span class="screen-text" style="margin-top:8px; display:block;">« Balcon moyen · 250–350 pi² : ~$14 000–$20 000 »</span>
+            <span class="screen-text" style="margin-top:8px; display:block;">« Grand balcon · 400 pi²+ : ~$22 000 et plus »</span>
+            <p class="instruction">Texte seul sur fond vert fonce — pas d'images en concurrence. Chaque ligne apparaît séquentiellement avec 1 s d'écart. Police mono pour les chiffres (sens du précis). Durée totale : 14 secondes.</p>
+            <p class="visual" style="margin-top:8px;">Note légale en petit en bas : « Prix approximatifs, fournitures et main-d'œuvre incluses. Varie selon le projet. »</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>28–38 s</span>
+            <span class="beat">Valeur</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Ce que vous obtenez avec Jardín Ideal : »</span>
+            <p class="visual">Retour sur les plans visuels : balcon fini, équipe qui travaille, gros plan sur le composite.</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">« Composite Trex · Garantie 25 ans »</span>
+            <span class="screen-text" style="margin-top:8px; display:block;">« Posé en 3–5 jours · Sans tracas »</span>
+            <span class="screen-text" style="margin-top:8px; display:block;">« Soumission détaillée · Sans engagement »</span>
+            <p class="instruction">3 points, 3 secondes chacun. Le rythme s'accélère légèrement. Musique monte doucement. Chaque point apparaît comme sous-titre avec le visuel correspondant en arrière-plan.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>38–45 s</span>
+            <span class="beat">CTA</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Obtenez votre prix exact — gratuit, en 48h. »</span>
+            <p class="visual">Plan final sur le balcon le plus impressionnant du portfolio. Logo Jardín Ideal visible.</p>
+            <p class="instruction">Texte CTA en grand, fond semi-transparent. 6 secondes statique. Musique fondu.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <span class="cta-lbl">CTA Meta Ads</span>
+        <span class="cta-text">« Obtenez votre prix exact — soumission gratuite, réponse en 48h. »</span>
+        <span class="cta-button-sample">Obtenir un devis</span>
+      </div>
+
+      <div class="visuels-block">
+        <p class="visuels-lbl">Visuels recommandés — liste de tournage</p>
+        <div class="visuels-grid">
+          <div class="visuel-item">
+            <p class="vi-head">Balcon d'ouverture</p>
+            <p>Le plus beau du portfolio · grand angle · lumière dorée · caméra lente vers l'avant</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Comparaison superficie</p>
+            <p>Drone ou grand angle : petit balcon en premier plan, grand en fond · même heure · même cadrage</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Comparaison lames</p>
+            <p>Main tenant deux lames Trex côte à côte · fond neutre · lumière naturelle · 5 secondes max</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Slide prix</p>
+            <p>Fond vert foncé Jardín Ideal · texte blanc/or · aucune image en arrière-plan · animation séquentielle</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Plan valeur</p>
+            <p>Équipe au travail · composite neuf posé · balcon terminé · 3 coupes de 3 s</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-block">
+        <span class="ref-lbl">Références briefing</span>
+        <div class="ref-tags">
+          <span class="ref-tag">Message : transparence des prix</span>
+          <span class="ref-tag">Seg. A/B recherche active</span>
+          <span class="ref-tag">Format Reel 9:16 · 45 s</span>
+          <span class="ref-tag">Formule 5 : éducatif + positionnement</span>
+          <span class="ref-tag">KPI CPL &lt;$80</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       B-R03
+  ═══════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="r03-h2">
+    <p class="section-tag">Reel 03 / 04</p>
+    <h2 id="r03-h2">Guion complet — B-R03</h2>
+
+    <article class="reel-card" aria-label="Reel B-R03">
+      <header class="reel-head">
+        <div>
+          <span class="reel-id">B-R03</span>
+          <h3 class="reel-title" style="margin:0; font-size:clamp(16px,2vw,22px);">"Bois pourri vs composite — 5 ans après"</h3>
+        </div>
+        <div class="reel-badges">
+          <span class="reel-dur">40 secondes</span>
+          <span class="reel-phase">Éducatif · Retargeting Seg. B</span>
+        </div>
+      </header>
+
+      <div class="reel-meta" role="list">
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Objectif</span>
+          <span class="rmv">Repositionner le composite comme choix rationnel. Convertir les prospects qui ont un vieux balcon bois et hésitent encore.</span>
+        </div>
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Public cible</span>
+          <span class="rmv">Seg. B : propriétaires avec balcon en bois existant (5–15 ans), fatigués de l'entretien. Ont vu B-R01 ou B-R02 mais n'ont pas encore agi.</span>
+        </div>
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Format & specs</span>
+          <span class="rmv">9:16 · 1080×1920 px · 40 s · Contraste visuel fort avant/après · Textes factuels · Sous-titres obligatoires</span>
+        </div>
+      </div>
+
+      <div class="hook-block" role="note">
+        <span class="hook-lbl">Hook · 0–3 secondes · Texte à l'écran</span>
+        <p class="hook-text">« Votre balcon en bois dans 5 ans sans entretien. »</p>
+        <p class="hook-note">Plan sur du bois véritablement dégradé — gris, craquelé, clous qui ressortent. Pas de beau bois entretenu. Le choc visuel fait stopper le scroll.</p>
+      </div>
+
+      <div class="script-wrap">
+        <div class="script-section-head">Guion scène par scène — 40 secondes</div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>0–3 s</span>
+            <span class="beat">Hook choc</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Votre balcon en bois dans 5 ans sans entretien. »</span>
+            <p class="visual">Gros plan sur planches de bois grises, clous rouillés, bois fendu. Si disponible : vrai projet client avant travaux. Sinon : image du web (libre de droits) de bois dégradé.</p>
+            <p class="instruction">Ce plan doit être inconfortable — c'est voulu. Ne pas adoucir avec un cadrage flatteur. Plan fixe, lumière crue.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>3–10 s</span>
+            <span class="beat">Réalité bois</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Bois traité : la réalité après 5 hivers au Québec. »</span>
+            <p class="visual">3 plans rapides (2 s chacun) montrant les défauts typiques du bois : gonflement, décoloration, joints ouverts, moisissures.</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">— Peinture qui s'écaille chaque été</span>
+            <span class="screen-text" style="margin-top:8px; display:block;">— Bois qui gonfle, se fend, pourrit</span>
+            <span class="screen-text" style="margin-top:8px; display:block;">— Rénovation forcée tous les 7–10 ans</span>
+            <p class="instruction">Chaque point s'affiche en couper avec son visuel. Ton factuel, pas dramatique. Les faits suffisent.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>10–22 s</span>
+            <span class="beat">Pivot composite</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Le même balcon, en composite Trex. Même scénario, 5 ans plus tard. »</span>
+            <p class="visual">Transition directe : coupe entre le bois dégradé et un composite immaculé, même angle si possible.</p>
+            <p class="instruction">Ce moment de transition est le coeur du Reel. Prendre le temps : 4 secondes sur le composite après la coupe. Laisser le viewer absorber.</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">— Aucune peinture, aucun traitement</span>
+            <span class="screen-text" style="margin-top:8px; display:block;">— Résiste au gel québécois : -40°C testé</span>
+            <span class="screen-text" style="margin-top:8px; display:block;">— Garantie 25 ans Trex</span>
+            <p class="visual" style="margin-top:8px;">3 gros plans sur le composite : surface lisse, joint serré, couleur intacte. Musique change de ton ici — plus légère, ouverte.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>22–33 s</span>
+            <span class="beat">Calcul</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Sur 25 ans : le composite coûte moins cher. »</span>
+            <p class="visual">Fond vert foncé Jardín Ideal. Comparatif visuel simple : deux colonnes, Bois vs Composite.</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">Bois : achat + peinture × 3 + rénovation = ~$18 000</span>
+            <span class="screen-text" style="margin-top:8px; display:block;">Composite Trex : achat posé = ~$15 000 · Entretien : $0</span>
+            <p class="instruction">Chiffres approximatifs et honnêtes. Note légale en petit. Temps total : 10 secondes. Ne pas surcharger — deux lignes suffisent.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>33–40 s</span>
+            <span class="beat">CTA</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Jardín Ideal. On pose le composite qui dure. »</span>
+            <p class="visual">Plan large sur un beau balcon composite terminé — lumière dorée, famille en arrière-plan flou ou café posé sur la balustrade.</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">« Soumission gratuite — réponse en 48h. »</span>
+            <p class="instruction">6 secondes. Musique en fondu. Logo Jardín Ideal discret. Le bouton CTA Meta s'affiche par dessus.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <span class="cta-lbl">CTA Meta Ads</span>
+        <span class="cta-text">« Passez au composite — soumission gratuite, sans engagement. »</span>
+        <span class="cta-button-sample">En savoir plus</span>
+      </div>
+
+      <div class="visuels-block">
+        <p class="visuels-lbl">Visuels recommandés — liste de tournage</p>
+        <div class="visuels-grid">
+          <div class="visuel-item">
+            <p class="vi-head">Bois dégradé</p>
+            <p>Vrai projet avant travaux · gros plan sans embellissement · lumière crue · ne pas nettoyer avant de filmer</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Défauts bois</p>
+            <p>Peinture écaillée · joint ouvert · bois gonflé · 3 plans différents · lumière naturelle de côté</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Pivot composite</p>
+            <p>Même angle que le bois dégradé · composite parfait · transition cut directe · lumière identique si possible</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Détails composite</p>
+            <p>Surface · joint · couleur · 3 gros plans macro · main qui touche la surface pour montrer la qualité</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Slide comparatif</p>
+            <p>Fond vert foncé · deux colonnes · typographie propre · pas d'images concurrentes · 10 s à l'écran</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Plan final</p>
+            <p>Balcon composite large · famille ou café en fond flou · lumière dorée · 6 s statique · logo discret</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-block">
+        <span class="ref-lbl">Références briefing</span>
+        <div class="ref-tags">
+          <span class="ref-tag">Message : transformation visible</span>
+          <span class="ref-tag">Seg. B · bois existant</span>
+          <span class="ref-tag">Format Reel 9:16 · 40 s</span>
+          <span class="ref-tag">Formule 5 : éducatif</span>
+          <span class="ref-tag">Retargeting Phase 2</span>
+          <span class="ref-tag">Vide compétitif vidéo</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       B-R04
+  ═══════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="r04-h2">
+    <p class="section-tag">Reel 04 / 04</p>
+    <h2 id="r04-h2">Guion complet — B-R04</h2>
+
+    <article class="reel-card" aria-label="Reel B-R04">
+      <header class="reel-head">
+        <div>
+          <span class="reel-id">B-R04</span>
+          <h3 class="reel-title" style="margin:0; font-size:clamp(16px,2vw,22px);">"L'équipe Jardín Ideal — 3 balcons en 1 semaine"</h3>
+        </div>
+        <div class="reel-badges">
+          <span class="reel-dur">50 secondes</span>
+          <span class="reel-phase">Volume · Preuve sociale · Lookalike</span>
+        </div>
+      </header>
+
+      <div class="reel-meta" role="list">
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Objectif</span>
+          <span class="rmv">Établir la crédibilité par le volume. Un prospect hésitant se convertit quand il voit que l'entreprise travaille constamment. Pas de témoignage — juste la preuve par l'image.</span>
+        </div>
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Public cible</span>
+          <span class="rmv">Seg. A/C : hésitants avancés. Ont déjà visité le site ou interagi avec B-R01/B-R02. Cherchent à confirmer que Jardín Ideal est une entreprise établie, fiable, qui livre.</span>
+        </div>
+        <div class="reel-meta-cell" role="listitem">
+          <span class="rml">Format & specs</span>
+          <span class="rmv">9:16 · 1080×1920 px · 50 s · Style documentaire · Équipe réelle · Sous-titres obligatoires · Lookalike + Retargeting</span>
+        </div>
+      </div>
+
+      <div class="hook-block" role="note">
+        <span class="hook-lbl">Hook · 0–3 secondes · Texte à l'écran</span>
+        <p class="hook-text">« 3 balcons. 1 semaine. Voici comment on travaille. »</p>
+        <p class="hook-note">Plan aérien ou grand angle sur un chantier actif — plusieurs ouvriers visibles, matériaux au sol, balcon en cours. L'activité est la preuve.</p>
+      </div>
+
+      <div class="script-wrap">
+        <div class="script-section-head">Guion scène par scène — 50 secondes</div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>0–3 s</span>
+            <span class="beat">Hook volume</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« 3 balcons. 1 semaine. Voici comment on travaille. »</span>
+            <p class="visual">Plan large sur un chantier actif : équipe visible, matériaux composite au sol, balcon à mi-chemin. L'effervescence est réelle.</p>
+            <p class="instruction">Si possible : drone ou plan en hauteur pour donner l'échelle. Sinon : grand angle de l'intérieur de la maison vers l'extérieur, équipe au fond. 3 secondes, plan fixe.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>3–18 s</span>
+            <span class="beat">Projet 1</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Balcon #1 — Laval. Lundi matin. »</span>
+            <p class="visual">3 coupes : équipe qui décharge les matériaux / pose des solives / prem ières lames composite installées.</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">« Dépose et pose complète : 1,5 jour. »</span>
+            <p class="visual">Plan résultat final Balcon 1 : angle large, propriétaire en arrière-plan (flou) ou sans personne. Lumière naturelle.</p>
+            <p class="instruction">Séquence : 3 plans process (2 s chacun) + 1 plan résultat (4 s). Total 10 secondes. Rythme décontracté mais efficace. Pas de musique suréditée — son ambiant du chantier acceptable en fond.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>18–33 s</span>
+            <span class="beat">Projet 2</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Balcon #2 — Terrebonne. Mercredi. »</span>
+            <p class="visual">Même structure : 3 plans process + 1 plan résultat. Ce balcon doit être visuellement différent du premier : autre teinte de composite, autre configuration (coin, garde-corps différent).</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">« 300 pi² posés en 2 jours. »</span>
+            <p class="instruction">Varier les angles : un plan en contre-plongée (caméra basse, équipe en hauteur), un plan du niveau du balcon regardant l'extérieur. Montre la diversité de configuration.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>33–44 s</span>
+            <span class="beat">Projet 3</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Balcon #3 — Rive-Nord. Vendredi. »</span>
+            <p class="visual">Ce troisième balcon est le plus impressionnant du lot — grand, belle vue, client souriant si disponible. C'est la récompense visuelle du Reel.</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">« 3 balcons livrés. 0 retard. »</span>
+            <p class="instruction">Plan final de ce projet : 5 secondes, lumière dorée, tout le balcon dans le cadre. Ce moment est le climax — ne pas couper trop vite.</p>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="scene-time">
+            <span>44–50 s</span>
+            <span class="beat">CTA</span>
+          </div>
+          <div class="scene-content">
+            <span class="screen-text full">« Jardín Ideal. Votre balcon, livré à temps. »</span>
+            <p class="visual">Plan de l'équipe complète devant un balcon fini — si réalisable. Sinon : montage des 3 balcons en split screen (1/3 chacun).</p>
+            <span class="screen-text" style="margin-top:8px; display:block;">« Soumission gratuite · Disponibilités limitées. »</span>
+            <p class="instruction">6 secondes. Urgence saisonnière réelle : l'été se remplit. Le texte "Disponibilités limitées" est honnête si c'est le cas — ne pas l'utiliser si l'agenda est vide.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <span class="cta-lbl">CTA Meta Ads</span>
+        <span class="cta-text">« Réservez votre créneau — disponibilités limitées cet été. »</span>
+        <span class="cta-button-sample">Nous contacter</span>
+      </div>
+
+      <div class="visuels-block">
+        <p class="visuels-lbl">Visuels recommandés — liste de tournage</p>
+        <div class="visuels-grid">
+          <div class="visuel-item">
+            <p class="vi-head">Hook chantier</p>
+            <p>Plan large ou drone · équipe active visible · matériaux au sol · pas de pose · 3 s fix</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Plans process × 3</p>
+            <p>Déchargement · pose solives · premières lames · 2 s par plan · coupes directes</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Résultats × 3</p>
+            <p>Un par chantier · angles différents · teintes différentes · lumière naturelle · 4–5 s chacun</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Variété</p>
+            <p>Petit + moyen + grand balcon · Laval / Terrebonne / Rive-Nord · valider que l'audience reconnait les secteurs</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Plan équipe</p>
+            <p>Équipe devant balcon fini · visages nets · sourire naturel · pas de pose figée · lumière frontale douce</p>
+          </div>
+          <div class="visuel-item">
+            <p class="vi-head">Plan climax</p>
+            <p>Le plus beau des 3 balcons · 5 s · lumière heure dorée · aucun texte superposé pendant ces 5 s</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-block">
+        <span class="ref-lbl">Références briefing</span>
+        <div class="ref-tags">
+          <span class="ref-tag">Message : urgence saisonnière</span>
+          <span class="ref-tag">Ref. K-1815 · volume de projets</span>
+          <span class="ref-tag">Seg. A/C hésitants</span>
+          <span class="ref-tag">Lookalike + Retargeting</span>
+          <span class="ref-tag">Formule 4 : preuve sociale</span>
+          <span class="ref-tag">Formule 3 : urgence</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       NOTES DE PRODUCTION
+  ═══════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="prod-h2">
+    <p class="section-tag">Production · Notes transversales</p>
+    <h2 id="prod-h2">Ce qui s'applique à tous les 4 Reels</h2>
+
+    <div class="brief-grid">
+      <div class="brief-cell">
+        <p class="brief-lbl">Son & sous-titres</p>
+        <p class="brief-val">85 % sans son</p>
+        <p class="brief-note">Sous-titres obligatoires sur chaque texte à l'écran. Blanc, gras, centré. Taille 28–32 pt équivalent. Contraste fond semi-transparent si besoin.</p>
+      </div>
+      <div class="brief-cell">
+        <p class="brief-lbl">Zones safe 9:16</p>
+        <p class="brief-val">250 px haut / bas libres</p>
+        <p class="brief-note">Ne placer aucun texte critique dans les 250 px du haut (icônes Meta) et du bas (bouton CTA). Zone active : 1420 px centraux sur 1920.</p>
+      </div>
+      <div class="brief-cell dark">
+        <p class="brief-lbl">Lumière : heure dorée</p>
+        <p class="brief-val">07h00–09h00 ou 16h30–18h30</p>
+        <p class="brief-note">Chaque plan résultat doit être filmé dans ces fenêtres. Pas de lumière plate de midi. La lumière dorée double la valeur perçue du composite.</p>
+      </div>
+      <div class="brief-cell">
+        <p class="brief-lbl">Montage</p>
+        <p class="brief-val">Coupes directes uniquement</p>
+        <p class="brief-note">Pas de transitions (fondu, glissement). Coupes directes exclusivement. Une seule exception : le fondu en fin de Reel (2 dernières secondes). Les transitions "lisses" font amateur en 2026.</p>
+      </div>
+      <div class="brief-cell">
+        <p class="brief-lbl">Musique</p>
+        <p class="brief-val">Instrumentale · Droits libres</p>
+        <p class="brief-note">Tonalité : chaleureuse, légèrement optimiste, pas de beat agressif. Sources : Epidemic Sound, Artlist. Niveau : -18 dB relatif à la voix si voix off présente.</p>
+      </div>
+      <div class="brief-cell dark">
+        <p class="brief-lbl">Logo Jardín Ideal</p>
+        <p class="brief-val">Bas gauche · dernier plan uniquement</p>
+        <p class="brief-note">Ne pas l'afficher dans les 10 premières secondes. L'authenticité passe avant la marque en début de Reel. Apparaît sur le CTA final uniquement.</p>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <span class="kpi-chip dark">Export : MP4 H.264</span>
+      <span class="kpi-chip dark">1080 × 1920 px · 30 fps</span>
+      <span class="kpi-chip dark">Son : AAC 192 kbps</span>
+      <span class="kpi-chip grn">Durée min. : 30 s pour booster</span>
+      <span class="kpi-chip yel">Test CTR à 1 000 impressions avant scaling</span>
+    </div>
+  </section>
+
+
+  <!-- PROCHAINES ÉTAPES -->
+  <section class="section" aria-labelledby="next-h2">
+    <p class="section-tag">Prochaines étapes</p>
+    <h2 id="next-h2">Plan d'exécution — Phase 1</h2>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-bar red"></div>
+        <div class="step-inner">
+          <strong>Planifier la journée de tournage B-R01</strong>
+          <span>Sélectionner un chantier balcon actif ou récent. Confirmer l'heure dorée (16h30–18h30). Préparer la liste des plans requis selon le guion.</span>
+        </div>
+      </li>
+      <li>
+        <div class="step-bar red"></div>
+        <div class="step-inner">
+          <strong>Vérifier les archives pour B-R03 et B-R04</strong>
+          <span>Identifier 3 projets balcon filmés ou photographiés. Si archives insuffisantes, planifier un second tournage sur chantier actif.</span>
+        </div>
+      </li>
+      <li>
+        <div class="step-bar yel"></div>
+        <div class="step-inner">
+          <strong>Monter B-R01 en priorité — lancer les tests</strong>
+          <span>B-R01 est la pièce maîtresse. Lancer Meta Ads dès la semaine suivant le tournage. Budget test : $150–$200 pour atteindre 1 000 impressions.</span>
+        </div>
+      </li>
+      <li>
+        <div class="step-bar yel"></div>
+        <div class="step-inner">
+          <strong>Évaluer CTR à 1 000 impressions</strong>
+          <span>Si CTR &gt; 3% → augmenter le budget et lancer B-R02. Si CTR &lt; 3% → revoir le hook (0–3 s), pas la durée ni le budget.</span>
+        </div>
+      </li>
+      <li>
+        <div class="step-bar grn"></div>
+        <div class="step-inner">
+          <strong>Lancer B-R02 en semaine 2 si B-R01 valide</strong>
+          <span>Diffuser en parallèle de B-R01. Segments différents : B-R01 cold audience, B-R02 recherche active / intérêt renovation.</span>
+        </div>
+      </li>
+      <li>
+        <div class="step-bar grn"></div>
+        <div class="step-inner">
+          <strong>B-R03 et B-R04 en retargeting Phase 2</strong>
+          <span>Activer sur les audiences ayant visionné 50%+ de B-R01 ou B-R02. Ne pas diffuser en cold audience — le ROI est sur le retargeting.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="doc-footer" role="contentinfo">
+  <span class="brand">Jardín <em>Ideal</em></span>
+  <span class="doc-id">BALCONES · 02_LISTA_REELS · Saison 2026 · Système IA opérationnel</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>05 — Stories Instagram/Facebook · Campagne BALCONES · Jardín Ideal 2026</title>
+<style>
+/* ═══════════════════════════════════════════════
+   JARDÍN IDEAL — DESIGN SYSTEM
+   Campagne BALCONES · Stories 05
+═══════════════════════════════════════════════ */
+:root {
+  --vf:  #1E3A20;
+  --vm:  #3D6B42;
+  --or:  #C8A45A;
+  --cr:  #F5F2EB;
+  --w:   #FFFFFF;
+  --n:   #0D0E0B;
+  --gf:  #2A2B28;
+  --g:   #6B6B63;
+  --gc:  #B8B8B0;
+  --cd:  #EDE9E0;
+  --or2: #E8C97A;
+  --red: #B83232;
+
+  --font-d: Georgia, 'Times New Roman', serif;
+  --font-b: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-m: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--font-b);
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── COVER ─── */
+.cover {
+  background: var(--vf);
+  padding: 56px 64px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: "STORY";
+  position: absolute;
+  right: 20px; top: 10px;
+  font-family: var(--font-d);
+  font-size: clamp(100px, 16vw, 180px);
+  font-weight: 700;
+  color: rgba(200,164,90,0.05);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -4px;
+}
+.cover-eyebrow {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 20px;
+}
+.cover h1 {
+  font-family: var(--font-d);
+  font-size: clamp(26px, 4vw, 50px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+.cover h1 em { color: var(--or); font-style: italic; }
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.cover-meta-item {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+}
+.cover-meta-item strong {
+  display: block;
+  color: var(--or2);
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+/* ─── PAGE ─── */
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+/* ─── LEGEND ─── */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 24px 0;
+  margin: 40px 0 0;
+  border-top: 1px solid var(--cd);
+  border-bottom: 1px solid var(--cd);
+}
+.legend-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--g);
+  width: 100%;
+  margin-bottom: 4px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--gf);
+}
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── WEEK BLOCK ─── */
+.week-block {
+  margin-top: 56px;
+}
+.week-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--vf);
+  margin-bottom: 28px;
+}
+.week-num {
+  font-family: var(--font-d);
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1;
+  opacity: 0.12;
+}
+.week-info {}
+.week-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 4px;
+}
+.week-title {
+  font-family: var(--font-d);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1.2;
+}
+.week-dates {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--g);
+  margin-left: auto;
+  padding-bottom: 4px;
+}
+
+/* ─── STORY GRID ─── */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ─── STORY CARD ─── */
+.story-card {
+  background: var(--w);
+  border: 1px solid var(--cd);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.story-card-top {
+  padding: 16px 18px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--cd);
+}
+.story-id {
+  font-family: var(--font-m);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--w);
+  background: var(--vf);
+  padding: 3px 8px;
+  letter-spacing: 1px;
+}
+.story-type-badge {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border: 1px solid;
+}
+.story-day {
+  margin-left: auto;
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--g);
+  letter-spacing: 1px;
+}
+
+/* Type colors */
+.type-launch    { border-color: var(--or);  color: var(--or);  }
+.type-edu       { border-color: var(--vm);  color: var(--vm);  }
+.type-poll      { border-color: #5A7BAF;    color: #5A7BAF;    }
+.type-proof     { border-color: var(--vm);  color: var(--vm);  }
+.type-urgency   { border-color: var(--red); color: var(--red); }
+.type-cta       { border-color: var(--or);  color: #B87800;    }
+.type-tips      { border-color: var(--g);   color: var(--g);   }
+.type-before    { border-color: #7A5A2A;    color: #7A5A2A;    }
+.type-bonus     { border-color: var(--vm);  color: var(--vm);  }
+
+.story-card-body {
+  padding: 16px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.story-hook {
+  font-family: var(--font-d);
+  font-size: 14.5px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--vf);
+  line-height: 1.3;
+}
+
+.story-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.story-field-label {
+  font-family: var(--font-m);
+  font-size: 8.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gc);
+}
+.story-field-value {
+  font-size: 12.5px;
+  color: var(--gf);
+  line-height: 1.6;
+}
+
+/* Screen text box */
+.screen-text {
+  background: var(--vf);
+  color: var(--w);
+  font-family: var(--font-d);
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.5;
+  padding: 12px 14px;
+  position: relative;
+}
+.screen-text::before {
+  content: "📱 Texte écran";
+  display: block;
+  font-family: var(--font-m);
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--or);
+  font-style: normal;
+  margin-bottom: 7px;
+}
+
+/* CTA pill */
+.story-cta {
+  background: var(--or);
+  color: var(--vf);
+  font-family: var(--font-m);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* Visual tag */
+.visual-tag {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--g);
+  border-top: 1px solid var(--cd);
+  padding-top: 10px;
+  margin-top: auto;
+  padding-bottom: 0;
+}
+.visual-tag::before {
+  content: "▲ ";
+  color: var(--or);
+}
+
+/* ─── SUMMARY BAR ─── */
+.week-summary {
+  margin-top: 20px;
+  padding: 14px 20px;
+  background: var(--vf);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+.ws-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+}
+.ws-label strong {
+  color: var(--or2);
+  display: inline;
+}
+
+/* ─── BONUS BAND ─── */
+.bonus-band {
+  margin-top: 56px;
+  background: linear-gradient(135deg, var(--vf) 0%, #3D6B42 100%);
+  padding: 28px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.bonus-band::before {
+  content: "BONUS";
+  position: absolute;
+  right: -10px; top: -10px;
+  font-family: var(--font-d);
+  font-size: 120px;
+  font-weight: 700;
+  color: rgba(200,164,90,0.06);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.bonus-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 8px;
+}
+.bonus-h {
+  font-family: var(--font-d);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--w);
+  margin-bottom: 20px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 680px) {
+  .cover { padding: 36px 24px 32px; }
+  .page { padding: 0 18px 60px; }
+  .story-grid { grid-template-columns: 1fr; }
+  .week-num { font-size: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div class="cover-eyebrow">Jardín Ideal · Campagne BALCONES 2026 · Document 05/06</div>
+  <h1>Plan de Stories<br><em>Instagram &amp; Facebook · Juillet 2026</em></h1>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>28 + 5 stories</strong>33 au total</div>
+    <div class="cover-meta-item"><strong>5 semaines</strong>Jul 1 → 31</div>
+    <div class="cover-meta-item"><strong>B-H01 → B-H33</strong>IDs campagne</div>
+    <div class="cover-meta-item"><strong>IG + FB</strong>Canaux</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-title">Types de stories</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--or)"></span>Lancement</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--vm)"></span>Éducatif</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#5A7BAF"></span>Sondage / Poll</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--vm)"></span>Preuve sociale</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--red)"></span>Urgence</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#B87800"></span>Conversion CTA</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--g)"></span>Conseils / Tips</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#7A5A2A"></span>Avant / Après</div>
+  </div>
+
+  <!-- ═══ SEMAINE 1 ═══ -->
+  <div class="week-block">
+    <div class="week-header">
+      <div class="week-num">01</div>
+      <div class="week-info">
+        <div class="week-label">Semaine 1 · Lancement &amp; Awarness</div>
+        <div class="week-title">On plante le décor — votre balcon mérite mieux</div>
+      </div>
+      <div class="week-dates">1 – 5 juillet 2026</div>
+    </div>
+
+    <div class="story-grid">
+
+      <!-- B-H01 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H01</span>
+          <span class="story-type-badge type-launch">Lancement</span>
+          <span class="story-day">Mar 1 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Ce balcon a eu sa dernière chance l'an dernier."</div>
+          <div class="screen-text">Votre balcon en bois a combien d'étés devant lui?<br>On vous dit la vérité gratuitement.</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte de soutien</div>
+            <div class="story-field-value">Jardín Ideal · Montréal · Inspection gratuite · Sans engagement</div>
+          </div>
+          <span class="story-cta">→ Lien: inspection gratuite</span>
+          <div class="visual-tag">Photo: balcon bois vieilli en contre-plongée. Lumière triste, bois gris.</div>
+        </div>
+      </div>
+
+      <!-- B-H02 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H02</span>
+          <span class="story-type-badge type-launch">Lancement</span>
+          <span class="story-day">Mar 1 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Le composite: 0 peinture. 0 ponçage. 0 regret."</div>
+          <div class="screen-text">Été 2026 : votre dernier été à poncer votre balcon?<br>↓ Swipe up pour voir ce que ça change.</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Texte animé — mots qui apparaissent un par un. Fond vert foncé.</div>
+          </div>
+          <span class="story-cta">→ Swipe: galerie projets</span>
+          <div class="visual-tag">Fond vert #1E3A20, typographie blanche, accent or sur le "0".</div>
+        </div>
+      </div>
+
+      <!-- B-H03 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H03</span>
+          <span class="story-type-badge type-before">Avant / Après</span>
+          <span class="story-day">Mer 2 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Même balcon. 6 semaines plus tard."</div>
+          <div class="screen-text">Avant → Après.<br>Laval, mai 2025.<br>Balcon composite 180 pi².<br>Durée: 4 jours.</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Carrousel 2 slides: photo avant (bois dégradé) — photo après (composite posé). Transition par glissement.</div>
+          </div>
+          <span class="story-cta">→ Lien: voir d'autres projets</span>
+          <div class="visual-tag">Photos réelles chantier Jardín Ideal, même angle de prise de vue.</div>
+        </div>
+      </div>
+
+      <!-- B-H04 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H04</span>
+          <span class="story-type-badge type-edu">Éducatif</span>
+          <span class="story-day">Jeu 3 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"3 chiffres que votre balcon ne vous dira jamais."</div>
+          <div class="screen-text">Durée de vie bois traité: 15–20 ans.<br>Durée de vie composite: 25–30 ans.<br>Coût entretien bois sur 10 ans: ~2 400 $.<br>Coût entretien composite sur 10 ans: 0 $.</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Slides de chiffres — un par écran. Fond crème, accent or sur les chiffres. Fonte Georgia pour les grands nombres.</div>
+          </div>
+          <span class="story-cta">→ Lien: article blog B-B02</span>
+          <div class="visual-tag">Graphisme minimaliste — chiffre seul en 80px + label petit en mono.</div>
+        </div>
+      </div>
+
+      <!-- B-H05 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H05</span>
+          <span class="story-type-badge type-launch">Lancement</span>
+          <span class="story-day">Ven 4 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"On installe des balcons à Montréal depuis 12 ans. Posez-nous n'importe quelle question."</div>
+          <div class="screen-text">Balcon composite à Montréal — des questions?<br>On répond à tout.<br>📩 DM ouvert.</div>
+          <div class="story-field">
+            <div class="story-field-label">Interaction</div>
+            <div class="story-field-value">Boîte de question Instagram activée. Stocker les réponses — utiliser comme base de contenu pour semaine 2 (stories éducatives).</div>
+          </div>
+          <span class="story-cta">→ Sticker: boîte de questions</span>
+          <div class="visual-tag">Photo Daniel ou équipe Jardín Ideal sur chantier. Ambiance terrain.</div>
+        </div>
+      </div>
+
+      <!-- B-H06 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H06</span>
+          <span class="story-type-badge type-before">Avant / Après</span>
+          <span class="story-day">Sam 5 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Rive-Nord, 3 semaines. Ce que ça donne."</div>
+          <div class="screen-text">Projet Rive-Nord · Juin 2025.<br>Balcon existant démoli.<br>Structure composite + garde-corps alu.<br>Surface: 220 pi².</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Vidéo timelapse 15 sec si disponible, sinon carrousel 3 photos (démolition / structure / fini). Texte superposé simple.</div>
+          </div>
+          <span class="story-cta">→ Lien: devis gratuit</span>
+          <div class="visual-tag">Préférer la vidéo si disponible. Musique instrumentale sans paroles.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="week-summary">
+      <div class="ws-label">Semaine 1 · <strong>6 stories</strong></div>
+      <div class="ws-label">Objectif: <strong>Notoriété + premier engagement</strong></div>
+      <div class="ws-label">KPI: <strong>Portée · Impressions · Boîte de questions remplie</strong></div>
+    </div>
+  </div>
+
+  <!-- ═══ SEMAINE 2 ═══ -->
+  <div class="week-block">
+    <div class="week-header">
+      <div class="week-num">02</div>
+      <div class="week-info">
+        <div class="week-label">Semaine 2 · Éducation &amp; Interaction</div>
+        <div class="week-title">On explique — et on écoute ce que vous voulez savoir</div>
+      </div>
+      <div class="week-dates">6 – 12 juillet 2026</div>
+    </div>
+
+    <div class="story-grid">
+
+      <!-- B-H07 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H07</span>
+          <span class="story-type-badge type-poll">Sondage</span>
+          <span class="story-day">Dim 6 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Votre balcon actuel est en bois ou en composite?"</div>
+          <div class="screen-text">Mon balcon est en:<br>🟩 Bois traité<br>🟩 Composite<br>🟩 Je sais pas trop</div>
+          <div class="story-field">
+            <div class="story-field-label">Interaction</div>
+            <div class="story-field-value">Sticker sondage Instagram (3 options). Partager le résultat en story le lendemain matin (B-H08).</div>
+          </div>
+          <span class="story-cta">→ Sticker: sondage actif</span>
+          <div class="visual-tag">Fond vert foncé. Texte blanc. Design épuré — la question est centrale.</div>
+        </div>
+      </div>
+
+      <!-- B-H08 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H08</span>
+          <span class="story-type-badge type-poll">Résultat poll</span>
+          <span class="story-day">Lun 7 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Vous avez répondu. Voici ce que ça révèle."</div>
+          <div class="screen-text">X% d'entre vous ont encore un balcon en bois.<br>C'est normal. La plupart n'avaient pas de raison de changer — jusqu'à maintenant.</div>
+          <div class="story-field">
+            <div class="story-field-label">Note d'exécution</div>
+            <div class="story-field-value">Adapter le texte avec le vrai résultat du poll. Utiliser une capture écran du poll + texte de commentaire superposé.</div>
+          </div>
+          <span class="story-cta">→ Lien: article B-B01 bois vs composite</span>
+          <div class="visual-tag">Screenshot poll Instagram centré. Commentaire en Georgia italique.</div>
+        </div>
+      </div>
+
+      <!-- B-H09 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H09</span>
+          <span class="story-type-badge type-edu">Éducatif</span>
+          <span class="story-day">Lun 7 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Ce que le froid de Montréal fait à un balcon en bois chaque hiver."</div>
+          <div class="screen-text">Cycle gel/dégel à Montréal: ~60 fois par hiver.<br>Chaque cycle dilate et contracte le bois.<br>Au bout de 5 ans: les fissures sont là.<br>Au bout de 15 ans: la structure est compromise.</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Animation simple: compteur "cycles" qui monte de 0 à 60. Fond blanc, accent rouge sur le chiffre.</div>
+          </div>
+          <span class="story-cta">→ Lien: article B-B03 signes d'usure</span>
+          <div class="visual-tag">Graphisme minimaliste. Pas de photo — laisser les chiffres parler.</div>
+        </div>
+      </div>
+
+      <!-- B-H10 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H10</span>
+          <span class="story-type-badge type-edu">Q&amp;R communauté</span>
+          <span class="story-day">Mar 8 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Vous avez demandé. On répond."</div>
+          <div class="screen-text">Question reçue: "Le composite chauffe-t-il trop en été à Montréal?"<br><br>Réponse courte: moins qu'on pense.<br>Réponse longue: swipe pour voir →</div>
+          <div class="story-field">
+            <div class="story-field-label">Note d'exécution</div>
+            <div class="story-field-value">Utiliser une vraie question reçue via B-H05. Afficher la question avec le sticker "question reçue de @pseudo" (floutée si privé). Réponse sur slide suivante.</div>
+          </div>
+          <span class="story-cta">→ Sticker: question ouverte</span>
+          <div class="visual-tag">Format question/réponse 2 slides. Simple et lisible.</div>
+        </div>
+      </div>
+
+      <!-- B-H11 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H11</span>
+          <span class="story-type-badge type-tips">Conseil rapide</span>
+          <span class="story-day">Mer 9 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Le test des 30 secondes pour savoir si votre balcon tient encore."</div>
+          <div class="screen-text">1. Appuyez sur une lambourde avec votre pouce.<br>2. Si elle cède: structure molle → urgence.<br>3. Si elle tient: regardez les planches de surface.<br>4. Planches qui s'écaillent? → Fin de vie.</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Carrousel de 4 slides — une étape par slide. Design liste numérotée, fond crème.</div>
+          </div>
+          <span class="story-cta">→ Lien: article B-B03</span>
+          <div class="visual-tag">Illustration schématique simple ou photo macro de lambourde. Fond --cr.</div>
+        </div>
+      </div>
+
+      <!-- B-H12 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H12</span>
+          <span class="story-type-badge type-edu">Éducatif</span>
+          <span class="story-day">Ven 11 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Combien ça coûte vraiment — en vrai, pas en théorie."</div>
+          <div class="screen-text">Balcon 200 pi² à Montréal:<br>Composite posé: ~14 000 $<br>Bois traité posé: ~8 500 $<br>Différence: 5 500 $<br>Économie entretien/10 ans composite: 2 400 $<br>Durée de vie bonus: +10 ans</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Infographie verticale. Deux colonnes: bois / composite. Fond blanc, couleurs Jardín Ideal.</div>
+          </div>
+          <span class="story-cta">→ Lien: guide de prix B-B02</span>
+          <div class="visual-tag">Infographie exportée depuis Canva template Jardín Ideal.</div>
+        </div>
+      </div>
+
+      <!-- B-H13 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H13</span>
+          <span class="story-type-badge type-poll">Sondage</span>
+          <span class="story-day">Sam 12 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Qu'est-ce qui vous retient encore?"</div>
+          <div class="screen-text">Vous n'avez pas encore remplacé votre balcon parce que:<br>🟩 Budget pas encore prêt<br>🟩 Je voulais d'abord comparer<br>🟩 J'attendais le bon entrepreneur</div>
+          <div class="story-field">
+            <div class="story-field-label">Objectif</div>
+            <div class="story-field-value">Identifier le principal frein d'achat de l'audience pour adapter le contenu de semaine 3 (social proof + urgence).</div>
+          </div>
+          <span class="story-cta">→ Sticker: sondage</span>
+          <div class="visual-tag">Fond vert foncé. Design identique à B-H07 pour cohérence visuelle.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="week-summary">
+      <div class="ws-label">Semaine 2 · <strong>7 stories</strong></div>
+      <div class="ws-label">Objectif: <strong>Éducation + qualification audience</strong></div>
+      <div class="ws-label">KPI: <strong>Taux réponse poll · Partages · Clics blog</strong></div>
+    </div>
+  </div>
+
+  <!-- ═══ SEMAINE 3 ═══ -->
+  <div class="week-block">
+    <div class="week-header">
+      <div class="week-num">03</div>
+      <div class="week-info">
+        <div class="week-label">Semaine 3 · Preuve sociale &amp; Urgence</div>
+        <div class="week-title">D'autres propriétaires ont décidé — voici ce qu'ils ont vécu</div>
+      </div>
+      <div class="week-dates">13 – 19 juillet 2026</div>
+    </div>
+
+    <div class="story-grid">
+
+      <!-- B-H14 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H14</span>
+          <span class="story-type-badge type-proof">Témoignage</span>
+          <span class="story-day">Dim 13 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"J'attendais depuis 3 ans. Je regrette d'avoir attendu."</div>
+          <div class="screen-text">"Notre vieux balcon nous faisait peur à chaque été. Jardín Ideal a tout remplacé en 5 jours. Mon seul regret: ne pas l'avoir fait avant."<br>— M. et Mme T., Laval</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Citation sur fond crème, guillemets en or, nom de ville affiché. Photo du balcon réalisé en bas de slide.</div>
+          </div>
+          <span class="story-cta">→ Lien: témoignage complet B-T01</span>
+          <div class="visual-tag">Photo balcon Laval terminé. Fond --cr, typographie Georgia.</div>
+        </div>
+      </div>
+
+      <!-- B-H15 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H15</span>
+          <span class="story-type-badge type-before">Avant / Après</span>
+          <span class="story-day">Lun 14 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"48 heures de travaux. Résultat pour 25 ans."</div>
+          <div class="screen-text">Rive-Nord · Juillet 2025.<br>Surface existante conservée.<br>Lames composite posées sur structure d'origine.<br>Durée: 2 jours.</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Vidéo 15 sec: split screen avant/après ou timelapse rapide de l'installation. Texte superposé minimal.</div>
+          </div>
+          <span class="story-cta">→ Lien: devis gratuit</span>
+          <div class="visual-tag">Vidéo réelle chantier. Pas de filtre — authenticité avant esthétique.</div>
+        </div>
+      </div>
+
+      <!-- B-H16 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H16</span>
+          <span class="story-type-badge type-proof">Chiffre terrain</span>
+          <span class="story-day">Mar 15 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"En 2025, 84% de nos clients ont choisi le composite. Voici pourquoi."</div>
+          <div class="screen-text">Sur nos projets 2025 à Montréal, Laval et Rive-Nord:<br>84% composite<br>16% bois<br>Raison principale: "plus jamais l'entretien".</div>
+          <div class="story-field">
+            <div class="story-field-label">Note d'exécution</div>
+            <div class="story-field-value">Remplacer les pourcentages par les vrais chiffres Jardín Ideal 2025. Ça rend le contenu distinctif et non-copiable.</div>
+          </div>
+          <span class="story-cta">→ Lien: article B-B01</span>
+          <div class="visual-tag">Graphique camembert simple. Fond vert foncé. Accent or sur 84%.</div>
+        </div>
+      </div>
+
+      <!-- B-H17 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H17</span>
+          <span class="story-type-badge type-urgency">Urgence</span>
+          <span class="story-day">Mer 16 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Juillet se remplit vite. Quelques places restent."</div>
+          <div class="screen-text">Notre carnet de juillet est quasi complet.<br>Les nouvelles demandes passent en août.<br>Vous voulez que votre balcon soit prêt cet été?<br>→ Il reste X créneaux.</div>
+          <div class="story-field">
+            <div class="story-field-label">Note d'exécution</div>
+            <div class="story-field-value">Mettre à jour le nombre de créneaux réel. Ne jamais inventer — ça se vérifie. Urgence authentique seulement.</div>
+          </div>
+          <span class="story-cta">→ Lien: réserver une visite</span>
+          <div class="visual-tag">Fond sombre (--gf). Texte blanc. Chiffre créneaux en or grand format.</div>
+        </div>
+      </div>
+
+      <!-- B-H18 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H18</span>
+          <span class="story-type-badge type-proof">Témoignage</span>
+          <span class="story-day">Jeu 17 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Le prix qu'on m'a donné était le prix final. Pas de surprise."</div>
+          <div class="screen-text">"Ce qui m'a convaincu: Jardín Ideal m'a donné un prix fixe avant de commencer. Aucun extra surprise à la fin. Et le travail était propre."<br>— M. L., Repentigny</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Citation texte + photo du projet. Souligner "prix fixe" et "aucun extra" — ce sont les objections classiques.</div>
+          </div>
+          <span class="story-cta">→ Lien: devis gratuit sans surprise</span>
+          <div class="visual-tag">Fond crème. Guillemets en or. Photo balcon Repentigny.</div>
+        </div>
+      </div>
+
+      <!-- B-H19 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H19</span>
+          <span class="story-type-badge type-urgency">Urgence saison</span>
+          <span class="story-day">Ven 18 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Attendre septembre: votre balcon passe un hiver de plus."</div>
+          <div class="screen-text">Un remplacement maintenant = balcon prêt pour l'automne.<br>Un remplacement en octobre = risque de gel pendant les travaux.<br>Un report à 2027 = un autre été à vous inquiéter.</div>
+          <div class="story-field">
+            <div class="story-field-label">Ton</div>
+            <div class="story-field-value">Factuel, pas alarmiste. Exposer les conséquences réelles du report sans dramatiser.</div>
+          </div>
+          <span class="story-cta">→ Lien: planifier ma visite</span>
+          <div class="visual-tag">3 slides: chaque option sur fond différent (crème / orange pâle / rouge pâle).</div>
+        </div>
+      </div>
+
+      <!-- B-H20 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H20</span>
+          <span class="story-type-badge type-tips">Conseil</span>
+          <span class="story-day">Sam 19 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Ce qu'on voit sur le chantier et que vous ne pouvez pas voir de chez vous."</div>
+          <div class="screen-text">Lors de notre inspection gratuite, on regarde:<br>✓ L'ancrage mural (invisible de l'extérieur)<br>✓ L'état des poteaux en fondation<br>✓ L'humidité dans les lambourdes<br>✓ La conformité au code du bâtiment</div>
+          <div class="story-field">
+            <div class="story-field-label">Objectif</div>
+            <div class="story-field-value">Valoriser l'inspection gratuite comme service expert, pas comme prétexte commercial.</div>
+          </div>
+          <span class="story-cta">→ Lien: réserver mon inspection</span>
+          <div class="visual-tag">Photo dessous de balcon en cours d'inspection. Angle technique.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="week-summary">
+      <div class="ws-label">Semaine 3 · <strong>7 stories</strong></div>
+      <div class="ws-label">Objectif: <strong>Conversion intention → demande de contact</strong></div>
+      <div class="ws-label">KPI: <strong>Clics lien devis · Messages DM · Formulaires soumis</strong></div>
+    </div>
+  </div>
+
+  <!-- ═══ SEMAINE 4 ═══ -->
+  <div class="week-block">
+    <div class="week-header">
+      <div class="week-num">04</div>
+      <div class="week-info">
+        <div class="week-label">Semaine 4 · Conversion &amp; Urgence finale</div>
+        <div class="week-title">Dernière chance cet été — décider maintenant ou remettre à 2027</div>
+      </div>
+      <div class="week-dates">20 – 26 juillet 2026</div>
+    </div>
+
+    <div class="story-grid">
+
+      <!-- B-H21 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H21</span>
+          <span class="story-type-badge type-cta">Conversion</span>
+          <span class="story-day">Dim 20 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Vous regardez votre balcon depuis 3 semaines. Il est temps."</div>
+          <div class="screen-text">Devis gratuit · Visite en 48h · Prix fixe garanti.<br>Jardín Ideal · Montréal / Laval / Rive-Nord.<br>→ Swipe up.</div>
+          <div class="story-field">
+            <div class="story-field-label">Ton</div>
+            <div class="story-field-value">Direct sans être agressif. On reconnaît le comportement du prospect (qui suit depuis 3 semaines) avec humour et confiance.</div>
+          </div>
+          <span class="story-cta">→ Lien direct: formulaire devis</span>
+          <div class="visual-tag">Photo balcon composite terminé, lumière dorée de fin de journée.</div>
+        </div>
+      </div>
+
+      <!-- B-H22 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H22</span>
+          <span class="story-type-badge type-urgency">Compte à rebours</span>
+          <span class="story-day">Lun 21 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Dernier mois pour un balcon prêt avant l'hiver."</div>
+          <div class="screen-text">Pour un balcon posé avant fin septembre:<br>→ Commandez avant le 31 juillet.<br>Après: report automatique à printemps 2027.</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Date "31 juillet" en grand format. Fond vert foncé. Compte à rebours JavaScript si la plateforme le permet, sinon date fixe.</div>
+          </div>
+          <span class="story-cta">→ Lien: réserver maintenant</span>
+          <div class="visual-tag">Typographie grande, fond sombre, date en or. Impact maximal.</div>
+        </div>
+      </div>
+
+      <!-- B-H23 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H23</span>
+          <span class="story-type-badge type-proof">Projet récent</span>
+          <span class="story-day">Mar 22 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Terminé hier. Propriétaires ravis. Un créneau de libéré."</div>
+          <div class="screen-text">Projet livré hier · Laval · Balcon 240 pi².<br>Composite lame large, garde-corps aluminium noir.<br>Un créneau vient de se libérer en août.</div>
+          <div class="story-field">
+            <div class="story-field-label">Note d'exécution</div>
+            <div class="story-field-value">Utiliser des photos réelles du chantier de la semaine précédente. Story à préparer au fil des chantiers, pas à l'avance.</div>
+          </div>
+          <span class="story-cta">→ Lien: prendre ce créneau</span>
+          <div class="visual-tag">Photos fraîches du chantier. Pas de filtre — authenticité.</div>
+        </div>
+      </div>
+
+      <!-- B-H24 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H24</span>
+          <span class="story-type-badge type-cta">Objection directe</span>
+          <span class="story-day">Mer 23 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"'C'est trop cher.' On entend ça. Voici ce qu'on répond."</div>
+          <div class="screen-text">Composite posé: ~14 000 $.<br>Coût d'entretien bois sur 20 ans: ~4 800 $.<br>Remplacement bois à 15 ans: ~8 500 $.<br>Total bois sur 20 ans: ~13 300 $.<br>Conclusion: la différence est moins grande qu'elle en a l'air.</div>
+          <div class="story-field">
+            <div class="story-field-label">Ton</div>
+            <div class="story-field-value">Traiter l'objection avec des faits, pas avec de la pression. C'est une conversation honnête.</div>
+          </div>
+          <span class="story-cta">→ Lien: guide de prix complet B-B02</span>
+          <div class="visual-tag">Infographie calcul. Fond blanc, chiffres en vert foncé.</div>
+        </div>
+      </div>
+
+      <!-- B-H25 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H25</span>
+          <span class="story-type-badge type-proof">Garantie</span>
+          <span class="story-day">Jeu 24 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Ce qu'on garantit. Noir sur blanc."</div>
+          <div class="screen-text">✓ Prix fixe écrit dans la soumission.<br>✓ Délai respecté ou déduction.<br>✓ Chantier propre à la livraison.<br>✓ Service après-installation 1 an.<br>Jardín Ideal · Montréal.</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Liste de garanties sur fond crème. Coches en or. Sobre et lisible. La force est dans la clarté, pas dans le design.</div>
+          </div>
+          <span class="story-cta">→ Lien: voir tous les détails</span>
+          <div class="visual-tag">Design liste propre. Fond --cr. Typographie body, pas de décoration superflue.</div>
+        </div>
+      </div>
+
+      <!-- B-H26 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H26</span>
+          <span class="story-type-badge type-cta">CTA Final</span>
+          <span class="story-day">Ven 25 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"5 jours. C'est tout ce qu'il faut pour transformer votre balcon."</div>
+          <div class="screen-text">Votre balcon composite installé en 5 jours ouvrables.<br>Devis en 48h · Visite gratuite · Prix fixe.<br>Jardín Ideal · Montréal / Laval / Rive-Nord.</div>
+          <div class="story-field">
+            <div class="story-field-label">Ton</div>
+            <div class="story-field-value">Synthèse de la proposition de valeur entière en 3 lignes. Dernière chance de la semaine.</div>
+          </div>
+          <span class="story-cta">→ Lien: formulaire devis (direct)</span>
+          <div class="visual-tag">Photo hero balcon composite terminé. Le meilleur projet du portfolio.</div>
+        </div>
+      </div>
+
+      <!-- B-H27 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H27</span>
+          <span class="story-type-badge type-before">Avant / Après</span>
+          <span class="story-day">Sam 26 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Montréal-Nord, ce printemps. L'avant faisait peur."</div>
+          <div class="screen-text">Printemps 2026 · Montréal-Nord.<br>Balcon 15 ans, structure compromise.<br>Résultat: composite 210 pi², garde-corps câbles inox.</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Carrousel 3 photos: structure dégradée / chantier en cours / résultat final. Texte superposé minimal.</div>
+          </div>
+          <span class="story-cta">→ Lien: voir d'autres projets</span>
+          <div class="visual-tag">Photos réelles. Séquence narrative: danger → travail → résultat.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="week-summary">
+      <div class="ws-label">Semaine 4 · <strong>7 stories</strong></div>
+      <div class="ws-label">Objectif: <strong>Conversion finale — devis soumis</strong></div>
+      <div class="ws-label">KPI: <strong>Formulaires soumis · Appels entrants · Devis envoyés</strong></div>
+    </div>
+  </div>
+
+  <!-- ═══ SEMAINE 5 BONUS ═══ -->
+  <div class="bonus-band">
+    <div class="bonus-title">Bonus · Semaine 5 · 27 – 31 Juillet 2026</div>
+    <div class="bonus-h">5 stories de clôture — résultats + relance douce</div>
+  </div>
+
+  <div class="week-block" style="margin-top:24px;">
+    <div class="story-grid">
+
+      <!-- B-H28 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H28</span>
+          <span class="story-type-badge type-proof">Bilan mois</span>
+          <span class="story-day">Lun 27 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Juillet 2026 — ce qu'on a installé."</div>
+          <div class="screen-text">Ce mois de juillet:<br>X projets livrés.<br>X pi² de composite posés.<br>X familles avec un balcon neuf.</div>
+          <div class="story-field">
+            <div class="story-field-label">Note</div>
+            <div class="story-field-value">Remplir avec les vrais chiffres fin juillet. Cette story est un preuve sociale finale et un marqueur de crédibilité.</div>
+          </div>
+          <span class="story-cta">→ Lien: rejoindre la liste d'attente août</span>
+          <div class="visual-tag">Collage photos projets du mois. Format mosaïque 3x2.</div>
+        </div>
+      </div>
+
+      <!-- B-H29 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H29</span>
+          <span class="story-type-badge type-bonus">Liste attente</span>
+          <span class="story-day">Mar 28 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Juillet complet. Août: il reste des places."</div>
+          <div class="screen-text">Les projets juillet sont tous confirmés.<br>On accepte encore des demandes pour août.<br>→ Votre balcon peut être prêt avant l'automne.</div>
+          <div class="story-field">
+            <div class="story-field-label">Ton</div>
+            <div class="story-field-value">Ton positif — pas alarmiste. Juillet complet est une bonne nouvelle (preuve de demande). Août est une opportunité, pas un consolation.</div>
+          </div>
+          <span class="story-cta">→ Lien: réserver un créneau août</span>
+          <div class="visual-tag">Calendrier visuel simple: juillet barré en vert, août ouvert.</div>
+        </div>
+      </div>
+
+      <!-- B-H30 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H30</span>
+          <span class="story-type-badge type-proof">Témoignage vidéo</span>
+          <span class="story-day">Mer 29 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Elle nous a dit quelque chose qu'on n'oubliera pas."</div>
+          <div class="screen-text">Client Laval · Livraison cette semaine.<br>"Je pensais que ça allait prendre 3 semaines et faire un désordre. Ça a pris 4 jours et ils ont tout nettoyé."</div>
+          <div class="story-field">
+            <div class="story-field-label">Format</div>
+            <div class="story-field-value">Extrait vidéo 10–15 sec du témoignage B-T01 ou B-T02 (tournés en juillet). Ou citation texte si vidéo pas encore montée.</div>
+          </div>
+          <span class="story-cta">→ Lien: voir le témoignage complet</span>
+          <div class="visual-tag">Extrait témoignage video. Sous-titres obligatoires (lecture sans son fréquente).</div>
+        </div>
+      </div>
+
+      <!-- B-H31 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H31</span>
+          <span class="story-type-badge type-edu">Contenu utile</span>
+          <span class="story-day">Jeu 30 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"3 questions à poser à n'importe quel entrepreneur avant de signer."</div>
+          <div class="screen-text">1. Le prix est-il fixe ou estimé?<br>2. L'équipe est-elle employée ou sous-traitée?<br>3. Avez-vous une garantie de chantier écrite?<br><br>(Et si vous demandez à Jardín Ideal, la réponse à chacune est oui.)</div>
+          <div class="story-field">
+            <div class="story-field-label">Stratégie</div>
+            <div class="story-field-value">Contenu utile même pour des prospects qui comparent. La dernière ligne positionne Jardín Ideal sans pression.</div>
+          </div>
+          <span class="story-cta">→ Lien: notre processus complet</span>
+          <div class="visual-tag">3 slides. Design liste. Fond crème, texte noir, réponse Jardín Ideal en vert.</div>
+        </div>
+      </div>
+
+      <!-- B-H32 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">B-H32</span>
+          <span class="story-type-badge type-cta">CTA Clôture</span>
+          <span class="story-day">Ven 31 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Dernier vendredi de juillet. Une question avant le weekend."</div>
+          <div class="screen-text">Dans combien d'étés votre balcon sera-t-il un problème?<br><br>→ La réponse coûte 0 $.<br>Inspection gratuite · Visite en 48h.</div>
+          <div class="story-field">
+            <div class="story-field-label">Ton</div>
+            <div class="story-field-value">Question rhétorique qui ramène au début du cycle de réflexion — pour les prospects qui ont suivi mais pas encore agi.</div>
+          </div>
+          <span class="story-cta">→ Lien: demander mon inspection</span>
+          <div class="visual-tag">Photo crépuscule sur balcon composite. Lumière chaude. Ambiance estivale.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="week-summary">
+      <div class="ws-label">Semaine 5 · <strong>5 stories bonus</strong></div>
+      <div class="ws-label">Objectif: <strong>Relance douce + liste attente août</strong></div>
+      <div class="ws-label">KPI: <strong>Inscriptions liste attente · Vidéo vues · Partages</strong></div>
+    </div>
+  </div>
+
+  <!-- Total -->
+  <div style="margin-top:48px; padding:28px 36px; background:var(--vf); display:flex; flex-wrap:wrap; gap:24px; align-items:center;">
+    <span style="font-family:var(--font-d);font-size:24px;font-weight:700;color:var(--w);">Total: <em style="color:var(--or);">33 stories</em></span>
+    <span style="font-family:var(--font-m);font-size:9px;letter-spacing:2px;color:rgba(245,242,235,0.5);text-transform:uppercase;">B-H01 → B-H32 · Juillet 2026 · IG + FB</span>
+    <span style="font-family:var(--font-m);font-size:9px;letter-spacing:2px;color:rgba(245,242,235,0.5);text-transform:uppercase;margin-left:auto;">Jardín Ideal · Campagne BALCONES · Doc 05/06</span>
+  </div>
+
+  <div style="border-top:1px solid var(--cd);padding-top:20px;margin-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <span style="font-family:var(--font-m);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--g);">Jardín Ideal · Campagne BALCONES · Document 05/06</span>
+    <span style="font-family:var(--font-m);font-size:9px;color:var(--gc);">Généré le 22 juin 2026 · Usage interne</span>
+  </div>
+
+</div>
+</body>
+</html>

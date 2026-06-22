@@ -1,0 +1,942 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04 — Liste Blogs · Campagne COUR AVANT · Jardín Ideal 2026</title>
+<style>
+/* ═══════════════════════════════════════════════
+   JARDÍN IDEAL — DESIGN SYSTEM
+   Campagne COUR AVANT · Blogs 04
+═══════════════════════════════════════════════ */
+:root {
+  --vf:  #1E3A20;
+  --vm:  #3D6B42;
+  --or:  #C8A45A;
+  --cr:  #F5F2EB;
+  --w:   #FFFFFF;
+  --n:   #0D0E0B;
+  --gf:  #2A2B28;
+  --g:   #6B6B63;
+  --gc:  #B8B8B0;
+  --cd:  #EDE9E0;
+  --or2: #E8C97A;
+  --red: #B83232;
+
+  --font-d: Georgia, 'Times New Roman', serif;
+  --font-b: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-m: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--font-b);
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── COVER ─── */
+.cover {
+  background: var(--vf);
+  padding: 56px 64px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: "BLOG";
+  position: absolute;
+  right: 40px; top: 20px;
+  font-family: var(--font-d);
+  font-size: clamp(120px, 18vw, 200px);
+  font-weight: 700;
+  color: rgba(200,164,90,0.06);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -4px;
+}
+.cover-eyebrow {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 20px;
+}
+.cover h1 {
+  font-family: var(--font-d);
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+.cover h1 em { color: var(--or); font-style: italic; }
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.cover-meta-item {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.55);
+}
+.cover-meta-item strong {
+  display: block;
+  color: var(--or2);
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+/* ─── VACÍO COMPETITIVO BANNER ─── */
+.vacio-banner {
+  background: var(--or);
+  padding: 14px 64px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.vacio-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--vf);
+  white-space: nowrap;
+  font-weight: 700;
+}
+.vacio-text {
+  font-family: var(--font-d);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--vf);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* ─── LAYOUT ─── */
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+/* ─── SECTION HEADER ─── */
+.section-header {
+  padding: 48px 0 0;
+  margin-bottom: 36px;
+  border-top: 2px solid var(--vf);
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+.section-num {
+  font-family: var(--font-d);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--or);
+  letter-spacing: 2px;
+  padding-top: 4px;
+  min-width: 32px;
+}
+.section-title {
+  font-family: var(--font-d);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--g);
+}
+
+/* ─── ARTICLE CARD ─── */
+.article-card {
+  position: relative;
+  background: var(--w);
+  border: 1px solid var(--cd);
+  margin-bottom: 64px;
+  overflow: hidden;
+}
+.article-card::before {
+  content: attr(data-num);
+  position: absolute;
+  right: -10px;
+  top: -20px;
+  font-family: var(--font-d);
+  font-size: 180px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(30,58,32,0.04);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -6px;
+}
+.article-header {
+  background: var(--vf);
+  padding: 28px 36px;
+  position: relative;
+}
+.article-id {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 10px;
+}
+.article-header h2 {
+  font-family: var(--font-d);
+  font-size: clamp(18px, 2.4vw, 26px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.article-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.stat {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+}
+.stat strong { color: var(--or2); }
+
+.article-body {
+  padding: 32px 36px;
+}
+
+/* ─── FIELD GROUPS ─── */
+.field {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--cd);
+}
+.field:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.field-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.field-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cd);
+  max-width: 100px;
+}
+.field-value {
+  font-family: var(--font-b);
+  font-size: 13.5px;
+  color: var(--n);
+  line-height: 1.75;
+}
+.field-value strong {
+  color: var(--vf);
+  font-weight: 600;
+}
+
+/* ─── SEO BOX ─── */
+.seo-box {
+  background: var(--cr);
+  border-left: 3px solid var(--or);
+  padding: 18px 22px;
+  margin-top: 8px;
+}
+.seo-title {
+  font-family: var(--font-d);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--vf);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.seo-meta {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--g);
+  margin-bottom: 8px;
+}
+.seo-desc {
+  font-size: 13px;
+  color: var(--gf);
+  line-height: 1.6;
+}
+
+/* ─── STRUCTURE TABLE ─── */
+.struct-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 13px;
+}
+.struct-table thead tr {
+  background: var(--vf);
+}
+.struct-table thead th {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--or);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 400;
+}
+.struct-table tbody tr {
+  border-bottom: 1px solid var(--cd);
+}
+.struct-table tbody tr:nth-child(even) {
+  background: var(--cr);
+}
+.struct-table td {
+  padding: 10px 14px;
+  vertical-align: top;
+  line-height: 1.6;
+}
+.struct-table td:first-child {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--or);
+  font-weight: 700;
+  white-space: nowrap;
+  min-width: 28px;
+}
+.struct-table td:nth-child(2) {
+  font-weight: 600;
+  color: var(--vf);
+  min-width: 200px;
+}
+.struct-table td:nth-child(3) {
+  color: var(--gf);
+  font-size: 12.5px;
+}
+.struct-table td:last-child {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--g);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ─── KEYWORDS ─── */
+.kw-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+.kw-tag {
+  background: var(--cr);
+  border: 1px solid var(--or);
+  color: var(--vf);
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+}
+.kw-tag.primary {
+  background: var(--or);
+  color: var(--vf);
+  font-weight: 700;
+}
+
+/* ─── VISUELS ─── */
+.visual-list {
+  list-style: none;
+  margin-top: 6px;
+}
+.visual-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--cd);
+  font-size: 13px;
+  color: var(--gf);
+}
+.visual-list li:last-child { border-bottom: none; }
+.visual-num {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--or);
+  font-weight: 700;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+/* ─── CTA BOX ─── */
+.cta-box {
+  background: linear-gradient(135deg, var(--vf) 0%, #2C4A2E 100%);
+  padding: 22px 28px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.cta-arrow {
+  font-family: var(--font-d);
+  font-size: 32px;
+  color: var(--or);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.cta-text {
+  font-family: var(--font-d);
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--w);
+  line-height: 1.3;
+}
+.cta-text small {
+  display: block;
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--or);
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+/* ─── REF TAG ─── */
+.ref-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gf);
+  color: var(--gc);
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 4px 10px;
+  margin-top: 6px;
+}
+
+/* ─── TOC ─── */
+.toc {
+  background: var(--w);
+  border: 1px solid var(--cd);
+  padding: 28px 32px;
+  margin: 40px 0 0;
+}
+.toc-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 14px;
+}
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.toc-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+.toc-id {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--or);
+  font-weight: 700;
+  min-width: 56px;
+}
+.toc-sep {
+  flex: 1;
+  height: 1px;
+  background: var(--cd);
+}
+.toc-kw {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--gc);
+  white-space: nowrap;
+}
+
+/* ─── ANGLE BOX ─── */
+.angle-box {
+  background: rgba(200,164,90,0.12);
+  border: 1px solid var(--or);
+  padding: 14px 18px;
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.angle-label {
+  font-family: var(--font-m);
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 700;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+.angle-text {
+  font-family: var(--font-d);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--vf);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 680px) {
+  .cover { padding: 36px 24px 32px; }
+  .vacio-banner { padding: 14px 24px; }
+  .page { padding: 0 18px 60px; }
+  .article-body { padding: 24px 20px; }
+  .struct-table { overflow-x: auto; display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div class="cover-eyebrow">Jardín Ideal · Campagne COUR AVANT 2026 · Document 04/06</div>
+  <h1>Articles de Blog<br><em>SEO Cour Avant · Été 2026</em></h1>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>2 articles</strong>CA-B01 → CA-B02</div>
+    <div class="cover-meta-item"><strong>~2 200 mots</strong>Total estimé</div>
+    <div class="cover-meta-item"><strong>CPL $134.17</strong>Meilleure campagne</div>
+    <div class="cover-meta-item"><strong>Vacío comp.</strong>Angle carte de visite</div>
+  </div>
+</div>
+
+<!-- VACÍO COMPETITIVO BANNER -->
+<div class="vacio-banner">
+  <div class="vacio-label">Vacío competitivo</div>
+  <div class="vacio-text">Aucun concurrent n'utilise l'angle "cour avant = carte de visite" — c'est notre territoire exclusif.</div>
+</div>
+
+<div class="page">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Table des matières — Blogs COUR AVANT</div>
+    <ul class="toc-list">
+      <li>
+        <span class="toc-id">CA-B01</span>
+        Cour avant à Montréal : guide complet pour transformer votre entrée en 2026
+        <span class="toc-sep"></span>
+        <span class="toc-kw">cour avant pavé uni Montréal</span>
+      </li>
+      <li>
+        <span class="toc-id">CA-B02</span>
+        Pavé uni vs asphalte vs béton à Montréal — le guide complet 2026
+        <span class="toc-sep"></span>
+        <span class="toc-kw">pavé uni prix Montréal 2026</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  ARTICLE CA-B01                           -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">Premier article de blog</span>
+  </div>
+
+  <div class="article-card" data-num="01">
+    <div class="article-header">
+      <div class="article-id">CA-B01 · Blog SEO · Cour Avant · Jardín Ideal 2026</div>
+      <h2>Cour avant à Montréal : guide complet pour transformer votre entrée en 2026</h2>
+      <div class="article-stats">
+        <div class="stat"><strong>~1 200 mots</strong>Longueur cible</div>
+        <div class="stat"><strong>8 sections</strong>Structure</div>
+        <div class="stat"><strong>3 FAQ</strong>Questions-réponses</div>
+        <div class="stat"><strong>5 visuels</strong>Recommandés</div>
+        <div class="stat"><strong>7 mots-clés</strong>SEO</div>
+      </div>
+    </div>
+    <div class="article-body">
+
+      <!-- OBJECTIF -->
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          Attirer les propriétaires montréalais qui cherchent à refaire leur entrée avant la saison estivale 2026.
+          Positionner Jardín Ideal comme l'expert incontournable de la cour avant dans la région de Montréal.
+          Capturer le trafic SEO à haute intention d'achat sur le mot-clé principal <strong>"cour avant pavé uni Montréal"</strong>.
+        </div>
+      </div>
+
+      <!-- PUBLIC CIBLE -->
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires de maisons unifamiliales à Montréal, Laval et Rive-Nord, 35–60 ans,
+          avec une entrée en asphalte ou béton vieillissante (fissures, décoloration, mauvais drainage).
+          Budget disponible : <strong>$8 000 – $25 000</strong>. Horizon de décision : printemps–été 2026.
+          Souvent motivés par une vente immobilière imminente ou un projet de rénovation général.
+        </div>
+      </div>
+
+      <!-- GANCHO / SEO -->
+      <div class="field">
+        <div class="field-label">Gancho — Titre &amp; Meta Description</div>
+        <div class="seo-box">
+          <div class="seo-title">Cour avant à Montréal : guide complet pour transformer votre entrée en 2026</div>
+          <div class="seo-meta">URL suggérée : /blog/cour-avant-montreal-guide-complet-2026 · ~1 200 mots · Mis à jour : été 2026</div>
+          <div class="seo-desc">Votre cour avant est la première chose que vos voisins — et vos acheteurs potentiels — voient. Découvrez les styles, matériaux, budgets et le processus Jardín Ideal pour transformer votre entrée à Montréal en 2026. Soumission gratuite incluse.</div>
+        </div>
+      </div>
+
+      <!-- ANGLE -->
+      <div class="field">
+        <div class="field-label">Angle éditorial</div>
+        <div class="angle-box">
+          <span class="angle-label">Angle</span>
+          <span class="angle-text">"Votre cour avant, c'est la première chose que vos voisins voient — et les acheteurs jugent une maison en 7 secondes."</span>
+        </div>
+      </div>
+
+      <!-- STRUCTURE -->
+      <div class="field">
+        <div class="field-label">Structure complète — 8 sections</div>
+        <div style="overflow-x:auto;">
+          <table class="struct-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Titre de section</th>
+                <th>Contenu &amp; points clés</th>
+                <th>Mots est.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>S1</td>
+                <td>Introduction — La valeur cachée de votre cour avant</td>
+                <td>Accroche choc : "Les acheteurs jugent une maison en 7 secondes, et la première chose qu'ils voient, c'est votre entrée." Statistique sur la valeur ajoutée à la revente (jusqu'à 5–10% du prix de vente). Poser la question : votre cour avant travaille pour vous, ou contre vous ? Annonce du plan de l'article.</td>
+                <td>100–130</td>
+              </tr>
+              <tr>
+                <td>S2</td>
+                <td>Les styles d'entrées populaires à Montréal en 2026</td>
+                <td>Tendances locales : entrée symétrique avec bordures, allée en courbe douce, double largeur pour 2 voitures. Mention des quartiers : Laval, Bois-des-Filion, Rosemère. Photos de référence recommandées. Note sur l'importance de l'harmonie avec la façade.</td>
+                <td>130–160</td>
+              </tr>
+              <tr>
+                <td>S3</td>
+                <td>Matériaux : asphalte, béton, pavé uni — laquelle choisir ?</td>
+                <td>Présentation rapide des 3 options avec avantages/inconvénients condensés. Asphalte : économique mais vieillissement visible. Béton : durable mais coûteux à réparer. Pavé uni : premium, durable 30 ans, valeur à la revente. Teaser vers CA-B02 pour comparaison complète.</td>
+                <td>150–180</td>
+              </tr>
+              <tr>
+                <td>S4</td>
+                <td>Budgets réalistes pour une cour avant à Montréal en 2026</td>
+                <td>Fourchettes de prix : asphalte $4–8/pi², béton $8–12/pi², pavé uni $12–20/pi². Exemple concret : entrée standard 600 pi² = $7 200 (asphalte) vs $10 800 (béton) vs $14 400 (pavé uni). Facteurs qui influencent le prix : superficie, complexité, drainage, pergola ou bordures. Mise en garde contre les soumissions sans visite.</td>
+                <td>160–190</td>
+              </tr>
+              <tr>
+                <td>S5</td>
+                <td>Le processus Jardín Ideal — De la soumission au résultat</td>
+                <td>5 étapes : (1) Visite et soumission gratuite sous 48h, (2) Conception et choix de matériaux, (3) Préparation du sol et drainage, (4) Installation avec équipe certifiée, (5) Inspection finale et garantie. Durée typique : 2–4 jours selon superficie. Disponibilité estivale limitée — réservation recommandée 3–4 semaines à l'avance.</td>
+                <td>150–180</td>
+              </tr>
+              <tr>
+                <td>S6</td>
+                <td>Exemples avant/après — Projets réels à Montréal et Laval</td>
+                <td>3 cas clients (sans noms complets) : (A) Asphalte fissuré → pavé uni à Laval, (B) Béton gris → pavé coloré à Bois-des-Filion, (C) Entrée étroite → double allée avec aménagement latéral. Pour chaque cas : description avant, travaux réalisés, résultat en termes de valeur perçue. Renvoi vers les témoignages vidéo CA-T01 et CA-T02.</td>
+                <td>150–170</td>
+              </tr>
+              <tr>
+                <td>S7</td>
+                <td>FAQ — Les questions les plus fréquentes</td>
+                <td><strong>Q1 :</strong> Combien de temps dure une cour avant en pavé uni à Montréal ? → Réponse : 25–30 ans avec entretien annuel minimal (polymeric sand). <strong>Q2 :</strong> Est-ce que les cycles gel/dégel abîment le pavé uni ? → Réponse : le pavé uni est conçu pour le climat québécois — chaque unité se déplace indépendamment, contrairement au béton qui fissure. <strong>Q3 :</strong> Est-ce que je peux rouler dessus immédiatement après l'installation ? → Réponse : attendre 72h pour la circulation vehiculaire, 24h pour piétons.</td>
+                <td>130–160</td>
+              </tr>
+              <tr>
+                <td>S8</td>
+                <td>Conclusion &amp; CTA — Votre entrée mérite mieux</td>
+                <td>Rappel de l'angle carte de visite. Insistance sur la fenêtre estivale courte à Montréal (mai–septembre). CTA direct vers soumission gratuite. Mention de la garantie Jardín Ideal. Lien interne vers CA-B02.</td>
+                <td>80–100</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CTA FINAL -->
+      <div class="field">
+        <div class="field-label">CTA final</div>
+        <div class="cta-box">
+          <div class="cta-arrow">→</div>
+          <div class="cta-text">
+            <small>Appel à l'action · Fin d'article</small>
+            "Votre entrée est la première impression que votre maison donne — faites-la compter. Obtenez votre soumission gratuite en 48h."
+          </div>
+        </div>
+      </div>
+
+      <!-- MOTS-CLÉS -->
+      <div class="field">
+        <div class="field-label">Mots-clés SEO — 7 cibles</div>
+        <div class="kw-grid">
+          <span class="kw-tag primary">cour avant pavé uni Montréal</span>
+          <span class="kw-tag">refaire entrée maison Montréal</span>
+          <span class="kw-tag">pavé uni entrée Montréal prix</span>
+          <span class="kw-tag">contractor entrée maison Laval</span>
+          <span class="kw-tag">cour avant transformation 2026</span>
+          <span class="kw-tag">allée pavé uni Montréal</span>
+          <span class="kw-tag">aménagement cour avant Rive-Nord</span>
+        </div>
+      </div>
+
+      <!-- VISUELS -->
+      <div class="field">
+        <div class="field-label">Visuels recommandés — 5 images</div>
+        <ul class="visual-list">
+          <li>
+            <span class="visual-num">V1</span>
+            <span><strong>Hero — Avant/après split screen</strong> : côté gauche asphalte fissuré, côté droit pavé uni installé par Jardín Ideal. Format paysage 1200×630px. Texte overlay : "Votre entrée, transformée."</span>
+          </li>
+          <li>
+            <span class="visual-num">V2</span>
+            <span><strong>Galerie styles</strong> : 3 photos de projets réels montrant différents styles (symétrique, courbe, double allée). Format carré 1:1, grille 3 colonnes.</span>
+          </li>
+          <li>
+            <span class="visual-num">V3</span>
+            <span><strong>Infographie matériaux</strong> : tableau visuel comparant asphalte / béton / pavé uni sur 4 critères (durée, prix, esthétique, entretien). Fond crème, texte vert foncé, accent doré.</span>
+          </li>
+          <li>
+            <span class="visual-num">V4</span>
+            <span><strong>Processus en 5 étapes</strong> : icônes simples illustrant chaque étape du processus Jardín Ideal. Style épuré, palette marque.</span>
+          </li>
+          <li>
+            <span class="visual-num">V5</span>
+            <span><strong>Équipe sur chantier</strong> : photo authentique de l'équipe Jardín Ideal en train d'installer le pavé uni, lumière naturelle matin. Renforce la crédibilité locale.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- RÉFÉRENCE BRIEFING -->
+      <div class="field">
+        <div class="field-label">Référence briefing</div>
+        <div class="ref-tag">JARDÍN IDEAL · CAMPAGNE COUR AVANT 2026 · CA-B01 · DOC 04/06 · CPL REF $134.17</div>
+      </div>
+
+    </div><!-- /article-body -->
+  </div><!-- /article-card -->
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  ARTICLE CA-B02                           -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">Deuxième article de blog</span>
+  </div>
+
+  <div class="article-card" data-num="02">
+    <div class="article-header">
+      <div class="article-id">CA-B02 · Blog SEO · Cour Avant · Jardín Ideal 2026</div>
+      <h2>Pavé uni vs asphalte vs béton à Montréal — le guide complet 2026</h2>
+      <div class="article-stats">
+        <div class="stat"><strong>~1 000 mots</strong>Longueur cible</div>
+        <div class="stat"><strong>7 sections</strong>Structure</div>
+        <div class="stat"><strong>Tableau 5 critères</strong>Comparatif</div>
+        <div class="stat"><strong>4 visuels</strong>Recommandés</div>
+        <div class="stat"><strong>6 mots-clés</strong>SEO</div>
+      </div>
+    </div>
+    <div class="article-body">
+
+      <!-- OBJECTIF -->
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          Capturer les propriétaires en phase de recherche comparative qui n'ont pas encore choisi leur matériau.
+          Établir Jardín Ideal comme conseiller honnête et expert — pas comme vendeur agressif.
+          Convertir via le coût total sur 20 ans (TCO) qui favorise naturellement le pavé uni,
+          et terminer sur un CTA soumission gratuite. Lien interne croisé avec CA-B01.
+        </div>
+      </div>
+
+      <!-- PUBLIC CIBLE -->
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires en phase de comparaison active, 35–65 ans, qui ont déjà identifié le besoin de refaire leur entrée
+          mais hésitent entre les matériaux. Souvent influencés par le prix immédiat (asphalte moins cher).
+          Recherchent une information <strong>honnête et non-partisane</strong> — méfiants des entrepreneurs qui ne proposent qu'une option.
+          Budget : $6 000 – $30 000.
+        </div>
+      </div>
+
+      <!-- GANCHO / SEO -->
+      <div class="field">
+        <div class="field-label">Gancho — Titre &amp; Meta Description</div>
+        <div class="seo-box">
+          <div class="seo-title">Pavé uni vs asphalte vs béton à Montréal — le guide complet 2026</div>
+          <div class="seo-meta">URL suggérée : /blog/pave-uni-vs-asphalte-vs-beton-montreal-2026 · ~1 000 mots · Mis à jour : été 2026</div>
+          <div class="seo-desc">Asphalte à $8/pi², béton à $12/pi², pavé uni à $15/pi² — mais lequel vous coûte vraiment le moins cher sur 20 ans ? Comparaison honnête avec prix réels du marché montréalais 2026, tableau des critères et calcul TCO. Aucun jargon, aucun biais.</div>
+        </div>
+      </div>
+
+      <!-- ANGLE -->
+      <div class="field">
+        <div class="field-label">Angle éditorial</div>
+        <div class="angle-box">
+          <span class="angle-label">Angle</span>
+          <span class="angle-text">Comparaison honnête avec données de prix réels ($8–15/pi²) — le seul entrepreneur de la région qui vous donne les chiffres des trois options, même celles qu'il ne fait pas.</span>
+        </div>
+      </div>
+
+      <!-- STRUCTURE -->
+      <div class="field">
+        <div class="field-label">Structure complète — 7 sections</div>
+        <div style="overflow-x:auto;">
+          <table class="struct-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Titre de section</th>
+                <th>Contenu &amp; points clés</th>
+                <th>Mots est.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>S1</td>
+                <td>Introduction — Le dilemme du propriétaire montréalais</td>
+                <td>Scénario réel : propriétaire devant trois soumissions différentes avec trois matériaux différents. Question : comment comparer ce qui n'est pas comparable au premier coup d'œil ? Promesse éditoriale : données réelles du marché 2026, prix honnêtes, aucun matériau favori. Annonce du tableau comparatif et du calcul TCO 20 ans.</td>
+                <td>90–110</td>
+              </tr>
+              <tr>
+                <td>S2</td>
+                <td>Asphalte — Le choix économique à court terme</td>
+                <td><strong>Avantages :</strong> prix d'entrée le plus bas ($4–8/pi²), installation rapide (1 journée), facile à trouver des entrepreneurs. <strong>Inconvénients :</strong> durée de vie 10–15 ans (gel/dégel québécois accélèrent la dégradation), fissures inévitables après 5–7 ans, resurfaçage tous les 3–5 ans ($0.50–1.50/pi²), chaleur l'été (asphalte absorbe la chaleur). <strong>Prix moyen marché Montréal 2026 :</strong> $5–8/pi² fourni + posé (entrée standard 600 pi² = $3 000–4 800).</td>
+                <td>130–160</td>
+              </tr>
+              <tr>
+                <td>S3</td>
+                <td>Béton — La solidité avec ses contraintes</td>
+                <td><strong>Avantages :</strong> durée de vie 20–25 ans si bien posé, aspect propre et moderne, peu d'entretien les premières années. <strong>Inconvénients :</strong> prix élevé ($9–14/pi²), très vulnérable aux sels de déglaçage (interdits sur béton les 2 premières années), réparations coûteuses et visibles (impossible de remplacer une section sans que ça paraisse), peu de flexibilité esthétique. <strong>Prix moyen marché Montréal 2026 :</strong> $9–14/pi² fourni + posé (600 pi² = $5 400–8 400).</td>
+                <td>130–160</td>
+              </tr>
+              <tr>
+                <td>S4</td>
+                <td>Pavé uni — Le premium qui se justifie</td>
+                <td><strong>Avantages :</strong> durée de vie 25–35 ans, résistance aux cycles gel/dégel (chaque unité se déplace indépendamment), infiniment réparable (remplacer une seule pièce), valeur ajoutée à la revente ($10 000–$20 000 selon études immobilières québécoises), esthétique premium, large choix de couleurs et de formes. <strong>Inconvénients :</strong> prix initial plus élevé ($12–20/pi²), installation nécessite des artisans certifiés pour les joints polymériques. <strong>Prix moyen marché Montréal 2026 :</strong> $12–20/pi² fourni + posé (600 pi² = $7 200–12 000).</td>
+                <td>140–170</td>
+              </tr>
+              <tr>
+                <td>S5</td>
+                <td>Tableau comparatif — 5 critères côte à côte</td>
+                <td>Tableau visuel comparant les 3 matériaux sur : (1) Prix initial/pi², (2) Durée de vie estimée au Québec, (3) Entretien annuel requis, (4) Résistance gel/dégel, (5) Valeur ajoutée à la revente. Chaque cellule utilise des symboles clairs (●●● = excellent, ●●○ = moyen, ●○○ = faible). Note : pas de "gagnant" artificiel — laisser les données parler.</td>
+                <td>80–100</td>
+              </tr>
+              <tr>
+                <td>S6</td>
+                <td>Calcul TCO sur 20 ans — Le vrai coût de chaque option</td>
+                <td>Exemple standardisé : entrée 600 pi² à Montréal. <strong>Asphalte :</strong> coût initial $4 200 + 4 resurfaçages à $900 + remplacement complet an 15 à $4 200 = <strong>~$13 500 sur 20 ans</strong>. <strong>Béton :</strong> coût initial $6 600 + 2 réparations de fissures à $800 = <strong>~$8 200 sur 20 ans</strong> (si pas de problème majeur). <strong>Pavé uni :</strong> coût initial $9 000 + sable polymérique tous les 7 ans à $400 = <strong>~$9 800 sur 20 ans</strong> — mais avec valeur ajoutée à la revente de $12 000–$18 000. Conclusion : le pavé uni est le seul investissement qui vous rend de l'argent.</td>
+                <td>160–180</td>
+              </tr>
+              <tr>
+                <td>S7</td>
+                <td>Conclusion &amp; CTA — Quelle option est faite pour vous ?</td>
+                <td>Résumé en 3 profils : (A) Budget serré et délai immédiat → asphalte, mais planifiez le remplacement, (B) Solidité sans ornement → béton, évitez les sels de déglaçage, (C) Investissement long terme avec valeur à la revente → pavé uni. CTA final : "Quel que soit votre choix, obtenez une soumission honnête avec les 3 options détaillées." Lien interne vers CA-B01.</td>
+                <td>90–110</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CTA FINAL -->
+      <div class="field">
+        <div class="field-label">CTA final</div>
+        <div class="cta-box">
+          <div class="cta-arrow">→</div>
+          <div class="cta-text">
+            <small>Appel à l'action · Fin d'article</small>
+            "Quel que soit le matériau choisi, obtenez une soumission détaillée avec les 3 options — prix, durée de vie et TCO. Gratuit, sous 48h."
+          </div>
+        </div>
+      </div>
+
+      <!-- MOTS-CLÉS -->
+      <div class="field">
+        <div class="field-label">Mots-clés SEO — 6 cibles</div>
+        <div class="kw-grid">
+          <span class="kw-tag primary">pavé uni prix Montréal 2026</span>
+          <span class="kw-tag">asphalte vs pavé uni Montréal</span>
+          <span class="kw-tag">béton vs pavé uni entrée maison</span>
+          <span class="kw-tag">coût refaire entrée Montréal</span>
+          <span class="kw-tag">prix asphalte entrée maison Québec</span>
+          <span class="kw-tag">meilleur matériau entrée maison gel dégel</span>
+        </div>
+      </div>
+
+      <!-- VISUELS -->
+      <div class="field">
+        <div class="field-label">Visuels recommandés — 4 images</div>
+        <ul class="visual-list">
+          <li>
+            <span class="visual-num">V1</span>
+            <span><strong>Hero triptique</strong> : trois photos côte à côte montrant asphalte, béton et pavé uni sur des entrées similaires. Format panoramique 1400×500px. Légendes sous chaque : prix médian 2026.</span>
+          </li>
+          <li>
+            <span class="visual-num">V2</span>
+            <span><strong>Infographie "dégradation asphalte"</strong> : timeline visuelle de 0 à 15 ans montrant l'état d'une allée en asphalte (années 0, 3, 7, 10, 15). Contraste fort avec pavé uni à 15 ans.</span>
+          </li>
+          <li>
+            <span class="visual-num">V3</span>
+            <span><strong>Tableau comparatif visuel</strong> : version graphique du tableau 5 critères. Utiliser les couleurs Jardín Ideal (--vf, --or). Fond blanc, lignes alternées --cr. Lisible sur mobile.</span>
+          </li>
+          <li>
+            <span class="visual-num">V4</span>
+            <span><strong>Graphique TCO 20 ans</strong> : graphique à barres comparant le coût cumulatif des 3 matériaux sur 20 ans. Le pavé uni montre la courbe la plus intéressante une fois la valeur à la revente comptabilisée.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- RÉFÉRENCE BRIEFING -->
+      <div class="field">
+        <div class="field-label">Référence briefing</div>
+        <div class="ref-tag">JARDÍN IDEAL · CAMPAGNE COUR AVANT 2026 · CA-B02 · DOC 04/06 · CPL REF $134.17</div>
+      </div>
+
+    </div><!-- /article-body -->
+  </div><!-- /article-card -->
+
+</div><!-- /page -->
+</body>
+</html>

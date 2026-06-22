@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cour Avant — Calendrier Éditorial Juillet 2026 · Jardin Idéal</title>
+<style>
+/* ─── TOKENS ─────────────────────────────────────────── */
+:root {
+  --vf:   #1E3A20;
+  --vm:   #3D6B42;
+  --or:   #C8A45A;
+  --cr:   #F5F2EB;
+  --w:    #FFFFFF;
+  --n:    #0D0E0B;
+  --gf:   #2A2B28;
+  --g:    #6B6B63;
+  --j:    #C8850A;
+  --jc:   #FEF5E4;
+  --r:    #B83232;
+  --vb:   #EAF2EB;
+
+  /* Content-type colors */
+  --reel-bg:      #D4EDDA;
+  --reel-tx:      #1E3A20;
+  --carrousel-bg: #FEF5E4;
+  --carrousel-tx: #7A5200;
+  --blog-bg:      #D6E8F5;
+  --blog-tx:      #1A3A5C;
+  --story-bg:     #EBEBEB;
+  --story-tx:     #3A3A36;
+  --temoignage-bg:#FDECEA;
+  --temoignage-tx:#7A1A1A;
+  --paid-bg:      #1E3A20;
+  --paid-tx:      #C8A45A;
+  --checkpoint-bg:#EDE4F5;
+  --checkpoint-tx:#4A1E7A;
+
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body:    system-ui, -apple-system, sans-serif;
+  --font-mono:    'Courier New', Courier, monospace;
+
+  --radius: 4px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* ─── RESET ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ─── PRINT / REDUCED MOTION ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ─── LAYOUT ─────────────────────────────────────────── */
+.page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; }
+
+/* ─── HERO — Cour Avant identity ─────────────────────── */
+/* Aesthetic risk: the hero uses a split-panel layout.
+   Left: deep forest with the campaign's core thesis in large italic Georgia.
+   Right: a canvas-drawn "pavement grid" pattern that suggests pavé uni —
+   the actual material of cour avant projects. This is the one kinetic moment. */
+.hero {
+  background: var(--vf);
+  color: var(--w);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  min-height: 340px;
+}
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-canvas-wrap { display: none; }
+}
+.hero-canvas-wrap {
+  position: relative;
+  background: var(--vm);
+  overflow: hidden;
+}
+#heroCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+.hero-inner {
+  padding: 52px 40px 48px 40px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: var(--or);
+  flex-shrink: 0;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: normal;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.hero-title em {
+  display: block;
+  color: var(--or);
+  font-style: italic;
+}
+.hero-thesis {
+  background: rgba(200,164,90,0.12);
+  border-left: 3px solid var(--or);
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-style: italic;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: rgba(245,242,235,0.9);
+  line-height: 1.5;
+  max-width: 480px;
+}
+.hero-thesis strong { color: var(--or); font-style: normal; }
+.hero-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid rgba(200,164,90,0.3);
+  padding-top: 28px;
+  margin-top: 8px;
+}
+.metric {
+  flex: 1;
+  min-width: 100px;
+  padding: 0 24px 0 0;
+  border-right: 1px solid rgba(200,164,90,0.2);
+  margin-right: 24px;
+}
+.metric:last-child { border-right: none; margin-right: 0; }
+.metric-val {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: normal;
+  color: var(--or);
+  line-height: 1;
+  display: block;
+}
+.metric-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.55);
+  margin-top: 4px;
+  display: block;
+}
+.best-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--or);
+  color: var(--vf);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 2px;
+  z-index: 2;
+}
+.cpl-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.cpl-stat {
+  font-size: 0.8rem;
+  color: rgba(245,242,235,0.65);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.cpl-stat strong { color: var(--or); font-size: 1rem; }
+.cpl-highlight { color: #6DCC8A !important; }
+
+/* ─── SECTION COMMON ─────────────────────────────────── */
+.section { padding: 48px 0 0; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--vf);
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--g);
+  letter-spacing: 0.08em;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: var(--vf);
+  letter-spacing: -0.01em;
+}
+.section-desc {
+  font-size: 0.85rem;
+  color: var(--g);
+  margin-top: 8px;
+}
+
+/* ─── ANGLE STRATÉGIQUE ──────────────────────────────── */
+.angle-box {
+  background: var(--vf);
+  color: var(--cr);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 700px) { .angle-box { grid-template-columns: 1fr; } }
+.angle-item {}
+.angle-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 6px;
+}
+.angle-value {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--cr);
+  line-height: 1.4;
+}
+.angle-note {
+  font-size: 0.75rem;
+  color: rgba(245,242,235,0.55);
+  margin-top: 4px;
+}
+
+/* ─── LÉGENDE ────────────────────────────────────────── */
+.legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.leg-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.leg-reel       { background: var(--reel-bg);       color: var(--reel-tx); }
+.leg-carrousel  { background: var(--carrousel-bg);  color: var(--carrousel-tx); }
+.leg-blog       { background: var(--blog-bg);        color: var(--blog-tx); }
+.leg-story      { background: var(--story-bg);       color: var(--story-tx); }
+.leg-temoignage { background: var(--temoignage-bg);  color: var(--temoignage-tx); }
+.leg-paid       { background: var(--paid-bg);        color: var(--paid-tx); }
+.leg-checkpoint { background: var(--checkpoint-bg);  color: var(--checkpoint-tx); }
+
+/* ─── RÉSUMÉ SEMAINES ────────────────────────────────── */
+.weekly-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background: var(--w);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.weekly-table th {
+  background: var(--vf);
+  color: var(--cr);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 11px 14px;
+  text-align: left;
+}
+.weekly-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  vertical-align: top;
+}
+.weekly-table tr:last-child td { border-bottom: none; }
+.weekly-table tr:hover td { background: var(--vb); }
+.sem-num {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--or);
+  font-weight: bold;
+}
+.sem-dates { font-size: 0.78rem; color: var(--g); }
+.sem-phase {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+.phase-lanzamiento { background: var(--vb); color: var(--vf); }
+.phase-aceleracion { background: var(--jc); color: var(--j); }
+.phase-consolidacion { background: var(--carrousel-bg); color: var(--carrousel-tx); }
+.phase-bilan { background: var(--temoignage-bg); color: var(--temoignage-tx); }
+.pieces-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.piece-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  background: var(--cr);
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--gf);
+}
+
+/* ─── CALENDAR GRID ──────────────────────────────────── */
+.cal-wrap {
+  background: var(--w);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  border-left: 1px solid rgba(0,0,0,0.08);
+}
+.cal-head {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--vf);
+}
+.cal-head-cell {
+  padding: 10px 4px;
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cr);
+}
+.cal-head-cell.weekend { color: var(--or); }
+.cal-cell {
+  border-right: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  min-height: 110px;
+  padding: 8px;
+  vertical-align: top;
+  position: relative;
+  transition: background 0.15s ease;
+}
+.cal-cell:focus-within { outline: 2px solid var(--or); outline-offset: -2px; }
+.cal-cell.other-month { background: rgba(0,0,0,0.02); }
+.cal-cell.other-month .day-num { color: var(--g); opacity: 0.4; }
+.day-num {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--gf);
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 6px;
+  display: block;
+}
+.content-card {
+  border-radius: 3px;
+  padding: 5px 7px;
+  margin-bottom: 4px;
+  cursor: default;
+  transition: filter 0.12s ease;
+}
+.content-card:hover { filter: brightness(0.94); }
+.card-code {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  display: block;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.card-desc {
+  font-size: 0.63rem;
+  line-height: 1.3;
+  opacity: 0.85;
+}
+.card-reel       { background: var(--reel-bg);       color: var(--reel-tx); }
+.card-carrousel  { background: var(--carrousel-bg);  color: var(--carrousel-tx); }
+.card-blog       { background: var(--blog-bg);        color: var(--blog-tx); }
+.card-story      { background: var(--story-bg);       color: var(--story-tx); }
+.card-temoignage { background: var(--temoignage-bg);  color: var(--temoignage-tx); }
+.card-paid       { background: var(--paid-bg);        color: var(--paid-tx); }
+.card-checkpoint { background: var(--checkpoint-bg);  color: var(--checkpoint-tx); }
+
+/* Phase indicator bar */
+.phase-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+}
+.pbar-lanzamiento  { background: var(--vm); }
+.pbar-aceleracion  { background: var(--or); }
+.pbar-consolidacion { background: var(--j); }
+.pbar-bilan        { background: var(--r); }
+
+/* ─── CHECKPOINTS ────────────────────────────────────── */
+.checkpoints-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.cp-card {
+  background: var(--w);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  border-top: 3px solid var(--checkpoint-bg);
+  position: relative;
+  overflow: hidden;
+}
+.cp-card::after {
+  content: attr(data-day);
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--checkpoint-bg);
+  line-height: 1;
+  font-weight: normal;
+}
+.cp-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--checkpoint-tx);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.cp-date {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--vf);
+  margin-bottom: 12px;
+}
+.kpi-list { list-style: none; }
+.kpi-list li {
+  font-size: 0.78rem;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  color: var(--gf);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.kpi-list li:last-child { border-bottom: none; }
+.kpi-metric {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--checkpoint-tx);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.kpi-action {
+  font-size: 0.72rem;
+  color: var(--r);
+  font-weight: 600;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(200,164,90,0.2);
+}
+.kpi-best {
+  font-size: 0.72rem;
+  color: var(--vm);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* ─── RESPONSABLES ───────────────────────────────────── */
+.resp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.resp-card {
+  background: var(--w);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  border-left: 4px solid var(--vf);
+}
+.resp-type {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vm);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.resp-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--vf);
+  margin-bottom: 10px;
+}
+.resp-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.tool-badge {
+  font-size: 0.68rem;
+  background: var(--cr);
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 3px 8px;
+  border-radius: 12px;
+  color: var(--gf);
+}
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+.footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.72rem;
+  color: var(--g);
+}
+.footer strong { color: var(--vf); font-family: var(--font-display); }
+
+@media print {
+  .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cal-cell { min-height: 80px; }
+  .hero-canvas-wrap { display: none; }
+}
+
+@media (max-width: 700px) {
+  .hero-inner { padding: 40px 24px; }
+  .metric { min-width: 80px; padding-right: 16px; margin-right: 16px; }
+  .metric-val { font-size: 1.8rem; }
+  .cal-cell { min-height: 80px; padding: 4px; }
+  .card-desc { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Jardin Idéal · Campagne Cour Avant · Juillet 2026</div>
+      <h1 class="hero-title">La cour avant,<br><em>carte de visite<br>de votre maison</em></h1>
+
+      <div class="hero-thesis">
+        « Vos voisins jugent votre entrée avant même de frapper à la porte. »
+        <br><strong>Angle 100 % inédit — aucun concurrent ne l'utilise.</strong>
+      </div>
+    </div>
+
+    <div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <span class="metric-val">2</span>
+          <span class="metric-label">Reels</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val">3</span>
+          <span class="metric-label">Carrusels</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val">2</span>
+          <span class="metric-label">Blogs</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val">2</span>
+          <span class="metric-label">Témoignages</span>
+        </div>
+        <div class="metric">
+          <span class="metric-val">5+</span>
+          <span class="metric-label">Stories/sem.</span>
+        </div>
+      </div>
+
+      <div class="cpl-row">
+        <div class="cpl-stat">
+          <span>CPL meilleure campagne</span>
+          <strong>$134.17 CAD</strong>
+        </div>
+        <div class="cpl-stat">
+          <span>Cible juillet</span>
+          <strong class="cpl-highlight">&lt; $80</strong>
+        </div>
+        <div class="cpl-stat">
+          <span>Segments</span>
+          <strong>A + C</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aesthetic risk: pavé uni pattern generated by canvas -->
+  <div class="hero-canvas-wrap">
+    <span class="best-badge">Meilleure CPL</span>
+    <canvas id="heroCanvas"></canvas>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+<!-- ═══════════════════════════ ANGLE STRATÉGIQUE ═══════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Angle stratégique</h2>
+    <span class="section-desc">Avantage compétitif unique — à exploiter sans relâche</span>
+  </div>
+
+  <div class="angle-box">
+    <div class="angle-item">
+      <div class="angle-label">Message principal</div>
+      <div class="angle-value">« La cour avant, c'est la carte de visite de votre maison »</div>
+      <div class="angle-note">Angle émotionnel, pas technique — parle à l'ego, pas au portefeuille</div>
+    </div>
+    <div class="angle-item">
+      <div class="angle-label">Vacance compétitive</div>
+      <div class="angle-value">Aucun concurrent n'utilise cet angle en ce moment</div>
+      <div class="angle-note">Fenêtre d'opportunité à exploiter avant juillet 2026</div>
+    </div>
+    <div class="angle-item">
+      <div class="angle-label">Preuve de concept</div>
+      <div class="angle-value">1 lead à $134.17 CPL — sous la moyenne de $168.73</div>
+      <div class="angle-note">Meilleure performance de toutes les campagnes actives</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ LÉGENDE ═══════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Types de contenu</h2>
+  </div>
+  <div class="legende">
+    <div class="leg-item leg-reel">
+      <span class="leg-dot" style="background:#3D6B42;"></span> Reel organique
+    </div>
+    <div class="leg-item leg-carrousel">
+      <span class="leg-dot" style="background:#C8850A;"></span> Carrusel
+    </div>
+    <div class="leg-item leg-blog">
+      <span class="leg-dot" style="background:#1A3A5C;"></span> Article blog
+    </div>
+    <div class="leg-item leg-story">
+      <span class="leg-dot" style="background:#6B6B63;"></span> Story
+    </div>
+    <div class="leg-item leg-temoignage">
+      <span class="leg-dot" style="background:#B83232;"></span> Témoignage
+    </div>
+    <div class="leg-item leg-paid">
+      <span class="leg-dot" style="background:#C8A45A;"></span> Publicité payante
+    </div>
+    <div class="leg-item leg-checkpoint">
+      <span class="leg-dot" style="background:#7A4AAA;"></span> Checkpoint KPI
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ RÉSUMÉ SEMAINES ═══════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Résumé par semaine</h2>
+    <span class="section-desc">Vue stratégique · 5 semaines</span>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table class="weekly-table">
+      <thead>
+        <tr>
+          <th>Sem.</th>
+          <th>Dates</th>
+          <th>Phase</th>
+          <th>Pièces prévues</th>
+          <th>Objectif principal</th>
+          <th>Décision clé</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="sem-num">01</span><br><span class="sem-dates">29 juin – 5 juil</span></td>
+          <td>Lun–Dim</td>
+          <td><span class="sem-phase phase-lanzamiento">Awareness</span></td>
+          <td>
+            <div class="pieces-list">
+              <span class="piece-tag">CA-H01</span>
+              <span class="piece-tag">CA-H02</span>
+            </div>
+          </td>
+          <td>Planter l'angle « carte de visite » dans les esprits</td>
+          <td>Mesurer impressions organiques Stories</td>
+        </tr>
+        <tr>
+          <td><span class="sem-num">02</span><br><span class="sem-dates">6 – 12 juil</span></td>
+          <td>Lun–Dim</td>
+          <td><span class="sem-phase phase-aceleracion">Lancement</span></td>
+          <td>
+            <div class="pieces-list">
+              <span class="piece-tag">CA-R01</span>
+              <span class="piece-tag">CA-C01</span>
+              <span class="piece-tag">Stories ×2</span>
+            </div>
+          </td>
+          <td>Reel transformations + Carrusel Avant/Après choc</td>
+          <td>Surveiller CTR CA-R01 &gt; 3% pour paid</td>
+        </tr>
+        <tr>
+          <td><span class="sem-num">03</span><br><span class="sem-dates">13 – 19 juil</span></td>
+          <td>Lun–Dim</td>
+          <td><span class="sem-phase phase-aceleracion">Accélération</span></td>
+          <td>
+            <div class="pieces-list">
+              <span class="piece-tag">CA-R02</span>
+              <span class="piece-tag">CA-C02</span>
+              <span class="piece-tag">Stories ×2</span>
+              <span class="piece-tag">PAID CA-R01</span>
+            </div>
+          </td>
+          <td>Éducation pavé uni · paid activé si CTR validé</td>
+          <td>Checkpoint J+14 : CPL actuel</td>
+        </tr>
+        <tr>
+          <td><span class="sem-num">04</span><br><span class="sem-dates">20 – 26 juil</span></td>
+          <td>Lun–Dim</td>
+          <td><span class="sem-phase phase-consolidacion">Consolidation</span></td>
+          <td>
+            <div class="pieces-list">
+              <span class="piece-tag">CA-B01</span>
+              <span class="piece-tag">CA-R03</span>
+              <span class="piece-tag">CA-C03</span>
+              <span class="piece-tag">Story urgence</span>
+            </div>
+          </td>
+          <td>Blog + preuve sociale + comparatif concurrents</td>
+          <td>Mesure CPL jul 26 · préparer bilan</td>
+        </tr>
+        <tr>
+          <td><span class="sem-num">05</span><br><span class="sem-dates">27 – 31 juil</span></td>
+          <td>Lun–Ven</td>
+          <td><span class="sem-phase phase-bilan">Bilan</span></td>
+          <td>
+            <div class="pieces-list">
+              <span class="piece-tag">CA-T01</span>
+              <span class="piece-tag">CA-B02</span>
+              <span class="piece-tag">CA-T02</span>
+              <span class="piece-tag">Story été</span>
+            </div>
+          </td>
+          <td>Témoignages · blog final · clôture campagne</td>
+          <td>Bilan J+30 · décision août</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ CALENDRIER ═══════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Calendrier jour par jour — Juillet 2026</h2>
+    <span class="section-desc">La barre latérale colorée indique la phase de campagne en cours</span>
+  </div>
+
+  <div class="cal-wrap">
+    <div class="cal-head">
+      <div class="cal-head-cell">Lun</div>
+      <div class="cal-head-cell">Mar</div>
+      <div class="cal-head-cell">Mer</div>
+      <div class="cal-head-cell">Jeu</div>
+      <div class="cal-head-cell">Ven</div>
+      <div class="cal-head-cell weekend">Sam</div>
+      <div class="cal-head-cell weekend">Dim</div>
+    </div>
+
+    <div class="cal-grid">
+
+      <!-- ── SEMAINE 1 : 29 juin – 5 juil ── -->
+      <!-- Lun 29 juin -->
+      <div class="cal-cell other-month">
+        <span class="phase-bar pbar-lanzamiento"></span>
+        <span class="day-num">29 <small style="font-size:0.6rem;color:var(--g);">juin</small></span>
+      </div>
+      <!-- Mar 30 juin -->
+      <div class="cal-cell other-month">
+        <span class="phase-bar pbar-lanzamiento"></span>
+        <span class="day-num">30 <small style="font-size:0.6rem;color:var(--g);">juin</small></span>
+      </div>
+      <!-- Mer 1 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-lanzamiento"></span>
+        <span class="day-num" style="color:var(--vf);font-weight:bold;">1 <small style="font-size:0.65rem;font-weight:normal;">juil ✦</small></span>
+      </div>
+      <!-- Jeu 2 juil -->
+      <div class="cal-cell" style="background:rgba(61,107,66,0.04);">
+        <span class="phase-bar pbar-lanzamiento"></span>
+        <span class="day-num">2</span>
+        <div class="content-card card-story">
+          <span class="card-code">CA-H01</span>
+          <span class="card-desc">Story awareness : « Qu'est-ce qui donne la première impression de votre maison ? »</span>
+        </div>
+      </div>
+      <!-- Ven 3 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-lanzamiento"></span>
+        <span class="day-num">3</span>
+        <div class="content-card card-story">
+          <span class="card-code">CA-H02</span>
+          <span class="card-desc">Story CTA : « Votre cour avant mérite mieux — estimé gratuit »</span>
+        </div>
+      </div>
+      <!-- Sam 4 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-lanzamiento"></span>
+        <span class="day-num" style="color:var(--g);">4</span>
+      </div>
+      <!-- Dim 5 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-lanzamiento"></span>
+        <span class="day-num" style="color:var(--g);">5</span>
+        <div class="content-card card-checkpoint">
+          <span class="card-code">CP J+3</span>
+          <span class="card-desc">Impressions Stories · noter réponses sondage</span>
+        </div>
+      </div>
+
+      <!-- ── SEMAINE 2 : 6 – 12 juil ── -->
+      <!-- Lun 6 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num">6</span>
+      </div>
+      <!-- Mar 7 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num">7</span>
+      </div>
+      <!-- Mer 8 juil -->
+      <div class="cal-cell" style="background:rgba(61,107,66,0.04);">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num">8</span>
+        <div class="content-card card-reel">
+          <span class="card-code">CA-R01</span>
+          <span class="card-desc">Reel transformations : avant/après cour avant — « 48 heures pour changer la face de votre maison »</span>
+        </div>
+      </div>
+      <!-- Jeu 9 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num">9</span>
+        <div class="content-card card-carrousel">
+          <span class="card-code">CA-C01</span>
+          <span class="card-desc">Carrusel Avant/Après : 5 cours avant transformées à Laval &amp; Grand MTL</span>
+        </div>
+      </div>
+      <!-- Ven 10 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num">10</span>
+        <div class="content-card card-story">
+          <span class="card-code">STORY</span>
+          <span class="card-desc">Monitor CTR CA-R01 · partager coulisses tournage</span>
+        </div>
+      </div>
+      <!-- Sam 11 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num" style="color:var(--g);">11</span>
+        <div class="content-card card-story">
+          <span class="card-code">STORY</span>
+          <span class="card-desc">Sondage : « Pavé uni ou asphalte — vous choisissez quoi ? »</span>
+        </div>
+      </div>
+      <!-- Dim 12 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num" style="color:var(--g);">12</span>
+        <div class="content-card card-checkpoint">
+          <span class="card-code">CP J+7</span>
+          <span class="card-desc">CTR CA-R01 &gt; 3% ? Préparer paid sem. 3</span>
+        </div>
+      </div>
+
+      <!-- ── SEMAINE 3 : 13 – 19 juil ── -->
+      <!-- Lun 13 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num">13</span>
+      </div>
+      <!-- Mar 14 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num">14</span>
+        <div class="content-card card-checkpoint">
+          <span class="card-code">CP CTR</span>
+          <span class="card-desc">Check CTR CA-R01 — lancer paid si &gt; 3%</span>
+        </div>
+        <div class="content-card card-paid">
+          <span class="card-code">PAID ★</span>
+          <span class="card-desc">Activer publicité CA-R01 si CTR validé</span>
+        </div>
+      </div>
+      <!-- Mer 15 juil -->
+      <div class="cal-cell" style="background:rgba(61,107,66,0.04);">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num">15</span>
+        <div class="content-card card-reel">
+          <span class="card-code">CA-R02</span>
+          <span class="card-desc">Reel processus : « De la conception au pavé uni — 4 étapes »</span>
+        </div>
+      </div>
+      <!-- Jeu 16 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num">16</span>
+      </div>
+      <!-- Ven 17 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num">17</span>
+        <div class="content-card card-carrousel">
+          <span class="card-code">CA-C02</span>
+          <span class="card-desc">Carrusel : Pavé uni 101 — types, couleurs, entretien, prix indicatifs</span>
+        </div>
+      </div>
+      <!-- Sam 18 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num" style="color:var(--g);">18</span>
+        <div class="content-card card-story">
+          <span class="card-code">STORY</span>
+          <span class="card-desc">Urgence : « Été 2026 — agenda presque plein »</span>
+        </div>
+      </div>
+      <!-- Dim 19 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-aceleracion"></span>
+        <span class="day-num" style="color:var(--g);">19</span>
+        <div class="content-card card-story">
+          <span class="card-code">STORY</span>
+          <span class="card-desc">Draft blog CA-B01 · préparer publication</span>
+        </div>
+      </div>
+
+      <!-- ── SEMAINE 4 : 20 – 26 juil ── -->
+      <!-- Lun 20 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-consolidacion"></span>
+        <span class="day-num">20</span>
+      </div>
+      <!-- Mar 21 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-consolidacion"></span>
+        <span class="day-num">21</span>
+        <div class="content-card card-blog">
+          <span class="card-code">CA-B01</span>
+          <span class="card-desc">Blog : « Cour avant à Laval — combien ça coûte vraiment en 2026 ? »</span>
+        </div>
+      </div>
+      <!-- Mer 22 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-consolidacion"></span>
+        <span class="day-num">22</span>
+      </div>
+      <!-- Jeu 23 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-consolidacion"></span>
+        <span class="day-num">23</span>
+        <div class="content-card card-reel">
+          <span class="card-code">CA-R03</span>
+          <span class="card-desc">Reel social proof : témoignage client filmé — « j'avais honte de ma façade »</span>
+        </div>
+      </div>
+      <!-- Ven 24 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-consolidacion"></span>
+        <span class="day-num">24</span>
+        <div class="content-card card-carrousel">
+          <span class="card-code">CA-C03</span>
+          <span class="card-desc">Carrusel comparatif : Jardin Idéal vs concurrents — 5 critères</span>
+        </div>
+      </div>
+      <!-- Sam 25 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-consolidacion"></span>
+        <span class="day-num" style="color:var(--g);">25</span>
+        <div class="content-card card-story">
+          <span class="card-code">STORY</span>
+          <span class="card-desc">Urgence : dernières disponibilités été 2026</span>
+        </div>
+      </div>
+      <!-- Dim 26 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-consolidacion"></span>
+        <span class="day-num" style="color:var(--g);">26</span>
+        <div class="content-card card-checkpoint">
+          <span class="card-code">MESURE CPL</span>
+          <span class="card-desc">Calcul CPL actualisé · comparer $134.17 référence</span>
+        </div>
+      </div>
+
+      <!-- ── SEMAINE 5 : 27 – 31 juil ── -->
+      <!-- Lun 27 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-bilan"></span>
+        <span class="day-num">27</span>
+      </div>
+      <!-- Mar 28 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-bilan"></span>
+        <span class="day-num">28</span>
+        <div class="content-card card-temoignage">
+          <span class="card-code">CA-T01</span>
+          <span class="card-desc">Témoignage vidéo : famille Laval-des-Rapides — cour avant $8 500, pavé uni 2 tons</span>
+        </div>
+      </div>
+      <!-- Mer 29 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-bilan"></span>
+        <span class="day-num">29</span>
+        <div class="content-card card-blog">
+          <span class="card-code">CA-B02</span>
+          <span class="card-desc">Blog : « 5 raisons pour lesquelles votre cour avant est votre meilleur investissement »</span>
+        </div>
+      </div>
+      <!-- Jeu 30 juil -->
+      <div class="cal-cell">
+        <span class="phase-bar pbar-bilan"></span>
+        <span class="day-num">30</span>
+        <div class="content-card card-story">
+          <span class="card-code">STORY</span>
+          <span class="card-desc">Dernière semaine de l'été · CTA direct estimé</span>
+        </div>
+      </div>
+      <!-- Ven 31 juil -->
+      <div class="cal-cell" style="background:rgba(30,58,32,0.04);">
+        <span class="phase-bar pbar-bilan"></span>
+        <span class="day-num" style="color:var(--vf);font-weight:bold;">31</span>
+        <div class="content-card card-temoignage">
+          <span class="card-code">CA-T02</span>
+          <span class="card-desc">Témoignage Rive-Nord — cour avant + stationnement, $12K</span>
+        </div>
+        <div class="content-card card-checkpoint">
+          <span class="card-code">BILAN J+30</span>
+          <span class="card-desc">Rapport · CPL final · décision août</span>
+        </div>
+      </div>
+      <!-- Sam–Dim vides -->
+      <div class="cal-cell" style="background:rgba(0,0,0,0.02);">
+        <span class="day-num" style="color:var(--g);opacity:0.3;">—</span>
+      </div>
+      <div class="cal-cell" style="background:rgba(0,0,0,0.02);">
+        <span class="day-num" style="color:var(--g);opacity:0.3;">—</span>
+      </div>
+
+    </div><!-- /cal-grid -->
+  </div><!-- /cal-wrap -->
+</div>
+
+<!-- ═══════════════════════════ CHECKPOINTS KPI ═══════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Checkpoints KPI</h2>
+    <span class="section-desc">5 jalons de décision — Cour Avant</span>
+  </div>
+
+  <div class="checkpoints-strip">
+
+    <div class="cp-card" data-day="J+3">
+      <div class="cp-label">Checkpoint 1</div>
+      <div class="cp-date">Dimanche 5 juillet</div>
+      <ul class="kpi-list">
+        <li>Portée Stories CA-H01/H02 <span class="kpi-metric">&gt; 400</span></li>
+        <li>Réponses sondage <span class="kpi-metric">&gt; 20</span></li>
+        <li>Clics liens bio <span class="kpi-metric">&gt; 15</span></li>
+      </ul>
+      <div class="kpi-action">Ajuster ciblage si portée &lt; 200</div>
+    </div>
+
+    <div class="cp-card" data-day="J+7">
+      <div class="cp-label">Checkpoint 2</div>
+      <div class="cp-date">Dimanche 12 juillet</div>
+      <ul class="kpi-list">
+        <li>CTR CA-R01 <span class="kpi-metric">&gt; 3 %</span></li>
+        <li>Reach CA-C01 <span class="kpi-metric">&gt; 2 500</span></li>
+        <li>DM entrants <span class="kpi-metric">&gt; 5</span></li>
+        <li>Leads <span class="kpi-metric">&gt; 2</span></li>
+      </ul>
+      <div class="kpi-action">Si CTR &gt; 3% → activer paid lun. 14</div>
+      <div class="kpi-best">Référence CPL : $134.17 — battre ce record</div>
+    </div>
+
+    <div class="cp-card" data-day="J+14">
+      <div class="cp-label">Checkpoint 3</div>
+      <div class="cp-date">Lundi 20 juillet</div>
+      <ul class="kpi-list">
+        <li>Leads cumulés <span class="kpi-metric">&gt; 6</span></li>
+        <li>CPL actuel <span class="kpi-metric">&lt; $100</span></li>
+        <li>Taux conv. DM→call <span class="kpi-metric">&gt; 20 %</span></li>
+        <li>Trafic blog CA-B01 <span class="kpi-metric">&gt; 150</span></li>
+      </ul>
+      <div class="kpi-action">Optimiser audience paid si CPL &gt; $110</div>
+    </div>
+
+    <div class="cp-card" data-day="J+26">
+      <div class="cp-label">Mesure CPL</div>
+      <div class="cp-date">Dimanche 26 juillet</div>
+      <ul class="kpi-list">
+        <li>Leads cumulés <span class="kpi-metric">&gt; 12</span></li>
+        <li>CPL intermédiaire <span class="kpi-metric">&lt; $90</span></li>
+        <li>Soumissions envoyées <span class="kpi-metric">&gt; 4</span></li>
+        <li>Taux fermeture <span class="kpi-metric">&gt; 25 %</span></li>
+      </ul>
+      <div class="kpi-action">Rapport intermédiaire · allouer budget août</div>
+    </div>
+
+    <div class="cp-card" data-day="J+30">
+      <div class="cp-label">Bilan final</div>
+      <div class="cp-date">Vendredi 31 juillet</div>
+      <ul class="kpi-list">
+        <li>Leads total <span class="kpi-metric">&gt; 15</span></li>
+        <li>CPL final <span class="kpi-metric">&lt; $80 CAD</span></li>
+        <li>Soumissions <span class="kpi-metric">&gt; 6</span></li>
+        <li>Contrats signés <span class="kpi-metric">&gt; 2</span></li>
+        <li>ROI campagne <span class="kpi-metric">&gt; 6×</span></li>
+      </ul>
+      <div class="kpi-action">Décision : reconduire en août avec budget accru</div>
+      <div class="kpi-best">Objectif : battre CPL de $134.17 — viser $70</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════ RESPONSABLES ═══════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Responsables &amp; outils</h2>
+    <span class="section-desc">Par type de contenu — Cour Avant</span>
+  </div>
+
+  <div class="resp-grid">
+    <div class="resp-card">
+      <div class="resp-type">Reels (CA-R01 à CA-R03)</div>
+      <div class="resp-name">Équipe terrain + montage</div>
+      <div class="resp-tools">
+        <span class="tool-badge">CapCut</span>
+        <span class="tool-badge">InShot</span>
+        <span class="tool-badge">DJI Mini</span>
+        <span class="tool-badge">iPhone Pro</span>
+      </div>
+    </div>
+    <div class="resp-card">
+      <div class="resp-type">Carrusels (CA-C01 à CA-C03)</div>
+      <div class="resp-name">Marketing / Graphiste</div>
+      <div class="resp-tools">
+        <span class="tool-badge">Canva Pro</span>
+        <span class="tool-badge">Figma</span>
+        <span class="tool-badge">Lightroom</span>
+      </div>
+    </div>
+    <div class="resp-card">
+      <div class="resp-type">Blogs (CA-B01 à CA-B02)</div>
+      <div class="resp-name">Contenu + SEO</div>
+      <div class="resp-tools">
+        <span class="tool-badge">WordPress</span>
+        <span class="tool-badge">Semrush</span>
+        <span class="tool-badge">Claude AI</span>
+      </div>
+    </div>
+    <div class="resp-card">
+      <div class="resp-type">Stories H01/H02 + quotidiennes</div>
+      <div class="resp-name">Community Manager</div>
+      <div class="resp-tools">
+        <span class="tool-badge">Meta Business</span>
+        <span class="tool-badge">Canva</span>
+        <span class="tool-badge">Later</span>
+      </div>
+    </div>
+    <div class="resp-card">
+      <div class="resp-type">Témoignages CA-T01/T02</div>
+      <div class="resp-name">Direction + terrain</div>
+      <div class="resp-tools">
+        <span class="tool-badge">Filmé sur site</span>
+        <span class="tool-badge">Autorisation client</span>
+        <span class="tool-badge">DJI Osmo</span>
+      </div>
+    </div>
+    <div class="resp-card">
+      <div class="resp-type">Publicité payante</div>
+      <div class="resp-name">Media Buyer</div>
+      <div class="resp-tools">
+        <span class="tool-badge">Meta Ads Manager</span>
+        <span class="tool-badge">Pixel FB</span>
+        <span class="tool-badge">Google Analytics</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div>
+    <strong>Jardin Idéal</strong> · Campagne Cour Avant · Juillet 2026<br>
+    Généré le <span id="gen-date"></span>
+  </div>
+  <div style="text-align:right;">
+    CPL cible : <strong style="color:var(--vf);">&lt; $80 CAD</strong> ·
+    Segments A + C · Laval / Rive-Nord / Grand Montréal<br>
+    <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--g);">v1.0 — COUR AVANT — JUL 2026</span>
+  </div>
+</div>
+
+</div><!-- /page-wrap -->
+
+<script>
+document.getElementById('gen-date').textContent = new Date().toLocaleDateString('fr-CA', {
+  year:'numeric', month:'long', day:'numeric'
+});
+
+/* ── Pavé uni canvas pattern ── */
+(function() {
+  var canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+
+  function draw() {
+    var W = canvas.offsetWidth;
+    var H = canvas.offsetHeight;
+    if (W < 1 || H < 1) return;
+    canvas.width = W;
+    canvas.height = H;
+    var ctx = canvas.getContext('2d');
+
+    /* Pavé uni: staggered rectangular blocks like interlocking pavers */
+    var bW = 42;  /* block width */
+    var bH = 24;  /* block height */
+    var gap = 3;
+    var colors = ['#2A4A2C', '#2E5230', '#325634', '#365A38', '#3D6642'];
+
+    ctx.clearRect(0, 0, W, H);
+
+    for (var row = 0; row * (bH + gap) < H + bH; row++) {
+      var offset = (row % 2 === 0) ? 0 : (bW + gap) / 2;
+      for (var col = -1; col * (bW + gap) < W + bW; col++) {
+        var x = col * (bW + gap) + offset;
+        var y = row * (bH + gap);
+        var ci = (row * 3 + col * 7) % colors.length;
+        if (ci < 0) ci = 0;
+        ctx.fillStyle = colors[ci];
+        ctx.beginPath();
+        ctx.roundRect(x, y, bW, bH, 1);
+        ctx.fill();
+        /* Subtle joint highlight */
+        ctx.strokeStyle = 'rgba(0,0,0,0.25)';
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+
+    /* Soft vertical gradient overlay */
+    var grad = ctx.createLinearGradient(0, 0, W, 0);
+    grad.addColorStop(0, 'rgba(30,58,32,0.9)');
+    grad.addColorStop(0.4, 'rgba(30,58,32,0.2)');
+    grad.addColorStop(1, 'rgba(30,58,32,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  /* Use requestAnimationFrame to ensure element is laid out */
+  if (typeof ResizeObserver !== 'undefined') {
+    var ro = new ResizeObserver(function() { draw(); });
+    ro.observe(canvas.parentElement);
+  } else {
+    setTimeout(draw, 50);
+  }
+  draw();
+})();
+</script>
+
+</body>
+</html>

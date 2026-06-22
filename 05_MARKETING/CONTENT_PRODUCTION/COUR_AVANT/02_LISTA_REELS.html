@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COUR AVANT — Reels Scripts · Jardín Ideal 2026</title>
+<style>
+  /* ═══════════════════════════════════════════════════════
+     DESIGN TOKENS — Jardín Ideal System
+     Campagne: COUR AVANT 2026
+  ═══════════════════════════════════════════════════════ */
+  :root {
+    --vert-fonce:  #1E3A20;
+    --vert:        #2C4A2E;
+    --vert-med:    #3D6B42;
+    --vert-clair:  #5A8F62;
+    --or:          #C8A45A;
+    --or-clair:    #E8C97A;
+    --or-dim:      rgba(200,164,90,0.15);
+    --or-border:   rgba(200,164,90,0.35);
+    --noir:        #0D0E0B;
+    --gris-fonce:  #2A2B28;
+    --gris:        #6B6B63;
+    --gris-clair:  #B8B8B0;
+    --creme:       #F5F2EB;
+    --creme-fonce: #EDE9E0;
+    --blanc:       #FFFFFF;
+    --rouge:       #B83232;
+    --rouge-clair: #F5E8E8;
+    --jaune:       #C8850A;
+    --jaune-clair: #FEF5E4;
+    --vert-bg:     #EAF2EB;
+    --bleu:        #2A4A6E;
+    --bleu-clair:  #EAF0F8;
+
+    /* COUR AVANT campaign accent — stone/concrete reference, warm dusk */
+    --ca-bg:       #1A1510;
+    --ca-stone:    #8C7B5E;
+    --ca-stone-dim: rgba(140,123,94,0.15);
+    --ca-stone-border: rgba(140,123,94,0.30);
+
+    --font-display: Georgia, 'Times New Roman', serif;
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Courier New', Courier, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--creme);
+    color: var(--noir);
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+
+  /* ═══════════════ COVER ═══════════════ */
+  .cover {
+    background: var(--vert-fonce);
+    min-height: 340px;
+    padding: 52px 60px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Aesthetic risk: a cracked-pavement texture built in CSS —
+     three diagonal hairlines that evoke béton fissuré,
+     referencing the campaign's core "before" visual anchor.
+     No SVG paths, built with pseudo-elements + rotated divs. */
+  .cover-crack {
+    position: absolute;
+    right: 60px;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    pointer-events: none;
+    opacity: 0.18;
+  }
+  .crack-line {
+    position: absolute;
+    background: var(--or);
+    transform-origin: top left;
+  }
+  .crack-line:nth-child(1) {
+    width: 1px; height: 140px;
+    top: 40px; left: 80px;
+    transform: rotate(7deg);
+  }
+  .crack-line:nth-child(2) {
+    width: 1px; height: 90px;
+    top: 100px; left: 80px;
+    transform: rotate(34deg);
+  }
+  .crack-line:nth-child(3) {
+    width: 1px; height: 65px;
+    top: 170px; left: 110px;
+    transform: rotate(18deg);
+  }
+  .crack-line:nth-child(4) {
+    width: 1px; height: 110px;
+    top: 50px; left: 160px;
+    transform: rotate(-12deg);
+  }
+  .crack-line:nth-child(5) {
+    width: 1px; height: 50px;
+    top: 155px; left: 165px;
+    transform: rotate(42deg);
+  }
+  /* Paving stone grid — references pavé uni "after" */
+  .cover-pave {
+    position: absolute;
+    right: 60px;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 3px;
+    padding: 20px;
+    opacity: 0;
+    animation: reveal-pave 1.2s ease-out 0.4s forwards;
+  }
+  .pave-brick {
+    background: rgba(200,164,90,0.07);
+    border: 1px solid rgba(200,164,90,0.14);
+    border-radius: 1px;
+  }
+  @keyframes reveal-pave {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cover-pave { opacity: 1; animation: none; }
+  }
+
+  .cover-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--blanc);
+    line-height: 1.08;
+    max-width: 620px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 em { color: var(--or); font-style: italic; }
+  .cover-sub {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: rgba(245,242,235,0.70);
+    max-width: 540px;
+    margin-bottom: 28px;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--or-dim);
+    border: 1px solid var(--or-border);
+    color: var(--or-clair);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 13px;
+  }
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    padding-top: 20px;
+    margin-top: 4px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-meta-item .lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .cover-meta-item .val {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blanc);
+  }
+  .cover-meta-item .val.gold { color: var(--or); }
+
+  /* ═══════════════ CAMPAIGN BAND ═══════════════ */
+  .camp-band {
+    padding: 14px 60px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--ca-bg);
+    color: var(--or);
+    border-left: 6px solid var(--or);
+  }
+  .camp-band-right {
+    margin-left: auto;
+    font-size: 9px;
+    color: rgba(200,164,90,0.50);
+    letter-spacing: 1px;
+  }
+  .camp-kpi {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    padding: 3px 10px;
+    background: rgba(200,164,90,0.08);
+    border: 1px solid rgba(200,164,90,0.20);
+    color: var(--or-clair);
+    letter-spacing: 1px;
+  }
+  .camp-kpi strong { color: var(--or); font-size: 11px; }
+
+  /* ═══════════════ CONTAINER ═══════════════ */
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 40px 100px; }
+
+  /* ═══════════════ INTRO SECTION ═══════════════ */
+  .intro-block {
+    padding: 36px 0 0;
+  }
+  .intro-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(15px, 2vw, 19px);
+    color: var(--vert-fonce);
+    font-style: italic;
+    border-left: 3px solid var(--or);
+    padding-left: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  /* ═══════════════ BRIEF GRID ═══════════════ */
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    margin: 20px 0 36px;
+    background: var(--vert-fonce);
+    border: 2px solid var(--vert-fonce);
+  }
+  .brief-cell {
+    background: var(--blanc);
+    padding: 20px;
+  }
+  .brief-cell.dark { background: var(--vert-fonce); }
+  .brief-lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 8px;
+  }
+  .brief-cell.dark .brief-lbl { color: rgba(200,164,90,0.65); }
+  .brief-val {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    line-height: 1.25;
+  }
+  .brief-cell.dark .brief-val { color: var(--blanc); }
+  .brief-note {
+    font-size: 12px;
+    color: var(--gris);
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+  .brief-cell.dark .brief-note { color: rgba(200,220,205,0.70); }
+  @media(max-width:720px) { .brief-grid { grid-template-columns: 1fr 1fr; } }
+  @media(max-width:480px) { .brief-grid { grid-template-columns: 1fr; } }
+
+  /* ═══════════════ KPI CHIPS ═══════════════ */
+  .kpi-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .kpi-chip {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+  .kpi-chip.red  { background: var(--rouge-clair); color: var(--rouge); }
+  .kpi-chip.grn  { background: var(--vert-bg);     color: var(--vert-med); }
+  .kpi-chip.yel  { background: var(--jaune-clair); color: var(--jaune); }
+  .kpi-chip.dark { background: var(--vert-fonce);  color: var(--or); }
+  .kpi-chip.blue { background: var(--bleu-clair);  color: var(--bleu); }
+
+  /* ═══════════════ SECTION DIVIDER ═══════════════ */
+  .section-divider {
+    margin-top: 52px;
+    padding-top: 52px;
+    border-top: 1.5px solid var(--vert-med);
+  }
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--creme-fonce);
+    max-width: 100px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.8vw, 30px);
+    font-weight: 700;
+    color: var(--vert-fonce);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    font-size: 14px;
+    color: var(--gris);
+    max-width: 600px;
+    margin-bottom: 4px;
+  }
+
+  /* ═══════════════ REEL CARD ═══════════════ */
+  .reel-card {
+    border: 1.5px solid var(--vert-fonce);
+    background: var(--blanc);
+    margin: 40px 0;
+    overflow: hidden;
+  }
+
+  /* Reel card header */
+  .reel-head {
+    background: var(--vert-fonce);
+    padding: 20px 26px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+  }
+  /* 9:16 ratio marker — references Reel format */
+  .reel-head::after {
+    content: "9:16";
+    position: absolute;
+    right: 18px;
+    bottom: 12px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: rgba(200,164,90,0.38);
+    letter-spacing: 2px;
+  }
+  .reel-id {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--or);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .reel-title {
+    font-family: var(--font-display);
+    font-size: clamp(15px, 2vw, 21px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--blanc);
+    line-height: 1.2;
+    max-width: 620px;
+  }
+  .reel-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .reel-dur {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--or);
+    text-transform: uppercase;
+    background: rgba(200,164,90,0.12);
+    border: 1px solid var(--or-border);
+    padding: 4px 12px;
+  }
+  .reel-obj {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(245,242,235,0.45);
+    text-transform: uppercase;
+  }
+
+  /* Reel meta row */
+  .reel-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--creme-fonce);
+    background: #FAFAF7;
+  }
+  .reel-meta-cell {
+    padding: 14px 20px;
+    border-right: 1px solid var(--creme-fonce);
+  }
+  .reel-meta-cell:last-child { border-right: none; }
+  .rml {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .rmv {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--vert-fonce);
+    line-height: 1.3;
+  }
+  @media(max-width:640px) {
+    .reel-meta { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Reel body */
+  .reel-body { padding: 28px 28px 0; }
+
+  /* Objectif + Public */
+  .obj-pub-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .field-block {}
+  .field-lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .field-lbl::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 11px;
+    background: var(--or);
+    border-radius: 2px;
+  }
+  .field-txt {
+    font-size: 13.5px;
+    color: var(--gris-fonce);
+    line-height: 1.55;
+  }
+  .field-txt strong { color: var(--vert-fonce); font-weight: 600; }
+  @media(max-width:580px) { .obj-pub-row { grid-template-columns: 1fr; } }
+
+  /* Hook box */
+  .hook-box {
+    background: #EAF2EB;
+    border-left: 4px solid var(--vert-med);
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hook-box-lbl {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vert-med);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .hook-text {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--vert-fonce);
+    line-height: 1.45;
+  }
+
+  /* ═══════════════ TIMELINE / SCRIPT ═══════════════ */
+  .script-header {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .script-header::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--creme-fonce);
+  }
+
+  .timeline {
+    position: relative;
+    margin-bottom: 0;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 44px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--vert-med), var(--or) 60%, var(--or));
+    opacity: 0.25;
+  }
+
+  .scene {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 0 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+  }
+  /* Alternate scene backgrounds for readability */
+  .scene:nth-child(odd)  { background: var(--blanc); }
+  .scene:nth-child(even) { background: #FAFAF7; }
+
+  .scene-time-col {
+    padding: 18px 0 18px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .scene-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--vert-med);
+    border: 2px solid var(--blanc);
+    outline: 1.5px solid var(--vert-med);
+    flex-shrink: 0;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .scene:last-child .scene-dot { background: var(--or); outline-color: var(--or); }
+  .scene-timing {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--vert-med);
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .scene:last-child .scene-timing { color: var(--or); }
+
+  .scene-content {
+    padding: 18px 24px 18px 0;
+    border-bottom: 1px solid var(--creme-fonce);
+  }
+  .scene:last-child .scene-content { border-bottom: none; }
+
+  .scene-label {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-bottom: 7px;
+    display: inline-block;
+  }
+  .scene-label.hook  { background: var(--rouge-clair); color: var(--rouge); }
+  .scene-label.setup { background: var(--bleu-clair);  color: var(--bleu); }
+  .scene-label.action{ background: var(--vert-bg);     color: var(--vert-med); }
+  .scene-label.react { background: var(--jaune-clair); color: var(--jaune); }
+  .scene-label.cta   { background: var(--vert-fonce);  color: var(--or); }
+
+  .scene-name {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .scene-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+  }
+  @media(max-width:640px) { .scene-fields { grid-template-columns: 1fr; } }
+
+  .sf-lbl {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .sf-val {
+    font-size: 13px;
+    color: var(--gris-fonce);
+    line-height: 1.5;
+  }
+  .sf-val strong { color: var(--noir); font-weight: 600; }
+  .sf-val em {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--vert-fonce);
+  }
+
+  /* Texte écran highlight */
+  .screen-text {
+    display: inline-block;
+    background: var(--vert-fonce);
+    color: var(--or);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    line-height: 1.5;
+    margin: 2px 0;
+  }
+
+  /* ═══════════════ CTA + VISUELS BLOCK ═══════════════ */
+  .reel-footer {
+    border-top: 1.5px solid var(--creme-fonce);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--blanc);
+  }
+  @media(max-width:640px) { .reel-footer { grid-template-columns: 1fr; } }
+
+  .footer-cell {
+    padding: 22px 24px;
+    border-right: 1px solid var(--creme-fonce);
+  }
+  .footer-cell:last-child { border-right: none; }
+
+  .footer-lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-lbl::before {
+    content: "";
+    width: 3px;
+    height: 11px;
+    background: var(--or);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .cta-quote {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--vert-fonce);
+    border-left: 3px solid var(--or);
+    padding-left: 14px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  .cta-note {
+    font-size: 12px;
+    color: var(--gris);
+    line-height: 1.5;
+  }
+  .visual-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .visual-list li {
+    font-size: 13px;
+    color: var(--gris-fonce);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--creme-fonce);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.45;
+  }
+  .visual-list li:last-child { border-bottom: none; }
+  .visual-list li::before {
+    content: "▸";
+    color: var(--or);
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  /* ═══════════════ BRIEFING REF FOOTER ═══════════════ */
+  .ref-strip {
+    background: #FAFAF7;
+    border-top: 1px solid var(--creme-fonce);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .ref-lbl {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+  }
+  .ref-val {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--vert-med);
+    letter-spacing: 1px;
+  }
+
+  /* ═══════════════ INDEX NAV ═══════════════ */
+  .index-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 28px 0 0;
+    margin-bottom: 0;
+  }
+  .index-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    background: var(--blanc);
+    border: 1.5px solid var(--vert-fonce);
+    text-decoration: none;
+    color: var(--vert-fonce);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+    transition: background 0.15s;
+  }
+  .index-link:hover { background: var(--vert-bg); }
+  .index-link .code {
+    font-size: 10px;
+    font-weight: 700;
+    background: var(--vert-fonce);
+    color: var(--or);
+    padding: 2px 7px;
+  }
+
+  /* ═══════════════ PRINT ═══════════════ */
+  @media print {
+    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .reel-head { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .camp-band { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ COVER ═══════════════════════════ -->
+<header class="cover">
+  <!-- Animated crack-to-paving-stone visual metaphor -->
+  <div class="cover-crack" aria-hidden="true">
+    <div class="crack-line"></div>
+    <div class="crack-line"></div>
+    <div class="crack-line"></div>
+    <div class="crack-line"></div>
+    <div class="crack-line"></div>
+  </div>
+  <div class="cover-pave" aria-hidden="true">
+    <div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div>
+    <div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div>
+    <div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div>
+    <div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div>
+    <div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div>
+    <div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div>
+    <div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div>
+    <div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div><div class="pave-brick"></div>
+  </div>
+
+  <p class="cover-eyebrow">Jardín Ideal Montréal &nbsp;·&nbsp; Campagne Cour Avant 2026 &nbsp;·&nbsp; Format Reel</p>
+  <h1>Scripts <em>Reels</em><br>Cour Avant</h1>
+  <p class="cover-sub">3 scripts complets scène par scène — hooks, timing exact, texte à l'écran, instructions filmage et CTA. Campagne mai–juin 2026, CPL référence $134.17.</p>
+
+  <div class="cover-pills">
+    <span class="pill">CA-R01 · 45s</span>
+    <span class="pill">CA-R02 · 50s</span>
+    <span class="pill">CA-R03 · 40s</span>
+    <span class="pill">Format 9:16</span>
+    <span class="pill">Seg. A + C</span>
+  </div>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="lbl">Campagne</span>
+      <span class="val">Cour Avant</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">CPL référence</span>
+      <span class="val gold">$134.17</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">CPL moyen</span>
+      <span class="val">$168.73</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Période</span>
+      <span class="val">Mai – Juin 2026</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Mise à jour</span>
+      <span class="val">Juin 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ CAMPAIGN BAND ═══════════════════════════ -->
+<div class="camp-band">
+  <span>Cour Avant — Carte de visite de la maison</span>
+  <span class="camp-kpi"><strong>$134.17</strong> CPL — meilleure campagne mai–juin 2026</span>
+  <span class="camp-band-right">02_LISTA_REELS.html · v1.0</span>
+</div>
+
+<!-- ═══════════════════════════ CONTAINER ═══════════════════════════ -->
+<main class="container">
+
+  <!-- INTRO -->
+  <div class="intro-block">
+    <p class="intro-tagline">« Aucun compétiteur n'utilise l'angle "cour avant = carte de visite de la maison". C'est notre territoire. »</p>
+
+    <div class="brief-grid">
+      <div class="brief-cell">
+        <p class="brief-lbl">Angle exclusif</p>
+        <p class="brief-val">Cour avant = carte de visite</p>
+        <p class="brief-note">Aucun compétiteur identifié avec cet angle. Fenêtre d'opportunité à exploiter immédiatement.</p>
+      </div>
+      <div class="brief-cell">
+        <p class="brief-lbl">Segment A</p>
+        <p class="brief-val">35–55 ans, Laval / Rive-Nord</p>
+        <p class="brief-note">Propriétaires établis. Sensibles à l'image de quartier, au regard des voisins, à la valeur perçue de la maison.</p>
+      </div>
+      <div class="brief-cell">
+        <p class="brief-lbl">Segment C</p>
+        <p class="brief-val">30–45 ans, $5K–15K, Grand Mtl</p>
+        <p class="brief-note">Premiers acheteurs ou maisons achetées récemment. Cherchent justification du prix et transparence du processus.</p>
+      </div>
+      <div class="brief-cell dark">
+        <p class="brief-lbl">Objectif contenus</p>
+        <p class="brief-val">Générer leads qualifiés — soumissions entrées pavé uni</p>
+        <p class="brief-note">Chaque Reel doit finir sur une action concrète : remplir le formulaire de soumission gratuite.</p>
+      </div>
+      <div class="brief-cell dark">
+        <p class="brief-lbl">Vacío competitivo</p>
+        <p class="brief-val">Angle "première impression" non occupé</p>
+        <p class="brief-note">Compétiteurs restent sur prix et matériaux. Jardín Ideal se positionne sur l'identité et l'image.</p>
+      </div>
+      <div class="brief-cell dark">
+        <p class="brief-lbl">KPI cible</p>
+        <p class="brief-val">CPL &lt; $134 — maintenir ou améliorer</p>
+        <p class="brief-note">Référence campagne mai–juin 2026. Moyenne marché : $168.73. Avantage actuel : 21 % sous la moyenne.</p>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <span class="kpi-chip dark">CPL $134.17 — Meilleure campagne</span>
+      <span class="kpi-chip grn">–21% vs moyenne $168.73</span>
+      <span class="kpi-chip yel">Fenêtre compétitive ouverte</span>
+      <span class="kpi-chip blue">Seg. A + C · Laval, Rive-Nord, Grand Mtl</span>
+    </div>
+
+    <!-- Quick index -->
+    <div class="index-nav">
+      <a href="#ca-r01" class="index-link"><span class="code">CA-R01</span> Béton fissuré → Pavé uni · 45s</a>
+      <a href="#ca-r02" class="index-link"><span class="code">CA-R02</span> Processus complet · 50s</a>
+      <a href="#ca-r03" class="index-link"><span class="code">CA-R03</span> FOMO voisin · 40s</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       REEL 01 — Transformation béton fissuré → pavé uni
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="section-divider" id="ca-r01">
+    <div class="section-tag">Reel 01 / 03</div>
+    <h2 class="section-title">CA-R01 · Transformation Cour Avant — Du béton fissuré au pavé uni en 3 jours</h2>
+    <p class="section-sub">Objectif : déclencher la reconnaissance émotionnelle ("c'est exactement mon entrée") et montrer la transformation complète en 45 secondes.</p>
+  </div>
+
+  <article class="reel-card" aria-label="Script Reel CA-R01">
+    <div class="reel-head">
+      <div>
+        <span class="reel-id">CA-R01</span>
+        <p class="reel-title">Cour avant transformée — du béton fissuré au pavé uni en 3 jours</p>
+      </div>
+      <div class="reel-badges">
+        <span class="reel-dur">45 secondes</span>
+        <span class="reel-obj">Transformation · Avant/Après</span>
+      </div>
+    </div>
+
+    <div class="reel-meta">
+      <div class="reel-meta-cell">
+        <span class="rml">Objectif</span>
+        <span class="rmv">Notoriété + leads — déclencher soumission</span>
+      </div>
+      <div class="reel-meta-cell">
+        <span class="rml">Public cible</span>
+        <span class="rmv">Segment A — 35–55 ans, Laval / Rive-Nord</span>
+      </div>
+      <div class="reel-meta-cell">
+        <span class="rml">Tonalité</span>
+        <span class="rmv">Émotionnel + aspirationnel — identification immédiate</span>
+      </div>
+    </div>
+
+    <div class="reel-body">
+      <!-- Hook -->
+      <div class="hook-box">
+        <span class="hook-box-lbl">Gancho — Phrase d'accroche</span>
+        <p class="hook-text">« Vous sortez votre voiture chaque matin... et vous essayez de ne pas regarder votre entrée? »</p>
+      </div>
+
+      <!-- Objectif + Public -->
+      <div class="obj-pub-row">
+        <div class="field-block">
+          <p class="field-lbl">Objectif stratégique</p>
+          <p class="field-txt">Créer une <strong>reconnaissance émotionnelle immédiate</strong> chez le propriétaire qui se reconnaît dans la situation. Le Reel doit déclencher la pensée : "C'est exactement mon problème." Puis montrer que la solution est concrète, rapide et proche géographiquement.</p>
+        </div>
+        <div class="field-block">
+          <p class="field-lbl">Public cible principal</p>
+          <p class="field-txt"><strong>Segment A :</strong> 35–55 ans, propriétaires Laval et Rive-Nord. Maison achetée depuis 5–15 ans. L'entrée d'origine commence à montrer son âge — fissures, décoloration, herbes entre les joints. Conscients du problème mais n'ont pas encore agi.</p>
+        </div>
+      </div>
+
+      <!-- Script timeline -->
+      <div class="script-header">Guion scène par scène — timing exact</div>
+
+      <div class="timeline">
+
+        <!-- Scène 1 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">0s – 3s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label hook">Hook visuel</span>
+            <p class="scene-name">Le problème en une image — béton fissuré gros plan</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">Vous évitez de regarder votre entrée?</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Gros plan à 10 cm du sol : béton fissuré avec herbes entre les fissures. Lumière matinale rasante pour accentuer les textures et ombres des fissures. Pas de filtre. Réaliste.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Caméra téléphone posée au sol, angle rasant. Tilt progressif vers le haut pour révéler l'étendue de l'entrée. 3 secondes, lent.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Son</span>
+                <div class="sf-val">Ambient : bruits de quartier matinal, une voiture qui démarre. Pas de musique encore.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 2 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">3s – 12s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label setup">Setup</span>
+            <p class="scene-name">La situation quotidienne — identification du spectateur</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">Chaque matin, vous regardez... et vous dites « peut-être l'année prochaine »</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Plan large de l'entrée complète vue de la rue. On voit : béton fissuré, quelques herbes, la rue propre du quartier en contraste. La maison est bien tenue — seulement l'entrée dérange.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Vue depuis le trottoir d'en face, cadrage en paysage puis crop 9:16. Stabilisateur recommandé. Durée : 9 secondes avec léger zoom arrière lent pour révéler le quartier.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Voix off / texte</span>
+                <div class="sf-val">Pas de voix off — uniquement texte à l'écran. Musique douce commence (lo-fi, 80 BPM).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 3 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">12s – 28s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label action">Transformation</span>
+            <p class="scene-name">Time-lapse accéléré — 3 jours de travail en 16 secondes</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val">
+                  <span class="screen-text">Jour 1 — Excavation</span><br>
+                  <span class="screen-text">Jour 2 — Pose du pavé uni</span><br>
+                  <span class="screen-text">Jour 3 — Joints polymériques</span>
+                </div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">3 séquences accélérées (4–5 sec chacune) : <strong>1)</strong> Excavation et découpe béton — équipe en action, copeaux de béton, camion. <strong>2)</strong> Pose des premiers rangs de pavé uni — mains qui placent, maillet, niveau. <strong>3)</strong> Application sable polymétrique, compaction, résultat immédiat.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Filmer à vitesse normale (60fps), accélérer en post à 4x. Angle fixe par jour pour cohérence du time-lapse. Contrejour évité — lumière de face ou latérale. Chaque séquence commence et finit sur un point fixe.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Son</span>
+                <div class="sf-val">Musique monte en intensité. Sons ambiants du chantier mixés bas. Transition sonore entre chaque jour (coupure nette).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 4 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">28s – 38s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label react">Réaction client</span>
+            <p class="scene-name">Le moment humain — réaction du propriétaire devant l'entrée terminée</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">C'est exactement ce qu'on voulait</span><br><span class="screen-text" style="font-size:10px;opacity:0.8;">— Client Laval, juin 2026</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Plan large : nouvelle entrée en pavé uni, client debout au centre de l'allée, bras croisés ou regardant l'entrée. Expression satisfaction naturelle — pas forcée. Puis gros plan entrée: joints nets, pavé aligné, haie taillée. Lumière chaude fin de journée.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Plan large d'abord (5 sec), puis travelling lent vers l'entrée (5 sec). Client authentique — voisin ou client réel, pas acteur. Si client refuse la caméra, filmer uniquement les jambes/mains ou de dos.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Son</span>
+                <div class="sf-val">Musique redescend légèrement. Ambiance quartier : oiseaux, voiture au loin. Sentiment de satisfaction et de tranquillité.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 5 — CTA -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">38s – 45s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label cta">CTA</span>
+            <p class="scene-name">Appel à l'action — soumission gratuite</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val">
+                  <span class="screen-text" style="font-size:13px;">Votre entrée mérite mieux.</span><br><br>
+                  <span class="screen-text">Soumission gratuite → lien en bio</span><br>
+                  <span class="screen-text" style="font-size:9px;opacity:0.7;">Jardín Ideal · groupe-ideal.com</span>
+                </div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Fond vert foncé (#1E3A20) ou carreau de pavé uni en gros plan. Logo Jardín Ideal centré. Texte en blanc et or. Flèche animée vers le haut pointant vers le lien en bio.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Slide statique créée en post-production (Canva ou CapCut). Durée 7 secondes. Animation : fade in du logo (0.5s), puis texte apparaît ligne par ligne (0.3s chacune).</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Caption Instagram</span>
+                <div class="sf-val">Votre cour avant, c'est la première chose que les visiteurs voient. Est-ce qu'elle reflète votre maison? Soumission gratuite en bio — on répond sous 24h. #pavéuni #couravan #jardínideal #laval #montréal</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+    </div><!-- /reel-body -->
+
+    <!-- CTA + Visuels footer -->
+    <div class="reel-footer">
+      <div class="footer-cell">
+        <p class="footer-lbl">CTA final</p>
+        <p class="cta-quote">« Votre entrée mérite mieux. Soumission gratuite — lien en bio. »</p>
+        <p class="cta-note">Répété en caption : inclure #pavéuni #couravent #jardínideal #laval. Lien vers formulaire soumission (groupe-ideal.com). Réponse promise sous 24h.</p>
+      </div>
+      <div class="footer-cell">
+        <p class="footer-lbl">Visuels recommandés</p>
+        <ul class="visual-list">
+          <li>Béton fissuré réel d'un chantier récent — gros plan texturé, lumière matinale</li>
+          <li>Équipe Jardín Ideal en action : excavation, pose pavé, compaction</li>
+          <li>Time-lapse : même angle fixe les 3 jours du chantier</li>
+          <li>Résultat final : entrée pavé uni, joints nets, haie taillée, lumière dorée</li>
+          <li>Réaction client authentique — satisfaction naturelle, pas posée</li>
+          <li>Slide CTA : fond #1E3A20, logo, texte #C8A45A et blanc</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ref-strip">
+      <span class="ref-lbl">Référence briefing</span>
+      <span class="ref-val">Campagne COUR AVANT 2026 · Segment A principal · CPL cible &lt; $134 · Format 9:16 · 45 secondes</span>
+    </div>
+  </article>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       REEL 02 — Processus complet : transparence du prix
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="section-divider" id="ca-r02">
+    <div class="section-tag">Reel 02 / 03</div>
+    <h2 class="section-title">CA-R02 · Entrée en pavé uni — le processus complet en 50 secondes</h2>
+    <p class="section-sub">Objectif : réduire l'anxiété liée au prix en montrant exactement pourquoi une entrée pavé uni coûte ce qu'elle coûte. Transparence = confiance.</p>
+  </div>
+
+  <article class="reel-card" aria-label="Script Reel CA-R02">
+    <div class="reel-head">
+      <div>
+        <span class="reel-id">CA-R02</span>
+        <p class="reel-title">Entrée en pavé uni — le processus complet en 50 secondes</p>
+      </div>
+      <div class="reel-badges">
+        <span class="reel-dur">50 secondes</span>
+        <span class="reel-obj">Éducatif · Transparence prix</span>
+      </div>
+    </div>
+
+    <div class="reel-meta">
+      <div class="reel-meta-cell">
+        <span class="rml">Objectif</span>
+        <span class="rmv">Réduire anxiété prix — convertir hésitants</span>
+      </div>
+      <div class="reel-meta-cell">
+        <span class="rml">Public cible</span>
+        <span class="rmv">Segment C — 30–45 ans, budget $5K–15K, Grand Mtl</span>
+      </div>
+      <div class="reel-meta-cell">
+        <span class="rml">Tonalité</span>
+        <span class="rmv">Pédagogique, confiant, factuel — sans vendre</span>
+      </div>
+    </div>
+
+    <div class="reel-body">
+      <!-- Hook -->
+      <div class="hook-box">
+        <span class="hook-box-lbl">Gancho — Phrase d'accroche</span>
+        <p class="hook-text">« Voici exactement pourquoi ça coûte ce prix. »</p>
+      </div>
+
+      <!-- Objectif + Public -->
+      <div class="obj-pub-row">
+        <div class="field-block">
+          <p class="field-lbl">Objectif stratégique</p>
+          <p class="field-txt">La principale barrière à l'achat pour le Segment C est le prix perçu comme élevé sans en comprendre la justification. Ce Reel <strong>démystifie le processus étape par étape</strong> : quand le spectateur comprend ce qui est inclus dans le prix, la résistance baisse. Éduquer = convertir.</p>
+        </div>
+        <div class="field-block">
+          <p class="field-lbl">Public cible principal</p>
+          <p class="field-txt"><strong>Segment C :</strong> 30–45 ans, Grand Montréal, budget $5K–15K. Propriétaires récents ou primo-accédants. Conscients que l'asphalte et le béton existent à moindre coût. Ont besoin de comprendre la valeur avant de s'engager. Doutent de la durabilité à long terme.</p>
+        </div>
+      </div>
+
+      <!-- Script timeline -->
+      <div class="script-header">Guion scène par scène — timing exact</div>
+
+      <div class="timeline">
+
+        <!-- Scène 1 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">0s – 4s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label hook">Hook</span>
+            <p class="scene-name">La promesse de transparence — accrocher avec l'honnêteté</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">Voici exactement pourquoi ça coûte ce prix.</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Plan large : entrée terminée en pavé uni impeccable, lumière naturelle. Montrer la qualité du résultat avant d'expliquer le processus — vendre le rêve d'abord, puis la justification.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Vue aérienne légère (bras tendu ou perche à selfie) de l'entrée terminée. Durée 4 secondes. Pas de texte sauf le hook. Musique de fond dès le début (neutre, professionnelle).</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Positionnement</span>
+                <div class="sf-val">L'honnêteté est le hook. "Exactement" = nous ne cachons rien. Cela désarme la méfiance immédiatement.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 2 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">4s – 12s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label action">Étape 1</span>
+            <p class="scene-name">Excavation — retrait béton ou asphalte existant</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">1 · Excavation</span><br><span class="screen-text" style="font-size:10px;">Retrait complet + préparation du sol</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Excavateur compact ou marteau-piqueur en action. Copeaux de béton, poussière, équipe au travail. Montre l'ampleur réelle du travail : c'est du vrai ouvrage, pas une simple pose.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Angle dynamique — caméra à mi-hauteur, légèrement incliné. Durée 8 secondes à vitesse normale. On doit sentir la puissance et le sérieux du travail. Éviter les plans trop serrés : montrer l'échelle de l'entrée.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Message implicite</span>
+                <div class="sf-val">L'excavation seule justifie une partie du prix. Le spectateur comprend : ce n'est pas juste "coller des briques".</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 3 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">12s – 20s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label action">Étape 2</span>
+            <p class="scene-name">Nivellement et compaction — la base invisible</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">2 · Nivellement + compaction</span><br><span class="screen-text" style="font-size:10px;">La base qui garantit 20 ans de durabilité</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Plaque vibrante sur lit de gravier, niveau de chantier posé sur la base, équipe qui vérifie les pentes pour drainage. Montrer la précision et le soin dans une étape que le client ne voit jamais dans le résultat final.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Gros plan sur la plaque vibrante et le gravier compacté. Puis plan moyen montrant l'équipe qui utilise le niveau. 8 secondes. Légende "La base invisible" ou équivalent à l'écran.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Message implicite</span>
+                <div class="sf-val">Ce que vous ne voyez pas est ce qui fait que ça dure. Les compétiteurs bon marché sautent cette étape. Nous ne la sautons jamais.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 4 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">20s – 30s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label action">Étape 3</span>
+            <p class="scene-name">Pose de la pierre angulaire — le cadre de l'entrée</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">3 · Pierre angulaire</span><br><span class="screen-text" style="font-size:10px;">Le cadre qui maintient tout en place</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Pose et fixation des bordures/pierres angulaires avec maillet et colle à bêton. Montrer l'alignement parfait. Gros plan sur le joint net entre la bordure et le début du pavé.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Vue de côté pour montrer la profondeur de la bordure. 10 secondes. Inclure 2–3 secondes de gros plan sur les mains de l'ouvrier — humanise le travail.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Message implicite</span>
+                <div class="sf-val">La précision est visible dès les premières pierres. Ce n'est pas de la quantité — c'est du soin artisanal à grande échelle.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 5 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">30s – 40s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label action">Étape 4</span>
+            <p class="scene-name">Pose du pavé uni — rang par rang, le motif prend forme</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">4 · Pose du pavé uni</span><br><span class="screen-text" style="font-size:10px;">Chaque pavé posé à la main, rang par rang</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Vue en plongée des mains qui posent le pavé, maillet de caoutchouc pour encastrer. Motif en chevron ou brique droite visible progressivement. Plan large : équipe de 2–3 personnes avancent rapidement et avec précision.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Accéléré x3 pour cette séquence. 10 secondes à l'écran (représente ~30 sec de pose réelle). Vue aérienne bras tendu ou perche — montre l'avancement du motif. Très satisfaisant visuellement.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Message implicite</span>
+                <div class="sf-val">Le "prix élevé" se justifie : une équipe qualifiée, un motif précis, un rythme soutenu. Ce n'est pas de la pose en kit — c'est un métier.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 6 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">40s – 47s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label action">Étape 5</span>
+            <p class="scene-name">Sable polymétrique — la finition qui change tout</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">5 · Sable polymétrique</span><br><span class="screen-text" style="font-size:10px;">Joints durables · anti-herbes · anti-fourmis</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Application du sable polymétrique à la raclette, puis activation à l'eau. Gros plan : sable qui pénètre dans les joints. Plan large : résultat immédiat — surface unie, joints nets, couleur uniforme.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">7 secondes : 3s application sable + 4s activation eau. Montrer la transformation immédiate (avant/après eau). Gros plan sur les joints : de "sablonneux" à "solide" en quelques secondes.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Message implicite</span>
+                <div class="sf-val">Cette étape finale est ce qui garantit que dans 5 ans, il n'y a pas d'herbes entre les joints. Détail que les clients ne connaissent pas — et qui vaut son prix.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 7 — Résultat + CTA -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">47s – 50s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label cta">CTA</span>
+            <p class="scene-name">Résultat et appel à l'action</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val">
+                  <span class="screen-text">Voilà pourquoi c'est ce prix.</span><br>
+                  <span class="screen-text">Et pourquoi ça vaut chaque dollar.</span><br><br>
+                  <span class="screen-text" style="font-size:9px;">Soumission gratuite → lien en bio</span>
+                </div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Entrée terminée vue depuis le trottoir. Lumière dorée fin de journée. Puis slide CTA fond vert foncé avec texte blanc/or et lien. Logo Jardín Ideal.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Caption Instagram</span>
+                <div class="sf-val">5 étapes. 3 jours. 20 ans de durabilité. Maintenant vous savez exactement pourquoi une entrée pavé uni coûte ce qu'elle coûte — et pourquoi ça en vaut la peine. Soumission gratuite en bio. #pavéuni #processus #transparence #jardínideal</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Note tactique</span>
+                <div class="sf-val">Ce Reel fonctionne particulièrement bien en reciblage (retargeting) sur les personnes ayant visité la page soumission sans convertir.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+    </div><!-- /reel-body -->
+
+    <!-- CTA + Visuels footer -->
+    <div class="reel-footer">
+      <div class="footer-cell">
+        <p class="footer-lbl">CTA final</p>
+        <p class="cta-quote">« Voilà pourquoi c'est ce prix. Et pourquoi ça vaut chaque dollar. Soumission gratuite — lien en bio. »</p>
+        <p class="cta-note">Utiliser en retargeting Meta Ads sur visiteurs page soumission non convertis. Aussi efficace comme Reel organique pour le Segment C sceptique face au prix.</p>
+      </div>
+      <div class="footer-cell">
+        <p class="footer-lbl">Visuels recommandés</p>
+        <ul class="visual-list">
+          <li>Entrée terminée — vue aérienne bras tendu, lumière naturelle</li>
+          <li>Excavation : équipe + marteau-piqueur + copeaux béton</li>
+          <li>Plaque vibrante sur gravier + niveau de chantier</li>
+          <li>Pose bordures / pierres angulaires — gros plan mains</li>
+          <li>Time-lapse pose pavé uni x3 — vue plongeante motif</li>
+          <li>Application sable polymétrique + activation eau — avant/après</li>
+          <li>Slide final : fond #1E3A20, texte blanc et #C8A45A</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ref-strip">
+      <span class="ref-lbl">Référence briefing</span>
+      <span class="ref-val">Campagne COUR AVANT 2026 · Segment C principal · Retargeting Meta · Format 9:16 · 50 secondes</span>
+    </div>
+  </article>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       REEL 03 — FOMO social voisin
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="section-divider" id="ca-r03">
+    <div class="section-tag">Reel 03 / 03</div>
+    <h2 class="section-title">CA-R03 · Votre voisin vient de refaire son entrée... les vôtres regardent déjà</h2>
+    <p class="section-sub">Objectif : activer le FOMO social et la pression du regard du quartier. Angle "première impression" — aucun compétiteur ne l'exploite actuellement.</p>
+  </div>
+
+  <article class="reel-card" aria-label="Script Reel CA-R03">
+    <div class="reel-head">
+      <div>
+        <span class="reel-id">CA-R03</span>
+        <p class="reel-title">Votre voisin vient de refaire son entrée... les vôtres regardent déjà</p>
+      </div>
+      <div class="reel-badges">
+        <span class="reel-dur">40 secondes</span>
+        <span class="reel-obj">FOMO · Preuve sociale · Quartier</span>
+      </div>
+    </div>
+
+    <div class="reel-meta">
+      <div class="reel-meta-cell">
+        <span class="rml">Objectif</span>
+        <span class="rmv">Activer FOMO social — déclencher soumission urgente</span>
+      </div>
+      <div class="reel-meta-cell">
+        <span class="rml">Public cible</span>
+        <span class="rmv">Segment A — 35–55 ans, propriétaires établis Laval/Rive-Nord</span>
+      </div>
+      <div class="reel-meta-cell">
+        <span class="rml">Tonalité</span>
+        <span class="rmv">Léger humour, complice, un brin provocateur — jamais condescendant</span>
+      </div>
+    </div>
+
+    <div class="reel-body">
+      <!-- Hook -->
+      <div class="hook-box">
+        <span class="hook-box-lbl">Gancho — Phrase d'accroche</span>
+        <p class="hook-text">« Il paraît que la maison du coin vient de refaire son entrée. »</p>
+      </div>
+
+      <!-- Objectif + Public -->
+      <div class="obj-pub-row">
+        <div class="field-block">
+          <p class="field-lbl">Objectif stratégique</p>
+          <p class="field-txt">Exploiter la dynamique sociale de quartier : quand un voisin rénove, le regard des autres change. Ce Reel <strong>active la pression sociale positive</strong> — pas de honte, mais une invitation à rejoindre une tendance visible dans le quartier. L'angle "cour avant = carte de visite" est ici le plus direct.</p>
+        </div>
+        <div class="field-block">
+          <p class="field-lbl">Public cible principal</p>
+          <p class="field-txt"><strong>Segment A :</strong> 35–55 ans, propriétaires Laval et Rive-Nord depuis plus de 5 ans. Attachés à leur quartier, sensibles à l'opinion des voisins. Ont peut-être déjà vu une entrée refaite dans leur rue cette année. Ce Reel transforme cette observation en passage à l'acte.</p>
+        </div>
+      </div>
+
+      <!-- Script timeline -->
+      <div class="script-header">Guion scène par scène — timing exact</div>
+
+      <div class="timeline">
+
+        <!-- Scène 1 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">0s – 3s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label hook">Hook</span>
+            <p class="scene-name">Shot de voisinage — la nouvelle entrée du coin</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">Il paraît que la maison du coin vient de refaire son entrée.</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Plan depuis le trottoir : belle entrée pavé uni neuve d'une maison de quartier résidentiel typique (Laval, Terrebonne, Bois-des-Filion). Maison ordinaire mais entrée impeccable — le contraste avec les voisins est visible dans le plan.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Filmer depuis le trottoir d'en face, légèrement de côté pour voir la rue. 3 secondes, plan fixe. Lumière naturelle en journée. L'entrée voisine (non refaite) peut apparaître en bord de cadre pour créer le contraste naturellement.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Son</span>
+                <div class="sf-val">Musique légère, légèrement espiègle (pas trop — rester professionnel). Bruits de quartier en fond.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 2 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">3s – 14s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label setup">Comparaison</span>
+            <p class="scene-name">Le contraste visible — l'ancienne et la nouvelle entrée côte à côte</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">Avant ↓</span> &nbsp; <span class="screen-text">Après ↑</span><br><br><span class="screen-text" style="font-size:10px;">Même rue. Même quartier. Résultat complètement différent.</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Split-screen vertical (gauche : ancienne entrée — béton fissuré, herbes, décoloré / droite : nouvelle entrée pavé uni, joints nets, haie taillée). Ou alternance rapide avant/après. Les deux maisons doivent être du même type et quartier.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Utiliser des projets réels Jardín Ideal (même rue ou rue similaire si possible). 11 secondes : 5s avant, 6s après. Monter en split-screen dans CapCut ou Premiere. Ajouter étiquettes texte "Avant" et "Après" en style Courier New.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Message implicite</span>
+                <div class="sf-val">La différence est évidente depuis la rue. Tout le monde la voit — les voisins, les visiteurs, les acheteurs potentiels.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 3 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">14s – 26s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label setup">Angle clé</span>
+            <p class="scene-name">La cour avant = carte de visite — l'argument émotionnel central</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">Votre cour avant, c'est la première impression que vous donnez.</span><br><br><span class="screen-text" style="font-size:10px;">Avant même d'ouvrir la porte.</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Lente descente de la façade de maison vers l'entrée — commence au toit (maison, fenêtres soignées) et descend progressivement jusqu'à l'entrée. Si l'entrée est belle : satisfaction. Si elle est vieille : le contraste crée la tension. Utiliser une belle entrée récente.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Mouvement tilt-down lent (7–8 sec de la façade jusqu'à l'entrée). Puis plan fixe 4–5 sec sur l'entrée seule. Lumière de l'après-midi de préférence — entrées Laval/Rive-Nord filmées en juin.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Message implicite</span>
+                <div class="sf-val">L'entrée n'est pas une commodité — c'est une déclaration. Quand elle est belle, elle dit : cette famille fait attention. Quand elle est abîmée, elle dit autre chose.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 4 -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">26s – 34s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label react">Preuve sociale</span>
+            <p class="scene-name">Les projets du quartier — Laval, Terrebonne, Bois-des-Filion</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val"><span class="screen-text">+47 projets réalisés en 2026</span><br><span class="screen-text" style="font-size:10px;">Laval · Terrebonne · Bois-des-Filion · Repentigny</span></div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Montage rapide de 4–5 projets différents (2 sec chacun) : des maisons de style et d'époque variés, toutes à Laval ou Rive-Nord. Montre la diversité des entrées réalisées — pavé classique, contemporain, avec haies. Terrain connu du spectateur.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">Photos ou courts clips des archives Jardín Ideal 2025–2026. Montage 8 secondes total. Superposer le nom de la ville en bas à gauche (petite police, Courier New). Musique plus dynamique pour ce passage.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Message implicite</span>
+                <div class="sf-val">Jardín Ideal est déjà dans votre quartier. Ce n'est pas une entreprise lointaine — c'est le service qui a refait l'entrée de la maison du coin.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scène 5 — CTA -->
+        <div class="scene">
+          <div class="scene-time-col">
+            <div class="scene-dot"></div>
+            <div class="scene-timing">34s – 40s</div>
+          </div>
+          <div class="scene-content">
+            <span class="scene-label cta">CTA</span>
+            <p class="scene-name">L'invitation — rejoignez le mouvement du quartier</p>
+            <div class="scene-fields">
+              <div>
+                <span class="sf-lbl">Texte à l'écran</span>
+                <div class="sf-val">
+                  <span class="screen-text">À votre tour.</span><br><br>
+                  <span class="screen-text">Soumission gratuite → lien en bio</span><br>
+                  <span class="screen-text" style="font-size:9px;">Jardín Ideal · On répond sous 24h</span>
+                </div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction visuelle</span>
+                <div class="sf-val">Belle entrée finale, plan large, maison bien entretenue. Puis slide CTA fond vert foncé. Ne pas utiliser le mot "voisin" dans le CTA — rester sur l'invitation positive, pas la pression négative.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Instruction filmage</span>
+                <div class="sf-val">6 secondes : 3s shot entrée + 3s slide CTA. L'urgence est suggérée ("à votre tour") sans être explicite. Ton positif et confiant, pas pressant.</div>
+              </div>
+              <div>
+                <span class="sf-lbl">Caption Instagram</span>
+                <div class="sf-val">La première impression commence à votre entrée. 47 propriétaires de Laval et Rive-Nord l'ont compris en 2026. Soumission gratuite en bio — on couvre votre quartier cet été. #couravan #pavéuni #laval #terrebonne #jardínideal #rénovation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+    </div><!-- /reel-body -->
+
+    <!-- CTA + Visuels footer -->
+    <div class="reel-footer">
+      <div class="footer-cell">
+        <p class="footer-lbl">CTA final</p>
+        <p class="cta-quote">« À votre tour. Soumission gratuite — lien en bio. On répond sous 24h. »</p>
+        <p class="cta-note">Ton : invitation positive, pas pression sociale négative. Le FOMO est activé par le contexte visuel — le CTA reste serein et professionnel. Cibler Segment A en audience froide (Laval, Rive-Nord, 35–55 ans, propriétaires).</p>
+      </div>
+      <div class="footer-cell">
+        <p class="footer-lbl">Visuels recommandés</p>
+        <ul class="visual-list">
+          <li>Belle entrée pavé uni récente — plan trottoir, quartier résidentiel typique</li>
+          <li>Split-screen avant/après — même style de maison, même quartier</li>
+          <li>Tilt-down lent façade maison → entrée (lumière PM)</li>
+          <li>Montage 4–5 projets Laval/Rive-Nord 2025–2026 avec noms de ville</li>
+          <li>Slide CTA : fond #1E3A20, "À votre tour." en grande police Georgia</li>
+          <li>Musique : légère, espiègle mais professionnelle — pas de trap ou EDM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ref-strip">
+      <span class="ref-lbl">Référence briefing</span>
+      <span class="ref-val">Campagne COUR AVANT 2026 · Segment A principal · Audience froide · FOMO social · Format 9:16 · 40 secondes</span>
+    </div>
+  </article>
+
+</main>
+
+</body>
+</html>

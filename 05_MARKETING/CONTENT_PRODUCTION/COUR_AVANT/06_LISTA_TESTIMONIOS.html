@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>06 — Témoignages Vidéo · Campagne COUR AVANT · Jardín Ideal 2026</title>
+<style>
+/* ═══════════════════════════════════════════════
+   JARDÍN IDEAL — DESIGN SYSTEM
+   Campagne COUR AVANT · Témoignages 06
+═══════════════════════════════════════════════ */
+:root {
+  --vf:  #1E3A20;
+  --vm:  #3D6B42;
+  --or:  #C8A45A;
+  --cr:  #F5F2EB;
+  --w:   #FFFFFF;
+  --n:   #0D0E0B;
+  --gf:  #2A2B28;
+  --g:   #6B6B63;
+  --gc:  #B8B8B0;
+  --cd:  #EDE9E0;
+  --or2: #E8C97A;
+  --red: #B83232;
+
+  --font-d: Georgia, 'Times New Roman', serif;
+  --font-b: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-m: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--font-b);
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── COVER ─── */
+.cover {
+  background: var(--vf);
+  padding: 56px 64px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: "TEMOIGNAGE";
+  position: absolute;
+  right: -20px; bottom: -10px;
+  font-family: var(--font-d);
+  font-size: clamp(60px, 11vw, 130px);
+  font-weight: 700;
+  color: rgba(200,164,90,0.05);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -3px;
+}
+.cover-eyebrow {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 20px;
+}
+.cover h1 {
+  font-family: var(--font-d);
+  font-size: clamp(26px, 4vw, 50px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  max-width: 700px;
+  margin-bottom: 28px;
+}
+.cover h1 em { color: var(--or); font-style: italic; }
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.cover-meta-item {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+}
+.cover-meta-item strong {
+  display: block;
+  color: var(--or2);
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+/* ─── PAGE ─── */
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+/* ─── SECTION HEADER ─── */
+.section-header {
+  padding: 52px 0 0;
+  margin-bottom: 32px;
+  border-top: 2px solid var(--vf);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.section-num {
+  font-family: var(--font-d);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--or);
+  letter-spacing: 2px;
+  padding-top: 4px;
+  min-width: 28px;
+}
+.section-title {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--g);
+}
+
+/* ─── TESTI CARD ─── */
+.testi-card {
+  background: var(--w);
+  border: 1px solid var(--cd);
+  margin-bottom: 72px;
+  overflow: hidden;
+}
+
+/* Header */
+.testi-header {
+  background: var(--vf);
+  padding: 30px 40px;
+  position: relative;
+}
+.testi-header::after {
+  content: attr(data-id);
+  position: absolute;
+  right: 30px; bottom: -20px;
+  font-family: var(--font-d);
+  font-size: 100px;
+  font-weight: 700;
+  color: rgba(200,164,90,0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+.testi-id {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 12px;
+}
+.testi-header h2 {
+  font-family: var(--font-d);
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.testi-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.stat {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+}
+.stat strong { color: var(--or2); }
+
+/* Body */
+.testi-body {
+  padding: 36px 40px;
+}
+
+/* Field */
+.field {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--cd);
+}
+.field:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.field-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.field-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cd);
+  max-width: 80px;
+}
+.field-value {
+  font-size: 13.5px;
+  color: var(--gf);
+  line-height: 1.75;
+}
+.field-value strong {
+  color: var(--vf);
+  font-weight: 600;
+}
+
+/* Hook */
+.hook-box {
+  background: var(--vf);
+  padding: 22px 28px;
+  position: relative;
+}
+.hook-box::before {
+  content: open-quote;
+  font-family: var(--font-d);
+  font-size: 72px;
+  color: var(--or);
+  line-height: 0.6;
+  position: absolute;
+  top: 20px; left: 20px;
+  opacity: 0.4;
+}
+.hook-text {
+  font-family: var(--font-d);
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--w);
+  line-height: 1.3;
+  padding-left: 24px;
+}
+
+/* Script block */
+.script-block {
+  background: var(--cr);
+  border-left: 3px solid var(--vf);
+  margin-top: 8px;
+}
+.script-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 80px;
+  border-bottom: 1px solid var(--cd);
+}
+.script-row:last-child { border-bottom: none; }
+.script-row.header-row {
+  background: var(--vf);
+}
+.script-row.header-row .script-cell {
+  font-family: var(--font-m);
+  font-size: 8.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 400;
+  padding: 9px 14px;
+}
+.script-cell {
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  vertical-align: top;
+}
+.script-cell:first-child {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--or);
+  font-weight: 700;
+  border-right: 1px solid var(--cd);
+  background: rgba(30,58,32,0.03);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 14px;
+}
+.script-cell:last-child {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--gc);
+  border-left: 1px solid var(--cd);
+  text-align: right;
+}
+.script-cell.question {
+  font-style: italic;
+  color: var(--gf);
+  font-weight: 500;
+}
+.script-cell.answer {
+  color: var(--n);
+}
+.script-cell.guided {
+  color: var(--vm);
+  font-size: 12px;
+}
+.script-cell.direction {
+  background: rgba(200,164,90,0.06);
+  color: var(--gf);
+  font-style: italic;
+  font-size: 12px;
+}
+
+/* CTA */
+.cta-box {
+  background: linear-gradient(135deg, var(--vf) 0%, var(--vm) 100%);
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 8px;
+}
+.cta-arrow {
+  font-family: var(--font-d);
+  font-size: 32px;
+  color: var(--or);
+  flex-shrink: 0;
+}
+.cta-text {
+  font-family: var(--font-d);
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--w);
+  line-height: 1.3;
+}
+.cta-text small {
+  display: block;
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--or);
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+/* Filming box */
+.film-box {
+  background: var(--n);
+  padding: 28px 32px;
+  margin-top: 8px;
+}
+.film-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 16px;
+}
+.film-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.film-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.film-item-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gc);
+}
+.film-item-value {
+  font-size: 13px;
+  color: rgba(245,242,235,0.85);
+  line-height: 1.6;
+}
+
+/* Film checklist */
+.film-checklist {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.film-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 13px;
+  color: rgba(245,242,235,0.85);
+  line-height: 1.5;
+}
+.film-checklist li:last-child { border-bottom: none; }
+.film-check-num {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--or);
+  font-weight: 700;
+  min-width: 24px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.film-check-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gc);
+  min-width: 110px;
+  padding-top: 3px;
+  flex-shrink: 0;
+}
+.film-check-value {
+  flex: 1;
+}
+
+/* Visual list */
+.visual-list {
+  list-style: none;
+  margin-top: 8px;
+}
+.visual-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--cd);
+  font-size: 13px;
+  color: var(--gf);
+}
+.visual-list li:last-child { border-bottom: none; }
+.visual-num {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--or);
+  font-weight: 700;
+  min-width: 24px;
+  padding-top: 3px;
+}
+
+/* Ref tag */
+.ref-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gf);
+  color: var(--gc);
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 4px 10px;
+  margin-top: 6px;
+}
+
+/* ROI highlight */
+.roi-highlight {
+  background: rgba(200,164,90,0.12);
+  border: 1px solid var(--or);
+  padding: 16px 20px;
+  margin-top: 8px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.roi-label {
+  font-family: var(--font-m);
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 700;
+  white-space: nowrap;
+  padding-top: 3px;
+}
+.roi-value {
+  font-family: var(--font-d);
+  font-size: 15px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--vf);
+  line-height: 1.4;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 720px) {
+  .cover { padding: 36px 24px 32px; }
+  .page { padding: 0 18px 60px; }
+  .testi-body { padding: 24px 20px; }
+  .script-row { grid-template-columns: 80px 1fr; }
+  .script-row .script-cell:last-child { display: none; }
+  .film-grid { grid-template-columns: 1fr; }
+  .film-check-label { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div class="cover-eyebrow">Jardín Ideal · Campagne COUR AVANT 2026 · Document 06/06</div>
+  <h1>Témoignages Vidéo<br><em>Scripts &amp; Guide de Filmage · Juillet 2026</em></h1>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>2 témoignages</strong>CA-T01 · CA-T02</div>
+    <div class="cover-meta-item"><strong>60s + 90s</strong>Durées cibles</div>
+    <div class="cover-meta-item"><strong>5 questions</strong>Par script</div>
+    <div class="cover-meta-item"><strong>8 points</strong>Guide filmage</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  TÉMOIGNAGE CA-T01                        -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">Premier témoignage</span>
+  </div>
+
+  <div class="testi-card">
+    <div class="testi-header" data-id="CA-T01">
+      <div class="testi-id">CA-T01 · Témoignage Vidéo · Cour Avant · Jardín Ideal 2026</div>
+      <h2>Client Laval — Entrée en pavé uni après 12 ans d'asphalte fissuré</h2>
+      <div class="testi-stats">
+        <div class="stat"><strong>60 secondes</strong>Durée cible</div>
+        <div class="stat"><strong>5 questions</strong>Script</div>
+        <div class="stat"><strong>Laval</strong>Localisation</div>
+        <div class="stat"><strong>Avant/après en direct</strong>Format</div>
+      </div>
+    </div>
+    <div class="testi-body">
+
+      <!-- OBJECTIF -->
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          Démontrer la transformation émotionnelle d'un propriétaire qui vivait avec la honte de son entrée dégradée.
+          Le message central : <strong>ce n'est pas une dépense, c'est une libération</strong>.
+          Ce témoignage cible les propriétaires qui "s'habituent" à leur entrée abîmée sans réaliser l'impact sur leur quotidien.
+          Format : client debout devant son entrée rénovée, comparaison visuelle avant/après intégrée au discours.
+        </div>
+      </div>
+
+      <!-- PUBLIC CIBLE -->
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires 40–65 ans à Laval, Montréal-Nord et Rive-Nord avec une entrée en asphalte vieillissant (5–15 ans).
+          Profil psychologique : "Je sais que c'est pas beau, mais j'attends encore un peu."
+          Déclencheur émotionnel : <strong>la honte de recevoir des invités</strong> ou la crainte du regard des voisins.
+        </div>
+      </div>
+
+      <!-- GANCHO -->
+      <div class="field">
+        <div class="field-label">Gancho — Accroche vidéo</div>
+        <div class="hook-box">
+          <div class="hook-text">"J'avais honte de recevoir du monde depuis 3 ans."</div>
+        </div>
+      </div>
+
+      <!-- GUION COMPLET -->
+      <div class="field">
+        <div class="field-label">Guion complet — 5 questions + timing</div>
+        <div class="script-block">
+          <div class="script-row header-row">
+            <div class="script-cell">Question / Note</div>
+            <div class="script-cell">Réponse guidée / Direction</div>
+            <div class="script-cell">Timing</div>
+          </div>
+
+          <!-- Q1 — ACCROCHE -->
+          <div class="script-row">
+            <div class="script-cell">Q1 — Accroche</div>
+            <div class="script-cell">
+              <div class="question"><strong>Daniel demande :</strong> "Avant qu'on refasse votre entrée, comment vous vous sentiez par rapport à elle ?"</div>
+              <div class="guided">Réponse guidée : Client répond spontanément. Si blocage, suggérer : "Est-ce que vous évitez d'inviter des gens à cause de l'état de l'entrée ?"</div>
+              <div class="answer">Exemple de réponse attendue : "Honnêtement, j'avais honte. Ça faisait 3 ans que je disais à mes amis de rentrer directement par la cour arrière pour pas qu'ils voient ça. C'était fissuré partout, ça avait l'air abandonné."</div>
+            </div>
+            <div class="script-cell">0–15 sec</div>
+          </div>
+
+          <!-- Q2 — DÉCLENCHEUR -->
+          <div class="script-row">
+            <div class="script-cell">Q2 — Déclencheur</div>
+            <div class="script-cell">
+              <div class="question"><strong>Daniel demande :</strong> "Qu'est-ce qui vous a finalement convaincu de faire le projet ?"</div>
+              <div class="guided">Réponse guidée : Laisser parler librement. Souvent : commentaire d'un voisin, arrivée d'un enfant, vente potentielle de la maison.</div>
+              <div class="answer">Exemple de réponse attendue : "Ma belle-mère est venue en visite et elle a rien dit, mais j'ai vu son regard. Là j'ai appelé Jardín Ideal le lendemain matin."</div>
+            </div>
+            <div class="script-cell">15–25 sec</div>
+          </div>
+
+          <!-- Q3 — PROCESSUS -->
+          <div class="script-row">
+            <div class="script-cell">Q3 — Processus</div>
+            <div class="script-cell">
+              <div class="question"><strong>Daniel demande :</strong> "Comment s'est passé le projet avec notre équipe ?"</div>
+              <div class="guided">Réponse guidée : Demander de mentionner la durée, la propreté du chantier, la communication. Éviter les détails techniques — rester sur le ressenti.</div>
+              <div class="answer">Exemple de réponse attendue : "En 4 jours c'était fini. L'équipe était propre, ils ont tout ramassé. Ils m'ont expliqué chaque étape. Moi j'avais peur que ça prenne des semaines."</div>
+            </div>
+            <div class="script-cell">25–38 sec</div>
+          </div>
+
+          <!-- Q4 — RÉSULTAT VISUEL — AVEC GESTE -->
+          <div class="script-row">
+            <div class="script-cell">Q4 — Résultat (avec geste)</div>
+            <div class="script-cell">
+              <div class="question"><strong>Daniel demande :</strong> "Maintenant, montrez-nous votre entrée et dites-nous ce que vous ressentez."</div>
+              <div class="direction">Direction caméra : client se retourne ou fait un geste vers l'entrée. Caméra effectue un panoramique lent de l'entrée avant de revenir sur le visage du client. Ce moment est le coeur émotionnel du témoignage — lui laisser le temps.</div>
+              <div class="answer">Exemple de réponse attendue : "Regardez ça. [pause] Maintenant j'ai envie que tout le monde vienne. Ma fille organise une fête chez nous la semaine prochaine — avant j'aurais jamais dit oui."</div>
+            </div>
+            <div class="script-cell">38–52 sec</div>
+          </div>
+
+          <!-- Q5 — RECOMMANDATION -->
+          <div class="script-row">
+            <div class="script-cell">Q5 — Recommandation</div>
+            <div class="script-cell">
+              <div class="question"><strong>Daniel demande :</strong> "À quelqu'un qui hésite encore, qu'est-ce que vous lui diriez ?"</div>
+              <div class="guided">Réponse guidée : Demander de s'adresser directement à la caméra pour créer un effet de connection directe avec le spectateur.</div>
+              <div class="answer">Exemple de réponse attendue : "Faites-le. Sérieusement. Moi j'ai attendu 12 ans. 12 ans où j'avais honte de mon entrée. Ça coûte moins cher que ce que vous pensez et ça change tout."</div>
+            </div>
+            <div class="script-cell">52–60 sec</div>
+          </div>
+
+        </div><!-- /script-block -->
+      </div>
+
+      <!-- CTA FINAL VIDEO -->
+      <div class="field">
+        <div class="field-label">CTA final vidéo</div>
+        <div class="cta-box">
+          <div class="cta-arrow">→</div>
+          <div class="cta-text">
+            <small>Fin de vidéo · Overlay texte ou voix off</small>
+            "Votre entrée mérite mieux. Soumission gratuite sous 48h — Jardín Ideal, Montréal et Rive-Nord."
+          </div>
+        </div>
+      </div>
+
+      <!-- VISUELS RECOMMANDÉS -->
+      <div class="field">
+        <div class="field-label">Visuels recommandés</div>
+        <ul class="visual-list">
+          <li>
+            <span class="visual-num">V1</span>
+            <span><strong>Plan d'ouverture :</strong> gros plan sur une fissure de l'ancienne entrée (photo archive ou reconstitution), 2 secondes, puis cut rapide sur le client qui parle. Crée la tension visuelle immédiate.</span>
+          </li>
+          <li>
+            <span class="visual-num">V2</span>
+            <span><strong>Plan B-roll :</strong> vue de l'entrée complète (pavé uni installé) depuis la rue, lumière du matin (7h–9h) pour ombres douces et reflets sur les pierres. 3–4 secondes pendant Q3.</span>
+          </li>
+          <li>
+            <span class="visual-num">V3</span>
+            <span><strong>Plan split avant/après :</strong> photo de l'état initial (archive) en split screen avec le plan actuel. Insérer pendant Q4 (moment du geste). Durée : 3 secondes.</span>
+          </li>
+          <li>
+            <span class="visual-num">V4</span>
+            <span><strong>Plan détail :</strong> gros plan sur les joints du pavé uni (sable polymérique), puis sur le bord de l'entrée avec la pelouse bien taillée. Insiste sur la qualité de l'installation.</span>
+          </li>
+          <li>
+            <span class="visual-num">V5</span>
+            <span><strong>Plan final CTA :</strong> fondu enchaîné logo Jardín Ideal sur fond vert foncé. Texte overlay : "Soumission gratuite · jardinideal.ca · 514-XXX-XXXX". Durée : 4 secondes.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- GUIDE FILMAGE DANIEL -->
+      <div class="field">
+        <div class="field-label">Instructions de filmage — 8 points pour Daniel</div>
+        <div class="film-box">
+          <div class="film-title">Guide filmage CA-T01 · Laval · Témoignage 60 sec</div>
+          <ul class="film-checklist">
+            <li>
+              <span class="film-check-num">01</span>
+              <span class="film-check-label">Heure</span>
+              <span class="film-check-value">Filmer entre 7h30 et 9h30 du matin. La lumière rasante d'est révèle les textures du pavé uni et élimine les ombres dures. Éviter la mi-journée (lumière plate, éblouissement).</span>
+            </li>
+            <li>
+              <span class="film-check-num">02</span>
+              <span class="film-check-label">Position</span>
+              <span class="film-check-value">Client positionné de 3/4 face à la caméra, avec l'entrée bien visible derrière lui. Ne pas mettre le client dos à la rue — l'entrée doit être lisible dans le cadre. Caméra à hauteur de poitrine (légèrement en dessous des yeux).</span>
+            </li>
+            <li>
+              <span class="film-check-num">03</span>
+              <span class="film-check-label">Matériel</span>
+              <span class="film-check-value">iPhone 14 ou supérieur en mode cinématique (portrait video) ou caméra. Trépied obligatoire — aucun mouvement de caméra non intentionnel. Micro-cravate filaire (éviter le Wi-Fi pour la sync) ou DJI Mic.</span>
+            </li>
+            <li>
+              <span class="film-check-num">04</span>
+              <span class="film-check-label">Avant/après</span>
+              <span class="film-check-value">Préparer à l'avance la photo "avant" sur téléphone ou tablette. Pendant Q4, le client peut pointer vers l'endroit où était l'ancienne entrée. Filmer ce geste en continu, monter ensuite en post-production avec split screen.</span>
+            </li>
+            <li>
+              <span class="film-check-num">05</span>
+              <span class="film-check-label">Spontanéité</span>
+              <span class="film-check-value">Ne pas donner le script au client à l'avance — maximum 2 minutes d'explication verbale avant tournage. Les réponses spontanées sont 3x plus crédibles. Si le client perd le fil, reprendre la question doucement.</span>
+            </li>
+            <li>
+              <span class="film-check-num">06</span>
+              <span class="film-check-label">B-roll</span>
+              <span class="film-check-value">Après le témoignage principal, filmer 5 plans de coupe supplémentaires : (1) entrée vue de la rue, (2) détail joint pavé, (3) client qui arrive avec sa voiture, (4) client qui ouvre sa porte d'entrée en souriant, (5) vue aérienne si disponible (perche ou voisin en hauteur).</span>
+            </li>
+            <li>
+              <span class="film-check-num">07</span>
+              <span class="film-check-label">Son</span>
+              <span class="film-check-value">Vérifier le son avant de commencer : vent, tondeuse, circulation. Si le vent est fort, utiliser le pare-brise sur le micro. Ne jamais filmer pendant que des véhicules passent derrière — attendre le silence relatif.</span>
+            </li>
+            <li>
+              <span class="film-check-num">08</span>
+              <span class="film-check-label">Autorisation</span>
+              <span class="film-check-value">Faire signer le formulaire de cession de droits image avant de partir. Version papier dans le cartable chantier OU version PDF envoyée par email avec signature électronique. Obligatoire avant toute publication.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RÉFÉRENCE BRIEFING -->
+      <div class="field">
+        <div class="field-label">Référence briefing</div>
+        <div class="ref-tag">JARDÍN IDEAL · CAMPAGNE COUR AVANT 2026 · CA-T01 · DOC 06/06 · CPL REF $134.17</div>
+      </div>
+
+    </div><!-- /testi-body -->
+  </div><!-- /testi-card -->
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  TÉMOIGNAGE CA-T02                        -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">Deuxième témoignage</span>
+  </div>
+
+  <div class="testi-card">
+    <div class="testi-header" data-id="CA-T02">
+      <div class="testi-id">CA-T02 · Témoignage Vidéo · Cour Avant · Jardín Ideal 2026</div>
+      <h2>Client Bois-des-Filion — Cour avant + aménagement haies + entrée latérale</h2>
+      <div class="testi-stats">
+        <div class="stat"><strong>90 secondes</strong>Durée cible</div>
+        <div class="stat"><strong>5 questions + walkthrough</strong>Format</div>
+        <div class="stat"><strong>Bois-des-Filion</strong>Localisation</div>
+        <div class="stat"><strong>ROI revente</strong>Angle principal</div>
+      </div>
+    </div>
+    <div class="testi-body">
+
+      <!-- OBJECTIF -->
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          Démontrer le retour sur investissement concret d'une transformation complète (cour avant + haies + allée latérale).
+          Angle central : <strong>l'entrée comme investissement immobilier</strong>, validé par un agent immobilier.
+          Ce témoignage cible spécifiquement les propriétaires qui préparent une vente dans les 1–3 ans.
+          Format : walking tour — le client guide la caméra à travers les différents éléments du projet.
+        </div>
+      </div>
+
+      <!-- PUBLIC CIBLE -->
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires 45–70 ans en phase de préparation à la vente ou conscients de la valeur marchande de leur propriété.
+          Profil : rationnels, orientés ROI, réceptifs aux chiffres concrets.
+          Déclencheur : <strong>validation externe d'un agent immobilier chiffrant l'impact</strong> ($15 000 de plus à la revente).
+        </div>
+      </div>
+
+      <!-- GANCHO -->
+      <div class="field">
+        <div class="field-label">Gancho — Accroche vidéo</div>
+        <div class="hook-box">
+          <div class="hook-text">"Le vendeur de maisons nous a dit que l'entrée valait $15 000 de plus maintenant."</div>
+        </div>
+        <div class="roi-highlight">
+          <span class="roi-label">ROI revente</span>
+          <span class="roi-value">Valeur ajoutée certifiée agent immobilier : +$15 000 sur le prix de vente estimé. Angle unique dans la campagne — aucun concurrent ne parle de ROI chiffré.</span>
+        </div>
+      </div>
+
+      <!-- GUION COMPLET -->
+      <div class="field">
+        <div class="field-label">Guion complet — 5 questions + walkthrough + timing</div>
+        <div class="script-block">
+          <div class="script-row header-row">
+            <div class="script-cell">Question / Note</div>
+            <div class="script-cell">Réponse guidée / Direction</div>
+            <div class="script-cell">Timing</div>
+          </div>
+
+          <!-- INTRO WALKTHROUGH -->
+          <div class="script-row">
+            <div class="script-cell">Intro walking</div>
+            <div class="script-cell">
+              <div class="direction">Direction caméra : le client commence depuis le trottoir, face à la maison. Il marche lentement vers la porte en décrivant ce qu'il voit. La caméra le suit depuis l'arrière (client de dos), puis se repositionne de face une fois arrivé à la porte. Ce walking tour donne immédiatement la perspective d'un acheteur potentiel qui arrive pour la première fois.</div>
+            </div>
+            <div class="script-cell">0–8 sec</div>
+          </div>
+
+          <!-- Q1 — CONTEXTE PROJET -->
+          <div class="script-row">
+            <div class="script-cell">Q1 — Contexte</div>
+            <div class="script-cell">
+              <div class="question"><strong>Daniel demande :</strong> "Décrivez-nous le projet que vous avez fait avec Jardín Ideal — qu'est-ce qu'on a transformé exactement ?"</div>
+              <div class="guided">Réponse guidée : Client marche vers les haies et les désigne de la main. Filmer les haies et l'allée latérale pendant la réponse. Le mouvement physique donne vie au témoignage.</div>
+              <div class="answer">Exemple de réponse attendue : "On a refait la cour avant complète en pavé uni, planté des haies des deux côtés, et fait une allée latérale pour accéder au garage. Avant c'était de l'asphalte cassé et des mauvaises herbes partout."</div>
+            </div>
+            <div class="script-cell">8–22 sec</div>
+          </div>
+
+          <!-- Q2 — AGENT IMMOBILIER -->
+          <div class="script-row">
+            <div class="script-cell">Q2 — ROI agent</div>
+            <div class="script-cell">
+              <div class="question"><strong>Daniel demande :</strong> "Vous nous avez parlé de quelque chose que votre agent immobilier vous a dit — pouvez-vous nous répéter exactement ce qu'il a dit ?"</div>
+              <div class="guided">Réponse guidée : C'est la phrase clé de tout le témoignage. Demander au client de la dire face caméra, directement, sans détours. Si le client ne se souvient pas du chiffre exact, lui confirmer à voix basse avant la prise.</div>
+              <div class="answer">Exemple de réponse attendue : "Notre agent est passé faire une évaluation pour une vente potentielle dans 2–3 ans. Il a regardé l'entrée et il m'a dit : 'Là ça vaut facilement $15 000 de plus qu'avant.' C'est lui qui me l'a dit, pas moi."</div>
+            </div>
+            <div class="script-cell">22–38 sec</div>
+          </div>
+
+          <!-- Q3 — WALKTHROUGH DÉTAIL -->
+          <div class="script-row">
+            <div class="script-cell">Q3 — Walkthrough</div>
+            <div class="script-cell">
+              <div class="question"><strong>Daniel demande :</strong> "Montrez-nous votre pièce préférée du projet."</div>
+              <div class="direction">Direction caméra : client marche vers l'élément qu'il choisit (souvent les haies ou l'allée latérale). Caméra suit en marchant, plans fluides. Filmer les détails que le client pointe : qualité des pierres, alignement, transitions entre zones. Ce plan-séquence est le coeur visuel du témoignage.</div>
+              <div class="answer">Exemple de réponse attendue : "Les haies pour moi c'est le détail qui fait tout. Ça donne l'impression que la maison est encadrée. Et l'allée latérale, c'est pratique, on peut sortir les poubelles sans traverser le devant."</div>
+            </div>
+            <div class="script-cell">38–58 sec</div>
+          </div>
+
+          <!-- Q4 — PROCESSUS -->
+          <div class="script-row">
+            <div class="script-cell">Q4 — Processus</div>
+            <div class="script-cell">
+              <div class="question"><strong>Daniel demande :</strong> "Pour quelqu'un qui a peur que le chantier soit trop perturbant — qu'est-ce que vous leur diriez ?"</div>
+              <div class="guided">Réponse guidée : Orienter vers la durée courte et la propreté de chantier. Demander de mentionner combien de jours ça a duré.</div>
+              <div class="answer">Exemple de réponse attendue : "En 5 jours c'était terminé. Ils arrivent tôt, ils travaillent toute la journée, ils nettoient avant de partir. Ma femme pensait que ça allait être un cauchemar. Elle était agréablement surprise."</div>
+            </div>
+            <div class="script-cell">58–74 sec</div>
+          </div>
+
+          <!-- Q5 — RECOMMANDATION FINALE -->
+          <div class="script-row">
+            <div class="script-cell">Q5 — Clôture</div>
+            <div class="script-cell">
+              <div class="question"><strong>Daniel demande :</strong> "Vous vendez votre maison dans quelques années. En une phrase, pourquoi cet investissement valait la peine ?"</div>
+              <div class="guided">Réponse guidée : Client se retourne pour avoir la maison entière dans le cadre derrière lui. Plan large — client + maison + entrée visible en entier. Clôture forte, face caméra.</div>
+              <div class="answer">Exemple de réponse attendue : "Parce que $15 000 de plus sur ma maison pour $12 000 d'investissement, ça, ça s'appelle une bonne décision. Et en plus, on vit dedans en attendant — alors c'est du bonus."</div>
+            </div>
+            <div class="script-cell">74–90 sec</div>
+          </div>
+
+        </div><!-- /script-block -->
+      </div>
+
+      <!-- CTA FINAL VIDEO -->
+      <div class="field">
+        <div class="field-label">CTA final vidéo</div>
+        <div class="cta-box">
+          <div class="cta-arrow">→</div>
+          <div class="cta-text">
+            <small>Fin de vidéo · Overlay texte ou voix off</small>
+            "Votre entrée, votre investissement. Soumission gratuite sous 48h — Jardín Ideal, Montréal et Rive-Nord."
+          </div>
+        </div>
+      </div>
+
+      <!-- VISUELS RECOMMANDÉS -->
+      <div class="field">
+        <div class="field-label">Visuels recommandés</div>
+        <ul class="visual-list">
+          <li>
+            <span class="visual-num">V1</span>
+            <span><strong>Plan d'ouverture walking :</strong> client de dos, marchant depuis le trottoir vers la maison. Vue complète de l'entrée et des haies. Caméra stable sur trépied ou gimbal. Lumière du matin pour ombres dramatiques sur les pierres.</span>
+          </li>
+          <li>
+            <span class="visual-num">V2</span>
+            <span><strong>Plan agent immobilier (optionnel) :</strong> si l'agent accepte, 5 secondes de B-roll avec lui pointant vers la maison. Sinon, insert photo de l'évaluation immobilière (document flou, montant visible). Renforce la crédibilité du chiffre $15 000.</span>
+          </li>
+          <li>
+            <span class="visual-num">V3</span>
+            <span><strong>Plan détails haies :</strong> gros plan sur les haies bien taillées en bordure de l'allée. Plan de 3 secondes qui révèle le soin du travail. Inclure un plan des racines plantées proprement si visible.</span>
+          </li>
+          <li>
+            <span class="visual-num">V4</span>
+            <span><strong>Plan allée latérale :</strong> travelling le long de l'allée latérale vers le garage. Révèle l'étendue complète du projet. Filmer depuis l'entrée principale vers l'arrière, 4 secondes.</span>
+          </li>
+          <li>
+            <span class="visual-num">V5</span>
+            <span><strong>Plan final maison entière :</strong> recul progressif depuis la porte jusqu'au trottoir, maison entière dans le cadre. Client debout à la porte, bras croisés, souriant. Le dernier plan que le spectateur voit avant le CTA.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- GUIDE FILMAGE DANIEL -->
+      <div class="field">
+        <div class="field-label">Instructions de filmage — 8 points pour Daniel</div>
+        <div class="film-box">
+          <div class="film-title">Guide filmage CA-T02 · Bois-des-Filion · Walkthrough 90 sec</div>
+          <ul class="film-checklist">
+            <li>
+              <span class="film-check-num">01</span>
+              <span class="film-check-label">Format</span>
+              <span class="film-check-value">Filmer en 4K si possible, exporter en 1080p. Format 9:16 (vertical) pour Stories et Reels. Filmer aussi un crop 16:9 pour le site web et YouTube. Un seul tournage, deux formats — prévoir de laisser de l'espace en haut et en bas de cadre.</span>
+            </li>
+            <li>
+              <span class="film-check-num">02</span>
+              <span class="film-check-label">Heure</span>
+              <span class="film-check-value">Filmer entre 7h30 et 9h30 du matin (même règle que CA-T01). Pour Bois-des-Filion, vérifier l'orientation de la maison sur Google Maps avant — les maisons face nord n'ont pas de lumière directe le matin. Adapter si nécessaire (18h–19h comme alternative).</span>
+            </li>
+            <li>
+              <span class="film-check-num">03</span>
+              <span class="film-check-label">Gimbal</span>
+              <span class="film-check-value">Le walking tour (Q3 et intro) exige un gimbal ou un stabilisateur — aucune image tremblée acceptable. Si pas de gimbal, filmer les plans fixes uniquement sur trépied et monter différemment. Le mouvement fluide est critique pour la crédibilité du format walking tour.</span>
+            </li>
+            <li>
+              <span class="film-check-num">04</span>
+              <span class="film-check-label">Walkthrough</span>
+              <span class="film-check-value">Faire une répétition du parcours sans caméra : client marche, vous suivez. Identifier les 3 points d'arrêt (entrée principale, haies, allée latérale). Planifier chaque transition. Le client ne doit jamais avoir l'air de "ne pas savoir où aller" devant la caméra.</span>
+            </li>
+            <li>
+              <span class="film-check-num">05</span>
+              <span class="film-check-label">Chiffre $15K</span>
+              <span class="film-check-value">Ce chiffre est le coeur du témoignage. Si le client hésite sur le montant exact, confirmer à voix basse avant la prise. Ne jamais suggérer ou exagérer un chiffre — utiliser uniquement ce que l'agent immobilier a réellement dit. Intégrité éditoriale prioritaire.</span>
+            </li>
+            <li>
+              <span class="film-check-num">06</span>
+              <span class="film-check-label">B-roll extra</span>
+              <span class="film-check-value">Filmer 8 plans de coupe minimum : (1) entrée vue rue, (2) détail pavé uni, (3) haies en gros plan, (4) allée latérale en travelling, (5) transition allée/pavé, (6) bordures, (7) client qui stationne sa voiture, (8) vue depuis la porte de la maison vers la rue. Ces plans donnent de la matière au montage.</span>
+            </li>
+            <li>
+              <span class="film-check-num">07</span>
+              <span class="film-check-label">Micro</span>
+              <span class="film-check-value">Micro-cravate sur le client, micro secondaire directionnel pointé vers lui (pour backup). Le walking tour crée des défis audio — vérifier que le micro est bien fixé et que le câble ne traîne pas au sol. Test audio obligatoire avant de commencer.</span>
+            </li>
+            <li>
+              <span class="film-check-num">08</span>
+              <span class="film-check-label">Autorisation</span>
+              <span class="film-check-value">Formulaire de cession de droits image signé avant de commencer. Si l'agent immobilier est filmé, obtenir une autorisation séparée pour lui. Conserver une copie PDF dans le dossier campagne et une copie papier dans le cartable chantier.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RÉFÉRENCE BRIEFING -->
+      <div class="field">
+        <div class="field-label">Référence briefing</div>
+        <div class="ref-tag">JARDÍN IDEAL · CAMPAGNE COUR AVANT 2026 · CA-T02 · DOC 06/06 · CPL REF $134.17</div>
+      </div>
+
+    </div><!-- /testi-body -->
+  </div><!-- /testi-card -->
+
+</div><!-- /page -->
+</body>
+</html>

@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COUR AVANT — Carruseles · Jardín Ideal 2026</title>
+<style>
+  /* ═══════════════════════════════════════════════════════
+     DESIGN TOKENS — Jardín Ideal System
+     Campagne: COUR AVANT 2026 · Carruseles
+  ═══════════════════════════════════════════════════════ */
+  :root {
+    --vert-fonce:  #1E3A20;
+    --vert:        #2C4A2E;
+    --vert-med:    #3D6B42;
+    --vert-clair:  #5A8F62;
+    --or:          #C8A45A;
+    --or-clair:    #E8C97A;
+    --or-dim:      rgba(200,164,90,0.15);
+    --or-border:   rgba(200,164,90,0.35);
+    --noir:        #0D0E0B;
+    --gris-fonce:  #2A2B28;
+    --gris:        #6B6B63;
+    --gris-clair:  #B8B8B0;
+    --creme:       #F5F2EB;
+    --creme-fonce: #EDE9E0;
+    --blanc:       #FFFFFF;
+    --rouge:       #B83232;
+    --rouge-clair: #F5E8E8;
+    --jaune:       #C8850A;
+    --jaune-clair: #FEF5E4;
+    --vert-bg:     #EAF2EB;
+    --bleu:        #2A4A6E;
+    --bleu-clair:  #EAF0F8;
+
+    /* COUR AVANT campaign — stone/concrete dusk */
+    --ca-bg:       #1A1510;
+
+    --font-display: Georgia, 'Times New Roman', serif;
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Courier New', Courier, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--creme);
+    color: var(--noir);
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+
+  /* ═══════════════ COVER ═══════════════ */
+  .cover {
+    background: var(--vert-fonce);
+    min-height: 320px;
+    padding: 52px 60px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Aesthetic risk: a carousel frame grid in the header corner —
+     a 4:5 portrait proportion grid (carousel format) rendered
+     as nested borders, echoing the slide layout this doc defines.
+     One orchestrated visual metaphor — no other animation runs. */
+  .cover-carousel-frame {
+    position: absolute;
+    right: 56px;
+    top: 36px;
+    width: 120px;
+    height: 150px; /* 4:5 ratio */
+    border: 1.5px solid rgba(200,164,90,0.25);
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 2px;
+    padding: 10px;
+    pointer-events: none;
+  }
+  .cf-cell {
+    background: rgba(200,164,90,0.05);
+    border: 1px solid rgba(200,164,90,0.10);
+    border-radius: 1px;
+  }
+  /* Active first slide indicator */
+  .cf-cell:first-child {
+    background: rgba(200,164,90,0.18);
+    border-color: rgba(200,164,90,0.40);
+  }
+  /* Slide counter dots below frame */
+  .cover-slide-dots {
+    position: absolute;
+    right: 56px;
+    top: calc(36px + 158px + 8px);
+    display: flex;
+    gap: 4px;
+    pointer-events: none;
+  }
+  .slide-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(200,164,90,0.20);
+  }
+  .slide-dot.active { background: rgba(200,164,90,0.55); }
+
+  .cover-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--blanc);
+    line-height: 1.08;
+    max-width: 620px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 em { color: var(--or); font-style: italic; }
+  .cover-sub {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: rgba(245,242,235,0.70);
+    max-width: 540px;
+    margin-bottom: 28px;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--or-dim);
+    border: 1px solid var(--or-border);
+    color: var(--or-clair);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 13px;
+  }
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    padding-top: 20px;
+    margin-top: 4px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-meta-item .lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .cover-meta-item .val {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blanc);
+  }
+  .cover-meta-item .val.gold { color: var(--or); }
+
+  /* ═══════════════ CAMPAIGN BAND ═══════════════ */
+  .camp-band {
+    padding: 14px 60px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--ca-bg);
+    color: var(--or);
+    border-left: 6px solid var(--or);
+    flex-wrap: wrap;
+  }
+  .camp-band-right {
+    margin-left: auto;
+    font-size: 9px;
+    color: rgba(200,164,90,0.50);
+    letter-spacing: 1px;
+  }
+  .camp-kpi {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    padding: 3px 10px;
+    background: rgba(200,164,90,0.08);
+    border: 1px solid rgba(200,164,90,0.20);
+    color: var(--or-clair);
+    letter-spacing: 1px;
+  }
+  .camp-kpi strong { color: var(--or); font-size: 11px; }
+
+  /* ═══════════════ CONTAINER ═══════════════ */
+  .container { max-width: 1060px; margin: 0 auto; padding: 0 40px 100px; }
+
+  /* ═══════════════ INTRO BLOCK ═══════════════ */
+  .intro-block { padding: 36px 0 0; }
+  .intro-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(15px, 2vw, 19px);
+    color: var(--vert-fonce);
+    font-style: italic;
+    border-left: 3px solid var(--or);
+    padding-left: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  /* ═══════════════ BRIEF GRID ═══════════════ */
+  .brief-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    margin: 20px 0 24px;
+    background: var(--vert-fonce);
+    border: 2px solid var(--vert-fonce);
+  }
+  .brief-cell { background: var(--blanc); padding: 18px 20px; }
+  .brief-cell.dark { background: var(--vert-fonce); }
+  .brief-lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 7px;
+  }
+  .brief-cell.dark .brief-lbl { color: rgba(200,164,90,0.65); }
+  .brief-val {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    line-height: 1.25;
+  }
+  .brief-cell.dark .brief-val { color: var(--blanc); }
+  .brief-note { font-size: 12px; color: var(--gris); margin-top: 4px; line-height: 1.5; }
+  .brief-cell.dark .brief-note { color: rgba(200,220,205,0.70); }
+  @media(max-width:720px) { .brief-grid { grid-template-columns: 1fr 1fr; } }
+  @media(max-width:480px) { .brief-grid { grid-template-columns: 1fr; } }
+
+  /* ═══════════════ KPI CHIPS ═══════════════ */
+  .kpi-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 20px; }
+  .kpi-chip {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+  .kpi-chip.red  { background: var(--rouge-clair); color: var(--rouge); }
+  .kpi-chip.grn  { background: var(--vert-bg);     color: var(--vert-med); }
+  .kpi-chip.yel  { background: var(--jaune-clair); color: var(--jaune); }
+  .kpi-chip.dark { background: var(--vert-fonce);  color: var(--or); }
+  .kpi-chip.blue { background: var(--bleu-clair);  color: var(--bleu); }
+
+  /* ═══════════════ INDEX NAV ═══════════════ */
+  .index-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 8px 0 0;
+  }
+  .index-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    background: var(--blanc);
+    border: 1.5px solid var(--vert-fonce);
+    text-decoration: none;
+    color: var(--vert-fonce);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+    transition: background 0.15s;
+  }
+  .index-link:hover { background: var(--vert-bg); }
+  .index-link .code {
+    font-size: 10px;
+    font-weight: 700;
+    background: var(--vert-fonce);
+    color: var(--or);
+    padding: 2px 7px;
+  }
+
+  /* ═══════════════ SECTION DIVIDER ═══════════════ */
+  .section-divider {
+    margin-top: 52px;
+    padding-top: 52px;
+    border-top: 1.5px solid var(--vert-med);
+  }
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--creme-fonce);
+    max-width: 100px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.8vw, 30px);
+    font-weight: 700;
+    color: var(--vert-fonce);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    font-size: 14px;
+    color: var(--gris);
+    max-width: 680px;
+    margin-bottom: 4px;
+  }
+
+  /* ═══════════════ CAROUSEL CARD ═══════════════ */
+  .carousel-card {
+    border: 1.5px solid var(--vert-fonce);
+    background: var(--blanc);
+    margin: 40px 0;
+    overflow: hidden;
+  }
+
+  .carousel-head {
+    background: var(--vert-fonce);
+    padding: 20px 28px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    position: relative;
+  }
+  /* 4:5 ratio indicator — carousel format */
+  .carousel-head::after {
+    content: "4:5";
+    position: absolute;
+    right: 18px;
+    bottom: 12px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: rgba(200,164,90,0.38);
+    letter-spacing: 2px;
+  }
+  .carousel-id {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--or);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .carousel-title {
+    font-family: var(--font-display);
+    font-size: clamp(15px, 2vw, 21px);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--blanc);
+    line-height: 1.2;
+    max-width: 600px;
+  }
+  .carousel-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .carousel-slides-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--or);
+    background: rgba(200,164,90,0.12);
+    border: 1px solid var(--or-border);
+    padding: 4px 12px;
+  }
+  .carousel-type {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(245,242,235,0.45);
+    text-transform: uppercase;
+  }
+
+  /* Carousel meta row */
+  .carousel-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--creme-fonce);
+    background: #FAFAF7;
+  }
+  .carousel-meta-cell {
+    padding: 14px 20px;
+    border-right: 1px solid var(--creme-fonce);
+  }
+  .carousel-meta-cell:last-child { border-right: none; }
+  .cml {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cmv {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--vert-fonce);
+    line-height: 1.3;
+  }
+  @media(max-width:640px) { .carousel-meta { grid-template-columns: 1fr 1fr; } }
+
+  /* Carousel body */
+  .carousel-body { padding: 28px 28px 0; }
+
+  /* Objectif + Public */
+  .obj-pub-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  @media(max-width:580px) { .obj-pub-row { grid-template-columns: 1fr; } }
+  .field-block {}
+  .field-lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .field-lbl::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 11px;
+    background: var(--or);
+    border-radius: 2px;
+  }
+  .field-txt {
+    font-size: 13.5px;
+    color: var(--gris-fonce);
+    line-height: 1.55;
+  }
+  .field-txt strong { color: var(--vert-fonce); font-weight: 600; }
+
+  /* Hook box */
+  .hook-box {
+    background: var(--vert-bg);
+    border-left: 4px solid var(--vert-med);
+    padding: 16px 20px;
+    margin-bottom: 28px;
+  }
+  .hook-box-lbl {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vert-med);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .hook-text {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--vert-fonce);
+    line-height: 1.45;
+  }
+
+  /* ═══════════════ SLIDES SECTION ═══════════════ */
+  .slides-section-header {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .slides-section-header::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--creme-fonce);
+  }
+  .slides-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--vert-fonce);
+    color: var(--or);
+    padding: 2px 8px;
+  }
+
+  /* Slides grid */
+  .slides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1px;
+    background: var(--creme-fonce);
+    margin-bottom: 0;
+  }
+
+  .slide-item {
+    background: var(--blanc);
+    padding: 20px 22px;
+  }
+  .slide-item.is-cover {
+    background: linear-gradient(135deg, var(--vert-bg) 0%, var(--blanc) 100%);
+  }
+  .slide-item.is-cta {
+    background: linear-gradient(135deg, var(--jaune-clair) 0%, var(--blanc) 100%);
+  }
+  .slide-item.is-dark {
+    background: var(--vert-fonce);
+  }
+
+  .slide-num-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .slide-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--vert-fonce);
+    color: var(--or);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .slide-item.is-cover .slide-num { background: var(--vert-med); }
+  .slide-item.is-cta  .slide-num  { background: var(--or); color: var(--vert-fonce); }
+  .slide-item.is-dark .slide-num  { background: rgba(200,164,90,0.20); color: var(--or); }
+
+  .slide-type-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+  .slide-type-tag.cover    { background: rgba(30,58,32,0.12); color: var(--vert-med); }
+  .slide-type-tag.content  { background: #EEF3EE; color: var(--vert-med); }
+  .slide-type-tag.compare  { background: var(--bleu-clair); color: var(--bleu); }
+  .slide-type-tag.data     { background: var(--jaune-clair); color: var(--jaune); }
+  .slide-type-tag.cta      { background: rgba(200,164,90,0.20); color: #8a6a20; }
+  .slide-type-tag.tableau  { background: var(--rouge-clair); color: var(--rouge); }
+
+  .slide-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .slide-item.is-dark .slide-title { color: var(--or-clair); }
+  .slide-item.is-cover .slide-title { color: var(--vert-fonce); }
+  .slide-item.is-cta  .slide-title  { color: var(--vert-fonce); }
+
+  .slide-visual {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--gris);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .slide-item.is-dark .slide-visual { color: rgba(200,164,90,0.50); }
+  .slide-visual::before {
+    content: "▷";
+    color: var(--or);
+    font-size: 8px;
+  }
+
+  .slide-content {
+    font-size: 13px;
+    color: var(--gris-fonce);
+    line-height: 1.55;
+  }
+  .slide-item.is-dark .slide-content { color: rgba(245,242,235,0.75); }
+  .slide-content ul {
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .slide-content ul li {
+    padding: 3px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 12.5px;
+    border-bottom: 1px solid rgba(200,164,90,0.10);
+    line-height: 1.45;
+  }
+  .slide-item.is-dark .slide-content ul li { border-bottom-color: rgba(255,255,255,0.06); }
+  .slide-content ul li:last-child { border-bottom: none; }
+  .slide-content ul li::before {
+    content: "·";
+    color: var(--or);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .slide-content strong { color: var(--vert-fonce); font-weight: 600; }
+  .slide-item.is-dark .slide-content strong { color: var(--or-clair); }
+
+  .slide-cta-text {
+    display: inline-block;
+    background: var(--vert-fonce);
+    color: var(--or);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 12px;
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+  .slide-item.is-cta .slide-cta-text {
+    background: var(--or);
+    color: var(--vert-fonce);
+  }
+
+  /* Price badge */
+  .price-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--or);
+    background: var(--vert-fonce);
+    padding: 3px 10px;
+    margin: 4px 0;
+    letter-spacing: 1px;
+  }
+
+  /* ═══════════════ TABLEAU COMPARATIF ═══════════════ */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 0;
+  }
+  table.compare-table {
+    width: 100%;
+    min-width: 480px;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .compare-table th {
+    background: var(--vert-fonce);
+    color: var(--blanc);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .compare-table th.or-col { color: var(--or); }
+  .compare-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--creme-fonce);
+    color: var(--gris-fonce);
+    vertical-align: middle;
+    line-height: 1.4;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:nth-child(even) td { background: #FAFAF7; }
+  .compare-table td.label-col {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .check-yes {
+    color: var(--vert-med);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .check-no {
+    color: var(--rouge);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .check-partial {
+    color: var(--jaune);
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  /* ═══════════════ CAROUSEL FOOTER (CTA + VISUELS) ═══════════════ */
+  .carousel-footer {
+    border-top: 1.5px solid var(--creme-fonce);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--blanc);
+  }
+  @media(max-width:640px) { .carousel-footer { grid-template-columns: 1fr; } }
+
+  .footer-cell {
+    padding: 22px 24px;
+    border-right: 1px solid var(--creme-fonce);
+  }
+  .footer-cell:last-child { border-right: none; }
+  .footer-lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-lbl::before {
+    content: "";
+    width: 3px;
+    height: 11px;
+    background: var(--or);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .cta-quote {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--vert-fonce);
+    border-left: 3px solid var(--or);
+    padding-left: 14px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  .cta-note { font-size: 12px; color: var(--gris); line-height: 1.5; }
+
+  .canva-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .color-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 1px solid var(--creme-fonce);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--gris-fonce);
+    background: var(--blanc);
+  }
+  .color-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .image-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .image-list li {
+    font-size: 13px;
+    color: var(--gris-fonce);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--creme-fonce);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.45;
+  }
+  .image-list li:last-child { border-bottom: none; }
+  .image-list li::before {
+    content: "▸";
+    color: var(--or);
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  /* ═══════════════ BRIEFING REF STRIP ═══════════════ */
+  .ref-strip {
+    background: #FAFAF7;
+    border-top: 1px solid var(--creme-fonce);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .ref-lbl {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+  }
+  .ref-val {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--vert-med);
+    letter-spacing: 1px;
+  }
+
+  /* ═══════════════ PRINT ═══════════════ */
+  @media print {
+    .cover, .carousel-head, .camp-band, .slide-item.is-dark {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ COVER ═══════════════════════════ -->
+<header class="cover">
+  <!-- Carousel format frame — 4:5 grid metaphor -->
+  <div class="cover-carousel-frame" aria-hidden="true">
+    <div class="cf-cell"></div><div class="cf-cell"></div><div class="cf-cell"></div>
+    <div class="cf-cell"></div><div class="cf-cell"></div><div class="cf-cell"></div>
+    <div class="cf-cell"></div><div class="cf-cell"></div><div class="cf-cell"></div>
+    <div class="cf-cell"></div><div class="cf-cell"></div><div class="cf-cell"></div>
+  </div>
+  <div class="cover-slide-dots" aria-hidden="true">
+    <div class="slide-dot active"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+    <div class="slide-dot"></div>
+  </div>
+
+  <p class="cover-eyebrow">Jardín Ideal Montréal &nbsp;·&nbsp; Campagne Cour Avant 2026 &nbsp;·&nbsp; Format Carrusel</p>
+  <h1>Carruseles<br><em>Cour Avant</em></h1>
+  <p class="cover-sub">3 carruseles complets avec structure slide par slide — portadas, contenus, tableaux comparatifs et CTA. Campagne mai–juin 2026, CPL référence $134.17.</p>
+
+  <div class="cover-pills">
+    <span class="pill">CA-C01 · 7 slides</span>
+    <span class="pill">CA-C02 · 8 slides</span>
+    <span class="pill">CA-C03 · 6 slides</span>
+    <span class="pill">Format 4:5</span>
+    <span class="pill">Seg. A + C</span>
+  </div>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="lbl">Campagne</span>
+      <span class="val">Cour Avant</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">CPL référence</span>
+      <span class="val gold">$134.17</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Total slides</span>
+      <span class="val">21 slides</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Période</span>
+      <span class="val">Mai – Juin 2026</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Mise à jour</span>
+      <span class="val">Juin 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- CAMPAIGN BAND -->
+<div class="camp-band">
+  <span>Cour Avant — Carte de visite de la maison</span>
+  <span class="camp-kpi"><strong>$134.17</strong> CPL · meilleure campagne mai–juin 2026</span>
+  <span class="camp-band-right">03_LISTA_CARRUSELES.html · v1.0</span>
+</div>
+
+<!-- ═══════════════════════════ CONTAINER ═══════════════════════════ -->
+<main class="container">
+
+  <!-- INTRO -->
+  <div class="intro-block">
+    <p class="intro-tagline">« Les carruseles éduquent, prouvent et convertissent — là où les Reels créent l'émotion. »</p>
+
+    <div class="brief-grid">
+      <div class="brief-cell">
+        <p class="brief-lbl">CA-C01 · Avant/Après</p>
+        <p class="brief-val">Preuve sociale géographique</p>
+        <p class="brief-note">5 projets réels dans des villes que l'audience reconnaît. Objectif : identification et confiance immédiate.</p>
+      </div>
+      <div class="brief-cell">
+        <p class="brief-lbl">CA-C02 · Pavé 101</p>
+        <p class="brief-val">Éducation styles et prix</p>
+        <p class="brief-note">4 types de pavé avec prix/m², durabilité et esthétique. Positionne Jardín Ideal comme expert incontournable.</p>
+      </div>
+      <div class="brief-cell">
+        <p class="brief-lbl">CA-C03 · Comparaison</p>
+        <p class="brief-val">Asphalte vs béton vs pavé — TCO 20 ans</p>
+        <p class="brief-note">Argument financier long terme. Convertit ceux qui hésitaient à cause du prix initial du pavé uni.</p>
+      </div>
+      <div class="brief-cell dark">
+        <p class="brief-lbl">Angle stratégique</p>
+        <p class="brief-val">Cour avant = carte de visite — aucun compétiteur n'utilise cet angle</p>
+        <p class="brief-note">Les carruseles ancrent l'argument éducatif et rationnel qui supporte l'angle émotionnel des Reels.</p>
+      </div>
+      <div class="brief-cell dark">
+        <p class="brief-lbl">Public</p>
+        <p class="brief-val">Seg. A (35–55, Laval/Rive-Nord) + Seg. C (30–45, $5K–15K)</p>
+        <p class="brief-note">CA-C01 et CA-C03 ciblent Seg. A. CA-C02 cible Seg. C en phase de recherche active.</p>
+      </div>
+      <div class="brief-cell dark">
+        <p class="brief-lbl">Funnel</p>
+        <p class="brief-val">Milieu et bas de funnel — audiences chaudes et retargeting</p>
+        <p class="brief-note">Carruseles à diffuser après exposition aux Reels. CPL cible : maintenir sous $134.17.</p>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <span class="kpi-chip dark">CPL $134.17 — Meilleure campagne</span>
+      <span class="kpi-chip grn">–21% vs moyenne $168.73</span>
+      <span class="kpi-chip blue">3 carruseles · 21 slides total</span>
+      <span class="kpi-chip yel">Format 4:5 · Instagram + Facebook</span>
+    </div>
+
+    <div class="index-nav">
+      <a href="#ca-c01" class="index-link"><span class="code">CA-C01</span> Avant/Après · 7 slides</a>
+      <a href="#ca-c02" class="index-link"><span class="code">CA-C02</span> Pavé uni 101 · 8 slides</a>
+      <a href="#ca-c03" class="index-link"><span class="code">CA-C03</span> Asphalte vs pavé · 6 slides</a>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CARRUSEL 01 — Avant/Après · 5 cours avants à Montréal
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="section-divider" id="ca-c01">
+    <div class="section-tag">Carrusel 01 / 03</div>
+    <h2 class="section-title">CA-C01 · Avant/Après — 5 cours avants à Montréal</h2>
+    <p class="section-sub">Preuve sociale géographique : 5 projets réels dans des villes reconnues par l'audience. L'objectif est que le spectateur se dise "c'est dans ma rue".</p>
+  </div>
+
+  <article class="carousel-card" aria-label="Carrusel CA-C01">
+    <div class="carousel-head">
+      <div>
+        <span class="carousel-id">CA-C01</span>
+        <p class="carousel-title">Ces entrées ont une chose en commun — elles étaient exactement comme la vôtre</p>
+      </div>
+      <div class="carousel-badges">
+        <span class="carousel-slides-badge">7 slides</span>
+        <span class="carousel-type">Avant/Après · Preuve sociale</span>
+      </div>
+    </div>
+
+    <div class="carousel-meta">
+      <div class="carousel-meta-cell">
+        <span class="cml">Objectif</span>
+        <span class="cmv">Preuve sociale géographique — identification du spectateur</span>
+      </div>
+      <div class="carousel-meta-cell">
+        <span class="cml">Public cible</span>
+        <span class="cmv">Segment A — 35–55 ans, Laval / Rive-Nord</span>
+      </div>
+      <div class="carousel-meta-cell">
+        <span class="cml">Tonalité</span>
+        <span class="cmv">Factuel, proche, preuve concrète — sans survendeur</span>
+      </div>
+    </div>
+
+    <div class="carousel-body">
+      <div class="hook-box">
+        <span class="hook-box-lbl">Gancho — Portada</span>
+        <p class="hook-text">« Ces entrées ont une chose en commun — elles étaient exactement comme la vôtre »</p>
+      </div>
+
+      <div class="obj-pub-row">
+        <div class="field-block">
+          <p class="field-lbl">Objectif stratégique</p>
+          <p class="field-txt">Créer de la proximité géographique et émotionnelle. Quand le spectateur voit "Laval-des-Rapides" ou "Terrebonne", il se dit : <strong>c'est mon quartier, ces gens sont comme moi, si ça a marché pour eux, ça peut marcher pour moi.</strong> La preuve sociale fonctionne d'autant mieux qu'elle est locale.</p>
+        </div>
+        <div class="field-block">
+          <p class="field-lbl">Public cible principal</p>
+          <p class="field-txt"><strong>Segment A :</strong> propriétaires Laval et Rive-Nord, 35–55 ans. Ont vu ce carrusel après avoir regardé un Reel CA-R01 ou CA-R03. Sont en phase de considération — comparent les options, cherchent la confiance. Le "social proof" géographique est le déclencheur final.</p>
+        </div>
+      </div>
+
+      <!-- Slides -->
+      <div class="slides-section-header">
+        Structure slide par slide <span class="slides-count">7 slides</span>
+      </div>
+
+      <div class="slides-grid">
+
+        <!-- Slide 1 — Cover -->
+        <div class="slide-item is-cover">
+          <div class="slide-num-row">
+            <div class="slide-num">1</div>
+            <span class="slide-type-tag cover">Portada</span>
+          </div>
+          <p class="slide-title">Ces entrées ont une chose en commun — elles étaient exactement comme la vôtre</p>
+          <p class="slide-visual">Photo : collage 4 petites photos avant/après</p>
+          <div class="slide-content">
+            <p>Fond : vert foncé (#1E3A20). Titre en blanc Georgia, grande taille. Sous-titre : <em>"5 projets réels · Laval, Rive-Nord, Montréal"</em> en police Courier New, couleur or.</p>
+            <p style="margin-top:8px;">Indicateur "1 / 7" en bas à droite en petite police Courier New, couleur or discret. Flèche ou texte "→ Glissez" en bas à gauche.</p>
+            <div class="slide-cta-text">→ Glissez pour voir les transformations</div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">2</div>
+            <span class="slide-type-tag content">Projet · Laval</span>
+          </div>
+          <p class="slide-title">Laval — Entrée 65 m², béton 1998 → pavé uni classique</p>
+          <p class="slide-visual">Photo : avant (béton fissuré) à gauche / après (pavé uni) à droite — split ou alternance</p>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Superficie :</strong> 65 m²</li>
+              <li><strong>Matériau :</strong> Pavé uni béton classique, teinte charbon</li>
+              <li><strong>Durée :</strong> 4 jours</li>
+              <li><strong>Budget :</strong> $8 500</li>
+              <li><strong>Détail :</strong> Excavation + nivellement + bordures + joints polymériques</li>
+            </ul>
+            <p style="margin-top:8px; font-size:12px; color:var(--gris);">Texte bas de slide : <em>"Ils attendaient depuis 3 ans. Ça a pris 4 jours."</em></p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">3</div>
+            <span class="slide-type-tag content">Projet · Laval-des-Rapides</span>
+          </div>
+          <p class="slide-title">Laval-des-Rapides — Entrée double allée, maison jumelée</p>
+          <p class="slide-visual">Photo : avant (asphalte craquelé) / après (pavé brun doré + haie)</p>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Superficie :</strong> 80 m²</li>
+              <li><strong>Matériau :</strong> Pavé uni brun rustique + bordures granit</li>
+              <li><strong>Durée :</strong> 5 jours</li>
+              <li><strong>Budget :</strong> $11 200</li>
+              <li><strong>Détail :</strong> Double allée + retrait asphalte + aménagement haie latérale</li>
+            </ul>
+            <p style="margin-top:8px; font-size:12px; color:var(--gris);">Texte bas de slide : <em>"Le voisin d'à côté a demandé notre numéro le lendemain."</em></p>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">4</div>
+            <span class="slide-type-tag content">Projet · Bois-des-Filion</span>
+          </div>
+          <p class="slide-title">Bois-des-Filion — Entrée rénovée avec escalier intégré</p>
+          <p class="slide-visual">Photo : avant (béton avec escalier cassé) / après (pavé + escalier intégré)</p>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Superficie :</strong> 55 m²</li>
+              <li><strong>Matériau :</strong> Pavé uni gris contemporain + marches intégrées</li>
+              <li><strong>Durée :</strong> 5 jours</li>
+              <li><strong>Budget :</strong> $9 800</li>
+              <li><strong>Détail :</strong> Escalier béton retiré + nouveau dessin courbe + haies taillées</li>
+            </ul>
+            <p style="margin-top:8px; font-size:12px; color:var(--gris);">Texte bas de slide : <em>"L'entrée donne maintenant l'impression que la maison vaut plus."</em></p>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">5</div>
+            <span class="slide-type-tag content">Projet · Terrebonne</span>
+          </div>
+          <p class="slide-title">Terrebonne — Cour avant avec muret décoratif</p>
+          <p class="slide-visual">Photo : avant (herbes, béton fissuré) / après (pavé + muret + éclairage)</p>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Superficie :</strong> 70 m²</li>
+              <li><strong>Matériau :</strong> Pavé uni brun + muret en blocs de béton décoratifs</li>
+              <li><strong>Durée :</strong> 6 jours</li>
+              <li><strong>Budget :</strong> $13 500</li>
+              <li><strong>Détail :</strong> Muret 3 rangs + éclairage solaire intégré + plantation bordure</li>
+            </ul>
+            <p style="margin-top:8px; font-size:12px; color:var(--gris);">Texte bas de slide : <em>"Les voisins pensaient qu'ils avaient changé de maison."</em></p>
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">6</div>
+            <span class="slide-type-tag content">Projet · Repentigny</span>
+          </div>
+          <p class="slide-title">Repentigny — Entrée rénovée, maison des années 80</p>
+          <p class="slide-visual">Photo : avant (asphalte ancien, taches) / après (pavé uni sablé, net)</p>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Superficie :</strong> 60 m²</li>
+              <li><strong>Matériau :</strong> Pavé uni gris charbon, motif en brique droite</li>
+              <li><strong>Durée :</strong> 3 jours</li>
+              <li><strong>Budget :</strong> $7 900</li>
+              <li><strong>Détail :</strong> Retrait asphalte + gravier compacté + pavé + joints polymériques</li>
+            </ul>
+            <p style="margin-top:8px; font-size:12px; color:var(--gris);">Texte bas de slide : <em>"En 3 jours, la maison a rajeuni de 15 ans."</em></p>
+          </div>
+        </div>
+
+        <!-- Slide 7 — CTA -->
+        <div class="slide-item is-cta">
+          <div class="slide-num-row">
+            <div class="slide-num">7</div>
+            <span class="slide-type-tag cta">CTA Final</span>
+          </div>
+          <p class="slide-title">Votre entrée, c'est vous.</p>
+          <p class="slide-visual">Visuel : mosaïque des 5 projets en arrière-plan flou + logo centré</p>
+          <div class="slide-content">
+            <p>Fond : vert foncé (#1E3A20) ou photo d'une belle entrée en overlay sombre. Titre Georgia grand format, blanc. Sous-titre : <em>"47 projets réalisés en 2026 · Laval, Rive-Nord, Grand Montréal"</em></p>
+            <p style="margin-top:8px;"><strong>CTA :</strong> "Soumission gratuite — lien en bio" en police Courier New, couleur or.</p>
+            <p style="margin-top:6px; font-size:12px; color:var(--gris);">Note : réponse sous 24h. Mentionner la période estivale limitée.</p>
+            <div class="slide-cta-text">→ Soumission gratuite · Lien en bio</div>
+          </div>
+        </div>
+
+      </div><!-- /slides-grid -->
+    </div><!-- /carousel-body -->
+
+    <div class="carousel-footer">
+      <div class="footer-cell">
+        <p class="footer-lbl">CTA final</p>
+        <p class="cta-quote">« Votre entrée, c'est vous. Soumission gratuite — on couvre votre quartier cet été. »</p>
+        <p class="cta-note">Caption : "Ces 5 entrées étaient comme la vôtre il y a quelques semaines. Soumission gratuite en bio. Jardín Ideal couvre Laval, Rive-Nord et Grand Montréal. #avantaprès #pavéuni #laval #jardínideal"</p>
+      </div>
+      <div class="footer-cell">
+        <p class="footer-lbl">Visuels Canva + palette</p>
+        <div class="canva-palette">
+          <span class="color-chip"><span class="color-swatch" style="background:#1E3A20;"></span>#1E3A20 Fond</span>
+          <span class="color-chip"><span class="color-swatch" style="background:#C8A45A;"></span>#C8A45A Or</span>
+          <span class="color-chip"><span class="color-swatch" style="background:#F5F2EB;"></span>#F5F2EB Crème</span>
+          <span class="color-chip"><span class="color-swatch" style="background:#FFFFFF;"></span>#FFFFFF Blanc</span>
+        </div>
+        <ul class="image-list">
+          <li>5 paires avant/après de projets Jardín Ideal réels (archives 2025–2026)</li>
+          <li>Chaque slide : photo avant (gauche/haut) + photo après (droite/bas) — même angle si possible</li>
+          <li>Portada : fond vert foncé + collage 4 mini-photos en coin supérieur droit</li>
+          <li>Slide CTA : mosaïque des 5 projets floutée en fond + logo blanc centré</li>
+          <li>Police : Georgia pour titres, Courier New pour données et badges</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ref-strip">
+      <span class="ref-lbl">Référence briefing</span>
+      <span class="ref-val">Campagne COUR AVANT 2026 · Segment A · Preuve sociale géographique · Format 4:5 · 7 slides</span>
+    </div>
+  </article>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CARRUSEL 02 — Pavé uni 101 · styles et prix
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="section-divider" id="ca-c02">
+    <div class="section-tag">Carrusel 02 / 03</div>
+    <h2 class="section-title">CA-C02 · Pavé uni 101 — styles et prix à Montréal</h2>
+    <p class="section-sub">Éduquer l'audience sur les 4 types de pavé uni — prix, durabilité, esthétique. Positionner Jardín Ideal comme expert de confiance, pas juste comme vendeur.</p>
+  </div>
+
+  <article class="carousel-card" aria-label="Carrusel CA-C02">
+    <div class="carousel-head">
+      <div>
+        <span class="carousel-id">CA-C02</span>
+        <p class="carousel-title">Il y a 4 types de pavé uni. Lequel convient à votre maison?</p>
+      </div>
+      <div class="carousel-badges">
+        <span class="carousel-slides-badge">8 slides</span>
+        <span class="carousel-type">Éducatif · Expert · Prix</span>
+      </div>
+    </div>
+
+    <div class="carousel-meta">
+      <div class="carousel-meta-cell">
+        <span class="cml">Objectif</span>
+        <span class="cmv">Éducation + positionnement expert — générer confiance</span>
+      </div>
+      <div class="carousel-meta-cell">
+        <span class="cml">Public cible</span>
+        <span class="cmv">Segment C — 30–45 ans, $5K–15K, Grand Montréal</span>
+      </div>
+      <div class="carousel-meta-cell">
+        <span class="cml">Tonalité</span>
+        <span class="cmv">Pédagogique, clair, honnête sur les prix — sans jargon inutile</span>
+      </div>
+    </div>
+
+    <div class="carousel-body">
+      <div class="hook-box">
+        <span class="hook-box-lbl">Gancho — Portada</span>
+        <p class="hook-text">« Il y a 4 types de pavé uni. Lequel convient à votre maison? »</p>
+      </div>
+
+      <div class="obj-pub-row">
+        <div class="field-block">
+          <p class="field-lbl">Objectif stratégique</p>
+          <p class="field-txt">Le Segment C cherche activement de l'information avant d'acheter. Ce carrusel <strong>anticipe leurs questions et y répond honnêtement</strong> — y compris sur les prix. Quand une marque vous aide à décider (même si vous ne choisissez pas leur option la plus chère), vous lui faites confiance. C'est le moteur de conversion ici.</p>
+        </div>
+        <div class="field-block">
+          <p class="field-lbl">Public cible principal</p>
+          <p class="field-txt"><strong>Segment C :</strong> 30–45 ans, Grand Montréal, budget $5K–15K. En phase de recherche active — ont commencé à chercher "prix pavé uni Montréal" ou équivalent. Ce carrusel apparaît dans leur feed au moment où ils comparent les options. Il doit leur donner l'impression de parler à un expert, pas à un commercial.</p>
+        </div>
+      </div>
+
+      <div class="slides-section-header">
+        Structure slide par slide <span class="slides-count">8 slides</span>
+      </div>
+
+      <div class="slides-grid">
+
+        <!-- Slide 1 -->
+        <div class="slide-item is-cover">
+          <div class="slide-num-row">
+            <div class="slide-num">1</div>
+            <span class="slide-type-tag cover">Portada</span>
+          </div>
+          <p class="slide-title">Il y a 4 types de pavé uni. Lequel convient à votre maison?</p>
+          <p class="slide-visual">Visuel : 4 échantillons de pavé (2x2 grille) avec teintes différentes</p>
+          <div class="slide-content">
+            <p>Fond : vert foncé. Titre blanc Georgia. Sous-titre Courier New or : <em>"Béton · Granit · Calcaire · Biseau — prix, durabilité, esthétique"</em>.</p>
+            <p style="margin-top:8px;">4 petits carrés de pavé en bas : charbon / beige / blanc crème / gris biseau. Indicateur "1 / 8" et "→ Glissez" discrets.</p>
+            <div class="slide-cta-text">→ Glissez pour comparer</div>
+          </div>
+        </div>
+
+        <!-- Slide 2 — Béton classique -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">2</div>
+            <span class="slide-type-tag content">Type 1 · Béton classique</span>
+          </div>
+          <p class="slide-title">Béton classique — le plus populaire à Montréal</p>
+          <p class="slide-visual">Photo : entrée béton classique gris charbon, chevron</p>
+          <div class="slide-content">
+            <div class="price-badge">$14–18/pi²</div>
+            <ul>
+              <li><strong>Durabilité :</strong> 25–30 ans avec entretien normal</li>
+              <li><strong>Esthétique :</strong> Classique, neutre, s'adapte à toutes les maisons</li>
+              <li><strong>Entretien :</strong> Joints polymériques tous les 5–7 ans</li>
+              <li><strong>Idéal pour :</strong> Maisons de banlieue, budget moyen, longévité assurée</li>
+              <li><strong>Couleurs dispo :</strong> Charbon, brun, beige, rouge brique, gris naturel</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 3 — Granit -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">3</div>
+            <span class="slide-type-tag content">Type 2 · Granit naturel</span>
+          </div>
+          <p class="slide-title">Granit naturel — le choix premium, une vie d'entrée</p>
+          <p class="slide-visual">Photo : pavé granit gris-noir, texture naturelle granuleuse</p>
+          <div class="slide-content">
+            <div class="price-badge">$28–38/pi²</div>
+            <ul>
+              <li><strong>Durabilité :</strong> 50+ ans — le granit ne se décolore pas</li>
+              <li><strong>Esthétique :</strong> Prestige, texture naturelle unique, éclat permanent</li>
+              <li><strong>Entretien :</strong> Minimal — résistant au gel, aux taches, aux huiles</li>
+              <li><strong>Idéal pour :</strong> Maisons haut de gamme, secteurs Laval des Rapides, Deux-Montagnes</li>
+              <li><strong>Note :</strong> Investissement initial 2× béton, mais durée 2× aussi</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 4 — Calcaire -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">4</div>
+            <span class="slide-type-tag content">Type 3 · Calcaire</span>
+          </div>
+          <p class="slide-title">Calcaire — la chaleur naturelle, l'élégance discrète</p>
+          <p class="slide-visual">Photo : pavé calcaire beige/crème, maison de style cottage</p>
+          <div class="slide-content">
+            <div class="price-badge">$22–30/pi²</div>
+            <ul>
+              <li><strong>Durabilité :</strong> 30–40 ans selon exposition et scellement</li>
+              <li><strong>Esthétique :</strong> Tons chauds beige/crème, look européen, très élégant</li>
+              <li><strong>Entretien :</strong> Scellement annuel recommandé — plus poreux que granit</li>
+              <li><strong>Idéal pour :</strong> Maisons style traditionnel, intégration jardin, look naturel</li>
+              <li><strong>Note :</strong> Moins populaire au Québec — différenciateur visuel fort</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 5 — Biseau -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">5</div>
+            <span class="slide-type-tag content">Type 4 · Pavé à biseaux</span>
+          </div>
+          <p class="slide-title">Pavé à biseaux — le contemporain qui fait tourner les têtes</p>
+          <p class="slide-visual">Photo : pavé biseau gris anthracite, maison moderne</p>
+          <div class="slide-content">
+            <div class="price-badge">$16–22/pi²</div>
+            <ul>
+              <li><strong>Durabilité :</strong> 25–35 ans — similaire au béton classique</li>
+              <li><strong>Esthétique :</strong> Bords biseautés créent ombre et profondeur — effet haut de gamme visuel</li>
+              <li><strong>Entretien :</strong> Identique au béton classique — joints polymériques 5–7 ans</li>
+              <li><strong>Idéal pour :</strong> Maisons contemporaines, rénovations récentes, acheteurs 30–40 ans</li>
+              <li><strong>Note :</strong> Meilleur rapport prix/effet visuel selon nos clients 2026</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 6 — Tableau comparatif -->
+        <div class="slide-item" style="grid-column: 1 / -1;">
+          <div class="slide-num-row">
+            <div class="slide-num">6</div>
+            <span class="slide-type-tag tableau">Tableau comparatif</span>
+          </div>
+          <p class="slide-title">Comparaison rapide — 4 types en un coup d'oeil</p>
+          <p class="slide-visual">Tableau : fond blanc, bordures vert foncé, accentuation or sur rangée recommandée</p>
+          <div class="table-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th class="or-col">Prix/pi²</th>
+                  <th>Durabilité</th>
+                  <th>Entretien</th>
+                  <th>Esthétique</th>
+                  <th>Popularité MTL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="label-col">Béton classique</td>
+                  <td>$14–18</td>
+                  <td>25–30 ans</td>
+                  <td>Faible</td>
+                  <td>Neutre / classique</td>
+                  <td><span class="check-yes">★★★★★</span></td>
+                </tr>
+                <tr>
+                  <td class="label-col">Pavé biseau</td>
+                  <td>$16–22</td>
+                  <td>25–35 ans</td>
+                  <td>Faible</td>
+                  <td>Contemporain ++</td>
+                  <td><span class="check-yes">★★★★</span></td>
+                </tr>
+                <tr>
+                  <td class="label-col">Calcaire</td>
+                  <td>$22–30</td>
+                  <td>30–40 ans</td>
+                  <td>Moyen</td>
+                  <td>Élégant, européen</td>
+                  <td><span class="check-partial">★★★</span></td>
+                </tr>
+                <tr>
+                  <td class="label-col">Granit naturel</td>
+                  <td>$28–38</td>
+                  <td>50+ ans</td>
+                  <td>Très faible</td>
+                  <td>Premium, intemporel</td>
+                  <td><span class="check-partial">★★</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Slide 7 — Comment choisir -->
+        <div class="slide-item is-dark">
+          <div class="slide-num-row">
+            <div class="slide-num">7</div>
+            <span class="slide-type-tag content">Guide · Choix</span>
+          </div>
+          <p class="slide-title">Comment choisir — 3 questions pour trouver le vôtre</p>
+          <p class="slide-visual">Visuel : fond vert foncé, texte blanc/or, icônes simples</p>
+          <div class="slide-content">
+            <ul>
+              <li><strong>Quel est votre budget sur 20 ans?</strong> — Si &lt;$15K au départ, béton classique ou biseau. Si vous pensez long terme, granit ou calcaire.</li>
+              <li><strong>Quel est le style de votre maison?</strong> — Contemporaine → biseau. Classique → béton. Cottage/traditionnelle → calcaire. Prestige → granit.</li>
+              <li><strong>Combien d'années prévoyez-vous rester?</strong> — &lt;7 ans : béton classique. 7–15 ans : biseau ou calcaire. 15+ ans : granit ou calcaire haut de gamme.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 8 — CTA -->
+        <div class="slide-item is-cta">
+          <div class="slide-num-row">
+            <div class="slide-num">8</div>
+            <span class="slide-type-tag cta">CTA Final</span>
+          </div>
+          <p class="slide-title">On vous aide à choisir. Gratuitement.</p>
+          <p class="slide-visual">Visuel : photo entrée pavé uni + logo Jardín Ideal + texte CTA</p>
+          <div class="slide-content">
+            <p>Fond : vert foncé. Titre blanc Georgia. Texte : <em>"Soumission et conseil gratuits — on vous guide dans le choix du pavé, sans engagement."</em></p>
+            <p style="margin-top:8px; font-size:12px; color:var(--gris);">Souligner "sans engagement" — réassurance importante pour le Segment C encore en phase de considération.</p>
+            <div class="slide-cta-text">→ Soumission gratuite · Lien en bio</div>
+          </div>
+        </div>
+
+      </div><!-- /slides-grid -->
+    </div><!-- /carousel-body -->
+
+    <div class="carousel-footer">
+      <div class="footer-cell">
+        <p class="footer-lbl">CTA final</p>
+        <p class="cta-quote">« On vous aide à choisir. Gratuitement. Soumission et conseil sans engagement — lien en bio. »</p>
+        <p class="cta-note">Caption : "4 types de pavé uni. 4 prix différents. 1 question : lequel convient à votre maison? On vous aide à décider, sans frais, sans pression. Soumission gratuite en bio. #pavéuni101 #rénovationmontréal #jardínideal #conseils"</p>
+      </div>
+      <div class="footer-cell">
+        <p class="footer-lbl">Visuels Canva + palette</p>
+        <div class="canva-palette">
+          <span class="color-chip"><span class="color-swatch" style="background:#1E3A20;"></span>#1E3A20 Fond</span>
+          <span class="color-chip"><span class="color-swatch" style="background:#C8A45A;"></span>#C8A45A Or</span>
+          <span class="color-chip"><span class="color-swatch" style="background:#F5F2EB;"></span>#F5F2EB Crème</span>
+          <span class="color-chip"><span class="color-swatch" style="background:#3D6B42;"></span>#3D6B42 Vert moyen</span>
+        </div>
+        <ul class="image-list">
+          <li>4 photos d'entrées en pavé — une par type : béton charbon, granit naturel, calcaire beige, biseau gris</li>
+          <li>Slide tableau (6) : généré dans Canva avec template tableau Jardín Ideal — vert foncé en-têtes</li>
+          <li>Slide guide (7) : fond #1E3A20, 3 blocs de texte avec icônes simples (maison, argent, calendrier)</li>
+          <li>Portada : 4 petits carrés de pavé en bas (2×2), fond vert foncé, titre blanc Georgia</li>
+          <li>Slide CTA (8) : photo entrée pavé en fond (opacité 30%) + texte centré blanc/or</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ref-strip">
+      <span class="ref-lbl">Référence briefing</span>
+      <span class="ref-val">Campagne COUR AVANT 2026 · Segment C principal · Éducatif · Format 4:5 · 8 slides</span>
+    </div>
+  </article>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CARRUSEL 03 — Asphalte vs béton vs pavé uni
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="section-divider" id="ca-c03">
+    <div class="section-tag">Carrusel 03 / 03</div>
+    <h2 class="section-title">CA-C03 · Asphalte vs béton vs pavé uni — quel revêtement pour votre entrée?</h2>
+    <p class="section-sub">Argument TCO (coût total sur 20 ans) — transformer la perception "pavé uni c'est cher" en "pavé uni c'est le moins cher sur la durée".</p>
+  </div>
+
+  <article class="carousel-card" aria-label="Carrusel CA-C03">
+    <div class="carousel-head">
+      <div>
+        <span class="carousel-id">CA-C03</span>
+        <p class="carousel-title">Asphalte à $8/pi², béton à $12/pi², pavé uni à $15/pi² — mais lequel DURE vraiment?</p>
+      </div>
+      <div class="carousel-badges">
+        <span class="carousel-slides-badge">6 slides</span>
+        <span class="carousel-type">Comparaison · TCO · Argument prix</span>
+      </div>
+    </div>
+
+    <div class="carousel-meta">
+      <div class="carousel-meta-cell">
+        <span class="cml">Objectif</span>
+        <span class="cmv">Justifier le prix pavé uni par l'argument TCO 20 ans</span>
+      </div>
+      <div class="carousel-meta-cell">
+        <span class="cml">Public cible</span>
+        <span class="cmv">Seg. A + C — hésitants face au prix initial du pavé</span>
+      </div>
+      <div class="carousel-meta-cell">
+        <span class="cml">Tonalité</span>
+        <span class="cmv">Factuel, chiffres précis, honnête — l'argument se suffit à lui-même</span>
+      </div>
+    </div>
+
+    <div class="carousel-body">
+      <div class="hook-box">
+        <span class="hook-box-lbl">Gancho — Portada</span>
+        <p class="hook-text">« Asphalte à $8/pi², béton à $12/pi², pavé uni à $15/pi² — mais lequel DURE vraiment? »</p>
+      </div>
+
+      <div class="obj-pub-row">
+        <div class="field-block">
+          <p class="field-lbl">Objectif stratégique</p>
+          <p class="field-txt">Renverser l'objection prix. Le spectateur voit "$15/pi² pour du pavé" et pense que c'est cher. Ce carrusel montre que <strong>sur 20 ans, le pavé uni coûte moins cher que l'asphalte</strong> une fois l'entretien comptabilisé. L'argument TCO (Total Cost of Ownership) est utilisé dans le B2B — appliqué ici au B2C résidentiel, c'est différenciateur et persuasif.</p>
+        </div>
+        <div class="field-block">
+          <p class="field-lbl">Public cible principal</p>
+          <p class="field-txt"><strong>Segments A et C :</strong> tous ceux qui ont regardé les Reels ou le CA-C01 mais n'ont pas encore demandé de soumission à cause du prix perçu. Aussi efficace en retargeting sur visiteurs de la page soumission non convertis. L'argument financier est la dernière barrière à franchir.</p>
+        </div>
+      </div>
+
+      <div class="slides-section-header">
+        Structure slide par slide <span class="slides-count">6 slides</span>
+      </div>
+
+      <div class="slides-grid">
+
+        <!-- Slide 1 -->
+        <div class="slide-item is-cover">
+          <div class="slide-num-row">
+            <div class="slide-num">1</div>
+            <span class="slide-type-tag cover">Portada</span>
+          </div>
+          <p class="slide-title">Asphalte $8/pi² · Béton $12/pi² · Pavé uni $15/pi² — mais lequel DURE vraiment?</p>
+          <p class="slide-visual">Visuel : 3 rectangles côte à côte représentant les 3 matériaux</p>
+          <div class="slide-content">
+            <p>Fond : vert foncé. Titre blanc Georgia. Les 3 prix affichés en grand en Courier New, couleur or pour "$15/pi² pavé uni".</p>
+            <p style="margin-top:8px;">Sous-titre : <em>"Le calcul que personne ne vous montre."</em> — crée curiosité et invite à glisser.</p>
+            <div class="slide-cta-text">→ Glissez pour le calcul complet</div>
+          </div>
+        </div>
+
+        <!-- Slide 2 — Asphalte -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">2</div>
+            <span class="slide-type-tag compare">Matériau 1 · Asphalte</span>
+          </div>
+          <p class="slide-title">Asphalte — le moins cher à l'achat, le plus coûteux dans le temps</p>
+          <p class="slide-visual">Photo : entrée asphalte avec fissures + taches, 7–8 ans après pose</p>
+          <div class="slide-content">
+            <div class="price-badge">$8–10/pi² · Installation</div>
+            <ul>
+              <li><strong>Durabilité :</strong> 15–20 ans sans fissures majeures (si bien posé)</li>
+              <li><strong>Entretien 5 ans :</strong> Scellement asphalte obligatoire ($500–700)</li>
+              <li><strong>Entretien 10 ans :</strong> Réparations fissures ($800–1 500)</li>
+              <li><strong>Remplacement 20 ans :</strong> Refaire l'entrée (même coût que le jour 1)</li>
+              <li><strong>Coût total 20 ans (60 m²) :</strong> ~$8 000 installation + $3 000 entretien = <strong>~$11 000</strong></li>
+              <li><strong>Esthétique vieillit :</strong> Taches, fissures, décoloration gris — dès l'année 5</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 3 — Béton -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">3</div>
+            <span class="slide-type-tag compare">Matériau 2 · Béton coulé</span>
+          </div>
+          <p class="slide-title">Béton coulé — plus solide à l'achat, mais le gel québécois le brise</p>
+          <p class="slide-visual">Photo : béton coulé fissuré avec joints de dilatation cassés, hiver québécois</p>
+          <div class="slide-content">
+            <div class="price-badge">$12–16/pi² · Installation</div>
+            <ul>
+              <li><strong>Durabilité :</strong> 20–25 ans, mais fissures dès l'année 8–12 au Québec (gel/dégel)</li>
+              <li><strong>Entretien 10 ans :</strong> Injection époxy fissures ($600–1 200)</li>
+              <li><strong>Remplacement partiel 15 ans :</strong> Sections cassées ($1 500–2 500)</li>
+              <li><strong>Remplacement total 25 ans :</strong> Démolition + refaire ($15–18/pi² à nouveau)</li>
+              <li><strong>Coût total 20 ans (60 m²) :</strong> ~$10 500 installation + $3 500 entretien = <strong>~$14 000</strong></li>
+              <li><strong>Esthétique :</strong> Fissures inévitables au Québec. Réparations visibles.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 4 — Pavé uni -->
+        <div class="slide-item">
+          <div class="slide-num-row">
+            <div class="slide-num">4</div>
+            <span class="slide-type-tag content">Matériau 3 · Pavé uni</span>
+          </div>
+          <p class="slide-title">Pavé uni — plus cher à l'achat, conçu pour le gel québécois</p>
+          <p class="slide-visual">Photo : entrée pavé uni propre après 10 ans, joints nets, aucune fissure</p>
+          <div class="slide-content">
+            <div class="price-badge">$14–18/pi² · Installation</div>
+            <ul>
+              <li><strong>Durabilité :</strong> 25–30 ans sans fissures — les pavés bougent avec le gel, pas contre lui</li>
+              <li><strong>Entretien 7 ans :</strong> Joints polymériques ($300–500 — DIY possible)</li>
+              <li><strong>Entretien 15 ans :</strong> Même chose ($300–500)</li>
+              <li><strong>Pas de remplacement :</strong> Si un pavé casse, on remplace seulement lui (pas tout)</li>
+              <li><strong>Coût total 20 ans (60 m²) :</strong> ~$11 500 installation + $1 500 entretien = <strong>~$13 000</strong></li>
+              <li><strong>Esthétique permanente :</strong> Même apparence à l'année 25 qu'à l'année 1</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 5 — Calcul 20 ans -->
+        <div class="slide-item is-dark" style="grid-column: 1 / -1;">
+          <div class="slide-num-row">
+            <div class="slide-num">5</div>
+            <span class="slide-type-tag data">Le calcul sur 20 ans</span>
+          </div>
+          <p class="slide-title">Le calcul sur 20 ans — entrée 60 m² typique à Montréal</p>
+          <p class="slide-visual">Visuel : graphique barres horizontal, fond vert foncé</p>
+          <div class="slide-content">
+            <div class="table-wrap">
+              <table class="compare-table">
+                <thead>
+                  <tr>
+                    <th>Matériau</th>
+                    <th class="or-col">Installation</th>
+                    <th class="or-col">Entretien 20 ans</th>
+                    <th class="or-col">Total 20 ans</th>
+                    <th>Apparence à 20 ans</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="label-col">Asphalte</td>
+                    <td>~$5 400</td>
+                    <td>~$3 000</td>
+                    <td><strong>~$8 400</strong></td>
+                    <td><span class="check-no">Fissures + refaire</span></td>
+                  </tr>
+                  <tr>
+                    <td class="label-col">Béton coulé</td>
+                    <td>~$8 700</td>
+                    <td>~$4 500</td>
+                    <td><strong>~$13 200</strong></td>
+                    <td><span class="check-partial">Fissures visibles</span></td>
+                  </tr>
+                  <tr>
+                    <td class="label-col" style="color:var(--or);">Pavé uni ★</td>
+                    <td>~$9 600</td>
+                    <td>~$1 500</td>
+                    <td><strong style="color:var(--or-clair);">~$11 100</strong></td>
+                    <td><span class="check-yes">Comme neuf</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="margin-top:12px; font-size:12px; color:rgba(245,242,235,0.65);">* Basé sur une entrée de 60 m², prix MTL 2026. L'asphalte semble moins cher sur 20 ans car une partie des propriétaires refont l'asphalte à 15 ans (+coût non inclus ci-dessus). Le béton intègre un remplacement partiel à 15 ans. Le pavé uni n'est jamais complètement refait — juste les joints.</p>
+          </div>
+        </div>
+
+        <!-- Slide 6 — CTA -->
+        <div class="slide-item is-cta">
+          <div class="slide-num-row">
+            <div class="slide-num">6</div>
+            <span class="slide-type-tag cta">CTA Final</span>
+          </div>
+          <p class="slide-title">Pavé uni coûte moins cher à long terme. Voici pourquoi.</p>
+          <p class="slide-visual">Visuel : belle entrée pavé uni + bannière "Sur 20 ans : le meilleur choix"</p>
+          <div class="slide-content">
+            <p>Fond : vert foncé. Titre Georgia blanc. Mettre en évidence le calcul clé : <em>"Sur 20 ans, pavé uni = ~$11 100 vs béton = ~$13 200. Et ça reste beau."</em></p>
+            <p style="margin-top:8px;">Sous-titre : <em>"Demandez votre soumission gratuite — on vous détaille le calcul pour votre entrée."</em></p>
+            <p style="margin-top:6px; font-size:12px; color:var(--gris);">Argument final : "Sans frais, sans pression. On répond sous 24h."</p>
+            <div class="slide-cta-text">→ Soumission gratuite · Lien en bio</div>
+          </div>
+        </div>
+
+      </div><!-- /slides-grid -->
+    </div><!-- /carousel-body -->
+
+    <div class="carousel-footer">
+      <div class="footer-cell">
+        <p class="footer-lbl">CTA final</p>
+        <p class="cta-quote">« Pavé uni coûte moins cher à long terme. Demandez votre soumission gratuite — on vous détaille le calcul pour votre entrée. »</p>
+        <p class="cta-note">Caption : "Asphalte $8/pi² vs pavé uni $15/pi² — qui coûte vraiment moins cher sur 20 ans? On a fait le calcul. Spoiler : ce n'est pas l'asphalte. Soumission gratuite en bio. #pavéuni #rénovationmontréal #calcul #jardínideal #couravent"</p>
+      </div>
+      <div class="footer-cell">
+        <p class="footer-lbl">Visuels Canva + palette</p>
+        <div class="canva-palette">
+          <span class="color-chip"><span class="color-swatch" style="background:#1E3A20;"></span>#1E3A20 Fond</span>
+          <span class="color-chip"><span class="color-swatch" style="background:#C8A45A;"></span>#C8A45A Or accent</span>
+          <span class="color-chip"><span class="color-swatch" style="background:#B83232;"></span>#B83232 Négatif</span>
+          <span class="color-chip"><span class="color-swatch" style="background:#3D6B42;"></span>#3D6B42 Positif</span>
+        </div>
+        <ul class="image-list">
+          <li>Slide 2 : photo asphalte fissuré avec taches — réel, pas retouché</li>
+          <li>Slide 3 : béton coulé québécois fissuré après cycles gel/dégel — réel</li>
+          <li>Slide 4 : pavé uni après 10+ ans — propre, joints nets (archives Jardín Ideal)</li>
+          <li>Slide 5 (tableau) : généré dans Canva — fond #1E3A20, ligne pavé uni surlignée en or</li>
+          <li>Portada : 3 rectangles de matériaux côte à côte, prix en grand, fond vert foncé</li>
+          <li>Éviter les graphiques trop complexes — les chiffres du tableau suffisent</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ref-strip">
+      <span class="ref-lbl">Référence briefing</span>
+      <span class="ref-val">Campagne COUR AVANT 2026 · Seg. A + C · Argument TCO · Retargeting · Format 4:5 · 6 slides</span>
+    </div>
+  </article>
+
+</main>
+
+</body>
+</html>

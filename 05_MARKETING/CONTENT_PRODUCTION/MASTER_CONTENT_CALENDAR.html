@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Content Calendar — Juillet 2026 · Jardín Ideal</title>
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   DESIGN TOKENS — Jardín Ideal System
+   Canonical source: plan_contenido_balcons_cour_arriere.html
+═══════════════════════════════════════════════════════════════════ */
+:root {
+  --vf:  #1E3A20;   /* vert foncé — BALCONES accent dark */
+  --vm:  #3D6B42;   /* vert moyen */
+  --vb:  #EAF2EB;   /* vert bg clair */
+  --or:  #C8A45A;   /* or — COUR AVANT accent */
+  --jc:  #FEF5E4;   /* jaune clair bg */
+  --j:   #C8850A;   /* jaune foncé */
+  --cr:  #F5F2EB;   /* crème — page ground */
+  --w:   #FFFFFF;
+  --n:   #0D0E0B;   /* noir */
+  --gf:  #2A2B28;   /* gris foncé */
+  --g:   #6B6B63;   /* gris */
+  --gc:  #B8B8B0;   /* gris clair */
+  --r:   #B83232;   /* rouge alerte */
+  --rc:  #F5E8E8;   /* rouge clair */
+
+  /* Campaign semantic aliases */
+  --bal-dark:   #1E3A20;
+  --bal-mid:    #3D6B42;
+  --bal-light:  #EAF2EB;
+  --bal-border: rgba(30,58,32,0.25);
+  --ca-dark:    #8B5E0A;
+  --ca-mid:     #C8A45A;
+  --ca-light:   #FEF5E4;
+  --ca-border:  rgba(200,164,90,0.4);
+
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+
+  /* spacing scale */
+  --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px;
+  --sp5: 24px; --sp6: 32px; --sp7: 48px; --sp8: 64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════
+   SKIP NAV / FOCUS
+═══════════════════════════════ */
+:focus-visible {
+  outline: 2px solid var(--or);
+  outline-offset: 2px;
+}
+
+/* ═══════════════════════════════
+   COVER
+═══════════════════════════════ */
+.cover {
+  background: var(--vf);
+  padding: var(--sp7) var(--sp8) var(--sp6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Aesthetic risk: two campaign rail stripes cut diagonally through cover bg */
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      113deg,
+      transparent 0%,
+      transparent 52%,
+      rgba(200,164,90,0.07) 52%,
+      rgba(200,164,90,0.07) 57%,
+      transparent 57%,
+      transparent 64%,
+      rgba(200,164,90,0.04) 64%,
+      rgba(200,164,90,0.04) 67%,
+      transparent 67%
+    );
+  pointer-events: none;
+}
+
+.cover-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cover-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: var(--sp4);
+}
+
+.cover h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.5vw, 54px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  margin-bottom: var(--sp5);
+  max-width: 720px;
+}
+
+.cover h1 em {
+  color: var(--or);
+  font-style: italic;
+}
+
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp3);
+  margin-bottom: var(--sp6);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
+.badge-green {
+  background: rgba(61,107,66,0.4);
+  border: 1px solid rgba(61,107,66,0.6);
+  color: #A8D4AC;
+}
+
+.badge-gold {
+  background: rgba(200,164,90,0.15);
+  border: 1px solid rgba(200,164,90,0.35);
+  color: #E8C97A;
+}
+
+.badge-neutral {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6);
+}
+
+/* Cover stat row */
+.cover-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: var(--sp5);
+  margin-top: var(--sp5);
+}
+
+.cstat {
+  flex: 1 1 120px;
+  padding: var(--sp3) var(--sp5) var(--sp3) 0;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.cstat:last-child { border-right: none; }
+
+.cstat-num {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1;
+}
+
+.cstat-num span {
+  font-size: 14px;
+  color: var(--or);
+  margin-left: 2px;
+  font-family: var(--font-mono);
+}
+
+.cstat-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-top: 4px;
+}
+
+/* Campaign identity bars */
+.campaign-identity {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp4);
+  margin-top: var(--sp5);
+}
+
+.ci-card {
+  padding: var(--sp4) var(--sp5);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: var(--sp4);
+}
+
+.ci-card-bal {
+  background: rgba(30,58,32,0.5);
+  border: 1px solid rgba(61,107,66,0.5);
+  border-left: 4px solid var(--vm);
+}
+
+.ci-card-ca {
+  background: rgba(200,164,90,0.1);
+  border: 1px solid rgba(200,164,90,0.3);
+  border-left: 4px solid var(--or);
+}
+
+.ci-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ci-dot-bal { background: var(--vm); }
+.ci-dot-ca  { background: var(--or); }
+
+.ci-name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--w);
+}
+
+.ci-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 1px;
+}
+
+/* ═══════════════════════════════
+   SECTION STRUCTURE
+═══════════════════════════════ */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--sp7) var(--sp8);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp4);
+  margin-bottom: var(--sp6);
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--or);
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1.2;
+}
+
+/* ═══════════════════════════════
+   MONTHLY GRID — THE DOMINANT VIEW
+═══════════════════════════════ */
+.cal-wrap {
+  background: var(--w);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+.cal-header-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--vf);
+}
+
+.cal-dow {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: var(--sp3) var(--sp2);
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.cal-cell {
+  min-height: 120px;
+  border-right: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.cal-cell:nth-child(7n) { border-right: none; }
+.cal-cell:nth-last-child(-n+7) { border-bottom: none; }
+
+.cal-cell.empty {
+  background: rgba(0,0,0,0.02);
+}
+
+.cal-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gf);
+  padding: var(--sp2) var(--sp3);
+  line-height: 1;
+}
+
+.cal-date.today-marker {
+  color: var(--vf);
+}
+
+/* Two-lane split: the aesthetic risk — visual rail system for 2 campaigns */
+.cal-lanes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 var(--sp2) var(--sp2);
+}
+
+.lane {
+  border-radius: 2px;
+  padding: 3px 5px;
+  font-size: 9.5px;
+  line-height: 1.35;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lane-bal {
+  background: var(--bal-light);
+  border-left: 3px solid var(--bal-mid);
+}
+
+.lane-ca {
+  background: var(--ca-light);
+  border-left: 3px solid var(--ca-mid);
+}
+
+.lane-empty-bal {
+  background: transparent;
+  border-left: 3px solid rgba(61,107,66,0.15);
+}
+
+.lane-empty-ca {
+  background: transparent;
+  border-left: 3px solid rgba(200,164,90,0.15);
+}
+
+.lane-tag {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.lane-tag-bal { color: var(--bal-dark); }
+.lane-tag-ca  { color: var(--ca-dark); }
+
+.lane-desc {
+  color: var(--gf);
+  font-size: 8.5px;
+  font-family: var(--font-body);
+}
+
+/* Paid boost indicator */
+.paid-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--r);
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+/* Checkpoint badge inside cell */
+.checkpoint-badge {
+  position: absolute;
+  top: 2px; right: 3px;
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: var(--vf);
+  color: var(--or);
+  padding: 1px 4px;
+  border-radius: 1px;
+  line-height: 1.6;
+}
+
+.cal-cell.weekend .cal-date { color: var(--gc); }
+.cal-cell.weekend { background: rgba(0,0,0,0.015); }
+
+/* ═══════════════════════════════
+   SEMAINE (WEEKLY) CARDS
+═══════════════════════════════ */
+.week-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp6);
+}
+
+.week-card {
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--w);
+}
+
+.week-head {
+  background: var(--vf);
+  padding: var(--sp4) var(--sp5);
+  display: flex;
+  align-items: center;
+  gap: var(--sp4);
+  justify-content: space-between;
+}
+
+.week-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+}
+
+.week-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--w);
+}
+
+.week-checkpoint {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 1px;
+}
+
+.week-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.week-table thead tr {
+  background: rgba(0,0,0,0.03);
+}
+
+.week-table th {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--g);
+  padding: var(--sp2) var(--sp4);
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  white-space: nowrap;
+}
+
+.week-table td {
+  padding: var(--sp3) var(--sp4);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  vertical-align: top;
+  font-size: 12px;
+}
+
+.week-table tr:last-child td { border-bottom: none; }
+
+.week-table tr:hover td { background: rgba(0,0,0,0.015); }
+
+.day-col {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gf);
+  white-space: nowrap;
+  min-width: 52px;
+}
+
+.piece-bal {
+  background: var(--bal-light);
+  border: 1px solid var(--bal-border);
+  border-left: 3px solid var(--bal-mid);
+  border-radius: 2px;
+  padding: 3px 7px;
+  margin-bottom: 3px;
+  display: inline-block;
+  font-size: 11px;
+}
+
+.piece-ca {
+  background: var(--ca-light);
+  border: 1px solid var(--ca-border);
+  border-left: 3px solid var(--ca-mid);
+  border-radius: 2px;
+  padding: 3px 7px;
+  margin-bottom: 3px;
+  display: inline-block;
+  font-size: 11px;
+}
+
+.piece-id {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  display: block;
+}
+
+.piece-id-bal { color: var(--bal-dark); }
+.piece-id-ca  { color: var(--ca-dark); }
+
+.piece-name {
+  font-size: 10.5px;
+  color: var(--gf);
+  display: block;
+  margin-top: 1px;
+}
+
+.prep-cell {
+  font-size: 11px;
+  color: var(--g);
+  max-width: 200px;
+}
+
+.prep-cell li {
+  margin-left: var(--sp4);
+  margin-bottom: 2px;
+}
+
+.kpi-cell {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--r);
+  white-space: nowrap;
+}
+
+.kpi-cell.green { color: var(--vm); }
+
+/* ═══════════════════════════════
+   PRODUCTION TABLE
+═══════════════════════════════ */
+.prod-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--w);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.prod-table thead {
+  background: var(--vf);
+}
+
+.prod-table thead th {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  padding: var(--sp3) var(--sp4);
+  text-align: left;
+}
+
+.prod-table tbody td {
+  padding: var(--sp3) var(--sp4);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  vertical-align: middle;
+}
+
+.prod-table tbody tr:last-child td { border-bottom: none; }
+.prod-table tbody tr:hover td { background: rgba(0,0,0,0.015); }
+
+.prod-table .campaign-bal {
+  border-left: 3px solid var(--bal-mid);
+}
+
+.prod-table .campaign-ca {
+  border-left: 3px solid var(--ca-mid);
+}
+
+.prod-code {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.prod-code-bal { color: var(--bal-dark); }
+.prod-code-ca  { color: var(--ca-dark); }
+
+.type-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 1px;
+}
+
+.type-reel  { background: #E8F4E8; color: #1E5C22; border: 1px solid #B8DDB8; }
+.type-caru  { background: #E8F0F8; color: #1A3A5C; border: 1px solid #B0C8E0; }
+.type-blog  { background: var(--jc); color: var(--j); border: 1px solid rgba(200,133,10,0.3); }
+.type-story { background: #F5EAF8; color: #5A2A6E; border: 1px solid #D4B0E0; }
+.type-temo  { background: var(--rc); color: var(--r); border: 1px solid rgba(184,50,50,0.3); }
+.type-paid  { background: #2A2B28; color: #E8C97A; border: 1px solid #4A4B48; }
+
+.status-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 1px;
+}
+
+.status-a-faire  { background: rgba(0,0,0,0.04); color: var(--g); border: 1px solid rgba(0,0,0,0.1); }
+.status-en-cours { background: var(--jc); color: var(--j); border: 1px solid rgba(200,133,10,0.3); }
+.status-publie   { background: var(--vb); color: var(--vf); border: 1px solid rgba(61,107,66,0.3); }
+
+.tool-col {
+  font-size: 10.5px;
+  color: var(--g);
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════
+   KPI TRACKING TABLE
+═══════════════════════════════ */
+.kpi-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp5);
+}
+
+.kpi-campaign-block {
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--w);
+}
+
+.kpi-campaign-head {
+  padding: var(--sp4) var(--sp5);
+  display: flex;
+  align-items: center;
+  gap: var(--sp3);
+}
+
+.kpi-campaign-head-bal {
+  background: var(--vf);
+  border-bottom: 3px solid var(--vm);
+}
+
+.kpi-campaign-head-ca {
+  background: #5A3A08;
+  border-bottom: 3px solid var(--or);
+}
+
+.kpi-head-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+}
+
+.kpi-head-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--w);
+}
+
+.kpi-head-target {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+}
+
+.kpi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.kpi-table thead tr {
+  background: rgba(0,0,0,0.03);
+}
+
+.kpi-table th {
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--g);
+  padding: var(--sp2) var(--sp3);
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  white-space: nowrap;
+}
+
+.kpi-table td {
+  padding: var(--sp2) var(--sp3);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gf);
+}
+
+.kpi-table tr:last-child td { border-bottom: none; }
+
+.kpi-sem {
+  color: var(--g);
+  font-size: 9px;
+}
+
+.kpi-blank {
+  color: var(--gc);
+  font-style: italic;
+  font-family: var(--font-body);
+  font-size: 10px;
+}
+
+.decision-col {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--n);
+  max-width: 120px;
+}
+
+/* ═══════════════════════════════
+   LEGENDE + FORMAT PIE CHART
+═══════════════════════════════ */
+.legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp5);
+  align-items: start;
+}
+
+.legend-block {
+  background: var(--w);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 4px;
+  padding: var(--sp5);
+}
+
+.legend-title {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: var(--sp4);
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp3);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp3);
+  font-size: 12px;
+}
+
+.legend-swatch {
+  width: 28px;
+  height: 10px;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.ls-bal-reel  { background: var(--bal-mid); }
+.ls-bal-caru  { background: #5A8F62; }
+.ls-bal-blog  { background: #8FB492; }
+.ls-ca-reel   { background: var(--or); }
+.ls-ca-caru   { background: #D4B07A; }
+.ls-ca-blog   { background: #E8D0A0; }
+
+/* Pure CSS donut chart — format distribution */
+.donut-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--sp6);
+}
+
+.donut-svg-wrap {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.donut-svg-wrap svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-center-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1;
+}
+
+.donut-center-label {
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-top: 2px;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp2);
+}
+
+.donut-legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp2);
+  font-size: 11px;
+}
+
+.donut-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.donut-legend-label { color: var(--gf); }
+.donut-legend-pct {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--g);
+}
+
+/* Alert boxes */
+.alert-box {
+  border-radius: 3px;
+  padding: var(--sp4) var(--sp5);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp4);
+  margin-bottom: var(--sp4);
+  font-size: 12px;
+}
+
+.alert-paid {
+  background: #2A2B28;
+  border-left: 4px solid var(--r);
+  color: rgba(255,255,255,0.75);
+}
+
+.alert-paid strong {
+  color: #E8C97A;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .section { padding: var(--sp6) var(--sp5); }
+  .cover { padding: var(--sp6) var(--sp5) var(--sp5); }
+  .kpi-section-grid { grid-template-columns: 1fr; }
+  .legend-grid { grid-template-columns: 1fr; }
+  .campaign-identity { grid-template-columns: 1fr; }
+  .cal-cell { min-height: 90px; }
+  .cstat-num { font-size: 22px; }
+}
+
+@media (max-width: 640px) {
+  .cover h1 { font-size: 22px; }
+  .cal-cell { min-height: 70px; }
+  .lane-desc { display: none; }
+  .week-table { font-size: 10px; }
+  .cover-stats { display: grid; grid-template-columns: repeat(3,1fr); }
+  .cstat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+  SECTION 0 — COVER EXECUTIVE
+═══════════════════════════════════════════════════════ -->
+<header class="cover">
+  <div class="cover-inner">
+    <p class="cover-eyebrow">Jardín Ideal Montréal · Système Opérationnel 2026</p>
+    <h1>Calendrier de contenu<br><em>Juillet 2026</em></h1>
+
+    <div class="cover-meta">
+      <span class="badge badge-green">2 Campagnes actives</span>
+      <span class="badge badge-gold">Objectif CPL Balcons &lt;$80</span>
+      <span class="badge badge-gold">Objectif CPL Cour Avant &lt;$70</span>
+      <span class="badge badge-neutral">Lancement payant conditionnel J+7/J+14</span>
+    </div>
+
+    <div class="cover-stats">
+      <div class="cstat">
+        <div class="cstat-num">7<span>pièces</span></div>
+        <div class="cstat-label">Reels</div>
+      </div>
+      <div class="cstat">
+        <div class="cstat-num">7<span>pièces</span></div>
+        <div class="cstat-label">Carrusels</div>
+      </div>
+      <div class="cstat">
+        <div class="cstat-num">5<span>pièces</span></div>
+        <div class="cstat-label">Articles blog</div>
+      </div>
+      <div class="cstat">
+        <div class="cstat-num">55<span>+</span></div>
+        <div class="cstat-label">Stories planifiées</div>
+      </div>
+      <div class="cstat">
+        <div class="cstat-num">4</div>
+        <div class="cstat-label">Témoignages</div>
+      </div>
+      <div class="cstat">
+        <div class="cstat-num">5</div>
+        <div class="cstat-label">Checkpoints KPI</div>
+      </div>
+    </div>
+
+    <div class="campaign-identity">
+      <div class="ci-card ci-card-bal">
+        <div class="ci-dot ci-dot-bal"></div>
+        <div>
+          <div class="ci-name">Campagne BALCONS</div>
+          <div class="ci-sub">Segment A · Laval / Rive-Nord · Paid dès Jul 11</div>
+        </div>
+      </div>
+      <div class="ci-card ci-card-ca">
+        <div class="ci-dot ci-dot-ca"></div>
+        <div>
+          <div class="ci-name">Campagne COUR AVANT</div>
+          <div class="ci-sub">Segments A+C · MTL · Paid dès Jul 14</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════
+  SECTION 1 — GRILLE MENSUELLE JUILLET 2026
+═══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">01 / 05</span>
+    <h2 class="section-title">Grille mensuelle — Juillet 2026</h2>
+  </div>
+
+  <div class="alert-box alert-paid">
+    <div>
+      <strong>Déclencheurs paid — conditions à vérifier</strong>
+      Jul 11 (J+10 Balcons) : booster B-R01 à $15/jour si CTR &gt; 3% ·
+      Jul 14 (J+6 Cour Avant) : booster CA-R01 à $20/jour si CTR &gt; 3% ·
+      CPL cible : Balcons &lt;$80 · Cour Avant &lt;$70 (réf. historique $134.17)
+    </div>
+  </div>
+
+  <div class="cal-wrap">
+    <div class="cal-header-row">
+      <div class="cal-dow">Dim</div>
+      <div class="cal-dow">Lun</div>
+      <div class="cal-dow">Mar</div>
+      <div class="cal-dow">Mer</div>
+      <div class="cal-dow">Jeu</div>
+      <div class="cal-dow">Ven</div>
+      <div class="cal-dow">Sam</div>
+    </div>
+    <div class="cal-grid">
+
+      <!-- Jul 1 starts on Wednesday (index 3) -->
+      <div class="cal-cell empty weekend"></div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+
+      <!-- Jul 1 — Wed -->
+      <div class="cal-cell">
+        <div class="cal-date">1</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-R01</span>
+            <span class="lane-desc">Avant/Après 4 jours (60s)</span>
+          </div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 2 — Thu -->
+      <div class="cal-cell">
+        <div class="cal-date">2</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 3 — Fri -->
+      <div class="cal-cell">
+        <div class="cal-date">3</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 4 — Sat -->
+      <div class="cal-cell weekend">
+        <div class="cal-date">4</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 5 — Sun -->
+      <div class="cal-cell weekend">
+        <div class="cal-date">5</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 6 — Mon -->
+      <div class="cal-cell">
+        <div class="cal-date">6</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 7 — Tue -->
+      <div class="cal-cell">
+        <div class="cal-date">7</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-C01</span>
+            <span class="lane-desc">Bois vs Composite</span>
+          </div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 8 — Wed -->
+      <div class="cal-cell">
+        <div class="cal-date">8</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca">CA-R01</span>
+            <span class="lane-desc">Cour avant 3 jours (45s)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jul 9 — Thu -->
+      <div class="cal-cell">
+        <div class="cal-date">9</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca">CA-C01</span>
+            <span class="lane-desc">Avant/Après 5 cours</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jul 10 — Fri -->
+      <div class="cal-cell">
+        <div class="cal-date">10</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 11 — Sat · PAID TRIGGER BALCONS -->
+      <div class="cal-cell weekend">
+        <div class="cal-date">11</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal"><span class="paid-dot"></span>PAID B-R01</span>
+            <span class="lane-desc">si CTR &gt;3% → $15/j</span>
+          </div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 12 — Sun -->
+      <div class="cal-cell weekend">
+        <div class="cal-date">12</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 13 — Mon -->
+      <div class="cal-cell">
+        <div class="cal-date">13</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 14 — Tue · PAID TRIGGER COUR AVANT -->
+      <div class="cal-cell">
+        <div class="cal-date">14</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-R02</span>
+            <span class="lane-desc">Prix composite (45s)</span>
+          </div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca"><span class="paid-dot"></span>PAID CA-R01</span>
+            <span class="lane-desc">si CTR &gt;3% → $20/j</span>
+          </div>
+        </div>
+        <div class="checkpoint-badge">J+14</div>
+      </div>
+
+      <!-- Jul 15 — Wed -->
+      <div class="cal-cell">
+        <div class="cal-date">15</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca">CA-R02</span>
+            <span class="lane-desc">Processus pavé uni (50s)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jul 16 — Thu -->
+      <div class="cal-cell">
+        <div class="cal-date">16</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-C02</span>
+            <span class="lane-desc">Étapes remplacement</span>
+          </div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 17 — Fri -->
+      <div class="cal-cell">
+        <div class="cal-date">17</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-B01</span>
+            <span class="lane-desc">Bois traité ou composite</span>
+          </div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca">CA-C02</span>
+            <span class="lane-desc">Pavé uni 101</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jul 18 — Sat -->
+      <div class="cal-cell weekend">
+        <div class="cal-date">18</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 19 — Sun -->
+      <div class="cal-cell weekend">
+        <div class="cal-date">19</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 20 — Mon -->
+      <div class="cal-cell">
+        <div class="cal-date">20</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 21 — Tue -->
+      <div class="cal-cell">
+        <div class="cal-date">21</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-R03</span>
+            <span class="lane-desc">Bois pourri vs composite (40s)</span>
+          </div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca">CA-B01</span>
+            <span class="lane-desc">Guide cour avant MTL</span>
+          </div>
+        </div>
+        <div class="checkpoint-badge">J+21</div>
+      </div>
+
+      <!-- Jul 22 — Wed -->
+      <div class="cal-cell">
+        <div class="cal-date">22</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 23 — Thu -->
+      <div class="cal-cell">
+        <div class="cal-date">23</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-C03</span>
+            <span class="lane-desc">5 réalisations été</span>
+          </div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca">CA-R03</span>
+            <span class="lane-desc">Voisin a refait (40s)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jul 24 — Fri -->
+      <div class="cal-cell">
+        <div class="cal-date">24</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-B02</span>
+            <span class="lane-desc">Combien coûte un balcon</span>
+          </div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca">CA-C03</span>
+            <span class="lane-desc">Asphalte vs béton vs pavé</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jul 25 — Sat -->
+      <div class="cal-cell weekend">
+        <div class="cal-date">25</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 26 — Sun -->
+      <div class="cal-cell weekend">
+        <div class="cal-date">26</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 27 — Mon -->
+      <div class="cal-cell">
+        <div class="cal-date">27</div>
+        <div class="cal-lanes">
+          <div class="lane lane-empty-bal"></div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+      </div>
+
+      <!-- Jul 28 — Tue -->
+      <div class="cal-cell">
+        <div class="cal-date">28</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-R04</span>
+            <span class="lane-desc">3 balcons 1 semaine (50s)</span>
+          </div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca">CA-T01</span>
+            <span class="lane-desc">Témoignage client</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jul 29 — Wed -->
+      <div class="cal-cell">
+        <div class="cal-date">29</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-T01</span>
+            <span class="lane-desc">Témoignage client</span>
+          </div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca">CA-B02</span>
+            <span class="lane-desc">Pavé vs asphalte vs béton</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jul 30 — Thu -->
+      <div class="cal-cell">
+        <div class="cal-date">30</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-C04</span>
+            <span class="lane-desc">Prix guide 2026</span>
+          </div>
+          <div class="lane lane-empty-ca"></div>
+        </div>
+        <div class="checkpoint-badge">J+30</div>
+      </div>
+
+      <!-- Jul 31 — Fri -->
+      <div class="cal-cell">
+        <div class="cal-date">31</div>
+        <div class="cal-lanes">
+          <div class="lane lane-bal">
+            <span class="lane-tag lane-tag-bal">B-B03</span>
+            <span class="lane-desc">5 signes remplacement</span>
+          </div>
+          <div class="lane lane-ca">
+            <span class="lane-tag lane-tag-ca">CA-T02</span>
+            <span class="lane-desc">Témoignage client</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filler cells for last row to complete 7 cols (31 fills cols 5 of row 5, need 2 more) -->
+      <div class="cal-cell empty weekend"></div>
+      <div class="cal-cell empty weekend"></div>
+
+    </div><!-- .cal-grid -->
+  </div><!-- .cal-wrap -->
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════
+  SECTION 2 — VUE PAR SEMAINE
+═══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">02 / 05</span>
+    <h2 class="section-title">Vue par semaine — Détail opérationnel</h2>
+  </div>
+
+  <div class="week-grid">
+
+    <!-- S1 -->
+    <div class="week-card">
+      <div class="week-head">
+        <div>
+          <div class="week-label">S1</div>
+          <div class="week-title">1–6 juillet · Lancement Balcons</div>
+        </div>
+        <div class="week-checkpoint">Checkpoint J+3 (Jul 4)</div>
+      </div>
+      <table class="week-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Publication</th>
+            <th>À préparer</th>
+            <th>KPI à surveiller</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day-col">Mar 1</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-R01</span>
+                <span class="piece-name">Avant/Après 4 jours — 60s</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Rush de montage CapCut</li><li>Photos chantier triées</li><li>Sous-titres FR vérifiés</li></ul></td>
+            <td class="kpi-cell">Reach H+24 · Sauvegardes · CTR si boosted</td>
+          </tr>
+          <tr>
+            <td class="day-col">Jeu 3</td>
+            <td style="color:var(--g);font-size:11px;">Stories B-H01 à B-H03</td>
+            <td class="prep-cell"><ul><li>3 stories coulisses chantier</li><li>Poll "Bois ou composite?"</li></ul></td>
+            <td class="kpi-cell green">Checkpoint J+3 : reach B-R01 &gt;500</td>
+          </tr>
+          <tr>
+            <td class="day-col">Ven 4</td>
+            <td style="color:var(--g);font-size:11px;">Stories B-H04 à B-H05</td>
+            <td class="prep-cell"><ul><li>Swipe-up devis balcon</li></ul></td>
+            <td class="kpi-cell">Taux de réponse poll</td>
+          </tr>
+          <tr>
+            <td class="day-col">Sam–Dim</td>
+            <td style="color:var(--gc);font-size:11px;font-style:italic;">— pause publication —</td>
+            <td class="prep-cell"><ul><li>Préparer B-C01 pour Jul 7</li><li>Scrip CA-R01 finalisé</li></ul></td>
+            <td class="kpi-cell"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- S2 -->
+    <div class="week-card">
+      <div class="week-head">
+        <div>
+          <div class="week-label">S2</div>
+          <div class="week-title">7–13 juillet · Lancement Cour Avant</div>
+        </div>
+        <div class="week-checkpoint">Checkpoint J+7 (Jul 8) · Paid B-R01 Jul 11</div>
+      </div>
+      <table class="week-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Publication</th>
+            <th>À préparer</th>
+            <th>KPI à surveiller</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day-col">Mar 7</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-C01</span>
+                <span class="piece-name">Bois vs Composite — Carrusel 5 diap.</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Canva template validé</li><li>Prix à jour 2026</li></ul></td>
+            <td class="kpi-cell">Sauvegardes + partages · Portée</td>
+          </tr>
+          <tr>
+            <td class="day-col">Mer 8</td>
+            <td>
+              <div class="piece-ca">
+                <span class="piece-id piece-id-ca">CA-R01</span>
+                <span class="piece-name">Cour avant 3 jours — 45s</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Montage CA-R01 CapCut</li><li>CTA devis cour avant</li></ul></td>
+            <td class="kpi-cell green">Checkpoint J+7 : CTR CA-R01 &gt;3% ?</td>
+          </tr>
+          <tr>
+            <td class="day-col">Jeu 9</td>
+            <td>
+              <div class="piece-ca">
+                <span class="piece-id piece-id-ca">CA-C01</span>
+                <span class="piece-name">Avant/Après 5 cours — Carrusel</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>5 photos avant/après triées</li><li>Design Canva cohérent</li></ul></td>
+            <td class="kpi-cell">Partages · Commentaires</td>
+          </tr>
+          <tr>
+            <td class="day-col">Sam 11</td>
+            <td>
+              <div class="piece-bal" style="border-left-color:var(--r);">
+                <span class="piece-id" style="color:var(--r);">PAID B-R01 <span class="paid-dot"></span></span>
+                <span class="piece-name">Boost si CTR &gt;3% → $15/jour Meta</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Vérifier CTR dans Meta Ads</li><li>Configurer audience Laval</li><li>Budget $15/j activé</li></ul></td>
+            <td class="kpi-cell">CPL cible &lt;$80 · Leads entrants</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- S3 -->
+    <div class="week-card">
+      <div class="week-head">
+        <div>
+          <div class="week-label">S3</div>
+          <div class="week-title">14–20 juillet · Accélération</div>
+        </div>
+        <div class="week-checkpoint">Checkpoint J+14 · Paid CA-R01 Jul 14</div>
+      </div>
+      <table class="week-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Publication</th>
+            <th>À préparer</th>
+            <th>KPI à surveiller</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day-col">Mar 14</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-R02</span>
+                <span class="piece-name">Prix composite — 45s</span>
+              </div>
+              <div class="piece-ca" style="border-left-color:var(--r);">
+                <span class="piece-id" style="color:var(--r);">PAID CA-R01 <span class="paid-dot"></span></span>
+                <span class="piece-name">Boost si CTR &gt;3% → $20/jour</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Monter B-R02 avec prix 2026</li><li>Vérifier CTR CA-R01 J+6</li><li>Activer audience MTL Cour Avant</li></ul></td>
+            <td class="kpi-cell green">Checkpoint J+14 : CPL les 2 camps.</td>
+          </tr>
+          <tr>
+            <td class="day-col">Mer 15</td>
+            <td>
+              <div class="piece-ca">
+                <span class="piece-id piece-id-ca">CA-R02</span>
+                <span class="piece-name">Processus pavé uni — 50s</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>CapCut : étapes pavé uni</li><li>Voix off ou texte animé</li></ul></td>
+            <td class="kpi-cell">Vues complètes &gt;50%</td>
+          </tr>
+          <tr>
+            <td class="day-col">Jeu 16</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-C02</span>
+                <span class="piece-name">Étapes remplacement balcon — Carrusel</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Infographie étapes Canva</li><li>Numéroter 6 diapositives</li></ul></td>
+            <td class="kpi-cell">Sauvegardes (contenu éducatif)</td>
+          </tr>
+          <tr>
+            <td class="day-col">Ven 17</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-B01</span>
+                <span class="piece-name">Bois traité ou composite — Blog</span>
+              </div>
+              <div class="piece-ca">
+                <span class="piece-id piece-id-ca">CA-C02</span>
+                <span class="piece-name">Pavé uni 101 — Carrusel</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Article WordPress SEO-ready</li><li>Mot-clé cible : "balcon composite Laval"</li></ul></td>
+            <td class="kpi-cell">Trafic organique blog</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- S4 -->
+    <div class="week-card">
+      <div class="week-head">
+        <div>
+          <div class="week-label">S4</div>
+          <div class="week-title">21–27 juillet · Volume + Blog</div>
+        </div>
+        <div class="week-checkpoint">Checkpoint J+21 (Jul 21)</div>
+      </div>
+      <table class="week-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Publication</th>
+            <th>À préparer</th>
+            <th>KPI à surveiller</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day-col">Mar 21</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-R03</span>
+                <span class="piece-name">Bois pourri vs composite — 40s</span>
+              </div>
+              <div class="piece-ca">
+                <span class="piece-id piece-id-ca">CA-B01</span>
+                <span class="piece-name">Guide cour avant MTL — Blog</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Photos comparaison bois dégradé</li><li>Article 800+ mots WordPress</li></ul></td>
+            <td class="kpi-cell green">Checkpoint J+21 : ajuster budget si CPL hors cible</td>
+          </tr>
+          <tr>
+            <td class="day-col">Jeu 23</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-C03</span>
+                <span class="piece-name">5 réalisations été — Carrusel</span>
+              </div>
+              <div class="piece-ca">
+                <span class="piece-id piece-id-ca">CA-R03</span>
+                <span class="piece-name">Voisin a refait — 40s (social proof)</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Sélectionner 5 photos chantiers été</li><li>Autorisation client pour CA-R03</li></ul></td>
+            <td class="kpi-cell">Social proof : partages voisinage</td>
+          </tr>
+          <tr>
+            <td class="day-col">Ven 24</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-B02</span>
+                <span class="piece-name">Combien coûte un balcon — Blog</span>
+              </div>
+              <div class="piece-ca">
+                <span class="piece-id piece-id-ca">CA-C03</span>
+                <span class="piece-name">Asphalte vs béton vs pavé — Carrusel</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Tableau prix réels Jardín Ideal</li><li>Infographie 3 matériaux Canva</li></ul></td>
+            <td class="kpi-cell">Trafic blog + leads formulaire</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- S5 -->
+    <div class="week-card">
+      <div class="week-head">
+        <div>
+          <div class="week-label">S5</div>
+          <div class="week-title">28–31 juillet · Clôture + Témoignages</div>
+        </div>
+        <div class="week-checkpoint">Checkpoint J+30 (Jul 30) · Bilan mensuel</div>
+      </div>
+      <table class="week-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Publication</th>
+            <th>À préparer</th>
+            <th>KPI à surveiller</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day-col">Mar 28</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-R04</span>
+                <span class="piece-name">3 balcons 1 semaine — 50s</span>
+              </div>
+              <div class="piece-ca">
+                <span class="piece-id piece-id-ca">CA-T01</span>
+                <span class="piece-name">Témoignage client Cour Avant</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Montage multi-chantier CapCut</li><li>Filmer témoignage CA-T01</li></ul></td>
+            <td class="kpi-cell">CTR vidéo · Leads cumulés S5</td>
+          </tr>
+          <tr>
+            <td class="day-col">Mer 29</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-T01</span>
+                <span class="piece-name">Témoignage client Balcon</span>
+              </div>
+              <div class="piece-ca">
+                <span class="piece-id piece-id-ca">CA-B02</span>
+                <span class="piece-name">Pavé vs asphalte vs béton — Blog</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Filmer B-T01 · Sous-titres FR</li><li>Article CA-B02 comparatif SEO</li></ul></td>
+            <td class="kpi-cell">Confiance : commentaires positifs</td>
+          </tr>
+          <tr>
+            <td class="day-col">Jeu 30</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-C04</span>
+                <span class="piece-name">Prix guide 2026 — Carrusel</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Tarifs mis à jour</li><li>CTA devis final fort</li></ul></td>
+            <td class="kpi-cell green">Checkpoint J+30 : bilan complet 2 campagnes</td>
+          </tr>
+          <tr>
+            <td class="day-col">Ven 31</td>
+            <td>
+              <div class="piece-bal">
+                <span class="piece-id piece-id-bal">B-B03</span>
+                <span class="piece-name">5 signes remplacement balcon — Blog</span>
+              </div>
+              <div class="piece-ca">
+                <span class="piece-id piece-id-ca">CA-T02</span>
+                <span class="piece-name">Témoignage client Cour Avant #2</span>
+              </div>
+              <div class="piece-bal" style="margin-top:3px;">
+                <span class="piece-id piece-id-bal">B-T02</span>
+                <span class="piece-name">Témoignage Balcon #2 (fin juillet)</span>
+              </div>
+            </td>
+            <td class="prep-cell"><ul><li>Article B-B03 SEO "remplacement balcon"</li><li>Filmer CA-T02 + B-T02</li></ul></td>
+            <td class="kpi-cell">Total leads juillet · CPL final</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- .week-grid -->
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════
+  SECTION 3 — RÉSUMÉ DE PRODUCTION
+═══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">03 / 05</span>
+    <h2 class="section-title">Résumé de production — Toutes pièces</h2>
+  </div>
+
+  <div style="overflow-x:auto;">
+  <table class="prod-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Code</th>
+        <th>Campagne</th>
+        <th>Format</th>
+        <th>Titre / Description</th>
+        <th>Durée</th>
+        <th>Statut</th>
+        <th>Outil</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- BALCONES reels -->
+      <tr>
+        <td>Jul 1</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-R01</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-reel">Reel</span></td>
+        <td>Avant/Après 4 jours</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">60s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <tr>
+        <td>Jul 7</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-C01</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-caru">Carrusel</span></td>
+        <td>Bois vs Composite</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">5 diap.</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">Canva</td>
+      </tr>
+      <!-- COUR AVANT reels -->
+      <tr>
+        <td>Jul 8</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-R01</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-reel">Reel</span></td>
+        <td>Cour avant 3 jours</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">45s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <tr>
+        <td>Jul 9</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-C01</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-caru">Carrusel</span></td>
+        <td>Avant/Après 5 cours</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">5 diap.</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">Canva</td>
+      </tr>
+      <tr>
+        <td>Jul 11</td>
+        <td class="campaign-bal prod-code" style="color:var(--r);border-left:3px solid var(--r);">PAID B-R01</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-paid">Paid Boost</span></td>
+        <td>Boost B-R01 si CTR &gt;3%</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">$15/j</td>
+        <td><span class="status-badge status-a-faire">Conditionnel</span></td>
+        <td class="tool-col">Meta Ads</td>
+      </tr>
+      <tr>
+        <td>Jul 14</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-R02</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-reel">Reel</span></td>
+        <td>Prix composite Laval 2026</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">45s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <tr>
+        <td>Jul 14</td>
+        <td class="campaign-ca prod-code" style="color:var(--r);border-left:3px solid var(--r);">PAID CA-R01</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-paid">Paid Boost</span></td>
+        <td>Boost CA-R01 si CTR &gt;3%</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">$20/j</td>
+        <td><span class="status-badge status-a-faire">Conditionnel</span></td>
+        <td class="tool-col">Meta Ads</td>
+      </tr>
+      <tr>
+        <td>Jul 15</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-R02</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-reel">Reel</span></td>
+        <td>Processus pavé uni étapes</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">50s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <tr>
+        <td>Jul 16</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-C02</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-caru">Carrusel</span></td>
+        <td>Étapes remplacement balcon</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">6 diap.</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">Canva</td>
+      </tr>
+      <tr>
+        <td>Jul 17</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-B01</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-blog">Blog</span></td>
+        <td>Bois traité ou composite — guide 2026</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">800+ mots</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">WordPress</td>
+      </tr>
+      <tr>
+        <td>Jul 17</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-C02</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-caru">Carrusel</span></td>
+        <td>Pavé uni 101</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">6 diap.</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">Canva</td>
+      </tr>
+      <tr>
+        <td>Jul 21</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-R03</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-reel">Reel</span></td>
+        <td>Bois pourri vs composite</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">40s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <tr>
+        <td>Jul 21</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-B01</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-blog">Blog</span></td>
+        <td>Guide complet cour avant Montréal</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">1000+ mots</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">WordPress</td>
+      </tr>
+      <tr>
+        <td>Jul 23</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-C03</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-caru">Carrusel</span></td>
+        <td>5 réalisations été Jardín Ideal</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">5 diap.</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">Canva</td>
+      </tr>
+      <tr>
+        <td>Jul 23</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-R03</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-reel">Reel</span></td>
+        <td>Voisin a refait sa cour (social proof)</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">40s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <tr>
+        <td>Jul 24</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-B02</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-blog">Blog</span></td>
+        <td>Combien coûte un balcon composite à Laval</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">800+ mots</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">WordPress</td>
+      </tr>
+      <tr>
+        <td>Jul 24</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-C03</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-caru">Carrusel</span></td>
+        <td>Asphalte vs béton vs pavé uni</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">6 diap.</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">Canva</td>
+      </tr>
+      <tr>
+        <td>Jul 28</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-R04</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-reel">Reel</span></td>
+        <td>3 balcons complétés en 1 semaine</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">50s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <tr>
+        <td>Jul 28</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-T01</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-temo">Témoignage</span></td>
+        <td>Témoignage client Cour Avant #1</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">30–60s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <tr>
+        <td>Jul 29</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-T01</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-temo">Témoignage</span></td>
+        <td>Témoignage client Balcon #1</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">30–60s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <tr>
+        <td>Jul 29</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-B02</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-blog">Blog</span></td>
+        <td>Pavé uni vs asphalte vs béton — comparatif</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">900+ mots</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">WordPress</td>
+      </tr>
+      <tr>
+        <td>Jul 30</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-C04</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-caru">Carrusel</span></td>
+        <td>Guide des prix balcon composite 2026</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">6 diap.</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">Canva</td>
+      </tr>
+      <tr>
+        <td>Jul 31</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-B03</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-blog">Blog</span></td>
+        <td>5 signes que votre balcon doit être remplacé</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">700+ mots</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">WordPress</td>
+      </tr>
+      <tr>
+        <td>Jul 31</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-T02</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-temo">Témoignage</span></td>
+        <td>Témoignage client Cour Avant #2</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">30–60s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <tr>
+        <td>Fin juil.</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-T02</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-temo">Témoignage</span></td>
+        <td>Témoignage client Balcon #2</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">30–60s</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">CapCut</td>
+      </tr>
+      <!-- Stories row summary -->
+      <tr>
+        <td>Juil. entier</td>
+        <td class="campaign-bal prod-code prod-code-bal">B-H01→H32</td>
+        <td><span class="badge badge-green" style="font-size:8px;">BALCONS</span></td>
+        <td><span class="type-badge type-story">Stories</span></td>
+        <td>Coulisses, polls, avant/après, swipe-up devis (5–7/sem)</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">32 stories</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">Canva / Stories</td>
+      </tr>
+      <tr>
+        <td>Juil. entier</td>
+        <td class="campaign-ca prod-code prod-code-ca">CA-H01→H25</td>
+        <td><span class="badge badge-gold" style="font-size:8px;">COUR AVANT</span></td>
+        <td><span class="type-badge type-story">Stories</span></td>
+        <td>Coulisses pavé, comparatifs matériaux, social proof (5–6/sem)</td>
+        <td style="font-family:var(--font-mono);font-size:10px;">25 stories</td>
+        <td><span class="status-badge status-a-faire">À faire</span></td>
+        <td class="tool-col">Canva / Stories</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════
+  SECTION 4 — SUIVI DES PERFORMANCES
+═══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">04 / 05</span>
+    <h2 class="section-title">Suivi des performances — KPIs par campagne</h2>
+  </div>
+
+  <div class="kpi-section-grid">
+
+    <!-- BALCONS KPI -->
+    <div class="kpi-campaign-block">
+      <div class="kpi-campaign-head kpi-campaign-head-bal">
+        <div>
+          <div class="kpi-head-label">Campagne</div>
+          <div class="kpi-head-name">BALCONS — Laval / Rive-Nord</div>
+        </div>
+        <div class="kpi-head-target">CPL cible &lt; $80</div>
+      </div>
+      <div style="overflow-x:auto;">
+      <table class="kpi-table">
+        <thead>
+          <tr>
+            <th>Semaine</th>
+            <th>Reach org.</th>
+            <th>CTR</th>
+            <th>CPL</th>
+            <th>Leads</th>
+            <th>Budget dép.</th>
+            <th>Décision</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="kpi-sem">S1 · Jul 1–6</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">$0</td>
+            <td class="decision-col">Lancer B-R01 · surveiller J+3</td>
+          </tr>
+          <tr>
+            <td class="kpi-sem">S2 · Jul 7–13</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">$0 / cond.</td>
+            <td class="decision-col">Si CTR B-R01 &gt;3% → paid Jul 11</td>
+          </tr>
+          <tr>
+            <td class="kpi-sem">S3 · Jul 14–20</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="decision-col">Checkpoint J+14 · ajuster audience</td>
+          </tr>
+          <tr>
+            <td class="kpi-sem">S4 · Jul 21–27</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="decision-col">Checkpoint J+21 · scaler ou freiner</td>
+          </tr>
+          <tr>
+            <td class="kpi-sem">S5 · Jul 28–31</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="decision-col">Bilan J+30 · plan août</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <!-- COUR AVANT KPI -->
+    <div class="kpi-campaign-block">
+      <div class="kpi-campaign-head kpi-campaign-head-ca">
+        <div>
+          <div class="kpi-head-label">Campagne</div>
+          <div class="kpi-head-name">COUR AVANT — Montréal</div>
+        </div>
+        <div class="kpi-head-target">CPL cible &lt; $70</div>
+      </div>
+      <div style="overflow-x:auto;">
+      <table class="kpi-table">
+        <thead>
+          <tr>
+            <th>Semaine</th>
+            <th>Reach org.</th>
+            <th>CTR</th>
+            <th>CPL</th>
+            <th>Leads</th>
+            <th>Budget dép.</th>
+            <th>Décision</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="kpi-sem">S1 · Jul 1–6</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">$0</td>
+            <td class="decision-col">Préparer CA-R01 · lancement Jul 8</td>
+          </tr>
+          <tr>
+            <td class="kpi-sem">S2 · Jul 7–13</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">$0 / cond.</td>
+            <td class="decision-col">Si CTR CA-R01 &gt;3% → paid Jul 14</td>
+          </tr>
+          <tr>
+            <td class="kpi-sem">S3 · Jul 14–20</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="decision-col">Checkpoint J+14 · CPL vs $70 cible</td>
+          </tr>
+          <tr>
+            <td class="kpi-sem">S4 · Jul 21–27</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="decision-col">Checkpoint J+21 · optimiser créatifs</td>
+          </tr>
+          <tr>
+            <td class="kpi-sem">S5 · Jul 28–31</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="kpi-blank">—</td>
+            <td class="decision-col">Bilan J+30 · CPL final vs $134.17 réf.</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+  </div><!-- .kpi-section-grid -->
+
+  <!-- Reference note -->
+  <div style="margin-top:var(--sp5);padding:var(--sp4) var(--sp5);background:var(--rc);border-left:3px solid var(--r);border-radius:2px;font-size:11px;color:var(--r);">
+    <strong style="font-family:var(--font-mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;">Référence historique</strong><br>
+    CPL le plus bas enregistré : <strong>$134.17</strong> — objectifs juillet représentent une réduction de 40–47% par rapport à ce référentiel.
+    Surveiller de près à J+14 pour ajustement budget et audience avant d'engager davantage.
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════
+  SECTION 5 — LEGENDE + DISTRIBUTION FORMATS
+═══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">05 / 05</span>
+    <h2 class="section-title">Légende & distribution des formats</h2>
+  </div>
+
+  <div class="legend-grid">
+
+    <!-- Campaign color legend -->
+    <div class="legend-block">
+      <div class="legend-title">Identité visuelle des campagnes</div>
+      <div class="legend-items">
+        <div class="legend-item">
+          <div class="legend-swatch ls-bal-reel"></div>
+          <span>BALCONS — Accent vert forêt <span style="font-family:var(--font-mono);font-size:10px;color:var(--g);">#3D6B42</span></span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch ls-ca-reel"></div>
+          <span>COUR AVANT — Accent or ambre <span style="font-family:var(--font-mono);font-size:10px;color:var(--g);">#C8A45A</span></span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--r);"></div>
+          <span>Déclencheur paid conditionnel</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--vf);"></div>
+          <span>Checkpoint KPI (J+3, J+7, J+14, J+21, J+30)</span>
+        </div>
+      </div>
+
+      <div style="margin-top:var(--sp5);">
+      <div class="legend-title">Types de contenu</div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--sp2);margin-top:var(--sp3);">
+        <span class="type-badge type-reel">Reel</span>
+        <span class="type-badge type-caru">Carrusel</span>
+        <span class="type-badge type-blog">Blog</span>
+        <span class="type-badge type-story">Stories</span>
+        <span class="type-badge type-temo">Témoignage</span>
+        <span class="type-badge type-paid">Paid Boost</span>
+      </div>
+      </div>
+
+      <div style="margin-top:var(--sp5);">
+      <div class="legend-title">Statuts de production</div>
+      <div style="display:flex;gap:var(--sp2);margin-top:var(--sp3);flex-wrap:wrap;">
+        <span class="status-badge status-a-faire">À faire</span>
+        <span class="status-badge status-en-cours">En cours</span>
+        <span class="status-badge status-publie">Publié</span>
+      </div>
+      </div>
+    </div>
+
+    <!-- Donut chart — format distribution (pure CSS/SVG inline) -->
+    <div class="legend-block">
+      <div class="legend-title">Distribution des pièces par format (hors stories)</div>
+      <div class="donut-wrap">
+        <div class="donut-svg-wrap">
+          <!-- SVG donut: circumference of r=42 = 263.9
+               Reels: 7/23 = 30.4% → 80.2
+               Carrusels: 7/23 = 30.4% → 80.2
+               Blogs: 5/23 = 21.7% → 57.3
+               Témoignages: 4/23 = 17.4% → 45.9
+          -->
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Diagramme distribution des formats">
+            <!-- Reels: 30.4% → offset 0 -->
+            <circle cx="50" cy="50" r="42"
+              fill="none" stroke="#3D6B42" stroke-width="14"
+              stroke-dasharray="80.2 183.7"
+              stroke-dashoffset="0"></circle>
+            <!-- Carrusels: 30.4% → offset −80.2 (equiv +183.7) -->
+            <circle cx="50" cy="50" r="42"
+              fill="none" stroke="#5A8F62" stroke-width="14"
+              stroke-dasharray="80.2 183.7"
+              stroke-dashoffset="-80.2"></circle>
+            <!-- Blogs: 21.7% → offset −160.4 -->
+            <circle cx="50" cy="50" r="42"
+              fill="none" stroke="#C8A45A" stroke-width="14"
+              stroke-dasharray="57.3 206.6"
+              stroke-dashoffset="-160.4"></circle>
+            <!-- Témoignages: 17.4% → offset −217.7 -->
+            <circle cx="50" cy="50" r="42"
+              fill="none" stroke="#D4B07A" stroke-width="14"
+              stroke-dasharray="45.9 218"
+              stroke-dashoffset="-217.7"></circle>
+          </svg>
+          <div class="donut-center">
+            <div class="donut-center-num">23</div>
+            <div class="donut-center-label">pièces</div>
+          </div>
+        </div>
+        <div class="donut-legend">
+          <div class="donut-legend-item">
+            <div class="donut-swatch" style="background:#3D6B42;"></div>
+            <span class="donut-legend-label">Reels</span>
+            <span class="donut-legend-pct">7 · 30%</span>
+          </div>
+          <div class="donut-legend-item">
+            <div class="donut-swatch" style="background:#5A8F62;"></div>
+            <span class="donut-legend-label">Carrusels</span>
+            <span class="donut-legend-pct">7 · 30%</span>
+          </div>
+          <div class="donut-legend-item">
+            <div class="donut-swatch" style="background:#C8A45A;"></div>
+            <span class="donut-legend-label">Blogs</span>
+            <span class="donut-legend-pct">5 · 22%</span>
+          </div>
+          <div class="donut-legend-item">
+            <div class="donut-swatch" style="background:#D4B07A;"></div>
+            <span class="donut-legend-label">Témoignages</span>
+            <span class="donut-legend-pct">4 · 17%</span>
+          </div>
+          <div style="border-top:1px solid rgba(0,0,0,0.08);margin-top:var(--sp2);padding-top:var(--sp2);">
+            <div class="donut-legend-item" style="font-style:italic;color:var(--g);">
+              <div class="donut-swatch" style="background:#9B78C8;"></div>
+              <span class="donut-legend-label">Stories (hors calcul)</span>
+              <span class="donut-legend-pct">55+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:var(--sp5);padding:var(--sp4);background:var(--vb);border-radius:2px;">
+        <div class="legend-title" style="margin-bottom:var(--sp3);">Récapitulatif budgétaire paid</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp3);font-size:11px;">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:9px;color:var(--g);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">BALCONS — B-R01</div>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--vf);">$15<span style="font-size:11px;color:var(--g);font-family:var(--font-body);font-weight:400;">/jour</span></div>
+            <div style="color:var(--g);font-size:10px;">Conditionnel CTR &gt;3% · Jul 11</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-mono);font-size:9px;color:var(--g);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">COUR AVANT — CA-R01</div>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--j);">$20<span style="font-size:11px;color:var(--g);font-family:var(--font-body);font-weight:400;">/jour</span></div>
+            <div style="color:var(--g);font-size:10px;">Conditionnel CTR &gt;3% · Jul 14</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .legend-grid -->
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--vf);padding:var(--sp5) var(--sp8);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--sp4);">
+  <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);">
+    Jardín Ideal Montréal · Système Opérationnel 2026
+  </div>
+  <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);letter-spacing:1px;">
+    MASTER_CONTENT_CALENDAR.html · Juillet 2026 · 2 campagnes · 23 pièces + 55 stories
+  </div>
+</footer>
+
+</body>
+</html>

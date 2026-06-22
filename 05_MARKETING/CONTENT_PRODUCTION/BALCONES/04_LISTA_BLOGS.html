@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04 — Liste Blogs · Campagne BALCONES · Jardín Ideal 2026</title>
+<style>
+/* ═══════════════════════════════════════════════
+   JARDÍN IDEAL — DESIGN SYSTEM
+   Campagne BALCONES · Blogs 04
+═══════════════════════════════════════════════ */
+:root {
+  --vf:  #1E3A20;
+  --vm:  #3D6B42;
+  --or:  #C8A45A;
+  --cr:  #F5F2EB;
+  --w:   #FFFFFF;
+  --n:   #0D0E0B;
+  --gf:  #2A2B28;
+  --g:   #6B6B63;
+  --gc:  #B8B8B0;
+  --cd:  #EDE9E0;
+  --or2: #E8C97A;
+  --red: #B83232;
+
+  --font-d: Georgia, 'Times New Roman', serif;
+  --font-b: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-m: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--font-b);
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── COVER ─── */
+.cover {
+  background: var(--vf);
+  padding: 56px 64px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: "BLOG";
+  position: absolute;
+  right: 40px; top: 20px;
+  font-family: var(--font-d);
+  font-size: clamp(120px, 18vw, 200px);
+  font-weight: 700;
+  color: rgba(200,164,90,0.06);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -4px;
+}
+.cover-eyebrow {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 20px;
+}
+.cover h1 {
+  font-family: var(--font-d);
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+.cover h1 em { color: var(--or); font-style: italic; }
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 0;
+}
+.cover-meta-item {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.55);
+}
+.cover-meta-item strong {
+  display: block;
+  color: var(--or2);
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+/* ─── LAYOUT ─── */
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+/* ─── SECTION HEADER ─── */
+.section-header {
+  padding: 48px 0 0;
+  margin-bottom: 36px;
+  border-top: 2px solid var(--vf);
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+.section-num {
+  font-family: var(--font-d);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--or);
+  letter-spacing: 2px;
+  padding-top: 4px;
+  min-width: 32px;
+}
+.section-title {
+  font-family: var(--font-d);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--g);
+}
+
+/* ─── ARTICLE CARD ─── */
+.article-card {
+  position: relative;
+  background: var(--w);
+  border: 1px solid var(--cd);
+  margin-bottom: 64px;
+  overflow: hidden;
+}
+.article-card::before {
+  content: attr(data-num);
+  position: absolute;
+  right: -10px;
+  top: -20px;
+  font-family: var(--font-d);
+  font-size: 180px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(30,58,32,0.04);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -6px;
+}
+.article-header {
+  background: var(--vf);
+  padding: 28px 36px;
+  position: relative;
+}
+.article-id {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 10px;
+}
+.article-header h2 {
+  font-family: var(--font-d);
+  font-size: clamp(18px, 2.4vw, 26px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.article-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.stat {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+}
+.stat strong { color: var(--or2); }
+
+.article-body {
+  padding: 32px 36px;
+}
+
+/* ─── FIELD GROUPS ─── */
+.field {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--cd);
+}
+.field:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.field-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.field-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cd);
+  max-width: 100px;
+}
+.field-value {
+  font-family: var(--font-b);
+  font-size: 13.5px;
+  color: var(--n);
+  line-height: 1.75;
+}
+.field-value strong {
+  color: var(--vf);
+  font-weight: 600;
+}
+
+/* ─── SEO BOX ─── */
+.seo-box {
+  background: var(--cr);
+  border-left: 3px solid var(--or);
+  padding: 18px 22px;
+  margin-top: 8px;
+}
+.seo-title {
+  font-family: var(--font-d);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--vf);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.seo-meta {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--g);
+  margin-bottom: 8px;
+}
+.seo-desc {
+  font-size: 13px;
+  color: var(--gf);
+  line-height: 1.6;
+}
+
+/* ─── STRUCTURE TABLE ─── */
+.struct-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 13px;
+}
+.struct-table thead tr {
+  background: var(--vf);
+}
+.struct-table thead th {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--or);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 400;
+}
+.struct-table tbody tr {
+  border-bottom: 1px solid var(--cd);
+}
+.struct-table tbody tr:nth-child(even) {
+  background: var(--cr);
+}
+.struct-table td {
+  padding: 10px 14px;
+  vertical-align: top;
+  line-height: 1.6;
+}
+.struct-table td:first-child {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--or);
+  font-weight: 700;
+  white-space: nowrap;
+  min-width: 28px;
+}
+.struct-table td:nth-child(2) {
+  font-weight: 600;
+  color: var(--vf);
+  min-width: 200px;
+}
+.struct-table td:nth-child(3) {
+  color: var(--gf);
+  font-size: 12.5px;
+}
+.struct-table td:last-child {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--g);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ─── KEYWORDS ─── */
+.kw-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+.kw-tag {
+  background: var(--cr);
+  border: 1px solid var(--or);
+  color: var(--vf);
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+}
+.kw-tag.primary {
+  background: var(--or);
+  color: var(--vf);
+  font-weight: 700;
+}
+
+/* ─── VISUELS ─── */
+.visual-list {
+  list-style: none;
+  margin-top: 6px;
+}
+.visual-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--cd);
+  font-size: 13px;
+  color: var(--gf);
+}
+.visual-list li:last-child { border-bottom: none; }
+.visual-num {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--or);
+  font-weight: 700;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+/* ─── CTA BOX ─── */
+.cta-box {
+  background: linear-gradient(135deg, var(--vf) 0%, #2C4A2E 100%);
+  padding: 22px 28px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.cta-arrow {
+  font-family: var(--font-d);
+  font-size: 32px;
+  color: var(--or);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.cta-text {
+  font-family: var(--font-d);
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--w);
+  line-height: 1.3;
+}
+.cta-text small {
+  display: block;
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--or);
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+/* ─── REF TAG ─── */
+.ref-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gf);
+  color: var(--gc);
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 4px 10px;
+  margin-top: 6px;
+}
+
+/* ─── TOC ─── */
+.toc {
+  background: var(--w);
+  border: 1px solid var(--cd);
+  padding: 28px 32px;
+  margin: 40px 0 0;
+}
+.toc-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 16px;
+}
+.toc-list {
+  list-style: none;
+}
+.toc-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--cd);
+  cursor: pointer;
+}
+.toc-list li:last-child { border-bottom: none; }
+.toc-list .toc-id {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--or);
+  font-weight: 700;
+  min-width: 50px;
+}
+.toc-list .toc-name {
+  font-family: var(--font-d);
+  font-size: 14px;
+  color: var(--vf);
+  font-style: italic;
+  flex: 1;
+}
+.toc-list .toc-words {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--g);
+  white-space: nowrap;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 680px) {
+  .cover { padding: 36px 24px 32px; }
+  .page { padding: 0 20px 60px; }
+  .article-header { padding: 20px 22px; }
+  .article-body { padding: 22px 22px; }
+  .struct-table { font-size: 12px; }
+  .struct-table td { padding: 8px 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div class="cover-eyebrow">Jardín Ideal · Campagne BALCONES 2026 · Document 04/06</div>
+  <h1>Stratégie de contenu<br><em>Blogs SEO — Balcons</em></h1>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>3 articles</strong>Format long</div>
+    <div class="cover-meta-item"><strong>Juillet 2026</strong>Publication</div>
+    <div class="cover-meta-item"><strong>FR — Montréal</strong>Marché cible</div>
+    <div class="cover-meta-item"><strong>SEO + Conversion</strong>Objectif principal</div>
+  </div>
+</div>
+
+<!-- ═══ PAGE ═══ -->
+<div class="page">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Contenu de ce document</div>
+    <ul class="toc-list">
+      <li>
+        <span class="toc-id">B-B01</span>
+        <span class="toc-name">Bois traité ou composite: ce que votre balcon devrait être en 2026</span>
+        <span class="toc-words">~1 200 mots</span>
+      </li>
+      <li>
+        <span class="toc-id">B-B02</span>
+        <span class="toc-name">Combien coûte un balcon composite à Montréal? Guide 2026</span>
+        <span class="toc-words">~1 000 mots</span>
+      </li>
+      <li>
+        <span class="toc-id">B-B03</span>
+        <span class="toc-name">5 signes que votre balcon doit être remplacé maintenant</span>
+        <span class="toc-words">~900 mots</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ═══ B-B01 ═══ -->
+  <div class="section-header" style="margin-top:56px;">
+    <div class="section-num">01</div>
+    <div class="section-title">Article de blog — Comparatif matériaux</div>
+  </div>
+
+  <div class="article-card" data-num="01" id="B-B01">
+    <div class="article-header">
+      <div class="article-id">B-B01 · Blog SEO · ~1 200 mots</div>
+      <h2>Bois traité ou composite: ce que votre balcon devrait être en 2026</h2>
+      <div class="article-stats">
+        <div class="stat"><strong>Catégorie</strong>Comparatif / Éducatif</div>
+        <div class="stat"><strong>Funnel</strong>TOFU — Sensibilisation</div>
+        <div class="stat"><strong>Priorité SEO</strong>Haute</div>
+        <div class="stat"><strong>Cible pub.</strong>Juillet 2026</div>
+      </div>
+    </div>
+    <div class="article-body">
+
+      <!-- Objectif -->
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          Positionner Jardín Ideal comme l'expert local du balcon composite à Montréal en répondant à la question que pose chaque propriétaire avant de budgétiser des travaux. L'article capture le trafic de recherche informationnelle sur "bois vs composite balcon", convertit le lecteur en prospect qualifié via un CTA devis gratuit, et établit un lien d'autorité interne vers B-B02 (guide de prix).
+        </div>
+      </div>
+
+      <!-- Public cible -->
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires de maisons unifamiliales et de plex à Montréal, Laval et Rive-Nord, 35–65 ans. Leur balcon en bois traité a entre 8 et 20 ans. Ils ont remarqué des planches qui se fendent, une décoloration ou des coûts d'entretien récurrents. Ils cherchent une décision éclairée, pas une publicité.
+        </div>
+      </div>
+
+      <!-- Gancho SEO -->
+      <div class="field">
+        <div class="field-label">Gancho — Titre SEO + Meta description</div>
+        <div class="seo-box">
+          <div class="seo-meta">Title tag · 58 caractères</div>
+          <div class="seo-title">Bois traité ou composite: le vrai choix pour votre balcon 2026</div>
+          <div class="seo-meta" style="margin-top:14px;">Meta description · 155 caractères</div>
+          <div class="seo-desc">Bois traité ou composite? Comparatif complet des coûts, de l'entretien et de la durabilité pour un balcon à Montréal en 2026. Découvrez pourquoi la plupart des propriétaires changent d'avis.</div>
+        </div>
+      </div>
+
+      <!-- Structure -->
+      <div class="field">
+        <div class="field-label">Structure complète — Section par section</div>
+        <div style="overflow-x:auto;">
+          <table class="struct-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Section</th>
+                <th>Contenu + angle</th>
+                <th>Mots</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>H1</td>
+                <td>Introduction — L'accroche</td>
+                <td>Ouvrir avec une scène concrète: propriétaire qui ponce son balcon un samedi de mai pour la troisième année de suite. Poser la question centrale sans la répondre tout de suite. Annoncer ce que l'article va livrer (décision claire, chiffres réels, contexte Montréal).</td>
+                <td>~120</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Le bois traité: ce que vous achetez réellement</td>
+                <td>Avantages honnêtes: coût initial bas, esthétique familière, disponibilité immédiate. Inconvénients structurels: cycles gel/dégel de Montréal, teinture obligatoire tous les 2–3 ans, risque de pourriture sous la neige accumulée. Durée de vie réaliste: 15–20 ans avec entretien rigoureux. Coût d'entretien cumulatif sur 20 ans (introduire la notion sans encore donner les chiffres).</td>
+                <td>~220</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Le composite: ce que vous achetez réellement</td>
+                <td>Composition des lames (fibres de bois + polymère). Avantages: zéro teinture, résistance au gel, couleur stable, surface non-glissante. Inconvénients honnêtes: coût initial plus élevé, chaleur en plein soleil en été, gamme de qualité très variable (ne pas acheter le moins cher). Durée de vie: 25–30 ans garantis. Nommer les marques disponibles au Québec sans être prescriptif.</td>
+                <td>~220</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Comparaison côte à côte — tableau</td>
+                <td>Tableau visuel sur 8 critères: coût initial / entretien annuel / durabilité / esthétique / installation / environnement / revente / contexte hivernal MTL. Rester factuel: cocher, croix ou note /5. Pas de déclaration gagnant/perdant encore.</td>
+                <td>~120</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Le calcul que personne ne fait</td>
+                <td>Coût total de possession sur 20 ans: bois traité (achat + entretien annuel + remplacement partiel) vs composite (achat + 0 entretien). Exemple chiffré pour un balcon standard 200 pi² à Montréal. Révéler que l'écart de coût s'inverse entre 7 et 10 ans. C'est l'argument de conversion central.</td>
+                <td>~200</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Quand le bois reste le bon choix</td>
+                <td>Honnêteté éditoriale: si budget initial très serré, si propriétaire vend dans 2 ans, si contexte patrimonial/règlement municipal. Ne pas vendre contre les intérêts du lecteur — ça construit la confiance.</td>
+                <td>~130</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Ce que font les propriétaires à Montréal en 2026</td>
+                <td>Donnée d'observation terrain: sur X projets Jardín Ideal en 2025, Y% ont choisi le composite. Tendance locale. Quartiers et types de propriétés les plus actifs (Laval, Rive-Nord, Rosemont). Donne du contexte social sans être prescriptif.</td>
+                <td>~120</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Conclusion + CTA</td>
+                <td>Synthèse en 3 lignes. Proposer l'étape suivante naturelle: obtenir un prix précis pour leur projet spécifique. Le CTA mène vers le formulaire devis.</td>
+                <td>~70</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="field">
+        <div class="field-label">CTA final</div>
+        <div class="cta-box">
+          <div class="cta-arrow">→</div>
+          <div class="cta-text">
+            <small>Appel à l'action</small>
+            "Vous savez maintenant lequel des deux durera. Ce qu'il manque, c'est le prix exact pour votre balcon. Obtenez votre soumission gratuite en 48h — sans engagement."
+          </div>
+        </div>
+      </div>
+
+      <!-- Keywords -->
+      <div class="field">
+        <div class="field-label">Mots-clés cibles</div>
+        <div class="kw-grid">
+          <span class="kw-tag primary">balcon composite Montréal</span>
+          <span class="kw-tag primary">bois traité vs composite balcon</span>
+          <span class="kw-tag">composite terrasse prix Québec</span>
+          <span class="kw-tag">remplacement balcon bois 2026</span>
+          <span class="kw-tag">coût entretien balcon bois</span>
+          <span class="kw-tag">balcon composite durable hiver</span>
+          <span class="kw-tag">entrepreneur balcon Laval</span>
+        </div>
+      </div>
+
+      <!-- Visuels -->
+      <div class="field">
+        <div class="field-label">Visuels recommandés</div>
+        <ul class="visual-list">
+          <li><span class="visual-num">V1</span>Photo avant/après: balcon bois vieilli (gauche) vs balcon composite neuf (droite) — même maison si possible. Format 16:9 pour hero.</li>
+          <li><span class="visual-num">V2</span>Macro: surface lame composite avec texture grain. Lumière naturelle. Montrer le détail du matériau. Format carré.</li>
+          <li><span class="visual-num">V3</span>Infographie ou tableau comparatif stylisé aux couleurs Jardín Ideal — reprendre le tableau de la section H2 en graphique.</li>
+          <li><span class="visual-num">V4</span>Graphique linéaire: coût cumulatif bois vs composite sur 20 ans. Croisement visible vers année 8. Export PNG fond transparent.</li>
+          <li><span class="visual-num">V5</span>Photo balcon composite avec neige — contexte Montréal hivernal. Montre que le produit tient au gel.</li>
+        </ul>
+      </div>
+
+      <!-- Référence -->
+      <div class="field">
+        <div class="field-label">Référence briefing</div>
+        <span class="ref-tag">Briefing BALCONES 2026 · Section: Contenu SEO · Ligne: Blog B-B01 · Campagne juillet 2026</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ B-B02 ═══ -->
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-title">Article de blog — Guide de prix</div>
+  </div>
+
+  <div class="article-card" data-num="02" id="B-B02">
+    <div class="article-header">
+      <div class="article-id">B-B02 · Blog SEO · ~1 000 mots</div>
+      <h2>Combien coûte un balcon composite à Montréal?<br>Guide complet 2026</h2>
+      <div class="article-stats">
+        <div class="stat"><strong>Catégorie</strong>Guide de prix / MOFU</div>
+        <div class="stat"><strong>Funnel</strong>MOFU — Considération</div>
+        <div class="stat"><strong>Priorité SEO</strong>Très haute</div>
+        <div class="stat"><strong>Cible pub.</strong>Juillet 2026</div>
+      </div>
+    </div>
+    <div class="article-body">
+
+      <!-- Objectif -->
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          Capturer les recherches transactionnelles à forte intention d'achat autour du prix d'un balcon composite à Montréal. Cet article cible le lecteur qui a déjà décidé de rénover — il cherche maintenant un ordre de grandeur pour valider son budget. L'objectif est de lui donner des chiffres honnêtes et contextualisés (Montréal, main-d'œuvre, matériaux 2026), puis de le convertir vers un devis personnalisé, seule façon d'avoir un vrai prix.
+        </div>
+      </div>
+
+      <!-- Public cible -->
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires en phase de planification active, budget disponible 5 000–20 000 $. Ils ont peut-être déjà lu B-B01. Ils veulent savoir si leur budget tient avant d'appeler un entrepreneur. Profil: 40–60 ans, maison unifamiliale ou duplex, Montréal / Laval / Rive-Nord.
+        </div>
+      </div>
+
+      <!-- Gancho SEO -->
+      <div class="field">
+        <div class="field-label">Gancho — Titre SEO + Meta description</div>
+        <div class="seo-box">
+          <div class="seo-meta">Title tag · 56 caractères</div>
+          <div class="seo-title">Prix balcon composite Montréal 2026: guide complet</div>
+          <div class="seo-meta" style="margin-top:14px;">Meta description · 152 caractères</div>
+          <div class="seo-desc">Balcon composite à Montréal: combien ça coûte vraiment en 2026? Fourchettes de prix réelles, facteurs qui font varier le devis, et comment éviter les mauvaises surprises.</div>
+        </div>
+      </div>
+
+      <!-- Structure -->
+      <div class="field">
+        <div class="field-label">Structure complète — Section par section</div>
+        <div style="overflow-x:auto;">
+          <table class="struct-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Section</th>
+                <th>Contenu + angle</th>
+                <th>Mots</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>H1</td>
+                <td>Introduction — Répondre en 3 lignes</td>
+                <td>Donner la fourchette immédiatement: "Entre 8 000 $ et 22 000 $ pour un balcon composite standard à Montréal en 2026, selon la superficie et la configuration." Puis expliquer pourquoi cet écart existe — c'est ce que le reste de l'article va décomposer.</td>
+                <td>~80</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Ce qui compose le prix — les 4 postes</td>
+                <td>Décomposer le devis en 4 lignes: (1) matériaux composite lame + structure, (2) main-d'œuvre installation, (3) démolition et évacuation de l'ancien balcon, (4) quincaillerie, ancrage, finitions. Donner un % de chaque poste dans un projet typique. Démystifier pourquoi la main-d'œuvre représente souvent 40–50% du total à Montréal.</td>
+                <td>~200</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Tableau de prix par superficie</td>
+                <td>Tableau avec 5 tailles courantes (100 pi², 150 pi², 200 pi², 300 pi², 400+ pi²). Colonnes: superficie, fourchette matériaux, fourchette main-d'œuvre, total estimé. Préciser que ces prix incluent la démolition standard mais excluent les travaux de structure. Note de bas de tableau: prix validés sur projets Jardín Ideal 2025, valides Montréal / Laval / Rive-Nord.</td>
+                <td>~180</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Ce qui fait monter le prix</td>
+                <td>Listage structuré des 6 facteurs qui augmentent le devis: hauteur du balcon (2e étage vs rez-de-chaussée), garde-corps verre vs aluminium, présence d'escalier, problèmes structuraux découverts à la démolition, accès difficile au chantier, qualité de lame choisie (entrée de gamme vs premium). Chiffrer l'impact de chaque facteur quand possible.</td>
+                <td>~200</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Composite entrée vs milieu vs haut de gamme</td>
+                <td>Trois niveaux de produit disponibles au Québec. Ce qui change: épaisseur de la lame, résistance à l'estompage, garantie fabricant, texture. Ce qui ne change pas: l'entretien reste zéro dans tous les cas. Recommandation éditoriale: le milieu de gamme est optimal pour le rapport durabilité/coût à Montréal.</td>
+                <td>~160</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Récupérer une partie du coût</td>
+                <td>Crédit RénoVert ou programmes municipaux actifs en 2026 (vérifier avant publication). Valeur ajoutée à la revente: étude locale ou estimation. Économies sur l'entretien annuel: calcul sur 10 ans.</td>
+                <td>~120</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Conclusion + CTA</td>
+                <td>Rappeler que les chiffres ci-dessus sont des points de départ — un vrai prix exige une visite. Invitation à demander une soumission sans obligation, délai de réponse 48h.</td>
+                <td>~60</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="field">
+        <div class="field-label">CTA final</div>
+        <div class="cta-box">
+          <div class="cta-arrow">→</div>
+          <div class="cta-text">
+            <small>Appel à l'action</small>
+            "Les chiffres ici vous donnent un repère. Votre balcon, lui, a ses propres mesures. Obtenez un prix précis pour votre projet — visite gratuite, soumission en 48h."
+          </div>
+        </div>
+      </div>
+
+      <!-- Keywords -->
+      <div class="field">
+        <div class="field-label">Mots-clés cibles</div>
+        <div class="kw-grid">
+          <span class="kw-tag primary">prix balcon composite Montréal</span>
+          <span class="kw-tag primary">coût balcon composite Québec 2026</span>
+          <span class="kw-tag">combien coûte balcon composite</span>
+          <span class="kw-tag">soumission balcon composite Laval</span>
+          <span class="kw-tag">prix installation balcon composite</span>
+          <span class="kw-tag">entrepreneur balcon Rive-Nord</span>
+          <span class="kw-tag">remplacement balcon bois prix</span>
+        </div>
+      </div>
+
+      <!-- Visuels -->
+      <div class="field">
+        <div class="field-label">Visuels recommandés</div>
+        <ul class="visual-list">
+          <li><span class="visual-num">V1</span>Photo chantier en cours: installation des lambourdes composite. Montre le travail de structure, pas seulement la finition. Rend le prix crédible.</li>
+          <li><span class="visual-num">V2</span>Infographie "Les 4 postes de coût" avec un graphique en anneau ou en barres horizontales. Fond blanc, couleurs Jardín Ideal.</li>
+          <li><span class="visual-num">V3</span>Photo comparaison 3 niveaux de lame: entrée, milieu, haut de gamme — même angle, même lumière. Montre la différence de texture et de finition.</li>
+          <li><span class="visual-num">V4</span>Photo balcon terminé avec propriétaire en arrière-plan (flou). Ambiance estivale, Montréal. Ancre le prix dans une réalité locale.</li>
+        </ul>
+      </div>
+
+      <!-- Référence -->
+      <div class="field">
+        <div class="field-label">Référence briefing</div>
+        <span class="ref-tag">Briefing BALCONES 2026 · Section: Contenu SEO · Ligne: Blog B-B02 · Campagne juillet 2026</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ B-B03 ═══ -->
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-title">Article de blog — Urgence &amp; diagnostic</div>
+  </div>
+
+  <div class="article-card" data-num="03" id="B-B03">
+    <div class="article-header">
+      <div class="article-id">B-B03 · Blog SEO · ~900 mots</div>
+      <h2>5 signes que votre balcon doit être remplacé maintenant</h2>
+      <div class="article-stats">
+        <div class="stat"><strong>Catégorie</strong>Urgence / TOFU–MOFU</div>
+        <div class="stat"><strong>Funnel</strong>TOFU–MOFU — Activation</div>
+        <div class="stat"><strong>Priorité SEO</strong>Haute</div>
+        <div class="stat"><strong>Cible pub.</strong>Juillet 2026</div>
+      </div>
+    </div>
+    <div class="article-body">
+
+      <!-- Objectif -->
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          Capter les propriétaires qui doutent sans encore décider — ceux qui regardent leur balcon le week-end et se demandent "est-ce que c'est vraiment urgent?" Transformer le doute en certitude d'action. Le format liste est délibéré: il permet un scan rapide et crée des micro-décisions ("oui, ça c'est mon cas") qui mènent à la décision finale. L'article doit être partageable et fonctionner en reel/story découpé en 5 parties.
+        </div>
+      </div>
+
+      <!-- Public cible -->
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires avec un balcon en bois de 10 ans ou plus. Ils procrastinent: le balcon "fonctionne encore" mais ils savent qu'il vieillit. Quelque chose les a mis en alerte — une planche qui craque, de la peinture qui s'écaille, un voisin qui vient de rénover. Ils cherchent validation externe pour agir.
+        </div>
+      </div>
+
+      <!-- Gancho SEO -->
+      <div class="field">
+        <div class="field-label">Gancho — Titre SEO + Meta description</div>
+        <div class="seo-box">
+          <div class="seo-meta">Title tag · 55 caractères</div>
+          <div class="seo-title">5 signes que votre balcon doit être remplacé en 2026</div>
+          <div class="seo-meta" style="margin-top:14px;">Meta description · 158 caractères</div>
+          <div class="seo-desc">Votre balcon en bois commence à montrer des signes de faiblesse? Ces 5 signaux d'alarme indiquent qu'une rénovation ne peut plus attendre — et ce que ça coûte d'ignorer chacun.</div>
+        </div>
+      </div>
+
+      <!-- Structure -->
+      <div class="field">
+        <div class="field-label">Structure complète — Section par section</div>
+        <div style="overflow-x:auto;">
+          <table class="struct-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Section</th>
+                <th>Contenu + angle</th>
+                <th>Mots</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>H1</td>
+                <td>Introduction — Le piège de l'attente</td>
+                <td>Ne pas ouvrir avec une liste d'avantages. Ouvrir avec la conséquence: chaque printemps qu'on attend coûte en dommages accumulés et en coût de réparation structurale qui s'ajoute au remplacement. Poser la question directe: "Votre balcon entre dans quelle catégorie?" et annoncer les 5 signes.</td>
+                <td>~90</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Signe 1 — Les planches se soulèvent ou s'écaillent</td>
+                <td>Description visuelle précise: planches bombées, clous qui ressortent, bords qui se fendent dans le sens du fil. Explication technique: cycle gel/dégel de Montréal accélère la délamination. Ce qui se passe si on attend: risque de blessure, planches qui tombent sur la structure. Urgence: modérée à élevée.</td>
+                <td>~130</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Signe 2 — La structure portante est molle</td>
+                <td>Test: appuyer sur les lambourdes et poutres principales à la main — si elles cèdent ou résonnent creux, c'est de la pourriture interne. C'est le signe le plus grave: une structure compromise rend le balcon dangereux indépendamment de l'état du plancher. Urgence: élevée — arrêter d'utiliser le balcon jusqu'à inspection.</td>
+                <td>~130</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Signe 3 — Le balcon penche vers la maison</td>
+                <td>Comment vérifier avec un niveau ou à l'œil. Ce que ça signifie: les ancrages muraux se désolidarisent ou la fondation du poteau s'est déplacée. Risque légal au Québec: responsabilité du propriétaire en cas de chute. Urgence: élevée.</td>
+                <td>~120</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Signe 4 — La peinture ou teinture ne "prend" plus</td>
+                <td>Un bois qui n'absorbe plus la teinture a atteint un stade de dégradation où les pores sont obstrués par la pourriture superficielle. La peinture est cosmétique — elle cache, elle ne répare pas. Calcul: coût d'une teinture annuelle vs remplacement amorti sur 25 ans en composite.</td>
+                <td>~120</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Signe 5 — Le balcon a plus de 20 ans</td>
+                <td>L'âge seul est un signe. Même un balcon qui "a l'air correct" à 20 ans a une structure interne qui arrive en fin de vie. Analogie: la voiture qui roule encore mais dont le châssis est rouillé. Recommandation: inspection professionnelle gratuite avant décision.</td>
+                <td>~110</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Que faire maintenant</td>
+                <td>Synthèse: si 1 signe sur 5, planifier pour l'an prochain. Si 2–3 signes, obtenir une soumission cet été. Si 4–5 signes ou signe 2–3, agir maintenant. Lien interne vers B-B02 pour les prix.</td>
+                <td>~100</td>
+              </tr>
+              <tr>
+                <td>H2</td>
+                <td>Conclusion + CTA</td>
+                <td>CTA direct: "Vous avez reconnu votre balcon dans un ou plusieurs de ces signes? Jardín Ideal offre une inspection gratuite. On vous dit exactement où vous en êtes, sans obligation."</td>
+                <td>~60</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="field">
+        <div class="field-label">CTA final</div>
+        <div class="cta-box">
+          <div class="cta-arrow">→</div>
+          <div class="cta-text">
+            <small>Appel à l'action</small>
+            "Vous avez reconnu votre balcon dans au moins un de ces signes. Jardín Ideal vient inspecter gratuitement — on vous dit la vérité sur son état, sans obligation de rénover avec nous."
+          </div>
+        </div>
+      </div>
+
+      <!-- Keywords -->
+      <div class="field">
+        <div class="field-label">Mots-clés cibles</div>
+        <div class="kw-grid">
+          <span class="kw-tag primary">balcon vieux remplacer Montréal</span>
+          <span class="kw-tag primary">signes balcon à rénover</span>
+          <span class="kw-tag">balcon bois pourri que faire</span>
+          <span class="kw-tag">inspection balcon gratuit Montréal</span>
+          <span class="kw-tag">balcon dangereux quoi faire Québec</span>
+          <span class="kw-tag">remplacement balcon urgence</span>
+          <span class="kw-tag">entrepreneur rénovation balcon Laval</span>
+        </div>
+      </div>
+
+      <!-- Visuels -->
+      <div class="field">
+        <div class="field-label">Visuels recommandés</div>
+        <ul class="visual-list">
+          <li><span class="visual-num">V1</span>Photo close-up: planches de bois fendues, clou rouillé qui ressort. Lumière naturelle. Rend le problème concret et reconnaissable. Hero de l'article.</li>
+          <li><span class="visual-num">V2</span>Photo: dessous d'un balcon en bois avec lambourdes visiblement dégradées (pourriture grise/noire visible). Angle légèrement plongeant.</li>
+          <li><span class="visual-num">V3</span>Infographie "les 5 signes" en format vertical — utilisable directement en reel/story Instagram sans retouche.</li>
+          <li><span class="visual-num">V4</span>Photo: balcon composite neuf installé par Jardín Ideal — contraste direct avec les photos de dégradation. Finir sur le positif.</li>
+          <li><span class="visual-num">V5</span>Portrait: technicien Jardín Ideal qui inspecte un balcon. Rend l'offre d'inspection gratuite concrète et humaine.</li>
+        </ul>
+      </div>
+
+      <!-- Référence -->
+      <div class="field">
+        <div class="field-label">Référence briefing</div>
+        <span class="ref-tag">Briefing BALCONES 2026 · Section: Contenu SEO · Ligne: Blog B-B03 · Campagne juillet 2026</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top: 1px solid var(--cd); padding-top: 24px; margin-top: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+    <span style="font-family: var(--font-m); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--g);">Jardín Ideal · Campagne BALCONES · Document 04/06</span>
+    <span style="font-family: var(--font-m); font-size: 9px; color: var(--gc);">Généré le 22 juin 2026 · Usage interne</span>
+  </div>
+
+</div>
+</body>
+</html>

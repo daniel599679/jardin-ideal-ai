@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>06 — Témoignages Vidéo · Campagne BALCONES · Jardín Ideal 2026</title>
+<style>
+/* ═══════════════════════════════════════════════
+   JARDÍN IDEAL — DESIGN SYSTEM
+   Campagne BALCONES · Témoignages 06
+═══════════════════════════════════════════════ */
+:root {
+  --vf:  #1E3A20;
+  --vm:  #3D6B42;
+  --or:  #C8A45A;
+  --cr:  #F5F2EB;
+  --w:   #FFFFFF;
+  --n:   #0D0E0B;
+  --gf:  #2A2B28;
+  --g:   #6B6B63;
+  --gc:  #B8B8B0;
+  --cd:  #EDE9E0;
+  --or2: #E8C97A;
+  --red: #B83232;
+
+  --font-d: Georgia, 'Times New Roman', serif;
+  --font-b: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-m: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--font-b);
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── COVER ─── */
+.cover {
+  background: var(--vf);
+  padding: 56px 64px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: "TEMOIGNAGE";
+  position: absolute;
+  right: -20px; bottom: -10px;
+  font-family: var(--font-d);
+  font-size: clamp(60px, 11vw, 130px);
+  font-weight: 700;
+  color: rgba(200,164,90,0.05);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -3px;
+}
+.cover-eyebrow {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 20px;
+}
+.cover h1 {
+  font-family: var(--font-d);
+  font-size: clamp(26px, 4vw, 50px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  max-width: 700px;
+  margin-bottom: 28px;
+}
+.cover h1 em { color: var(--or); font-style: italic; }
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.cover-meta-item {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+}
+.cover-meta-item strong {
+  display: block;
+  color: var(--or2);
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+/* ─── PAGE ─── */
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+/* ─── SECTION HEADER ─── */
+.section-header {
+  padding: 52px 0 0;
+  margin-bottom: 32px;
+  border-top: 2px solid var(--vf);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.section-num {
+  font-family: var(--font-d);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--or);
+  letter-spacing: 2px;
+  padding-top: 4px;
+  min-width: 28px;
+}
+.section-title {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--g);
+}
+
+/* ─── TESTI CARD ─── */
+.testi-card {
+  background: var(--w);
+  border: 1px solid var(--cd);
+  margin-bottom: 72px;
+  overflow: hidden;
+}
+
+/* Header */
+.testi-header {
+  background: var(--vf);
+  padding: 30px 40px;
+  position: relative;
+}
+.testi-header::after {
+  content: attr(data-id);
+  position: absolute;
+  right: 30px; bottom: -20px;
+  font-family: var(--font-d);
+  font-size: 100px;
+  font-weight: 700;
+  color: rgba(200,164,90,0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+.testi-id {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 12px;
+}
+.testi-header h2 {
+  font-family: var(--font-d);
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.testi-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.stat {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+}
+.stat strong { color: var(--or2); }
+
+/* Body */
+.testi-body {
+  padding: 36px 40px;
+}
+
+/* Field */
+.field {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--cd);
+}
+.field:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.field-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--g);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.field-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cd);
+  max-width: 80px;
+}
+.field-value {
+  font-size: 13.5px;
+  color: var(--gf);
+  line-height: 1.75;
+}
+
+/* Hook */
+.hook-box {
+  background: var(--vf);
+  padding: 22px 28px;
+  position: relative;
+}
+.hook-box::before {
+  content: open-quote;
+  font-family: var(--font-d);
+  font-size: 72px;
+  color: var(--or);
+  line-height: 0.6;
+  position: absolute;
+  top: 20px; left: 20px;
+  opacity: 0.4;
+}
+.hook-text {
+  font-family: var(--font-d);
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--w);
+  line-height: 1.3;
+  padding-left: 24px;
+}
+
+/* Script block */
+.script-block {
+  background: var(--cr);
+  border-left: 3px solid var(--vf);
+  margin-top: 8px;
+}
+.script-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 80px;
+  border-bottom: 1px solid var(--cd);
+}
+.script-row:last-child { border-bottom: none; }
+.script-row.header-row {
+  background: var(--vf);
+}
+.script-row.header-row .script-cell {
+  font-family: var(--font-m);
+  font-size: 8.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 400;
+  padding: 9px 14px;
+}
+.script-cell {
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  vertical-align: top;
+}
+.script-cell:first-child {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--or);
+  font-weight: 700;
+  border-right: 1px solid var(--cd);
+  background: rgba(30,58,32,0.03);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 14px;
+}
+.script-cell:last-child {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--gc);
+  border-left: 1px solid var(--cd);
+  text-align: right;
+}
+.script-cell.question {
+  font-style: italic;
+  color: var(--gf);
+  font-weight: 500;
+}
+.script-cell.answer {
+  color: var(--n);
+}
+.script-cell.guided {
+  color: var(--vm);
+  font-size: 12px;
+}
+.script-cell.direction {
+  background: rgba(200,164,90,0.06);
+  color: var(--gf);
+  font-style: italic;
+  font-size: 12px;
+}
+
+/* CTA */
+.cta-box {
+  background: linear-gradient(135deg, var(--vf) 0%, var(--vm) 100%);
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 8px;
+}
+.cta-arrow {
+  font-family: var(--font-d);
+  font-size: 32px;
+  color: var(--or);
+  flex-shrink: 0;
+}
+.cta-text {
+  font-family: var(--font-d);
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--w);
+  line-height: 1.3;
+}
+.cta-text small {
+  display: block;
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--or);
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+/* Filming box */
+.film-box {
+  background: var(--n);
+  padding: 28px 32px;
+  margin-top: 8px;
+}
+.film-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 16px;
+}
+.film-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.film-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.film-item-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gc);
+}
+.film-item-value {
+  font-size: 13px;
+  color: rgba(245,242,235,0.85);
+  line-height: 1.6;
+}
+
+/* Visual list */
+.visual-list {
+  list-style: none;
+  margin-top: 8px;
+}
+.visual-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--cd);
+  font-size: 13px;
+  color: var(--gf);
+}
+.visual-list li:last-child { border-bottom: none; }
+.visual-num {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--or);
+  font-weight: 700;
+  min-width: 24px;
+  padding-top: 3px;
+}
+
+/* Ref tag */
+.ref-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gf);
+  color: var(--gc);
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  padding: 4px 10px;
+  margin-top: 6px;
+}
+
+/* Timing chip */
+.timing-chip {
+  display: inline-block;
+  background: var(--or);
+  color: var(--vf);
+  font-family: var(--font-m);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 2px 7px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 680px) {
+  .cover { padding: 36px 22px 32px; }
+  .page { padding: 0 18px 60px; }
+  .testi-header { padding: 22px 22px; }
+  .testi-body { padding: 22px 22px; }
+  .script-row { grid-template-columns: 80px 1fr; }
+  .script-cell:last-child { display: none; }
+  .film-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div class="cover-eyebrow">Jardín Ideal · Campagne BALCONES 2026 · Document 06/06</div>
+  <h1>Scripts de<br><em>Témoignages Vidéo</em></h1>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>2 vidéos</strong>B-T01 · B-T02</div>
+    <div class="cover-meta-item"><strong>Juillet 2026</strong>Tournage</div>
+    <div class="cover-meta-item"><strong>Laval + Rive-Nord</strong>Localisations</div>
+    <div class="cover-meta-item"><strong>60–90 sec</strong>Durée cible</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ═══ B-T01 ═══ -->
+  <div class="section-header" style="margin-top:52px;">
+    <div class="section-num">T1</div>
+    <div class="section-title">Témoignage vidéo — Remplacement balcon bois → composite</div>
+  </div>
+
+  <div class="testi-card">
+    <div class="testi-header" data-id="T1">
+      <div class="testi-id">B-T01 · Témoignage · Laval · Format: 60–75 secondes</div>
+      <h2>Client Laval — Le balcon qu'ils n'osaient plus utiliser</h2>
+      <div class="testi-stats">
+        <div class="stat"><strong>Profil client</strong>Couple 50–60 ans</div>
+        <div class="stat"><strong>Projet</strong>Remplacement bois → composite</div>
+        <div class="stat"><strong>Surface</strong>~180 pi²</div>
+        <div class="stat"><strong>Durée travaux</strong>4 jours</div>
+      </div>
+    </div>
+    <div class="testi-body">
+
+      <!-- Objectif -->
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          Ce témoignage cible le prospect qui procrastine — celui qui sait que son balcon vieillit mais n'a pas encore franchi le pas. La force de ce client est double: (1) il avait peur de la corvée des travaux, et (2) son balcon en bois était devenu une source d'inquiétude quotidienne. Le témoignage doit montrer que la décision était simple une fois prise, et que le résultat a dépassé les attentes. Aucun script préfabriqué — les réponses guidées ci-dessous orientent sans dicter.
+        </div>
+      </div>
+
+      <!-- Public cible -->
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires 45–65 ans, Laval et Montréal, avec un balcon en bois de 12 ans ou plus. Ils regardent leur balcon chaque printemps en se demandant si cette année est "la bonne". Le balcon fonctionne encore mais l'entretien devient pesant. Ce témoignage leur parle directement.
+        </div>
+      </div>
+
+      <!-- Gancho -->
+      <div class="field">
+        <div class="field-label">Gancho — Première ligne de la vidéo</div>
+        <div class="hook-box">
+          <div class="hook-text">"On n'osait même plus s'asseoir dessus le soir."</div>
+        </div>
+        <div class="field-value" style="margin-top:14px;">
+          Cette phrase s'ouvre sur la peur, pas sur le produit. Elle doit venir naturellement du client — si elle ne vient pas, utiliser: "On savait depuis deux ans qu'on devait le remplacer. On repoussait toujours." Le but: la première seconde doit faire dire au spectateur "c'est exactement moi".
+        </div>
+      </div>
+
+      <!-- Script -->
+      <div class="field">
+        <div class="field-label">Guion complet — Questions + Réponses guidées + Timing</div>
+        <div class="script-block">
+          <div class="script-row header-row">
+            <div class="script-cell">Temps</div>
+            <div class="script-cell">Question à poser (hors caméra) / Réponse guidée / Direction</div>
+            <div class="script-cell">Durée</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:00</div>
+            <div class="script-cell direction">
+              [OUVERTURE — b-roll balcon avant/après, ou plan fixe sur le client devant son balcon neuf. Aucun texte encore.]
+            </div>
+            <div class="script-cell">5 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:05</div>
+            <div class="script-cell question">
+              Q: "Avant les travaux — qu'est-ce qui vous posait problème avec votre ancien balcon?"<br>
+              <span class="guided">→ Guider vers: l'état du bois, l'entretien annuel, la peur de l'utiliser, un incident ou une frayeur. Laisser le client trouver ses propres mots — ne pas suggérer les réponses.</span>
+            </div>
+            <div class="script-cell">15 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:20</div>
+            <div class="script-cell question">
+              Q: "Pourquoi avoir choisi Jardín Ideal en particulier?"<br>
+              <span class="guided">→ Guider vers: la recommandation d'un voisin, le contact initial, la première visite, la façon dont on leur a expliqué le projet. Éviter "parce qu'ils étaient les moins chers" — si c'est la réponse, creuser: "et qu'est-ce qui vous a mis en confiance?"</span>
+            </div>
+            <div class="script-cell">12 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:32</div>
+            <div class="script-cell question">
+              Q: "Comment s'est passé le chantier? Est-ce que ça a correspondu à ce qu'on vous avait promis?"<br>
+              <span class="guided">→ Guider vers: le délai respecté, la propreté du chantier, la communication pendant les travaux, les imprévus s'il y en avait (et comment on les a gérés). Les détails concrets rendent le témoignage crédible.</span>
+            </div>
+            <div class="script-cell">15 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:47</div>
+            <div class="script-cell question">
+              Q: "Maintenant que le balcon est composite — qu'est-ce qui a changé concrètement dans votre quotidien?"<br>
+              <span class="guided">→ Guider vers: le fait de ne plus penser à l'entretien, de pouvoir profiter de l'espace sans inquiétude, une anecdote précise (premier café du matin, repas en famille). L'image concrète vaut mieux que le résumé abstrait.</span>
+            </div>
+            <div class="script-cell">12 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:59</div>
+            <div class="script-cell question">
+              Q: "Est-ce que vous recommanderiez Jardín Ideal à quelqu'un dans votre entourage?"<br>
+              <span class="guided">→ Laisser répondre librement. Ne pas couper si la réponse dépasse 10 secondes — une recommandation spontanée et longue est plus authentique qu'une courte réponse préparée.</span>
+            </div>
+            <div class="script-cell">10 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">01:09</div>
+            <div class="script-cell direction">
+              [CLÔTURE — plan large balcon neuf. Texte superposé en post-production: nom (prénom + ville), projet, Jardín Ideal logo.]
+            </div>
+            <div class="script-cell">6 sec</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="field">
+        <div class="field-label">CTA intégré à la vidéo</div>
+        <div class="cta-box">
+          <div class="cta-arrow">→</div>
+          <div class="cta-text">
+            <small>Texte superposé fin de vidéo</small>
+            "Votre balcon mérite la même transformation. Inspection gratuite · Devis en 48h · jardinideal.ca"
+          </div>
+        </div>
+        <div class="field-value" style="margin-top:14px;">
+          Afficher en sous-titre fixe les 6 dernières secondes. Police blanche sur fond semi-transparent vert. Ne pas faire parler le client du CTA — il reste dans l'authenticité de son expérience. Le CTA est de la production, pas du script.
+        </div>
+      </div>
+
+      <!-- Visuels -->
+      <div class="field">
+        <div class="field-label">Visuels recommandés — Plan par plan</div>
+        <ul class="visual-list">
+          <li><span class="visual-num">P1</span><strong>Plan d'ouverture (b-roll):</strong> Traveling lent sur la surface du balcon composite — grain de la lame en gros plan, puis recul sur l'ensemble. Durée: 4–5 sec. Ambiance: lumière naturelle fin de journée (18h–19h).</li>
+          <li><span class="visual-num">P2</span><strong>Plan interview principal:</strong> Client(s) assis ou debout sur leur balcon neuf. Caméra à hauteur des yeux, légèrement en contre-plongée pour valoriser l'espace. Arrière-plan: balcon visible mais pas coupé. Format 16:9.</li>
+          <li><span class="visual-num">P3</span><strong>Plan de coupe réaction:</strong> Plan poitrine du client qui écoute la question — pour couper les silences ou reformuler sans jump-cut visible.</li>
+          <li><span class="visual-num">P4</span><strong>B-roll matériau:</strong> Main du client qui touche la lame composite. Montre le confort du matériau. Plan macro, 3 secondes.</li>
+          <li><span class="visual-num">P5</span><strong>Plan large final:</strong> Le client(s) sur le balcon, cadre large. Si possible avec plantes ou mobilier — montre que l'espace est vécu, pas juste installé.</li>
+          <li><span class="visual-num">P6</span><strong>Photo fixe avant (si disponible):</strong> L'ancien balcon en bois. Utilisée en insert 2 sec au début, avant la réponse à Q1.</li>
+        </ul>
+      </div>
+
+      <!-- Tournage -->
+      <div class="field">
+        <div class="field-label">Instructions de filmation pour Daniel</div>
+        <div class="film-box">
+          <div class="film-title">Guide pratique — Tournage B-T01</div>
+          <div class="film-grid">
+            <div class="film-item">
+              <div class="film-item-label">Moment idéal</div>
+              <div class="film-item-value">En semaine, 17h30–19h (lumière dorée, client disponible). Éviter midi (soleil dur, ombres dures sur le visage).</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Équipement minimum</div>
+              <div class="film-item-value">iPhone 14 Pro ou mieux. Stabilisateur (Joby GorillaPod ou DJI OM). Micro-cravate filaire si possible. Sinon : micro natif à 30 cm.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Orientation caméra</div>
+              <div class="film-item-value">Portrait (9:16) pour stories IG. Filmer aussi en 16:9 si possible pour utilisation web/annonce. Idéal: tourner les deux.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Son</div>
+              <div class="film-item-value">Silence de fond obligatoire. Fermer fenêtres, éteindre ventilateur. Tester audio avant de commencer — refaire si bruit de rue important.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Mise en scène</div>
+              <div class="film-item-value">Clients habillés simplement — pas de logo visible autre que Jardín Ideal si tenue de travail. Retirer le matériel de chantier de l'arrière-plan. Ajouter 1–2 plantes si disponible pour humaniser l'espace.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Avant de commencer</div>
+              <div class="film-item-value">Expliquer au client qu'il n'y a pas de "bonne réponse" ni de texte à mémoriser. Faire 2 min de conversation informelle pour le mettre à l'aise avant d'enregistrer. Faire signe discret quand l'enregistrement commence.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Nombre de prises</div>
+              <div class="film-item-value">2–3 prises par question. Garder la 2e ou 3e prise — la première est souvent rigide. Ne pas couper entre les prises, laisser rouler.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Durée totale tournage</div>
+              <div class="film-item-value">Prévoir 45–60 min sur place. Tournage réel: 20–25 min. Marge pour b-roll et imprévus.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Référence -->
+      <div class="field">
+        <div class="field-label">Référence briefing</div>
+        <span class="ref-tag">Briefing BALCONES 2026 · Section: Social Proof · Ligne: Témoignage B-T01 · Campagne juillet 2026</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ B-T02 ═══ -->
+  <div class="section-header">
+    <div class="section-num">T2</div>
+    <div class="section-title">Témoignage vidéo — Balcon neuf sur fondation existante</div>
+  </div>
+
+  <div class="testi-card">
+    <div class="testi-header" data-id="T2">
+      <div class="testi-id">B-T02 · Témoignage · Rive-Nord · Format: 60–90 secondes</div>
+      <h2>Client Rive-Nord — Un balcon neuf, sans tout démolir</h2>
+      <div class="testi-stats">
+        <div class="stat"><strong>Profil client</strong>Famille 35–50 ans</div>
+        <div class="stat"><strong>Projet</strong>Balcon neuf sur fondation existante</div>
+        <div class="stat"><strong>Surface</strong>~220 pi²</div>
+        <div class="stat"><strong>Durée travaux</strong>2–3 jours</div>
+      </div>
+    </div>
+    <div class="testi-body">
+
+      <!-- Objectif -->
+      <div class="field">
+        <div class="field-label">Objectif</div>
+        <div class="field-value">
+          Ce témoignage cible un segment distinct du premier: le prospect qui a une structure de balcon encore saine mais un revêtement dégradé. Il hésite car il pense devoir "tout démolir et recommencer". La force de ce client est de montrer qu'une rénovation intelligente conserve la structure existante, réduit le coût et le délai, et donne un résultat identique. L'angle: la solution pragmatique, pas la rénovation totale.
+        </div>
+      </div>
+
+      <!-- Public cible -->
+      <div class="field">
+        <div class="field-label">Public cible</div>
+        <div class="field-value">
+          Propriétaires de maisons unifamiliales sur la Rive-Nord (Terrebonne, Repentigny, Mascouche, Saint-Jérôme). Leur balcon a 8–15 ans. La structure est encore bonne selon eux, mais le plancher est dégradé. Ils pensent que le coût sera prohibitif car ils imaginent une démolition totale. Ce témoignage lève cette objection.
+        </div>
+      </div>
+
+      <!-- Gancho -->
+      <div class="field">
+        <div class="field-label">Gancho — Première ligne de la vidéo</div>
+        <div class="hook-box">
+          <div class="hook-text">"On pensait qu'on allait devoir tout refaire. On a gardé la structure et c'est comme un balcon neuf."</div>
+        </div>
+        <div class="field-value" style="margin-top:14px;">
+          Cette phrase répond immédiatement à l'objection coût. Si le client ne la formule pas naturellement, utiliser la question d'amorce: "C'était quoi votre principale inquiétude avant de nous contacter?" et laisser la réponse émerger. Ne jamais suggérer la formulation exacte — ça se voit à l'écran.
+        </div>
+      </div>
+
+      <!-- Script -->
+      <div class="field">
+        <div class="field-label">Guion complet — Questions + Réponses guidées + Timing</div>
+        <div class="script-block">
+          <div class="script-row header-row">
+            <div class="script-cell">Temps</div>
+            <div class="script-cell">Question à poser (hors caméra) / Réponse guidée / Direction</div>
+            <div class="script-cell">Durée</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:00</div>
+            <div class="script-cell direction">
+              [OUVERTURE — b-roll: plan de la surface composite posée sur l'ancienne structure. Idéalement visible que la structure est ancienne (poutres) mais le plancher est neuf. Montre visuellement le concept "sur fondation existante".]
+            </div>
+            <div class="script-cell">5 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:05</div>
+            <div class="script-cell question">
+              Q: "Quelle était la situation de votre balcon avant qu'on intervienne?"<br>
+              <span class="guided">→ Guider vers: l'état des lames (dégradé), la structure (encore bonne selon lui), la surprise de réaliser que tout n'avait pas besoin d'être remplacé. Si le client ne mentionne pas la structure, relancer: "Et la charpente, vous saviez dans quel état elle était?"</span>
+            </div>
+            <div class="script-cell">15 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:20</div>
+            <div class="script-cell question">
+              Q: "Qu'est-ce qui vous a le plus surpris dans notre approche?"<br>
+              <span class="guided">→ Guider vers: la proposition de conserver la structure plutôt que de tout remplacer, l'évaluation honnête sur place, le fait d'avoir reçu plusieurs options avec leurs coûts respectifs. La surprise positive est ce qui rend ce client crédible pour un prospect similaire.</span>
+            </div>
+            <div class="script-cell">12 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:32</div>
+            <div class="script-cell question">
+              Q: "2 ou 3 jours de travaux — comment c'était au quotidien pendant le chantier?"<br>
+              <span class="guided">→ Guider vers: l'accès à la maison maintenu, la propreté, la communication avec l'équipe, la rapidité. Si la famille a des enfants, demander: "Les enfants étaient curieux? Ça a dérangé la routine?" Les anecdotes familiales humanisent.</span>
+            </div>
+            <div class="script-cell">15 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:47</div>
+            <div class="script-cell question">
+              Q: "Maintenant que c'est terminé — est-ce que vous avez l'impression d'avoir un balcon neuf même si la structure date?"<br>
+              <span class="guided">→ C'est la question clé. Guider vers: l'apparence neuve, le fait de ne plus voir la différence, la satisfaction de ne pas avoir "sur-investi" inutilement. Si le client dit "oui mais on voit quand même la vieille structure", c'est honnête — ne pas couper, ça renforce la crédibilité.</span>
+            </div>
+            <div class="script-cell">12 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">00:59</div>
+            <div class="script-cell question">
+              Q: "Si quelqu'un de votre quartier est dans la même situation que vous étiez il y a 3 mois — qu'est-ce que vous lui diriez?"<br>
+              <span class="guided">→ Laisser répondre librement. Cette question produit souvent les phrases les plus authentiques. Ne pas couper même si la réponse dépasse 15 secondes — on pourra choisir le meilleur extrait au montage.</span>
+            </div>
+            <div class="script-cell">15 sec</div>
+          </div>
+
+          <div class="script-row">
+            <div class="script-cell">01:14</div>
+            <div class="script-cell direction">
+              [CLÔTURE — plan large balcon avec famille si à l'aise. Texte superposé: prénom + ville, type de projet, logo Jardín Ideal.]
+            </div>
+            <div class="script-cell">6 sec</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="field">
+        <div class="field-label">CTA intégré à la vidéo</div>
+        <div class="cta-box">
+          <div class="cta-arrow">→</div>
+          <div class="cta-text">
+            <small>Texte superposé fin de vidéo</small>
+            "Votre structure est peut-être encore bonne. On vient vérifier gratuitement. jardinideal.ca · Rive-Nord / Laval / Montréal"
+          </div>
+        </div>
+        <div class="field-value" style="margin-top:14px;">
+          Ce CTA est spécifiquement adapté à ce témoignage: il répond à l'objection de ce segment ("je dois tout refaire") et propose une inspection qui réduit l'engagement à zéro. Différent du CTA de B-T01 — ne pas interchanger.
+        </div>
+      </div>
+
+      <!-- Visuels -->
+      <div class="field">
+        <div class="field-label">Visuels recommandés — Plan par plan</div>
+        <ul class="visual-list">
+          <li><span class="visual-num">P1</span><strong>Plan technique d'ouverture:</strong> Vue du dessous du balcon montrant l'ancienne structure (poutres, lambourdes) contrastant avec les lames composites neuves posées par-dessus. C'est l'image centrale du concept.</li>
+          <li><span class="visual-num">P2</span><strong>Plan interview:</strong> Client(s) debout sur le balcon, appuyé sur la garde-corps. Plan mi-corps. Lumière naturelle latérale. Arrière-plan: jardin ou rue de banlieue Rive-Nord visible — ancre géographiquement.</li>
+          <li><span class="visual-num">P3</span><strong>B-roll détail jointure:</strong> Lame composite qui rencontre l'ancienne poutre — montre visuellement l'intégration. Plan macro 3 secondes.</li>
+          <li><span class="visual-num">P4</span><strong>B-roll utilisation:</strong> Famille sur le balcon — café, conversation informelle. Capture naturelle, pas posée. 5 secondes.</li>
+          <li><span class="visual-num">P5</span><strong>Plan large final:</strong> Balcon complet vu depuis le jardin. On voit la maison, le balcon, la végétation. Format 16:9.</li>
+          <li><span class="visual-num">P6</span><strong>Photo archive (si disponible):</strong> L'état des lames avant l'intervention. Insérer 2 sec lors de la réponse à la première question pour illustrer "l'état avant".</li>
+        </ul>
+      </div>
+
+      <!-- Tournage -->
+      <div class="field">
+        <div class="field-label">Instructions de filmation pour Daniel</div>
+        <div class="film-box">
+          <div class="film-title">Guide pratique — Tournage B-T02</div>
+          <div class="film-grid">
+            <div class="film-item">
+              <div class="film-item-label">Moment idéal</div>
+              <div class="film-item-value">Weekend, 10h–12h (lumière douce, famille disponible). Sur la Rive-Nord, les matins de semaine sont calmes mais moins pratiques pour les familles.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Particularité B-T02</div>
+              <div class="film-item-value">Filmer impérativement le dessous du balcon pour montrer la structure ancienne conservée. C'est la preuve visuelle du concept "sur fondation existante" — sans ce plan, le témoignage perd son argument principal.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Angle interview</div>
+              <div class="film-item-value">Si famille: filmer les deux personnes ensemble en plan large. Le soutien mutuel dans le récit est plus convaincant que l'individu seul. Si seulement une personne disponible, plan mi-corps classique.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Contexte géographique</div>
+              <div class="film-item-value">Laisser visible un détail de la Rive-Nord dans l'arrière-plan si possible (rue, maisons, végétation typique banlieue). Les prospects de cette région s'identifient à "quelqu'un comme eux".</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Son Rive-Nord</div>
+              <div class="film-item-value">Vérifier le bruit de la rue (maisons plus proches de la voie rapide sur Rive-Nord). Si bruit important, repositionner l'interview vers l'intérieur du balcon, côté maison.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Montage</div>
+              <div class="film-item-value">Version courte 60 sec pour stories et annonces. Version longue 90 sec pour YouTube et page web. Exporter les deux depuis le même tournage. Sous-titres français obligatoires sur toutes les versions.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Consentement</div>
+              <div class="film-item-value">Faire signer l'autorisation d'utilisation de l'image avant le tournage, pas après. Modèle disponible dans dossier 07_LEGAL.</div>
+            </div>
+            <div class="film-item">
+              <div class="film-item-label">Durée totale tournage</div>
+              <div class="film-item-value">Prévoir 60 min sur place. Tournage réel: 25–30 min. 15 min pour b-roll. 10 min imprévus / mise en place.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notes de production -->
+      <div class="field">
+        <div class="field-label">Notes de production communes aux 2 témoignages</div>
+        <div class="field-value">
+          <strong>Montage:</strong> Ne jamais couper une phrase à mi-chemin — toujours laisser la pensée se terminer, puis couper. Les coupures mid-phrase sonnent faux.<br><br>
+          <strong>Musique:</strong> Instrumentale légère, sans paroles françaises. Niveau en dessous de la voix. Couper la musique sur les moments les plus forts du témoignage.<br><br>
+          <strong>Sous-titres:</strong> Obligatoires sur toutes les versions. Police sans-serif, blanc avec contour noir. Vérifier l'orthographe avant publication — une faute dans les sous-titres nuit à la crédibilité de l'entreprise.<br><br>
+          <strong>Format de livraison:</strong> MP4, H.264, 1080p minimum. Version 9:16 (stories) et 16:9 (web). Durée: 60 sec (court) et 75–90 sec (long). Nommer les fichiers: JI_BT01_court_v1.mp4 / JI_BT01_long_v1.mp4.<br><br>
+          <strong>Publication:</strong> Publier d'abord en story IG (extrait 15 sec) pour tester l'engagement avant publication en reels ou post permanent.
+        </div>
+      </div>
+
+      <!-- Référence -->
+      <div class="field">
+        <div class="field-label">Référence briefing</div>
+        <span class="ref-tag">Briefing BALCONES 2026 · Section: Social Proof · Ligne: Témoignage B-T02 · Campagne juillet 2026</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--cd); padding-top:24px; margin-top:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+    <span style="font-family:var(--font-m);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--g);">Jardín Ideal · Campagne BALCONES · Document 06/06</span>
+    <span style="font-family:var(--font-m);font-size:9px;color:var(--gc);">Généré le 22 juin 2026 · Usage interne</span>
+  </div>
+
+</div>
+</body>
+</html>

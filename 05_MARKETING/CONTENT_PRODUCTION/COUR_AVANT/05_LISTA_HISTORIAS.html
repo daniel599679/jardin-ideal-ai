@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>05 — Stories Instagram/Facebook · Campagne COUR AVANT · Jardín Ideal 2026</title>
+<style>
+/* ═══════════════════════════════════════════════
+   JARDÍN IDEAL — DESIGN SYSTEM
+   Campagne COUR AVANT · Stories 05
+═══════════════════════════════════════════════ */
+:root {
+  --vf:  #1E3A20;
+  --vm:  #3D6B42;
+  --or:  #C8A45A;
+  --cr:  #F5F2EB;
+  --w:   #FFFFFF;
+  --n:   #0D0E0B;
+  --gf:  #2A2B28;
+  --g:   #6B6B63;
+  --gc:  #B8B8B0;
+  --cd:  #EDE9E0;
+  --or2: #E8C97A;
+  --red: #B83232;
+
+  --font-d: Georgia, 'Times New Roman', serif;
+  --font-b: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-m: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--font-b);
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── COVER ─── */
+.cover {
+  background: var(--vf);
+  padding: 56px 64px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: "STORY";
+  position: absolute;
+  right: 20px; top: 10px;
+  font-family: var(--font-d);
+  font-size: clamp(100px, 16vw, 180px);
+  font-weight: 700;
+  color: rgba(200,164,90,0.05);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -4px;
+}
+.cover-eyebrow {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 20px;
+}
+.cover h1 {
+  font-family: var(--font-d);
+  font-size: clamp(26px, 4vw, 50px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+.cover h1 em { color: var(--or); font-style: italic; }
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.cover-meta-item {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+}
+.cover-meta-item strong {
+  display: block;
+  color: var(--or2);
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+/* ─── PAGE ─── */
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+/* ─── LEGEND ─── */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 24px 0;
+  margin: 40px 0 0;
+  border-top: 1px solid var(--cd);
+  border-bottom: 1px solid var(--cd);
+}
+.legend-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--g);
+  width: 100%;
+  margin-bottom: 4px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--gf);
+}
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── WEEK BLOCK ─── */
+.week-block {
+  margin-top: 56px;
+}
+.week-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--vf);
+  margin-bottom: 28px;
+}
+.week-num {
+  font-family: var(--font-d);
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1;
+  opacity: 0.12;
+}
+.week-info {}
+.week-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 4px;
+}
+.week-title {
+  font-family: var(--font-d);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1.2;
+}
+.week-dates {
+  font-family: var(--font-m);
+  font-size: 10px;
+  color: var(--g);
+  margin-left: auto;
+  padding-bottom: 4px;
+}
+
+/* ─── STORY GRID ─── */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ─── STORY CARD ─── */
+.story-card {
+  background: var(--w);
+  border: 1px solid var(--cd);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.story-card-top {
+  padding: 16px 18px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--cd);
+}
+.story-id {
+  font-family: var(--font-m);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--w);
+  background: var(--vf);
+  padding: 3px 8px;
+  letter-spacing: 1px;
+}
+.story-type-badge {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border: 1px solid;
+}
+.story-day {
+  margin-left: auto;
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--g);
+  letter-spacing: 1px;
+}
+
+/* Type colors */
+.type-awareness  { border-color: var(--vm);  color: var(--vm);  }
+.type-launch     { border-color: var(--or);  color: var(--or);  }
+.type-edu        { border-color: var(--vm);  color: var(--vm);  }
+.type-poll       { border-color: #5A7BAF;    color: #5A7BAF;    }
+.type-proof      { border-color: var(--vm);  color: var(--vm);  }
+.type-urgency    { border-color: var(--red); color: var(--red); }
+.type-cta        { border-color: var(--or);  color: #B87800;    }
+.type-tips       { border-color: var(--g);   color: var(--g);   }
+.type-before     { border-color: #7A5A2A;    color: #7A5A2A;    }
+.type-bonus      { border-color: var(--vm);  color: var(--vm);  }
+.type-bilan      { border-color: var(--vf);  color: var(--vf);  }
+
+.story-card-body {
+  padding: 16px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.story-hook {
+  font-family: var(--font-d);
+  font-size: 14.5px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--vf);
+  line-height: 1.3;
+}
+
+.story-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.story-field-label {
+  font-family: var(--font-m);
+  font-size: 8.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gc);
+}
+.story-field-value {
+  font-size: 12.5px;
+  color: var(--gf);
+  line-height: 1.6;
+}
+
+/* Screen text box */
+.screen-text {
+  background: var(--vf);
+  color: var(--w);
+  font-family: var(--font-d);
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.5;
+  padding: 12px 14px;
+  position: relative;
+}
+.screen-text::before {
+  content: "Texte ecran";
+  display: block;
+  font-family: var(--font-m);
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--or);
+  font-style: normal;
+  margin-bottom: 7px;
+}
+
+/* CTA pill */
+.story-cta {
+  background: var(--or);
+  color: var(--vf);
+  font-family: var(--font-m);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* Visual tag */
+.visual-tag {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--g);
+  border-top: 1px solid var(--cd);
+  padding-top: 10px;
+  margin-top: auto;
+  padding-bottom: 0;
+}
+.visual-tag::before {
+  content: "▲ ";
+  color: var(--or);
+}
+
+/* Emoji badge */
+.emoji-badge {
+  font-size: 16px;
+  line-height: 1;
+  align-self: flex-start;
+  margin-top: -2px;
+}
+
+/* ─── SUMMARY BAR ─── */
+.week-summary {
+  margin-top: 20px;
+  padding: 14px 20px;
+  background: var(--vf);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+.ws-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+}
+.ws-label strong {
+  color: var(--or2);
+  display: inline;
+}
+
+/* ─── BONUS BAND ─── */
+.bonus-band {
+  margin-top: 56px;
+  background: linear-gradient(135deg, var(--vf) 0%, #3D6B42 100%);
+  padding: 28px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.bonus-band::before {
+  content: "BONUS";
+  position: absolute;
+  right: -10px; top: -10px;
+  font-family: var(--font-d);
+  font-size: 120px;
+  font-weight: 700;
+  color: rgba(200,164,90,0.06);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.bonus-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 8px;
+}
+.bonus-h {
+  font-family: var(--font-d);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--w);
+  margin-bottom: 20px;
+}
+.bonus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 680px) {
+  .cover { padding: 36px 24px 32px; }
+  .page { padding: 0 18px 60px; }
+  .story-grid { grid-template-columns: 1fr; }
+  .bonus-grid { grid-template-columns: 1fr; }
+  .week-num { font-size: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div class="cover-eyebrow">Jardín Ideal · Campagne COUR AVANT 2026 · Document 05/06</div>
+  <h1>Plan de Stories<br><em>Instagram &amp; Facebook · Juillet 2026</em></h1>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>25 + stories</strong>CA-H01 → CA-H25</div>
+    <div class="cover-meta-item"><strong>5 semaines</strong>Jul 1 → 31 + bonus</div>
+    <div class="cover-meta-item"><strong>Angle exclusif</strong>Cour avant = carte de visite</div>
+    <div class="cover-meta-item"><strong>IG + FB</strong>Canaux cibles</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- LÉGENDE -->
+  <div class="legend">
+    <div class="legend-title">Types de stories</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--vm)"></span>Awareness</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--or)"></span>Lancement</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--vm)"></span>Éducatif</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#5A7BAF"></span>Sondage / Poll</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--vm)"></span>Preuve sociale</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--red)"></span>Urgence</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#B87800"></span>CTA</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--vf)"></span>Bilan</div>
+  </div>
+
+  <!-- ══════════════════════════ SEMAINE 1 ══════════════════════════ -->
+  <div class="week-block">
+    <div class="week-header">
+      <div class="week-num">01</div>
+      <div class="week-info">
+        <div class="week-label">Semaine 1 · Juillet 2026</div>
+        <div class="week-title">Awareness — "Votre cour avant est votre carte de visite"</div>
+      </div>
+      <div class="week-dates">1–5 juillet</div>
+    </div>
+
+    <div class="story-grid">
+
+      <!-- CA-H01 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H01</span>
+          <span class="story-type-badge type-awareness">Awareness</span>
+          <span class="story-day">Mer 1 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Saviez-vous que les acheteurs jugent une maison en 7 secondes ?"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Les acheteurs décident en 7 secondes.<br>La première chose qu'ils voient ?<br><strong>Votre entrée.</strong><br><br>Est-ce qu'elle travaille pour vous ?</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Swipe up — voir nos projets</div>
+          </div>
+          <div class="emoji-badge">🏡</div>
+          <div class="visual-tag">Fond vert foncé (#1E3A20), texte blanc, stat "7 secondes" en grand doré</div>
+        </div>
+      </div>
+
+      <!-- CA-H02 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H02</span>
+          <span class="story-type-badge type-poll">Sondage</span>
+          <span class="story-day">Jeu 2 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Dans quel état est votre entrée en ce moment ?"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Votre entrée, c'est quoi ?<br><br>A — Impeccable, j'en suis fier<br>B — Ça fait le travail<br>C — Des fissures, mais bon...<br>D — J'ai honte de recevoir du monde</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">Mécanique</div>
+            <div class="story-field-value">Poll Instagram natif (4 options). Partager les résultats en story le lendemain pour créer l'engagement.</div>
+          </div>
+          <div class="emoji-badge">📊</div>
+          <div class="visual-tag">Fond crème, options texte sur fond blanc, palette marque</div>
+        </div>
+      </div>
+
+      <!-- CA-H03 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H03</span>
+          <span class="story-type-badge type-cta">CTA</span>
+          <span class="story-day">Ven 3 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Soumission gratuite — lien en bio"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Transformez votre entrée<br>avant la fin de l'été.<br><br>Soumission gratuite.<br>Visite sous 48h.<br><br>Lien en bio ↓</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Lien en bio — soumission gratuite</div>
+          </div>
+          <div class="emoji-badge">✅</div>
+          <div class="visual-tag">Fond vert foncé, bouton doré CTA en bas de story, logo Jardín Ideal visible</div>
+        </div>
+      </div>
+
+      <!-- CA-H04 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H04</span>
+          <span class="story-type-badge type-edu">Éducatif</span>
+          <span class="story-day">Sam 4 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Résultats du sondage — vous avez répondu"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Vous avez répondu !<br><br>42% ont dit : "des fissures, mais bon..."<br>28% ont dit : "j'ai honte de recevoir du monde"<br><br>Vous n'êtes pas seuls.<br>Et ça se règle plus vite que vous pensez.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Voir nos transformations</div>
+          </div>
+          <div class="emoji-badge">📈</div>
+          <div class="visual-tag">Graphique à barres simple avec résultats sondage, couleurs marque</div>
+        </div>
+      </div>
+
+      <!-- CA-H05 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H05</span>
+          <span class="story-type-badge type-awareness">Awareness</span>
+          <span class="story-day">Dim 5 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Votre voisin a remarqué votre entrée. En bien ou en mal ?"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Votre entrée parle de vous<br>même quand vous n'êtes pas là.<br><br>C'est votre carte de visite<br>au quartier entier.<br><br>Qu'est-ce qu'elle dit en ce moment ?</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Découvrir le pavé uni</div>
+          </div>
+          <div class="emoji-badge">🏘️</div>
+          <div class="visual-tag">Photo aérienne d'une rue résidentielle, entrée Jardín Ideal en évidence avec flèche dorée</div>
+        </div>
+      </div>
+
+    </div><!-- /story-grid -->
+
+    <div class="week-summary">
+      <span class="ws-label">Stories sem. 1 : <strong>5</strong></span>
+      <span class="ws-label">IDs : <strong>CA-H01 → CA-H05</strong></span>
+      <span class="ws-label">Objectif : <strong>Awareness + engagement (poll)</strong></span>
+      <span class="ws-label">KPI : <strong>Taux de réponse sondage &gt;8%</strong></span>
+    </div>
+  </div><!-- /week-block -->
+
+
+  <!-- ══════════════════════════ SEMAINE 2 ══════════════════════════ -->
+  <div class="week-block">
+    <div class="week-header">
+      <div class="week-num">02</div>
+      <div class="week-info">
+        <div class="week-label">Semaine 2 · Juillet 2026</div>
+        <div class="week-title">Lancement + Preuve sociale</div>
+      </div>
+      <div class="week-dates">6–12 juillet</div>
+    </div>
+
+    <div class="story-grid">
+
+      <!-- CA-H06 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H06</span>
+          <span class="story-type-badge type-launch">Lancement</span>
+          <span class="story-day">Lun 6 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Teaser — notre plus gros projet cour avant de l'été arrive"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Quelque chose arrive...<br><br>Notre plus gros projet<br>cour avant de l'été 2026.<br><br>On vous montre tout.<br>De l'asphalte fissuré au pavé uni parfait.<br><br>Restez là. 👀</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Activer les notifications</div>
+          </div>
+          <div class="emoji-badge">👀</div>
+          <div class="visual-tag">Image floue ou en construction du chantier, suspense visuel, fond vert</div>
+        </div>
+      </div>
+
+      <!-- CA-H07 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H07</span>
+          <span class="story-type-badge type-launch">Lancement</span>
+          <span class="story-day">Mar 7 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Derrière la caméra — comment on filme un projet Reel CA-R01"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Voici comment on documente<br>un projet de A à Z.<br><br>Jour 1 : état initial (asphalte fissuré depuis 12 ans)<br>Jours 2–3 : excavation et préparation<br>Jour 4 : pose du pavé uni<br>Jour 5 : résultat final<br><br>Chaque détail compte.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Voir le reel complet</div>
+          </div>
+          <div class="emoji-badge">🎬</div>
+          <div class="visual-tag">Coulisses tournage : Daniel avec téléphone sur trépied, équipe en arrière-plan</div>
+        </div>
+      </div>
+
+      <!-- CA-H08 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H08</span>
+          <span class="story-type-badge type-proof">Preuve sociale</span>
+          <span class="story-day">Mer 8 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Réaction du client — en direct à la livraison"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">"J'aurais dû faire ça il y a 5 ans."<br><br>— Marie-Claude, Laval<br>Entrée en pavé uni · Juillet 2026<br><br>C'est ce qu'on entend à chaque livraison.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Voir sa transformation</div>
+          </div>
+          <div class="emoji-badge">💬</div>
+          <div class="visual-tag">Capture d'écran message client (floutée ou reconstituée), fond crème, police marque</div>
+        </div>
+      </div>
+
+      <!-- CA-H09 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H09</span>
+          <span class="story-type-badge type-proof">Preuve sociale</span>
+          <span class="story-day">Jeu 9 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"95 % de nos clients refont leur entrée avant de vendre leur maison"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">95 % de nos clients<br>qui vendent leur maison<br>refont leur entrée d'abord.<br><br>Pas par hasard.<br>Par stratégie.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Calculer votre ROI</div>
+          </div>
+          <div class="emoji-badge">🏠</div>
+          <div class="visual-tag">Stat en grand sur fond vert foncé, "95%" en chiffre doré oversized</div>
+        </div>
+      </div>
+
+      <!-- CA-H10 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H10</span>
+          <span class="story-type-badge type-cta">CTA</span>
+          <span class="story-day">Sam 12 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"L'été avance — les places s'envolent"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Juillet est là.<br>Nos équipes sont en chantier.<br><br>Il reste quelques créneaux<br>pour août 2026.<br><br>Soumission gratuite en 48h.<br>Réservez le vôtre maintenant.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Réserver ma soumission</div>
+          </div>
+          <div class="emoji-badge">📅</div>
+          <div class="visual-tag">Calendrier visuel avec créneaux barrés, urgence visuelle subtile</div>
+        </div>
+      </div>
+
+    </div><!-- /story-grid -->
+
+    <div class="week-summary">
+      <span class="ws-label">Stories sem. 2 : <strong>5</strong></span>
+      <span class="ws-label">IDs : <strong>CA-H06 → CA-H10</strong></span>
+      <span class="ws-label">Objectif : <strong>Lancement Reel + preuve sociale</strong></span>
+      <span class="ws-label">KPI : <strong>Reach story &gt;500 / taux tap-forward &lt;25%</strong></span>
+    </div>
+  </div><!-- /week-block -->
+
+
+  <!-- ══════════════════════════ SEMAINE 3 ══════════════════════════ -->
+  <div class="week-block">
+    <div class="week-header">
+      <div class="week-num">03</div>
+      <div class="week-info">
+        <div class="week-label">Semaine 3 · Juillet 2026</div>
+        <div class="week-title">Éducatif + Urgence été</div>
+      </div>
+      <div class="week-dates">13–19 juillet</div>
+    </div>
+
+    <div class="story-grid">
+
+      <!-- CA-H11 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H11</span>
+          <span class="story-type-badge type-edu">Éducatif</span>
+          <span class="story-day">Lun 13 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Asphalte vs pavé uni — la vraie différence en 3 images"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Asphalte à 5 ans : premières fissures.<br>Asphalte à 10 ans : resurfaçage requis.<br>Asphalte à 15 ans : remplacement complet.<br><br>Pavé uni à 30 ans :<br>exactement comme à l'installation.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Voir notre guide complet</div>
+          </div>
+          <div class="emoji-badge">📸</div>
+          <div class="visual-tag">3 photos asphalte dégradé (timeline), vs 1 photo pavé uni après 30 ans</div>
+        </div>
+      </div>
+
+      <!-- CA-H12 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H12</span>
+          <span class="story-type-badge type-edu">Éducatif</span>
+          <span class="story-day">Mar 14 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Pourquoi le pavé uni dure 30 ans au Québec"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Le gel/dégel casse le béton.<br>Il fissure l'asphalte.<br><br>Le pavé uni ?<br>Chaque unité se déplace<br>indépendamment.<br><br>C'est pour ça qu'il dure 30 ans<br>dans notre climat.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Lire l'article complet</div>
+          </div>
+          <div class="emoji-badge">❄️</div>
+          <div class="visual-tag">Schéma simplifié montrant les joints polymériques et le mouvement thermique, fond blanc</div>
+        </div>
+      </div>
+
+      <!-- CA-H13 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H13</span>
+          <span class="story-type-badge type-poll">Sondage</span>
+          <span class="story-day">Mer 15 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Asphalte ou pavé uni — si le prix était identique, vous choisiriez quoi ?"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Si le prix était identique,<br>vous choisiriez...<br><br>A — Asphalte (classique, rapide)<br>B — Pavé uni (durable, élégant)</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">Mécanique</div>
+            <div class="story-field-value">Poll binaire. Partager résultats le lendemain avec commentaire : "87% choisissent le pavé uni — et en réalité, la différence de prix est moindre qu'on pense sur 20 ans."</div>
+          </div>
+          <div class="emoji-badge">🤔</div>
+          <div class="visual-tag">Fond crème, deux visuels côte à côte (asphalte vs pavé uni)</div>
+        </div>
+      </div>
+
+      <!-- CA-H14 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H14</span>
+          <span class="story-type-badge type-urgency">Urgence</span>
+          <span class="story-day">Jeu 16 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"La saison d'installation se termine en septembre — il reste 8 semaines"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Il reste 8 semaines<br>de saison d'installation.<br><br>Après septembre,<br>il faudra attendre le printemps 2027.<br><br>Votre cour avant peut changer<br>avant l'automne.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Réserver maintenant</div>
+          </div>
+          <div class="emoji-badge">⏰</div>
+          <div class="visual-tag">Compte à rebours visuel "8 semaines", fond rouge foncé (#B83232) ou vert foncé</div>
+        </div>
+      </div>
+
+      <!-- CA-H15 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H15</span>
+          <span class="story-type-badge type-before">Sneak peek</span>
+          <span class="story-day">Sam 19 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Aperçu d'un chantier en cours — jour 2"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Jour 2 sur le chantier.<br><br>La base est prête.<br>Demain, les premières pierres.<br><br>Chaque couche compte pour<br>une installation qui dure 30 ans.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Suivre le projet complet</div>
+          </div>
+          <div class="emoji-badge">🔨</div>
+          <div class="visual-tag">Photo authentique chantier (base granulaire, avant pavé), lumière naturelle</div>
+        </div>
+      </div>
+
+      <!-- CA-H16 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H16</span>
+          <span class="story-type-badge type-cta">CTA Payant</span>
+          <span class="story-day">Dim 19 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Vous méritez une entrée dont vous êtes fier — soumission gratuite"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Votre maison mérite une entrée<br>à la hauteur de ce qu'elle est.<br><br>Jardín Ideal · Montréal &amp; Rive-Nord<br>Pavé uni · Asphalte · Béton<br><br>Soumission gratuite. Sous 48h.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Obtenir ma soumission gratuite</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">Note</div>
+            <div class="story-field-value">Story sponsorisée — booster en Meta Ads pour ciblage Laval + Rive-Nord, 35–65 ans, propriétaires.</div>
+          </div>
+          <div class="emoji-badge">✨</div>
+          <div class="visual-tag">Photo hero avant/après, format 9:16, logo Jardín Ideal, fond vert</div>
+        </div>
+      </div>
+
+    </div><!-- /story-grid -->
+
+    <div class="week-summary">
+      <span class="ws-label">Stories sem. 3 : <strong>6</strong></span>
+      <span class="ws-label">IDs : <strong>CA-H11 → CA-H16</strong></span>
+      <span class="ws-label">Objectif : <strong>Éducation + urgence + paid</strong></span>
+      <span class="ws-label">KPI : <strong>CPL &lt;$134 sur story paid</strong></span>
+    </div>
+  </div><!-- /week-block -->
+
+
+  <!-- ══════════════════════════ SEMAINE 4 ══════════════════════════ -->
+  <div class="week-block">
+    <div class="week-header">
+      <div class="week-num">04</div>
+      <div class="week-info">
+        <div class="week-label">Semaine 4 · Juillet 2026</div>
+        <div class="week-title">Conversion + Preuve sociale forte</div>
+      </div>
+      <div class="week-dates">20–26 juillet</div>
+    </div>
+
+    <div class="story-grid">
+
+      <!-- CA-H17 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H17</span>
+          <span class="story-type-badge type-proof">Témoignage</span>
+          <span class="story-day">Lun 20 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"J'avais honte de recevoir du monde depuis 3 ans — CA-T01"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">"J'avais honte de recevoir<br>du monde depuis 3 ans."<br><br>— Marc, Laval<br>Entrée en pavé uni après<br>12 ans d'asphalte fissuré<br><br>Maintenant il invite tout le monde.<br>↓ Voir son projet</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Voir le témoignage complet</div>
+          </div>
+          <div class="emoji-badge">🎥</div>
+          <div class="visual-tag">Capture écran du témoignage vidéo CA-T01, client devant son entrée rénovée</div>
+        </div>
+      </div>
+
+      <!-- CA-H18 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H18</span>
+          <span class="story-type-badge type-before">Projet semaine</span>
+          <span class="story-day">Mar 21 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Projet de la semaine — entrée + haies + allée latérale à Bois-des-Filion"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Cette semaine :<br>Bois-des-Filion.<br><br>Cour avant + haies + allée latérale.<br>Le vendeur de maisons a dit :<br>"ça vaut $15 000 de plus maintenant."<br><br>Résultat complet demain.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Voir le before / after</div>
+          </div>
+          <div class="emoji-badge">🌿</div>
+          <div class="visual-tag">Photo before aérienne (drone si possible), avant l'installation, fond sobre</div>
+        </div>
+      </div>
+
+      <!-- CA-H19 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H19</span>
+          <span class="story-type-badge type-urgency">Urgence</span>
+          <span class="story-day">Mer 22 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Il reste 6 semaines — les derniers créneaux d'août partent vite"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Août arrive dans 10 jours.<br><br>Il reste 4 créneaux d'installation<br>pour la fin de l'été 2026.<br><br>Après ça : printemps 2027.<br><br>Votre entrée peut changer<br>avant que l'été se termine.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Réserver mon créneau</div>
+          </div>
+          <div class="emoji-badge">🔥</div>
+          <div class="visual-tag">Calendrier avec créneaux, 4 cases restantes en doré, reste en rouge barré</div>
+        </div>
+      </div>
+
+      <!-- CA-H20 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H20</span>
+          <span class="story-type-badge type-proof">Satisfaction</span>
+          <span class="story-day">Jeu 23 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"98 % de satisfaction — voici pourquoi"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">98 % de nos clients<br>recommanderaient Jardín Ideal.<br><br>Pas parce qu'on leur demande.<br>Parce qu'ils voient leur entrée<br>chaque matin en partant au travail.<br><br>Et ça les rend fiers.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Lire les avis Google</div>
+          </div>
+          <div class="emoji-badge">⭐</div>
+          <div class="visual-tag">Stat "98%" en grand, fond vert foncé, photos de 4 projets en grille en dessous</div>
+        </div>
+      </div>
+
+      <!-- CA-H21 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H21</span>
+          <span class="story-type-badge type-edu">FAQ Rapide</span>
+          <span class="story-day">Ven 25 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"3 questions qu'on nous pose tout le temps sur le pavé uni"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Q : Ça dure combien de temps ?<br>R : 25–30 ans au Québec.<br><br>Q : Peut-on rouler dessus de suite ?<br>R : 72h pour les voitures.<br><br>Q : Entretien difficile ?<br>R : Sable polymérique tous les 7 ans.<br>C'est tout.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">D'autres questions ? DM-nous</div>
+          </div>
+          <div class="emoji-badge">❓</div>
+          <div class="visual-tag">Format Q&amp;R, alternance fond blanc / fond crème pour chaque question</div>
+        </div>
+      </div>
+
+      <!-- CA-H22 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H22</span>
+          <span class="story-type-badge type-cta">CTA Final</span>
+          <span class="story-day">Sam 26 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Dernière chance juillet — soumission gratuite cette semaine"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Juillet se termine.<br><br>Si votre entrée doit changer<br>avant l'automne,<br>c'est maintenant.<br><br>Soumission gratuite.<br>Visite sous 48h.<br>Équipe locale, Montréal et Rive-Nord.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Obtenir ma soumission</div>
+          </div>
+          <div class="emoji-badge">📞</div>
+          <div class="visual-tag">Fond vert foncé, bouton CTA doré oversized, logo + numéro de téléphone</div>
+        </div>
+      </div>
+
+    </div><!-- /story-grid -->
+
+    <div class="week-summary">
+      <span class="ws-label">Stories sem. 4 : <strong>6</strong></span>
+      <span class="ws-label">IDs : <strong>CA-H17 → CA-H22</strong></span>
+      <span class="ws-label">Objectif : <strong>Conversion maximale</strong></span>
+      <span class="ws-label">KPI : <strong>Leads générés &gt;8 cette semaine</strong></span>
+    </div>
+  </div><!-- /week-block -->
+
+
+  <!-- ══════════════════════════ SEMAINE 5 BONUS ══════════════════════════ -->
+  <div class="bonus-band">
+    <div class="bonus-title">Semaine 5 Bonus · 27–31 Juillet 2026</div>
+    <div class="bonus-h">Bilan juillet + Teaser août</div>
+
+    <div class="bonus-grid">
+
+      <!-- CA-H23 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H23</span>
+          <span class="story-type-badge type-bilan">Bilan</span>
+          <span class="story-day">Lun 27 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Bilan juillet — X projets livrés, X familles fières de leur entrée"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Juillet 2026 en chiffres :<br><br>X projets livrés<br>X pi² de pavé uni installé<br>X familles avec une nouvelle carte de visite<br><br>Merci à tous nos clients.<br>Le meilleur est à venir en août.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">Note</div>
+            <div class="story-field-value">Remplir X avec les vrais chiffres du mois. Publier le 27 juillet au matin.</div>
+          </div>
+          <div class="emoji-badge">🏆</div>
+          <div class="visual-tag">Collage de photos des projets juillet, palette marque, chiffres en overlay doré</div>
+        </div>
+      </div>
+
+      <!-- CA-H24 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H24</span>
+          <span class="story-type-badge type-urgency">Août arrive</span>
+          <span class="story-day">Mer 29 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Août arrive — dernière chance pour une entrée avant l'automne"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Août = les dernières semaines<br>d'installation 2026.<br><br>Septembre arrive vite.<br>L'automne, encore plus vite.<br><br>Votre entrée peut être faite<br>avant que les feuilles tombent.<br>Mais il faut décider maintenant.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Réserver mon créneau août</div>
+          </div>
+          <div class="emoji-badge">🍂</div>
+          <div class="visual-tag">Image avant/après avec feuilles d'automne en arrière-plan (montage), urgence saisonnière</div>
+        </div>
+      </div>
+
+      <!-- CA-H25 -->
+      <div class="story-card">
+        <div class="story-card-top">
+          <span class="story-id">CA-H25</span>
+          <span class="story-type-badge type-cta">Offre anticipée</span>
+          <span class="story-day">Ven 31 Jul</span>
+        </div>
+        <div class="story-card-body">
+          <div class="story-hook">"Réservez en août, économisez — offre de fin de saison"</div>
+          <div class="story-field">
+            <div class="story-field-label">Texte écran</div>
+            <div class="screen-text">Fin de saison 2026.<br><br>Réservez votre projet en août<br>et obtenez :<br>— Livraison prioritaire<br>— Consultation design gratuite<br>— Sans frais de déplacement<br><br>Soumission cette semaine seulement.</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">CTA</div>
+            <div class="story-cta">Profiter de l'offre août</div>
+          </div>
+          <div class="story-field">
+            <div class="story-field-label">Note</div>
+            <div class="story-field-value">Valider avec Daniel les avantages offerts avant publication. Adapter selon disponibilités réelles.</div>
+          </div>
+          <div class="emoji-badge">🎁</div>
+          <div class="visual-tag">Fond vert foncé, liste d'avantages sur fond crème, bouton CTA doré</div>
+        </div>
+      </div>
+
+    </div><!-- /bonus-grid -->
+  </div><!-- /bonus-band -->
+
+</div><!-- /page -->
+</body>
+</html>
