@@ -1,0 +1,31 @@
+{
+  "actualizado": "2026-06-22",
+  "pedidos": [
+    {
+      "id": "MAT001",
+      "material": "Granit gris anthracite — bordures 6po",
+      "cantidad": "45 pièces",
+      "proveedor": "Pierre Idéale QC",
+      "telefono_proveedor": "450-555-1234",
+      "fecha_pedido": "2026-06-18",
+      "fecha_entrega_estimada": "2026-06-24",
+      "estado": "en_transito",
+      "bloquea_obra": true,
+      "proyecto_afectado": "P2026-044",
+      "notas": "Confirmar entrega el 24 de junio por la mañana"
+    },
+    {
+      "id": "MAT002",
+      "material": "Pavé-uni Béton couleur chêne 4x8",
+      "cantidad": "120 m²",
+      "proveedor": "Matériaux Tremco",
+      "telefono_proveedor": "514-555-5678",
+      "fecha_pedido": "2026-06-20",
+      "fecha_entrega_estimada": "2026-06-23",
+      "estado": "confirmado",
+      "bloquea_obra": false,
+      "proyecto_afectado": "P2026-049",
+      "notas": "Para inicio del 24 de junio"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "fecha": "2026-06-22",
+  "periodo": "2026-06-21T18:00:00 a 2026-06-22T07:00:00",
+  "leads": [
+    {
+      "id": "L2026-0622-001",
+      "hora_entrada": "2026-06-21T19:45:00",
+      "nombre": "François Bergeron",
+      "telefono": "450-555-0101",
+      "email": "",
+      "servicio_interes": "pavé-uni",
+      "zona": "Laval",
+      "fuente": "Meta Ads",
+      "canal": "formulario_instantaneo",
+      "mensaje": "",
+      "campos_completos": true,
+      "primer_contacto_realizado": false,
+      "horas_esperando": 11.25
+    },
+    {
+      "id": "L2026-0622-002",
+      "hora_entrada": "2026-06-22T06:30:00",
+      "nombre": "Sophie Larivière",
+      "telefono": "514-555-0202",
+      "email": "sophie@email.com",
+      "servicio_interes": "cour arrière complète",
+      "zona": "Montréal-Nord",
+      "fuente": "Google Ads",
+      "canal": "formulario_web",
+      "mensaje": "Je voudrais un estimé pour refaire ma cour arrière complète.",
+      "campos_completos": true,
+      "primer_contacto_realizado": false,
+      "horas_esperando": 0.5
+    },
+    {
+      "id": "L2026-0622-003",
+      "hora_entrada": "2026-06-21T20:10:00",
+      "nombre": "Marco Ricci",
+      "telefono": "514-555-0303",
+      "email": "",
+      "servicio_interes": "allée latérale",
+      "zona": "Saint-Léonard",
+      "fuente": "Instagram DM",
+      "canal": "dm_instagram",
+      "mensaje": "Bonjour, est-ce que vous faites des allées latérales?",
+      "campos_completos": false,
+      "campos_faltantes": ["email", "zona_confirmada"],
+      "primer_contacto_realizado": true,
+      "horas_esperando": 10.8
+    }
+  ],
+  "resumen": {
+    "total_leads_hoy": 3,
+    "por_fuente": {
+      "meta_ads": 1,
+      "google_ads": 1,
+      "instagram_dm": 1,
+      "facebook_dm": 0,
+      "llamada_directa": 0,
+      "referido": 0
+    },
+    "sin_primer_contacto": 2,
+    "con_campos_incompletos": 1
+  }
+}

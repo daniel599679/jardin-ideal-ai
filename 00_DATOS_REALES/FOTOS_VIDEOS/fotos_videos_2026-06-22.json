@@ -1,0 +1,29 @@
+{
+  "fecha": "2026-06-22",
+  "recibidos": [
+    {
+      "proyecto_id": "P2026-047",
+      "cliente": "Famille Bouchard",
+      "tipo": "cierre",
+      "cantidad_fotos": 7,
+      "cantidad_videos": 1,
+      "canal_recepcion": "WhatsApp",
+      "hora_recepcion": "16:10",
+      "subidas_a_drive": false,
+      "carpeta_drive": "Proyectos/P2026-047-Bouchard/cierre/",
+      "aprobadas_marketing": false,
+      "calidad": "excelente",
+      "notas": "Fotos de luz natural, muy buen ángulo. Candidatas para portafolio Instagram."
+    }
+  ],
+  "pendientes": [],
+  "resumen": {
+    "fotos_recibidas_hoy": 7,
+    "videos_recibidos_hoy": 1,
+    "proyectos_con_fotos_hoy": 1,
+    "fotos_subidas_drive": 0,
+    "fotos_pendientes_subir": 7,
+    "proyectos_sin_fotos_requeridas": 0,
+    "cierres_sin_documentar": 0
+  }
+}

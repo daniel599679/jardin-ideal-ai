@@ -1,0 +1,60 @@
+{
+  "fecha": "2026-06-21",
+  "campanas": [
+    {
+      "id": "CAMP_META_001",
+      "nombre": "Pavé-uni Montréal — Leads",
+      "presupuesto_diario_cad": 50,
+      "gasto_cad": 48.73,
+      "impresiones": 3241,
+      "clics": 87,
+      "ctr_pct": 2.68,
+      "leads": 4,
+      "cpl_cad": 12.18,
+      "frecuencia_7_dias": 2.1,
+      "cpl_objetivo_cad": 75,
+      "estado": "normal"
+    },
+    {
+      "id": "CAMP_META_002",
+      "nombre": "Cour Arrière — Laval",
+      "presupuesto_diario_cad": 40,
+      "gasto_cad": 39.50,
+      "impresiones": 2180,
+      "clics": 41,
+      "ctr_pct": 1.88,
+      "leads": 2,
+      "cpl_cad": 19.75,
+      "frecuencia_7_dias": 3.8,
+      "cpl_objetivo_cad": 75,
+      "estado": "atencion"
+    },
+    {
+      "id": "CAMP_META_003",
+      "nombre": "Terrasse — Rive-Sud",
+      "presupuesto_diario_cad": 30,
+      "gasto_cad": 29.10,
+      "impresiones": 1540,
+      "clics": 12,
+      "ctr_pct": 0.78,
+      "leads": 0,
+      "cpl_cad": null,
+      "frecuencia_7_dias": 4.2,
+      "cpl_objetivo_cad": 75,
+      "estado": "problema"
+    }
+  ],
+  "totales": {
+    "gasto_total_cad": 117.33,
+    "impresiones_totales": 6961,
+    "clics_totales": 140,
+    "ctr_promedio_pct": 2.01,
+    "leads_totales": 6,
+    "cpl_promedio_cad": 19.56
+  },
+  "alertas": {
+    "frecuencia_alta": ["Cour Arrière — Laval", "Terrasse — Rive-Sud"],
+    "ctr_bajo": ["Terrasse — Rive-Sud"],
+    "sin_leads_presupuesto_activo": ["Terrasse — Rive-Sud"]
+  }
+}

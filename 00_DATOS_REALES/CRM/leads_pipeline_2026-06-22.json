@@ -1,0 +1,39 @@
+{
+  "fecha": "2026-06-22",
+  "pipeline": {
+    "nuevo": [
+      {"id": "L2026-0622-001", "nombre": "François Bergeron", "servicio": "pavé-uni", "valor_estimado_cad": 12000, "dias_en_etapa": 0},
+      {"id": "L2026-0622-002", "nombre": "Sophie Larivière", "servicio": "cour arrière complète", "valor_estimado_cad": 18500, "dias_en_etapa": 0}
+    ],
+    "contactado": [
+      {"id": "L2026-0615-004", "nombre": "Jean-Pierre Gagnon", "servicio": "terrasse", "valor_estimado_cad": 22000, "dias_en_etapa": 3},
+      {"id": "L2026-0617-007", "nombre": "Marie-Claude Côté", "servicio": "entrée pavé-uni", "valor_estimado_cad": 8500, "dias_en_etapa": 1}
+    ],
+    "calificado": [
+      {"id": "L2026-0610-003", "nombre": "Robert Tremblay", "servicio": "cours avant + latérale", "valor_estimado_cad": 15000, "dias_en_etapa": 4}
+    ],
+    "propuesta_enviada": [
+      {"id": "L2026-0614-002", "nombre": "Paul Gagné", "servicio": "aménagement complet", "valor_estimado_cad": 35000, "fecha_propuesta": "2026-06-14", "dias_en_etapa": 8},
+      {"id": "L2026-0616-005", "nombre": "Famille Martin", "servicio": "cour arrière + terrasse", "valor_estimado_cad": 28000, "fecha_propuesta": "2026-06-16", "dias_en_etapa": 6}
+    ],
+    "cerrado_ganado": [
+      {"id": "L2026-0601-001", "nombre": "Famille Bouchard", "servicio": "cours complète", "valor_cad": 19500, "fecha_cierre": "2026-06-01"}
+    ],
+    "cerrado_perdido": [
+      {"id": "L2026-0605-002", "nombre": "Michel Dubois", "servicio": "entrée", "valor_estimado_cad": 7000, "razon_perdida": "precio", "fecha_cierre": "2026-06-10"}
+    ]
+  },
+  "alertas": {
+    "sin_contacto_mas_24h": 2,
+    "detenidos_mas_7_dias": 0,
+    "propuestas_sin_respuesta_mas_7_dias": ["Paul Gagné — propuesta $35,000 enviada hace 8 días"],
+    "seguimientos_vencen_hoy": [
+      {"nombre": "Robert Tremblay", "tipo": "llamada de seguimiento", "hora_limite": "14:00"}
+    ]
+  },
+  "indicadores": {
+    "valor_pipeline_cad": 137000,
+    "total_leads_activos": 7,
+    "tasa_cierre_mes": 0.42
+  }
+}

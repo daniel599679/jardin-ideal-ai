@@ -1,0 +1,64 @@
+{
+  "fecha": "2026-06-22",
+  "visitas_tecnicas": [
+    {
+      "id": "V001",
+      "hora": "10:00",
+      "cliente": "Famille Martin",
+      "telefono": "514-555-0700",
+      "direccion": "234 Rue Jarry E, Montréal-Nord, QC H2R 1W5",
+      "proposito": "visita_tecnica",
+      "servicio_interes": "cour arrière + terrasse",
+      "responsable": "Daniel",
+      "confirmado_cliente": true,
+      "hora_confirmacion": "2026-06-21T17:30:00",
+      "tiempo_desplazamiento_min": 25,
+      "materiales_necesarios": ["muestras pavé-uni", "tabla de precios"],
+      "notas": "Cliente vio nuestro Instagram — tiene presupuesto de $30K"
+    },
+    {
+      "id": "V002",
+      "hora": "14:30",
+      "cliente": "M. Leblanc",
+      "telefono": "450-555-0800",
+      "direccion": "890 Rue des Pins, Laval, QC H7L 3A2",
+      "proposito": "entrega_proyecto",
+      "servicio_interes": null,
+      "responsable": "Carlos",
+      "confirmado_cliente": false,
+      "hora_confirmacion": null,
+      "tiempo_desplazamiento_min": 20,
+      "materiales_necesarios": ["factura", "garantía firmada"],
+      "notas": "⚠️ Sin confirmar — llamar antes de las 08:30"
+    }
+  ],
+  "equipos_en_campo": [
+    {
+      "nombre": "Equipo 1",
+      "integrantes": ["Carlos", "Miguel"],
+      "proyecto_asignado": "P2026-047",
+      "cliente": "Famille Bouchard",
+      "direccion": "1234 Rue des Érables, Laval",
+      "hora_salida_estimada": "07:00",
+      "hora_regreso_estimada": "16:00",
+      "tareas_del_dia": "Día 4 de 4 — acabados finales, limpieza, fotos de cierre"
+    }
+  ],
+  "reunion_0900": {
+    "confirmada": true,
+    "modalidad": "presencial",
+    "agenda_lista": false,
+    "puntos_urgentes": [
+      "Material granit P2026-044 — ¿llegó?",
+      "Lead Paul Gagné — propuesta $35K sin respuesta 8 días",
+      "Lead François Bergeron — contacto urgente (11h esperando)"
+    ]
+  },
+  "pendientes_dia_anterior": [
+    {
+      "descripcion": "Enviar garantía escrita al cliente Bouchard",
+      "responsable": "Daniel",
+      "completado": false
+    }
+  ]
+}

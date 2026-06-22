@@ -1,0 +1,66 @@
+{
+  "actualizado": "2026-06-22",
+  "proyectos": [
+    {
+      "id": "P2026-047",
+      "cliente": "Famille Bouchard",
+      "direccion": "1234 Rue des Érables, Laval",
+      "servicio": "pavé-uni",
+      "etapa": "en_curso",
+      "dias_transcurridos": 3,
+      "dias_estimados": 4,
+      "fecha_inicio": "2026-06-19",
+      "fecha_fin_estimada": "2026-06-22",
+      "responsable": "Carlos",
+      "equipo": ["Carlos", "Miguel"],
+      "bloqueo_activo": false,
+      "descripcion_bloqueo": null,
+      "dias_pausado": 0,
+      "valor_contrato_cad": 19500,
+      "notas": "Último día de instalación — entrega programada hoy"
+    },
+    {
+      "id": "P2026-044",
+      "cliente": "M. Gauthier",
+      "direccion": "567 Boul. Décarie, Montréal",
+      "servicio": "cour arrière + entrée",
+      "etapa": "pausado",
+      "dias_transcurridos": 5,
+      "dias_estimados": 7,
+      "fecha_inicio": "2026-06-16",
+      "fecha_fin_estimada": "2026-06-25",
+      "responsable": "Daniel",
+      "equipo": ["Luis"],
+      "bloqueo_activo": true,
+      "descripcion_bloqueo": "Granit para bordures no llegó — proveedor dice el 24 de junio",
+      "dias_pausado": 2,
+      "valor_contrato_cad": 14200,
+      "notas": "Esperar material para continuar — cliente informado"
+    },
+    {
+      "id": "P2026-049",
+      "cliente": "Famille Tremblay",
+      "direccion": "890 Rue des Pins, Brossard",
+      "servicio": "terrasse + muret",
+      "etapa": "planificacion",
+      "dias_transcurridos": 0,
+      "dias_estimados": 5,
+      "fecha_inicio": "2026-06-24",
+      "fecha_fin_estimada": "2026-06-29",
+      "responsable": "Daniel",
+      "equipo": ["Carlos", "Luis"],
+      "bloqueo_activo": false,
+      "descripcion_bloqueo": null,
+      "dias_pausado": 0,
+      "valor_contrato_cad": 23000,
+      "notas": "Materiales pedidos. Confirmar con equipo el 23."
+    }
+  ],
+  "resumen": {
+    "total_activos": 3,
+    "proyectos_con_bloqueo": 1,
+    "entregas_esta_semana": 1,
+    "inicio_esta_semana": 0,
+    "valor_en_obra_cad": 56700
+  }
+}

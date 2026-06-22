@@ -1,0 +1,48 @@
+{
+  "fecha": "2026-06-21",
+  "campanas": [
+    {
+      "id": "CAMP_GOOG_001",
+      "nombre": "Recherche — Pavé-uni Montréal",
+      "tipo": "search",
+      "presupuesto_diario_cad": 35,
+      "gasto_cad": 34.20,
+      "impresiones": 412,
+      "clics": 28,
+      "ctr_pct": 6.8,
+      "conversiones": 2,
+      "cpl_cad": 17.10,
+      "quality_score_promedio": 7.2,
+      "cpl_objetivo_cad": 75,
+      "estado": "normal"
+    },
+    {
+      "id": "CAMP_GOOG_002",
+      "nombre": "Performance Max — Aménagement",
+      "tipo": "pmax",
+      "presupuesto_diario_cad": 25,
+      "gasto_cad": 24.80,
+      "impresiones": 8740,
+      "clics": 62,
+      "ctr_pct": 0.71,
+      "conversiones": 1,
+      "cpl_cad": 24.80,
+      "quality_score_promedio": null,
+      "cpl_objetivo_cad": 75,
+      "estado": "normal"
+    }
+  ],
+  "totales": {
+    "gasto_total_cad": 59.00,
+    "impresiones_totales": 9152,
+    "clics_totales": 90,
+    "ctr_promedio_pct": 3.75,
+    "leads_totales": 3,
+    "cpl_promedio_cad": 19.67
+  },
+  "alertas": {
+    "cpl_alto": [],
+    "ctr_bajo_search": [],
+    "quality_score_bajo": []
+  }
+}

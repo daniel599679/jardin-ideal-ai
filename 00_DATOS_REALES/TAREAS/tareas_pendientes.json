@@ -1,0 +1,65 @@
+{
+  "actualizado": "2026-06-22",
+  "tareas": [
+    {
+      "id": "T001",
+      "descripcion": "Contactar François Bergeron (lead nuevo pavé-uni Laval)",
+      "prioridad": "critica",
+      "agente": "CRM",
+      "responsable": "Daniel",
+      "plazo": "2026-06-22 09:00",
+      "estado": "pendiente",
+      "proyecto_relacionado": null
+    },
+    {
+      "id": "T002",
+      "descripcion": "Seguimiento propuesta Paul Gagné — $35,000 sin respuesta 8 días",
+      "prioridad": "critica",
+      "agente": "CRM",
+      "responsable": "Daniel",
+      "plazo": "2026-06-22 11:00",
+      "estado": "pendiente",
+      "proyecto_relacionado": null
+    },
+    {
+      "id": "T003",
+      "descripcion": "Pausar campaña Meta 'Terrasse Rive-Sud' (0 leads, frecuencia 4.2)",
+      "prioridad": "alta",
+      "agente": "Marketing",
+      "responsable": "Daniel",
+      "plazo": "2026-06-22",
+      "estado": "pendiente",
+      "proyecto_relacionado": null
+    },
+    {
+      "id": "T004",
+      "descripcion": "Llamar proveedor para confirmar entrega granit P2026-044",
+      "prioridad": "alta",
+      "agente": "Operaciones",
+      "responsable": "Daniel",
+      "plazo": "2026-06-22 10:00",
+      "estado": "pendiente",
+      "proyecto_relacionado": "P2026-044"
+    },
+    {
+      "id": "T005",
+      "descripcion": "Subir fotos proyecto Bouchard a Google Drive",
+      "prioridad": "media",
+      "agente": "Operaciones",
+      "responsable": "Daniel",
+      "plazo": "2026-06-22 18:00",
+      "estado": "pendiente",
+      "proyecto_relacionado": "P2026-047"
+    },
+    {
+      "id": "T006",
+      "descripcion": "Rotación de creatividades Meta Ads — diseñar 2 nuevas para Cour Arrière Laval",
+      "prioridad": "media",
+      "agente": "Marketing",
+      "responsable": "Daniel",
+      "plazo": "2026-06-24",
+      "estado": "pendiente",
+      "proyecto_relacionado": null
+    }
+  ]
+}

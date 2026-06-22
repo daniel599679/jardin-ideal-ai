@@ -1,0 +1,92 @@
+# REPORTE DIARIO — JARDÍN IDEAL
+**Fecha:** 2026-06-22  |  **Generado:** 09:34  |  **Sistema:** Motor de Reportes v1.0
+
+---
+## 01 · RESUMEN EJECUTIVO
+
+| Métrica | Valor |
+|---------|-------|
+| Leads nuevos hoy | 3 |
+| Gasto Meta Ads (ayer) | 117.33 CAD |
+| CPL promedio Meta (ayer) | 19.56 CAD |
+| Proyectos activos | 3 |
+| Proyectos con bloqueo | 1 |
+
+---
+## 02 · PRIORIDADES ANTES DE LAS 09:00 AM
+
+1. 🔴 **CRÍTICO** — 2 lead(s) sin primer contacto → revisar CRM ahora
+2. 🔴 **CRÍTICO** — Material 'Granit gris anthracite — bordures 6po' bloquea P2026-044 → llamar Pierre Idéale QC
+3. 🟠 **ALTO** — Visita 14:30 con M. Leblanc sin confirmar → llamar antes de las 08:30
+4. 🔴 **CRÍTICO** — Contactar François Bergeron (lead nuevo pavé-uni Laval) (2026-06-22 09:00)
+5. 🔴 **CRÍTICO** — Seguimiento propuesta Paul Gagné — $35,000 sin respuesta 8 días (2026-06-22 11:00)
+6. 🟠 **ALTO** — Preparar agenda reunión 09:00 AM (máx. 15 min)
+
+---
+## 03 · LEADS NUEVOS
+
+**Total hoy:** 3 leads
+
+| Fuente | Cantidad |
+|--------|---------|
+| Meta Ads | 1 |
+| Google Ads | 1 |
+| Instagram Dm | 1 |
+
+**Leads sin primer contacto:**
+- François Bergeron | Meta Ads | pavé-uni | esperando 11.25h
+- Sophie Larivière | Google Ads | cour arrière complète | esperando 0.5h
+
+---
+## 04 · CAMPAÑAS ACTIVAS
+
+### Meta Ads
+**Gasto:** 117.33 CAD  |  **Leads:** 6  |  **CPL:** 19.56 CAD  |  **CTR:** 2.01%
+
+| Campaña | Gasto | Leads | CPL | CTR | Estado |
+|---------|-------|-------|-----|-----|--------|
+| Pavé-uni Montréal — Leads | 49 CAD | 4 | 12 CAD | 2.7% | [OK] |
+| Cour Arrière — Laval | 40 CAD | 2 | 20 CAD | 1.9% | [ATENCIÓN] |
+| Terrasse — Rive-Sud | 29 CAD | 0 | N/D | 0.8% | [PROBLEMA] |
+
+⚠️ Frecuencia >3.5: Cour Arrière — Laval, Terrasse — Rive-Sud → rotar creatividades esta semana
+
+### Google Ads
+**Gasto:** 59.00 CAD  |  **Leads:** 3  |  **CPL:** 19.67 CAD  |  **CTR:** 3.75%
+
+| Campaña | Gasto | Leads | CPL | CTR | Estado |
+|---------|-------|-------|-----|-----|--------|
+| Recherche — Pavé-uni Montréal | 34 CAD | 2 | 17 CAD | 6.8% | ✅ normal |
+| Performance Max — Aménagement | 25 CAD | 1 | 25 CAD | 0.7% | ✅ normal |
+
+---
+## 05 · PROYECTOS ACTIVOS
+
+| Proyecto | Cliente | Servicio | Etapa | Días | Bloqueo |
+|----------|---------|----------|-------|------|---------|
+| P2026-047 | Famille Bouchard | pavé-uni | en_curso | 3/4 | ✅ |
+| P2026-044 | M. Gauthier | cour arrière + entrée | pausado | 5/7 | 🔴 Granit para bordures no llegó — proveedo |
+| P2026-049 | Famille Tremblay | terrasse + muret | planificacion | 0/5 | ✅ |
+
+---
+## 06 · TAREAS CRÍTICAS
+
+**Críticas:**
+- 🔴 [CRM] Contactar François Bergeron (lead nuevo pavé-uni Laval) — Daniel — plazo: 2026-06-22 09:00
+- 🔴 [CRM] Seguimiento propuesta Paul Gagné — $35,000 sin respuesta 8 días — Daniel — plazo: 2026-06-22 11:00
+
+**Altas:**
+- 🟠 [Marketing] Pausar campaña Meta 'Terrasse Rive-Sud' (0 leads, frecuencia 4.2) — Daniel — plazo: 2026-06-22
+- 🟠 [Operaciones] Llamar proveedor para confirmar entrega granit P2026-044 — Daniel — plazo: 2026-06-22 10:00
+
+---
+## 07 · SIGUIENTES ACCIONES
+
+1. CRM — Seguimiento con Robert Tremblay: llamada de seguimiento
+2. Operaciones — Visita 10:00: Famille Martin (visita_tecnica)
+3. Operaciones — Visita 14:30: M. Leblanc (entrega_proyecto)
+4. Operaciones — Resolver bloqueo P2026-044: Granit para bordures no llegó — proveedor dice el 
+
+---
+_Reporte generado automáticamente por el Motor de Reportes Jardín Ideal — 2026-06-22 09:34_
+_El prompt maestro fue usado como instrucción, no como contenido de este reporte._
