@@ -1,0 +1,42 @@
+# Sistema operativo — Jardín Ideal AI
+
+# Archivos de sistema Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Archivos de sistema macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Datos sensibles — NUNCA commitear
+*.env
+.env*
+secrets/
+credentials/
+*_password*
+*_secret*
+
+# Exports de CRM con datos de clientes reales
+exports/
+datos_reales/
+clientes_privado/
+
+# Reportes con datos reales (las plantillas sí se commitean, los rellenos no)
+# Para excluir reportes llenos: descomentar la línea siguiente
+# 08_REPORTES/reporte_2*.md
+# 08_REPORTES/reporte_semana_2*.md
+# 08_REPORTES/reporte_mes_2*.md
