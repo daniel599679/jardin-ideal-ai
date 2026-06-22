@@ -1,0 +1,1142 @@
+<title>Plan de Contenu — Balcons & Cour Arrière · Jardín Ideal 2026</title>
+<style>
+  :root {
+    --vert-fonce:  #1E3A20;
+    --vert:        #2C4A2E;
+    --vert-med:    #3D6B42;
+    --vert-clair:  #5A8F62;
+    --or:          #C8A45A;
+    --noir:        #0D0E0B;
+    --gris-fonce:  #2A2B28;
+    --gris:        #6B6B63;
+    --gris-clair:  #B8B8B0;
+    --creme:       #F5F2EB;
+    --creme-fonce: #EDE9E0;
+    --blanc:       #FFFFFF;
+    --rouge:       #B83232;
+    --rouge-clair: #F5E8E8;
+    --jaune:       #C8850A;
+    --jaune-clair: #FEF5E4;
+    --vert-bg:     #EAF2EB;
+    --bleu:        #2A4A6E;
+    --bleu-clair:  #EAF0F8;
+
+    --font-display: Georgia, 'Times New Roman', serif;
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Courier New', Courier, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--creme); color: var(--noir); font-family: var(--font-body); font-size: 14.5px; line-height: 1.75; }
+
+  /* ─── COVER ─── */
+  .cover {
+    background: var(--vert-fonce);
+    min-height: 300px;
+    padding: 52px 60px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    border: 65px solid rgba(200,164,90,0.07);
+  }
+  .cover-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 18px;
+  }
+  .cover h1 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--blanc);
+    line-height: 1.1;
+    max-width: 700px;
+    margin-bottom: 26px;
+  }
+  .cover h1 em { color: var(--or); font-style: italic; }
+  .cover-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(200,164,90,0.15);
+    border: 1px solid rgba(200,164,90,0.35);
+    color: var(--or-clair, #E8C97A);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 13px;
+  }
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    padding-top: 20px;
+  }
+  .cover-meta-item .lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .cover-meta-item .val { font-size: 13px; font-weight: 600; color: var(--blanc); }
+
+  /* ─── CAMPAIGN HEADER BAND ─── */
+  .camp-band {
+    padding: 14px 60px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .camp-band.balcon   { background: #2A1E0A; color: var(--or); border-left: 6px solid var(--or); }
+  .camp-band.cour     { background: #0A1E0F; color: #7DBF87; border-left: 6px solid var(--vert-med); }
+
+  /* ─── CONTAINER ─── */
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 40px 80px; }
+
+  /* ─── SECTIONS ─── */
+  .section { padding-top: 48px; margin-top: 48px; border-top: 1.5px solid var(--vert-med); }
+  .section.no-border { border-top: none; margin-top: 32px; padding-top: 0; }
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::after { content: ""; flex: 1; height: 1px; background: var(--creme-fonce); max-width: 100px; }
+  h2 { font-family: var(--font-display); font-size: clamp(20px, 2.8vw, 32px); font-weight: 700; color: var(--vert-fonce); line-height: 1.2; margin-bottom: 16px; }
+  h3 { font-family: var(--font-display); font-size: 17px; font-style: italic; color: var(--vert-med); margin: 28px 0 10px; }
+  h4 { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--vert-fonce); margin-bottom: 6px; }
+  p { margin-bottom: 12px; color: var(--gris-fonce); }
+  strong { font-weight: 600; color: var(--noir); }
+  ul { padding-left: 20px; margin-bottom: 12px; }
+  li { color: var(--gris-fonce); margin-bottom: 4px; font-size: 13.5px; }
+
+  /* ─── OBJECTIVE BOXES ─── */
+  .obj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin: 20px 0; background: var(--vert-fonce); border: 2px solid var(--vert-fonce); }
+  .obj-box { background: var(--blanc); padding: 24px 22px; }
+  .obj-box.dark { background: var(--vert-fonce); }
+  .obj-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--or); margin-bottom: 10px; }
+  .obj-box.dark .obj-label { color: rgba(200,164,90,0.7); }
+  .obj-title { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--vert-fonce); margin-bottom: 10px; }
+  .obj-box.dark .obj-title { color: var(--blanc); }
+  .obj-box p { font-size: 13px; margin-bottom: 6px; }
+  .obj-box.dark p { color: #C8D8CA; }
+  @media(max-width:680px) { .obj-grid { grid-template-columns: 1fr; } }
+
+  /* ─── KPI CHIPS ─── */
+  .kpi-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .kpi-chip {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+  .kpi-chip.red  { background: var(--rouge-clair); color: var(--rouge); }
+  .kpi-chip.grn  { background: var(--vert-bg);     color: var(--vert-med); }
+  .kpi-chip.yel  { background: var(--jaune-clair); color: var(--jaune); }
+  .kpi-chip.dark { background: var(--vert-fonce);  color: var(--or); }
+
+  /* ─── REEL SCRIPT ─── */
+  .script-wrap { border: 1px solid #DDD8CE; background: var(--blanc); margin: 20px 0; overflow: hidden; }
+  .script-header {
+    background: var(--vert-fonce);
+    padding: 12px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .script-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--blanc); font-style: italic; }
+  .script-duration { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; color: var(--or); text-transform: uppercase; }
+  .scene {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    border-bottom: 1px solid #EDE9E0;
+  }
+  .scene:last-child { border-bottom: none; }
+  .scene-time {
+    background: var(--creme-fonce);
+    padding: 16px 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--vert-fonce);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    text-align: center;
+    border-right: 2px solid var(--vert-fonce);
+  }
+  .scene-time .beat {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--or);
+    font-weight: 700;
+  }
+  .scene-content { padding: 16px 20px; }
+  .scene-content .screen-text {
+    background: var(--vert-fonce);
+    color: var(--or);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .scene-content .visual {
+    font-size: 13px;
+    color: var(--gris-fonce);
+    font-style: italic;
+  }
+  .scene-content .instruction {
+    font-size: 12px;
+    color: var(--vert-med);
+    margin-top: 5px;
+    font-weight: 600;
+  }
+
+  /* ─── BLOG OUTLINE ─── */
+  .blog-wrap { border: 1px solid #DDD8CE; background: var(--blanc); margin: 20px 0; overflow: hidden; }
+  .blog-header { background: #F0EFEA; padding: 14px 22px; border-bottom: 1px solid #DDD8CE; }
+  .blog-header .blog-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 3px; color: var(--gris); text-transform: uppercase; margin-bottom: 4px; }
+  .blog-header .blog-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--vert-fonce); }
+  .blog-header .blog-meta { font-family: var(--font-mono); font-size: 9px; color: var(--gris); letter-spacing: 1px; margin-top: 4px; }
+  .blog-section { padding: 14px 22px; border-bottom: 1px solid #F0EFEA; }
+  .blog-section:last-child { border-bottom: none; }
+  .blog-section .num { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--creme-fonce); float: left; margin-right: 12px; line-height: 1; }
+  .blog-section h5 { font-family: var(--font-body); font-size: 13.5px; font-weight: 700; color: var(--vert-fonce); margin-bottom: 4px; }
+  .blog-section p { font-size: 12.5px; color: var(--gris-fonce); margin: 0; clear: none; }
+  .blog-cta { background: var(--vert-bg); border-top: 2px solid var(--vert-med); padding: 14px 22px; }
+  .blog-cta p { color: var(--vert-med); font-size: 13px; font-weight: 600; margin: 0; }
+
+  /* ─── CALENDAR / RESPONSIBLES ─── */
+  .tbl-wrap { overflow-x: auto; margin: 16px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead tr { background: var(--vert-fonce); }
+  thead th { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--blanc); padding: 10px 13px; text-align: left; font-weight: 700; }
+  tbody tr { border-bottom: 1px solid #E0DDD5; }
+  tbody tr:nth-child(even) { background: #F9F7F2; }
+  tbody td { padding: 10px 13px; vertical-align: top; color: var(--gris-fonce); font-size: 13px; }
+  tbody td:first-child { font-weight: 600; color: var(--vert-fonce); font-family: var(--font-mono); font-size: 11px; }
+  .td-red { color: var(--rouge); font-weight: 700; }
+  .td-grn { color: var(--vert-med); font-weight: 700; }
+  .td-or  { color: #9A7A30; font-weight: 700; }
+
+  /* ─── TOOLS GRID ─── */
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 18px 0; }
+  .tool-card { background: var(--blanc); border: 1px solid #DDD8CE; padding: 18px 18px; }
+  .tool-icon { font-size: 24px; margin-bottom: 8px; }
+  .tool-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--vert-fonce); margin-bottom: 4px; }
+  .tool-use  { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; color: var(--or); text-transform: uppercase; margin-bottom: 8px; }
+  .tool-card ul { padding-left: 16px; }
+  .tool-card li { font-size: 12.5px; margin-bottom: 3px; }
+
+  /* ─── ACTION ITEMS ─── */
+  .action-item { display: flex; gap: 0; margin: 8px 0; border: 1px solid #DDD8CE; }
+  .action-side { width: 7px; flex-shrink: 0; }
+  .action-side.red  { background: var(--rouge); }
+  .action-side.yel  { background: var(--jaune); }
+  .action-side.grn  { background: var(--vert-med); }
+  .action-content { background: var(--blanc); padding: 13px 20px; flex: 1; }
+  .action-content h4 { font-size: 13.5px; font-weight: 700; color: var(--vert-fonce); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .action-content p { font-size: 12.5px; margin: 0; }
+
+  /* ─── BADGE ─── */
+  .badge { display: inline-block; font-family: var(--font-mono); font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 8px; font-weight: 700; margin-right: 4px; }
+  .b-red  { background: var(--rouge-clair); color: var(--rouge); }
+  .b-grn  { background: var(--vert-bg);    color: var(--vert-med); }
+  .b-yel  { background: var(--jaune-clair);color: var(--jaune); }
+  .b-dark { background: var(--vert-fonce); color: var(--or); }
+  .b-gray { background: #F0EFEA;           color: var(--gris); }
+
+  /* ─── IMAGE PLACEHOLDER ─── */
+  .img-ph { background: var(--creme-fonce); border: 2px dashed #C0BDB5; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22px; margin: 12px 0; text-align: center; min-height: 90px; }
+  .img-ph .icon { font-size: 24px; margin-bottom: 8px; opacity: 0.4; }
+  .img-ph p { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); margin: 0; }
+  .img-ph .sub { font-family: var(--font-body); font-size: 11px; color: var(--gris); margin-top: 4px; text-transform: none; letter-spacing: 0; max-width: 420px; }
+
+  /* ─── CALLOUT ─── */
+  .callout { background: var(--vert-fonce); color: var(--blanc); padding: 24px 30px; margin: 24px 0; }
+  .callout h3 { font-family: var(--font-display); font-size: 18px; font-style: normal; color: var(--or); margin: 0 0 10px; }
+  .callout p  { color: #C8D8CA; font-size: 13px; margin-bottom: 6px; }
+  .callout ul { padding-left: 18px; }
+  .callout li { color: #C8D8CA; font-size: 13px; margin-bottom: 4px; }
+
+  /* ─── PULL QUOTE ─── */
+  .pq { border-left: 4px solid var(--or); padding: 14px 22px; margin: 18px 0; background: var(--blanc); font-family: var(--font-display); font-size: 16px; font-style: italic; color: var(--vert); line-height: 1.6; }
+
+  /* ─── DIVIDER ─── */
+  .divider { border: none; border-top: 2px solid var(--vert-fonce); margin: 48px 0 0; }
+
+  /* ─── GRID ─── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  @media(max-width:680px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  /* ─── FOOTER ─── */
+  .footer { margin-top: 60px; border-top: 2px solid var(--vert-fonce); padding: 22px 0 6px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .footer p { font-family: var(--font-mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gris); margin: 0; }
+
+  @media(max-width:600px) {
+    .cover { padding: 36px 24px 28px; }
+    .container { padding: 0 20px 60px; }
+    .camp-band { padding: 12px 24px; }
+    .scene { grid-template-columns: 72px 1fr; }
+  }
+  @media(prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<!-- ═══════════════════════════
+     COVER
+═══════════════════════════ -->
+<div class="cover">
+  <div class="cover-eyebrow">Plan de Contenu · Campagnes Prioritaires · Jardín Ideal</div>
+  <h1>Balcons &amp;<br><em>Cour Arrière</em><br>Plan Exécution Été 2026</h1>
+  <div class="cover-pills">
+    <span class="pill">Guions Reel</span>
+    <span class="pill">Plans Blog</span>
+    <span class="pill">Calendrier Publication</span>
+    <span class="pill">Outils Production</span>
+    <span class="pill">KPIs</span>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="lbl">Période</span>
+      <span class="val">1 juillet → 31 août 2026</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Campagnes</span>
+      <span class="val">Balcons · Cour Arrière</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Budget mensuel</span>
+      <span class="val">C$800–$1 200 / mois (Phase 1)</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Responsable principal</span>
+      <span class="val">Daniel Figueroa</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Production visuelle</span>
+      <span class="val">Ingrid (terrain) · CapCut · Canva</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════════
+     SECTION 01 — OBJECTIFS DES CAMPAGNES
+═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">01 · Objectifs des Campagnes</div>
+  <h2>Deux campagnes, deux marchés distincts</h2>
+
+  <p>Ces deux campagnes répondent à des besoins clients différents et doivent donc avoir des messages, des formats et des KPIs distincts. La campagne balcon cible la rénovation et le remplacement ; la campagne cour arrière cible la transformation complète de l'espace extérieur.</p>
+
+  <div class="obj-grid">
+    <div class="obj-box">
+      <div class="obj-label">Campagne 1 · Balcons</div>
+      <div class="obj-title">Relancer après l'échec des images statiques</div>
+      <p>Les 4 annonces image balcon ont généré C$65+ sans aucun lead. L'objectif est de relancer la campagne dans un format Reel avant/après, avec un copy centré sur l'urgence saisonnière et la transparence des prix.</p>
+      <p><strong>Services visés :</strong> Remplacement balcon bois → composite · Balcon neuf sur fondation existante · Garde-corps et finitions</p>
+      <div class="kpi-row">
+        <span class="kpi-chip dark">CPL cible &lt;$80 CAD</span>
+        <span class="kpi-chip yel">5–8 leads/sem. (Ph.1)</span>
+        <span class="kpi-chip grn">10–15 leads/sem. (Ph.2)</span>
+      </div>
+    </div>
+    <div class="obj-box dark">
+      <div class="obj-label">Campagne 2 · Cour Arrière</div>
+      <div class="obj-title">Capitaliser sur le format Reel confirmé</div>
+      <p>Le Reel K-1815 (Terrebonne) a prouvé que le format transformation attire massivement. L'objectif est de reproduire ce succès avec plusieurs projets de cour arrière, en ciblant des budgets de $15K–$40K.</p>
+      <p style="color:#C8D8CA;"><strong>Services visés :</strong> Gazon naturel/synthétique · Pavés et terrasses · Clôtures et haies · Aménagement complet cour arrière</p>
+      <div class="kpi-row">
+        <span class="kpi-chip dark">CPL cible &lt;$100 CAD</span>
+        <span class="kpi-chip yel">8–12 leads/sem. (Ph.1)</span>
+        <span class="kpi-chip grn">15–20 leads/sem. (Ph.2)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     CAMPAIGN 1 — BALCONS
+═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">02 · Campagne Balcons — Contenu détaillé</div>
+  <h2>Balcons — Guion Reel, Blog &amp; Production</h2>
+</div>
+
+<div class="camp-band balcon">
+  CAMPAGNE 1 · BALCONS · CPL CIBLE &lt;$80 CAD · LANCEMENT 11 JUILLET 2026
+</div>
+
+<!-- REEL SCRIPT -->
+<div class="section no-border">
+  <h3>Guion Reel #1 — Transformation balcon (60 secondes)</h3>
+  <div class="script-wrap">
+    <div class="script-header">
+      <span class="script-title">Reel balcon "Avant/Après — 4 jours"</span>
+      <span class="script-duration">Durée : 60 sec · Format : 9:16 · Outil : CapCut · Sous-titres : Oui</span>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">0–3s<div class="beat">Accroche</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"Ce balcon avait 12 ans. Il a fallu 4 jours pour le transformer en ça."</div>
+        <p class="visual">Visuel : Gros plan du balcon terminé sous le soleil — lames composites gris ardoise, garde-corps propre, finitions nettes. Le contraste avec ce qui suit est la clé de l'accroche.</p>
+        <p class="instruction">INSTRUCTION TOURNAGE : Commencer par le résultat — pas par l'avant. On capte l'œil d'abord, on raconte ensuite.</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">3–15s<div class="beat">Avant</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"Voici dans quel état on l'a trouvé."</div>
+        <p class="visual">Visuel : Tour complet du vieux balcon en bois traité — lattes grises et échardes, bois fissuré, taches de moisissure, quelques lattes manquantes. Plan large + gros plans détails.</p>
+        <p class="instruction">INSTRUCTION TOURNAGE : Filmer sous différents angles. Ne pas embellir — l'état dégradé justifie le projet.</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">15–35s<div class="beat">Process</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"L'équipe Jardín Ideal. Chaque détail compte."</div>
+        <p class="visual">Visuel : Montage accéléré (×4) — 1) Enlèvement des vieilles lattes 2) Inspection et remplacement solives si besoin 3) Pose lames composites en séquence 4) Coupe de précision aux extrémités 5) Installation garde-corps 6) Finitions + nettoyage.</p>
+        <p class="instruction">INSTRUCTION TOURNAGE : Filmer chaque étape à 4× la durée normale (CapCut accélère). Varier les angles : vue du sol, vue de côté, gros plan outil. 3–4 secondes minimum par étape.</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">35–50s<div class="beat">Résultat</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"Composite Trex. 25 ans de garantie. Zéro entretien."</div>
+        <p class="visual">Visuel : Vue d'ensemble du balcon terminé + gros plans finitions : vis cachées (invisible fasteners), joints propres entre lames, détail garde-corps aluminium ou verre, vue depuis la porte arrière.</p>
+        <p class="instruction">INSTRUCTION TOURNAGE : Heure dorée si possible (matin 7h–9h ou soir 18h–20h) pour la lumière. Nettoyer le balcon avant de filmer.</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">50–58s<div class="beat">Usage</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"L'été commence sur votre balcon."</div>
+        <p class="visual">Visuel : Couple avec café du matin ou apéro en fin de journée. Si possible, enfants. Vue sur la cour ou la rue. Naturel, pas posé — si Daniel peut filmer lui-même avec sa propre famille c'est encore mieux.</p>
+        <p class="instruction">INSTRUCTION TOURNAGE : 1–2 personnes maximum. Vêtements neutres (pas de logos). Sourire décontracté, pas de pose forcée.</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">58–60s<div class="beat">CTA</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"Votre balcon mérite mieux. Devis gratuit en 48h. ↓ Lien en bio."</div>
+        <p class="visual">Visuel : Logo Jardín Ideal + texte animé. Fond vert foncé. Texte en or.</p>
+        <p class="instruction">INSTRUCTION MONTAGE CapCut : Utiliser l'effet "slide in" pour le texte CTA. Pas de fondu au noir — rester sur l'image.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="img-ph">
+    <div class="icon">🎬</div>
+    <p>Storyboard Reel Balcon</p>
+    <span class="sub">Insérer ici : 6 captures du storyboard visuel (cases 1 à 6 avec timing exact)</span>
+  </div>
+
+  <h3>Guion Reel #2 — Transparence des prix (45 secondes)</h3>
+  <p>Ce deuxième Reel teste l'angle "transparence prix" — un vide compétitif confirmé : aucun concurrent ne communique ses prix. À lancer en Phase 2 si Reel #1 atteint CPL &lt;$80.</p>
+  <div class="script-wrap">
+    <div class="script-header">
+      <span class="script-title">Reel balcon "Combien ça coûte vraiment?"</span>
+      <span class="script-duration">Durée : 45 sec · Format : 9:16 · Outil : CapCut + Canva (slides animées)</span>
+    </div>
+    <div class="scene">
+      <div class="scene-time">0–3s<div class="beat">Accroche</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"Combien coûte un balcon composite à Montréal en 2026? On vous dit tout."</div>
+        <p class="visual">Visuel : Texte animé sur fond vert foncé. Pas de visuel de chantier au départ — c'est la question qui accroche.</p>
+      </div>
+    </div>
+    <div class="scene">
+      <div class="scene-time">3–30s<div class="beat">Contenu</div></div>
+      <div class="scene-content">
+        <div class="screen-text">Slides animées : Prix par superficie, inclusions, garantie</div>
+        <p class="visual">Slide 1 : "Balcon 10 × 12 pieds → $8 000–$12 000 CAD" | Slide 2 : "Balcon 12 × 16 pieds → $12 000–$18 000 CAD" | Slide 3 : "Ce qui est inclus : main-d'œuvre, matériaux Trex, garde-corps, finitions" | Slide 4 : "Garantie 25 ans sur le composite. Zéro peinture. Zéro entretien."</p>
+        <p class="instruction">INSTRUCTION MONTAGE : Créer les slides dans Canva (template texte sur fond vert foncé, texte en or). Importer dans CapCut, 6 secondes par slide, transition simple "cut".</p>
+      </div>
+    </div>
+    <div class="scene">
+      <div class="scene-time">30–45s<div class="beat">Preuve + CTA</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"On a réalisé 14 balcons à Montréal ce printemps. Le prochain pourrait être le vôtre."</div>
+        <p class="visual">Visuel : Montage rapide de 4–5 balcons réalisés (2 sec chacun) · CTA final : "Devis gratuit — délai de réponse 48h — lien en bio"</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG BALCON -->
+<div class="section no-border" style="margin-top:32px;">
+  <h3>Plan du blog — Article balcon</h3>
+  <div class="blog-wrap">
+    <div class="blog-header">
+      <div class="blog-label">Article de blog · SEO · Français · ~1 200 mots</div>
+      <div class="blog-title">"Bois traité ou bois composite : ce que votre balcon devrait être en 2026"</div>
+      <div class="blog-meta">Mots-clés cibles : balcon composite Montréal · remplacement balcon Laval · coût balcon composite Québec · Jardín Ideal balcon</div>
+    </div>
+    <div class="blog-section">
+      <span class="num">01</span>
+      <h5>Introduction : le balcon qui vieillit mal (150 mots)</h5>
+      <p>Décrire le problème concret : bois traité après 5–8 hivers québécois (échardes, fissures, décoloration, pourriture). Photo avant/après intégrée (projet réel de Jardín Ideal). Question rhétorique : "Et si c'était la dernière fois que vous repeigniez ce balcon?"</p>
+    </div>
+    <div class="blog-section">
+      <span class="num">02</span>
+      <h5>Le bois traité : avantages et limites réelles (200 mots)</h5>
+      <p>Coût initial bas ($4K–$8K) mais entretien annuel obligatoire (peinture, teinte). Durée de vie 10–15 ans si bien entretenu. Risque d'échardes et de déformation avec les cycles gel/dégel. Bon choix pour les budgets limités mais coût total sur 20 ans souvent supérieur au composite.</p>
+    </div>
+    <div class="blog-section">
+      <span class="num">03</span>
+      <h5>Le bois composite : investissement et retour sur 20 ans (200 mots)</h5>
+      <p>Coût initial plus élevé ($8K–$18K selon superficie) mais zéro entretien annuel. Garantie 25 ans (Trex, TimberTech). Résiste aux hivers québécois sans se déformer ni se décolorer. Calcul TCO (total cost of ownership) sur 20 ans : composite souvent 30% moins cher que bois traité avec entretien.</p>
+    </div>
+    <div class="blog-section">
+      <span class="num">04</span>
+      <h5>Tableau comparatif (inclure image Canva) (visuel)</h5>
+      <p>Tableau à 5 lignes : Coût initial · Coût entretien/an · Durée de vie · Garantie fabricant · Esthétique après 10 ans. Deux colonnes : Bois traité vs Composite. Créer dans Canva, exporter en image pour le blog.</p>
+    </div>
+    <div class="blog-section">
+      <span class="num">05</span>
+      <h5>3 projets réalisés par Jardín Ideal (avec photos) (250 mots)</h5>
+      <p>Projet A : Laval, balcon 12×14 pi, composite gris, $13 500. Projet B : Rive-Nord, balcon avant + escalier, composite brun, $9 800. Projet C : Montréal, remplacement complet balcon arrière + garde-corps verre, $16 200. Chaque projet : 1 avant, 1 après, budget approximatif, durée des travaux.</p>
+    </div>
+    <div class="blog-section">
+      <span class="num">06</span>
+      <h5>FAQ client (150 mots)</h5>
+      <p>"Mon balcon actuel est-il récupérable?" · "Combien de temps durent les travaux?" · "Puis-je choisir la couleur?" · "Quelles garanties offrez-vous?" · "Acceptez-vous les paiements par étapes?"</p>
+    </div>
+    <div class="blog-cta">
+      <p>CTA final : "Obtenez une soumission gratuite pour votre balcon — réponse en 48h — Jardín Ideal · groupe-ideal.com"</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     CAMPAIGN 2 — COUR ARRIÈRE
+═══════════════════════════════════════════ -->
+<hr class="divider">
+
+<div class="section">
+  <div class="section-tag">03 · Campagne Cour Arrière — Contenu détaillé</div>
+  <h2>Cour Arrière — Guion Reel, Blog &amp; Production</h2>
+</div>
+
+<div class="camp-band cour">
+  CAMPAGNE 2 · COUR ARRIÈRE · CPL CIBLE &lt;$100 CAD · LANCEMENT 19 JUILLET 2026
+</div>
+
+<!-- REEL SCRIPT COUR -->
+<div class="section no-border">
+  <h3>Guion Reel #1 — Transformation complète cour arrière (45 secondes)</h3>
+  <div class="script-wrap">
+    <div class="script-header">
+      <span class="script-title">Reel cour arrière "Rectangle de boue → espace de vie"</span>
+      <span class="script-duration">Durée : 45 sec · Format : 9:16 · Référence : K-1815 Terrebonne · Outil : CapCut</span>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">0–3s<div class="beat">Accroche</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"Cette cour était un rectangle de boue et de gazon mort. 3 semaines plus tard..."</div>
+        <p class="visual">Visuel : Gros plan du résultat final — terrasse pavée lumineuse, haies taillées, gazon parfait. L'accroche donne d'abord la récompense, puis recule vers le point de départ.</p>
+        <p class="instruction">INSTRUCTION TOURNAGE : Heure dorée obligatoire pour ce plan. C'est l'image qui fait décider de regarder ou non.</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">3–12s<div class="beat">Avant</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"L'état initial. Rien d'exceptionnel — mais un potentiel évident."</div>
+        <p class="visual">Visuel : Vue large de la cour abandonnée — gazon mort, asphalte fissuré, vieux cabanon, clôture rouillée. Plan de 5 secondes wide shot + 2 gros plans détails dégradation.</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">12–32s<div class="beat">Équipe en action</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"L'équipe Jardín Ideal. Du premier coup de pelle au gazon final."</div>
+        <p class="visual">Montage accéléré : 1) Machinerie excavatrice (5 sec accéléré) 2) Nivellement et compaction (4 sec) 3) Pose des pavés (6 sec — gros plan sur les joints) 4) Plantation haies et arbustes (3 sec) 5) Pose gazon en rouleau ou ensemencement (2 sec)</p>
+        <p class="instruction">INSTRUCTION TOURNAGE : Filmer l'excavatrice en action — c'est le plan le plus partagé systématiquement. Identifier le bon angle de 9:16 pour chaque machine. Filmer tôt (lumière du matin, moins de chaleur, équipe plus fraîche).</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">32–43s<div class="beat">Résultat</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"4 mois de vie en plein air. Chaque été. Pour les années à venir."</div>
+        <p class="visual">Séquence résultat : vue aérienne si drone disponible (15 sec max selon règlementation) · Tour de la terrasse · Gros plan pavés joints · Famille ou enfants profitant de l'espace</p>
+      </div>
+    </div>
+
+    <div class="scene">
+      <div class="scene-time">43–45s<div class="beat">CTA</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"Votre cour mérite mieux. Soumission gratuite. ↓"</div>
+        <p class="visual">Texte animé sur fond vert foncé + logo Jardín Ideal. Lien en bio mentionné verbalement si narration possible.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="img-ph">
+    <div class="icon">🏡</div>
+    <p>Photo avant/après — prochain chantier cour arrière</p>
+    <span class="sub">Insérer ici : captures de chantier en cours (Ingrid) — état initial + progression jour par jour</span>
+  </div>
+
+  <h3>Guion Reel #2 — Témoignage client (60 secondes)</h3>
+  <p>Ce format génère le CTR le plus élevé dans le secteur rénovation. À planifier dès la prochaine livraison de cour arrière terminée. Le client parle face caméra sur son propre terrain.</p>
+  <div class="script-wrap">
+    <div class="script-header">
+      <span class="script-title">Reel cour arrière "Témoignage client — [Prénom], [Ville]"</span>
+      <span class="script-duration">Durée : 60 sec max · Format : 9:16 · Filmer dès prochaine livraison</span>
+    </div>
+    <div class="scene">
+      <div class="scene-time">0–5s<div class="beat">Intro client</div></div>
+      <div class="scene-content">
+        <div class="screen-text">Question à poser : "Pouvez-vous vous présenter et nous montrer votre nouvelle cour?"</div>
+        <p class="visual">Le client se présente debout sur sa nouvelle terrasse. Vue large pour montrer l'espace. Naturel, non scripté.</p>
+      </div>
+    </div>
+    <div class="scene">
+      <div class="scene-time">5–40s<div class="beat">Témoignage</div></div>
+      <div class="scene-content">
+        <div class="screen-text">3 questions à poser au client :</div>
+        <p class="visual">1) "Pourquoi avez-vous choisi Jardín Ideal?" 2) "Qu'est-ce qui vous a le plus surpris pendant les travaux?" 3) "Qu'est-ce que vos voisins vous ont dit depuis?" · Laisser le client parler naturellement. Ne pas couper les silences — CapCut les supprime au montage.</p>
+        <p class="instruction">INSTRUCTION ENTRETIEN : Daniel conduit l'entretien. Ingrid filme. Ne pas souffler les réponses — l'authenticité est l'actif principal de ce format.</p>
+      </div>
+    </div>
+    <div class="scene">
+      <div class="scene-time">40–60s<div class="beat">Tour du terrain</div></div>
+      <div class="scene-content">
+        <div class="screen-text">"Voilà le résultat — après [X] jours de travaux."</div>
+        <p class="visual">Tour du terrain avec le client qui montre ses espaces préférés. Terminer sur une vue large + CTA texte animé.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG COUR ARRIÈRE -->
+<div class="section no-border" style="margin-top:32px;">
+  <h3>Plan du blog — Article cour arrière</h3>
+  <div class="blog-wrap">
+    <div class="blog-header">
+      <div class="blog-label">Article de blog · SEO · Français · ~1 500 mots</div>
+      <div class="blog-title">"5 transformations de cour arrière réalisées à Montréal en 2026 — budgets inclus"</div>
+      <div class="blog-meta">Mots-clés cibles : aménagement cour arrière Montréal · transformation cour Laval · pavé uni cour arrière Québec · prix aménagement extérieur 2026 · Jardín Ideal avis</div>
+    </div>
+    <div class="blog-section">
+      <span class="num">01</span>
+      <h5>Introduction : l'été québécois est court — votre cour doit être prête (150 mots)</h5>
+      <p>Statistique : l'été au Québec dure en moyenne 14 semaines. Chaque semaine de retard est une semaine de moins à profiter. Invitation directe à planifier maintenant. Photo d'une cour Jardín Ideal en plein usage familial.</p>
+    </div>
+    <div class="blog-section">
+      <span class="num">02–06</span>
+      <h5>5 projets réalisés — format fiche projet (800 mots)</h5>
+      <p><strong>Projet 1 — Terrebonne (K-1815) :</strong> Piscine Mova 11×19 + terrasse pavée + haies. Budget : $42 000. Durée : 3 semaines. Photo avant + après. <strong>Projet 2 — Laval :</strong> Cour avant pavée + haies de cèdres. Budget : $18 000. 10 jours. <strong>Projet 3 — Brossard :</strong> Gazon synthétique + pergola aluminium. Budget : $22 000. 12 jours. <strong>Projet 4 — Saint-Eustache :</strong> Réfection complète cour + clôture vinyle. Budget : $15 500. 8 jours. <strong>Projet 5 — Montréal-Nord :</strong> Balcon composite + petite terrasse arrière. Budget : $12 200. 6 jours.</p>
+    </div>
+    <div class="blog-section">
+      <span class="num">07</span>
+      <h5>Guide de budget : combien coûte une cour arrière à Montréal? (250 mots)</h5>
+      <p>Tableau par type de projet : Mini-projet (gazon + bordures, $5K–$10K) · Projet moyen (pavé + plantation, $12K–$22K) · Grand projet (transformation complète avec piscine, $35K–$60K+). Facteurs qui influencent le prix : superficie, type de sol, accès au chantier, matériaux choisis.</p>
+    </div>
+    <div class="blog-section">
+      <span class="num">08</span>
+      <h5>FAQ et objections courantes (100 mots)</h5>
+      <p>"Mon terrain est petit — est-ce que ça vaut la peine?" · "Mes voisins ont fait ça et ça a pris 6 mois." · "J'ai peur des surprises de coûts." · "Ma cour a une pente compliquée." Réponses directes, sans jargon.</p>
+    </div>
+    <div class="blog-cta">
+      <p>CTA final : "Planifiez votre projet maintenant — soumission gratuite, réponse en 48h. Les places pour août sont limitées. → groupe-ideal.com"</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     SECTION 04 — CALENDRIER + RESPONSABLES
+═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">04 · Calendrier de Publication &amp; Responsables</div>
+  <h2>Plan d'exécution semaine par semaine — Juillet–Août 2026</h2>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Tâche</th>
+          <th>Campagne</th>
+          <th>Responsable</th>
+          <th>Outil</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>23–30 juin</td>
+          <td>Pauser img 1/2/3/4 balcon dans Meta Ads Manager + brief Ingrid pour tournage</td>
+          <td>Balcons</td>
+          <td>Daniel</td>
+          <td>Meta Ads</td>
+          <td><span class="badge b-red">Urgent</span></td>
+        </tr>
+        <tr>
+          <td>1–7 juillet</td>
+          <td>Tournage Reel balcon #1 sur chantier en cours (toutes scènes du guion)</td>
+          <td>Balcons</td>
+          <td>Ingrid (terrain) · Daniel (validation)</td>
+          <td>iPhone + trépied</td>
+          <td><span class="badge b-yel">À planifier</span></td>
+        </tr>
+        <tr>
+          <td>7–10 juillet</td>
+          <td>Montage Reel balcon #1 dans CapCut — sous-titres + CTA</td>
+          <td>Balcons</td>
+          <td>Daniel</td>
+          <td>CapCut</td>
+          <td><span class="badge b-yel">À planifier</span></td>
+        </tr>
+        <tr>
+          <td>11 juillet</td>
+          <td><strong>Publication organique Reel balcon #1</strong> — Instagram + Facebook</td>
+          <td>Balcons</td>
+          <td>Daniel</td>
+          <td>Meta Business Suite</td>
+          <td><span class="badge b-dark">Lancement</span></td>
+        </tr>
+        <tr>
+          <td>14 juillet</td>
+          <td>Mesure CTR J+3 — si CTR &gt;3% : lancer campagne payante $15/jour (Segment A)</td>
+          <td>Balcons</td>
+          <td>Daniel</td>
+          <td>Meta Ads Manager</td>
+          <td><span class="badge b-yel">Conditionnel</span></td>
+        </tr>
+        <tr>
+          <td>15 juillet</td>
+          <td>Publier carrusel "teaser blog balcon" — 5 slides avec extrait tableau comparatif</td>
+          <td>Balcons</td>
+          <td>Daniel</td>
+          <td>Canva + Meta</td>
+          <td><span class="badge b-gray">Planifié</span></td>
+        </tr>
+        <tr>
+          <td>18 juillet</td>
+          <td>Tournage chantier cour arrière — toutes scènes Reel #1 (équipe en action)</td>
+          <td>Cour Arrière</td>
+          <td>Ingrid (terrain) · Daniel (validation)</td>
+          <td>iPhone + trépied</td>
+          <td><span class="badge b-yel">À confirmer selon chantier</span></td>
+        </tr>
+        <tr>
+          <td>18–19 juillet</td>
+          <td>Rédaction + mise en page article blog balcon (~1 200 mots)</td>
+          <td>Balcons</td>
+          <td>Daniel (rédaction) · Claude (structure)</td>
+          <td>WordPress / Wix</td>
+          <td><span class="badge b-gray">Planifié</span></td>
+        </tr>
+        <tr>
+          <td>19 juillet</td>
+          <td><strong>Publication organique Reel cour arrière #1</strong> — Instagram + Facebook</td>
+          <td>Cour Arrière</td>
+          <td>Daniel</td>
+          <td>Meta Business Suite</td>
+          <td><span class="badge b-dark">Lancement</span></td>
+        </tr>
+        <tr>
+          <td>21 juillet</td>
+          <td>Mesure CPL balcon J+7 — si CPL &lt;$80 : maintenir; si CPL &gt;$80 : réviser copy</td>
+          <td>Balcons</td>
+          <td>Daniel</td>
+          <td>Meta Ads + Pipedrive</td>
+          <td><span class="badge b-gray">Planifié</span></td>
+        </tr>
+        <tr>
+          <td>22 juillet</td>
+          <td>Si CTR cour arrière &gt;3% : lancer campagne payante $20/jour (Segment A)</td>
+          <td>Cour Arrière</td>
+          <td>Daniel</td>
+          <td>Meta Ads Manager</td>
+          <td><span class="badge b-yel">Conditionnel</span></td>
+        </tr>
+        <tr>
+          <td>25 juillet</td>
+          <td>Publication article blog cour arrière + story teaser Instagram</td>
+          <td>Cour Arrière</td>
+          <td>Daniel</td>
+          <td>Blog + Canva</td>
+          <td><span class="badge b-gray">Planifié</span></td>
+        </tr>
+        <tr>
+          <td>28 juillet</td>
+          <td>Lancer Reel balcon #2 (transparence prix) si CPL Reel #1 &lt;$80</td>
+          <td>Balcons</td>
+          <td>Daniel</td>
+          <td>Canva + CapCut</td>
+          <td><span class="badge b-yel">Conditionnel Ph.2</span></td>
+        </tr>
+        <tr>
+          <td>1 août</td>
+          <td>Bilan mensuel juillet — CPL, leads, CTR, fréquence — ajustements Phase 2</td>
+          <td>Les deux</td>
+          <td>Daniel</td>
+          <td>Meta Ads + Pipedrive</td>
+          <td><span class="badge b-gray">Planifié</span></td>
+        </tr>
+        <tr>
+          <td>Dès prochaine livraison cour</td>
+          <td>Filmer témoignage client cour arrière (guion Reel #2) — planifier à la livraison du chantier</td>
+          <td>Cour Arrière</td>
+          <td>Ingrid + Daniel + Client</td>
+          <td>iPhone</td>
+          <td><span class="badge b-yel">À confirmer</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     SECTION 05 — PIÈCES VISUELLES & OUTILS
+═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">05 · Pièces Visuelles &amp; Outils de Production</div>
+  <h2>Ce qu'il faut produire — et avec quoi</h2>
+
+  <div class="callout">
+    <h3>Règle de production Jardín Ideal</h3>
+    <p>Chaque pièce visuelle a un seul objectif principal. Ne jamais mélanger : un Reel = une transformation. Un carrusel = un seul concept. Une story = un seul CTA. La clarté du message est directement liée au CTR.</p>
+    <ul>
+      <li>Filmer toujours en 9:16 (vertical) — même si l'équipe préfère le paysage</li>
+      <li>Stabilisateur recommandé pour les plans de marche (type DJI Osmo ou Insta360 Flow)</li>
+      <li>Son ambiance OK — voix off dans CapCut si besoin</li>
+      <li>Sous-titres toujours activés (80% des Reels vus sans son)</li>
+    </ul>
+  </div>
+
+  <h3>Outils par type de pièce</h3>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-icon">🎬</div>
+      <div class="tool-name">CapCut</div>
+      <div class="tool-use">Montage vidéo Reels</div>
+      <ul>
+        <li>Sous-titres automatiques en français</li>
+        <li>Accélération ×2 à ×8 pour le process</li>
+        <li>Transitions "cut" seulement (éviter effets flashy)</li>
+        <li>Texte animé pour CTA final</li>
+        <li>Export : 1080×1920 / 60fps</li>
+      </ul>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">🎨</div>
+      <div class="tool-name">Canva</div>
+      <div class="tool-use">Images statiques &amp; carrusels</div>
+      <ul>
+        <li>Template carrusel 5–8 slides (format 1:1 pour FB, 4:5 pour IG)</li>
+        <li>Palette : vert foncé #1E3A20 + or #C8A45A</li>
+        <li>Slides "transparence prix" Reel #2</li>
+        <li>Infographies blog (tableau comparatif)</li>
+        <li>Templates stories avec CTA swipe-up</li>
+      </ul>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">📊</div>
+      <div class="tool-name">Meta Ads Manager</div>
+      <div class="tool-use">Campagnes payantes</div>
+      <ul>
+        <li>Campagne génération de leads (formulaire natif)</li>
+        <li>Duplication campagne trafic → leads (Reel K-1815)</li>
+        <li>A/B test copy urgent vs transparence prix</li>
+        <li>Suivi CPL, CTR, fréquence</li>
+        <li>Budget quotidien : $15 (Ph.1) → $25 (Ph.2)</li>
+      </ul>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">📋</div>
+      <div class="tool-name">Pipedrive CRM</div>
+      <div class="tool-use">Suivi des leads</div>
+      <ul>
+        <li>Chaque lead Meta → Pipedrive via Zapier</li>
+        <li>Étapes : Nouveau → Qualifié → Devis envoyé → Fermé</li>
+        <li>Tag obligatoire : source (balcon / cour arrière)</li>
+        <li>Délai de contact cible : &lt;2h après réception</li>
+        <li>Rapport hebdomadaire lundi matin</li>
+      </ul>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">📱</div>
+      <div class="tool-name">iPhone (terrain)</div>
+      <div class="tool-use">Tournage sur chantier</div>
+      <ul>
+        <li>Mode vidéo 4K 60fps (ou 1080p 60fps si stockage limité)</li>
+        <li>Format portrait 9:16 obligatoire</li>
+        <li>Stabilisateur : DJI Osmo Mobile recommandé</li>
+        <li>Lumière : privilégier matin et heure dorée (éviter 11h–14h)</li>
+        <li>Backup : envoyer sur Google Drive après tournage</li>
+      </ul>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon">✍️</div>
+      <div class="tool-name">Claude Code</div>
+      <div class="tool-use">Rédaction &amp; scripts</div>
+      <ul>
+        <li>Génération des guions Reel</li>
+        <li>Rédaction des articles blog</li>
+        <li>Adaptation du copy selon les A/B tests</li>
+        <li>Création des briefings de campagne</li>
+        <li>Plans de contenu hebdomadaires</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Pièces visuelles à produire — checklist complète</h3>
+  <div class="grid-2">
+    <div>
+      <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:3px;color:var(--or);text-transform:uppercase;margin-bottom:8px;">CAMPAGNE BALCONS</p>
+      <div class="action-item">
+        <div class="action-side yel"></div>
+        <div class="action-content">
+          <h4>Reel #1 — Avant/après balcon (60 sec)</h4>
+          <p>Tournage sur prochain chantier balcon · CapCut · Sous-titres obligatoires</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-side yel"></div>
+        <div class="action-content">
+          <h4>Reel #2 — Transparence prix (45 sec)</h4>
+          <p>Slides Canva + montage CapCut · À lancer si Reel #1 CPL &lt;$80</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-side grn"></div>
+        <div class="action-content">
+          <h4>Carrusel — Teaser article blog (5 slides)</h4>
+          <p>Canva template · Extrait tableau bois vs composite · CTA lien en bio</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-side grn"></div>
+        <div class="action-content">
+          <h4>3 photos organiques balcons réalisés</h4>
+          <p>Archives Ingrid · Format 1:1 pour feed · Copy court avec spécification matériau</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:3px;color:#7DBF87;text-transform:uppercase;margin-bottom:8px;">CAMPAGNE COUR ARRIÈRE</p>
+      <div class="action-item">
+        <div class="action-side yel"></div>
+        <div class="action-content">
+          <h4>Reel #1 — Transformation cour (45 sec)</h4>
+          <p>Tournage prochain chantier actif · Équipe en action · CapCut</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-side yel"></div>
+        <div class="action-content">
+          <h4>Reel #2 — Témoignage client (60 sec)</h4>
+          <p>Planifier à la prochaine livraison · Daniel conduit l'entretien · Ingrid filme</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-side grn"></div>
+        <div class="action-content">
+          <h4>Carrusel — "5 projets avec budgets" (8 slides)</h4>
+          <p>Canva · Teaser de l'article blog · 1 projet par slide + prix approximatif</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-side grn"></div>
+        <div class="action-content">
+          <h4>2 stories par semaine avec CTA soumission</h4>
+          <p>Canva template story · Swipe-up vers groupe-ideal.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="img-ph" style="min-height:100px;">
+    <div class="icon">📁</div>
+    <p>Dossier de production visuels</p>
+    <span class="sub">Insérer ici : lien vers le dossier partagé Google Drive / OneDrive contenant toutes les ressources brutes (tournage Ingrid) et les fichiers Canva</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     SECTION 06 — KPIs
+═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">06 · KPIs &amp; Mesure de Performance</div>
+  <h2>Les chiffres qui définissent le succès — mesurés chaque lundi</h2>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>KPI</th>
+          <th>Campagne Balcons</th>
+          <th>Campagne Cour Arrière</th>
+          <th>Seuil d'alerte</th>
+          <th>Fréquence</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CPL (coût par lead)</td>
+          <td class="td-grn">&lt;$80 CAD (Ph.1)<br>&lt;$60 CAD (Ph.2)</td>
+          <td class="td-grn">&lt;$100 CAD (Ph.1)<br>&lt;$80 CAD (Ph.2)</td>
+          <td class="td-red">&gt;$120 → Pause</td>
+          <td>Chaque lundi</td>
+          <td>Meta Ads</td>
+        </tr>
+        <tr>
+          <td>Leads / semaine</td>
+          <td class="td-grn">5–8 (Ph.1) · 10–15 (Ph.2)</td>
+          <td class="td-grn">8–12 (Ph.1) · 15–20 (Ph.2)</td>
+          <td class="td-red">&lt;3 → Réviser copy</td>
+          <td>Chaque lundi</td>
+          <td>Pipedrive + Meta</td>
+        </tr>
+        <tr>
+          <td>CTR annonce Reel</td>
+          <td class="td-grn">&gt;3% (seuil de boost payant)</td>
+          <td class="td-grn">&gt;3% (seuil de boost payant)</td>
+          <td class="td-red">&lt;1.5% → Ne pas booster</td>
+          <td>J+3 après publication</td>
+          <td>Meta Ads</td>
+        </tr>
+        <tr>
+          <td>Vues / Reel (organique)</td>
+          <td class="td-grn">&gt;1 000 vues (J+7)</td>
+          <td class="td-grn">&gt;1 500 vues (J+7)</td>
+          <td class="td-red">&lt;500 → Réviser hook 0–3s</td>
+          <td>J+7 après publication</td>
+          <td>Meta Business Suite</td>
+        </tr>
+        <tr>
+          <td>Fréquence annonce</td>
+          <td class="td-grn">&lt;2.5 (Phase 1)</td>
+          <td class="td-grn">&lt;3.0 (Phase 1)</td>
+          <td class="td-red">&gt;3.0 → Changer créatif</td>
+          <td>Chaque semaine</td>
+          <td>Meta Ads</td>
+        </tr>
+        <tr>
+          <td>Taux de contact CRM (&lt;2h)</td>
+          <td class="td-grn">&gt;80% des leads</td>
+          <td class="td-grn">&gt;80% des leads</td>
+          <td class="td-red">&lt;60% → Revoir process</td>
+          <td>Chaque semaine</td>
+          <td>Pipedrive</td>
+        </tr>
+        <tr>
+          <td>Taux de conversion devis → contrat</td>
+          <td class="td-or">À mesurer (base 0)</td>
+          <td class="td-or">À mesurer (base 0)</td>
+          <td>Objectif &gt;25%</td>
+          <td>Mensuel</td>
+          <td>Pipedrive</td>
+        </tr>
+        <tr>
+          <td>Budget dépensé vs CPL cible</td>
+          <td class="td-or">$15/jour Ph.1 → $25/jour Ph.2</td>
+          <td class="td-or">$20/jour Ph.1 → $30/jour Ph.2</td>
+          <td class="td-red">Augmenter seulement si CPL dans cible</td>
+          <td>Hebdomadaire</td>
+          <td>Meta Ads</td>
+        </tr>
+        <tr>
+          <td>Partages / Reel (signal viral)</td>
+          <td class="td-grn">&gt;5 partages (objectif)</td>
+          <td class="td-grn">&gt;10 partages (objectif)</td>
+          <td class="td-or">0 partages → Réviser storytelling</td>
+          <td>J+7 après publication</td>
+          <td>Meta Business Suite</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pq">
+    "Un KPI qui n'est pas mesuré chaque lundi n'existe pas. La réunion du lundi matin commence avec ces chiffres — pas avec les impressions."
+    <cite style="font-family:var(--font-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gris);margin-top:10px;display:block;">— Règle opérationnelle · Jardín Ideal · Été 2026</cite>
+  </div>
+
+  <h3>Condition de passage Phase 1 → Phase 2</h3>
+  <div class="grid-2">
+    <div class="action-item">
+      <div class="action-side grn"></div>
+      <div class="action-content">
+        <h4>Campagne Balcons — Passage Ph.2 si :</h4>
+        <p>CPL &lt;$80 CAD sur 2 semaines consécutives <strong>ET</strong> CTR &gt;3% <strong>ET</strong> fréquence &lt;2.5. Action : augmenter budget à $25/jour + lancer Reel #2 (transparence prix).</p>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-side grn"></div>
+      <div class="action-content">
+        <h4>Campagne Cour Arrière — Passage Ph.2 si :</h4>
+        <p>CPL &lt;$100 CAD sur 2 semaines consécutives <strong>ET</strong> CTR &gt;3% <strong>ET</strong> fréquence &lt;3.0. Action : augmenter budget à $30/jour + lancer reciblage carrusel "5 projets".</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ─── FOOTER ─── -->
+<div class="footer">
+  <p>Jardín Ideal · Plan Contenu Balcons &amp; Cour Arrière · Juillet–Août 2026</p>
+  <p>Fichier : plan_contenido_balcons_cour_arriere.html · Dossier : materiales</p>
+  <p>Prochaine révision : lundi 28 juillet 2026 (bilan mi-saison)</p>
+</div>
+
+</div>
