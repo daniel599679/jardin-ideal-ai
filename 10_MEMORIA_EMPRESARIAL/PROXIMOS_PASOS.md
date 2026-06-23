@@ -39,9 +39,9 @@
 
 | Tarea | Por qué es P2 | Fecha objetivo |
 |-------|--------------|----------------|
-| Alex Fase 2: identificar plataforma actual de Alex | Desbloquea toda la integración | 2026-06-30 |
-| Alex Fase 2: crear campos personalizados en Pipedrive | Prerequisito para auto-calificación | 2026-07-07 |
-| Alex Fase 2: Zapier formulario → Pipedrive → notif. Daniel | Elimina manual lag en leads | 2026-07-07 |
+| Alex: responder 5 DECISIONES en ALEX_LANDING_PAGE_CONTEXT.md | Desbloquea la implementación | 2026-06-30 |
+| Alex Fase 2: crear 40+ campos en Pipedrive (ver ALEX_PIPEDRIVE_FIELDS.md) | Prerequisito para Zapier | 2026-07-07 |
+| Alex Fase 2: configurar 3 Zaps (formulario → Pipedrive → notif.) | Elimina lag manual en leads | 2026-07-07 |
 | Primer lunes ejecutar el DAILY_IDEA_REVIEW completo | Establecer el ritual | 2026-06-30 |
 | Compartir ICS + Home Workflow con el equipo | Capacitación 30 min | 2026-06-30 |
 | Activar suscripción Epidemic Sound o Artlist | Necesaria para música en reels | 2026-07-07 |

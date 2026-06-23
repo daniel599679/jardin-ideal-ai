@@ -4,6 +4,33 @@
 
 ---
 
+## 2026-06-23 — Sesión 6: ALEX Sistema Operativo Unificado — 7 archivos
+
+### Sistemas creados
+| Archivo | Descripción |
+|---------|-------------|
+| `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_UNIFIED_AGENT_SYSTEM.md` | Sistema maestro: 3 fases completas, scores, continuidad de datos, reglas de oro |
+| `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_PERSONALITY.md` | Personalidad, voz, 4 pilares, vocabulario permitido/prohibido, templates |
+| `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_CONVERSATION_FLOW.md` | 15+ flujos exactos en Fase 1/2/3 con ramas y salidas |
+| `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_DECISION_TREE.md` | 8 árboles: servicio, zona, pre-score, intención, objeción, escalada |
+| `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_OBJECTION_HANDLING.md` | 11 objeciones con scripts en francés para Fase 1/2/3 |
+| `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_PIPEDRIVE_FIELDS.md` | 40+ campos a crear + 3 automatizaciones Zapier diseñadas |
+| `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_LEAD_REPORT_TEMPLATE.md` | Reporte pre-visita 9 secciones + versión WhatsApp compacta |
+
+### Sistemas modificados
+| Archivo | Cambio |
+|---------|--------|
+| `10_MEMORIA_EMPRESARIAL/MEMORIA_GLOBAL.md` | Sección Alex actualizada con referencia a 7 archivos del sistema |
+| `10_MEMORIA_EMPRESARIAL/ESTADO_ACTUAL_ECOSISTEMA.md` | Alex → ✅ Sistema diseñado completo |
+| `10_MEMORIA_EMPRESARIAL/PROXIMOS_PASOS.md` | Acciones Alex Fase 2 actualizadas con referencias a archivos específicos |
+
+### Git
+| Commit | Descripción |
+|--------|-------------|
+| (pending) | ALEX sistema operativo unificado — 7 archivos |
+
+---
+
 ## 2026-06-23 — Sesión 5: Alex + Landing Page + Sistema Marketing
 
 ### Sistemas creados
