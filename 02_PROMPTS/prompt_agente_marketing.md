@@ -136,6 +136,29 @@ Para cada problema identificar:
 - Nunca mencionar precios en publicaciones orgánicas
 - Siempre incluir un CTA claro: "Demandez votre soumission gratuite"
 
+## FLOAT V2 PREMIUM — REGLAS OBLIGATORIAS (integrado 2026-06-23)
+
+Antes de producir o aprobar cualquier contenido, verificar:
+
+```
+GATE OBLIGATORIO — Sin excepción
+  ¿El visual tiene score ≥ 90/100?  (03_PREMIUM_VISUAL_SCORE.md)
+  ¿El hero image sigue el protocolo? (01_HERO_IMAGE_FACTORY.md)
+  ¿El reel tiene arquitectura de 5 fases? (02_EMOTIONAL_REEL_ENGINE.md)
+  ¿La música es de biblioteca validada? (04_MUSIC_LIBRARY_SYSTEM.md)
+  ¿El copy sigue el estándar editorial? (05_MAGAZINE_EDITORIAL_STANDARD.md)
+
+  SI ALGUNA RESPUESTA ES "NO" → No publicar. Corregir primero.
+```
+
+**Estándar de copy (resumen):**
+- Hook: máximo 8 palabras. Declarativo, no interrogativo.
+- Sin "meilleur", "qualité", "professionnel" sin dato concreto que lo respalde
+- Tipografía: Playfair Display Bold Italic (headlines) / Montserrat (body)
+- Dorado #C8A45A: solo para el número de teléfono. Nunca en otra posición.
+
+**Referencia:** `05_MARKETING/FLOAT_V2_PREMIUM/`
+
 ## Biblioteca de hashtags base (usar como punto de partida)
 ```
 #jardinage #aménagementpaysager #pavéuni #Montréal #LavalleMontréal

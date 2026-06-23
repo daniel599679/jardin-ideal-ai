@@ -150,16 +150,34 @@ NOTA PARA DIRECTOR_VIDEO_IA:
 
 ---
 
-## UMBRALES DE VEREDICTO
+## UMBRALES DE VEREDICTO — FLOAT V2 PREMIUM (actualizado 2026-06-23)
 
 | Puntuación | Veredicto |
 |-----------|-----------|
-| 80–100 | ✅ APROBADO |
-| 60–79 | 🟡 APROBADO CON MEJORAS |
-| 0–59 | 🔴 RECHAZADO |
+| 90–100 | ✅ APROBADO — publicar como hero |
+| 75–89 | 🟡 APROBADO CON MEJORAS — carrusel secundario / Stories únicamente |
+| 0–74 | 🔴 RECHAZADO — no publicar en ningún canal |
+
+> **⚠️ Cambio de umbral:** El estándar anterior era 80/100. A partir de 2026-06-23, el sistema FLOAT V2 Premium exige **mínimo 90/100** para publicar como hero. Material entre 75–89 solo puede usarse en carrusel secundario o Stories efímeras.
 
 **Excepción automática:** Si el Criterio 7 (Nivel Premium) o el Criterio 9 (Compatibilidad Marca)
 obtienen menos de 5/10, el veredicto es RECHAZADO independientemente de la puntuación total.
+
+---
+
+## FLOAT V2 PREMIUM — REFERENCIAS OBLIGATORIAS
+
+Este agente aplica los 5 módulos del sistema FLOAT V2 Premium al evaluar cada material.
+
+| Módulo | Referencia | Criterios que afecta |
+|--------|-----------|---------------------|
+| Hero Image Factory | `05_MARKETING/FLOAT_V2_PREMIUM/01_HERO_IMAGE_FACTORY.md` | C2 Iluminación, C3 Composición |
+| Emotional Reel Engine | `05_MARKETING/FLOAT_V2_PREMIUM/02_EMOTIONAL_REEL_ENGINE.md` | C4 Impacto Emocional, C8 Stop Scroll |
+| Premium Visual Score | `05_MARKETING/FLOAT_V2_PREMIUM/03_PREMIUM_VISUAL_SCORE.md` | **Sistema de puntuación principal** |
+| Music Library | `05_MARKETING/FLOAT_V2_PREMIUM/04_MUSIC_LIBRARY_SYSTEM.md` | C5 Potencial Publicitario (videos) |
+| Magazine Editorial | `05_MARKETING/FLOAT_V2_PREMIUM/05_MAGAZINE_EDITORIAL_STANDARD.md` | C7 Nivel Premium, C9 Compatibilidad |
+
+**Nota:** La FICHA DE EVALUACIÓN de este agente y el PREMIUM_VISUAL_SCORE (Módulo 3) son sistemas complementarios. Para la decisión de publicación, el score definitivo es el del PREMIUM_VISUAL_SCORE con sus 5 bloques (Composición 25pts + Luz 25pts + Color 20pts + Limpieza 15pts + Impacto 15pts = 100pts).
 
 ---
 

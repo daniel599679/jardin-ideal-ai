@@ -1,5 +1,5 @@
 # MEMORIA GLOBAL — JARDÍN IDEAL AI SYSTEM
-**Versión:** 1.1 | **Última actualización:** 2026-06-23
+**Versión:** 1.2 | **Última actualización:** 2026-06-23
 **Propósito:** Documento maestro de contexto. Cualquier IA debe leer este archivo primero.
 
 ---
@@ -82,10 +82,19 @@ Jardin_Ideal_AI_System/
 - **Protocolo:** Producción premium de contenido en <60 minutos por proyecto
 - **Cubre:** 9 servicios × storyboard + reel + carrusel + Meta Ads + hooks
 
-### FLOAT V2 — Evolución Fábrica de Contenido
-- **Estado:** 🟡 PLANIFICADO — 7 módulos
-- **Archivo:** `FLOAT_V2_ROADMAP.md`
-- **Próximo módulo:** Hero Image Factory (prioridad CRÍTICA, fecha 2026-06-27)
+### FLOAT V2 PREMIUM — Sistema de Producción Premium
+- **Estado:** ✅ COMPLETO — 5 módulos productivos + guardrails globales integrados
+- **Carpeta:** `05_MARKETING/FLOAT_V2_PREMIUM/`
+- **Módulos:**
+  - `01_HERO_IMAGE_FACTORY.md` — protocolo fotográfico (ventanas de luz, ángulos, Lightroom)
+  - `02_EMOTIONAL_REEL_ENGINE.md` — arquitectura de 5 fases para reels (0-20s)
+  - `03_PREMIUM_VISUAL_SCORE.md` — sistema de puntuación 100pts; **gate: ≥90/100 para publicar**
+  - `04_MUSIC_LIBRARY_SYSTEM.md` — 5 bibliotecas emocionales, fuentes licenciadas, -14 LUFS
+  - `05_MAGAZINE_EDITORIAL_STANDARD.md` — estándar Architectural Digest × Luxe Magazine
+  - `GLOBAL_CONTENT_GUARDRAILS.md` — 10 reglas globales para todos los agentes
+- **Integrado en:** 8 archivos del ecosistema (agentes, prompts, checklist, automatizaciones)
+- **Reporte completo:** `PREMIUM_SYSTEM_INTEGRATION_REPORT.md` (raíz del proyecto)
+- **Posicionamiento:** Techo-Bloc / Permacon / Architectural Digest level
 
 ### Sistema de Cliente Ideal (ICS)
 - **Estado:** ✅ COMPLETO

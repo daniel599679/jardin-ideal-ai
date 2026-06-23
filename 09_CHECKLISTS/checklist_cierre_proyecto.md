@@ -18,11 +18,14 @@
 - [ ] Mínimo 5 fotos desde ángulos distintos
 - [ ] Al menos 1 foto panorámica del conjunto
 - [ ] Al menos 1 foto de detalle (juntas de pavé-uni, escalier, etc.)
-- [ ] Fotos tomadas con buena luz (preferir luz natural, evitar mediodía con sombras duras)
-- [ ] Fotos subidas a la carpeta del proyecto en Drive/almacenamiento compartido
+- [ ] Fotos tomadas en **ventana de luz correcta** — hora dorada (06:30-09:00 o 16:30-19:00) o luz nublada difusa. **Nunca entre 11:00-14:00** (sombras duras, descalificación automática en FLOAT V2)
+- [ ] Set limpio: sin herramientas, vehículos, personas visibles en el frame
+- [ ] Fotos subidas a la carpeta `INBOX_MARKETING` del proyecto en Drive
 - [ ] Si se tienen fotos de "antes" → verificar que el "antes" también está guardado para el par antes/después
 
-**Nota para Marketing:** notificar al Agente Marketing que hay fotos de cierre disponibles → candidatas para contenido.
+**FLOAT V2 PREMIUM — Trigger automático:** Al tener fotos de cierre, notificar al AGENTE_CONTROL_CALIDAD_MAGAZINE para evaluación con PREMIUM_VISUAL_SCORE. Solo las fotos con **score ≥ 90/100** serán usadas en redes y Meta Ads.
+
+**Referencia:** `05_MARKETING/FLOAT_V2_PREMIUM/01_HERO_IMAGE_FACTORY.md` — protocolo de la sesión de 10 minutos para tomas de cierre.
 
 ---
 
@@ -82,6 +85,12 @@ Merci beaucoup !
 - [ ] Operaciones: marcar proyecto como **ENTREGADO** con fecha
 - [ ] Carpeta del proyecto: confirmar que tiene fotos antes + después, contrato, fotos de proceso
 - [ ] Notificar a Marketing: fotos de cierre disponibles en [ruta de la carpeta]
+- [ ] **FLOAT V2 PREMIUM:** Activar pipeline de contenido:
+  1. AGENTE_CONTROL_CALIDAD_MAGAZINE evalúa todas las fotos con PREMIUM_VISUAL_SCORE
+  2. Fotos ≥90/100 → candidatas para hero image / Meta Ads / reel
+  3. DIRECTOR_VIDEO_IA genera brief si hay material apto para reel
+  4. AGENTE_MONTAJE_VIDEO produce el paquete de producción
+  5. AGENTE_MARKETING (AGENTES_CALIDAD_Y_VIDEO) crea los copys y ads
 
 ---
 

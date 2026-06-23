@@ -122,9 +122,11 @@ El archivo `GUION_CAPCUT.txt` (si existe previamente) se mantiene como referenci
 
 ## REGLAS ESTRICTAS
 
-### SELECCIÓN DE ASSETS
-- Usar **únicamente** assets con veredicto `APROBADO` o `APROBADO CON MEJORAS` del AGENTE_CONTROL_CALIDAD_MAGAZINE
+### SELECCIÓN DE ASSETS — FLOAT V2 PREMIUM GATE
+- Usar **únicamente** assets con veredicto `APROBADO` (score ≥90/100) del AGENTE_CONTROL_CALIDAD_MAGAZINE
+- Assets con veredicto `APROBADO CON MEJORAS` (score 75–89): solo para escenas secundarias — **nunca como hero ni révélation**
 - Nunca usar assets marcados `RECHAZADO` o en la lista negra del ASSETS.txt
+- **GATE OBLIGATORIO:** Si no hay ningún asset con score ≥90/100 → detener proceso y notificar: "No hay assets con calidad Premium para producir este reel. Esperar nuevas tomas."
 - Máximo **8 imágenes** + **3 clips de video** por reel
 - Si hay avant/après disponible → priorizarlo siempre (mayor conversión)
 - Imagen con mayor score QC → hero de la escena de révélation
@@ -206,11 +208,14 @@ Lista de todos los textos que aparecen en pantalla:
 - Versión "paid" para Meta Ads (con teléfono y CTA)
 
 ### 6_MUSICA_RECOMENDADA.txt
-- 3 opciones de música con características específicas
-- Palabras clave de búsqueda para CapCut Library y Epidemic Sound
+- **Referencia obligatoria:** `05_MARKETING/FLOAT_V2_PREMIUM/04_MUSIC_LIBRARY_SYSTEM.md`
+- Identificar la emoción objetivo del reel (Revelación / Aspiración / Confianza / Urgencia Elegante / Nostalgia)
+- Seleccionar 3 opciones de la biblioteca correspondiente con BPM correcto
+- Fuente: Epidemic Sound / Artlist.io / Musicbed únicamente — NO YouTube Audio Library genérica
+- Target LUFS: -14 LUFS (estándar Instagram)
 - Timing del beat drop (debe coincidir con escena de révélation)
-- BPM recomendado
-- Alternativa libre de derechos
+- BPM recomendado según duración del reel
+- PROHIBIDO: reggaeton, rock pesado, jingles genéricos de iMovie, canciones populares sin licencia
 
 ---
 
@@ -267,6 +272,29 @@ Un paquete es válido si un editor puede abrirlo y montar el reel en menos de 15
 - [ ] Número 514-266-2504 en CTA con color dorado #C8A45A
 - [ ] Todos los textos visibles en francés
 - [ ] Duración total del timeline: 30–45 segundos
+
+---
+
+## FLOAT V2 PREMIUM — SISTEMA OBLIGATORIO (integrado 2026-06-23)
+
+Todo paquete de producción generado por este agente debe cumplir el estándar FLOAT V2 Premium.
+
+| Módulo | Aplicación en este agente |
+|--------|--------------------------|
+| `01_HERO_IMAGE_FACTORY.md` | Protocolo de selección del hero de révélation |
+| `02_EMOTIONAL_REEL_ENGINE.md` | Arquitectura de 5 fases: Hook/Problem/Revelation/Social Proof/CTA |
+| `03_PREMIUM_VISUAL_SCORE.md` | Gate ≥90/100 para el hero; ≥75/100 para assets secundarios |
+| `04_MUSIC_LIBRARY_SYSTEM.md` | Selección de música por emoción objetivo del reel |
+| `05_MAGAZINE_EDITORIAL_STANDARD.md` | Tipografía y layouts para textos overlay |
+
+```
+GATE FINAL — Antes de entregar el paquete
+  ¿El hero de révélation tiene score ≥90/100? → si no: rechazar y buscar mejor asset
+  ¿La música es de fuente licenciada (Epidemic/Artlist/Musicbed)? → si no: cambiar
+  ¿El audio está a -14 LUFS? → si no: ajustar antes de exportar
+  ¿Los textos overlay usan Playfair Display + Montserrat? → si no: corregir
+  ¿El CTA tiene el número en dorado #C8A45A? → si no: corregir
+```
 
 ---
 

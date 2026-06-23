@@ -66,6 +66,28 @@ Agente         : AGENTE_MARKETING_OPERACIONAL
 
 ---
 
+## FLOAT V2 PREMIUM — SISTEMA OBLIGATORIO
+
+Todo contenido producido o aprobado por este agente debe cumplir el estándar FLOAT V2 Premium.
+**Regla de publicación:** `SI VISUAL_SCORE < 90/100 → NO PUBLICAR.`
+
+| Archivo | Aplicación |
+|---------|-----------|
+| `05_MARKETING/FLOAT_V2_PREMIUM/01_HERO_IMAGE_FACTORY.md` | Validar hero image antes de publicar |
+| `05_MARKETING/FLOAT_V2_PREMIUM/02_EMOTIONAL_REEL_ENGINE.md` | Verificar arquitectura emocional del reel |
+| `05_MARKETING/FLOAT_V2_PREMIUM/03_PREMIUM_VISUAL_SCORE.md` | Score ≥90/100 obligatorio para publicar |
+| `05_MARKETING/FLOAT_V2_PREMIUM/04_MUSIC_LIBRARY_SYSTEM.md` | Música solo de bibliotecas validadas |
+| `05_MARKETING/FLOAT_V2_PREMIUM/05_MAGAZINE_EDITORIAL_STANDARD.md` | Copy y layout editorial |
+
+```
+GATE DE PUBLICACIÓN
+  VISUAL_SCORE ≥ 90 → ✅ Publicar
+  VISUAL_SCORE 80–89 → 🟡 Carrusel secundario / Stories — no hero
+  VISUAL_SCORE < 80  → 🔴 No publicar en ningún canal
+```
+
+---
+
 ## AGENTES RELACIONADOS
 - `05_MARKETING/AGENTES_CALIDAD_Y_VIDEO/AGENTE_MARKETING.md` → producción de copys y ads
 - `AGENTE_REPORTES.md` → consume métricas de este agente

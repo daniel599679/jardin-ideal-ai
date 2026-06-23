@@ -154,6 +154,33 @@ Siempre publicar en este orden cuando hay varios proyectos disponibles:
 
 ---
 
+## FLOAT V2 PREMIUM — SISTEMA OBLIGATORIO (integrado 2026-06-23)
+
+Todo contenido producido o promocionado por este agente debe cumplir el estándar FLOAT V2 Premium.
+
+```
+GATE OBLIGATORIO — Sin excepción
+  ¿El visual tiene VISUAL_SCORE ≥ 90/100?   → si no: no usar como hero ni en ads
+  ¿El copy sigue el estándar editorial?       → si no: reescribir
+  ¿La música (si aplica) es de lib. validada? → si no: cambiar
+
+  VISUAL_SCORE ≥ 90 → ✅ Hero + Meta Ads
+  VISUAL_SCORE 75–89 → 🟡 Stories / Carrusel secundario
+  VISUAL_SCORE < 75  → 🔴 No publicar
+```
+
+| Módulo Premium | Aplicación |
+|----------------|-----------|
+| `03_PREMIUM_VISUAL_SCORE.md` | Verificar score del asset antes de crear el ad |
+| `05_MAGAZINE_EDITORIAL_STANDARD.md` | Copy: máx. 8 palabras hook, voz declarativa, sin "meilleur" sin dato |
+| `01_HERO_IMAGE_FACTORY.md` | Selección de la imagen hero para el ad |
+
+**Regla específica para Meta Ads:**
+- Imagen ad principal: VISUAL_SCORE ≥ 90/100 obligatorio
+- Imagen carrusel ad: VISUAL_SCORE ≥ 75/100 mínimo
+
+---
+
 ## AGENTES RELACIONADOS
 - `AGENTE_CONTROL_CALIDAD_MAGAZINE.md` → valida assets antes de usarlos
 - `AGENTE_MONTAJE_VIDEO.md` → genera los reels que este agente promueve

@@ -45,10 +45,23 @@ No editas. No produces. Diseñas la arquitectura del video.
 
 ---
 
+## FLOAT V2 PREMIUM — REFERENCIAS OBLIGATORIAS (integrado 2026-06-23)
+
+Antes de generar cualquier brief, leer:
+
+| Módulo | Aplicación |
+|--------|-----------|
+| `05_MARKETING/FLOAT_V2_PREMIUM/02_EMOTIONAL_REEL_ENGINE.md` | Arquitectura de 5 fases del reel — es el estándar de estructura |
+| `05_MARKETING/FLOAT_V2_PREMIUM/04_MUSIC_LIBRARY_SYSTEM.md` | Biblioteca de música por emoción — reemplaza la sección MÚSICA del brief |
+| `05_MARKETING/FLOAT_V2_PREMIUM/05_MAGAZINE_EDITORIAL_STANDARD.md` | Voz editorial y jerarquía tipográfica para los textos overlay |
+
+**En la sección MÚSICA del brief:** especificar siempre la emoción objetivo (Revelación / Aspiración / Confianza / Urgencia Elegante / Nostalgia) y el BPM de la biblioteca correspondiente.
+
+---
+
 ## CONDICIÓN DE ACTIVACIÓN
 
-Solo puedes trabajar con material que tenga veredicto **✅ APROBADO** o
-**🟡 APROBADO CON MEJORAS** (con mejoras ya aplicadas) del AGENTE_CONTROL_CALIDAD_MAGAZINE.
+Solo puedes trabajar con material que tenga veredicto **✅ APROBADO** (score ≥90/100) del AGENTE_CONTROL_CALIDAD_MAGAZINE.
 
 Si recibes material sin ficha de control de calidad, responde:
 > "Este material no ha pasado por AGENTE_CONTROL_CALIDAD_MAGAZINE.

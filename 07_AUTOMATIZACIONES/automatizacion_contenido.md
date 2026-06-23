@@ -8,25 +8,31 @@ El contenido constante genera confianza. La automatización garantiza que el con
 
 ---
 
-## FLUJO 1 — Programación semanal de contenido
+## FLUJO 1 — Programación semanal de contenido (FLOAT V2 Premium integrado)
 
 ```
 DISPARADOR
 └── Bloque de contenido del calendario: Miércoles 10:00 AM
 
 PROCESO (manual con herramientas de programación)
-├── 1. Seleccionar las fotos de la semana (desde Drive o galería)
-├── 2. Redactar los textos siguiendo las fórmulas de 05_MARKETING/contenido_organico.md
+├── 0. GATE FLOAT V2 PREMIUM — ejecutar antes de todo:
+│       ¿Hay fotos con VISUAL_SCORE ≥ 90/100 disponibles? (evaluar con 03_PREMIUM_VISUAL_SCORE.md)
+│       Si NO → no programar hero/reel. Solo carrusel con score ≥75 si existe.
+│       Si SÍ → continuar con el flujo.
+├── 1. Seleccionar las fotos de la semana — solo de la carpeta DISPONIBLE (score ≥90 → hero, score 75-89 → secundario)
+├── 2. Redactar los textos siguiendo el MAGAZINE_EDITORIAL_STANDARD (05_MARKETING/FLOAT_V2_PREMIUM/05)
+│       Hook: máx. 8 palabras | Voz: declarativa | Sin "meilleur/qualité/professionnel" sin dato
 ├── 3. Programar en Meta Business Suite o Buffer:
-│       Lunes: Antes/Después
-│       Martes: Consejo técnico
-│       Miércoles: Proceso de obra
-│       Jueves: Testimonio
-│       Viernes: Inspiración
+│       Lunes: Antes/Después (hero ≥90pts)
+│       Martes: Consejo técnico o proceso
+│       Miércoles: Carrusel de detalle
+│       Jueves: Testimonio o prueba social
+│       Viernes: Inspiración / Reel
 └── 4. Verificar que todas las publicaciones de la semana siguiente estén programadas
 
 RESULTADO
 └── Semana siguiente 100% cubierta de contenido sin intervención diaria
+    y con estándar visual ≥90/100 en todas las publicaciones hero
 ```
 
 **Herramienta primaria:** Meta Business Suite (gratuito, publica en Instagram y Facebook simultáneamente)
@@ -51,24 +57,31 @@ HERRAMIENTA NATIVA (sin Make)
 
 ---
 
-## FLUJO 3 — Alerta de foto de obra disponible para contenido
+## FLUJO 3 — Alerta de foto de obra disponible para contenido (FLOAT V2 Premium integrado)
 
 ```
 DISPARADOR
-└── Equipo de obra sube fotos a la carpeta compartida (Drive/Dropbox)
-    con la etiqueta "PARA MARKETING" o en carpeta específica
+└── Equipo de obra sube fotos a la carpeta INBOX_MARKETING (Drive/Dropbox)
 
-ACCIÓN
+ACCIÓN — PASO 1: Evaluación Premium (antes de notificar a Marketing)
+└── AGENTE_CONTROL_CALIDAD_MAGAZINE evalúa cada foto con PREMIUM_VISUAL_SCORE
+    → Score ≥ 90/100: mover a carpeta DISPONIBLE/HERO
+    → Score 75–89:    mover a carpeta DISPONIBLE/SECUNDARIO
+    → Score < 75:     mover a carpeta RECHAZADO (no publicar)
+
+ACCIÓN — PASO 2: Notificación a Marketing (solo si hay material aprobado)
 └── Notificación automática al agente de Marketing:
-    "📸 FOTOS NUEVAS DISPONIBLES
+    "📸 FOTOS EVALUADAS — FLOAT V2 PREMIUM
      Proyecto: [Nombre del proyecto]
-     Tipo: [Proceso / Cierre / Antes]
-     Carpeta: [Link directo]
-     → Revisar y programar contenido"
+     Hero (≥90pts): [N] fotos → candidatas para reel y Meta Ads hero
+     Secundario (75-89pts): [N] fotos → candidatas para carrusel
+     Rechazadas (<75pts): [N] fotos → no usar
+     Carpeta: [Link directo a DISPONIBLE/HERO]
+     → Activar pipeline FLOAT V2: QC → Director → Montaje → Marketing"
 ```
 
 **Herramienta:** Google Drive + Make.com (Watch Files trigger) → WhatsApp notificación
-**Alternativa manual:** Carpeta "INBOX MARKETING" en Drive que el agente revisa cada miércoles
+**Alternativa manual:** Carpeta "INBOX_MARKETING" en Drive que el agente evalúa con PREMIUM_VISUAL_SCORE cada miércoles antes del bloque de contenido
 
 ---
 
