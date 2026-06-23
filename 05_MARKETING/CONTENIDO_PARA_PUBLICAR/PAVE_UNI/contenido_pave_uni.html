@@ -1,0 +1,1864 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pavé-Uni — Contenu Meta Ads · Jardín Ideal 2026</title>
+<style>
+  /* ═══════════════════════════════════════════
+     TOKENS — Jardín Ideal Design System
+  ═══════════════════════════════════════════ */
+  :root {
+    --vf:          #1E3A20;
+    --vert:        #2C4A2E;
+    --vert-med:    #3D6B42;
+    --vert-clair:  #5A8F62;
+    --or:          #C8A45A;
+    --or-pale:     #E8C97A;
+    --noir:        #0D0E0B;
+    --gf:          #2A2B28;
+    --gris:        #6B6B63;
+    --gris-clair:  #B8B8B0;
+    --cr:          #F5F2EB;
+    --creme-fonce: #EDE9E0;
+    --w:           #FFFFFF;
+    --rouge:       #B83232;
+    --rouge-clair: #F5E8E8;
+    --jaune:       #C8850A;
+    --jaune-clair: #FEF5E4;
+    --vert-bg:     #EAF2EB;
+
+    --font-display: Georgia, 'Times New Roman', serif;
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Courier New', Courier, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--cr); color: var(--gf); font-family: var(--font-body); font-size: 14.5px; line-height: 1.75; }
+
+  /* ─── COVER ─── */
+  .cover {
+    background: var(--vf);
+    padding: 56px 60px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: var(--or);
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    right: -80px; bottom: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 80px solid rgba(200,164,90,0.06);
+    pointer-events: none;
+  }
+  .cover-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .cover-eyebrow::after { content: ""; width: 40px; height: 1px; background: rgba(200,164,90,0.4); display: inline-block; }
+  .cover h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4.5vw, 56px);
+    font-weight: 700;
+    color: var(--w);
+    line-height: 1.08;
+    max-width: 760px;
+    margin-bottom: 10px;
+  }
+  .cover h1 em { color: var(--or); font-style: italic; }
+  .cover-subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 36px;
+    max-width: 600px;
+  }
+  .cover-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(200,164,90,0.12);
+    border: 1px solid rgba(200,164,90,0.30);
+    color: var(--or-pale);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+  }
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    padding-top: 22px;
+  }
+  .cover-meta-item .lbl {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .cover-meta-item .val { font-size: 13.5px; font-weight: 600; color: var(--w); }
+
+  /* ─── NAV INDEX ─── */
+  .toc-band {
+    background: var(--vert);
+    padding: 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border-bottom: 2px solid var(--vf);
+  }
+  .toc-item {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    padding: 14px 18px 14px 0;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    margin-right: 18px;
+    text-decoration: none;
+    transition: color .15s;
+  }
+  .toc-item:hover { color: var(--or); }
+  .toc-item span { color: var(--or); margin-right: 5px; }
+
+  /* ─── CONTAINER ─── */
+  .container { max-width: 1060px; margin: 0 auto; padding: 0 40px 100px; }
+
+  /* ─── SECTION HEADERS ─── */
+  .section { padding-top: 56px; margin-top: 56px; border-top: 1.5px solid var(--creme-fonce); }
+  .section.first { border-top: none; margin-top: 0; padding-top: 48px; }
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::after { content: ""; flex: 1; height: 1px; background: var(--creme-fonce); max-width: 80px; }
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.8vw, 32px);
+    font-weight: 700;
+    color: var(--vf);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .section-desc { color: var(--gris); font-size: 13.5px; margin-bottom: 28px; max-width: 680px; }
+  h3 { font-family: var(--font-display); font-size: 17px; font-style: italic; color: var(--vert-med); margin: 28px 0 10px; }
+  h4 { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--vf); margin-bottom: 6px; }
+  p { margin-bottom: 10px; color: var(--gf); }
+  strong { font-weight: 600; color: var(--noir); }
+
+  /* ─── HOOKS ─── */
+  .hooks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3px;
+    background: var(--vf);
+    border: 2px solid var(--vf);
+    margin-top: 4px;
+  }
+  .hook-card {
+    background: var(--w);
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+  }
+  .hook-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: 22px; right: 22px;
+    font-family: var(--font-display);
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--creme-fonce);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hook-angle {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    display: inline-block;
+    padding: 3px 9px;
+    border: 1px solid rgba(200,164,90,0.35);
+    width: fit-content;
+  }
+  .hook-text {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--vf);
+    line-height: 1.25;
+    padding-right: 36px;
+  }
+  .hook-sub {
+    font-size: 13px;
+    color: var(--gris);
+    line-height: 1.55;
+  }
+  .hook-card.dark { background: var(--vf); }
+  .hook-card.dark .hook-text { color: var(--w); }
+  .hook-card.dark .hook-sub { color: rgba(255,255,255,0.55); }
+  .hook-card.dark::before { color: rgba(255,255,255,0.05); }
+
+  /* ─── COPY BLOCKS (Facebook / Instagram) ─── */
+  .copy-block {
+    background: var(--w);
+    border: 1px solid #DDD8CE;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .copy-header {
+    background: var(--vf);
+    padding: 13px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .copy-header-left { display: flex; flex-direction: column; gap: 2px; }
+  .copy-label {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(200,164,90,0.7);
+  }
+  .copy-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--w);
+    font-style: italic;
+  }
+  .copy-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .copy-chip {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border-radius: 1px;
+  }
+  .chip-words { background: var(--vert-bg); color: var(--vert-med); }
+  .chip-angle { background: rgba(200,164,90,0.15); color: var(--or); }
+  .chip-obj   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.12); }
+  .copy-body {
+    padding: 26px 28px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--gf);
+    white-space: pre-wrap;
+    font-family: var(--font-body);
+    border-bottom: 1px solid var(--creme-fonce);
+  }
+  .copy-body strong { font-weight: 700; color: var(--vf); }
+  .copy-footer {
+    background: var(--cr);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .copy-note {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--gris);
+    text-transform: uppercase;
+  }
+  .copy-btn {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--vf);
+    color: var(--or);
+    border: none;
+    padding: 7px 16px;
+    cursor: pointer;
+  }
+
+  /* ─── IG POSTS ─── */
+  .ig-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3px;
+    background: var(--gf);
+    border: 2px solid var(--gf);
+    margin-top: 4px;
+  }
+  .ig-card { background: var(--w); overflow: hidden; display: flex; flex-direction: column; }
+  .ig-card-header {
+    background: var(--vf);
+    padding: 16px 20px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .ig-num {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: rgba(200,164,90,0.7);
+    text-transform: uppercase;
+  }
+  .ig-card-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--w);
+    line-height: 1.3;
+  }
+  .ig-card-body { padding: 18px 20px; flex: 1; }
+  .ig-copy { font-size: 13px; line-height: 1.75; color: var(--gf); white-space: pre-wrap; }
+  .ig-hashtags {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--vert-med);
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    line-height: 1.7;
+  }
+  .ig-footer {
+    background: var(--creme-fonce);
+    padding: 9px 20px;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    display: flex;
+    gap: 12px;
+  }
+
+  /* ─── META ADS ─── */
+  .ad-card {
+    background: var(--w);
+    border: 1px solid #DDD8CE;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .ad-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border-bottom: 1px solid #E6E2D8;
+  }
+  .ad-type-bar {
+    background: var(--or);
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vf);
+    font-weight: 700;
+    min-width: 44px;
+  }
+  .ad-header-content { padding: 20px 26px; }
+  .ad-objective {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 6px;
+  }
+  .ad-headline {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--vf);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .ad-subline {
+    font-size: 13px;
+    color: var(--gris);
+  }
+  .ad-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 14px 26px;
+    background: var(--cr);
+    border-bottom: 1px solid #E6E2D8;
+  }
+  .spec-tag {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border: 1px solid #DDD8CE;
+    color: var(--gris);
+    background: var(--w);
+  }
+  .ad-body { padding: 22px 26px; }
+  .ad-field { margin-bottom: 16px; }
+  .ad-field:last-child { margin-bottom: 0; }
+  .field-label {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 4px;
+  }
+  .field-val {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--gf);
+    line-height: 1.7;
+    background: var(--cr);
+    padding: 12px 16px;
+    border-left: 3px solid var(--or);
+  }
+  .field-val.primary-text { font-size: 13.5px; white-space: pre-wrap; }
+  .field-val.headline-val {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--vf);
+  }
+  .field-val.cta-val {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--vert-med);
+    background: var(--vert-bg);
+    border-left-color: var(--vert-med);
+  }
+
+  /* ─── REEL SCRIPTS ─── */
+  .reel-wrap { border: 1px solid #DDD8CE; background: var(--w); margin-bottom: 20px; overflow: hidden; }
+  .reel-header {
+    background: var(--vf);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .reel-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--w); font-style: italic; }
+  .reel-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .reel-badge {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid rgba(200,164,90,0.35);
+    color: var(--or);
+  }
+  .scene {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    border-bottom: 1px solid #EDE9E0;
+  }
+  .scene:last-child { border-bottom: none; }
+  .scene-time {
+    background: var(--creme-fonce);
+    padding: 16px 14px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--vf);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3px;
+    text-align: center;
+    border-right: 2px solid var(--vf);
+  }
+  .scene-time .beat {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--or);
+    font-weight: 700;
+  }
+  .scene-content { padding: 16px 22px; }
+  .screen-text {
+    background: var(--vf);
+    color: var(--or);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 6px 13px;
+    margin-bottom: 9px;
+    display: inline-block;
+  }
+  .scene-visual {
+    font-size: 13px;
+    color: var(--gris);
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+  .scene-instruction {
+    font-size: 12px;
+    color: var(--vert-med);
+    font-weight: 600;
+  }
+  .scene-vo {
+    font-size: 13px;
+    color: var(--gf);
+    line-height: 1.65;
+    margin-top: 6px;
+    padding-left: 10px;
+    border-left: 2px solid var(--or);
+  }
+
+  /* ─── CAROUSEL ─── */
+  .carousel-intro { margin-bottom: 20px; }
+  .slides-list { display: flex; flex-direction: column; gap: 3px; }
+  .slide-row {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    background: var(--gf);
+    gap: 2px;
+  }
+  .slide-num {
+    background: var(--vf);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--or);
+    min-height: 100px;
+  }
+  .slide-content { background: var(--w); padding: 20px 24px; }
+  .slide-type {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 5px;
+  }
+  .slide-title {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--vf);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .slide-body { font-size: 13px; color: var(--gris); line-height: 1.6; }
+  .slide-body ul { padding-left: 16px; margin-top: 4px; }
+  .slide-body li { margin-bottom: 2px; font-size: 13px; color: var(--gris); }
+  .slide-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .slide-cta-btn {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--vf);
+    color: var(--or);
+    padding: 7px 18px;
+    display: inline-block;
+  }
+
+  /* ─── MATERIAL TEXTURE CANVAS HEADERS (aesthetic risk) ─── */
+  .texture-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    background: var(--gf);
+    border: 2px solid var(--gf);
+    margin: 20px 0 28px;
+  }
+  .mat-col { display: flex; flex-direction: column; }
+  .mat-canvas-wrap { position: relative; height: 80px; overflow: hidden; }
+  .mat-canvas-wrap canvas { width: 100%; height: 100%; display: block; }
+  .mat-label {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 8px; left: 12px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 700;
+  }
+  .mat-body { background: var(--w); padding: 20px 18px; flex: 1; }
+  .mat-price {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--vf);
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+  .mat-price-unit { font-size: 12px; font-weight: 400; color: var(--gris); }
+  .mat-pros, .mat-cons { margin-top: 10px; }
+  .mat-pros li { color: var(--vert-med); font-size: 12.5px; font-weight: 600; }
+  .mat-cons li { color: var(--rouge); font-size: 12.5px; }
+  .mat-pros li::marker, .mat-cons li::marker { font-size: 10px; }
+  ul.mat-pros, ul.mat-cons { padding-left: 16px; margin-bottom: 0; }
+
+  /* ─── TCO TABLE ─── */
+  .tco-wrap { overflow-x: auto; margin: 20px 0; }
+  .tco-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 540px; }
+  .tco-table thead tr { background: var(--vf); }
+  .tco-table thead th {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--w);
+    padding: 11px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .tco-table thead th.col-pave { color: var(--or); }
+  .tco-table tbody tr { border-bottom: 1px solid #E0DDD5; }
+  .tco-table tbody tr:nth-child(even) { background: #F9F7F2; }
+  .tco-table tbody td { padding: 10px 16px; color: var(--gf); vertical-align: top; }
+  .tco-table tbody td:first-child { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--vf); }
+  .tco-table .td-winner { color: var(--vert-med); font-weight: 700; }
+  .tco-table .td-mid { color: var(--jaune); font-weight: 600; }
+  .tco-table .td-loser { color: var(--rouge); }
+  .tco-table tfoot tr { background: var(--creme-fonce); border-top: 2px solid var(--vf); }
+  .tco-table tfoot td { font-weight: 700; color: var(--vf); padding: 12px 16px; font-family: var(--font-display); }
+  .tco-table tfoot td.col-winner { background: var(--vert-bg); color: var(--vert-med); font-size: 15px; }
+
+  /* ─── CTA SECTION ─── */
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    background: var(--gf);
+    border: 2px solid var(--gf);
+    margin-top: 4px;
+  }
+  .cta-card { background: var(--w); padding: 30px 28px; }
+  .cta-card.primary { background: var(--vf); }
+  .cta-type {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .cta-main {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--vf);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .cta-card.primary .cta-main { color: var(--w); }
+  .cta-sub { font-size: 13.5px; color: var(--gris); line-height: 1.6; margin-bottom: 20px; }
+  .cta-card.primary .cta-sub { color: rgba(255,255,255,0.6); }
+  .cta-button {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 12px 24px;
+    text-decoration: none;
+  }
+  .btn-or { background: var(--or); color: var(--vf); }
+  .btn-outline { background: transparent; color: var(--vf); border: 2px solid var(--vf); }
+  .cta-variants { margin-top: 14px; }
+  .cta-variant-label {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    margin-bottom: 5px;
+    display: block;
+  }
+  .cta-variant-text {
+    font-size: 13px;
+    color: var(--gris);
+    border-left: 2px solid var(--creme-fonce);
+    padding-left: 12px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .cta-card.primary .cta-variant-text { color: rgba(255,255,255,0.55); border-left-color: rgba(200,164,90,0.3); }
+
+  /* ─── MISC ─── */
+  .kpi-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .kpi-chip {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 1px;
+  }
+  .chip-red  { background: var(--rouge-clair); color: var(--rouge); }
+  .chip-grn  { background: var(--vert-bg); color: var(--vert-med); }
+  .chip-yel  { background: var(--jaune-clair); color: var(--jaune); }
+  .chip-dark { background: var(--vf); color: var(--or); }
+  .note-box {
+    background: var(--jaune-clair);
+    border-left: 4px solid var(--jaune);
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: var(--gf);
+    line-height: 1.65;
+  }
+  .note-box strong { color: var(--jaune); }
+  .tip-box {
+    background: var(--vert-bg);
+    border-left: 4px solid var(--vert-med);
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: var(--vf);
+    line-height: 1.65;
+  }
+  hr.section-rule { border: none; border-top: 1px solid var(--creme-fonce); margin: 36px 0; }
+
+  @media (max-width: 720px) {
+    .cover { padding: 40px 24px 36px; }
+    .container { padding: 0 20px 60px; }
+    .toc-band { padding: 0 20px; }
+    .hooks-grid, .ig-grid, .texture-compare, .cta-grid { grid-template-columns: 1fr; }
+    .ad-header { grid-template-columns: 1fr; }
+    .ad-type-bar { writing-mode: horizontal-tb; transform: none; padding: 10px 18px; min-width: unset; }
+    .scene { grid-template-columns: 80px 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ COVER ═══════════ -->
+<div class="cover">
+  <div class="cover-eyebrow">Jardín Ideal · Montréal · Meta Ads 2026</div>
+  <h1>Pavé-Uni —<br><em>Contenu prêt à publier</em></h1>
+  <p class="cover-subtitle">Poses résidentielles Techo Bloc / Permacon · Entrées, cours, allées, terrasses · Grand Montréal & Laval</p>
+  <div class="cover-pills">
+    <span class="pill">5 hooks</span>
+    <span class="pill">3 copies Facebook</span>
+    <span class="pill">3 posts Instagram</span>
+    <span class="pill">2 annonces Meta Ads</span>
+    <span class="pill">2 scripts Reel</span>
+    <span class="pill">1 carrousel 8 slides</span>
+    <span class="pill">CTA organic + paid</span>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="lbl">Langue</span>
+      <span class="val">Français (Québec)</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Audience</span>
+      <span class="val">Propriétaires 35–65 ans · Budget CA$8K–$45K</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Zones</span>
+      <span class="val">Saint-Léonard · Montréal-Nord · Anjou · Laval</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Téléphone</span>
+      <span class="val">514-266-2504</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Certifications</span>
+      <span class="val">RBQ · Garantie 10 ans · 15 ans d'expérience</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="toc-band" aria-label="Index des sections">
+  <a class="toc-item" href="#hooks"><span>01</span> Hooks</a>
+  <a class="toc-item" href="#facebook"><span>02</span> Facebook</a>
+  <a class="toc-item" href="#instagram"><span>03</span> Instagram</a>
+  <a class="toc-item" href="#ads"><span>04</span> Meta Ads</a>
+  <a class="toc-item" href="#reels"><span>05</span> Reels</a>
+  <a class="toc-item" href="#carousel"><span>06</span> Carrousel</a>
+  <a class="toc-item" href="#cta"><span>07</span> CTA</a>
+</nav>
+
+<div class="container">
+
+  <!-- ═══════════ SECTION 1 — HOOKS ═══════════ -->
+  <section class="section first" id="hooks">
+    <div class="section-tag">Section 01</div>
+    <h2>5 Hooks — Premières lignes d'accroches</h2>
+    <p class="section-desc">Chaque hook est conçu pour stopper le scroll dans les 3 premières secondes. Utilisez-les comme première phrase d'un post Facebook, légende Instagram, ou titre d'une annonce.</p>
+
+    <div class="hooks-grid">
+
+      <div class="hook-card" data-num="1">
+        <span class="hook-angle">Angle : Prix / Investissement TCO</span>
+        <div class="hook-text">L'asphalte vous coûte plus cher sur 20 ans. Voici les chiffres réels.</div>
+        <div class="hook-sub">Entrée de 60 m² : asphalte réparé 4× en 20 ans = CA$22 000+. Pavé uni posé une fois = CA$14 000 tout inclus. La question n'est pas si vous pouvez vous le permettre — c'est si vous pouvez vous permettre de ne pas le faire.</div>
+      </div>
+
+      <div class="hook-card" data-num="2">
+        <span class="hook-angle">Angle : Problème concret</span>
+        <div class="hook-text">Votre asphalte gondole. Votre béton se fissure. L'hiver québécois n'est pas gentil.</div>
+        <div class="hook-sub">Le gel-dégel + le sel de voirie attaquent les revêtements rigides chaque printemps. Le pavé uni est le seul matériau résidentiel conçu pour travailler avec les cycles thermiques — pas contre eux. Une unité bougée se remplace en 10 minutes, sans refaire toute la surface.</div>
+      </div>
+
+      <div class="hook-card dark" data-num="3">
+        <span class="hook-angle">Angle : Esthétique / Fierté</span>
+        <div class="hook-text">Transformez votre propriété en 3 jours. Valeur ajoutée immédiate : +8 % à la revente.</div>
+        <div class="hook-sub">Une entrée en pavé uni Techo Bloc, c'est la première chose que vos voisins — et les acheteurs — voient. Nos équipes posent, nettoient et dégagent en 2 à 3 jours. Vous rentrez du travail sur une nouvelle propriété.</div>
+      </div>
+
+      <div class="hook-card" data-num="4">
+        <span class="hook-angle">Angle : Expertise / Confiance</span>
+        <div class="hook-text">15 ans d'expérience. 500+ projets pavé uni à Montréal. Entrepreneur certifié RBQ.</div>
+        <div class="hook-sub">Pas un nouvel arrivant dans le marché. Pas une app qui dispatche des sous-traitants. Une équipe stable, formée, qui pose du Techo Bloc et du Permacon depuis 2009 — avec une garantie sur la pose de 10 ans, par écrit.</div>
+      </div>
+
+      <div class="hook-card" data-num="5">
+        <span class="hook-angle">Angle : Financement</span>
+        <div class="hook-text">Votre nouvelle entrée à partir de CA$90/mois. Financement disponible — réponse en 24h.</div>
+        <div class="hook-sub">Pourquoi continuer à réparer l'asphalte à répétition quand vous pouvez passer au pavé uni aujourd'hui pour le prix d'un abonnement mensuel ? Financement 12 à 240 mois, approbation rapide. Soumission gratuite sans engagement.</div>
+      </div>
+
+    </div>
+
+    <div class="note-box" style="margin-top:20px;">
+      <strong>Note de mise en oeuvre :</strong> Testez les hooks 1 et 5 en A/B sur Facebook Ads — l'angle TCO est plus long à convaincre mais convertit à plus haut budget; l'angle financement réduit la friction immédiate. Commencez avec les deux en parallèle, budget $15/jour chacun, 7 jours.
+    </div>
+  </section>
+
+  <!-- ═══════════ SECTION 2 — FACEBOOK ═══════════ -->
+  <section class="section" id="facebook">
+    <div class="section-tag">Section 02</div>
+    <h2>3 Copies Facebook</h2>
+    <p class="section-desc">Prêts à coller dans Meta Business Suite. Respectez les sauts de ligne — ils font partie du rythme de lecture mobile.</p>
+
+    <!-- FB POST 1 -->
+    <div class="copy-block">
+      <div class="copy-header">
+        <div class="copy-header-left">
+          <span class="copy-label">Facebook · Post 1 / 3</span>
+          <span class="copy-title">Argumentaire TCO 20 ans — les vrais chiffres</span>
+        </div>
+        <div class="copy-meta">
+          <span class="copy-chip chip-words">~240 mots</span>
+          <span class="copy-chip chip-angle">Angle : prix long terme</span>
+          <span class="copy-chip chip-obj">Objectif : Lead Generation</span>
+        </div>
+      </div>
+      <div class="copy-body">🔢 <strong>Asphalte vs Béton vs Pavé Uni — les vrais chiffres sur 20 ans (entrée 60 m², Montréal)</strong>
+
+Beaucoup de propriétaires choisissent l'asphalte parce que c'est "moins cher au départ."
+
+Voici ce que ça coûte vraiment sur 20 ans :
+
+❌ <strong>Asphalte</strong> : pose CA$5 000 + sellage tous les 3 ans ($600 × 6) + 2 réfections partielles ($2 500 × 2) + remplacement complet à l'an 18 ($6 000) = <strong>CA$20 100</strong>
+
+❌ <strong>Béton</strong> : pose CA$8 500 + réparations fissures ($400 × 5) + décapage sel ($300/an) + remplacement partiel à l'an 15 ($4 000) = <strong>CA$17 500</strong>
+
+✅ <strong>Pavé uni Techo Bloc / Permacon</strong> : pose CA$12 000–$14 000 + scellement léger tous les 5 ans ($350 × 3) = <strong>CA$13 050–$15 050</strong>
+
+Le pavé uni résiste au sel de déglaçage. Il absorbe les cycles de gel-dégel sans craquer. Et si une unité bouge ? On la remplace en 10 minutes — sans refaire toute la surface.
+
+Nous sommes entrepreneur certifié RBQ avec 15 ans d'expérience et plus de 500 projets réalisés dans le Grand Montréal.
+
+📍 Saint-Léonard · Montréal-Nord · Anjou · Laval
+
+👉 <strong>Obtenez votre soumission gratuite — réponse en 24h</strong>
+📞 514-266-2504 ou cliquez sur le bouton ci-dessous.
+
+<em>#PavéUni #JardinIdeal #EntréeMaison #Montréal #Laval #Aménagement</em></div>
+      <div class="copy-footer">
+        <span class="copy-note">Ajouter photo : tableau comparatif ou avant/après entrée asphalte → pavé uni</span>
+        <button class="copy-btn" onclick="navigator.clipboard && navigator.clipboard.writeText(this.closest('.copy-block').querySelector('.copy-body').innerText)" type="button">Copier</button>
+      </div>
+    </div>
+
+    <!-- FB POST 2 -->
+    <div class="copy-block">
+      <div class="copy-header">
+        <div class="copy-header-left">
+          <span class="copy-label">Facebook · Post 2 / 3</span>
+          <span class="copy-title">Expertise + Confiance — "500 familles de Montréal"</span>
+        </div>
+        <div class="copy-meta">
+          <span class="copy-chip chip-words">~200 mots</span>
+          <span class="copy-chip chip-angle">Angle : preuve sociale</span>
+          <span class="copy-chip chip-obj">Objectif : Consideration</span>
+        </div>
+      </div>
+      <div class="copy-body">🏡 <strong>Voici pourquoi plus de 500 familles de Montréal nous ont choisi pour leur pavé uni.</strong>
+
+En 15 ans, on a entendu les mêmes questions :
+— "Comment savoir si l'entrepreneur est sérieux ?"
+— "Est-ce que la garantie est vraiment honorée ?"
+— "Mon voisin a eu des problèmes avec une autre compagnie..."
+
+Alors on a décidé de faire les choses différemment.
+
+✅ <strong>Entrepreneur certifié RBQ</strong> — vérifiable en ligne, numéro fourni sur demande
+✅ <strong>Garantie 10 ans sur la pose</strong> — par écrit, dans le contrat, pas juste une promesse verbale
+✅ <strong>Même équipe depuis le début</strong> — pas de sous-traitants inconnus, des poseurs formés chez nous
+✅ <strong>Techo Bloc & Permacon agréé</strong> — matériaux fabriqués au Québec, adaptés à notre climat
+
+Nos clients de Saint-Léonard, Anjou, Montréal-Nord et Laval peuvent vous en parler. Plusieurs nous appellent maintenant pour leur cour arrière après avoir vu ce qu'on a fait devant.
+
+La confiance, ça se gagne un projet à la fois.
+
+📞 514-266-2504
+👉 <strong>Soumission gratuite — on vous répond en 24h</strong>
+
+<em>#JardinIdeal #EntrepreneurRBQ #PavéUni #Montréal #GarantiePose</em></div>
+      <div class="copy-footer">
+        <span class="copy-note">Ajouter photo : équipe en chantier ou projet terminé avec propriétaires satisfaits</span>
+        <button class="copy-btn" onclick="navigator.clipboard && navigator.clipboard.writeText(this.closest('.copy-block').querySelector('.copy-body').innerText)" type="button">Copier</button>
+      </div>
+    </div>
+
+    <!-- FB POST 3 -->
+    <div class="copy-block">
+      <div class="copy-header">
+        <div class="copy-header-left">
+          <span class="copy-label">Facebook · Post 3 / 3</span>
+          <span class="copy-title">Financement = accessibilité — "à partir de CA$90/mois"</span>
+        </div>
+        <div class="copy-meta">
+          <span class="copy-chip chip-words">~180 mots</span>
+          <span class="copy-chip chip-angle">Angle : financement</span>
+          <span class="copy-chip chip-obj">Objectif : Lead Generation</span>
+        </div>
+      </div>
+      <div class="copy-body">💳 <strong>Votre entrée en pavé uni : à partir de CA$90/mois. Sans compromis sur la qualité.</strong>
+
+On entend souvent : "On va attendre d'avoir le budget complet."
+
+Mais pendant ce temps, l'asphalte se dégrade. Les réparations s'accumulent. Et le budget "d'attente" disparaît en patchs temporaires.
+
+🔢 <strong>Exemple concret — entrée 55 m² :</strong>
+• Coût du projet : CA$13 500
+• Mise de fonds 0 $
+• Financement 240 mois (20 ans) : <strong>≈ CA$90/mois</strong>
+• Financement 60 mois (5 ans) : <strong>≈ CA$255/mois</strong>
+• Financement 24 mois : <strong>≈ CA$590/mois</strong>
+
+<em>*Taux indicatif selon approbation de crédit. Plusieurs options disponibles.</em>
+
+Pendant que vous financez votre pavé uni, vous arrêtez de payer des réparations d'asphalte. Dans plusieurs cas, le financement ne coûte pas plus que l'entretien de l'ancienne surface.
+
+👉 <strong>Obtenez votre soumission gratuite — on calcule votre paiement mensuel en même temps</strong>
+📞 514-266-2504
+
+<em>#PavéUni #FinancementMaison #JardinIdeal #Montréal #Laval #EntréeMaison</em></div>
+      <div class="copy-footer">
+        <span class="copy-note">Ajouter visuel : calculateur simplifié ou mockup d'entrée avec paiement mensuel affiché</span>
+        <button class="copy-btn" onclick="navigator.clipboard && navigator.clipboard.writeText(this.closest('.copy-block').querySelector('.copy-body').innerText)" type="button">Copier</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SECTION 3 — INSTAGRAM ═══════════ -->
+  <section class="section" id="instagram">
+    <div class="section-tag">Section 03</div>
+    <h2>3 Posts Instagram</h2>
+    <p class="section-desc">Format court, impact visuel fort. Les hashtags sont optimisés pour le marché québécois.</p>
+
+    <div class="ig-grid">
+
+      <!-- IG 1 -->
+      <div class="ig-card">
+        <div class="ig-card-header">
+          <span class="ig-num">Post IG 01 / 03</span>
+          <span class="ig-card-title">Avant/après + chiffre clé</span>
+        </div>
+        <div class="ig-card-body">
+          <div class="ig-copy">Asphalte fissuré → Pavé uni Techo Bloc.
+
+2 jours de travail. 20 ans de tranquillité.
+
+Projet réalisé à Saint-Léonard : 65 m², bordures granit, finition platine. Le propriétaire nous a rappelés 3 semaines plus tard pour la cour arrière.
+
+C'est le compliment qu'on préfère.
+
+📞 514-266-2504
+Soumission gratuite — réponse en 24h.</div>
+          <div class="ig-hashtags">#PavéUni #JardinIdeal #EntréeMaison #AvantAprès #Montréal #SaintLéonard #Laval #Anjou #AménagementPaysager #TechoBloc #Permacon #EntrepreneurRBQ #MaisonQuébec #RénovationExtérieure #CourAvant</div>
+        </div>
+        <div class="ig-footer">
+          <span>~85 mots</span>
+          <span>15 hashtags</span>
+          <span>Visuel : avant/après côte à côte</span>
+        </div>
+      </div>
+
+      <!-- IG 2 -->
+      <div class="ig-card">
+        <div class="ig-card-header">
+          <span class="ig-num">Post IG 02 / 03</span>
+          <span class="ig-card-title">Tip : 3 raisons pour l'hiver québécois</span>
+        </div>
+        <div class="ig-card-body">
+          <div class="ig-copy">3 raisons de choisir le pavé uni si vous vivez au Québec 🇨🇦
+
+❄️ Résiste aux cycles de gel-dégel — chaque unité travaille indépendamment
+🧂 Ne réagit pas au sel de voirie comme l'asphalte ou le béton
+🔧 Une unité bougée = 10 minutes de réparation, pas une réfection complète
+
+L'hiver qu'on a ici, ce n'est pas fait pour les revêtements rigides.
+
+Soumission gratuite → lien en bio.
+📞 514-266-2504</div>
+          <div class="ig-hashtags">#PavéUni #HiverQuébécois #JardinIdeal #Montréal #Laval #CycleGelDégel #EntréeMaison #TechoBloc #Permacon #AménagementExtérieur #EntrepreneurRBQ #ConseilsPaysagisme #MaisonQuébec #RénovationMontréal #Anjou</div>
+        </div>
+        <div class="ig-footer">
+          <span>~70 mots</span>
+          <span>15 hashtags</span>
+          <span>Visuel : pavé uni en hiver, neige propre dessus</span>
+        </div>
+      </div>
+
+      <!-- IG 3 -->
+      <div class="ig-card">
+        <div class="ig-card-header">
+          <span class="ig-num">Post IG 03 / 03</span>
+          <span class="ig-card-title">Financement highlight</span>
+        </div>
+        <div class="ig-card-body">
+          <div class="ig-copy">Votre entrée en pavé uni à partir de CA$90/mois. 💳
+
+Financement 12 à 240 mois disponible.
+Pas besoin d'attendre d'avoir tout le budget.
+
+Entrepreneur certifié RBQ · Garantie 10 ans · 500+ projets à Montréal.
+
+Soumission gratuite → lien en bio
+📞 514-266-2504</div>
+          <div class="ig-hashtags">#PavéUni #FinancementMaison #JardinIdeal #Montréal #Laval #EntréePavé #AménagementPaysager #TechoBloc #Permacon #EntrepreneurRBQ #MaisonQuébec #RénovationExtérieure #CourAvant #PaysagisteMontréal #SaintLéonard</div>
+        </div>
+        <div class="ig-footer">
+          <span>~55 mots</span>
+          <span>15 hashtags</span>
+          <span>Visuel : chiffre "$90/mois" en grand sur fond vert foncé</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ SECTION 4 — META ADS ═══════════ -->
+  <section class="section" id="ads">
+    <div class="section-tag">Section 04</div>
+    <h2>2 Annonces Meta Ads</h2>
+    <p class="section-desc">Structure complète pour le Gestionnaire de publicités : texte principal, titre, description, CTA, et notes de paramétrage.</p>
+
+    <!-- AD 1 -->
+    <div class="ad-card">
+      <div class="ad-header">
+        <div class="ad-type-bar">Lead Gen</div>
+        <div class="ad-header-content">
+          <div class="ad-objective">Objectif : Génération de prospects · Formulaire natif Meta</div>
+          <div class="ad-headline">Soumission gratuite · Angle "Prix juste"</div>
+          <div class="ad-subline">Ciblage : propriétaires 35–65 ans · Saint-Léonard, Montréal-Nord, Anjou, Laval · Intérêts : rénovation, aménagement paysager</div>
+        </div>
+      </div>
+      <div class="ad-specs">
+        <span class="spec-tag">Texte principal : 125 car. max recommandé</span>
+        <span class="spec-tag">Titre : 40 car. max</span>
+        <span class="spec-tag">Description : 30 car. max</span>
+        <span class="spec-tag">Visuel : 1080×1080 ou 1080×1350</span>
+        <span class="spec-tag">Budget suggéré : CA$20–30/jour</span>
+      </div>
+      <div class="ad-body">
+
+        <div class="ad-field">
+          <div class="field-label">Texte principal (primary text)</div>
+          <div class="field-val primary-text">L'asphalte vous coûte plus cher sur 20 ans. Les vrais chiffres →
+
+Entrée 60 m² : asphalte = CA$20 000 en 20 ans. Pavé uni = CA$14 000, une seule fois.
+
+Jardín Ideal · Entrepreneur certifié RBQ · 15 ans d'expérience · 500+ projets à Montréal · Garantie 10 ans sur la pose.
+
+Financement disponible 12 à 240 mois — à partir de CA$90/mois.
+
+Soumission 100 % gratuite. Réponse en 24h.</div>
+        </div>
+
+        <div class="ad-field">
+          <div class="field-label">Titre (headline)</div>
+          <div class="field-val headline-val">Soumission pavé uni gratuite — 24h</div>
+        </div>
+
+        <div class="ad-field">
+          <div class="field-label">Description (sous-titre)</div>
+          <div class="field-val">Certifié RBQ · Garantie 10 ans · Financement disponible</div>
+        </div>
+
+        <div class="ad-field">
+          <div class="field-label">Bouton d'appel à l'action</div>
+          <div class="field-val cta-val">Obtenir un devis</div>
+        </div>
+
+        <div class="ad-field">
+          <div class="field-label">Questions formulaire natif (Lead Form)</div>
+          <div class="field-val">
+            1. Votre prénom et nom<br>
+            2. Votre adresse courriel<br>
+            3. Votre numéro de téléphone<br>
+            4. Votre ville (Saint-Léonard / Anjou / Montréal-Nord / Laval / Autre)<br>
+            5. Type de projet : Entrée de garage / Allée piéton / Cour avant / Terrasse / Autre<br>
+            6. Surface approximative : &lt;40 m² / 40–80 m² / 80–150 m² / +150 m²<br>
+            7. Revêtement actuel : Asphalte / Béton / Terre battue / Autre pavé uni
+          </div>
+        </div>
+
+        <div class="ad-field">
+          <div class="field-label">Recommandations visuelles</div>
+          <div class="field-val">Photo haute qualité : entrée en pavé uni terminée, lumière naturelle de fin d'après-midi. Angle légèrement en hauteur pour montrer toute la surface. Texte superposé : "À partir de CA$90/mois · Soumission gratuite" en Courier New sur bandeau vert foncé (#1E3A20).</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AD 2 -->
+    <div class="ad-card">
+      <div class="ad-header">
+        <div class="ad-type-bar">Trafic</div>
+        <div class="ad-header-content">
+          <div class="ad-objective">Objectif : Trafic vers article de blog / page de service</div>
+          <div class="ad-headline">Guide comparatif 2026 — Asphalte vs Pavé Uni</div>
+          <div class="ad-subline">Ciblage : intérêts rénovation, maison, jardinage · Lookalike 1% anciens clients · Exclure les leads déjà collectés</div>
+        </div>
+      </div>
+      <div class="ad-specs">
+        <span class="spec-tag">Objectif : Consideration (milieu de funnel)</span>
+        <span class="spec-tag">Destination : page blog ou landing page</span>
+        <span class="spec-tag">Visuel : 1200×628 (format lien)</span>
+        <span class="spec-tag">Budget suggéré : CA$15/jour</span>
+        <span class="spec-tag">Retargeting : 30 jours visiteurs site</span>
+      </div>
+      <div class="ad-body">
+
+        <div class="ad-field">
+          <div class="field-label">Texte principal (primary text)</div>
+          <div class="field-val primary-text">Vous pensez refaire votre entrée à Montréal — mais vous ne savez pas quel matériau choisir ?
+
+Asphalte, béton, pavé uni : on compare tout. Prix d'installation, coût d'entretien sur 20 ans, résistance au gel québécois, valeur à la revente.
+
+Le guide que nos clients auraient voulu lire avant de décider.
+
+→ Lecture : 4 minutes. Décision : beaucoup plus facile.</div>
+        </div>
+
+        <div class="ad-field">
+          <div class="field-label">Titre (headline)</div>
+          <div class="field-val headline-val">Asphalte vs Pavé Uni à Montréal — le guide 2026</div>
+        </div>
+
+        <div class="ad-field">
+          <div class="field-label">Description (sous-titre)</div>
+          <div class="field-val">Coûts réels, gel-dégel, valeur revente — tout comparer en 4 min</div>
+        </div>
+
+        <div class="ad-field">
+          <div class="field-label">Bouton d'appel à l'action</div>
+          <div class="field-val cta-val">En savoir plus</div>
+        </div>
+
+        <div class="ad-field">
+          <div class="field-label">Recommandations visuelles</div>
+          <div class="field-val">Image divisée en 3 verticalement : 1/3 asphalte fissuré (texture sombre) · 1/3 béton grisâtre · 1/3 pavé uni Techo Bloc en bon état. Texte superposé centré : "Quel revêtement choisir en 2026 ?" — police Georgia italic, blanc sur bandeau semi-transparent.</div>
+        </div>
+
+        <div class="ad-field">
+          <div class="field-label">Pixel & événements à configurer</div>
+          <div class="field-val">Événement "ViewContent" à la lecture. Audience retargeting J+7 et J+30. Créer audience lookalike 1% sur les visiteurs de cette page pour campagne Lead Gen.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>Stratégie d'entonnoir recommandée :</strong> Annonce 2 (trafic/guide) en premier, puis retargeting 30 jours avec Annonce 1 (lead gen). Les visiteurs du guide convertissent à 3× le taux des audiences froides.
+    </div>
+  </section>
+
+  <!-- ═══════════ SECTION 5 — REELS ═══════════ -->
+  <section class="section" id="reels">
+    <div class="section-tag">Section 05</div>
+    <h2>2 Scripts de Reels</h2>
+    <p class="section-desc">Scripts séquencés scène par scène avec timecode, texte à l'écran, direction visuelle et voix off. Format vertical 9:16.</p>
+
+    <!-- REEL 1 -->
+    <div class="reel-wrap">
+      <div class="reel-header">
+        <span class="reel-title">Reel 1 — "Combien ça coûte vraiment ?" · Transparence des prix</span>
+        <div class="reel-badges">
+          <span class="reel-badge">50 secondes</span>
+          <span class="reel-badge">9:16 vertical</span>
+          <span class="reel-badge">Son recommandé</span>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">0–3s<div class="beat">Hook</div></div>
+        <div class="scene-content">
+          <div class="screen-text">On va parler d'argent.</div>
+          <div class="scene-visual">Caméra face au présentateur (propriétaire ou entrepreneur). Fond : entrée en asphalte dégradé derrière lui. Regard direct caméra.</div>
+          <div class="scene-vo">Voix off / direct : <em>"Combien ça coûte vraiment, une entrée en pavé uni à Montréal ? On vous dit tout."</em></div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">3–12s<div class="beat">Problème</div></div>
+        <div class="scene-content">
+          <div class="screen-text">L'asphalte : moins cher au départ.</div>
+          <div class="scene-visual">Coupe rapide : asphalte fissuré, réparation de fortune, flaque d'eau dans craquelure. B-roll au sol, angle bas.</div>
+          <div class="scene-vo"><em>"L'asphalte coûte CA$8 à $10 par pied carré. Mais ajoutez le sellage, les réparations, et la réfection... et sur 20 ans, vous payez plus cher."</em></div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">12–22s<div class="beat">Chiffres</div></div>
+        <div class="scene-content">
+          <div class="screen-text">Les vrais chiffres — 60 m²</div>
+          <div class="scene-visual">Animation texte qui s'affiche : chaque ligne apparaît une par une. Fond blanc ou vert foncé. Style "calculatrice".</div>
+          <div class="scene-vo"><em>"Asphalte sur 20 ans : environ CA$20 000. Béton : CA$17 500. Pavé uni Techo Bloc : CA$13 000 à $15 000 — pose incluse, entretien minimal."</em></div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">22–34s<div class="beat">Preuve</div></div>
+        <div class="scene-content">
+          <div class="screen-text">Pourquoi le pavé uni coûte moins cher sur 20 ans</div>
+          <div class="scene-visual">Timelapse d'une pose de pavé uni — excavation, pose des unités, sablage. Accéléré 10×.</div>
+          <div class="scene-vo"><em>"Le pavé uni résiste au gel-dégel. Il ne se fissure pas avec le sel. Et si une unité bouge ? 10 minutes — on la replace. Pas toute la surface à refaire."</em></div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">34–43s<div class="beat">Confiance</div></div>
+        <div class="scene-content">
+          <div class="screen-text">Jardín Ideal · 15 ans · RBQ · 500+ projets</div>
+          <div class="scene-visual">Photos rapides de projets terminés — 3 à 4 cuts rapides. Avant/après en split screen si possible.</div>
+          <div class="scene-vo"><em>"Chez Jardín Ideal, on fait ça depuis 15 ans. Entrepreneur certifié RBQ, garantie 10 ans sur la pose, financement disponible."</em></div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">43–50s<div class="beat">CTA</div></div>
+        <div class="scene-content">
+          <div class="screen-text">Soumission gratuite — 24h · 514-266-2504</div>
+          <div class="scene-visual">Retour face caméra. Fond : entrée en pavé uni terminée. Texte CTA en surimpression avec animation de soulignement.</div>
+          <div class="scene-vo"><em>"Soumission gratuite, réponse en 24 heures. Lien en bio — ou appelez le 514-266-2504."</em></div>
+          <div class="scene-instruction">Musique : monter légèrement au fade out. Ne pas couper abruptement.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REEL 2 -->
+    <div class="reel-wrap">
+      <div class="reel-header">
+        <span class="reel-title">Reel 2 — Processus de pose pavé uni · Excavation → Résultat final</span>
+        <div class="reel-badges">
+          <span class="reel-badge">55 secondes</span>
+          <span class="reel-badge">9:16 vertical</span>
+          <span class="reel-badge">Timelapse + explications</span>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">0–4s<div class="beat">Hook</div></div>
+        <div class="scene-content">
+          <div class="screen-text">Voici comment on pose du pavé uni — de A à Z.</div>
+          <div class="scene-visual">Plan aérien (drone si possible) d'une entrée en asphalte dégradé. Ou plan large au sol.</div>
+          <div class="scene-vo"><em>"Avant le résultat, il y a un processus. Voici ce qu'on fait — et pourquoi ça dure 20 ans."</em></div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">4–13s<div class="beat">Étape 1</div></div>
+        <div class="scene-content">
+          <div class="screen-text">Étape 1 — Excavation et préparation du lit</div>
+          <div class="scene-visual">Timelapse : excavatrice, enlèvement de l'asphalte existant, mise à niveau du sol. Suivi de la pose de la sous-base granulaire compactée.</div>
+          <div class="scene-vo"><em>"On commence par excaver jusqu'à 30–40 cm de profondeur. La sous-base — pierre concassée compactée — c'est elle qui assure la stabilité sur 20 ans. C'est ce que les moins chers ne font pas correctement."</em></div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">13–23s<div class="beat">Étape 2</div></div>
+        <div class="scene-content">
+          <div class="screen-text">Étape 2 — Lit de sable et bordures</div>
+          <div class="scene-visual">Pose du lit de sable, nivelage à la règle, installation des bordures de retenue.</div>
+          <div class="scene-vo"><em>"Un lit de sable de 3 cm, nivelé à la règle. Puis les bordures — elles retiennent tout. Sans bordures solides, les unités s'écartent au fil du temps."</em></div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">23–36s<div class="beat">Étape 3</div></div>
+        <div class="scene-content">
+          <div class="screen-text">Étape 3 — Pose des unités Techo Bloc / Permacon</div>
+          <div class="scene-visual">Timelapse accéléré de la pose des pavés — pattern qui se forme progressivement. Cut sur détail des joints. Cut sur mains expertes qui posent.</div>
+          <div class="scene-vo"><em>"Les unités s'assemblent selon le patron choisi. C'est là que le travail se voit — ou ne se voit plus. La régularité des joints, l'alignement des lignes... ça, c'est l'expérience."</em></div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">36–46s<div class="beat">Étape 4</div></div>
+        <div class="scene-content">
+          <div class="screen-text">Étape 4 — Compaction et sablage des joints</div>
+          <div class="scene-visual">Passage de la plaque vibrante, puis sablage polymère des joints, balayage final.</div>
+          <div class="scene-vo"><em>"Compaction à la plaque vibrante — pour ancrer chaque unité. Puis sable polymère dans les joints : il durcit avec l'eau et bloque les mauvaises herbes et les fourmis."</em></div>
+        </div>
+      </div>
+
+      <div class="scene">
+        <div class="scene-time">46–55s<div class="beat">Résultat + CTA</div></div>
+        <div class="scene-content">
+          <div class="screen-text">Résultat · Jardín Ideal · Soumission gratuite</div>
+          <div class="scene-visual">Panoramique final du projet terminé — caméra qui recule depuis le détail pour révéler l'ensemble. Photo avant en split screen rapide à la fin. Texte CTA fixe les 5 dernières secondes.</div>
+          <div class="scene-vo"><em>"2 à 3 jours de travail. 20 ans de résultat. Soumission gratuite — lien en bio ou 514-266-2504."</em></div>
+          <div class="scene-instruction">Terminer sur un plan large statique 2 secondes avant le fade. CTA textuel permanent : "Soumission gratuite → 514-266-2504".</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SECTION 6 — CARROUSEL ═══════════ -->
+  <section class="section" id="carousel">
+    <div class="section-tag">Section 06</div>
+    <h2>Carrousel 8 slides — Comparaison complète</h2>
+    <p class="section-desc">Thème : "Asphalte vs Béton vs Pavé Uni — Quel revêtement pour votre entrée en 2026 ?" · Format Canva : 1080×1080 ou 1080×1350</p>
+
+    <!-- Material texture canvases — the aesthetic risk -->
+    <div class="texture-compare" aria-label="Comparaison visuelle des matériaux">
+      <div class="mat-col">
+        <div class="mat-canvas-wrap">
+          <canvas id="canvas-asphalt" width="400" height="160" aria-label="Texture asphalte"></canvas>
+          <span class="mat-label">Asphalte</span>
+        </div>
+        <div class="mat-body">
+          <div class="mat-price">CA$8–10 <span class="mat-price-unit">/ pi²</span></div>
+          <ul class="mat-pros">
+            <li>Pose rapide (1 jour)</li>
+            <li>Prix initial le plus bas</li>
+          </ul>
+          <ul class="mat-cons">
+            <li>Sellage requis tous les 3 ans</li>
+            <li>Se gondole sous la chaleur</li>
+            <li>Durée 15–20 ans max</li>
+            <li>Coût total 20 ans : ~CA$20K</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mat-col">
+        <div class="mat-canvas-wrap">
+          <canvas id="canvas-concrete" width="400" height="160" aria-label="Texture béton"></canvas>
+          <span class="mat-label">Béton</span>
+        </div>
+        <div class="mat-body">
+          <div class="mat-price">CA$12–15 <span class="mat-price-unit">/ pi²</span></div>
+          <ul class="mat-pros">
+            <li>Aspect propre et lisse</li>
+            <li>Faible entretien 5 premières années</li>
+          </ul>
+          <ul class="mat-cons">
+            <li>Se fissure avec le gel-dégel</li>
+            <li>Réparations irréversibles</li>
+            <li>Décoloration par sel</li>
+            <li>Coût total 20 ans : ~CA$17,5K</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mat-col">
+        <div class="mat-canvas-wrap">
+          <canvas id="canvas-pave" width="400" height="160" aria-label="Texture pavé uni"></canvas>
+          <span class="mat-label">Pavé uni</span>
+        </div>
+        <div class="mat-body">
+          <div class="mat-price">CA$15–22 <span class="mat-price-unit">/ pi²</span></div>
+          <ul class="mat-pros">
+            <li>Résiste aux cycles gel-dégel</li>
+            <li>Unité individuelle remplaçable</li>
+            <li>Valeur à la revente +8%</li>
+            <li>Coût total 20 ans : ~CA$14K ✓</li>
+          </ul>
+          <ul class="mat-cons">
+            <li>Investissement initial plus élevé</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>Note :</strong> Le tableau de texture ci-dessus est une aide visuelle de référence pour votre équipe créative. Pour Canva, photographiez des surfaces réelles de chaque matériau ou utilisez les textures incluses dans votre bibliothèque de marque.
+    </div>
+
+    <div class="slides-list">
+
+      <!-- Slide 1 -->
+      <div class="slide-row">
+        <div class="slide-num">1</div>
+        <div class="slide-content">
+          <div class="slide-type">Couverture · Accroche</div>
+          <div class="slide-title">Asphalte vs Béton vs Pavé Uni — Quel revêtement pour votre entrée en 2026 ?</div>
+          <div class="slide-body">
+            <p><strong>Visuel :</strong> Image partagée en 3 colonnes verticales — asphalte fissuré / béton gris / pavé uni Techo Bloc en couleur. Chaque tiers légèrement assombri sauf le dernier.</p>
+            <p><strong>Texte Canva :</strong> Grand titre centré en Georgia Bold, blanc sur bandeau vert foncé (#1E3A20) semi-transparent. Sous-titre : "Jardín Ideal · Guide 2026". Logo en bas à droite.</p>
+            <p><strong>Caption post :</strong> "Vous pensez refaire votre entrée ? Avant de décider, lisez ce carrousel — les vrais chiffres sur 20 ans. Glissez →"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide-row">
+        <div class="slide-num">2</div>
+        <div class="slide-content">
+          <div class="slide-type">Asphalte — Analyse complète</div>
+          <div class="slide-title">L'asphalte : le choix qui semble logique... jusqu'aux vrais chiffres.</div>
+          <div class="slide-body">
+            <p><strong>Contenu slide :</strong></p>
+            <ul>
+              <li>✅ Prix installation : CA$8–10/pi² (le moins cher)</li>
+              <li>✅ Pose rapide : 1 journée</li>
+              <li>❌ Sellage obligatoire tous les 3 ans : CA$600+</li>
+              <li>❌ Se gondole sous la chaleur estivale</li>
+              <li>❌ Fissures par gel-dégel dès l'an 5–7</li>
+              <li>❌ Durée de vie : 15–20 ans avec entretien rigoureux</li>
+              <li>❌ Coût total 20 ans (60 m²) : <strong>CA$20 000+</strong></li>
+            </ul>
+            <p><strong>Visuel :</strong> Photo asphalte fissuré avec crack bien visible. Texte en blanc sur fond noir-asphalte (#1A1A1A). Accent : rouge (#B83232) pour les croix.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide-row">
+        <div class="slide-num">3</div>
+        <div class="slide-content">
+          <div class="slide-type">Béton — Analyse complète</div>
+          <div class="slide-title">Le béton : propre... jusqu'au premier hiver sérieux.</div>
+          <div class="slide-body">
+            <p><strong>Contenu slide :</strong></p>
+            <ul>
+              <li>✅ Aspect soigné et contemporain</li>
+              <li>✅ Prix installation : CA$12–15/pi²</li>
+              <li>✅ Peu d'entretien les 5 premières années</li>
+              <li>❌ Se fissure avec les cycles de gel-dégel québécois</li>
+              <li>❌ Le sel de voirie attaque et décolore la surface</li>
+              <li>❌ Réparations visibles et quasi-impossibles à harmoniser</li>
+              <li>❌ Coût total 20 ans (60 m²) : <strong>CA$17 500</strong></li>
+            </ul>
+            <p><strong>Visuel :</strong> Photo béton fissuré ou tâché. Fond gris (#9A9A9A) pour le béton. Même structure de layout que slide 2.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide-row">
+        <div class="slide-num">4</div>
+        <div class="slide-content">
+          <div class="slide-type">Pavé uni — Analyse complète</div>
+          <div class="slide-title">Le pavé uni : plus cher à l'installation. Moins cher sur 20 ans. Voici pourquoi.</div>
+          <div class="slide-body">
+            <p><strong>Contenu slide :</strong></p>
+            <ul>
+              <li>✅ Prix installation : CA$15–22/pi² (matière + pose)</li>
+              <li>✅ Résiste au sel de déglaçage</li>
+              <li>✅ Travaille avec les cycles de gel-dégel (pas contre)</li>
+              <li>✅ Une unité bougée = 10 min de réparation</li>
+              <li>✅ Valeur ajoutée à la revente : +8% estimé</li>
+              <li>✅ Durée de vie : 30–40 ans avec entretien minimal</li>
+              <li>✅ Coût total 20 ans (60 m²) : <strong>CA$13 000–15 000</strong></li>
+            </ul>
+            <p><strong>Visuel :</strong> Photo pavé uni Techo Bloc en excellent état — couleurs vives, joints propres. Fond vert foncé (#1E3A20). Accent or (#C8A45A) pour les coches.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="slide-row">
+        <div class="slide-num">5</div>
+        <div class="slide-content">
+          <div class="slide-type">Tableau comparatif TCO 20 ans · 60 m²</div>
+          <div class="slide-title">Les chiffres côte à côte — coût total sur 20 ans pour une entrée de 60 m²</div>
+          <div class="slide-body">
+            <div class="tco-wrap">
+              <table class="tco-table">
+                <thead>
+                  <tr>
+                    <th>Poste de coût</th>
+                    <th>Asphalte</th>
+                    <th>Béton</th>
+                    <th class="col-pave">Pavé uni ✓</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Installation initiale</td>
+                    <td class="td-mid">CA$5 000</td>
+                    <td class="td-mid">CA$8 500</td>
+                    <td class="td-winner">CA$13 500</td>
+                  </tr>
+                  <tr>
+                    <td>Entretien annuel (sellage / nettoyage)</td>
+                    <td class="td-loser">CA$600 × 6 = $3 600</td>
+                    <td class="td-mid">CA$300/an = $6 000</td>
+                    <td class="td-winner">CA$350 / 5 ans = $1 050</td>
+                  </tr>
+                  <tr>
+                    <td>Réparations (fissures, patches)</td>
+                    <td class="td-loser">CA$2 500 × 2 = $5 000</td>
+                    <td class="td-mid">CA$400 × 5 = $2 000</td>
+                    <td class="td-winner">CA$0–200 (unités)</td>
+                  </tr>
+                  <tr>
+                    <td>Remplacement partiel / complet</td>
+                    <td class="td-loser">CA$6 000 (an 18)</td>
+                    <td class="td-mid">CA$4 000 (an 15)</td>
+                    <td class="td-winner">CA$0 (30–40 ans durée)</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td>TOTAL 20 ANS</td>
+                    <td class="td-loser">≈ CA$20 100</td>
+                    <td class="td-mid">≈ CA$17 500</td>
+                    <td class="col-winner">≈ CA$14 750</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <p style="font-size:12px; color:var(--gris); margin-top:8px;"><em>*Estimations basées sur les prix du marché montréalais 2024–2026. Les prix varient selon la superficie, les matériaux choisis et l'état du terrain.</em></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="slide-row">
+        <div class="slide-num">6</div>
+        <div class="slide-content">
+          <div class="slide-type">Guide de décision</div>
+          <div class="slide-title">Comment choisir en 3 questions — votre check-list personnelle</div>
+          <div class="slide-body">
+            <p><strong>Contenu slide (format décision-arbre visuel dans Canva) :</strong></p>
+            <ul>
+              <li><strong>Question 1 :</strong> Vous gardez votre maison plus de 5 ans ? → Si oui : pavé uni s'amortit mieux. Si non : asphalte peut suffire.</li>
+              <li><strong>Question 2 :</strong> Vous êtes en zone avec beaucoup de gel-dégel ? (= Montréal) → Si oui : béton est à éviter. Pavé uni est conçu pour ça.</li>
+              <li><strong>Question 3 :</strong> La valeur à la revente compte pour vous ? → Pavé uni ajoute en moyenne 8% de valeur perçue. Asphalte : neutre. Béton fissuré : négatif.</li>
+            </ul>
+            <p><strong>Visuel :</strong> Infographie arbre de décision simple. 3 branches. Fond crème (#F5F2EB). Nœuds en vert foncé, textes en noir.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7 -->
+      <div class="slide-row">
+        <div class="slide-num">7</div>
+        <div class="slide-content">
+          <div class="slide-type">Garantie + Financement</div>
+          <div class="slide-title">Pourquoi choisir Jardín Ideal — les garanties concrètes</div>
+          <div class="slide-body">
+            <p><strong>Contenu slide :</strong></p>
+            <ul>
+              <li>🏅 <strong>Garantie 10 ans sur la pose</strong> — par écrit dans le contrat</li>
+              <li>📋 <strong>Entrepreneur certifié RBQ</strong> — numéro vérifiable</li>
+              <li>🏗️ <strong>15 ans d'expérience</strong> — 500+ projets Grand Montréal</li>
+              <li>🧱 <strong>Techo Bloc & Permacon agréé</strong> — matériaux fabriqués au Québec</li>
+              <li>💳 <strong>Financement 12 à 240 mois</strong> — à partir de CA$90/mois</li>
+              <li>⚡ <strong>Soumission gratuite — réponse en 24h</strong></li>
+            </ul>
+            <p><strong>Visuel :</strong> Fond vert foncé (#1E3A20). Icônes simples en or (#C8A45A). Chaque point sur sa propre ligne. Logo Jardín Ideal en bas centré.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8 -->
+      <div class="slide-row">
+        <div class="slide-num">8</div>
+        <div class="slide-content">
+          <div class="slide-type">CTA Final · Dernier slide</div>
+          <div class="slide-title">Votre entrée mérite mieux. Obtenez votre soumission gratuite — réponse en 24h.</div>
+          <div class="slide-body">
+            <p><strong>Contenu slide :</strong></p>
+            <ul>
+              <li>Grand titre : "Prêt à passer au pavé uni ?"</li>
+              <li>Sous-titre : "Soumission gratuite · Réponse en 24h · Financement disponible"</li>
+              <li>Bouton visuel : "Appelez le 514-266-2504"</li>
+              <li>Deuxième ligne : "Ou écrivez-nous — lien en bio"</li>
+              <li>Badges : RBQ · Garantie 10 ans · 500+ projets · Montréal depuis 2009</li>
+            </ul>
+            <p><strong>Visuel :</strong> Photo d'entrée en pavé uni termineé — belle lumière dorée. Bandeau vert foncé en bas 30% de la slide avec tout le texte CTA en blanc et or. Effet split : photo en haut, action en bas.</p>
+            <div class="slide-cta-row">
+              <span class="slide-cta-btn">514-266-2504</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ SECTION 7 — CTA FINAL ═══════════ -->
+  <section class="section" id="cta">
+    <div class="section-tag">Section 07</div>
+    <h2>CTA — 2 versions prêtes à l'emploi</h2>
+    <p class="section-desc">Version organique (ton conversationnel, pour posts non payés) et version payée (direct, orienté conversion). Variante financement incluse pour chaque.</p>
+
+    <div class="cta-grid">
+
+      <!-- CTA Organique -->
+      <div class="cta-card">
+        <span class="cta-type">Version A · Organique</span>
+        <div class="cta-main">Obtenez votre soumission gratuite — on vous répond en 24h.</div>
+        <div class="cta-sub">Pas d'engagement. Pas de vente sous pression. On évalue votre projet, on vous envoie un prix détaillé, et c'est vous qui décidez — à votre rythme.</div>
+        <a class="cta-button btn-outline" href="tel:5142662504">📞 514-266-2504</a>
+
+        <div class="cta-variants" style="margin-top:20px;">
+          <span class="cta-variant-label">Variante avec financement</span>
+          <div class="cta-variant-text">Soumission gratuite — on calcule votre paiement mensuel en même temps. Financement à partir de CA$90/mois, 12 à 240 mois. Réponse en 24h. 📞 514-266-2504</div>
+
+          <span class="cta-variant-label">Variante courte (légende Instagram)</span>
+          <div class="cta-variant-text">👉 Soumission gratuite → lien en bio ou 📞 514-266-2504. On répond en 24h.</div>
+
+          <span class="cta-variant-label">Variante urgence (saison haute)</span>
+          <div class="cta-variant-text">Notre agenda se remplit rapidement pour la saison. Réservez votre visite maintenant — soumission gratuite, réponse en 24h. 📞 514-266-2504</div>
+        </div>
+      </div>
+
+      <!-- CTA Paid -->
+      <div class="cta-card primary">
+        <span class="cta-type">Version B · Annonces payées (Meta Ads)</span>
+        <div class="cta-main">Soumission gratuite. Réponse en 24h. Financement disponible.</div>
+        <div class="cta-sub">Pour les propriétaires de Saint-Léonard, Anjou, Montréal-Nord et Laval. Entrepreneur certifié RBQ. Garantie 10 ans sur la pose.</div>
+        <a class="cta-button btn-or" href="tel:5142662504">Obtenir un devis gratuit →</a>
+
+        <div class="cta-variants" style="margin-top:20px;">
+          <span class="cta-variant-label">Variante financement (bouton Meta Ads)</span>
+          <div class="cta-variant-text">Votre entrée à partir de CA$90/mois — soumission gratuite, financement 12 à 240 mois, réponse en 24h. Entrepreneur certifié RBQ.</div>
+
+          <span class="cta-variant-label">Variante courte (titre d'annonce, 40 car.)</span>
+          <div class="cta-variant-text">Pavé uni gratuit à évaluer — 24h</div>
+
+          <span class="cta-variant-label">Variante Messenger / DM automatique</span>
+          <div class="cta-variant-text">Bonjour ! Pour votre soumission pavé uni gratuite, pouvez-vous nous indiquer : votre ville, le type de surface (entrée / cour / allée) et la superficie approximative ? On vous répond sous 24h. — L'équipe Jardín Ideal</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tip-box" style="margin-top:24px;">
+      <strong>Recommandation finale :</strong> Testez toujours 2 CTA en parallèle sur chaque campagne. Donnez 7 jours minimum et CA$15/jour minimum par variante avant de conclure. Le CTA "Obtenir un devis" surpasse généralement "En savoir plus" pour les audiences chaudes (retargeting), mais l'inverse est vrai pour les audiences froides.
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- ═══════════ CANVAS TEXTURES (aesthetic risk — material surfaces) ═══════════ -->
+<script>
+(function() {
+  'use strict';
+
+  function drawAsphalt(canvas) {
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width, h = canvas.height;
+
+    // Dark asphalt base
+    var grad = ctx.createLinearGradient(0, 0, 0, h);
+    grad.addColorStop(0, '#2A2926');
+    grad.addColorStop(1, '#1A1917');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+
+    // Aggregate texture — random grainy particles
+    for (var i = 0; i < 1800; i++) {
+      var x = Math.random() * w;
+      var y = Math.random() * h;
+      var r = Math.random() * 2.2;
+      var lightness = 40 + Math.random() * 40;
+      ctx.fillStyle = 'hsla(30, 5%, ' + lightness + '%, ' + (0.08 + Math.random() * 0.25) + ')';
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Crack simulation
+    ctx.strokeStyle = 'rgba(60,55,50,0.6)';
+    ctx.lineWidth = 0.8;
+    ctx.beginPath();
+    ctx.moveTo(w * 0.3, 0);
+    ctx.bezierCurveTo(w * 0.28, h * 0.3, w * 0.35, h * 0.5, w * 0.25, h);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(w * 0.6, h * 0.2);
+    ctx.bezierCurveTo(w * 0.65, h * 0.4, w * 0.58, h * 0.6, w * 0.7, h * 0.8);
+    ctx.stroke();
+  }
+
+  function drawConcrete(canvas) {
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width, h = canvas.height;
+
+    // Concrete base
+    var grad = ctx.createLinearGradient(0, 0, w, h);
+    grad.addColorStop(0, '#C8C4BE');
+    grad.addColorStop(1, '#B0ACA5');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+
+    // Fine aggregate / sand texture
+    for (var i = 0; i < 2400; i++) {
+      var x = Math.random() * w;
+      var y = Math.random() * h;
+      var r = Math.random() * 1.4;
+      var light = 55 + Math.random() * 30;
+      ctx.fillStyle = 'hsla(35, 8%, ' + light + '%, ' + (0.06 + Math.random() * 0.18) + ')';
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Formwork lines — subtle horizontal
+    ctx.strokeStyle = 'rgba(150,145,138,0.25)';
+    ctx.lineWidth = 1;
+    for (var j = 0; j < h; j += 18) {
+      ctx.beginPath();
+      ctx.moveTo(0, j + Math.random() * 2);
+      ctx.lineTo(w, j + Math.random() * 2);
+      ctx.stroke();
+    }
+
+    // Salt damage simulation — pale spots
+    for (var k = 0; k < 12; k++) {
+      var sx = Math.random() * w;
+      var sy = Math.random() * h;
+      var rg = ctx.createRadialGradient(sx, sy, 0, sx, sy, 10 + Math.random() * 18);
+      rg.addColorStop(0, 'rgba(255,248,235,0.35)');
+      rg.addColorStop(1, 'rgba(255,248,235,0)');
+      ctx.fillStyle = rg;
+      ctx.fillRect(sx - 28, sy - 28, 56, 56);
+    }
+  }
+
+  function drawPave(canvas) {
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width, h = canvas.height;
+
+    // Individual paving stone grid
+    var stoneW = 38, stoneH = 22, jointW = 3;
+    var cols = Math.ceil(w / (stoneW + jointW)) + 1;
+    var rows = Math.ceil(h / (stoneH + jointW)) + 1;
+
+    // Background / joint color
+    ctx.fillStyle = '#4A4640';
+    ctx.fillRect(0, 0, w, h);
+
+    for (var row = 0; row < rows; row++) {
+      var offsetX = (row % 2 === 0) ? 0 : (stoneW + jointW) / 2;
+      for (var col = 0; col < cols; col++) {
+        var x = col * (stoneW + jointW) - offsetX;
+        var y = row * (stoneH + jointW);
+
+        // Each stone slightly varied hue
+        var hueShift = (Math.random() - 0.5) * 20;
+        var lightShift = 25 + Math.random() * 18;
+        ctx.fillStyle = 'hsl(' + (200 + hueShift) + ', 12%, ' + lightShift + '%)';
+        ctx.fillRect(x, y, stoneW, stoneH);
+
+        // Stone surface highlight — top-left bevel
+        ctx.fillStyle = 'rgba(255,255,255,0.08)';
+        ctx.fillRect(x, y, stoneW, 2);
+        ctx.fillRect(x, y, 2, stoneH);
+
+        // Stone shadow — bottom-right
+        ctx.fillStyle = 'rgba(0,0,0,0.18)';
+        ctx.fillRect(x, y + stoneH - 2, stoneW, 2);
+        ctx.fillRect(x + stoneW - 2, y, 2, stoneH);
+      }
+    }
+
+    // Overlay — subtle green tint (Jardín Ideal brand)
+    ctx.fillStyle = 'rgba(30, 58, 32, 0.22)';
+    ctx.fillRect(0, 0, w, h);
+  }
+
+  // Draw when DOM ready — use setTimeout for safety
+  setTimeout(function() {
+    var ca = document.getElementById('canvas-asphalt');
+    var cc = document.getElementById('canvas-concrete');
+    var cp = document.getElementById('canvas-pave');
+    if (ca) drawAsphalt(ca);
+    if (cc) drawConcrete(cc);
+    if (cp) drawPave(cp);
+  }, 0);
+
+})();
+</script>
+
+</body>
+</html>

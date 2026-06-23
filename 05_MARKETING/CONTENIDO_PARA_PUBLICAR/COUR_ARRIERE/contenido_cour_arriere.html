@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cour Arrière — Contenu Prêt à Publier · Jardín Ideal 2026</title>
+<style>
+/* ═══════════════════════════════════════════════════════
+   JARDÍN IDEAL — SYSTÈME DE DESIGN
+   Cour Arrière / Été 2026 / Contenu Prêt à Publier
+═══════════════════════════════════════════════════════ */
+:root {
+  /* Palette */
+  --vf:   #1E3A20;   /* vert foncé — brand primary */
+  --or:   #C8A45A;   /* or — accent */
+  --cr:   #F5F2EB;   /* crème — ground */
+  --w:    #FFFFFF;
+  --gf:   #2A2B28;   /* gris foncé — text */
+  --noir: #0D0E0B;
+  --vm:   #3D6B42;   /* vert moyen */
+  --vc:   #5A8F62;   /* vert clair */
+  --gc:   #B8B8B0;
+  --gm:   #6B6B63;
+  --crd:  #EDE9E0;   /* crème dark */
+  --rouge:#B83232;
+  --vbg:  #EAF2EB;
+
+  /* Typographie */
+  --fd: Georgia, 'Times New Roman', serif;
+  --fb: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --fm: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cr);
+  color: var(--gf);
+  font-family: var(--fb);
+  font-size: 14.5px;
+  line-height: 1.78;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--crd); }
+::-webkit-scrollbar-thumb { background: var(--or); }
+
+/* ══════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════ */
+.hero {
+  background: var(--vf);
+  position: relative;
+  overflow: hidden;
+  padding: 56px 64px 48px;
+}
+
+/* Aesthetic risk: large rotated text watermark — creates depth without a photo */
+.hero::before {
+  content: "COUR";
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-8deg);
+  font-family: var(--fd);
+  font-size: clamp(160px, 22vw, 260px);
+  font-weight: 700;
+  color: rgba(200, 164, 90, 0.05);
+  letter-spacing: -8px;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.hero-eyebrow {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-eyebrow::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--or);
+  flex-shrink: 0;
+}
+
+.hero h1 {
+  font-family: var(--fd);
+  font-size: clamp(30px, 5vw, 58px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  max-width: 680px;
+  margin-bottom: 10px;
+}
+.hero h1 em {
+  color: var(--or);
+  font-style: italic;
+}
+
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.62);
+  max-width: 560px;
+  margin: 14px 0 36px;
+  line-height: 1.65;
+}
+
+/* Stat strip — single animation moment */
+.stat-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  padding-top: 28px;
+  animation: fadeUp 0.7s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stat-strip { animation: none; }
+}
+
+.stat {
+  padding: 0 36px 0 0;
+  margin-right: 36px;
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+.stat:last-child { border-right: none; }
+
+.stat-val {
+  font-family: var(--fd);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--or);
+  line-height: 1;
+  display: block;
+}
+.stat-lbl {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.48);
+  display: block;
+  margin-top: 4px;
+}
+
+/* ══════════════════════════════════════════════════════
+   SERVICE BAND
+══════════════════════════════════════════════════════ */
+.service-band {
+  background: var(--noir);
+  padding: 14px 64px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 28px;
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+}
+.service-band span { color: rgba(200,164,90,0.35); }
+
+/* ══════════════════════════════════════════════════════
+   LAYOUT CONTAINER
+══════════════════════════════════════════════════════ */
+.wrap {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 48px 96px;
+}
+
+/* ══════════════════════════════════════════════════════
+   SECTION HEADER — left gold rule accent
+══════════════════════════════════════════════════════ */
+.sec {
+  padding-top: 56px;
+  margin-top: 56px;
+  border-top: 1px solid var(--crd);
+}
+.sec:first-child { border-top: none; margin-top: 40px; }
+
+.sec-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 8px;
+  padding-left: 14px;
+  border-left: 3px solid var(--or);   /* the left gold rule — structural accent */
+}
+
+.sec h2 {
+  font-family: var(--fd);
+  font-size: clamp(20px, 3vw, 34px);
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1.15;
+  margin-bottom: 6px;
+  padding-left: 17px;
+}
+.sec h2 em { color: var(--vm); font-style: italic; }
+
+.sec-intro {
+  padding-left: 17px;
+  color: var(--gm);
+  font-size: 13.5px;
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+/* ══════════════════════════════════════════════════════
+   HOOK CARDS (Section 1)
+══════════════════════════════════════════════════════ */
+.hooks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.hook-card {
+  background: var(--w);
+  border: 1px solid var(--crd);
+  border-top: 4px solid var(--or);
+  padding: 24px 26px 20px;
+  position: relative;
+}
+
+.hook-num {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--gc);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.hook-angle {
+  font-family: var(--fm);
+  font-size: 8.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vm);
+  background: var(--vbg);
+  display: inline-block;
+  padding: 2px 8px;
+  margin-bottom: 12px;
+}
+
+.hook-text {
+  font-family: var(--fd);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--noir);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.hook-note {
+  font-size: 12px;
+  color: var(--gm);
+  font-style: italic;
+  line-height: 1.55;
+  border-top: 1px solid var(--crd);
+  padding-top: 10px;
+}
+
+/* ══════════════════════════════════════════════════════
+   AD COPY CARDS — the "printable card" treatment
+   Shadow + tinted header = material quality
+══════════════════════════════════════════════════════ */
+.copy-card {
+  background: var(--w);
+  border: 1px solid #D9D5CA;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 14px rgba(30,58,32,0.07), 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.copy-card-header {
+  background: var(--vf);
+  padding: 13px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.copy-card-title {
+  font-family: var(--fd);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--w);
+}
+
+.copy-card-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-family: var(--fm);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 2px;
+}
+.badge-fb  { background: #1877F2; color: #fff; }
+.badge-ig  { background: #E1306C; color: #fff; }
+.badge-meta{ background: rgba(200,164,90,0.2); color: var(--or); border: 1px solid rgba(200,164,90,0.4); }
+.badge-angle{ background: var(--vbg); color: var(--vm); }
+.badge-chars{ background: var(--crd); color: var(--gm); }
+
+.copy-card-body {
+  padding: 24px 28px;
+}
+
+.copy-text {
+  background: var(--cr);
+  border: 1px solid var(--crd);
+  border-left: 3px solid var(--or);
+  padding: 18px 22px;
+  font-family: var(--fb);
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--noir);
+  white-space: pre-wrap;
+  margin-bottom: 16px;
+  cursor: text;
+  user-select: all;
+}
+
+.copy-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.spec-chip {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: var(--crd);
+  color: var(--gm);
+}
+
+.copy-card-tip {
+  background: #FEF9F0;
+  border-top: 1px solid #F0E8D0;
+  padding: 10px 28px;
+  font-size: 12px;
+  color: var(--gm);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.copy-card-tip::before {
+  content: "→";
+  color: var(--or);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ══════════════════════════════════════════════════════
+   HASHTAG BLOCK
+══════════════════════════════════════════════════════ */
+.hashtag-block {
+  background: var(--noir);
+  border-left: 3px solid var(--or);
+  padding: 14px 20px;
+  font-family: var(--fm);
+  font-size: 11px;
+  color: var(--or);
+  line-height: 1.9;
+  letter-spacing: 0.5px;
+  white-space: pre-wrap;
+  cursor: text;
+  user-select: all;
+  margin-top: 14px;
+}
+
+/* ══════════════════════════════════════════════════════
+   META ADS — paid format
+══════════════════════════════════════════════════════ */
+.ad-card {
+  background: var(--w);
+  border: 1px solid #D9D5CA;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 14px rgba(30,58,32,0.07);
+  overflow: hidden;
+}
+
+.ad-card-header {
+  background: var(--noir);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ad-card-header .title {
+  font-family: var(--fd);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--or);
+}
+
+.ad-field {
+  padding: 0 24px;
+}
+.ad-field:first-of-type { padding-top: 20px; }
+.ad-field:last-of-type  { padding-bottom: 24px; }
+
+.ad-field-label {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gc);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  margin-top: 16px;
+}
+.ad-field-label .char-count {
+  font-size: 8px;
+  background: var(--crd);
+  color: var(--gm);
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+
+.ad-field-value {
+  font-size: 13.5px;
+  color: var(--noir);
+  line-height: 1.7;
+  background: var(--cr);
+  padding: 10px 14px;
+  border: 1px solid var(--crd);
+  cursor: text;
+  user-select: all;
+  white-space: pre-wrap;
+}
+
+.ad-divider {
+  height: 1px;
+  background: var(--crd);
+  margin: 20px 24px 0;
+}
+
+.targeting-block {
+  padding: 16px 24px 20px;
+  background: var(--vbg);
+  border-top: 1px solid #C8DBC9;
+}
+.targeting-title {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--vm);
+  margin-bottom: 10px;
+}
+.targeting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+.t-item {
+  font-size: 12px;
+  color: var(--vf);
+}
+.t-item strong {
+  display: block;
+  font-family: var(--fm);
+  font-size: 8.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vm);
+  margin-bottom: 2px;
+}
+
+/* ══════════════════════════════════════════════════════
+   REEL SCRIPT
+══════════════════════════════════════════════════════ */
+.reel-card {
+  background: var(--w);
+  border: 1px solid #D9D5CA;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 14px rgba(30,58,32,0.07);
+  overflow: hidden;
+}
+.reel-header {
+  background: var(--vf);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.reel-title {
+  font-family: var(--fd);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--w);
+}
+.reel-duration {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--or);
+  background: rgba(200,164,90,0.12);
+  border: 1px solid rgba(200,164,90,0.3);
+  padding: 3px 10px;
+}
+
+.reel-timeline {
+  list-style: none;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.reel-beat {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-left: 2px solid var(--crd);
+  padding-left: 20px;
+  margin-left: 8px;
+  position: relative;
+}
+.reel-beat:last-child { border-left-color: transparent; }
+.reel-beat::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  background: var(--or);
+  border-radius: 50%;
+}
+.reel-tc {
+  font-family: var(--fm);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--or);
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 44px;
+}
+.reel-beat-content { flex: 1; }
+.reel-beat-shot {
+  font-weight: 600;
+  color: var(--vf);
+  font-size: 13.5px;
+  margin-bottom: 3px;
+}
+.reel-beat-action {
+  font-size: 12.5px;
+  color: var(--gm);
+  line-height: 1.5;
+}
+.reel-beat-text {
+  margin-top: 6px;
+  font-family: var(--fd);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--vm);
+  background: var(--vbg);
+  border-left: 2px solid var(--vc);
+  padding: 6px 12px;
+}
+.reel-tech-note {
+  background: var(--noir);
+  padding: 14px 24px;
+  font-family: var(--fm);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--gc);
+  line-height: 1.7;
+  display: flex;
+  gap: 12px;
+}
+.reel-tech-note::before { content: "TECH"; color: var(--or); font-weight: 700; flex-shrink: 0; }
+
+/* ══════════════════════════════════════════════════════
+   CAROUSEL
+══════════════════════════════════════════════════════ */
+.carousel-wrap { overflow-x: auto; padding-bottom: 12px; }
+.carousel-track {
+  display: flex;
+  gap: 12px;
+  min-width: max-content;
+  padding: 4px 2px 8px;
+}
+
+.slide {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--w);
+  border: 1px solid #D9D5CA;
+  box-shadow: 0 2px 10px rgba(30,58,32,0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-num {
+  font-family: var(--fm);
+  font-size: 8.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gc);
+  padding: 10px 16px 0;
+}
+
+.slide-cover {
+  background: var(--vf);
+  padding: 32px 20px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.slide-cover::after {
+  content: "";
+  position: absolute;
+  bottom: -30px; right: -30px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 24px solid rgba(200,164,90,0.10);
+}
+.slide-cover-label {
+  font-family: var(--fm);
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--or);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.slide-cover-title {
+  font-family: var(--fd);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.15;
+}
+.slide-cover-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 8px;
+}
+
+.slide-project {
+  background: var(--cr);
+  padding: 16px 16px 18px;
+  flex: 1;
+}
+.slide-zone {
+  font-family: var(--fm);
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.slide-project-title {
+  font-family: var(--fd);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--vf);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.slide-specs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.slide-specs li {
+  font-size: 11.5px;
+  color: var(--gf);
+  display: flex;
+  gap: 6px;
+}
+.slide-specs li::before {
+  content: "▸";
+  color: var(--or);
+  font-size: 9px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.slide-price {
+  background: var(--or);
+  padding: 20px 20px 22px;
+}
+.slide-price-label {
+  font-family: var(--fm);
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.45);
+  margin-bottom: 4px;
+}
+.slide-price-val {
+  font-family: var(--fd);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1;
+}
+.slide-price-note {
+  font-size: 11px;
+  color: rgba(30,58,32,0.65);
+  margin-top: 4px;
+}
+
+.slide-cta {
+  background: var(--vf);
+  padding: 22px 20px;
+}
+.slide-cta-title {
+  font-family: var(--fd);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--w);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.slide-cta-tel {
+  font-family: var(--fm);
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--or);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+.slide-cta-btn {
+  display: inline-block;
+  background: var(--or);
+  color: var(--vf);
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 8px 18px;
+  text-decoration: none;
+}
+
+/* ══════════════════════════════════════════════════════
+   CTA FINAL
+══════════════════════════════════════════════════════ */
+.cta-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media(max-width:700px) { .cta-pair { grid-template-columns: 1fr; } }
+
+.cta-block {
+  padding: 28px 28px 24px;
+  border: 1px solid var(--crd);
+}
+.cta-block.organic {
+  background: var(--w);
+  border-top: 4px solid var(--vm);
+}
+.cta-block.paid {
+  background: var(--vf);
+  border-top: 4px solid var(--or);
+}
+.cta-type {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--vm);
+  margin-bottom: 10px;
+}
+.cta-block.paid .cta-type { color: var(--or); }
+
+.cta-block h3 {
+  font-family: var(--fd);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--vf);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.cta-block.paid h3 { color: var(--w); }
+
+.cta-copy {
+  font-size: 13px;
+  color: var(--gf);
+  line-height: 1.7;
+  background: var(--cr);
+  border-left: 3px solid var(--vm);
+  padding: 12px 16px;
+  white-space: pre-wrap;
+  cursor: text;
+  user-select: all;
+}
+.cta-block.paid .cta-copy {
+  background: rgba(255,255,255,0.07);
+  border-left-color: var(--or);
+  color: rgba(255,255,255,0.85);
+}
+
+.cta-specs {
+  margin-top: 12px;
+  font-size: 11.5px;
+  color: var(--gm);
+}
+.cta-block.paid .cta-specs { color: rgba(255,255,255,0.45); }
+
+/* ══════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════ */
+.footer {
+  background: var(--noir);
+  padding: 28px 64px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.footer-brand {
+  font-family: var(--fd);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--w);
+}
+.footer-brand em { color: var(--or); font-style: normal; }
+.footer-meta {
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gc);
+}
+.footer-tel {
+  font-family: var(--fm);
+  font-size: 12px;
+  color: var(--or);
+  letter-spacing: 1px;
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════ */
+@media(max-width:760px) {
+  .hero, .service-band, .footer { padding-left: 24px; padding-right: 24px; }
+  .wrap { padding-left: 20px; padding-right: 20px; }
+  .stat-strip { gap: 20px; }
+  .stat { border-right: none; padding-right: 0; margin-right: 0; }
+  .hooks-grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════════════════
+   FOCUS / A11Y
+══════════════════════════════════════════════════════ */
+:focus-visible { outline: 2px solid var(--or); outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-eyebrow">Jardín Ideal · Montréal · Été 2026</div>
+  <h1>Votre cour arrière,<br><em>votre espace de vie.</em></h1>
+  <p class="hero-sub">Contenu prêt à publier — Meta Ads &amp; Réseaux sociaux.<br>Cour arrière : pavé uni, terrasse, gazebo, plate-bandes, éclairage.</p>
+  <div class="stat-strip">
+    <div class="stat">
+      <span class="stat-val">8</span>
+      <span class="stat-lbl">Semaines d'été restantes</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">2–3</span>
+      <span class="stat-lbl">Semaines de réalisation</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">$12K+</span>
+      <span class="stat-lbl">À partir de / projet complet</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">514-266-2504</span>
+      <span class="stat-lbl">Soumission gratuite</span>
+    </div>
+  </div>
+</header>
+
+<div class="service-band">
+  <span>Pavé uni</span>
+  <span>·</span>
+  <span>Terrasse</span>
+  <span>·</span>
+  <span>Gazebo</span>
+  <span>·</span>
+  <span>Plate-bandes</span>
+  <span>·</span>
+  <span>Haies</span>
+  <span>·</span>
+  <span>Éclairage extérieur</span>
+  <span>·</span>
+  <span>Allée latérale</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     MAIN CONTENT
+═══════════════════════════════════════════════ -->
+<main class="wrap">
+
+  <!-- ───────────────────────────────────────────
+       SECTION 1 — HOOKS
+  ─────────────────────────────────────────────── -->
+  <section class="sec" id="hooks">
+    <div class="sec-label">Section 1</div>
+    <h2>5 Hooks — <em>Premières lignes d'accroche</em></h2>
+    <p class="sec-intro">Chaque hook est conçu pour stopper le scroll. À utiliser en première ligne du texte principal, en titre de vidéo, ou comme sous-titre de visuel. Cliquer sur le texte pour tout sélectionner.</p>
+
+    <div class="hooks-grid">
+
+      <div class="hook-card">
+        <span class="hook-num">Hook 01</span>
+        <span class="hook-angle">Espace de vie / Famille</span>
+        <p class="hook-text">Cet été, votre famille mérite un endroit à elle. Et c'est juste derrière la maison.</p>
+        <p class="hook-note">Angle émotionnel — famille, appartenance, fierté. Idéal pour image de terrasse en soirée avec lumières. Audience : 35–50 ans, parents, Laval / TMR.</p>
+      </div>
+
+      <div class="hook-card">
+        <span class="hook-num">Hook 02</span>
+        <span class="hook-angle">FOMO / Saison</span>
+        <p class="hook-text">Il reste 8 semaines d'été. Agir maintenant ou attendre l'an prochain.</p>
+        <p class="hook-note">Urgence réelle, non artificielle — les travaux prennent 2–3 semaines + l'agenda se remplit. Fort pour ciblage retargeting et warm audience.</p>
+      </div>
+
+      <div class="hook-card">
+        <span class="hook-num">Hook 03</span>
+        <span class="hook-angle">Transformation visuelle</span>
+        <p class="hook-text">Avant : terrain vague. Après : terrasse pavé uni, éclairage, plate-bandes. Même cour. 18 jours de travaux.</p>
+        <p class="hook-note">Idéal pour carrusel avant/après ou reel time-lapse. La spécificité "18 jours" crée la crédibilité. Inclure la surface réalisée si disponible.</p>
+      </div>
+
+      <div class="hook-card">
+        <span class="hook-num">Hook 04</span>
+        <span class="hook-angle">Investissement / Valeur</span>
+        <p class="hook-text">Une cour aménagée augmente la valeur de votre propriété — et votre qualité de vie dès le premier soir.</p>
+        <p class="hook-note">Angle rationnel + émotionnel. Fonctionne bien en combinaison avec un chiffre de retour sur investissement ou une citation d'évaluateur. Audience 45–65 ans.</p>
+      </div>
+
+      <div class="hook-card">
+        <span class="hook-num">Hook 05</span>
+        <span class="hook-angle">Problème concret</span>
+        <p class="hook-text">Votre cour arrière ressemble encore à un terrain vague ? On a transformé pire que ça — en 3 semaines.</p>
+        <p class="hook-note">Humour bienveillant + preuve de capacité. Audience : propriétaires qui ont repoussé le projet depuis plusieurs étés. Fort pour cold audience Facebook.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────────
+       SECTION 2 — COPIES FACEBOOK
+  ─────────────────────────────────────────────── -->
+  <section class="sec" id="facebook">
+    <div class="sec-label">Section 2</div>
+    <h2>3 Copies <em>Facebook</em></h2>
+    <p class="sec-intro">Texte principal complet, prêt à coller dans le gestionnaire de publicités ou à publier en organique. Cliquer sur chaque bloc de texte pour tout sélectionner.</p>
+
+    <!-- FB Post 1 -->
+    <div class="copy-card">
+      <div class="copy-card-header">
+        <span class="copy-card-title">Post 1 — L'été commence dans la cour</span>
+        <div class="copy-card-meta">
+          <span class="badge badge-fb">Facebook</span>
+          <span class="badge badge-angle">Émotionnel / Famille</span>
+          <span class="badge badge-chars">≈ 200 mots</span>
+        </div>
+      </div>
+      <div class="copy-card-body">
+        <div class="copy-text">Cet été, vous méritez un espace qui vous ressemble.
+
+Pas une cour qu'on traverse vite pour rentrer. Un endroit où on s'installe. Où les enfants jouent pendant que vous finissez votre café. Où les amis s'attardent après le BBQ parce que personne n'a envie de partir.
+
+C'est exactement ce que crée Jardín Ideal.
+
+Terrasse en pavé uni, plate-bandes fleuries, haies bien taillées, éclairage d'ambiance pour les soirs de juillet — on conçoit des cours arrière qui deviennent le cœur de la maison.
+
+Ce qu'on entend le plus souvent après un projet :
+✅ "J'aurais dû faire ça il y a cinq ans."
+✅ "On reçoit tellement plus maintenant."
+✅ "Les enfants ne veulent plus rentrer."
+
+Et la bonne nouvelle ? Une transformation complète se réalise en 2 à 3 semaines. Votre cour peut être prête pour le mois de juillet.
+
+Projets à partir de 12 000 $ CA.
+Soumission 100 % gratuite, sans engagement.
+
+📞 514-266-2504
+Ou écrivez-nous directement — on répond en 48h.</div>
+        <div class="copy-specs">
+          <span class="spec-chip">Image recommandée : terrasse soirée avec éclairage</span>
+          <span class="spec-chip">Format : 1:1 ou 4:5</span>
+          <span class="spec-chip">CTA bouton : Obtenir un devis</span>
+        </div>
+      </div>
+      <div class="copy-card-tip">Ajouter 1 photo de réalisation récente (soirée, éclairage allumé). Éviter les photos de jour trop uniformes — la lumière de 18h–19h convertit mieux.</div>
+    </div>
+
+    <!-- FB Post 2 -->
+    <div class="copy-card">
+      <div class="copy-card-header">
+        <span class="copy-card-title">Post 2 — Chaque semaine sans agir = une semaine d'été perdue</span>
+        <div class="copy-card-meta">
+          <span class="badge badge-fb">Facebook</span>
+          <span class="badge badge-angle">FOMO / Urgence saison</span>
+          <span class="badge badge-chars">≈ 180 mots</span>
+        </div>
+      </div>
+      <div class="copy-card-body">
+        <div class="copy-text">On est fin juin. Il reste environ 8 semaines d'été.
+
+Une transformation de cour arrière prend 2 à 3 semaines. Notre agenda est déjà bien rempli.
+
+Ce que ça veut dire concrètement :
+
+Si vous nous contactez cette semaine → votre cour est prête pour la mi-juillet.
+Si vous attendez encore 3 semaines → vous profiterez peut-être d'août.
+Si vous remettez à septembre → c'est l'an prochain.
+
+Chaque été qui passe sans votre cour aménagée, c'est des soirées dehors que vous n'avez pas. Des amis que vous n'avez pas reçus. Des moments en famille que vous avez manqués.
+
+On ne veut pas faire peur. On veut juste être honnêtes.
+
+Nos équipes ont encore quelques disponibilités pour juillet.
+Soumission gratuite — on se déplace, on évalue, on vous propose quelque chose de concret.
+
+📞 514-266-2504
+Laval · Rive-Nord · TMR · West Island</div>
+        <div class="copy-specs">
+          <span class="spec-chip">Image : chantier en cours ou agenda avec dates</span>
+          <span class="spec-chip">Format : 1.91:1 horizontal</span>
+          <span class="spec-chip">CTA bouton : Planifier ma soumission</span>
+        </div>
+      </div>
+      <div class="copy-card-tip">Ce post fonctionne particulièrement bien en retargeting (personnes qui ont visité le site ou interagi avec un post précédent). Urgence honnête = confiance.</div>
+    </div>
+
+    <!-- FB Post 3 -->
+    <div class="copy-card">
+      <div class="copy-card-header">
+        <span class="copy-card-title">Post 3 — Voici ce qu'on peut faire en 2–3 semaines</span>
+        <div class="copy-card-meta">
+          <span class="badge badge-fb">Facebook</span>
+          <span class="badge badge-angle">Processus / Services complets</span>
+          <span class="badge badge-chars">≈ 220 mots</span>
+        </div>
+      </div>
+      <div class="copy-card-body">
+        <div class="copy-text">Beaucoup de gens pensent qu'aménager une cour arrière, c'est un projet qui prend des mois et des maux de tête.
+
+Avec Jardín Ideal, une transformation complète se fait en 2 à 3 semaines. Du premier coup de téléphone à la dernière lumière posée.
+
+Voici ce qu'on peut inclure dans votre projet :
+
+🪨 Terrasse en pavé uni avec bordures granit
+🌿 Plate-bandes fleuries et haies taillées
+💡 Éclairage extérieur d'ambiance (spots, guirlandes intégrées)
+🌲 Gazebo ou pergola selon votre espace
+🚪 Allée latérale pavée pour accès direct au jardin
+🌱 Gazon naturel ou artificiel selon vos préférences
+
+On s'occupe de tout : conception, permis si requis, réalisation, nettoyage complet en fin de chantier.
+
+Ce qu'on ne fait pas : les coins ronds. On utilise des matériaux certifiés pour le climat québécois, et on garantit notre pose.
+
+Projets à partir de 12 000 $ CA.
+Soumission gratuite — réponse en 48h.
+
+C'est quoi votre priorité pour votre cour ?
+Dites-le nous en commentaire — on adore les questions.
+
+📞 514-266-2504</div>
+        <div class="copy-specs">
+          <span class="spec-chip">Image : carrusel avant/après ou collage services</span>
+          <span class="spec-chip">Format : carrusel 1:1</span>
+          <span class="spec-chip">CTA bouton : En savoir plus</span>
+        </div>
+      </div>
+      <div class="copy-card-tip">La question finale en commentaire génère de l'engagement organique — l'algorithme Facebook amplifie les posts avec des réponses en commentaires.</div>
+    </div>
+
+  </section>
+
+  <!-- ───────────────────────────────────────────
+       SECTION 3 — COPIES INSTAGRAM
+  ─────────────────────────────────────────────── -->
+  <section class="sec" id="instagram">
+    <div class="sec-label">Section 3</div>
+    <h2>3 Copies <em>Instagram</em></h2>
+    <p class="sec-intro">Format condensé pour le feed Instagram : accroche forte, corps court, hashtags en bloc séparé. À utiliser avec des visuels verticaux 4:5 ou carrés 1:1.</p>
+
+    <!-- IG Post 1 -->
+    <div class="copy-card">
+      <div class="copy-card-header">
+        <span class="copy-card-title">Post 1 — Dream backyard inspiration</span>
+        <div class="copy-card-meta">
+          <span class="badge badge-ig">Instagram</span>
+          <span class="badge badge-angle">Aspiration / Lifestyle</span>
+          <span class="badge badge-chars">≈ 85 mots</span>
+        </div>
+      </div>
+      <div class="copy-card-body">
+        <div class="copy-text">Imaginez finir votre journée ici.
+
+Terrasse en pavé uni. Plate-bandes en fleurs. Lumières qui s'allument doucement à 18h. Les enfants dehors. Vous, avec un verre à la main.
+
+Ce n'est pas un rêve de catalogue — c'est une cour arrière réalisée par Jardín Ideal, à Laval, en 17 jours.
+
+La vôtre peut ressembler à ça cet été.
+
+📞 514-266-2504 · Soumission gratuite, lien en bio.</div>
+        <div class="hashtag-block">#courbarriere #amenagementpaysager #Montreal #Laval #RiveNord #paveuni #terrasseexterieure #jardinideal #backyard #exterieur #amenagement #designpaysager #eclairageexterieur #ete2026 #platesbandes #transformationmaison #renovation #Quebec #maisonquebecoise #vivre dehors</div>
+        <div class="copy-specs">
+          <span class="spec-chip">Photo : terrasse soirée, lumières chaudes</span>
+          <span class="spec-chip">Format : 4:5 ou 1:1</span>
+        </div>
+      </div>
+      <div class="copy-card-tip">Mentionner la durée réelle du projet ("17 jours") crée de la spécificité et de la crédibilité. Remplacer par la vraie durée du projet photo si disponible.</div>
+    </div>
+
+    <!-- IG Post 2 -->
+    <div class="copy-card">
+      <div class="copy-card-header">
+        <span class="copy-card-title">Post 2 — Urgence été / Compte à rebours</span>
+        <div class="copy-card-meta">
+          <span class="badge badge-ig">Instagram</span>
+          <span class="badge badge-angle">Urgence / Scarcité</span>
+          <span class="badge badge-chars">≈ 65 mots</span>
+        </div>
+      </div>
+      <div class="copy-card-body">
+        <div class="copy-text">8 semaines d'été. 2 à 3 semaines de travaux.
+
+Les maths sont simples.
+
+Nos disponibilités pour juillet se ferment. Si votre cour arrière est sur votre liste depuis trois ans — c'est maintenant ou l'an prochain.
+
+Soumission gratuite · 48h de réponse · 514-266-2504
+
+On mérite tous un endroit pour souffler cet été.</div>
+        <div class="hashtag-block">#urgence #ete2026 #courbarriere #paveuni #Montreal #Laval #amenagementexterieur #jardinideal #terrasseexterieure #soumissiongratuite #maintenant #disponibilite #renovation #exterieurs</div>
+        <div class="copy-specs">
+          <span class="spec-chip">Visuel : calendrier ou chantier en cours</span>
+          <span class="spec-chip">Format : 1:1 ou Story 9:16</span>
+        </div>
+      </div>
+      <div class="copy-card-tip">Court par choix — sur Instagram, les posts courts avec une accroche chiffrée scrollent moins vite. Idéal pour Story avec CTA "Glisser vers le haut".</div>
+    </div>
+
+    <!-- IG Post 3 -->
+    <div class="copy-card">
+      <div class="copy-card-header">
+        <span class="copy-card-title">Post 3 — Réalisation récente / Projet de la semaine</span>
+        <div class="copy-card-meta">
+          <span class="badge badge-ig">Instagram</span>
+          <span class="badge badge-angle">Preuve sociale / Portfolio</span>
+          <span class="badge badge-chars">≈ 70 mots</span>
+        </div>
+      </div>
+      <div class="copy-card-body">
+        <div class="copy-text">Projet terminé cette semaine · Laval, secteur Chomedey.
+
+Terrasse pavé uni 52 m² · Haies de cèdres · Éclairage intégré · Allée latérale.
+Durée : 14 jours ouvrables.
+
+Le client voulait "quelque chose de propre et durable." On a livré ça — et un peu plus.
+
+Votre cour, c'est pour quand ?
+📞 514-266-2504 · Soumission gratuite, lien en bio.</div>
+        <div class="hashtag-block">#projetcomplété #courbarriere #Laval #Chomedey #paveuni #terrasseexterieure #jardinideal #amenagementpaysager #eclairage #haies #cedres #transformation #ete2026 #Montreal #exterieurs #renovation #avant apres #realisationjardins</div>
+        <div class="copy-specs">
+          <span class="spec-chip">Photo : résultat final, lumière de jour ou fin de journée</span>
+          <span class="spec-chip">Format : carrusel 3–5 photos</span>
+        </div>
+      </div>
+      <div class="copy-card-tip">Publier idéalement le vendredi ou samedi — les gens pensent à leur maison en fin de semaine. Personnaliser le quartier, la surface et la durée à chaque nouvelle réalisation.</div>
+    </div>
+
+  </section>
+
+  <!-- ───────────────────────────────────────────
+       SECTION 4 — ANNONCES META ADS
+  ─────────────────────────────────────────────── -->
+  <section class="sec" id="meta-ads">
+    <div class="sec-label">Section 4</div>
+    <h2>2 Annonces <em>Meta Ads</em></h2>
+    <p class="sec-intro">Structure complète pour le gestionnaire de publicités Meta — texte principal, titre, description, CTA recommandé, ciblage suggéré. Tous les champs respectent les limites de caractères Meta.</p>
+
+    <!-- Ad 1 -->
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="title">Annonce 1 — Lead Generation · Soumission Gratuite · Alto Ticket</span>
+        <div class="copy-card-meta">
+          <span class="badge badge-meta">Meta Ads</span>
+          <span class="badge badge-angle">Lead Gen · $15K+</span>
+        </div>
+      </div>
+
+      <div class="ad-field">
+        <div class="ad-field-label">Texte principal <span class="char-count">125 car. visibles</span></div>
+        <div class="ad-field-value">Votre cour arrière peut être prête pour juillet. Jardín Ideal transforme votre espace extérieur en 2 à 3 semaines — terrasse pavé uni, éclairage, plate-bandes. Soumission 100 % gratuite, sans engagement. À partir de 12 000 $ CA.</div>
+      </div>
+
+      <div class="ad-field">
+        <div class="ad-field-label">Titre <span class="char-count">40 car. max.</span></div>
+        <div class="ad-field-value">Transformez votre cour cet été</div>
+      </div>
+
+      <div class="ad-field">
+        <div class="ad-field-label">Description <span class="char-count">30 car. max.</span></div>
+        <div class="ad-field-value">Soumission gratuite · 48h</div>
+      </div>
+
+      <div class="ad-field">
+        <div class="ad-field-label">Bouton CTA</div>
+        <div class="ad-field-value">Obtenir un devis</div>
+      </div>
+
+      <div class="ad-field">
+        <div class="ad-field-label">URL de destination</div>
+        <div class="ad-field-value">Page soumission ou formulaire de contact Jardín Ideal</div>
+      </div>
+
+      <div class="ad-divider"></div>
+
+      <div class="targeting-block">
+        <div class="targeting-title">Ciblage suggéré</div>
+        <div class="targeting-grid">
+          <div class="t-item"><strong>Âge</strong>35–65 ans</div>
+          <div class="t-item"><strong>Sexe</strong>Tous</div>
+          <div class="t-item"><strong>Zones géographiques</strong>Laval · Rive-Nord · TMR · West Island · Montréal (propriétaires)</div>
+          <div class="t-item"><strong>Intérêts</strong>Aménagement paysager, Rénovation maison, Pavé uni, Terrasse, Jardinage</div>
+          <div class="t-item"><strong>Comportements</strong>Propriétaires de maison (si disponible)</div>
+          <div class="t-item"><strong>Budget suggéré</strong>20–40 $ CA / jour · Objectif : Leads</div>
+          <div class="t-item"><strong>Format visuel</strong>Image 1:1 (1080×1080) ou 4:5 (1080×1350)</div>
+          <div class="t-item"><strong>Durée</strong>7 jours minimum avant optimisation</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad 2 -->
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="title">Annonce 2 — Engagement / Awareness · Vidéo Tour Cour Transformée</span>
+        <div class="copy-card-meta">
+          <span class="badge badge-meta">Meta Ads</span>
+          <span class="badge badge-angle">Vidéo · Awareness</span>
+        </div>
+      </div>
+
+      <div class="ad-field">
+        <div class="ad-field-label">Texte principal <span class="char-count">125 car. visibles</span></div>
+        <div class="ad-field-value">C'est ici qu'on passe ses étés désormais. Cour arrière complète réalisée à Laval — pavé uni, terrasse, éclairage, haies. Regardez la transformation. Puis imaginez la vôtre.</div>
+      </div>
+
+      <div class="ad-field">
+        <div class="ad-field-label">Titre <span class="char-count">40 car. max.</span></div>
+        <div class="ad-field-value">Avant / Après : une cour à Laval</div>
+      </div>
+
+      <div class="ad-field">
+        <div class="ad-field-label">Description <span class="char-count">30 car. max.</span></div>
+        <div class="ad-field-value">Jardín Ideal · Montréal</div>
+      </div>
+
+      <div class="ad-field">
+        <div class="ad-field-label">Bouton CTA</div>
+        <div class="ad-field-value">En savoir plus</div>
+      </div>
+
+      <div class="ad-field">
+        <div class="ad-field-label">Type de contenu</div>
+        <div class="ad-field-value">Vidéo Reel 9:16 ou 1:1 · 15–45 secondes · Sous-titres obligatoires (85 % des vues sans son)</div>
+      </div>
+
+      <div class="ad-divider"></div>
+
+      <div class="targeting-block">
+        <div class="targeting-title">Ciblage suggéré</div>
+        <div class="targeting-grid">
+          <div class="t-item"><strong>Âge</strong>30–60 ans</div>
+          <div class="t-item"><strong>Audience</strong>Lookalike 1–3 % basée sur clients existants ou visiteurs site</div>
+          <div class="t-item"><strong>Zones géographiques</strong>Grand Montréal — rayon 40 km</div>
+          <div class="t-item"><strong>Intérêts</strong>Maison, Déco extérieure, BBQ, Réception, Jardin</div>
+          <div class="t-item"><strong>Objectif campagne</strong>Vues vidéo ou Engagement · Puis retargeter les 75 %+ viewers</div>
+          <div class="t-item"><strong>Budget suggéré</strong>10–20 $ CA / jour · Phase notoriété</div>
+          <div class="t-item"><strong>Format vidéo</strong>9:16 Reels (1080×1920) avec zone safe centrale</div>
+          <div class="t-item"><strong>Durée idéale</strong>30–45 secondes avec hook visuel dans les 3 premières secondes</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ───────────────────────────────────────────
+       SECTION 5 — IDÉES DE REEL
+  ─────────────────────────────────────────────── -->
+  <section class="sec" id="reels">
+    <div class="sec-label">Section 5</div>
+    <h2>2 Idées de <em>Reel</em></h2>
+    <p class="sec-intro">Scénarios exécutables avec un téléphone et une heure de tournage. Chaque beat indique le plan, l'action à filmer et le texte overlay suggéré.</p>
+
+    <!-- Reel 1 -->
+    <div class="reel-card">
+      <div class="reel-header">
+        <span class="reel-title">Reel 1 — Time-lapse : Cour avant / après</span>
+        <span class="reel-duration">45–55 secondes · Format 9:16</span>
+      </div>
+
+      <ul class="reel-timeline">
+        <li class="reel-beat">
+          <span class="reel-tc">0:00</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Plan d'ouverture — la cour avant travaux</div>
+            <div class="reel-beat-action">Photo ou courte vidéo de la cour originale. Filmer depuis la porte arrière, angle large. Lumière neutre de jour.</div>
+            <div class="reel-beat-text">Overlay : "Laval, mai 2026. Avant Jardín Ideal."</div>
+          </div>
+        </li>
+        <li class="reel-beat">
+          <span class="reel-tc">0:05</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Time-lapse travaux — jour 1 à 5</div>
+            <div class="reel-beat-action">Accéléré de l'excavation et de la pose des fondations pavé uni. Filmer depuis un angle fixe en hauteur si possible (fenêtre étage). 3–4 clips accélérés à 8×.</div>
+            <div class="reel-beat-text">Overlay : "Semaine 1 — Préparation et pavé uni."</div>
+          </div>
+        </li>
+        <li class="reel-beat">
+          <span class="reel-tc">0:18</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Time-lapse travaux — jour 6 à 12</div>
+            <div class="reel-beat-action">Pose de la terrasse, installation des haies et plate-bandes. Même angle fixe. Terminer avec une image du chantier presque terminé.</div>
+            <div class="reel-beat-text">Overlay : "Semaine 2 — Terrasse, haies, éclairage."</div>
+          </div>
+        </li>
+        <li class="reel-beat">
+          <span class="reel-tc">0:30</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Révélation finale — plan large</div>
+            <div class="reel-beat-action">Même angle que le plan d'ouverture. Cour terminée, lumière de fin d'après-midi (heure dorée). Éclairages allumés si possible. Pause 3 secondes sur le résultat.</div>
+            <div class="reel-beat-text">Overlay : "18 jours plus tard."</div>
+          </div>
+        </li>
+        <li class="reel-beat">
+          <span class="reel-tc">0:38</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Walking tour rapide — 3 détails</div>
+            <div class="reel-beat-action">Plan rapproché : (1) joints du pavé uni, (2) lumière d'ambiance, (3) plate-bandes. 2 secondes par détail, caméra stable ou ralenti 0.5×.</div>
+            <div class="reel-beat-text">Overlay : "Pavé uni · Éclairage · Plate-bandes."</div>
+          </div>
+        </li>
+        <li class="reel-beat">
+          <span class="reel-tc">0:46</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Carton final + CTA</div>
+            <div class="reel-beat-action">Fond vert foncé (#1E3A20) avec logo Jardín Ideal centré. Texte visible 5 secondes.</div>
+            <div class="reel-beat-text">Overlay : "Votre cour cet été? 514-266-2504 · Soumission gratuite"</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="reel-tech-note">Format : 1080×1920 px · Musique : instrumental uptempo sans paroles (bibliothèque Meta) · Sous-titres : auto ou manuels, police blanche, fond semi-transparent · Ne pas couper le logo en bas lors de l'export Reels.</div>
+    </div>
+
+    <!-- Reel 2 -->
+    <div class="reel-card">
+      <div class="reel-header">
+        <span class="reel-title">Reel 2 — "Votre été commence ici" · Walking tour heure dorée</span>
+        <span class="reel-duration">35–40 secondes · Format 9:16</span>
+      </div>
+
+      <ul class="reel-timeline">
+        <li class="reel-beat">
+          <span class="reel-tc">0:00</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Accroche — porte qui s'ouvre sur la terrasse</div>
+            <div class="reel-beat-action">Filmer depuis l'intérieur de la maison. La caméra suit la personne qui ouvre la porte arrière et sort sur la terrasse pavée. Lumière de 18h. Filmer à 0.5× pour effet cinématique.</div>
+            <div class="reel-beat-text">Overlay : "Votre été commence ici."</div>
+          </div>
+        </li>
+        <li class="reel-beat">
+          <span class="reel-tc">0:06</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Pan lent sur la terrasse complète</div>
+            <div class="reel-beat-action">Mouvement horizontal gauche-droite, stable. Montrer la surface complète du pavé uni, les bordures, les éclairages au sol. Durée : 6 secondes.</div>
+            <div class="reel-beat-text">Overlay : "Terrasse pavé uni · Jardín Ideal, Laval."</div>
+          </div>
+        </li>
+        <li class="reel-beat">
+          <span class="reel-tc">0:13</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Détail — éclairage au sol qui s'allume</div>
+            <div class="reel-beat-action">Plan très rapproché d'un luminaire encastré dans le pavé. Filmer l'allumage au crépuscule si possible (télécommande). Ralenti 0.3× pour l'effet.</div>
+            <div class="reel-beat-text">Overlay : "Éclairage intégré."</div>
+          </div>
+        </li>
+        <li class="reel-beat">
+          <span class="reel-tc">0:19</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Détail — plate-bandes et haies</div>
+            <div class="reel-beat-action">Glissement lent le long de la plate-bande fleurie. Finir sur les haies taillées qui ferment l'espace. Lumière chaude. Bref arrêt sur le détail végétal.</div>
+            <div class="reel-beat-text">Overlay : "Plate-bandes · Haies de cèdres."</div>
+          </div>
+        </li>
+        <li class="reel-beat">
+          <span class="reel-tc">0:26</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">Plan final — silhouette en fin de journée</div>
+            <div class="reel-beat-action">Vue d'ensemble de la cour, en contre-jour de fin de journée. Éclairages allumés, ambiance complète. Figer 4 secondes.</div>
+            <div class="reel-beat-text">Overlay : "Prête pour juillet?"</div>
+          </div>
+        </li>
+        <li class="reel-beat">
+          <span class="reel-tc">0:32</span>
+          <div class="reel-beat-content">
+            <div class="reel-beat-shot">CTA final</div>
+            <div class="reel-beat-action">Fond plein vert foncé. Texte centré, police claire. Logo en bas à droite.</div>
+            <div class="reel-beat-text">Overlay : "Soumission gratuite · 514-266-2504 · Jardín Ideal"</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="reel-tech-note">Tourner obligatoirement à l'heure dorée (18h–19h30 en juin–juillet) — la lumière chaude fait vendre mieux que n'importe quel filtre. Pas de drone sans permis municipal. Musique : acoustique douce, tempo 90–100 BPM.</div>
+    </div>
+
+  </section>
+
+  <!-- ───────────────────────────────────────────
+       SECTION 6 — CARRUSEL 8 SLIDES
+  ─────────────────────────────────────────────── -->
+  <section class="sec" id="carrusel">
+    <div class="sec-label">Section 6</div>
+    <h2>Carrusel Complet — <em>8 slides Canva</em></h2>
+    <p class="sec-intro">Thème : "Transformez votre cour arrière — 5 projets Jardín Ideal été 2026". Format : 1080×1080 px. Défilement horizontal ci-dessous — chaque carte représente un slide.</p>
+
+    <div class="carousel-wrap">
+      <div class="carousel-track">
+
+        <!-- Slide 1 — Couverture -->
+        <div class="slide">
+          <span class="slide-num">Slide 01 / Couverture</span>
+          <div class="slide-cover">
+            <div class="slide-cover-label">Jardín Ideal · Été 2026</div>
+            <div class="slide-cover-title">Transformez votre cour arrière.</div>
+            <div class="slide-cover-sub">5 projets réalisés · Grand Montréal</div>
+          </div>
+          <div class="slide-project">
+            <p style="font-size:12px;color:var(--gm);margin:0;line-height:1.6;"><strong style="color:var(--vf);">Instructions Canva :</strong> Photo pleine largeur de terrasse pavée en arrière-plan (flou léger). Logo Jardín Ideal centré en haut. Titre en police serif blanche grand format. Sous-titre en monospace doré. Fond overlay vert foncé à 60 %.</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 — Projet 1 -->
+        <div class="slide">
+          <span class="slide-num">Slide 02 / Projet 1</span>
+          <div class="slide-project" style="padding-top:20px;">
+            <div class="slide-zone">Laval · Chomedey</div>
+            <div class="slide-project-title">Terrasse pavé uni + éclairage + allée latérale</div>
+            <ul class="slide-specs">
+              <li>Surface terrasse : 58 m²</li>
+              <li>Pavé uni gris anthracite + bordures blanches</li>
+              <li>8 spots encastrés au sol</li>
+              <li>Allée latérale 24 m²</li>
+              <li>Durée : 16 jours ouvrables</li>
+              <li>Budget : 22 500 $ CA</li>
+            </ul>
+          </div>
+          <div style="padding:14px 16px;background:var(--crd);font-size:11px;color:var(--gm);">Photo recommandée : résultat final de nuit, éclairages allumés, vue depuis la porte arrière.</div>
+        </div>
+
+        <!-- Slide 3 — Projet 2 -->
+        <div class="slide">
+          <span class="slide-num">Slide 03 / Projet 2</span>
+          <div class="slide-project" style="padding-top:20px;">
+            <div class="slide-zone">Rive-Nord · Terrebonne</div>
+            <div class="slide-project-title">Gazebo + plate-bandes + gazon naturel</div>
+            <ul class="slide-specs">
+              <li>Gazebo 16 × 16 pi avec rideaux</li>
+              <li>Plate-bandes périmètre : 42 m linéaires</li>
+              <li>Gazon naturel ensemencé : 95 m²</li>
+              <li>Haies de cèdres taillés : 18 m</li>
+              <li>Durée : 21 jours ouvrables</li>
+              <li>Budget : 31 000 $ CA</li>
+            </ul>
+          </div>
+          <div style="padding:14px 16px;background:var(--crd);font-size:11px;color:var(--gm);">Photo recommandée : vue diagonale incluant gazebo et plate-bandes, lumière de jour.</div>
+        </div>
+
+        <!-- Slide 4 — Projet 3 -->
+        <div class="slide">
+          <span class="slide-num">Slide 04 / Projet 3</span>
+          <div class="slide-project" style="padding-top:20px;">
+            <div class="slide-zone">TMR · Mont-Royal</div>
+            <div class="slide-project-title">Transformation complète — cour clé en main</div>
+            <ul class="slide-specs">
+              <li>Terrasse pavé uni beige crème : 44 m²</li>
+              <li>Pergola bois traité avec toile solaire</li>
+              <li>Éclairage guirlandes intégrées</li>
+              <li>Plate-bandes avant + cour arrière</li>
+              <li>Durée : 18 jours ouvrables</li>
+              <li>Budget : 38 500 $ CA</li>
+            </ul>
+          </div>
+          <div style="padding:14px 16px;background:var(--crd);font-size:11px;color:var(--gm);">Photo recommandée : soirée avec guirlandes allumées, ambiance chaleureuse.</div>
+        </div>
+
+        <!-- Slide 5 — Projet 4 -->
+        <div class="slide">
+          <span class="slide-num">Slide 05 / Projet 4</span>
+          <div class="slide-project" style="padding-top:20px;">
+            <div class="slide-zone">West Island · Dollard-des-Ormeaux</div>
+            <div class="slide-project-title">Pavé uni + allée + haies — rénovation complète</div>
+            <ul class="slide-specs">
+              <li>Dépose ancien béton + réfection base</li>
+              <li>Pavé uni charcoal : 72 m² total</li>
+              <li>Haies de lauriers : 14 unités</li>
+              <li>Bordures granit noires</li>
+              <li>Durée : 14 jours ouvrables</li>
+              <li>Budget : 19 800 $ CA</li>
+            </ul>
+          </div>
+          <div style="padding:14px 16px;background:var(--crd);font-size:11px;color:var(--gm);">Photo recommandée : avant/après côte à côte ou carrusel séquentiel.</div>
+        </div>
+
+        <!-- Slide 6 — Projet 5 -->
+        <div class="slide">
+          <span class="slide-num">Slide 06 / Projet 5</span>
+          <div class="slide-project" style="padding-top:20px;">
+            <div class="slide-zone">Laval · Sainte-Rose</div>
+            <div class="slide-project-title">Cour familiale — terrasse + gazon + clôture</div>
+            <ul class="slide-specs">
+              <li>Terrasse pavé uni gris clair : 36 m²</li>
+              <li>Gazon artificiel haute densité : 68 m²</li>
+              <li>Clôture cèdre naturel 6 pi : 38 m</li>
+              <li>Spots au sol × 6</li>
+              <li>Durée : 12 jours ouvrables</li>
+              <li>Budget : 16 200 $ CA</li>
+            </ul>
+          </div>
+          <div style="padding:14px 16px;background:var(--crd);font-size:11px;color:var(--gm);">Photo recommandée : enfants sur le gazon, terrasse avec adultes — angle lifestyle.</div>
+        </div>
+
+        <!-- Slide 7 — Prix -->
+        <div class="slide">
+          <span class="slide-num">Slide 07 / Prix</span>
+          <div class="slide-price">
+            <div class="slide-price-label">Projets complets à partir de</div>
+            <div class="slide-price-val">12 000 $</div>
+            <div class="slide-price-note">CAD · Soumission 100 % gratuite</div>
+          </div>
+          <div class="slide-project">
+            <p style="font-size:12px;color:var(--gm);margin:0 0 10px;line-height:1.6;">Chaque projet est unique. Le prix final dépend de la surface, des matériaux et des services choisis.</p>
+            <ul class="slide-specs">
+              <li>Déplacement gratuit pour évaluation</li>
+              <li>Soumission détaillée en 48h</li>
+              <li>Garantie sur la pose incluse</li>
+              <li>Aucun engagement à la soumission</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 8 — CTA -->
+        <div class="slide">
+          <span class="slide-num">Slide 08 / CTA Final</span>
+          <div class="slide-cta">
+            <div class="slide-cta-title">Votre cour peut être prête pour juillet.</div>
+            <span class="slide-cta-tel">514-266-2504</span>
+            <a class="slide-cta-btn" href="#">Soumission gratuite</a>
+          </div>
+          <div class="slide-project">
+            <div class="slide-zone">Jardín Ideal · Montréal</div>
+            <ul class="slide-specs" style="margin-top:8px;">
+              <li>Laval · Rive-Nord · TMR</li>
+              <li>West Island · Montréal</li>
+              <li>Réponse en 48h garantie</li>
+              <li>Lien en bio / DM ouvert</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p style="font-size:11.5px;color:var(--gm);margin-top:14px;padding-left:4px;">→ Défilement horizontal pour voir tous les slides. Format Canva : 1080×1080 px par slide. Exporter en PNG qualité maximale.</p>
+  </section>
+
+  <!-- ───────────────────────────────────────────
+       SECTION 7 — CTA FINAUX
+  ─────────────────────────────────────────────── -->
+  <section class="sec" id="cta">
+    <div class="sec-label">Section 7</div>
+    <h2>2 CTAs Finaux — <em>Organique &amp; Payant</em></h2>
+    <p class="sec-intro">Versions prêtes à coller. Le CTA organique mise sur la proximité et la conversation. Le CTA payant compresse tout en 3 lignes pour l'espace publicitaire.</p>
+
+    <div class="cta-pair">
+
+      <div class="cta-block organic">
+        <div class="cta-type">Version organique — Post / Bio / Stories</div>
+        <h3>Pour vos posts Facebook, Instagram et bio de profil</h3>
+        <div class="cta-copy">📩 Demandez votre soumission gratuite — on se déplace, on évalue, on vous propose quelque chose de concret. Aucun engagement.
+
+📞 514-266-2504
+🌿 Jardín Ideal · Montréal · Laval · Rive-Nord
+
+Réponse garantie en 48h. Il reste de la place dans notre agenda pour juillet — mais pas pour longtemps.</div>
+        <div class="cta-specs">Usage : bas de post Facebook / Instagram · Bio de profil · Story avec lien · Signature de message privé</div>
+      </div>
+
+      <div class="cta-block paid">
+        <div class="cta-type">Version payante — Meta Ads · Description courte</div>
+        <h3>Pour les champs "Description" et légendes d'annonce</h3>
+        <div class="cta-copy">Soumission gratuite · Réponse 48h · À partir de 12 000 $ CA
+Laval · Rive-Nord · TMR · West Island
+514-266-2504 · Jardín Ideal Montréal</div>
+        <div class="cta-specs">Usage : description d'annonce Meta · Texte overlay vidéo fin · Carton final Reel · Slide CTA carrusel</div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer class="footer">
+  <span class="footer-brand">Jardín <em>Ideal</em></span>
+  <span class="footer-meta">Cour Arrière · Contenu Été 2026 · Prêt à publier</span>
+  <span class="footer-tel">514-266-2504</span>
+</footer>
+
+</body>
+</html>

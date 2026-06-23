@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cour Avant — Contenu Prêt à Publier · Jardín Ideal 2026</title>
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   DESIGN TOKENS — Jardín Ideal System
+   Document: CONTENIDO_PARA_PUBLICAR / COUR_AVANT
+   Campagne: Cour Avant — été 2026
+   Angle exclusif: "Votre cour avant, c'est votre carte de visite"
+═══════════════════════════════════════════════════════════════════ */
+:root {
+  /* Core system — inherited from Jardín Ideal */
+  --vf:   #1E3A20;
+  --vm:   #3D6B42;
+  --vc:   #5A8F62;
+  --or:   #C8A45A;
+  --orc:  #E8C97A;
+  --ord:  rgba(200,164,90,0.14);
+  --orb:  rgba(200,164,90,0.32);
+  --cr:   #F5F2EB;
+  --crd:  #EDE9E0;
+  --w:    #FFFFFF;
+  --n:    #0D0E0B;
+  --gf:   #2A2B28;
+  --g:    #6B6B63;
+  --gc:   #B8B8B0;
+  --r:    #B83232;
+  --rc:   #F5E8E8;
+  --j:    #C8850A;
+  --jc:   #FEF5E4;
+  --vb:   #EAF2EB;
+
+  /* COUR AVANT campaign-specific — stone, concrete, béton */
+  --stone:    #8C7B5E;
+  --stone-d:  #5A4E3C;
+  --stone-c:  #C4B89A;
+  --asphalt:  #1A1510;
+  --asphalt-m:#2E2820;
+  --pave-bg:  #D4CCBC;
+  --pave-jt:  #A89E88;
+
+  /* Section accent colors */
+  --hook-bg:   #1A1510;
+  --fb-bg:     #EAF2EB;
+  --ig-bg:     #F7EDDA;
+  --ads-bg:    #1E3A20;
+  --reel-bg:   #EDE9E0;
+  --carru-bg:  #FEF5E4;
+  --cta-bg:    #1E3A20;
+
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body:    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:    'Courier New', Courier, monospace;
+
+  --radius-s: 3px;
+  --radius:   6px;
+  --shadow:   0 2px 14px rgba(0,0,0,0.07);
+  --shadow-m: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+/* ─── RESET ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--or); outline-offset: 3px; border-radius: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ─── NAV ────────────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--vf);
+  border-bottom: 2px solid var(--or);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-inner {
+  display: flex;
+  align-items: stretch;
+  min-width: max-content;
+}
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  color: rgba(255,255,255,0.5);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-right: 1px solid rgba(200,164,90,0.12);
+  transition: background 0.18s, color 0.18s;
+  cursor: pointer;
+}
+.nav-link:last-child { border-right: none; }
+.nav-link .n-num {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(200,164,90,0.38);
+  line-height: 1;
+  margin-bottom: 2px;
+  transition: color 0.18s;
+}
+.nav-link:hover { background: rgba(200,164,90,0.08); color: var(--orc); }
+.nav-link:hover .n-num { color: var(--or); }
+
+/* ─── HERO — the aesthetic risk ──────────────────────────────
+   Full-width split-screen: cracked asphalt (left 55%) meets
+   orderly pavé grid (right 45%), divided by a diagonal seam.
+   CSS-only — no images. The document's first gesture IS the
+   campaign message.
+────────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  background: var(--asphalt);
+}
+
+/* Pavé grid — right side "après" */
+.hero-pave {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 3px;
+  background: var(--pave-jt);
+  clip-path: polygon(58% 0%, 100% 0%, 100% 100%, 48% 100%);
+  opacity: 0.65;
+}
+.hero-pave span {
+  display: block;
+  background: var(--pave-bg);
+  border-radius: 1px;
+}
+
+/* Cracked asphalt — left side "avant" */
+.hero-asphalt {
+  position: absolute;
+  inset: 0;
+  background: var(--asphalt);
+  clip-path: polygon(0% 0%, 60% 0%, 52% 100%, 0% 100%);
+}
+/* Crack lines built with pseudo-elements + rotated divs */
+.crack { position: absolute; background: rgba(200,164,90,0.22); pointer-events: none; }
+.c1 { width: 1px; height: 180px; top: 30px;  left: 18%; transform: rotate(8deg); }
+.c2 { width: 1px; height: 110px; top: 100px; left: 18%; transform: rotate(38deg); }
+.c3 { width: 1px; height: 80px;  top: 60px;  left: 30%; transform: rotate(-6deg); }
+.c4 { width: 1px; height: 55px;  top: 130px; left: 31%; transform: rotate(45deg); }
+.c5 { width: 1px; height: 140px; top: 50px;  left: 42%; transform: rotate(12deg); }
+.c6 { width: 1px; height: 70px;  top: 180px; left: 43%; transform: rotate(-22deg); }
+.c7 { width: 1px; height: 90px;  top: 200px; left: 20%; transform: rotate(5deg); }
+.c8 { width: 1px; height: 45px;  top: 280px; left: 22%; transform: rotate(33deg); }
+
+/* Diagonal seam — the visual caesura */
+.hero-seam {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent 49%,
+    rgba(200,164,90,0.6) 50.5%,
+    transparent 52%
+  );
+  clip-path: polygon(50% 0%, 54% 0%, 54% 100%, 46% 100%);
+  transform: skewX(-4deg);
+}
+
+/* Overlay gradient for text legibility */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,9,7,0.90) 0%,
+    rgba(10,9,7,0.55) 45%,
+    rgba(10,9,7,0.15) 100%
+  );
+}
+
+/* AVANT / APRÈS labels */
+.hero-label {
+  position: absolute;
+  top: 28px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.hero-label-av { left: 5%;  color: rgba(200,164,90,0.55); }
+.hero-label-ap { right: 8%; color: rgba(196,184,154,0.55); }
+
+/* Text content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 48px 60px 52px;
+  max-width: 860px;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.5vw, 54px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  margin-bottom: 20px;
+}
+.hero h1 em { color: var(--or); font-style: italic; }
+.hero-sub {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  max-width: 560px;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hero-pill {
+  background: rgba(200,164,90,0.14);
+  border: 1px solid rgba(200,164,90,0.32);
+  color: var(--orc);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+}
+
+/* ─── PAGE CONTAINER ─────────────────────────────────────────── */
+.page { max-width: 1080px; margin: 0 auto; padding: 0 32px 80px; }
+
+/* ─── SECTION HEADER ─────────────────────────────────────────── */
+.sec-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 52px 0 24px;
+  border-bottom: 1px solid var(--gc);
+  margin-bottom: 32px;
+}
+.sec-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--or);
+  flex-shrink: 0;
+}
+.sec-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.8vw, 30px);
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1.1;
+}
+.sec-badge {
+  margin-left: auto;
+  background: var(--vf);
+  color: var(--or);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ─── CARDS BASE ─────────────────────────────────────────────── */
+.card {
+  background: var(--w);
+  border: 1px solid var(--crd);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  box-shadow: var(--shadow);
+}
+.card + .card { margin-top: 20px; }
+
+.card-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+.card p { font-size: 14px; color: var(--gf); line-height: 1.75; margin-bottom: 10px; }
+.card p:last-child { margin-bottom: 0; }
+
+/* ─── SECTION 1 — HOOKS ──────────────────────────────────────── */
+#hooks { background: var(--hook-bg); }
+.hooks-wrapper { max-width: 1080px; margin: 0 auto; padding: 52px 32px; }
+.hooks-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(200,164,90,0.2);
+  margin-bottom: 36px;
+}
+.hooks-header .sec-num { color: var(--or); }
+.hooks-header .sec-title { color: var(--w); }
+.hooks-header .sec-badge { background: var(--or); color: var(--asphalt); }
+
+.hooks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.hook-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(200,164,90,0.18);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  position: relative;
+  overflow: hidden;
+}
+.hook-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.hook-card:nth-child(1)::before { background: var(--or); }
+.hook-card:nth-child(2)::before { background: var(--vc); }
+.hook-card:nth-child(3)::before { background: var(--stone-c); }
+.hook-card:nth-child(4)::before { background: var(--r); }
+.hook-card:nth-child(5)::before { background: var(--j); }
+
+.hook-num {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+.hook-card:nth-child(1) .hook-num { color: var(--or); }
+.hook-card:nth-child(2) .hook-num { color: var(--vc); }
+.hook-card:nth-child(3) .hook-num { color: var(--stone-c); }
+.hook-card:nth-child(4) .hook-num { color: #E07070; }
+.hook-card:nth-child(5) .hook-num { color: var(--orc); }
+
+.hook-type {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 14px;
+  display: block;
+}
+.hook-text {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--w);
+  line-height: 1.45;
+  font-style: italic;
+}
+.hook-note {
+  margin-top: 14px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  font-family: var(--font-mono);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 12px;
+  line-height: 1.5;
+}
+.hook-star {
+  display: inline-block;
+  background: var(--or);
+  color: var(--asphalt);
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  font-style: normal;
+}
+
+/* ─── SECTION 2 — FACEBOOK ───────────────────────────────────── */
+.fb-grid { display: grid; gap: 24px; }
+
+.fb-post {
+  background: var(--w);
+  border: 1px solid var(--crd);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.fb-post-header {
+  background: var(--vb);
+  border-bottom: 1px solid #C8DCC9;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.fb-post-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fb-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--vf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--or);
+  flex-shrink: 0;
+}
+.fb-page-name {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--n);
+}
+.fb-page-sub {
+  font-size: 11px;
+  color: var(--g);
+  font-family: var(--font-mono);
+}
+.fb-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.fb-tag-fomo  { background: var(--jc); color: var(--j); }
+.fb-tag-valeur { background: var(--vb); color: var(--vm); }
+.fb-tag-process { background: var(--crd); color: var(--gf); }
+
+.fb-post-body { padding: 24px 28px 20px; }
+.fb-post-text {
+  font-size: 14.5px;
+  color: var(--n);
+  line-height: 1.75;
+  white-space: pre-line;
+}
+.fb-post-image {
+  margin: 16px 0 0;
+  height: 90px;
+  background: var(--crd);
+  border-radius: var(--radius-s);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--g);
+  text-transform: uppercase;
+  border: 1px dashed var(--gc);
+}
+.fb-post-cta-bar {
+  padding: 16px 28px 20px;
+  border-top: 1px solid var(--crd);
+  background: #F9F8F5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.fb-cta-btn {
+  background: var(--vf);
+  color: var(--or);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border-radius: var(--radius-s);
+  border: none;
+  cursor: pointer;
+}
+.fb-cta-info {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--g);
+}
+
+/* ─── SECTION 3 — INSTAGRAM ──────────────────────────────────── */
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.ig-post {
+  background: var(--w);
+  border: 1px solid var(--crd);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.ig-post-image {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--crd);
+}
+.ig-img-1 { background: linear-gradient(135deg, var(--asphalt) 50%, var(--pave-bg) 50%); color: var(--or); }
+.ig-img-2 { background: var(--vb); color: var(--vm); }
+.ig-img-3 { background: var(--jc); color: var(--j); }
+
+.ig-post-body { padding: 18px 20px 20px; }
+.ig-username {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--n);
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+}
+.ig-caption {
+  font-size: 13.5px;
+  color: var(--n);
+  line-height: 1.7;
+  margin-bottom: 12px;
+  white-space: pre-line;
+}
+.ig-hashtags {
+  font-size: 12px;
+  color: #2E6EA6;
+  line-height: 1.8;
+  font-family: var(--font-mono);
+  word-break: break-word;
+}
+.ig-tag {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.ig-tag-fomo    { background: var(--jc); color: var(--j); }
+.ig-tag-stat    { background: var(--vb); color: var(--vm); }
+.ig-tag-poll    { background: var(--rc); color: var(--r); }
+
+/* ─── SECTION 4 — META ADS ───────────────────────────────────── */
+.ads-wrapper {
+  background: var(--vf);
+  padding: 48px 32px;
+}
+.ads-inner { max-width: 1080px; margin: 0 auto; }
+.ads-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(200,164,90,0.2);
+  margin-bottom: 36px;
+}
+.ads-header .sec-num  { color: var(--or); }
+.ads-header .sec-title { color: var(--w); }
+.ads-header .sec-badge { background: var(--or); color: var(--asphalt); }
+.ads-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 640px) { .ads-grid { grid-template-columns: 1fr; } }
+
+.ad-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,164,90,0.2);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.ad-card-header {
+  background: rgba(200,164,90,0.1);
+  border-bottom: 1px solid rgba(200,164,90,0.15);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.ad-objective {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+.ad-obj-lead  { background: var(--or); color: var(--asphalt); }
+.ad-obj-video { background: rgba(90,143,98,0.4); color: var(--vc); }
+.ad-name { font-family: var(--font-mono); font-size: 10px; color: var(--orc); }
+.ad-card-body { padding: 22px 22px 18px; }
+.ad-field { margin-bottom: 16px; }
+.ad-field:last-child { margin-bottom: 0; }
+.ad-field-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(200,164,90,0.55);
+  margin-bottom: 5px;
+  display: block;
+}
+.ad-field-value {
+  font-size: 13.5px;
+  color: var(--w);
+  line-height: 1.65;
+}
+.ad-field-value.bold { font-weight: 700; color: var(--orc); font-family: var(--font-display); font-size: 15px; }
+.ad-targets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.ad-target-pill {
+  background: rgba(200,164,90,0.12);
+  border: 1px solid rgba(200,164,90,0.22);
+  color: var(--stone-c);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  padding: 3px 9px;
+  border-radius: 2px;
+}
+
+/* ─── SECTION 5 — REELS ──────────────────────────────────────── */
+.reel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 680px) { .reel-grid { grid-template-columns: 1fr; } }
+
+.reel-card {
+  background: var(--w);
+  border: 1px solid var(--crd);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.reel-card-header {
+  background: var(--reel-bg);
+  border-bottom: 1px solid #D4CFC5;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.reel-id {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gf);
+  letter-spacing: 1px;
+}
+.reel-duration {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  background: var(--vf);
+  color: var(--or);
+  padding: 3px 9px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+}
+.reel-card-body { padding: 22px 24px 22px; }
+.reel-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--vf);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.reel-hook-line {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--g);
+  margin-bottom: 18px;
+  font-style: italic;
+}
+.scene {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--crd);
+}
+.scene:last-of-type { border-bottom: none; }
+.scene-tc {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--or);
+  flex-shrink: 0;
+  width: 42px;
+  padding-top: 2px;
+  letter-spacing: 0.5px;
+}
+.scene-body { flex: 1; }
+.scene-action {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--n);
+  margin-bottom: 2px;
+}
+.scene-note {
+  font-size: 12px;
+  color: var(--g);
+  line-height: 1.55;
+}
+.scene-text {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--vf);
+  background: var(--vb);
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+.reel-cta-bar {
+  margin-top: 18px;
+  padding: 12px 16px;
+  background: var(--vb);
+  border-radius: var(--radius-s);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--vf);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─── SECTION 6 — CARRUSEL ───────────────────────────────────── */
+.carru-section { background: var(--jc); }
+.carru-wrapper { max-width: 1080px; margin: 0 auto; padding: 48px 32px; }
+.carru-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(200,133,10,0.25);
+  margin-bottom: 36px;
+}
+.carru-header .sec-num  { color: var(--j); }
+.carru-header .sec-title { color: var(--asphalt); }
+.carru-header .sec-badge { background: var(--j); color: var(--w); }
+.carru-theme {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--stone-d);
+  margin-top: -20px;
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
+}
+.slides-scroll {
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--j) var(--jc);
+}
+.slides-track {
+  display: flex;
+  gap: 16px;
+  min-width: max-content;
+}
+.slide {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--w);
+  border: 1px solid rgba(200,133,10,0.2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.slide-num {
+  background: var(--vf);
+  color: var(--or);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.slide-visual {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 12px;
+  line-height: 1.5;
+}
+.sv-1 { background: linear-gradient(135deg, var(--asphalt) 48%, var(--pave-bg) 48%); color: rgba(200,164,90,0.8); }
+.sv-2 { background: var(--asphalt); color: rgba(200,164,90,0.7); }
+.sv-3 { background: var(--pave-bg); color: var(--stone-d); }
+.sv-4 { background: var(--vb); color: var(--vm); }
+.sv-5 { background: var(--crd); color: var(--g); }
+.sv-6 { background: var(--vf); color: var(--orc); }
+.sv-7 { background: var(--or); color: var(--asphalt); }
+
+.slide-body { padding: 14px 14px 16px; flex: 1; }
+.slide-main {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--n);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.slide-sub {
+  font-size: 11.5px;
+  color: var(--g);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+.slide-note {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--j);
+  border-top: 1px solid var(--crd);
+  padding-top: 8px;
+  line-height: 1.4;
+}
+
+/* ─── SECTION 7 — CTA ────────────────────────────────────────── */
+.cta-section {
+  background: var(--vf);
+  padding: 56px 32px;
+}
+.cta-inner { max-width: 1080px; margin: 0 auto; }
+.cta-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(200,164,90,0.2);
+  margin-bottom: 36px;
+}
+.cta-header .sec-num  { color: var(--or); }
+.cta-header .sec-title { color: var(--w); }
+.cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 600px) { .cta-grid { grid-template-columns: 1fr; } }
+.cta-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,164,90,0.2);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.cta-card:nth-child(1)::before { background: var(--or); }
+.cta-card:nth-child(2)::before { background: var(--vc); }
+.cta-type {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(200,164,90,0.55);
+  margin-bottom: 14px;
+  display: block;
+}
+.cta-headline {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+.cta-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--or);
+  color: var(--asphalt);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  border-radius: var(--radius-s);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.cta-tel {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--orc);
+  display: block;
+  font-weight: 700;
+  margin-top: 6px;
+}
+.cta-note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.5;
+}
+.cta-paid-copy {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  white-space: pre-line;
+  margin-bottom: 16px;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────────── */
+.footer {
+  background: var(--n);
+  padding: 28px 32px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 1px;
+}
+.footer strong { color: var(--or); font-weight: 400; }
+
+/* ─── UTILITY ─────────────────────────────────────────────────── */
+.copy-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--g);
+  background: var(--crd);
+  border: 1px solid var(--gc);
+  padding: 3px 9px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  user-select: none;
+}
+.copy-hint:hover { background: var(--or); color: var(--asphalt); }
+
+.divider { height: 1px; background: var(--crd); margin: 40px 0; }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .page { padding: 0 18px 60px; }
+  .hero-content { padding: 36px 20px 40px; }
+  .hero h1 { font-size: 26px; }
+  .hooks-wrapper, .ads-inner, .carru-wrapper, .cta-inner { padding-left: 18px; padding-right: 18px; }
+  .reel-grid { grid-template-columns: 1fr; }
+  .cta-grid  { grid-template-columns: 1fr; }
+  .ig-grid   { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── STICKY NAV ────────────────────────────────────────── -->
+<nav class="nav" role="navigation" aria-label="Navigation du document">
+  <div class="nav-inner">
+    <a href="#hooks"   class="nav-link"><span class="n-num">01</span>Hooks</a>
+    <a href="#facebook" class="nav-link"><span class="n-num">02</span>Facebook</a>
+    <a href="#instagram" class="nav-link"><span class="n-num">03</span>Instagram</a>
+    <a href="#metaads" class="nav-link"><span class="n-num">04</span>Meta Ads</a>
+    <a href="#reels"   class="nav-link"><span class="n-num">05</span>Reels</a>
+    <a href="#carrousel" class="nav-link"><span class="n-num">06</span>Carrusel</a>
+    <a href="#cta"     class="nav-link"><span class="n-num">07</span>CTA</a>
+  </div>
+</nav>
+
+<!-- ─── HERO — CSS split avant/après ────────────────────── -->
+<header class="hero" role="banner">
+  <!-- Pavé grid — right "après" -->
+  <div class="hero-pave" aria-hidden="true">
+    <!-- 140 spans for the grid cells -->
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <!-- Cracked asphalt — left "avant" -->
+  <div class="hero-asphalt" aria-hidden="true"></div>
+  <div class="crack c1" aria-hidden="true"></div>
+  <div class="crack c2" aria-hidden="true"></div>
+  <div class="crack c3" aria-hidden="true"></div>
+  <div class="crack c4" aria-hidden="true"></div>
+  <div class="crack c5" aria-hidden="true"></div>
+  <div class="crack c6" aria-hidden="true"></div>
+  <div class="crack c7" aria-hidden="true"></div>
+  <div class="crack c8" aria-hidden="true"></div>
+  <!-- Diagonal seam -->
+  <div class="hero-seam" aria-hidden="true"></div>
+  <!-- Text overlay gradient -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <!-- AVANT / APRÈS labels -->
+  <span class="hero-label hero-label-av" aria-hidden="true">Avant</span>
+  <span class="hero-label hero-label-ap" aria-hidden="true">Après</span>
+  <!-- Content -->
+  <div class="hero-content">
+    <p class="hero-eyebrow">Jardín Ideal · Campagne Cour Avant 2026 · Contenu prêt à publier</p>
+    <h1>Votre cour avant, c'est la première chose<br>que vos <em>voisins</em> voient.</h1>
+    <p class="hero-sub">5 hooks · 3 posts Facebook · 3 posts Instagram · 2 annonces Meta Ads · 2 scripts Reel · 1 carrusel Canva complet. Tout en français, prêt à copier-coller.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">Angle exclusif: carte de visite</span>
+      <span class="hero-pill">CPL: $134.17</span>
+      <span class="hero-pill">À partir de CA$5 500</span>
+      <span class="hero-pill">Laval · Rive-Nord · Saint-Léonard</span>
+      <span class="hero-pill">514-266-2504</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 1 — HOOKS
+══════════════════════════════════════════════════════════ -->
+<section id="hooks">
+  <div class="hooks-wrapper">
+    <div class="hooks-header">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">5 Hooks — Accroches Prêtes à l'Emploi</h2>
+      <span class="sec-badge">Copier / Coller</span>
+    </div>
+
+    <div class="hooks-grid">
+
+      <!-- Hook 1 — FOMO social -->
+      <div class="hook-card">
+        <span class="hook-num">Hook 01</span>
+        <span class="hook-star">Le plus fort — angle exclusif</span>
+        <span class="hook-type">FOMO social / voisinage</span>
+        <p class="hook-text">"Votre voisin vient de refaire son entrée. Maintenant tout le monde vous regarde."</p>
+        <p class="hook-note">Aucun concurrent n'utilise cet angle. Déclenche la comparaison sociale immédiate. Utiliser en image de couverture + première ligne du post.</p>
+      </div>
+
+      <!-- Hook 2 — Première impression -->
+      <div class="hook-card">
+        <span class="hook-num">Hook 02</span>
+        <span class="hook-type">Première impression / valeur maison</span>
+        <p class="hook-text">"En 3 secondes, votre maison est jugée. Votre entrée parle avant vous."</p>
+        <p class="hook-note">Angle rationnel-émotionnel. Fort pour les propriétaires qui pensent revente (30-55 ans). Fonctionne bien en Reel — montrer 3 secondes d'arrivée devant une maison.</p>
+      </div>
+
+      <!-- Hook 3 — Avant/Après visuel -->
+      <div class="hook-card">
+        <span class="hook-num">Hook 03</span>
+        <span class="hook-type">Avant / après visuel</span>
+        <p class="hook-text">"Même maison. Même rue. Valeur perçue: +$40 000."</p>
+        <p class="hook-note">Chiffre fort à l'écran sur split-screen. Supporte le carrusel avant/après. S'utilise en texte overlay sur image comparative.</p>
+      </div>
+
+      <!-- Hook 4 — Problème concret -->
+      <div class="hook-card">
+        <span class="hook-num">Hook 04</span>
+        <span class="hook-type">Problème concret — béton fissuré</span>
+        <p class="hook-text">"Ce béton fissuré ne va pas se réparer tout seul. Et chaque été, ça empire."</p>
+        <p class="hook-note">Ancre le problème physique. Culpabilité productive — pas anxiogène. Idéal pour cibler propriétaires avec maisons + 20 ans (Laval, Rive-Nord).</p>
+      </div>
+
+      <!-- Hook 5 — Urgence saison -->
+      <div class="hook-card">
+        <span class="hook-num">Hook 05</span>
+        <span class="hook-type">Urgence / saison</span>
+        <p class="hook-text">"Il reste 8 semaines de saison. Notre calendrier se remplit vite — les voisins qui ont réservé en juin sont déjà livrés."</p>
+        <p class="hook-note">À activer juillet–août. Changer "8 semaines" selon la date réelle. Renforce le FOMO du Hook 1 avec une contrainte temporelle réelle.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 2 — COPIES FACEBOOK
+══════════════════════════════════════════════════════════ -->
+<section id="facebook">
+  <div class="page">
+    <div class="sec-header">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">3 Copies Facebook — Prêtes à Publier</h2>
+      <span class="sec-badge">Facebook · Organique + Paid</span>
+    </div>
+
+    <div class="fb-grid">
+
+      <!-- FB Post 1 — FOMO voisinage -->
+      <article class="fb-post">
+        <div class="fb-post-header">
+          <div class="fb-post-meta">
+            <div class="fb-avatar" aria-hidden="true">JI</div>
+            <div>
+              <div class="fb-page-name">Jardín Ideal Montréal</div>
+              <div class="fb-page-sub">Aménagement paysager · Laval &amp; Rive-Nord</div>
+            </div>
+          </div>
+          <span class="fb-tag fb-tag-fomo">FOMO voisinage</span>
+        </div>
+        <div class="fb-post-body">
+          <div class="fb-post-text">Votre voisin vient de refaire son entrée.
+
+Et maintenant, chaque matin en sortant votre voiture, vous le voyez — ce pavé uni propre, bien aligné, qui donne l'air d'une maison neuve.
+
+La vôtre n'a pas changé. Mais quelque chose a changé dans la rue.
+
+On ne vous dit pas ça pour vous culpabiliser. On vous le dit parce qu'on entend ça tous les jours : "C'est en voyant le résultat chez mon voisin que j'ai appelé."
+
+Votre cour avant, c'est la première chose que tout le monde voit. Avant que vous ouvriez la porte. Avant que vous disiez bonjour. C'est votre carte de visite.
+
+Chez Jardín Ideal, on transforme les entrées fissurées, gondolées, ou simplement fatiguées — en quelque chose dont vous serez fier à chaque retour.
+
+En 3 jours de travaux. À partir de CA$5 500.
+
+👉 Soumission gratuite en 48h — on se déplace, on mesure, on vous propose.
+
+📞 514-266-2504
+🌐 jardinideal.ca</div>
+          <div class="fb-post-image" aria-label="Emplacement image: avant/après entrée transformée">Photo avant / après — entrée maison</div>
+        </div>
+        <div class="fb-post-cta-bar">
+          <span class="fb-cta-info">Objectif: Engagement + soumission · 185 mots</span>
+          <button class="fb-cta-btn" type="button">Obtenir une soumission</button>
+        </div>
+      </article>
+
+      <!-- FB Post 2 — Valeur revente -->
+      <article class="fb-post">
+        <div class="fb-post-header">
+          <div class="fb-post-meta">
+            <div class="fb-avatar" aria-hidden="true">JI</div>
+            <div>
+              <div class="fb-page-name">Jardín Ideal Montréal</div>
+              <div class="fb-page-sub">Aménagement paysager · Laval &amp; Rive-Nord</div>
+            </div>
+          </div>
+          <span class="fb-tag fb-tag-valeur">Valeur revente</span>
+        </div>
+        <div class="fb-post-body">
+          <div class="fb-post-text">Ce que peu de propriétaires savent sur leur entrée.
+
+Les agents immobiliers de Montréal le confirment régulièrement : une entrée refaite en pavé uni peut augmenter la valeur perçue d'une propriété de 5 à 10 %. Sur une maison à $600 000, c'est entre $30 000 et $60 000 d'impression supplémentaire — pour un investissement entre $5 500 et $15 000.
+
+Mais au-delà de la revente, il y a quelque chose de plus simple : la fierté de rentrer chez soi.
+
+Quand l'entrée est belle, tout le reste de la maison paraît mieux entretenu. C'est l'effet que les designers appellent "curb appeal" — et c'est exactement ce qu'une cour avant en pavé uni procure.
+
+Chez Jardín Ideal, on travaille à Laval, Saint-Léonard et sur la Rive-Nord depuis plusieurs années. On connaît les maisons des années 70-80 avec leur béton qui s'effrite, leur asphalte gondolé, leurs joints qui disparaissent.
+
+On sait quoi faire. Et on le fait vite.
+
+Soumission gratuite, visite en 48h.
+
+📞 514-266-2504</div>
+          <div class="fb-post-image" aria-label="Emplacement image: infographie valeur ajoutée pavé uni">Infographie: investissement vs valeur ajoutée</div>
+        </div>
+        <div class="fb-post-cta-bar">
+          <span class="fb-cta-info">Objectif: Éducatif + notoriété · 210 mots</span>
+          <button class="fb-cta-btn" type="button">Calculer mon investissement</button>
+        </div>
+      </article>
+
+      <!-- FB Post 3 — Processus rassurant -->
+      <article class="fb-post">
+        <div class="fb-post-header">
+          <div class="fb-post-meta">
+            <div class="fb-avatar" aria-hidden="true">JI</div>
+            <div>
+              <div class="fb-page-name">Jardín Ideal Montréal</div>
+              <div class="fb-page-sub">Aménagement paysager · Laval &amp; Rive-Nord</div>
+            </div>
+          </div>
+          <span class="fb-tag fb-tag-process">Processus rassurant</span>
+        </div>
+        <div class="fb-post-body">
+          <div class="fb-post-text">Voici comment ça se passe, du premier appel à la dernière pierre.
+
+Beaucoup de gens hésitent à appeler parce qu'ils ont peur des travaux — le bruit, la poussière, ne plus pouvoir sortir leur voiture. On comprend.
+
+Alors voici exactement ce qui se passe chez nos clients :
+
+Jour 1 — On arrive le matin avec l'équipe. Démolition et excavation. À la fin de la journée, l'ancienne surface est partie, le sol est préparé. Vous pouvez garer dans la rue — on vous prévient à l'avance.
+
+Jour 2 — Pose de la base granulaire et compaction. C'est la fondation invisible qui fait durer votre entrée 25 ans. Aucun bruit après 17h.
+
+Jour 3 — Pose du pavé, joints, finition. Le soir, votre nouvelle entrée est là.
+
+Le lendemain matin, vous sortez votre voiture dessus pour la première fois.
+
+Nos clients disent tous la même chose : "C'est allé plus vite que je pensais."
+
+Si vous hésitez encore, on vous invite à appeler pour qu'on réponde à vos questions — sans engagement.
+
+📞 514-266-2504 · Soumission gratuite en 48h</div>
+          <div class="fb-post-image" aria-label="Emplacement image: 3 photos côte à côte Jour 1 / Jour 2 / Jour 3">Triptyque: Jour 1 · Jour 2 · Jour 3</div>
+        </div>
+        <div class="fb-post-cta-bar">
+          <span class="fb-cta-info">Objectif: Réassurance + conversion · 200 mots</span>
+          <button class="fb-cta-btn" type="button">Poser une question</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 3 — COPIES INSTAGRAM
+══════════════════════════════════════════════════════════ -->
+<section id="instagram">
+  <div class="page">
+    <div class="sec-header">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">3 Copies Instagram</h2>
+      <span class="sec-badge">Instagram · Feed + Stories</span>
+    </div>
+
+    <div class="ig-grid">
+
+      <!-- IG Post 1 — FOMO + avant/après -->
+      <article class="ig-post">
+        <div class="ig-post-image ig-img-1" aria-label="Image: split screen avant/après">
+          Avant / Après<br>Format carré 1:1
+        </div>
+        <div class="ig-post-body">
+          <span class="ig-tag ig-tag-fomo">FOMO + visuel</span>
+          <div class="ig-username">jardinideal_montreal</div>
+          <div class="ig-caption">Même maison. Même rue. Même quartier.
+
+L'entrée à gauche : béton fissuré, asphalte gondolé.
+L'entrée à droite : pavé uni, bordures nettes, 3 jours de travaux.
+
+Votre voisin a appelé en juin. Son entrée est faite.
+La vôtre peut l'être avant la fin de l'été.
+
+Soumission gratuite en 48h → 514-266-2504</div>
+          <div class="ig-hashtags">#CourAvant #PavéUni #Montréal #Laval #RiveNord #AménagementPaysager #JardinIdeal #AvantAprès #EntréeMaison #CurbAppeal #Rénovation #MaisonMontréal #PaysagisteMontréal #TravailDuPaysagiste #TransformationExtérieur</div>
+        </div>
+      </article>
+
+      <!-- IG Post 2 — Saviez-vous -->
+      <article class="ig-post">
+        <div class="ig-post-image ig-img-2" aria-label="Image: fond sombre avec chiffre stat en grand">
+          Fond sombre · Chiffre en grand<br>Format 1:1 ou 4:5
+        </div>
+        <div class="ig-post-body">
+          <span class="ig-tag ig-tag-stat">Éducatif · stat</span>
+          <div class="ig-username">jardinideal_montreal</div>
+          <div class="ig-caption">Saviez-vous que la cour avant représente jusqu'à 10 % de la valeur perçue d'une maison par un acheteur potentiel?
+
+C'est la première chose qu'il voit. Et la première chose qui lui donne envie — ou pas — d'entrer.
+
+Une entrée en pavé uni chez Jardín Ideal : à partir de CA$5 500.
+
+→ Lien en bio pour votre soumission gratuite.</div>
+          <div class="ig-hashtags">#CurbAppeal #ValeurMaison #ImmobilierMontréal #PavéUni #JardinIdeal #Laval #RiveNord #Rénovation2026 #EntréeMaison #PaysagisteMontréal #MaisonQuébec #AménagementExtérieur #CourAvant</div>
+        </div>
+      </article>
+
+      <!-- IG Post 3 — Poll engagement -->
+      <article class="ig-post">
+        <div class="ig-post-image ig-img-3" aria-label="Image: fond chaud avec question en overlay">
+          Fond ambré · Question overlay<br>Story ou Feed carré
+        </div>
+        <div class="ig-post-body">
+          <span class="ig-tag ig-tag-poll">Engagement · sondage</span>
+          <div class="ig-username">jardinideal_montreal</div>
+          <div class="ig-caption">Dans quel état est votre entrée en ce moment? 👇
+
+🔴 Béton fissuré / asphalte gondolé
+🟡 Passable, mais je rêve d'autre chose
+🟢 Pavé uni — et je l'adore
+
+Dites-nous en commentaires. Et si vous êtes 🔴 ou 🟡, on a une soumission gratuite qui vous attend. 📞 514-266-2504</div>
+          <div class="ig-hashtags">#CourAvant #EntréeMaison #PavéUni #JardinIdeal #Montréal #Laval #RiveNord #AménagementPaysager #Rénovation #SondageJardin #PaysagisteMontréal #CourAméricaine</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 4 — ANNONCES META ADS
+══════════════════════════════════════════════════════════ -->
+<section id="metaads">
+  <div class="ads-wrapper">
+    <div class="ads-inner">
+      <div class="ads-header">
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">2 Annonces Meta Ads — Configurées</h2>
+        <span class="sec-badge">Lead Gen + Video Views</span>
+      </div>
+
+      <div class="ads-grid">
+
+        <!-- Annonce 1 — Lead Generation -->
+        <div class="ad-card">
+          <div class="ad-card-header">
+            <span class="ad-name">CA-L01 · Cour Avant Lead Gen</span>
+            <span class="ad-objective ad-obj-lead">Objectif: Leads</span>
+          </div>
+          <div class="ad-card-body">
+
+            <div class="ad-field">
+              <span class="ad-field-label">Titre principal (40 car. max)</span>
+              <div class="ad-field-value bold">"Votre entrée mérite mieux que des fissures"</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Texte principal</span>
+              <div class="ad-field-value">Votre voisin vient de refaire son entrée. Ne restez pas en arrière. Pavé uni posé en 3 jours — soumission gratuite, on se déplace à Laval, Rive-Nord et Montréal-Nord. À partir de CA$5 500.</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Description (30 car. max)</span>
+              <div class="ad-field-value bold">"Réponse en 48h. Sans engagement."</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">CTA bouton</span>
+              <div class="ad-field-value bold">Obtenir un devis</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Format visuel recommandé</span>
+              <div class="ad-field-value">Image carrée 1:1 — split avant/après · Texte overlay: "3 jours. À partir de $5 500." · Logo Jardín Ideal bas droite</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Ciblage audience</span>
+              <div class="ad-targets">
+                <span class="ad-target-pill">Propriétaires 30–55 ans</span>
+                <span class="ad-target-pill">Laval</span>
+                <span class="ad-target-pill">Rive-Nord</span>
+                <span class="ad-target-pill">Saint-Léonard</span>
+                <span class="ad-target-pill">Intérêt: Rénovation maison</span>
+                <span class="ad-target-pill">Intérêt: Jardinage / aménagement</span>
+                <span class="ad-target-pill">Revenu ménage ≥ $80K</span>
+              </div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Budget recommandé / jour</span>
+              <div class="ad-field-value bold">CA$15–25/jour · CPL cible: $134 (historique)</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Questions formulaire instantané</span>
+              <div class="ad-field-value">1. Quelle est l'adresse du projet? (ville) · 2. Surface approximative (petite / moyenne / grande) · 3. Matériau actuel (béton / asphalte / pavé existant / autre) · 4. Délai souhaité (dès que possible / 1–2 mois / pas pressé)</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Annonce 2 — Video Views -->
+        <div class="ad-card">
+          <div class="ad-card-header">
+            <span class="ad-name">CA-R01 · Video Views Reel</span>
+            <span class="ad-objective ad-obj-video">Objectif: Vues vidéo</span>
+          </div>
+          <div class="ad-card-body">
+
+            <div class="ad-field">
+              <span class="ad-field-label">Titre</span>
+              <div class="ad-field-value bold">"En 3 jours, on a tout changé"</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Texte principal</span>
+              <div class="ad-field-value">Regardez ce que 3 jours de travaux peuvent faire à votre entrée. Béton fissuré → pavé uni. Client à Laval, été 2025. 📞 514-266-2504 pour votre soumission gratuite.</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">CTA bouton</span>
+              <div class="ad-field-value bold">En savoir plus</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Vidéo à utiliser</span>
+              <div class="ad-field-value">Reel CA-R01 "En 3 jours" (script Section 5 ci-dessous) · Format 9:16 · Durée cible: 45s · Sous-titres obligatoires (65% vues sans son)</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Ciblage audience</span>
+              <div class="ad-targets">
+                <span class="ad-target-pill">Propriétaires 30–55 ans</span>
+                <span class="ad-target-pill">Laval + Rive-Nord</span>
+                <span class="ad-target-pill">Lookalike: leads existants</span>
+                <span class="ad-target-pill">Retargeting: visiteurs site</span>
+                <span class="ad-target-pill">Vus vidéo balcons 75%+</span>
+              </div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Budget recommandé / jour</span>
+              <div class="ad-field-value bold">CA$8–12/jour · KPI: CPV ≤ $0.08 · Taux complétion ≥ 40%</div>
+            </div>
+
+            <div class="ad-field">
+              <span class="ad-field-label">Séquence funnel</span>
+              <div class="ad-field-value">Diffuser CA-R01 (vues) → retargeter vus 50%+ avec CA-L01 (leads) · Délai: 3–7 jours entre les deux expositions</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 5 — SCRIPTS REELS
+══════════════════════════════════════════════════════════ -->
+<section id="reels">
+  <div class="page">
+    <div class="sec-header">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title">2 Scripts Reel — Scène par Scène</h2>
+      <span class="sec-badge">Vertical 9:16 · Sous-titres requis</span>
+    </div>
+
+    <div class="reel-grid">
+
+      <!-- Reel 1 — En 3 jours -->
+      <article class="reel-card">
+        <div class="reel-card-header">
+          <span class="reel-id">CA-R01</span>
+          <span class="reel-duration">~45 sec</span>
+        </div>
+        <div class="reel-card-body">
+          <div class="reel-title">"En 3 jours, on a tout changé"</div>
+          <div class="reel-hook-line">Accroche: "Jour 1. 7h du matin. L'équipe arrive."</div>
+
+          <div class="scene">
+            <span class="scene-tc">0:00–0:05</span>
+            <div class="scene-body">
+              <div class="scene-action">Plan large: entrée en béton fissuré, mauvais état</div>
+              <div class="scene-note">Caméra fixe, tôt le matin, lumière naturelle. Pas de musique encore — silence.</div>
+              <div class="scene-text">"Voici comment ressemblait l'entrée de Marc, à Laval."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:05–0:10</span>
+            <div class="scene-body">
+              <div class="scene-action">Cut: camion Jardín Ideal qui arrive dans la rue</div>
+              <div class="scene-note">Angle bas, camion en mouvement. La musique démarre — rythme régulier, pas excessif.</div>
+              <div class="scene-text">"Jour 1. 7h du matin."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:10–0:18</span>
+            <div class="scene-body">
+              <div class="scene-action">Timelapse: démolition et excavation — béton arraché, sol mis à nu</div>
+              <div class="scene-note">Compresser 4h de travail en 8 secondes. Montrer la transformation du sol, pas juste des outils.</div>
+              <div class="scene-text">"Démolition. Excavation. Le sol est prêt."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:18–0:26</span>
+            <div class="scene-body">
+              <div class="scene-action">Jour 2: pose granulaire + compaction — gros plan sur les couches</div>
+              <div class="scene-note">Plan rapproché sur la machine de compaction, puis vue d'ensemble surface préparée. Insister sur l'aspect "fondation solide".</div>
+              <div class="scene-text">"Jour 2. La base qui dure 25 ans."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:26–0:36</span>
+            <div class="scene-body">
+              <div class="scene-action">Jour 3: timelapse pose pavé uni — rangées qui apparaissent</div>
+              <div class="scene-note">C'est le moment visuellement le plus fort. Ralentir légèrement sur les 2 dernières secondes — les pavés qui se mettent en place.</div>
+              <div class="scene-text">"Jour 3. Le pavé prend place, rangée par rangée."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:36–0:42</span>
+            <div class="scene-body">
+              <div class="scene-action">Plan final: entrée terminée, lumière dorée, propriétaire qui sort et regarde</div>
+              <div class="scene-note">Réaction authentique. Ne pas demander au client de parler — juste le sourire suffit. La musique monte légèrement.</div>
+              <div class="scene-text">"Marc est rentré chez lui. Son entrée aussi."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:42–0:45</span>
+            <div class="scene-body">
+              <div class="scene-action">Card finale avec logo + CTA</div>
+              <div class="scene-note">Fond vert foncé. Logo Jardín Ideal. Texte centré.</div>
+              <div class="scene-text">"Soumission gratuite en 48h · 514-266-2504"</div>
+            </div>
+          </div>
+
+          <div class="reel-cta-bar">
+            Diffuser comme: CA-R01 · Objectif vues → retargeter avec CA-L01
+          </div>
+        </div>
+      </article>
+
+      <!-- Reel 2 — Walking tour social proof -->
+      <article class="reel-card">
+        <div class="reel-card-header">
+          <span class="reel-id">CA-R02</span>
+          <span class="reel-duration">~40 sec</span>
+        </div>
+        <div class="reel-card-body">
+          <div class="reel-title">"Votre voisin a refait son entrée"</div>
+          <div class="reel-hook-line">Accroche: "Je me promenais dans votre quartier hier soir..."</div>
+
+          <div class="scene">
+            <span class="scene-tc">0:00–0:06</span>
+            <div class="scene-body">
+              <div class="scene-action">Walking shot: rue résidentielle de Laval / Rive-Nord, maisons côte à côte</div>
+              <div class="scene-note">Filmer à la main, légèrement instable — donne l'impression d'un vrai passant. Pas de stabilisateur.</div>
+              <div class="scene-text">"Je me promenais dans votre quartier hier soir..."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:06–0:14</span>
+            <div class="scene-body">
+              <div class="scene-action">Arrêt devant une maison avec belle entrée en pavé uni — zoom lent</div>
+              <div class="scene-note">L'entrée doit être vraiment belle — vraie réalisation Jardín Ideal si possible. Lumière en fin d'après-midi.</div>
+              <div class="scene-text">"Et j'ai vu ça. Un client qu'on a livré il y a 3 semaines."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:14–0:22</span>
+            <div class="scene-body">
+              <div class="scene-action">Pan vers la maison voisine — entrée en béton abîmé</div>
+              <div class="scene-note">Pas de jugement dans la voix. Neutre, observateur. L'image parle d'elle-même.</div>
+              <div class="scene-text">"À côté. Même rue."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:22–0:31</span>
+            <div class="scene-body">
+              <div class="scene-action">Retour sur la belle entrée — gros plans: détail joint, bordure, couleur pavé</div>
+              <div class="scene-note">3 plans rapides, 3 secondes chacun. Montrer la qualité du travail: alignement, propreté des joints, finition des bords.</div>
+              <div class="scene-text">"Pavé uni posé en 3 jours. Ça dure 25 ans."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:31–0:37</span>
+            <div class="scene-body">
+              <div class="scene-action">Face caméra — ton direct, pas publicitaire</div>
+              <div class="scene-note">La personne à l'écran parle naturellement. Pas de script appris — juste l'idée principale. Permettre les hésitations naturelles.</div>
+              <div class="scene-text">"Vous voulez qu'on vienne voir votre entrée? On se déplace gratuitement. Soumission en 48h."</div>
+            </div>
+          </div>
+
+          <div class="scene">
+            <span class="scene-tc">0:37–0:40</span>
+            <div class="scene-body">
+              <div class="scene-action">Card finale logo + numéro</div>
+              <div class="scene-note">Même format que CA-R01 pour cohérence de marque.</div>
+              <div class="scene-text">"514-266-2504 · jardinideal.ca"</div>
+            </div>
+          </div>
+
+          <div class="reel-cta-bar">
+            Social proof pur — ne pas sur-produire · Authenticité &gt; perfection technique
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 6 — CARRUSEL CANVA
+══════════════════════════════════════════════════════════ -->
+<section id="carrousel" class="carru-section">
+  <div class="carru-wrapper">
+    <div class="carru-header">
+      <span class="sec-num">06</span>
+      <h2 class="sec-title">Carrusel Complet — 7 Slides Canva</h2>
+      <span class="sec-badge">Instagram · Facebook</span>
+    </div>
+    <p class="carru-theme">Thème: "Avant/Après — 5 cours avants transformées à Montréal" · Format 1:1 (1080×1080px)</p>
+
+    <div class="slides-scroll">
+      <div class="slides-track">
+
+        <!-- Slide 1 — Couverture -->
+        <div class="slide">
+          <div class="slide-num">
+            <span>Slide 01</span>
+            <span>Couverture</span>
+          </div>
+          <div class="slide-visual sv-1" aria-label="Visuel: split diagonal avant/après">
+            Split diagonal<br>Avant / Après
+          </div>
+          <div class="slide-body">
+            <div class="slide-main">Avant / Après — 5 entrées transformées à Montréal</div>
+            <div class="slide-sub">Balayez pour voir les transformations →</div>
+            <div class="slide-note">Design: fond vert foncé #1E3A20, titre en Georgia blanc, flèche or. Logo Jardín Ideal en bas. Split diagonal béton / pavé en arrière-plan (semi-transparent).</div>
+          </div>
+        </div>
+
+        <!-- Slide 2 — Transformation 1 -->
+        <div class="slide">
+          <div class="slide-num">
+            <span>Slide 02</span>
+            <span>Transformation 1</span>
+          </div>
+          <div class="slide-visual sv-2" aria-label="Visuel: photo avant béton fissuré à gauche">
+            Avant<br>Béton fissuré<br>Photo réelle
+          </div>
+          <div class="slide-body">
+            <div class="slide-main">Laval, Duvernay. 2024.</div>
+            <div class="slide-sub">Béton original de 1978. Fissures profondes, gel/dégel. Surface 45 m².</div>
+            <div class="slide-note">Photo réelle chantier Jardín Ideal. Texte en bas: ville + surface. Badge "AVANT" en rouge haut gauche.</div>
+          </div>
+        </div>
+
+        <!-- Slide 3 — Résultat 1 -->
+        <div class="slide">
+          <div class="slide-num">
+            <span>Slide 03</span>
+            <span>Résultat 1</span>
+          </div>
+          <div class="slide-visual sv-3" aria-label="Visuel: photo après pavé uni gris charcoal">
+            Après<br>Pavé uni charcoal<br>Photo réelle
+          </div>
+          <div class="slide-body">
+            <div class="slide-main">3 jours plus tard.</div>
+            <div class="slide-sub">Pavé uni gris charcoal. Bordures en granit. Durée garantie: 25 ans.</div>
+            <div class="slide-note">Même cadrage que slide 02. Badge "APRÈS" en vert. Valeur du projet en bas: "CA$7 200". Permet la comparaison directe.</div>
+          </div>
+        </div>
+
+        <!-- Slide 4 — Transformation 2 -->
+        <div class="slide">
+          <div class="slide-num">
+            <span>Slide 04</span>
+            <span>Transformation 2</span>
+          </div>
+          <div class="slide-visual sv-4" aria-label="Visuel: photo avant asphalte gondolé">
+            Avant<br>Asphalte gondolé<br>Photo réelle
+          </div>
+          <div class="slide-body">
+            <div class="slide-main">Saint-Léonard. 2025.</div>
+            <div class="slide-sub">Asphalte d'origine. Gondolé, nids-de-poule, racines d'arbre en dessous.</div>
+            <div class="slide-note">Plan légèrement plus large pour montrer l'intégration dans le quartier. Montrer la végétation qui pousse dans les fissures si disponible.</div>
+          </div>
+        </div>
+
+        <!-- Slide 5 — Résultat 2 -->
+        <div class="slide">
+          <div class="slide-num">
+            <span>Slide 05</span>
+            <span>Résultat 2</span>
+          </div>
+          <div class="slide-visual sv-5" aria-label="Visuel: photo après pavé uni beige + haie">
+            Après<br>Pavé beige + haie<br>Photo réelle
+          </div>
+          <div class="slide-body">
+            <div class="slide-main">Pavé uni beige, haie de cèdres, bordures béton.</div>
+            <div class="slide-sub">Le client a ajouté une haie de séparation. Résultat complet: entrée + espace vert.</div>
+            <div class="slide-note">Ce projet montre les services complémentaires (haies). Mentionner: "Projet complet en 4 jours". Valeur: CA$11 400.</div>
+          </div>
+        </div>
+
+        <!-- Slide 6 — Preuve sociale / témoignage -->
+        <div class="slide">
+          <div class="slide-num">
+            <span>Slide 06</span>
+            <span>Témoignage</span>
+          </div>
+          <div class="slide-visual sv-6" aria-label="Visuel: fond vert foncé avec citation en grand">
+            Fond vert foncé<br>Citation en or
+          </div>
+          <div class="slide-body">
+            <div class="slide-main">"Je pensais que ce serait compliqué. Ça a pris 3 jours."</div>
+            <div class="slide-sub">— Marie-Hélène B., Laval · Google ⭐⭐⭐⭐⭐</div>
+            <div class="slide-note">Fond #1E3A20. Citation en Georgia italic, couleur or. Étoiles 5/5 en bas. Prénom + ville seulement (pas de nom complet). Source: Google ou Facebook.</div>
+          </div>
+        </div>
+
+        <!-- Slide 7 — CTA final -->
+        <div class="slide">
+          <div class="slide-num">
+            <span>Slide 07</span>
+            <span>CTA Final</span>
+          </div>
+          <div class="slide-visual sv-7" aria-label="Visuel: fond or avec CTA centré">
+            Fond or<br>CTA centré<br>Numéro en grand
+          </div>
+          <div class="slide-body">
+            <div class="slide-main">Votre entrée, la prochaine sur cette liste.</div>
+            <div class="slide-sub">Soumission gratuite · Visite en 48h · Sans engagement</div>
+            <div class="slide-note">Fond or #C8A45A. Texte en vert foncé #1E3A20. Numéro en grand: 514-266-2504. Logo Jardín Ideal. C'est le seul slide où le numéro est prioritaire sur le visuel.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 7 — CTA FINAL
+══════════════════════════════════════════════════════════ -->
+<section id="cta" class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-header">
+      <span class="sec-num">07</span>
+      <h2 class="sec-title">2 Versions CTA Final</h2>
+    </div>
+
+    <div class="cta-grid">
+
+      <!-- CTA 1 — Organique -->
+      <div class="cta-card">
+        <span class="cta-type">Version organique · Facebook / Instagram</span>
+        <div class="cta-headline">"Prêt à refaire votre entrée?"</div>
+        <div class="cta-sub">Aucune pression. On se déplace, on mesure, on vous soumet un prix fixe. Vous décidez.</div>
+        <div class="cta-paid-copy">Soumission gratuite en 48h.
+On couvre Laval, la Rive-Nord et Montréal-Nord.
+À partir de CA$5 500 — entrée standard.</div>
+        <a href="tel:5142662504" class="cta-btn">Appeler maintenant</a>
+        <span class="cta-tel">514-266-2504</span>
+        <div class="cta-note">Utiliser en bas de chaque post organique. Ne pas modifier le numéro. Ajouter l'emoji 📞 sur mobile.</div>
+      </div>
+
+      <!-- CTA 2 — Paid Meta Ads -->
+      <div class="cta-card">
+        <span class="cta-type">Version paid · Meta Ads Lead Form</span>
+        <div class="cta-headline">"Votre voisin n'a pas attendu."</div>
+        <div class="cta-sub">Formulaire instantané — 4 questions, 30 secondes. On vous rappelle dans les 48h avec un prix.</div>
+        <div class="cta-paid-copy">✓ Visite gratuite sur place
+✓ Prix fixe — pas de surprises
+✓ Posé en 3 jours
+✓ Garantie 2 ans main-d'œuvre</div>
+        <a href="#" class="cta-btn">Obtenir mon devis gratuit</a>
+        <span class="cta-tel">514-266-2504</span>
+        <div class="cta-note">Texte du bouton Meta Ads: "Obtenir un devis" (30 car.). Utiliser avec formulaire instantané CA-L01. CPL historique: CA$134.17.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ──────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <strong>Jardín Ideal</strong> &nbsp;·&nbsp; Contenu prêt à publier · Campagne Cour Avant 2026 &nbsp;·&nbsp; 514-266-2504 &nbsp;·&nbsp; daniel@groupe-ideal.com
+</footer>
+
+</body>
+</html>

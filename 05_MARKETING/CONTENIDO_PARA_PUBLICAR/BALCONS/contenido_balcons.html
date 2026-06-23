@@ -1,0 +1,1389 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contenido Meta Ads — Balcons Composite · Jardín Ideal 2026</title>
+<style>
+/* ─────────────────────────────────────────────
+   JARDÍN IDEAL — BRAND TOKENS
+   Appliqués exactement depuis le système existant
+───────────────────────────────────────────── */
+:root {
+  --vf:   #1E3A20;   /* vert foncé */
+  --or:   #C8A45A;   /* or */
+  --cr:   #F5F2EB;   /* crème */
+  --w:    #FFFFFF;
+  --n:    #0D0E0B;   /* noir */
+  --gf:   #2A2B28;   /* gris foncé */
+  --vm:   #3D6B42;   /* vert médium */
+  --vc:   #5A8F62;   /* vert clair */
+  --gc:   #B8B8B0;   /* gris clair */
+  --ce:   #EDE9E0;   /* crème foncé */
+  --rouge: #B83232;
+  --rouge-bg: #F5E8E8;
+  --vert-bg: #EAF2EB;
+  --bois: #A0722A;   /* ambré bois traité — couleur signature de ce document */
+
+  --font-d: Georgia, 'Times New Roman', serif;
+  --font-b: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-m: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: var(--font-b);
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+
+/* ─── COUVERTURE ─── */
+.cover {
+  background: var(--vf);
+  padding: 56px 60px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 38px,
+      rgba(200,164,90,0.035) 38px,
+      rgba(200,164,90,0.035) 39px
+    );
+  pointer-events: none;
+}
+/* ─── Aesthetic risk: vertical wood-grain striping on the cover ──
+   Represents the composite deck boards this service installs.
+   The repeat width (39px) echoes a standard 4-inch composite plank
+   at common document zoom — a material reference, not decoration.
+─────────────────────────────────────────────────────────────────── */
+.cover::after {
+  content: "";
+  position: absolute;
+  right: 56px; top: 50%;
+  transform: translateY(-50%);
+  width: 180px; height: 180px;
+  border: 40px solid rgba(200,164,90,0.08);
+  border-radius: 0;
+}
+.cover-eyebrow {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 18px;
+}
+.cover h1 {
+  font-family: var(--font-d);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--w);
+  line-height: 1.08;
+  max-width: 680px;
+  margin-bottom: 22px;
+}
+.cover h1 em { color: var(--or); font-style: italic; }
+.cover-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+.pill {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--or);
+  padding: 5px 13px;
+  border: 1px solid rgba(200,164,90,0.4);
+  background: rgba(200,164,90,0.10);
+}
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  padding-top: 22px;
+}
+.cover-meta-item .lbl {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gc);
+  display: block;
+  margin-bottom: 2px;
+}
+.cover-meta-item .val { font-size: 13px; font-weight: 600; color: var(--w); }
+
+/* ─── BAND ─── */
+.band {
+  background: #2A1E0A;
+  padding: 13px 60px;
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--or);
+  border-left: 5px solid var(--or);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.band-dot {
+  width: 6px; height: 6px;
+  background: var(--or);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── CONTAINER ─── */
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+/* ─── SECTION HEADERS ─── */
+.section {
+  padding-top: 52px;
+  margin-top: 52px;
+  border-top: 2px solid var(--vf);
+}
+.section.first { border-top: none; margin-top: 0; padding-top: 44px; }
+.section-tag {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-tag::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--ce);
+  max-width: 80px;
+}
+.section-title {
+  font-family: var(--font-d);
+  font-size: clamp(20px, 2.6vw, 30px);
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.section-sub {
+  font-size: 13px;
+  color: var(--gc);
+  margin-bottom: 24px;
+  font-family: var(--font-m);
+  letter-spacing: 0.5px;
+}
+
+/* ─── COPY BOXES ───────────────────────────────────────────────
+   Left border in --bois (warm amber / bois traité tone).
+   This is the material signature of the BALCONS content set —
+   every copyable block carries the colour of the deck board being
+   replaced. Different from the green-border used in other services.
+──────────────────────────────────────────────────────────────── */
+.copy-box {
+  background: var(--w);
+  border: 1px solid #DDD8CE;
+  border-left: 5px solid var(--bois);
+  margin-bottom: 20px;
+  position: relative;
+}
+.copy-box-header {
+  background: var(--vf);
+  padding: 10px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.copy-box-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 700;
+}
+.copy-box-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gc);
+}
+.copy-box-body {
+  padding: 20px 22px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--n);
+  white-space: pre-wrap;
+  font-family: var(--font-b);
+}
+.copy-box-body strong { font-weight: 700; }
+.copy-box-body em { color: var(--bois); font-style: normal; font-weight: 600; }
+
+/* Hook boxes — tighter, bolder */
+.hook-box {
+  background: var(--w);
+  border: 1px solid #DDD8CE;
+  border-left: 5px solid var(--bois);
+  padding: 14px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.hook-num {
+  font-family: var(--font-m);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--bois);
+  min-width: 24px;
+  padding-top: 2px;
+  letter-spacing: 1px;
+}
+.hook-content { flex: 1; }
+.hook-text {
+  font-family: var(--font-d);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--n);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+.hook-note {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gc);
+}
+
+/* ─── META AD SPEC BOXES ─── */
+.ad-box {
+  background: var(--w);
+  border: 1px solid #DDD8CE;
+  border-left: 5px solid var(--bois);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.ad-header {
+  background: var(--vf);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ad-header-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 700;
+}
+.ad-header-badge {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(200,164,90,0.15);
+  border: 1px solid rgba(200,164,90,0.35);
+  color: var(--or);
+  padding: 3px 10px;
+}
+.ad-grid {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  border-collapse: collapse;
+}
+.ad-row {
+  display: contents;
+}
+.ad-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--or);
+  background: #2A1E0A;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: flex-start;
+}
+.ad-value {
+  font-size: 13.5px;
+  color: var(--n);
+  padding: 10px 18px;
+  border-bottom: 1px solid #EDE9E0;
+  background: var(--w);
+  line-height: 1.5;
+}
+.ad-value strong { color: var(--vf); }
+.ad-value.char-warning { color: var(--rouge); font-family: var(--font-m); font-size: 11px; }
+.char-count {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--gc);
+  margin-left: 8px;
+}
+
+/* ─── REEL SCRIPT ─── */
+.reel-wrap {
+  background: var(--w);
+  border: 1px solid #DDD8CE;
+  border-left: 5px solid var(--bois);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.reel-header {
+  background: var(--vf);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.reel-title {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 700;
+}
+.reel-meta {
+  font-family: var(--font-m);
+  font-size: 9px;
+  color: var(--gc);
+  letter-spacing: 1px;
+}
+.reel-scene {
+  display: grid;
+  grid-template-columns: 44px 1fr 1fr 1fr;
+  border-bottom: 1px solid #EDE9E0;
+}
+.reel-scene:last-child { border-bottom: none; }
+.reel-scene-num {
+  background: #2A1E0A;
+  color: var(--or);
+  font-family: var(--font-m);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+}
+.reel-scene-cell {
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  border-left: 1px solid #EDE9E0;
+  color: var(--gf);
+}
+.reel-scene-cell .cell-lbl {
+  font-family: var(--font-m);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gc);
+  display: block;
+  margin-bottom: 4px;
+}
+.reel-scene-cell .cell-val { color: var(--n); font-weight: 600; }
+.reel-scene-cell .cell-note { color: var(--gc); font-size: 12px; font-style: italic; }
+@media (max-width: 700px) {
+  .reel-scene { grid-template-columns: 36px 1fr; }
+  .reel-scene-cell:nth-child(3),
+  .reel-scene-cell:nth-child(4) { display: none; }
+}
+
+/* ─── CAROUSEL SLIDES ─── */
+.carousel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.slide-card {
+  background: var(--w);
+  border: 1px solid #DDD8CE;
+  border-left: 5px solid var(--bois);
+  overflow: hidden;
+}
+.slide-num {
+  background: var(--vf);
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.slide-num span {
+  font-family: var(--font-m);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--or);
+}
+.slide-num-tag {
+  font-family: var(--font-m);
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gc);
+}
+.slide-body { padding: 14px 16px; }
+.slide-main {
+  font-family: var(--font-d);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.slide-secondary {
+  font-size: 12.5px;
+  color: var(--gf);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.slide-visual {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--vc);
+  background: var(--vert-bg);
+  padding: 4px 10px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.slide-note {
+  font-size: 11px;
+  color: var(--gc);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ─── CTA SECTION ─── */
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.cta-card {
+  background: var(--w);
+  border: 1px solid #DDD8CE;
+  border-left: 5px solid var(--bois);
+  overflow: hidden;
+}
+.cta-card-header {
+  background: var(--vf);
+  padding: 10px 18px;
+}
+.cta-card-label {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 700;
+}
+.cta-card-body {
+  padding: 18px 20px;
+}
+.cta-text {
+  font-family: var(--font-d);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--n);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.cta-details {
+  font-size: 13px;
+  color: var(--gf);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.cta-button {
+  display: inline-block;
+  background: var(--vf);
+  color: var(--w);
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+}
+.cta-button.gold {
+  background: var(--or);
+  color: var(--n);
+}
+@media (max-width: 680px) {
+  .cta-grid { grid-template-columns: 1fr; }
+  .ad-grid { grid-template-columns: 120px 1fr; }
+}
+
+/* ─── CHIPS / TAGS ─── */
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.tag {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+.tag.green { background: var(--vert-bg); color: var(--vm); border-color: rgba(61,107,66,0.25); }
+.tag.gold  { background: rgba(200,164,90,0.12); color: var(--or); border-color: rgba(200,164,90,0.35); }
+.tag.red   { background: var(--rouge-bg); color: var(--rouge); border-color: rgba(184,50,50,0.25); }
+.tag.dark  { background: var(--vf); color: var(--or); }
+
+/* ─── INSTRUCTION BLOCKS ─── */
+.instruction {
+  background: #EAF2EB;
+  border-left: 4px solid var(--vm);
+  padding: 12px 18px;
+  font-size: 12.5px;
+  color: var(--vf);
+  font-family: var(--font-m);
+  letter-spacing: 0.3px;
+  margin-bottom: 20px;
+}
+.instruction strong { font-weight: 700; letter-spacing: 1px; }
+
+/* ─── UTILITY ─── */
+p { margin-bottom: 10px; color: var(--gf); }
+ul { padding-left: 20px; margin-bottom: 10px; }
+li { color: var(--gf); font-size: 13.5px; margin-bottom: 4px; }
+strong { color: var(--n); font-weight: 600; }
+
+@media (max-width: 600px) {
+  .cover { padding: 36px 24px 32px; }
+  .band { padding: 13px 24px; }
+  .container { padding: 0 20px 60px; }
+  .carousel-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     COUVERTURE
+═══════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-eyebrow">Jardín Ideal · Contenu Prêt à Publier · Été 2026</div>
+  <h1>Balcons<br><em>Composite</em></h1>
+  <div class="cover-pills">
+    <span class="pill">Meta Ads</span>
+    <span class="pill">Facebook</span>
+    <span class="pill">Instagram</span>
+    <span class="pill">Reels</span>
+    <span class="pill">Carrusel</span>
+    <span class="pill">Organique</span>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="lbl">Service</span>
+      <span class="val">Remplacement balcon — Bois → Composite</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Audience</span>
+      <span class="val">Propriétaires 35–55 ans · Laval / Rive-Nord</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Budget client</span>
+      <span class="val">CA$8 000 – $20 000</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Saison</span>
+      <span class="val">Été 2026 · Urgence automne</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="lbl">Contact</span>
+      <span class="val">514-266-2504 · jardin-ideal.com</span>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <span class="band-dot"></span>
+  Tous les textes sont en français · Prêts à copier-coller · 7 sections · Été 2026
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════
+     SECTION 1 — HOOKS
+═══════════════════════════════════════ -->
+<div class="section first">
+  <div class="section-tag">Section 01</div>
+  <div class="section-title">5 Hooks — Stop-Scroll</div>
+  <div class="section-sub">Texte à l'écran dans les 3 premières secondes · Reels &amp; Stories</div>
+
+  <div class="instruction">
+    <strong>Utilisation :</strong> Ces textes apparaissent en superposition sur la vidéo, dans les 3 premières secondes. Taille de police recommandée : grande, centrée, fond semi-transparent noir ou blanc selon le visuel.
+  </div>
+
+  <div class="hook-box">
+    <div class="hook-num">01</div>
+    <div class="hook-content">
+      <div class="hook-text">Votre balcon vous fait honte quand les voisins passent ?</div>
+      <div class="hook-note">Douleur · Propriétaire avec balcon en bois abîmé, pourri ou grisé</div>
+    </div>
+  </div>
+
+  <div class="hook-box">
+    <div class="hook-num">02</div>
+    <div class="hook-content">
+      <div class="hook-text">Bois traité vs composite : ce que personne ne vous dit avant de choisir.</div>
+      <div class="hook-note">Éducatif · Propriétaire indécis qui compare les deux options</div>
+    </div>
+  </div>
+
+  <div class="hook-box">
+    <div class="hook-num">03</div>
+    <div class="hook-content">
+      <div class="hook-text">Il vous reste 6 semaines pour profiter de votre balcon cet été.</div>
+      <div class="hook-note">Urgence saisonnière · Fenêtre d'installation se rétrécit</div>
+    </div>
+  </div>
+
+  <div class="hook-box">
+    <div class="hook-num">04</div>
+    <div class="hook-content">
+      <div class="hook-text">Avant : bois grisé et dangereux. Après : composite qui dure 25 ans.</div>
+      <div class="hook-note">Preuve sociale · Avant/après · Génère la curiosité de faire défiler</div>
+    </div>
+  </div>
+
+  <div class="hook-box">
+    <div class="hook-num">05</div>
+    <div class="hook-content">
+      <div class="hook-text">Un balcon composite 10×12 pi : à partir de 8 000 $. Voici ce que ça inclut.</div>
+      <div class="hook-note">Prix / transparence · Stoppe ceux qui veulent chiffrer leur projet</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 2 — COPIES FACEBOOK
+═══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">Section 02</div>
+  <div class="section-title">3 Copies Facebook</div>
+  <div class="section-sub">Publications organiques et/ou annonces payées · Ton professionnel et de proximité</div>
+
+  <!-- POST 1 -->
+  <div class="copy-box">
+    <div class="copy-box-header">
+      <div class="copy-box-title">Post Facebook 1 — Émotionnel / Avant-Après</div>
+      <div class="copy-box-label">150–200 mots · Organique ou Payé</div>
+    </div>
+    <div class="copy-box-body">Il y a deux ans, ce balcon était une honte. Bois grisé, planches qui gondolaient, des échardes à chaque été.
+
+Aujourd'hui, les propriétaires nous appellent pour nous dire qu'ils ne rentrent plus chez eux le soir sans sourire en montant les marches.
+
+C'est ce que fait un balcon en composite — pas seulement il dure 25 ans sans entretien, il change la façon dont vous vivez votre maison.
+
+Chez Jardín Ideal, on remplace les balcons en bois traité par du composite de qualité supérieure. Résultat : 0 peinture, 0 teinture, 0 réparation. Juste profiter.
+
+✅ Composite garanti 10 ans
+✅ À partir de 8 000 $ (balcon 10 × 12 pi)
+✅ Installation avant l'automne — disponibilités limitées
+
+Vous avez un projet pour cet été ? On vous prépare une soumission gratuite, sans engagement, en 48 h.
+
+👉 Appelez le 514-266-2504 ou visitez jardin-ideal.com
+
+#BalconComposite #JardinIdeal #AmenagemntExterieur #Laval #RiveNord #RenovationMaison #BalconMontreal</div>
+  </div>
+
+  <!-- POST 2 -->
+  <div class="copy-box">
+    <div class="copy-box-header">
+      <div class="copy-box-title">Post Facebook 2 — Éducatif / Bois vs Composite</div>
+      <div class="copy-box-label">200–250 mots · Format pédagogique · Organique</div>
+    </div>
+    <div class="copy-box-body">Bois traité ou composite — quelle est vraiment la bonne décision pour votre balcon ?
+
+C'est la question qu'on nous pose le plus souvent au printemps. Voici la réponse honnête :
+
+🌲 BOIS TRAITÉ
+• Coût initial plus bas
+• Nécessite entretien annuel (teinture, ponçage, traitement)
+• Durée de vie : 10–15 ans avec entretien rigoureux
+• Sensible aux cycles gel-dégel québécois
+• Risque d'échardes, de gauchissement, de pourriture
+
+🔲 COMPOSITE
+• Investissement initial plus élevé (à partir de 8 000 $)
+• Zéro entretien — ni teinture, ni sablage
+• Durée de vie : 25–30 ans
+• Résiste aux hivers montréalais sans fléchir
+• Surface uniforme, aucune écharde, aucune réparation
+
+Sur 20 ans, le composite revient souvent moins cher — quand on additionne les produits d'entretien, les heures de travail et les remplacements partiels du bois.
+
+Chez Jardín Ideal, on travaille uniquement avec des matériaux composite de qualité supérieure, avec garantie fabricant de 10 ans.
+
+Si vous hésitez encore, on vous invite à venir voir nos échantillons et à poser toutes vos questions — sans engagement.
+
+📞 514-266-2504
+🌐 jardin-ideal.com
+
+#CompositeVsBois #BalconComposite #RenovationExterieure #ConseilsMaison #JardinIdeal #Laval #Montreal</div>
+  </div>
+
+  <!-- POST 3 -->
+  <div class="copy-box">
+    <div class="copy-box-header">
+      <div class="copy-box-title">Post Facebook 3 — Témoignage / Preuve sociale</div>
+      <div class="copy-box-label">150–200 mots · Format client · Adapté pour le retargeting</div>
+    </div>
+    <div class="copy-box-body">⭐⭐⭐⭐⭐ "On hésitait depuis trois ans. À chaque été, on se disait qu'on allait refaire le balcon, et à chaque printemps, mon mari repeignait les planches pour gagner du temps. Cette année, on a finalement appelé Jardín Ideal.
+
+L'équipe est venue évaluer le projet un mardi. On avait notre soumission détaillée le jeudi. Les travaux ont commencé deux semaines plus tard et ont pris trois jours. Trois jours.
+
+Maintenant on a un balcon composite gris anthracite que je n'aurais jamais imaginé avoir. Mes enfants jouent dessus tous les soirs. Et moi, je n'ai plus jamais à sortir la teinture."
+
+— Marie-France L., Laval-des-Rapides
+
+Ce genre de transformation, on en fait plusieurs par semaine dans Laval et sur la Rive-Nord.
+
+Si votre balcon vous retient en dedans plutôt qu'il vous attire dehors, il est peut-être temps.
+
+👉 Soumission gratuite : 514-266-2504
+
+#JardinIdeal #BalconComposite #Temoignage #RenovationBalcon #LavalQuebec</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 3 — COPIES INSTAGRAM
+═══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">Section 03</div>
+  <div class="section-title">3 Copies Instagram</div>
+  <div class="section-sub">Format court, emojis, ton visuel · Caption + Hashtags</div>
+
+  <!-- INSTA 1 -->
+  <div class="copy-box">
+    <div class="copy-box-header">
+      <div class="copy-box-title">Instagram 1 — Avant/Après Visuel</div>
+      <div class="copy-box-label">80–100 mots · Photo avant/après obligatoire</div>
+    </div>
+    <div class="copy-box-body">Bois grisé → Composite anthracite 🔲
+
+Un balcon qui envahissait l'entrée visuellement. Des planches qui grondaient sous les pieds. Une teinture à refaire chaque été.
+
+Résultat : composite 25 ans de durée de vie, 0 entretien, garantie 10 ans fabricant.
+
+Projet réalisé à Laval en 4 jours. ✅
+
+Votre balcon mérite la même transformation.
+👉 Soumission gratuite au lien en bio ou au 514-266-2504.
+
+#BalconComposite #AvantApres #JardinIdeal #Laval #RiveNord #AmenagemntExterieur #BalconMontreal #RenoExterieure #CompositeDecking</div>
+  </div>
+
+  <!-- INSTA 2 -->
+  <div class="copy-box">
+    <div class="copy-box-header">
+      <div class="copy-box-title">Instagram 2 — Tip du Jour Éducatif</div>
+      <div class="copy-box-label">60–80 mots · Format carrousel ou image unique</div>
+    </div>
+    <div class="copy-box-body">💡 Le saviez-vous ?
+
+Le bois traité québécois supporte en moyenne 3 à 4 cycles gel-dégel avant de commencer à se fissurer ou se gauchir.
+
+Le composite, lui, est conçu spécifiquement pour le climat nordique. Pas de fissures. Pas d'échardes. Pas d'entretien annuel.
+
+25 ans de durée de vie garantie. 🔲
+
+📞 514-266-2504 · jardin-ideal.com
+
+#BalconComposite #ConseisReno #JardinIdeal #Montreal #RenovationMaison #ExterieursQuebec</div>
+  </div>
+
+  <!-- INSTA 3 -->
+  <div class="copy-box">
+    <div class="copy-box-header">
+      <div class="copy-box-title">Instagram 3 — Urgence Été</div>
+      <div class="copy-box-label">60–80 mots · Reel ou Story · Ton direct</div>
+    </div>
+    <div class="copy-box-body">⏳ Il reste 6 semaines pour profiter de votre balcon cet été.
+
+Nos équipes sont disponibles — mais les créneaux de juillet se remplissent vite.
+
+Si votre balcon est en bois et que vous y pensiez depuis l'automne dernier, c'est maintenant.
+
+Soumission gratuite en 48 h. Sans engagement. 🌿
+
+👉 514-266-2504 · jardin-ideal.com
+
+#BalconComposite #EteMontreal #JardinIdeal #Laval #UrgenceSaison #RenoExterieure #PaysagisteMontreal</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 4 — ANNONCES META ADS
+═══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">Section 04</div>
+  <div class="section-title">2 Annonces Meta Ads</div>
+  <div class="section-sub">Champs prêts à copier dans le Gestionnaire de publicités Meta</div>
+
+  <!-- ANNONCE 1 -->
+  <div class="ad-box">
+    <div class="ad-header">
+      <div class="ad-header-title">Annonce 1 — Lead Generation</div>
+      <div class="ad-header-badge">Objectif : Formulaire de soumission</div>
+    </div>
+    <div class="ad-grid">
+      <div class="ad-label">Titre principal</div>
+      <div class="ad-value"><strong>Balcon composite — 8 000 $</strong> <span class="char-count">(27 car. ✓)</span></div>
+
+      <div class="ad-label">Titre 2</div>
+      <div class="ad-value"><strong>0 entretien · Garanti 10 ans</strong> <span class="char-count">(27 car. ✓)</span></div>
+
+      <div class="ad-label">Description</div>
+      <div class="ad-value"><strong>Remplacez votre balcon en bois traité par du composite. Soumission gratuite en 48 h. Disponibilités limitées cet été.</strong> <span class="char-count">(125 car. ✓)</span></div>
+
+      <div class="ad-label">Bouton CTA</div>
+      <div class="ad-value"><strong>Obtenir un devis</strong></div>
+
+      <div class="ad-label">URL de destination</div>
+      <div class="ad-value"><strong>jardin-ideal.com</strong> (ou page de destination balcons)</div>
+
+      <div class="ad-label">Format visuel</div>
+      <div class="ad-value">Photo avant/après · 1080×1080 px · Texte &lt;20 % · Fond sombre à gauche (bois), clair à droite (composite)</div>
+
+      <div class="ad-label">Audience suggérée</div>
+      <div class="ad-value">Propriétaires · 35–60 ans · Laval, Saint-Eustache, Blainville, Terrebonne, Repentigny · Intérêts : rénovation, maison, jardin · Exclure : locataires</div>
+
+      <div class="ad-label">Budget recommandé</div>
+      <div class="ad-value">20–35 $ / jour · CPA cible : &lt; 45 $ / lead · Phase test : 7 jours minimum</div>
+    </div>
+  </div>
+
+  <!-- ANNONCE 2 -->
+  <div class="ad-box">
+    <div class="ad-header">
+      <div class="ad-header-title">Annonce 2 — Trafic + Notoriété</div>
+      <div class="ad-header-badge">Objectif : Vues vidéo / Visite site</div>
+    </div>
+    <div class="ad-grid">
+      <div class="ad-label">Titre principal</div>
+      <div class="ad-value"><strong>Bois ou composite en 2026 ?</strong> <span class="char-count">(23 car. ✓)</span></div>
+
+      <div class="ad-label">Titre 2</div>
+      <div class="ad-value"><strong>25 ans sans entretien.</strong> <span class="char-count">(21 car. ✓)</span></div>
+
+      <div class="ad-label">Description</div>
+      <div class="ad-value"><strong>Jardín Ideal remplace les balcons en bois par du composite haut de gamme. Découvrez la différence et obtenez une soumission gratuite.</strong> <span class="char-count">(148 car. — tronquer si nécessaire)</span></div>
+
+      <div class="ad-label">Bouton CTA</div>
+      <div class="ad-value"><strong>En savoir plus</strong></div>
+
+      <div class="ad-label">URL de destination</div>
+      <div class="ad-value"><strong>jardin-ideal.com</strong></div>
+
+      <div class="ad-label">Format visuel</div>
+      <div class="ad-value">Vidéo Reel 9:16 · 30–45 sec · Hook visuel les 3 premières secondes · Sous-titres obligatoires (85 % des vues sans son)</div>
+
+      <div class="ad-label">Audience suggérée</div>
+      <div class="ad-value">Lookalike 1 % des leads existants · Ou : propriétaires 35–55 ans · Grand Montréal · Intérêts : décoration extérieure, bricolage, terrasse, paysagisme</div>
+
+      <div class="ad-label">Budget recommandé</div>
+      <div class="ad-value">15–25 $ / jour · Objectif CPV : &lt; 0,05 $ · Retargeting sur les vues 50 %+ avec Annonce 1 (Lead Gen)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 5 — GUIONS DE REELS
+═══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">Section 05</div>
+  <div class="section-title">2 Guions de Reels</div>
+  <div class="section-sub">Scènes prêtes à filmer · Format : Scène / Texte à l'écran / Instruction de tournage</div>
+
+  <!-- REEL 1 -->
+  <div class="reel-wrap">
+    <div class="reel-header">
+      <div class="reel-title">Reel 1 — Avant/Après en Temps Réel</div>
+      <div class="reel-meta">Durée : 60 sec · Format 9:16 · Musique : beat lent → montée</div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">01</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Votre balcon vous retient en dedans ?</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Durée</span>
+        <span class="cell-val">0–3 sec</span>
+        <span class="cell-note">Texte seul, fond noir ou gros plan bois abîmé</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Instruction tournage</span>
+        <span class="cell-val">Gros plan sur planche de bois grisée, écaillée ou pourrie. Ou texte blanc sur fond noir.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">02</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Bois traité — ça vieillit mal.</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">3–8 sec</span>
+        <span class="cell-note">Plan large d'un balcon en bois abîmé</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Balcon avant les travaux. Camera lente, panoramique de bas en haut. Lumière naturelle.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">03</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">On l'a remplacé. En 3 jours.</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">8–15 sec</span>
+        <span class="cell-note">Accéléré du chantier</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Time-lapse ou montage rapide : démolition, structure, pose composite. Rythme soutenu.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">04</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Résultat ↓</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">15–20 sec</span>
+        <span class="cell-note">Moment de révélation</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Zoom arrière du balcon fini. Composite gris anthracite, propre, symétrique. Musique monte.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">05</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Composite · 25 ans · 0 entretien</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">20–35 sec</span>
+        <span class="cell-note">Détails produit</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Gros plans : surface composite (texture, couleur), visserie cachée, joints propres. Lent.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">06</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Garanti 10 ans. À partir de 8 000 $.</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">35–45 sec</span>
+        <span class="cell-note">Crédibilité</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Plan moyen sur le balcon avec famille ou propriétaire dessus. Vie réelle. Souriant.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">07</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Obtenez votre soumission gratuite · 514-266-2504</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">45–55 sec</span>
+        <span class="cell-note">CTA final</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Logo Jardín Ideal centré sur fond vert foncé (#1E3A20). Numéro en grand. Musique fade out.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">08</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Disponibilités limitées cet été.</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">55–60 sec</span>
+        <span class="cell-note">Urgence finale</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Texte seul, fond vert, couleur or (#C8A45A). Laissez à l'écran 5 sec. Fin.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- REEL 2 -->
+  <div class="reel-wrap">
+    <div class="reel-header">
+      <div class="reel-title">Reel 2 — "Combien ça coûte ?" — Transparence de prix</div>
+      <div class="reel-meta">Durée : 45 sec · Format 9:16 · Musique : neutre, décontractée</div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">01</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Combien coûte vraiment un balcon composite ?</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">0–4 sec</span>
+        <span class="cell-note">Hook fort — question directe</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Texte en gros plan, fond blanc ou vert foncé. Aucune image encore — la question est le hook.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">02</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Balcon 10 × 12 pi : à partir de 8 000 $</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">4–10 sec</span>
+        <span class="cell-note">Fourchette basse</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Plan d'un petit balcon composite terminé. Texte en overlay. Simple, honnête.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">03</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Grand balcon ou 2e étage : 14 000 $ – 20 000 $</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">10–18 sec</span>
+        <span class="cell-note">Fourchette haute + contexte</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Plan d'un balcon plus grand ou à deux niveaux. Même style d'overlay texte.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">04</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Ce que ça inclut : démolition · structure · composite · finitions</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">18–27 sec</span>
+        <span class="cell-note">Ce qui est compris</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Liste apparaît mot par mot. Fond sobre. Pas de musique agressive — le contenu est l'information.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">05</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Garanti 10 ans. Aucun entretien. 25 ans de durée de vie.</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">27–35 sec</span>
+        <span class="cell-note">Justification de l'investissement</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Gros plan composite : surface propre, détail de la planche, couleur uniforme. Montre la qualité.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">06</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">Soumission gratuite — on se déplace chez vous.</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">35–42 sec</span>
+        <span class="cell-note">CTA sans pression</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Un technicien Jardín Ideal sur un balcon client, bloc-notes ou tablette en main. Humain, accessible.</span>
+      </div>
+    </div>
+    <div class="reel-scene">
+      <div class="reel-scene-num">07</div>
+      <div class="reel-scene-cell">
+        <span class="cell-lbl">Texte écran</span>
+        <span class="cell-val">514-266-2504 · jardin-ideal.com</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">42–45 sec</span>
+        <span class="cell-note">Fin avec contact</span>
+      </div>
+      <div class="reel-scene-cell">
+        <span class="cell-val">Logo + contact sur fond vert foncé. Numéro lisible, grand. 3 sec. Fade to black.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 6 — CARRUSEL COMPLET
+═══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">Section 06</div>
+  <div class="section-title">Carrusel Complet — 7 Slides</div>
+  <div class="section-sub">Prêt à assembler dans Canva · Thème : Bois traité ou composite — Ce que votre balcon devrait être en 2026</div>
+
+  <div class="instruction">
+    <strong>Specs Canva :</strong> Format 1080×1080 px · Couleurs : #1E3A20 (vert foncé), #C8A45A (or), #F5F2EB (crème), #FFFFFF (blanc) · Police titre : Georgia bold · Police corps : système sans-serif · Cohérence visuelle entre slides obligatoire.
+  </div>
+
+  <div class="carousel-grid">
+    <div class="slide-card">
+      <div class="slide-num">
+        <span>Slide 1 / 7</span>
+        <span class="slide-num-tag">Couverture</span>
+      </div>
+      <div class="slide-body">
+        <div class="slide-main">Bois traité ou composite — Ce que votre balcon devrait être en 2026</div>
+        <div class="slide-secondary">Logo Jardín Ideal · Fond vert foncé · Titre en blanc · Sous-titre en or</div>
+        <div class="slide-visual">Visuel : Photo composite gris anthracite, lumière naturelle</div>
+        <div class="slide-note">Design : Fond #1E3A20, titre Georgia bold blanc 42px, sous-titre Courier New or 12px. Effet : bande dorée en bas sur 8px.</div>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="slide-num">
+        <span>Slide 2 / 7</span>
+        <span class="slide-num-tag">Problème</span>
+      </div>
+      <div class="slide-body">
+        <div class="slide-main">Le bois traité vieillit mal au Québec.</div>
+        <div class="slide-secondary">Gel-dégel · Teinture chaque année · Échardes · Gauchissement · Durée : 10–15 ans maximum</div>
+        <div class="slide-visual">Visuel : Gros plan bois grisé, fissuré, en mauvais état</div>
+        <div class="slide-note">Fond crème (#F5F2EB), texte vert foncé, icônes simples (✗) en rouge pour chaque point négatif.</div>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="slide-num">
+        <span>Slide 3 / 7</span>
+        <span class="slide-num-tag">Solution</span>
+      </div>
+      <div class="slide-body">
+        <div class="slide-main">Le composite, c'est différent.</div>
+        <div class="slide-secondary">0 entretien · 0 teinture · 0 échardes · Conçu pour les hivers nordiques · Durée : 25–30 ans</div>
+        <div class="slide-visual">Visuel : Surface composite propre, gros plan texture uniforme</div>
+        <div class="slide-note">Fond blanc, chaque point avec icône (✓) en vert #3D6B42. Contraste fort : bon vs mauvais entre slides 2 et 3.</div>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="slide-num">
+        <span>Slide 4 / 7</span>
+        <span class="slide-num-tag">Comparatif</span>
+      </div>
+      <div class="slide-body">
+        <div class="slide-main">Sur 20 ans, lequel coûte vraiment moins cher ?</div>
+        <div class="slide-secondary">Bois : installation + 15 ans d'entretien + remplacement partiel = coût réel élevé. Composite : un seul investissement. Zéro après.</div>
+        <div class="slide-visual">Visuel : Tableau ou graphique simple bois vs composite</div>
+        <div class="slide-note">Deux colonnes : gauche BOIS (fond rouge clair), droite COMPOSITE (fond vert clair). Chiffres en gras. Simple et lisible.</div>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="slide-num">
+        <span>Slide 5 / 7</span>
+        <span class="slide-num-tag">Avant/Après</span>
+      </div>
+      <div class="slide-body">
+        <div class="slide-main">Résultats réels. Laval, 2025.</div>
+        <div class="slide-secondary">Balcon 12×14 pi · Bois grisé → Composite anthracite · Durée des travaux : 4 jours</div>
+        <div class="slide-visual">Visuel : Photo avant à gauche, photo après à droite — même angle</div>
+        <div class="slide-note">Ligne verticale centrale divise les deux photos. Étiquettes AVANT / APRÈS en Courier New gras. Même cadrage obligatoire.</div>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="slide-num">
+        <span>Slide 6 / 7</span>
+        <span class="slide-num-tag">Prix</span>
+      </div>
+      <div class="slide-body">
+        <div class="slide-main">À partir de 8 000 $ — tout inclus.</div>
+        <div class="slide-secondary">Démolition · Nouvelle structure · Composite premium · Finitions · Garantie fabricant 10 ans</div>
+        <div class="slide-visual">Visuel : Chiffre "8 000 $" en grand, fond vert foncé</div>
+        <div class="slide-note">Fond #1E3A20, chiffre en Georgia bold blanc 64px, sous-liste en Courier New or 12px. Aucune ambiguïté sur ce qui est inclus.</div>
+      </div>
+    </div>
+
+    <div class="slide-card">
+      <div class="slide-num">
+        <span>Slide 7 / 7</span>
+        <span class="slide-num-tag">CTA Final</span>
+      </div>
+      <div class="slide-body">
+        <div class="slide-main">Obtenez votre soumission gratuite.</div>
+        <div class="slide-secondary">Sans engagement · Réponse en 48 h · On se déplace chez vous</div>
+        <div class="slide-visual">Visuel : Logo Jardín Ideal + coordonnées + QR code (optionnel)</div>
+        <div class="slide-note">Fond crème (#F5F2EB), logo centré, numéro en Georgia bold vert foncé 28px, site en Courier New or. Espace blanc autour — respirer.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 7 — CTA FINAL
+═══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-tag">Section 07</div>
+  <div class="section-title">CTA Final — 2 Versions</div>
+  <div class="section-sub">Version organique (doux) · Version payée (directe)</div>
+
+  <div class="cta-grid">
+    <div class="cta-card">
+      <div class="cta-card-header">
+        <div class="cta-card-label">Version 1 — Organique</div>
+      </div>
+      <div class="cta-card-body">
+        <div class="cta-text">Votre balcon mérite mieux que du bois qui peint chaque été.</div>
+        <div class="cta-details">
+          On transforme les balcons en bois traité en composite durable — sans tracas, avec une garantie qui tient ses promesses.<br><br>
+          Soumission gratuite · Réponse en 48 h · On se déplace.<br><br>
+          📞 <strong>514-266-2504</strong><br>
+          🌐 <strong>jardin-ideal.com</strong>
+        </div>
+        <div class="tag-row">
+          <span class="tag green">Ton : invitant</span>
+          <span class="tag gold">Pas de pression</span>
+          <span class="tag green">Publications organiques</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-card">
+      <div class="cta-card-header">
+        <div class="cta-card-label">Version 2 — Payée (Meta Ads)</div>
+      </div>
+      <div class="cta-card-body">
+        <div class="cta-text">Obtenez votre soumission gratuite avant que les créneaux de juillet soient complets.</div>
+        <div class="cta-details">
+          Balcon composite à partir de 8 000 $. Garanti 10 ans. Installation possible avant l'automne — mais les disponibilités sont limitées.<br><br>
+          👉 Appelez maintenant ou remplissez le formulaire en ligne.<br><br>
+          📞 <strong>514-266-2504</strong><br>
+          🌐 <strong>jardin-ideal.com</strong>
+        </div>
+        <div class="tag-row">
+          <span class="tag dark">Ton : direct</span>
+          <span class="tag red">Urgence réelle</span>
+          <span class="tag gold">Meta Ads payés</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy-box">
+    <div class="copy-box-header">
+      <div class="copy-box-title">CTA Organique — Texte à copier</div>
+      <div class="copy-box-label">Bio Instagram · Légende · Story</div>
+    </div>
+    <div class="copy-box-body">Votre balcon mérite mieux que du bois qui peint chaque été.
+
+On transforme les balcons en bois traité en composite durable — sans tracas, avec une garantie qui tient ses promesses.
+
+Soumission gratuite · Réponse en 48 h · On se déplace chez vous.
+
+📞 514-266-2504
+🌐 jardin-ideal.com</div>
+  </div>
+
+  <div class="copy-box">
+    <div class="copy-box-header">
+      <div class="copy-box-title">CTA Payé — Texte à copier</div>
+      <div class="copy-box-label">Annonce Meta · Texte principal · Bouton : Obtenir un devis</div>
+    </div>
+    <div class="copy-box-body">Obtenez votre soumission gratuite avant que les créneaux de juillet soient complets.
+
+Balcon composite à partir de 8 000 $. Garanti 10 ans. Installation possible avant l'automne — mais les disponibilités sont limitées.
+
+Appelez maintenant ou remplissez le formulaire en ligne.
+
+📞 514-266-2504
+🌐 jardin-ideal.com</div>
+  </div>
+
+  <!-- RÉCAPITULATIF RAPIDE -->
+  <div class="section" style="border-top:1px solid var(--ce); padding-top:32px; margin-top:40px;">
+    <div class="section-tag">Récapitulatif</div>
+    <div class="section-title" style="font-size:18px;">Contenu produit — Été 2026</div>
+    <div class="tag-row" style="margin-top:14px;">
+      <span class="tag dark">5 Hooks</span>
+      <span class="tag dark">3 Posts Facebook</span>
+      <span class="tag dark">3 Posts Instagram</span>
+      <span class="tag dark">2 Annonces Meta</span>
+      <span class="tag dark">2 Guions Reels</span>
+      <span class="tag dark">7 Slides Carrusel</span>
+      <span class="tag dark">2 CTA Finals</span>
+    </div>
+    <div class="tag-row" style="margin-top:8px;">
+      <span class="tag gold">514-266-2504</span>
+      <span class="tag gold">jardin-ideal.com</span>
+      <span class="tag green">Français · Prêt à publier</span>
+      <span class="tag green">Été 2026</span>
+    </div>
+  </div>
+
+</div><!-- /.container -->
+
+</body>
+</html>
