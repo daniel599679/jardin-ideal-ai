@@ -23,7 +23,7 @@
 ### Git
 | Commit | Descripción |
 |--------|-------------|
-| (pending) | Alex Landing Page context + Sistema Marketing |
+| `3a65df7` | Alex Landing Page context + Sistema Marketing |
 
 ---
 
