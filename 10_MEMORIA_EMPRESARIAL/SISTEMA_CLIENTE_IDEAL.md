@@ -103,6 +103,31 @@ Si solo puede venir uno → reagendar. Sin excepción.
 
 ---
 
+## PRE-SCORE — DESDE FORMULARIO (sin llamada)
+
+Cuando un lead entra por Meta Ads o Landing Page, el formulario solo captura 3–4 datos.
+Con esos datos se calcula un PRE-SCORE parcial. **No es el score final. No define el perfil.**
+
+| Dato del formulario | Factor ICS | Pts posibles |
+|---------------------|-----------|-------------|
+| Presupuesto estimado | Factor 1 | 0–25 |
+| Urgencia declarada | Factor 2 | 0–20 |
+| Tipo de proyecto | Factor 5 | 0–10 |
+| **SUBTOTAL FORMULARIO** | | **0–55** |
+
+**PRE-CLASIFICACIÓN (solo para definir urgencia de llamada):**
+
+| Pre-Score | Pre-Clase | Acción |
+|-----------|-----------|--------|
+| ≥ 38 / 55 | PRE-A | Llamar HOY — puede ser un A o A+ |
+| 27–37 / 55 | PRE-B | Llamar dentro de 4 horas |
+| < 27 / 55 | PRE-C | Llamar en 24h para confirmar o descartar |
+
+**Agente responsable del pre-score:** ALEX (Fase 2 — no activo aún)
+**Referencia técnica:** `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_LANDING_PAGE_CONTEXT.md`
+
+---
+
 ## LEAD INTELLIGENCE REPORT — ESTRUCTURA
 
 Antes de cada visita, preparar:

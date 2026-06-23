@@ -39,6 +39,9 @@
 
 | Tarea | Por qué es P2 | Fecha objetivo |
 |-------|--------------|----------------|
+| Alex Fase 2: identificar plataforma actual de Alex | Desbloquea toda la integración | 2026-06-30 |
+| Alex Fase 2: crear campos personalizados en Pipedrive | Prerequisito para auto-calificación | 2026-07-07 |
+| Alex Fase 2: Zapier formulario → Pipedrive → notif. Daniel | Elimina manual lag en leads | 2026-07-07 |
 | Primer lunes ejecutar el DAILY_IDEA_REVIEW completo | Establecer el ritual | 2026-06-30 |
 | Compartir ICS + Home Workflow con el equipo | Capacitación 30 min | 2026-06-30 |
 | Activar suscripción Epidemic Sound o Artlist | Necesaria para música en reels | 2026-07-07 |
@@ -51,6 +54,8 @@
 
 | Tarea | Contexto | Fecha objetivo |
 |-------|---------|----------------|
+| Alex Fase 3: agente de voz para calificación post-formulario | Elimina llamadas manuales | 2026-08-01 |
+| Alex Fase 3: LEAD_INTELLIGENCE_REPORT automático pre-visita | Vendedor llega preparado | 2026-08-15 |
 | Definir servicios específicos Groupe Ideal | Requiere input de Daniel | 2026-07-15 |
 | Automatización reseña Google → Story Instagram | Idea en IDEA_INBOX-EJEMPLO-001 | 2026-07-31 |
 | Automatización reportes semanales | Requiere HubSpot + API Meta | 2026-08-15 |

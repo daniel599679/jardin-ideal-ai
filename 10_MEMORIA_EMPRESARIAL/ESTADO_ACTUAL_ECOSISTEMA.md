@@ -20,6 +20,8 @@
 | Sistema de Voz Claude | ✅ Operativo |
 | Memoria Unificada | ✅ Operativa |
 | DAILY_OPERATIONS_ENGINE | ✅ Completo (5 archivos — Start + Lead + Content + Dashboard + Checklist) |
+| Alex — Landing Page Agent | 🟡 Prototipo (Fase 1 parcial — Fases 2/3 por construir) |
+| Sistema de Marketing | ✅ Documentado (flujo, canales, KPIs, brechas, Alex) |
 | GitHub sync | ✅ Al día (pending commit DAILY_OPERATIONS_ENGINE) |
 
 ---

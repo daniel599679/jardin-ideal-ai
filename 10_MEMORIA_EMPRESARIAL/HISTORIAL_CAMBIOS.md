@@ -4,6 +4,29 @@
 
 ---
 
+## 2026-06-23 — Sesión 5: Alex + Landing Page + Sistema Marketing
+
+### Sistemas creados
+| Archivo | Descripción |
+|---------|-------------|
+| `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_LANDING_PAGE_CONTEXT.md` | Contexto completo de Alex: estado actual, pre-score, 3 fases de evolución, arquitectura de datos, decisiones pendientes |
+| `10_MEMORIA_EMPRESARIAL/SISTEMA_MARKETING.md` | Sistema de marketing completo: canales, flujo de leads, pre-score, KPIs, brechas actuales |
+
+### Sistemas modificados
+| Archivo | Cambio |
+|---------|--------|
+| `10_MEMORIA_EMPRESARIAL/SISTEMA_CLIENTE_IDEAL.md` | Añadida sección PRE-SCORE desde formulario (0–55 pts, pre-clasificación PRE-A/B/C) |
+| `10_MEMORIA_EMPRESARIAL/MEMORIA_GLOBAL.md` | v1.5 → añadida sección Alex (3 fases, estado, limitaciones) |
+| `10_MEMORIA_EMPRESARIAL/ESTADO_ACTUAL_ECOSISTEMA.md` | Alex + SISTEMA_MARKETING añadidos al resumen ejecutivo |
+| `10_MEMORIA_EMPRESARIAL/PROXIMOS_PASOS.md` | Alex Fase 2 en P2, Alex Fase 3 en P3 |
+
+### Git
+| Commit | Descripción |
+|--------|-------------|
+| (pending) | Alex Landing Page context + Sistema Marketing |
+
+---
+
 ## 2026-06-23 — Sesión 4: DAILY_OPERATIONS_ENGINE + sistemas completos
 
 ### Sistemas creados

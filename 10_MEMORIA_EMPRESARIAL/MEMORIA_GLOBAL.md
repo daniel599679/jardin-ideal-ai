@@ -117,6 +117,16 @@ Jardin_Ideal_AI_System/
   - `DAILY_IDEA_REVIEW.md` — ritual de 15 min diario (7:30 AM) + revisión semanal de lunes
 - **Home Workflow:** `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md` — qué decirle a cada IA + bloque compacto para móvil
 
+### ALEX — Agente de Landing Page (3 fases)
+- **Estado:** 🟡 PROTOTIPO — Fase 1 parcialmente activa, Fases 2 y 3 por construir
+- **Archivo principal:** `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_LANDING_PAGE_CONTEXT.md`
+- **Rol:** Agente conversacional en la landing page de Jardín Ideal (idioma: francés)
+- **Fase 1 — Landing Page Guide:** navega al visitante → explica servicios → guía al formulario
+- **Fase 2 — Form Assistant:** asiste el llenado → calcula PRE-SCORE → envía a Pipedrive (por construir)
+- **Fase 3 — Call Qualification Agent:** calificación post-formulario + briefing vendedor (futuro)
+- **Limitación actual:** NO conectado a Pipedrive, Zapier ni llamadas. No asumir integración.
+- **Sistema de marketing completo:** `10_MEMORIA_EMPRESARIAL/SISTEMA_MARKETING.md`
+
 ### DAILY OPERATIONS ENGINE — Motor Ejecutivo Diario
 - **Estado:** ✅ COMPLETO — 5 archivos operativos listos para uso diario
 - **Carpeta:** `10_MEMORIA_EMPRESARIAL/OPERACIONES_DIARIAS/`
