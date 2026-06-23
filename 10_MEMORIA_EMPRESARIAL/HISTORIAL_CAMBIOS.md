@@ -27,7 +27,7 @@
 ### Git
 | Commit | Descripción |
 |--------|-------------|
-| (pending) | ALEX sistema operativo unificado — 7 archivos |
+| `a3a3088` | ALEX sistema operativo unificado — 7 archivos |
 
 ---
 
