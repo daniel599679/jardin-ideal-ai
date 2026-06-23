@@ -1,0 +1,78 @@
+═══════════════════════════════════════════════════════════════
+PROMPT CAPCUT COPILOT — PROJ CA-003 PUSCHAK
+Pegar directamente en CapCut AI / Copilot chat
+Idioma: English (CapCut Copilot responds better in English)
+═══════════════════════════════════════════════════════════════
+
+COPIAR Y PEGAR ESTE TEXTO EN CAPCUT COPILOT:
+
+─────────────────────────────────────────────────────────────
+
+Create a 45-second vertical Reel (9:16, 1080x1920, 30fps) for a landscaping
+company called Jardín Ideal based in Montreal, Canada.
+
+I have already imported these 4 images and 1 video clip in this exact order:
+
+1. avant_travaux (3).jpg — BEFORE photo (old asphalt driveway, cold look)
+2. clip from Vidéo début projet.mp4 — construction process, 3 seconds
+3. apres_travaux.jpg — AFTER photo (new paver driveway, warm colors, hero shot)
+4. apres_travaux-5.jpg — AFTER detail (bokeh, close-up of pavers and lawn)
+5. apres_travaux.jpg — AFTER photo again (for the final CTA section)
+
+Apply the following edits to each clip:
+
+CLIP 1 (avant_travaux, 4 seconds):
+- Apply cold color grading: saturation -25%, blue tint, slightly darker
+- Slow zoom in from bottom-left corner (100% to 107%)
+- Add small red label top-left: text "Avant" in white on red (#CC3333) background
+- Exit transition: whip pan to the right
+
+CLIP 2 (video clip, 3 seconds):
+- No color changes, use natural video movement
+- No text overlay
+- Cut directly to clip 3 — this cut MUST be synchronized with the music beat drop
+
+CLIP 3 (apres_travaux hero, 8 seconds):
+- Apply warm color grading: saturation +20%, warm tone, slightly brighter
+- Very slow Ken Burns zoom (100% to 105%, center to top-right)
+- Wait 2 seconds before showing any text, then add small green label top-left:
+  text "Après" in white on dark green (#1E3A20) background
+- Fade to black transition at the end
+
+CLIP 4 (apres_travaux-5 bokeh, 5 seconds):
+- No color changes
+- Slow tilt up animation
+- Add text centered bottom: "Chaque détail, pensé pour durer."
+  Font: elegant serif or italic, white with soft shadow, medium size
+- Fade to black
+
+CLIP 5 (apres_travaux CTA, 25 seconds):
+- Apply 45% dark overlay on the full image
+- Static image, no movement
+- Add 3 text elements appearing in sequence:
+  At 0:20: "Et si c'était votre entrée ?" — large, centered, white, elegant serif
+  At 0:27: "Soumission gratuite · Sans engagement" — small, centered, white 80% opacity
+  At 0:34: "514-266-2504" — very large, centered, GOLD color #C8A45A, bold, with scale-up animation
+- Add company logo bottom-left at 0:39, fade in
+
+MUSIC:
+Add background music with a build-up from 0:00 to 0:07, then a clear drop or
+peak moment exactly at 0:07 when clip 3 appears. The music should feel cinematic,
+warm, and aspirational (piano + strings). Keep volume at 70% so no voice-over
+is needed. Search CapCut library for: "cinematic reveal" or "before after transformation"
+
+EXPORT SETTINGS:
+- Resolution: 1080×1920
+- Frame rate: 30fps
+- Format: MP4
+- File name: JI_REEL_PUSCHAK_AVANTAPRES_v2
+
+─────────────────────────────────────────────────────────────
+
+NOTA ADICIONAL (no pegar en CapCut — solo para referencia):
+Si CapCut Copilot no puede aplicar todos los ajustes automáticamente,
+usa este prompt como checklist y aplica cada punto manualmente.
+El orden de los clips y el beat sync en 0:07 son los elementos más críticos.
+Referencia completa: ver 1_TIMELINE_VIDEO.txt y 5_TEXTOS_OVERLAY.txt
+
+═══════════════════════════════════════════════════════════════

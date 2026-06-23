@@ -1,0 +1,84 @@
+═══════════════════════════════════════════════════════════════
+PROMPT MANUS — GENERACIÓN AUTOMÁTICA MP4
+Proj CA-003 Puschak | Reel avant/après 45s
+═══════════════════════════════════════════════════════════════
+
+COPIAR Y PEGAR ESTE TEXTO COMPLETO EN MANUS:
+
+─────────────────────────────────────────────────────────────
+
+Hola Manus. Necesito que crees un video MP4 vertical (9:16) de 45 segundos para
+una empresa de paisajismo llamada Jardín Ideal.
+
+PASO 1 — VERIFICAR FFMPEG
+Abre la terminal de Windows (CMD o PowerShell) y ejecuta:
+  ffmpeg -version
+Si no está instalado, descárgalo desde https://ffmpeg.org/download.html
+(versión Windows, ZIP, extraer en C:\ffmpeg, agregar C:\ffmpeg\bin al PATH)
+Confirma que ffmpeg funciona antes de continuar.
+
+PASO 2 — ARCHIVOS DE ENTRADA
+Los archivos están en esta carpeta base:
+  C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\
+
+Archivos necesarios (rutas exactas):
+
+IMG_AVANT:
+  C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos - avant - travaux\avant_travaux (3).jpg
+
+VIDEO_PROCESS:
+  C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Vidéo début projet.mp4
+
+IMG_APRES_HERO:
+  C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos -  après - travaux\apres_travaux.jpg
+
+IMG_APRES_BOKEH:
+  C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos -  après - travaux\apres_travaux-5.jpg
+
+PASO 3 — CREAR EL VIDEO
+Ejecuta estos comandos ffmpeg en secuencia. Si alguno falla, informa el error exacto.
+
+Primero, preparar el clip de video (extraer 3 segundos del segundo 5 al 8):
+  ffmpeg -y -ss 5 -t 3 -i "C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Vidéo début projet.mp4" -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" -c:v libx264 -an "C:\Users\Daniel\AppData\Local\Temp\clip_process.mp4"
+
+Segundo, crear segmentos desde imágenes:
+  ffmpeg -y -loop 1 -t 4 -i "C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos - avant - travaux\avant_travaux (3).jpg" -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,eq=saturation=0.6:gamma_b=0.85,zoompan=z='min(zoom+0.001,1.07)':d=120:x='iw/2-(iw/zoom/2)':y='ih-(ih/zoom)',setsar=1" -r 30 -c:v libx264 -pix_fmt yuv420p "C:\Users\Daniel\AppData\Local\Temp\seg1_avant.mp4"
+
+  ffmpeg -y -loop 1 -t 8 -i "C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos -  après - travaux\apres_travaux.jpg" -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,eq=saturation=1.3:gamma_r=1.1,zoompan=z='min(zoom+0.0005,1.05)':d=240:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)',setsar=1" -r 30 -c:v libx264 -pix_fmt yuv420p "C:\Users\Daniel\AppData\Local\Temp\seg3_apres.mp4"
+
+  ffmpeg -y -loop 1 -t 5 -i "C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos -  après - travaux\apres_travaux-5.jpg" -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,zoompan=z='zoom':d=150:x='iw/2-(iw/zoom/2)':y='ih-(ih/zoom)',setsar=1" -r 30 -c:v libx264 -pix_fmt yuv420p "C:\Users\Daniel\AppData\Local\Temp\seg4_bokeh.mp4"
+
+  ffmpeg -y -loop 1 -t 25 -i "C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos -  après - travaux\apres_travaux.jpg" -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,colorchannelmixer=.7:.7:.7:.7:.7:.7:.7:.7:.7,setsar=1" -r 30 -c:v libx264 -pix_fmt yuv420p "C:\Users\Daniel\AppData\Local\Temp\seg5_cta.mp4"
+
+Tercero, concatenar todos los segmentos:
+Crea el archivo C:\Users\Daniel\AppData\Local\Temp\concat_list.txt con este contenido:
+  file 'C:/Users/Daniel/AppData/Local/Temp/seg1_avant.mp4'
+  file 'C:/Users/Daniel/AppData/Local/Temp/clip_process.mp4'
+  file 'C:/Users/Daniel/AppData/Local/Temp/seg3_apres.mp4'
+  file 'C:/Users/Daniel/AppData/Local/Temp/seg4_bokeh.mp4'
+  file 'C:/Users/Daniel/AppData/Local/Temp/seg5_cta.mp4'
+
+Luego ejecutar:
+  ffmpeg -y -f concat -safe 0 -i "C:\Users\Daniel\AppData\Local\Temp\concat_list.txt" -c:v libx264 -pix_fmt yuv420p -r 30 "C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\CONTENIDO_PARA_PUBLICAR\COUR_AVANT\CA003_PUSCHAK\PAQUETE_PUBLICACION_FINAL\2_REEL_CAPCUT\JI_REEL_PUSCHAK_BASE_v2.mp4"
+
+PASO 4 — VERIFICAR
+Abre el archivo resultante:
+  C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\05_MARKETING\CONTENIDO_PARA_PUBLICAR\COUR_AVANT\CA003_PUSCHAK\PAQUETE_PUBLICACION_FINAL\2_REEL_CAPCUT\JI_REEL_PUSCHAK_BASE_v2.mp4
+
+Confirma:
+  - Duración: ~45 segundos
+  - Formato vertical: 1080×1920
+  - Las 5 escenas se ven en orden correcto
+
+PASO 5 — RESULTADO
+Cuando el video esté creado, escribe en el chat:
+"Video base creado: JI_REEL_PUSCHAK_BASE_v2.mp4 — [duración exacta] — listo para agregar textos en CapCut"
+
+NOTA: Este video es el borrador SIN textos overlay ni música.
+Los textos y música se agregan en CapCut siguiendo los archivos:
+  5_TEXTOS_OVERLAY.txt
+  6_MUSICA_RECOMENDADA.txt
+
+─────────────────────────────────────────────────────────────
+FIN DEL PROMPT MANUS
+═══════════════════════════════════════════════════════════════

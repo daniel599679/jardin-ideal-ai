@@ -1,0 +1,121 @@
+═══════════════════════════════════════════════════════════════
+TEXTOS OVERLAY — PROJ CA-003 PUSCHAK
+Todo en francés — listo para copiar-pegar en CapCut o cualquier editor
+═══════════════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ESCENA 1 — AVANT LABEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Texto       : Avant
+Fuente      : sans-serif bold
+Tamaño      : pequeño (etiqueta)
+Color texto : #FFFFFF blanco
+Fondo       : #CC3333 rojo
+Padding     : 4px 12px (pastille)
+Posición    : superior-izquierda (16px margen)
+Aparece     : 0:00
+Desaparece  : 0:03
+Animación   : fade in instantáneo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ESCENA 2 — PENDANT (sin texto)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Sin texto — el video habla solo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ESCENA 3 — APRÈS LABEL (esperar 2 segundos antes de mostrar)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Texto       : Après
+Fuente      : sans-serif bold
+Tamaño      : pequeño (etiqueta)
+Color texto : #FFFFFF blanco
+Fondo       : #1E3A20 verde oscuro Jardín Ideal
+Padding     : 4px 12px (pastille)
+Posición    : superior-izquierda (16px margen)
+Aparece     : 0:09 (2 segundos después del beat sync de 0:07)
+Desaparece  : 0:14
+Animación   : fade in suave (300ms)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ESCENA 4 — DÉTAIL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Texto       : Chaque détail, pensé pour durer.
+Fuente      : sans-serif regular ou Georgia italic
+Tamaño      : mediano
+Color texto : #FFFFFF blanco
+Fondo       : sombra suave negra detrás del texto (no rectángulo)
+Posición    : inferior-centro (32px del borde)
+Aparece     : 0:17
+Desaparece  : 0:20
+Animación   : fade in suave
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ESCENA 5 — CTA BLOQUE 1 (pregunta aspiracional)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Texto       : Et si c'était votre entrée ?
+Fuente      : Georgia ou serif élégant
+Tamaño      : grande (titre)
+Color texto : #FFFFFF blanco
+Fondo       : NINGUNO (el overlay negro de la imagen hace contraste)
+Posición    : centrado
+Aparece     : 0:20
+Desaparece  : 0:27
+Animación   : slide up suave (400ms)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ESCENA 5 — CTA BLOQUE 2 (propuesta sin riesgo)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Texto       : Soumission gratuite · Sans engagement
+Fuente      : sans-serif regular
+Tamaño      : pequeño
+Color texto : rgba(255,255,255,0.80)
+Fondo       : NINGUNO
+Posición    : centrado (debajo del texto anterior)
+Aparece     : 0:27
+Desaparece  : 0:34
+Animación   : fade in suave
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ESCENA 5 — CTA BLOQUE 3 (número de teléfono — OBLIGATORIO)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Texto       : 514-266-2504
+Fuente      : sans-serif bold / black weight
+Tamaño      : MUY GRANDE (el más grande del reel)
+Color texto : #C8A45A DORADO — nunca cambiar este color
+Fondo       : NINGUNO
+Posición    : centrado
+Aparece     : 0:34
+Desaparece  : FIN del reel (0:45)
+Animación   : scale up 80% → 100% + pulse ×2 suave
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LOGO JARDÍN IDEAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Posición    : inferior-izquierda (20px margen cada lado)
+Tamaño      : pequeño
+Aparece     : 0:39
+Desaparece  : 0:45
+Animación   : fade in suave
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VERSIÓN ORGÁNICA (sin teléfono — para feed Instagram)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Usar todos los textos anteriores EXCEPTO el teléfono.
+Reemplazar CTA BLOQUE 3 por:
+  Texto     : "↓ Soumission gratuite en bio"
+  Fuente    : sans-serif bold
+  Tamaño    : mediano
+  Color     : #C8A45A dorado
+  Posición  : centrado
+  Aparece   : 0:34 – 0:45
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PALETA DE COLORES DE MARCA (referencia rápida)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Verde foncé  : #1E3A20  ← fondo etiquetas "Après" y logo
+Verde moyen  : #3D6B42
+Or / Dorado  : #C8A45A  ← SIEMPRE para teléfono y CTA principal
+Crème        : #F5F2EB
+Rouge AVANT  : #CC3333  ← fondo etiqueta "Avant" únicamente
+Blanc        : #FFFFFF
+═══════════════════════════════════════════════════════════════
