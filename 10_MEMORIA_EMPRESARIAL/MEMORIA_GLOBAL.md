@@ -1,5 +1,5 @@
 # MEMORIA GLOBAL — JARDÍN IDEAL AI SYSTEM
-**Versión:** 1.3 | **Última actualización:** 2026-06-23
+**Versión:** 1.4 | **Última actualización:** 2026-06-23
 **Propósito:** Documento maestro de contexto. Cualquier IA debe leer este archivo primero.
 
 ---
@@ -105,6 +105,17 @@ Jardin_Ideal_AI_System/
 - **Estado:** ✅ OPERATIVO
 - **Archivo:** `C:\Users\Daniel\.claude\speak.py`
 - **Función:** Notificaciones de voz en español cuando Claude termina respuesta
+
+### Sistema de Captura de Ideas y Sincronización
+- **Estado:** ✅ COMPLETO — 5 archivos + protocolo de home workflow
+- **Carpeta:** `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/`
+- **Archivos:**
+  - `IDEA_INBOX.md` — bandeja de entrada de ideas brutas (toda idea entra aquí primero)
+  - `IDEAS_PRIORIZADAS.md` — P1 (genera ingresos) / P2 (mejora producción) / P3 (infraestructura)
+  - `PROTOCOLO_CAPTURA_IDEAS.md` — 4 canales de captura (voz, Claude, Code, WhatsApp) + árbol de decisión por sistema
+  - `SYNC_PROTOCOL_CHATGPT_CLAUDE_MANUS.md` — bloques de contexto por herramienta + protocolo de sincronización diaria
+  - `DAILY_IDEA_REVIEW.md` — ritual de 15 min diario (7:30 AM) + revisión semanal de lunes
+- **Home Workflow:** `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md` — qué decirle a cada IA + bloque compacto para móvil
 
 ### Sistema de Producción Continua Diaria
 - **Estado:** ✅ COMPLETO — 4 módulos operativos

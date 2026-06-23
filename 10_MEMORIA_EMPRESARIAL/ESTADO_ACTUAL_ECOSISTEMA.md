@@ -9,14 +9,17 @@
 | Indicador | Estado |
 |-----------|--------|
 | FLOAT V1 | ✅ Completo |
+| FLOAT V2 Premium | ✅ Completo (5 módulos + guardrails + integrado en 8 agentes) |
 | Content Operating System | ✅ Completo |
 | Brand Style Guide V1 | ✅ Completo |
 | Ideal Customer System | ✅ Completo |
-| FLOAT V2 | 🟡 Planificado (7 módulos) |
+| Producción Continua Diaria | ✅ Completo (4 módulos — Factory + Queue + Calendar + Dashboard) |
+| Sistema de Captura de Ideas | ✅ Completo (5 archivos — Inbox + Priorizadas + Protocolo + Sync + Review) |
+| Home Workflow Protocol | ✅ Completo (guía por herramienta + sincronización diaria) |
 | Ecosistema Dual Jardín + Groupe | ✅ Arquitectura completa |
 | Sistema de Voz Claude | ✅ Operativo |
-| Memoria Unificada | ✅ Creada hoy 2026-06-23 |
-| GitHub sync | ✅ Al día (commit 36f3d31) |
+| Memoria Unificada | ✅ Operativa |
+| GitHub sync | ✅ Al día (commit 9939299) |
 
 ---
 
@@ -101,17 +104,21 @@
 
 ---
 
-## ÚLTIMA SESIÓN — 2026-06-23
+## ÚLTIMA SESIÓN — 2026-06-23 (sesión completa)
 
 **Lo que se hizo:**
-1. Creado `FLOAT_V2_ROADMAP.md` — 7 módulos de evolución del sistema de contenido
-2. Creado `CONTENT_OPERATING_SYSTEM.md` — protocolo de 60 minutos por servicio
-3. Creado `JARDIN_IDEAL_BRAND_STYLE_GUIDE_V1.md` — guía visual oficial
-4. Creado `JARDIN_IDEAL_IDEAL_CUSTOMER_SYSTEM.md` — sistema de calificación de leads
-5. Corregido hook de voz Claude Code (bug de backslashes en Windows → forward slashes)
-6. Creado sistema de memoria unificada `10_MEMORIA_EMPRESARIAL/`
-7. Git commit `36f3d31` — 141 archivos commiteados
+1. Creado `10_MEMORIA_EMPRESARIAL/` — sistema de memoria unificada (13 archivos)
+2. Creado `10_MEMORIA_EMPRESARIAL/PROTOCOLOS_DIARIOS/` — START_DAY + MORNING_BRIEF
+3. Creado `05_MARKETING/FLOAT_V2_PREMIUM/` — 5 módulos Premium (Hero Image, Reel Engine, Visual Score, Music Library, Editorial Standard)
+4. Integrado FLOAT V2 Premium en 8 archivos del ecosistema — umbral elevado 80→90/100
+5. Creado `GLOBAL_CONTENT_GUARDRAILS.md` — 10 reglas globales de contenido
+6. Creado `05_MARKETING/PRODUCCION_CONTINUA/` — 4 módulos de producción diaria
+7. Creado `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/` — 5 archivos del sistema de ideas
+8. Creado `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md` — guía de trabajo remoto
+9. Commits: `861d32d`, `d0aed0a`, `d5bec25`, `37469bc`, `9939299` + el de esta sesión
 
 **Próxima sesión debe:**
-- Ver `10_MEMORIA_EMPRESARIAL/PROXIMOS_PASOS.md`
-- Implementar FLOAT V2 Módulo 1 (Hero Image Factory)
+1. Leer `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/IDEA_INBOX.md` — procesar ideas nuevas
+2. Verificar si hay proyectos con fotos disponibles para producir contenido (gate 90/100)
+3. Ejecutar el `DAILY_CONTENT_QUEUE.md` — generar las 5 piezas del día
+4. Si hay proyecto terminado: activar el pipeline FLOAT V2 completo

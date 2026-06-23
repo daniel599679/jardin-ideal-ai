@@ -4,70 +4,58 @@
 
 ---
 
-## PRIORIDAD 1 — ESTA SEMANA (2026-06-23 al 2026-06-27)
+## PRIORIDAD 1 — INMEDIATO (genera ingresos esta semana)
 
-### P1-A: Implementar FLOAT V2 Módulo 1 — Hero Image Factory
-**Qué hacer:** Crear el sistema de briefs estandarizados para fotografía en obra
-**Entregable:** Archivo `HERO_IMAGE_FACTORY.md` con:
-- Brief de DÍA 0: qué capturar en obra (ángulos, luz, antes/durante/después)
-- Brief de DÍA 1: plantilla para brief al fotógrafo/responsable
-- Brief de DÍA 2: protocolo de retoque + 3 formatos de exportación
-- Checklist de calidad del hero image
-
-**Referencia:** `FLOAT_V2_ROADMAP.md` → Módulo 1
-
----
-
-### P1-B: Primera ejecución real del protocolo COS
-**Qué hacer:** Aplicar el Content Operating System a un proyecto real recién terminado
-**Requiere:** Fotos de un proyecto completado (cualquier servicio)
-**Resultado esperado:** Hero image + 1 Reel + 1 Carrusel + 1 Meta Ad lanzado
-**Tiempo objetivo:** <60 minutos de trabajo humano
-
----
-
-### P1-C: Activar el ICS con el primer lead real
-**Qué hacer:** Usar el sistema de calificación con el próximo lead entrante
+### P1-A: Primera producción real con el sistema completo
+**Qué hacer:** Usar el pipeline FLOAT V2 con un proyecto real terminado
 **Proceso:**
-1. Aplicar 8 preguntas de calificación
-2. Calcular score 0–100
-3. Preparar LEAD_INTELLIGENCE_REPORT
-4. Ejecutar la visita con el protocolo completo
+1. ¿Hay fotos de un proyecto reciente? → evaluar con PREMIUM_VISUAL_SCORE
+2. Si score ≥90/100 → activar DAILY_CONTENT_QUEUE (5 piezas)
+3. Producir: Hero Post + Reel AVANT/APRÈS + Meta Ad
+4. Publicar y medir CTR en 48h
+
+**Referencia:** `05_MARKETING/PRODUCCION_CONTINUA/DAILY_CONTENT_QUEUE.md`
+**Tiempo objetivo:** <3 horas de trabajo total
+
+---
+
+### P1-B: Activar el ICS con el próximo lead real
+**Qué hacer:** Aplicar el sistema de calificación con el próximo lead entrante
+**Proceso:** 8 preguntas → score 0-100 → LEAD_INTELLIGENCE_REPORT → visita
 **Referencia:** `JARDIN_IDEAL_IDEAL_CUSTOMER_SYSTEM.md`
+**Tiempo objetivo:** 15 min de calificación antes de la visita
 
 ---
 
-## PRIORIDAD 2 — PRÓXIMAS 2 SEMANAS (hasta 2026-07-11)
-
-| Tarea | Fecha objetivo | Referencia |
-|-------|----------------|------------|
-| FLOAT V2 Módulo 2 — Protocolo Captura en Obra | 2026-07-04 | `FLOAT_V2_ROADMAP.md` |
-| FLOAT V2 Módulo 3 — Clasificador de Activos | 2026-07-11 | `FLOAT_V2_ROADMAP.md` |
-| Compartir ICS con equipo de ventas | 2026-06-30 | Capacitación de 30 min |
-| Primer commit con los archivos de memoria | 2026-06-23 | Git push |
+### P1-C: Lanzar primera campaña Meta Ads con material FLOAT V2 Premium
+**Qué hacer:** Crear el primer ad con score visual ≥90/100 usando AGENTE_MARKETING
+**Requiere:** Hero image aprobado (P1-A completo)
+**Presupuesto inicial:** $30-50 CAD/día × 7 días para test
+**KPI objetivo:** CPL <$80 CAD en la primera semana
 
 ---
 
-## PRIORIDAD 3 — ESTE MES (hasta 2026-07-31)
+## PRIORIDAD 2 — ESTE MES (mejora la producción)
 
-| Tarea | Fecha objetivo |
-|-------|----------------|
-| FLOAT V2 Módulo 4 — Biblioteca de Estilos | 2026-07-18 |
-| FLOAT V2 Módulo 5 — Banco de Hooks Premium | 2026-07-25 |
-| 10 piezas de contenido producidas con COS | 2026-07-31 |
-| Primera campaña Meta Ads con el protocolo FLOAT | 2026-07-15 |
-| Definir servicios específicos Groupe Ideal | 2026-07-15 |
+| Tarea | Por qué es P2 | Fecha objetivo |
+|-------|--------------|----------------|
+| Primer lunes ejecutar el DAILY_IDEA_REVIEW completo | Establecer el ritual | 2026-06-30 |
+| Compartir ICS + Home Workflow con el equipo | Capacitación 30 min | 2026-06-30 |
+| Activar suscripción Epidemic Sound o Artlist | Necesaria para música en reels | 2026-07-07 |
+| Producir 5 piezas diarias durante 5 días seguidos | Validar el sistema de producción | 2026-07-15 |
+| Sesión de calibración editorial (Techo-Bloc + AD + RH) | Protocolo mensual FLOAT V2 | 2026-07-01 |
 
 ---
 
-## PRIORIDAD 4 — Q3 2026 (agosto-septiembre)
+## PRIORIDAD 3 — ESTE TRIMESTRE (infraestructura futura)
 
-| Tarea | Contexto |
-|-------|---------|
-| FLOAT V2 Módulos 6 y 7 | Scoring + KPI dashboard |
-| Automatización reportes semanales | Requiere HubSpot + API Meta |
-| Expansion Groupe Ideal | Post-consolidación Jardín Ideal |
-| Brand Style Guide Groupe Ideal | Adaptar de Jardín Ideal |
+| Tarea | Contexto | Fecha objetivo |
+|-------|---------|----------------|
+| Definir servicios específicos Groupe Ideal | Requiere input de Daniel | 2026-07-15 |
+| Automatización reseña Google → Story Instagram | Idea en IDEA_INBOX-EJEMPLO-001 | 2026-07-31 |
+| Automatización reportes semanales | Requiere HubSpot + API Meta | 2026-08-15 |
+| Brand Style Guide Groupe Ideal | Adaptar de Jardín Ideal | 2026-08-01 |
+| CLAUDE.md en raíz del proyecto | Contexto persistente para Claude Desktop | 2026-06-30 |
 
 ---
 
@@ -78,14 +66,18 @@
 | TikTok | Prioridad: Instagram + Meta Ads primero |
 | App móvil | Fuera del alcance 2026 |
 | CRM propietario | HubSpot cubre las necesidades actuales |
-| Contratación de equipo de contenido | Post-sistema validado con FLOAT |
+| Contratación de equipo de contenido | Post-sistema validado con producción continua |
 
 ---
 
 ## PARA CLAUDE AL INICIAR MAÑANA
 
-**Pregunta de orientación:** "¿Hay un proyecto completado con fotos disponibles?"
-- Sí → Ejecutar protocolo COS inmediatamente (60 min, impacto máximo)
-- No → Implementar FLOAT V2 Módulo 1 (Hero Image Factory)
+**Secuencia de orientación (15 min antes de las 09:00):**
+1. Leer `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/IDEA_INBOX.md` → ¿hay ideas nuevas?
+2. Leer `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/IDEAS_PRIORIZADAS.md` → ¿cuál es la P1?
+3. Pregunta clave: "¿Hay fotos de un proyecto terminado con score ≥90/100?"
+   - SÍ → ejecutar `DAILY_CONTENT_QUEUE.md` inmediatamente (impacto máximo)
+   - NO → ejecutar la P1 más urgente de `IDEAS_PRIORIZADAS.md`
 
-**Recordatorio:** Cualquier lead que llegue hoy → aplicar ICS antes de responder.
+**Recordatorio:** Todo lead entrante → aplicar ICS antes de responder.
+**Protocolo completo:** `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md`
