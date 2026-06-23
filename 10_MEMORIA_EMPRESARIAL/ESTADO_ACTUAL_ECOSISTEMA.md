@@ -19,7 +19,8 @@
 | Ecosistema Dual Jardín + Groupe | ✅ Arquitectura completa |
 | Sistema de Voz Claude | ✅ Operativo |
 | Memoria Unificada | ✅ Operativa |
-| GitHub sync | ✅ Al día (commit 9939299) |
+| DAILY_OPERATIONS_ENGINE | ✅ Completo (5 archivos — Start + Lead + Content + Dashboard + Checklist) |
+| GitHub sync | ✅ Al día (pending commit DAILY_OPERATIONS_ENGINE) |
 
 ---
 
@@ -104,21 +105,26 @@
 
 ---
 
-## ÚLTIMA SESIÓN — 2026-06-23 (sesión completa)
+## ÚLTIMA SESIÓN — 2026-06-23 (sesión completa — 4 tareas)
 
 **Lo que se hizo:**
-1. Creado `10_MEMORIA_EMPRESARIAL/` — sistema de memoria unificada (13 archivos)
-2. Creado `10_MEMORIA_EMPRESARIAL/PROTOCOLOS_DIARIOS/` — START_DAY + MORNING_BRIEF
-3. Creado `05_MARKETING/FLOAT_V2_PREMIUM/` — 5 módulos Premium (Hero Image, Reel Engine, Visual Score, Music Library, Editorial Standard)
-4. Integrado FLOAT V2 Premium en 8 archivos del ecosistema — umbral elevado 80→90/100
-5. Creado `GLOBAL_CONTENT_GUARDRAILS.md` — 10 reglas globales de contenido
-6. Creado `05_MARKETING/PRODUCCION_CONTINUA/` — 4 módulos de producción diaria
-7. Creado `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/` — 5 archivos del sistema de ideas
-8. Creado `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md` — guía de trabajo remoto
-9. Commits: `861d32d`, `d0aed0a`, `d5bec25`, `37469bc`, `9939299` + el de esta sesión
+1. Creado `05_MARKETING/FLOAT_V2_PREMIUM/` — 5 módulos + GLOBAL_CONTENT_GUARDRAILS.md
+2. Integrado FLOAT V2 Premium en 8 archivos del ecosistema — umbral 80→90/100
+3. Creado `05_MARKETING/PRODUCCION_CONTINUA/` — 4 módulos de producción diaria
+4. Creado `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/` — 5 archivos del sistema de ideas
+5. Creado `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md` — guía multi-herramienta
+6. Creado `10_MEMORIA_EMPRESARIAL/OPERACIONES_DIARIAS/` — 5 archivos DAILY_OPERATIONS_ENGINE
+7. Commits: `861d32d`, `d0aed0a`, `d5bec25`, `37469bc`, `9939299` + (pending)
+
+**Sistema ahora listo para operación diaria completa:**
+- Cada mañana: `ejecutar START_DAY_ENGINE` → DAILY_BRIEF en 5 min
+- Leads: evaluación A/B/C/D con LEAD_REVIEW_ENGINE (100 pts, 8 factores)
+- Contenido: timeline 08:00→16:00 con CONTENT_EXECUTION_ENGINE
+- CEO: CEO_DASHBOARD_TEMPLATE para revisión antes de las 09:00
+- Cierre: CHECKLIST_APERTURA_7AM → commit + push
 
 **Próxima sesión debe:**
-1. Leer `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/IDEA_INBOX.md` — procesar ideas nuevas
-2. Verificar si hay proyectos con fotos disponibles para producir contenido (gate 90/100)
-3. Ejecutar el `DAILY_CONTENT_QUEUE.md` — generar las 5 piezas del día
-4. Si hay proyecto terminado: activar el pipeline FLOAT V2 completo
+1. Ejecutar `CHECKLIST_APERTURA_7AM.md` a las 07:00 AM
+2. Decir `ejecutar START_DAY_ENGINE` para generar el DAILY_BRIEF del día
+3. Revisar leads en LEAD_REVIEW_ENGINE
+4. Verificar material disponible → si score ≥90/100 → producir las 5 piezas

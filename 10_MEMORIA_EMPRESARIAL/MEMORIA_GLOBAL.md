@@ -1,5 +1,5 @@
 # MEMORIA GLOBAL — JARDÍN IDEAL AI SYSTEM
-**Versión:** 1.4 | **Última actualización:** 2026-06-23
+**Versión:** 1.5 | **Última actualización:** 2026-06-23
 **Propósito:** Documento maestro de contexto. Cualquier IA debe leer este archivo primero.
 
 ---
@@ -116,6 +116,18 @@ Jardin_Ideal_AI_System/
   - `SYNC_PROTOCOL_CHATGPT_CLAUDE_MANUS.md` — bloques de contexto por herramienta + protocolo de sincronización diaria
   - `DAILY_IDEA_REVIEW.md` — ritual de 15 min diario (7:30 AM) + revisión semanal de lunes
 - **Home Workflow:** `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md` — qué decirle a cada IA + bloque compacto para móvil
+
+### DAILY OPERATIONS ENGINE — Motor Ejecutivo Diario
+- **Estado:** ✅ COMPLETO — 5 archivos operativos listos para uso diario
+- **Carpeta:** `10_MEMORIA_EMPRESARIAL/OPERACIONES_DIARIAS/`
+- **Archivos:**
+  - `START_DAY_ENGINE.md` — lee 4 archivos → genera DAILY_BRIEF con 8 secciones exactas
+  - `LEAD_REVIEW_ENGINE.md` — calificación A/B/C/D con 100 puntos en 8 factores + scripts de respuesta
+  - `CONTENT_EXECUTION_ENGINE.md` — timeline 08:00 → 09:00 → 11:00 → 14:00 → 16:00 para producir 5 piezas
+  - `CEO_DASHBOARD_TEMPLATE.md` — panel diario: ventas + leads + proyectos + campañas + contenido + problemas
+  - `CHECKLIST_APERTURA_7AM.md` — 8 pasos en 10 minutos, termina con commit + push
+- **Activación:** escribir `ejecutar START_DAY_ENGINE` en Claude Code a las 07:00 AM
+- **Integrado con:** FLOAT V2 Premium (gate 90/100), ICS Lead Scoring, DAILY_CONTENT_QUEUE
 
 ### Sistema de Producción Continua Diaria
 - **Estado:** ✅ COMPLETO — 4 módulos operativos

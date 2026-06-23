@@ -72,12 +72,16 @@
 
 ## PARA CLAUDE AL INICIAR MAÑANA
 
-**Secuencia de orientación (15 min antes de las 09:00):**
-1. Leer `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/IDEA_INBOX.md` → ¿hay ideas nuevas?
-2. Leer `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/IDEAS_PRIORIZADAS.md` → ¿cuál es la P1?
-3. Pregunta clave: "¿Hay fotos de un proyecto terminado con score ≥90/100?"
-   - SÍ → ejecutar `DAILY_CONTENT_QUEUE.md` inmediatamente (impacto máximo)
-   - NO → ejecutar la P1 más urgente de `IDEAS_PRIORIZADAS.md`
+**Instrucción única (Daniel la escribe a las 07:00):**
+```
+ejecutar START_DAY_ENGINE
+```
+→ Claude lee 4 archivos y entrega el DAILY_BRIEF completo en <5 minutos.
 
-**Recordatorio:** Todo lead entrante → aplicar ICS antes de responder.
-**Protocolo completo:** `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md`
+**Si no hay datos en el brief:**
+- Lead activo: usar `LEAD_REVIEW_ENGINE.md` para calificar
+- Contenido: verificar material → si score ≥90/100 → `CONTENT_EXECUTION_ENGINE.md`
+- Problema urgente: escalar a Daniel inmediatamente con solución propuesta
+
+**Recordatorio:** Todo lead entrante → `LEAD_REVIEW_ENGINE.md` antes de responder.
+**Protocolo completo:** `10_MEMORIA_EMPRESARIAL/OPERACIONES_DIARIAS/START_DAY_ENGINE.md`
