@@ -1,0 +1,67 @@
+═══════════════════════════════════════════════════════════════════════════
+MAPA DE ASSETS — PROJ CA-003 PUSCHAK
+Reel: JI_REEL_PUSCHAK_AVANTAPRES_v2 | 45 segundos | 9:16 vertical
+═══════════════════════════════════════════════════════════════════════════
+
+INSTRUCCIONES PARA EL EDITOR
+─────────────────────────────
+Todos los archivos necesarios están en ESTA carpeta (1_ASSETS_SELECCIONADOS/).
+No necesitas buscar nada fuera de aquí.
+
+Para montar el reel: abrir 2_REEL_CAPCUT/4_PROMPT_CAPCUT_COPILOT.txt
+Para generar MP4 automático: abrir 2_REEL_CAPCUT/3_PROMPT_MANUS_VIDEO.txt
+Para referencia visual: abrir 2_REEL_CAPCUT/2_STORYBOARD_VIDEO.html
+
+═══════════════════════════════════════════════════════════════════════════
+TABLA DE CORRESPONDENCIA
+═══════════════════════════════════════════════════════════════════════════
+
+NOMBRE NUEVO           | NOMBRE ORIGINAL                     | ESCENA   | EN PANTALLA  | NOTAS
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+01_AVANT.jpg           | avant_travaux (3).jpg               | Escena 1 | 0:00–0:04 (4s)  | Color frío −25 sat
+02_PROCESSUS.mp4       | Vidéo début projet.mp4              | Escena 2 | 0:04–0:07 (3s)  | Usar clip seg. 5–8 del video
+03_REVELATION.jpg      | apres_travaux.jpg                   | Escena 3 | 0:07–0:15 (8s)  | ⭐ BEAT SYNC en 0:07 — color cálido +20 sat
+04_DETAIL.jpg          | apres_travaux-5.jpg                 | Escena 4 | 0:15–0:20 (5s)  | Tilt up — sin ajuste de color
+05_CTA.jpg             | apres_travaux.jpg                   | Escena 5 | 0:20–0:45 (25s) | Overlay negro 45% — misma imagen que Escena 3
+
+═══════════════════════════════════════════════════════════════════════════
+ARCHIVOS EN ESTA CARPETA
+═══════════════════════════════════════════════════════════════════════════
+
+01_AVANT.jpg           0.4 MB   Foto avant — asphalte viejo
+02_PROCESSUS.mp4     184.8 MB   Video chantier — excavación (usar solo 3s)
+03_REVELATION.jpg      0.9 MB   Foto après — allée pavé, clôture anthracite, ciel bleu
+04_DETAIL.jpg          1.0 MB   Foto après — bokeh a ras del suelo
+05_CTA.jpg             0.9 MB   Copia de 03_REVELATION.jpg para escena CTA
+ASSETS.txt             —        Descripción original de cada asset (QC scores, notas)
+MAPA_ASSETS.txt        —        Este archivo
+
+═══════════════════════════════════════════════════════════════════════════
+ASSETS RECHAZADOS (NO COPIADOS — NUNCA USAR)
+═══════════════════════════════════════════════════════════════════════════
+
+❌ apres_travaux-4.jpg         Muebles de jardín ordinarios en primer plano
+❌ Photos prise par travailleurs/  Sin consentimiento verificado
+
+═══════════════════════════════════════════════════════════════════════════
+ASSETS APROBADOS NO INCLUIDOS EN ESTE REEL (disponibles en biblioteca)
+═══════════════════════════════════════════════════════════════════════════
+
+✓ apres_travaux-2.jpg (83/100) → reservado carrusel Slide 4
+✓ processus_travaux.jpg (82/100) → reservado carrusel Slide 5
+✓ Vidéo installation pavé Alicia.mp4 → reservado reel proceso versión B
+
+Ubicación: 05_MARKETING/00_BIBLIOTECA_VISUAL/COUR_AVANT/Projet Puschak 6394 29e avenue/
+
+═══════════════════════════════════════════════════════════════════════════
+RUTA FUENTE ORIGINAL (referencia archivística)
+═══════════════════════════════════════════════════════════════════════════
+
+C:\Users\Daniel\Desktop\Jardin-ideal-AI\Jardin_Ideal_AI_System\
+└── 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\
+    ├── Photos - avant - travaux\avant_travaux (3).jpg
+    ├── Photos -  après - travaux\apres_travaux.jpg         ← doble espacio en nombre carpeta
+    ├── Photos -  après - travaux\apres_travaux-5.jpg
+    └── Vidéo début projet.mp4
+
+═══════════════════════════════════════════════════════════════════════════
