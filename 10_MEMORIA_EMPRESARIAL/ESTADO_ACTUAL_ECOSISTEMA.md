@@ -10,6 +10,7 @@
 |-----------|--------|
 | FLOAT V1 | ✅ Completo |
 | FLOAT V2 Premium | ✅ Completo (5 módulos + guardrails + integrado en 8 agentes) |
+| TEST_OPERATIVO_FLOAT_V2 | ✅ Completo — protocolo de 5 piezas desde material real (commit 7043620) |
 | Content Operating System | ✅ Completo |
 | Brand Style Guide V1 | ✅ Completo |
 | Ideal Customer System | ✅ Completo |
@@ -19,10 +20,11 @@
 | Ecosistema Dual Jardín + Groupe | ✅ Arquitectura completa |
 | Sistema de Voz Claude | ✅ Operativo |
 | Memoria Unificada | ✅ Operativa |
+| CLAUDE.md (raíz del proyecto) | ✅ Creado — contexto persistente para nuevas sesiones |
 | DAILY_OPERATIONS_ENGINE | ✅ Completo (5 archivos — Start + Lead + Content + Dashboard + Checklist) |
-| Alex — Sistema Unificado (8 archivos) | 🔵 FASE 2 EN SPRINT — Zapier + Pipedrive + alertas (5 días, aprobado hoy) |
+| Alex — Sistema Unificado (9 archivos) | 🔵 FASE 2 EN SPRINT — Zapier + Pipedrive + alertas (5 días, sprint 24-30 jun) |
 | Sistema de Marketing | ✅ Documentado (flujo, canales, KPIs, brechas, Alex) |
-| GitHub sync | ✅ Al día (pending commit DAILY_OPERATIONS_ENGINE) |
+| GitHub sync | ✅ Al día |
 
 ---
 
@@ -107,7 +109,7 @@
 
 ---
 
-## ÚLTIMA SESIÓN — 2026-06-23 (sesión completa — 4 tareas)
+## ÚLTIMA SESIÓN — 2026-06-23 (sesión 2 — continuación del sprint)
 
 **Lo que se hizo:**
 1. Creado `05_MARKETING/FLOAT_V2_PREMIUM/` — 5 módulos + GLOBAL_CONTENT_GUARDRAILS.md
@@ -116,7 +118,9 @@
 4. Creado `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/` — 5 archivos del sistema de ideas
 5. Creado `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md` — guía multi-herramienta
 6. Creado `10_MEMORIA_EMPRESARIAL/OPERACIONES_DIARIAS/` — 5 archivos DAILY_OPERATIONS_ENGINE
-7. Commits: `861d32d`, `d0aed0a`, `d5bec25`, `37469bc`, `9939299` + (pending)
+7. Creado `10_MEMORIA_EMPRESARIAL/TEST_OPERATIVO_FLOAT_V2.md` — protocolo producción 5 piezas (commit 7043620)
+8. Creado `CLAUDE.md` en raíz — contexto persistente para nuevas sesiones de Claude Code
+9. Creado `OPERACIONES_DIARIAS/CEO_DASHBOARD_2026-06-23.md` — dashboard del día pre-llenado
 
 **Sistema ahora listo para operación diaria completa:**
 - Cada mañana: `ejecutar START_DAY_ENGINE` → DAILY_BRIEF en 5 min

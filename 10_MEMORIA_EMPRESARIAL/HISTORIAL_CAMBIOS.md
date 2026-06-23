@@ -4,6 +4,26 @@
 
 ---
 
+## 2026-06-23 — Sesión 8: CLAUDE.md + CEO_DASHBOARD + actualización ecosistema
+
+### Sistemas creados
+| Archivo | Descripción |
+|---------|-------------|
+| `CLAUDE.md` | Contexto persistente para nuevas sesiones de Claude Code — incluye código JS Zapier, leads urgentes, sprint activo |
+| `10_MEMORIA_EMPRESARIAL/OPERACIONES_DIARIAS/CEO_DASHBOARD_2026-06-23.md` | Dashboard del día pre-llenado con estado actual, leads urgentes y agenda del Día 1 del sprint |
+
+### Sistemas modificados
+| Archivo | Cambio |
+|---------|--------|
+| `10_MEMORIA_EMPRESARIAL/ESTADO_ACTUAL_ECOSISTEMA.md` | Añadido TEST_OPERATIVO_FLOAT_V2 + CLAUDE.md al resumen ejecutivo; historial de sesión actualizado |
+
+### Git
+| Commit | Descripción |
+|--------|-------------|
+| (este commit) | feat: CLAUDE.md + CEO_DASHBOARD_2026-06-23 + ecosistema actualizado |
+
+---
+
 ## 2026-06-23 — Sesión 7: Decisiones Alex aprobadas + Roadmap Fase 2
 
 ### Sistemas creados
