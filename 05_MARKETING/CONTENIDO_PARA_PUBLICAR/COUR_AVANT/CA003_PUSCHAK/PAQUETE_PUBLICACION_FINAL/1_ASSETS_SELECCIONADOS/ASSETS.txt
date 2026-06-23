@@ -1,0 +1,87 @@
+═══════════════════════════════════════════════════
+ASSETS SELECCIONADOS — PROJ CA-003 PUSCHAK
+Orden exacto de uso en producción
+═══════════════════════════════════════════════════
+
+PROYECTO: 6394, 29e avenue, Montréal
+PRIORIDAD: ★★★ MÁXIMA — único proyecto con avant/après completo + videos
+
+───────────────────────────────────────────────────
+SLOT 1 — IMAGEN AVANT (uso: reel escena 1)
+───────────────────────────────────────────────────
+Archivo : avant_travaux (3).jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos - avant - travaux\avant_travaux (3).jpg
+Score QC: 70/100
+Rol     : ANTES — entrada vieja con asphalte + muebles cubiertos
+Duración en reel: 3-4 segundos
+Nota    : NO editar colores — dejar frío y opaco (contraste con après)
+
+SLOT 2 — VIDEO PROCESO (uso: reel escena 2)
+───────────────────────────────────────────────────
+Archivo : Vidéo début projet.mp4
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Vidéo début projet.mp4
+Score QC: Aprobado
+Rol     : PENDANT — comienzo del chantier
+Duración en reel: extraer clip de 3-5 segundos (primeros segundos del video)
+Nota    : Si el video es muy largo, cortar entre segundo 5-15 donde se ve mejor la excavación
+
+SLOT 3 — IMAGEN APRÈS PRINCIPAL ⭐ (uso: reel escena 3 — MOMENTO CLAVE)
+───────────────────────────────────────────────────
+Archivo : apres_travaux.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos -  après - travaux\apres_travaux.jpg
+Score QC: 96/100
+Rol     : RÉVÉLATION PRINCIPALE — allée grand format, clôture anthracite, ciel bleu
+Duración en reel: 5-6 segundos (dejar respirar)
+Nota    : IMAGEN MÁS IMPORTANTE. Colores cálidos +15. No poner texto los primeros 2 segundos.
+
+SLOT 4 — IMAGEN APRÈS BOKEH (uso: reel escena 4)
+───────────────────────────────────────────────────
+Archivo : apres_travaux-5.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos -  après - travaux\apres_travaux-5.jpg
+Score QC: 89/100
+Rol     : DÉTAIL — plano a ras del suelo, profundidad de campo, césped verde
+Duración en reel: 3 segundos
+Nota    : Muy bella para cerrar antes del CTA
+
+SLOT 5 — IMAGEN APRÈS PASSAGE (uso: reel escena 5 / carrusel)
+───────────────────────────────────────────────────
+Archivo : apres_travaux-2.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos -  après - travaux\apres_travaux-2.jpg
+Score QC: 83/100
+Rol     : PASSAGE LATÉRAL — pavé + gazon + végétation
+Duración en reel: 3 segundos (opcional — si se hace reel de 60s)
+Nota    : Ideal para slide 4 del carrusel
+
+SLOT 6 — IMAGEN PROCESO EXCAVADORA (uso: carrusel slide 4)
+───────────────────────────────────────────────────
+Archivo : processus_travaux.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos - processus - travaux\processus_travaux.jpg
+Score QC: 82/100
+Rol     : PENDANT — excavadora amarilla tearing up old asphalt
+Duración en reel: 2-3 segundos (transición rápida)
+Nota    : Dramático. Usar entre escena avant y escena après.
+
+SLOT 7 — VIDEO INSTALACIÓN (uso: reel proceso / Facebook video)
+───────────────────────────────────────────────────
+Archivo : Vidéo installation pavé Alicia.mp4
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Vidéo installation pavé Alicia.mp4
+Score QC: Aprobado
+Rol     : PENDANT — instalación del pavé, elemento humano
+Uso     : Para un reel de proceso (no el reel principal de avant/après)
+Nota    : 74MB — extraer clip de 5-8s con la instalación más clara
+
+═══════════════════════════════════════════════════
+RESUMEN ORDEN DE USO
+═══════════════════════════════════════════════════
+Reel principal  → SLOT 1 → SLOT 6 → SLOT 3 → SLOT 4 → CTA
+Carrusel        → SLOT 1(avant) → SLOT 3 → SLOT 5 → SLOT 6 → SLOT 4
+Meta Ad imagen  → SLOT 3 (apres_travaux.jpg) — sin ninguna duda
+Meta Ad video   → SLOT 7 (Vidéo processus) — 48MB — formato ideal
+
+═══════════════════════════════════════════════════
+ARCHIVOS NO USAR (RECHAZADOS O RIESGO)
+═══════════════════════════════════════════════════
+❌ Photos prise par travailleurs/ → Verificar consentimiento primero
+❌ apres_travaux-4.jpg → Muebles de jardín ordinarios en primer plano
+
+═══════════════════════════════════════════════════

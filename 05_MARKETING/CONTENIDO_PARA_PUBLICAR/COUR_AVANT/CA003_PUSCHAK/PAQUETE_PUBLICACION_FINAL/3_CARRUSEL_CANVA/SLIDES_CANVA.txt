@@ -1,0 +1,131 @@
+═══════════════════════════════════════════════════
+CARRUSEL CANVA — PROJ CA-003 PUSCHAK
+7 slides | Format: 1080×1080 (1:1) ou 1080×1350 (4:5)
+═══════════════════════════════════════════════════
+
+CONFIGURACIÓN EN CANVA
+──────────────────────
+□ Nuevo diseño → Publicación de Instagram (1080×1080) o 1080×1350
+□ Paleta de colores:
+  - Verde oscuro : #1E3A20
+  - Dorado       : #C8A45A
+  - Crema        : #F5F2EB
+  - Blanco       : #FFFFFF
+  - Gris texto   : #2A2B28
+□ Fuente display : Georgia (o Playfair Display si disponible)
+□ Fuente cuerpo  : cualquier sans-serif limpia (Montserrat, Open Sans)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 1 — PORTADA (la gente decide si deslizar aquí)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : apres_travaux.jpg (imagen completa, ocupa todo el slide)
+Overlay       : degradado negro abajo 40% opacidad
+Etiqueta top  : "AVANT → APRÈS" — texto pequeño, dorado, centrado arriba
+Título        : "Votre entrée,"
+               "réinventée."
+               (Georgia, blanco, grande, centrado abajo)
+Sous-titre    : "6394, 29e avenue · Montréal"
+               (sans-serif, blanco 70%, pequeño)
+Logo          : Jardín Ideal — esquina inferior derecha, pequeño
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 2 — AVANT (estado original)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : avant_travaux (3).jpg (ocupa 60% superior del slide)
+Fondo inferior: color rojo oscuro #8B1A1A o crema oscura
+Etiqueta      : "AVANT" — rectángulo rojo, texto blanco, esquina superior izquierda
+Texto slide   : "C'était comme ça."
+               (Georgia, blanco, grande sobre la imagen)
+Sous-titre    : "Asphalte de plus de 30 ans."
+Nota          : "Votre entrée ressemble à ça ?"
+               (texto pequeño abajo, cursiva, blanco 70%)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 3 — APRÈS RÉVÉLATION ⭐
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : apres_travaux.jpg (imagen completa)
+Overlay       : mínimo — dejar la imagen brillar
+Etiqueta      : "APRÈS" — rectángulo verde #1E3A20, texto dorado, esquina superior izquierda
+Texto slide   : "6 jours plus tard."
+               (Georgia, blanco, grande, esquina inferior)
+Sous-titre    : "Même maison. Autre monde."
+               (sans-serif, blanco, mediano)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 4 — EL PROCESO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : processus_travaux.jpg (excavadora amarilla)
+Overlay       : negro 30%
+Etiqueta      : "COMMENT ?" — verde, texto dorado
+Texto slide   : "On repart de zéro."
+               (Georgia, blanco, grande)
+Bullets       :
+  • Démolition complète
+  • Base granulaire 8"
+  • Pavé uni grand format
+  • Finition polymère
+(sans-serif, blanco, pequeño, lista con puntos dorados)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 5 — DÉTAIL QUALITÉ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : apres_travaux-5.jpg (plano bokeh a ras del suelo)
+Overlay       : degradado izquierda oscuro 50%
+Etiqueta      : "QUALITÉ"
+Texto slide   : "Pavé premium."
+               "Résistant au gel québécois."
+Sous-titre    : "Durée de vie : 30-50 ans"
+               "Garantie : 5 ans"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 6 — COMPARATIF (solo texto)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Fondo         : #1E3A20 (verde oscuro)
+Título        : "Asphalte vs Pavé uni"
+               (Georgia, dorado #C8A45A, grande, centrado)
+
+Tabla comparativa (2 columnas):
+
+  ASPHALTE              PAVÉ UNI
+  ────────────────────────────────
+  15-20 ans             30-50 ans
+  Entretien annuel      Zéro entretien
+  Gonfle au gel         Résiste au gel
+  Se fissure            Ne se fissure pas
+  Valeur nulle          +10-15% valeur
+
+(texto blanco, sans-serif, pequeño, columnas alineadas)
+
+Sous-texte    : "Le choix intelligent, c'est le pavé."
+               (cursiva, dorado, centrado abajo)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 7 — CTA FINAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : apres_travaux.jpg — overlay negro 50%
+Texto 1       : "Votre entrée mérite ça aussi."
+               (Georgia, blanco, grande, centrado)
+Texto 2       : "Soumission gratuite · Sans engagement"
+               (sans-serif, blanco 70%, pequeño)
+Teléfono      : "514-266-2504"
+               (bold, dorado #C8A45A, MUY grande — lo más prominente de la slide)
+Texto 3       : "jardin-ideal.com"
+               (sans-serif, blanco 50%, pequeño)
+Texto 4       : "Montréal · Laval · Rive-Nord"
+               (sans-serif, blanco 40%, muy pequeño, parte inferior)
+Logo          : Jardín Ideal — centrado inferior
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CAPTION INSTAGRAM PARA EL CARRUSEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+De l'asphalte de 30 ans à ça. 🔄
+
+29e avenue, Montréal. 6 jours de travail.
+
+→ Swipe pour voir toute la transformation
+
+📞 514-266-2504 | Soumission gratuite — lien en bio 🌿
+
+#jardinideal #avantapres #couravan #paveuni #montreal #transformation #amenagementpaysager
+
+═══════════════════════════════════════════════════

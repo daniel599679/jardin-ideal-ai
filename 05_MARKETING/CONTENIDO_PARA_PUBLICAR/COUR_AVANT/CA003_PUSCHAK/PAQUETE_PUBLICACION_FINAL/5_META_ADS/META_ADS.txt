@@ -1,0 +1,109 @@
+═══════════════════════════════════════════════════
+META ADS — PROJ CA-003 PUSCHAK
+Listo para copiar en Meta Business Manager
+═══════════════════════════════════════════════════
+
+CONFIGURACIÓN CAMPAÑA (interna)
+────────────────────────────────
+Objetivo      : Génération de prospects (Leads)
+Presupuesto   : $30-50 CAD/día para test inicial
+Duración test : 7 días
+Audiencia     : Propriétaires, 40-60 ans, 20km autour de Montréal
+               Intérêts: Rénovation domiciliaire, Immobilier, Aménagement paysager
+Placements    : Facebook Feed + Instagram Feed + Reels
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANNONCE 1 — IMAGE PRINCIPALE (avant/après)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Image à utiliser : apres_travaux.jpg
+Chemin          : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos -  après - travaux\apres_travaux.jpg
+Format image    : 1:1 ou 4:5 (recadrer si nécessaire, garder l'allée centrale)
+Angle créatif  : TRANSFORMATION — choc visuel avant/après
+
+--- COPIER DANS META BUSINESS MANAGER ---
+
+TEXTE PRINCIPAL:
+Cette entrée était de l'asphalte fissuré depuis 30 ans. En 6 jours, on l'a transformée en ça.
+
+Votre cour avant mérite la même attention. Jardín Ideal — aménagement paysager résidentiel depuis plus de 15 ans dans le Grand Montréal.
+
+Soumission gratuite, sans engagement. Délais respectés. Garantie 5 ans.
+
+TITRE:
+Avant → Après · 6 jours à Montréal
+
+DESCRIPTION:
+Pavé uni premium · Clôture composite · Drainage intégré
+
+BOUTON CTA: Obtenir un devis
+
+URL DESTINATION: jardin-ideal.com (ou page formulaire si disponible)
+
+PIXEL/TRACKING: Activer l'événement "Lead" sur la page de confirmation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANNONCE 2 — URGENCE / DISPONIBILITÉ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Image à utiliser : apres_travaux-5.jpg (plano bokeh — más aspiracional)
+Chemin          : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Puschak 6394 29e avenue\Photos -  après - travaux\apres_travaux-5.jpg
+Format image    : 1:1
+Angle créatif  : URGENCE — últimas disponibilidades verano
+
+--- COPIER DANS META BUSINESS MANAGER ---
+
+TEXTE PRINCIPAL:
+Vous y pensez depuis le printemps. C'est le bon moment d'agir.
+
+Les disponibilités de juillet 2026 sont presque comblées. Jardín Ideal — spécialistes du pavé uni résidentiel dans le Grand Montréal, Laval et Rive-Nord.
+
+📞 514-266-2504 · Devis gratuit · Résultats garantis
+
+TITRE:
+Dernières places — Juillet 2026
+
+DESCRIPTION:
+Allées · Escaliers · Cours avant · Éclairage extérieur
+
+BOUTON CTA: Appeler maintenant
+
+NUMÉRO TÉLÉPHONE: 514-266-2504
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANNONCE 3 — VIDÉO (si reel monté)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Vidéo à utiliser : JI_REEL_PUSCHAK_AVANTAPRES_v1.mp4 (una vez montado)
+Format          : 9:16 (Reels) ou 1:1 (Feed)
+Angle créatif  : PROCESO + RESULTADO — la transformación real
+
+--- COPIER DANS META BUSINESS MANAGER ---
+
+TEXTE PRINCIPAL:
+De l'asphalte fissuré à une entrée premium — regardez comment on y arrive.
+
+6 jours. Une équipe. Un résultat garanti.
+
+Jardín Ideal · Soumission gratuite · 514-266-2504
+
+TITRE:
+6 jours pour tout changer
+
+DESCRIPTION:
+Jardín Ideal · Pavé uni · Montréal · Laval · Rive-Nord
+
+BOUTON CTA: En savoir plus
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUDIENCIAS RECOMENDADAS PARA TEST A/B
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Audiencia A : Propriétaires 40-60 ans, Montréal-Est + Laval-Est, intérêt rénovation
+Audiencia B : Retargeting — personas que visitaron jardin-ideal.com últimos 30 días
+Audiencia C : Lookalike 1% — basado en lista de clientes existentes
+
+KPI objetivo : CPL < $70 CAD
+Si CPL > $100 después de 3 días → pausar y revisar el creative
+Si CTR > 3% en orgánico → escalar a paid inmediatamente
+
+═══════════════════════════════════════════════════

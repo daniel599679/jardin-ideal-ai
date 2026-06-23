@@ -1,0 +1,175 @@
+═══════════════════════════════════════════════════
+GUION CAPCUT — REEL GOLDEN HOUR BÉRIAULT
+Reel ID: JI-R-20260623-002
+Duración total: 45 segundos | Formato: 9:16 vertical
+═══════════════════════════════════════════════════
+
+CONCEPTO: El bollard en heure dorée es el hook. La belleza detiene el scroll.
+DIFERENCIADOR: Sin antes/après — la foto vedette A7409920 ES TAN BUENA que no lo necesita.
+
+PREPARAR ARCHIVOS EN CARPETA:
+1. A7409920.jpg  ← IMAGEN ESTRELLA — usar 2 veces (hook + CTA)
+2. A7409840.jpg  ← allée lateral
+3. A7409842.jpg  ← allée ancho
+4. IMG_3528.jpg  ← proceso chantier
+5. A7409832.jpg  ← fachada bungalow
+
+──────────────────────────────────────────
+PASO 1 — CONFIGURACIÓN DEL PROYECTO EN CAPCUT
+──────────────────────────────────────────
+□ Nuevo proyecto
+□ Formato: 9:16 (1080 × 1920)
+□ Frame rate: 30fps
+
+──────────────────────────────────────────
+ESCENA 1 — HOOK: BOLLARD HEURE DORÉE (0:00 – 0:05)
+──────────────────────────────────────────
+Archivo     : A7409920.jpg ⭐ (98/100)
+Duración    : 5 segundos
+Animación   : NINGUNA — imagen completamente estática
+              (La foto es tan buena que cualquier movimiento la arruina)
+Color       : NO modificar — la balance de blancos original es perfecta
+Filtro      : Ninguno
+
+TEXTO EN PANTALLA:
+  Aparece en : 0:02 (los primeros 2 segundos: sin texto, solo la foto)
+  Texto      : "Regardez ça."
+  Fuente     : sans-serif light, pequeña
+  Color      : blanco
+  Posición   : esquina inferior izquierda
+  Desaparece : 0:04
+
+Transición  : Fade to black rápido (0.2 segundos)
+
+──────────────────────────────────────────
+ESCENA 2 — PROCESO (0:05 – 0:09)
+──────────────────────────────────────────
+Archivo     : IMG_3528.jpg
+Duración    : 4 segundos
+Animación   : Ken Burns — zoom out lento
+Color       : Normal
+Transición  : Whip pan hacia derecha
+
+TEXTO EN PANTALLA:
+  Texto      : "Voilà d'où on est parti."
+  Posición   : centrado inferior
+  Aparece en : 0:06
+  Desaparece : 0:08
+
+──────────────────────────────────────────
+ESCENA 3 — ALLÉE ANCHO (0:09 – 0:16)
+──────────────────────────────────────────
+Archivo     : A7409842.jpg
+Duración    : 7 segundos
+Animación   : Travelling avant simulado (zoom in muy lento 100% → 106%)
+Color       : Saturación +15, temperatura ligeramente cálida +10
+Transición  : Match cut en la posición del bollard
+
+SIN TEXTO los primeros 3 segundos (0:09 – 0:12)
+
+TEXTO EN PANTALLA (aparece a 0:12):
+  Texto      : "Chaque détail compte."
+  Posición   : inferior izquierda
+  Tamaño     : pequeño
+  Desaparece : 0:15
+
+──────────────────────────────────────────
+ESCENA 4 — ALLÉE LATERAL (0:16 – 0:22)
+──────────────────────────────────────────
+Archivo     : A7409840.jpg
+Duración    : 6 segundos
+Animación   : Pan horizontal derecha → izquierda muy lento
+Color       : Mismo que escena 3
+Transición  : Coupe directe
+
+TEXTO EN PANTALLA:
+  Texto      : "Un bungalow de Laval."
+  Línea 2    : "Une transformation complète."
+  Posición   : centrado
+  Aparece en : 0:17
+  Desaparece : 0:21
+
+──────────────────────────────────────────
+ESCENA 5 — CONTEXTO CASA (0:22 – 0:27)
+──────────────────────────────────────────
+Archivo     : A7409832.jpg
+Duración    : 5 segundos
+Animación   : Zoom out lento (viene de la casa, se aleja a la calle)
+Color       : Normal
+Transición  : Fade suave
+
+TEXTO EN PANTALLA:
+  Texto      : "Laval, Québec."
+  Posición   : inferior derecha
+  Tamaño     : muy pequeño
+  Aparece en : 0:23
+  Desaparece : 0:26
+
+──────────────────────────────────────────
+ESCENA 6 — CTA con imagen vedette (0:27 – 0:45)
+──────────────────────────────────────────
+Archivo     : A7409920.jpg (de nuevo — la mejor imagen cierra el reel)
+Duración    : 18 segundos
+Animación   : Statique primeros 3 segundos → muy lento zoom in
+Color       : Overlay negro 35% sobre la imagen (texto legible)
+
+TEXTOS EN PANTALLA — en orden:
+
+  [0:27] Texto 1 — aparece con fade:
+    "Votre tour ?"
+    Fuente    : Georgia o serif equivalente
+    Tamaño    : MUY GRANDE
+    Color     : blanco
+    Posición  : centrado
+
+  [0:33] Texto 2 — aparece debajo:
+    "Soumission gratuite · Sans engagement"
+    Tamaño    : pequeño
+    Color     : blanco 70%
+    Posición  : centrado
+
+  [0:36] Texto 3 — EL MÁS IMPORTANTE:
+    "514-266-2504"
+    Tamaño    : MÁXIMO — lo más grande posible
+    Color     : #C8A45A (dorado) o amarillo luminoso
+    Posición  : centrado
+    Animación : scale up del 80% al 100% + pulse x2
+
+  [0:41] Logo Jardín Ideal:
+    Posición  : inferior izquierda
+    Tamaño    : pequeño
+
+──────────────────────────────────────────
+MÚSICA
+──────────────────────────────────────────
+Estilo      : Guitar acoustique + strings — aspirational/warm
+Tempo       : 75 BPM, lento, emocional
+Sin letra   : instrumental puro (sin voz en inglés ni francés)
+
+Buscar en CapCut Library:
+  - "acoustic emotional"
+  - "warm inspirational guitar"
+  - "home renovation music"
+
+Sincronización: El primer beat notable cae en 0:09 (inicio escena 3 — révélation)
+              La música sube de intensidad en 0:27 para el CTA
+
+──────────────────────────────────────────
+EXPORTACIÓN
+──────────────────────────────────────────
+Nombre archivo: JI_REEL_BERIAULT_GOLDENHOUR_v1.mp4
+Resolución    : 1080 × 1920
+Formato       : MP4, 30fps
+
+──────────────────────────────────────────
+CHECKLIST ANTES DE EXPORTAR
+──────────────────────────────────────────
+□ A7409920.jpg NO tiene filtros ni ajustes de color
+□ La escena 1 tiene 2 segundos SIN texto
+□ El teléfono 514-266-2504 está en dorado y es el texto más grande del reel
+□ La música sube al llegar a la escena 3
+□ Duración total entre 43-47 segundos
+□ Formato 9:16 verificado antes de exportar
+□ A7409843.jpg y A7409845.jpg NO están incluidos en el reel
+
+═══════════════════════════════════════════════════

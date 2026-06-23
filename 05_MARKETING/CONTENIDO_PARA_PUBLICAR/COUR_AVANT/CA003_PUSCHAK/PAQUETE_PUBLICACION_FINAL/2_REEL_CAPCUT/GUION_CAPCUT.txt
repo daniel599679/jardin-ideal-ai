@@ -1,0 +1,204 @@
+═══════════════════════════════════════════════════
+GUION CAPCUT — REEL AVANT/APRÈS PUSCHAK
+Reel ID: JI-R-20260623-003
+Duración total: 45 segundos | Formato: 9:16 vertical
+═══════════════════════════════════════════════════
+
+ANTES DE ABRIR CAPCUT — PREPARAR ARCHIVOS
+──────────────────────────────────────────
+1. Crear carpeta en el escritorio: "PUSCHAK_REEL_ASSETS"
+2. Copiar ahí exactamente:
+   a. avant_travaux (3).jpg
+   b. apres_travaux.jpg
+   c. apres_travaux-5.jpg
+   d. processus_travaux.jpg
+   e. Vidéo début projet.mp4 (importar completo, cortaremos dentro de CapCut)
+
+──────────────────────────────────────────
+PASO 1 — CONFIGURACIÓN DEL PROYECTO EN CAPCUT
+──────────────────────────────────────────
+□ Nuevo proyecto
+□ Formato: 9:16 (1080 × 1920)
+□ Frame rate: 30fps
+□ Duración objetivo: 45s
+
+──────────────────────────────────────────
+ESCENA 1 — AVANT (0:00 – 0:04)
+──────────────────────────────────────────
+Archivo     : avant_travaux (3).jpg
+Duración    : 4 segundos
+Animación   : Ken Burns — zoom out muy lento (escala 105% → 100%)
+Color       : Reducir saturación -20 | Temperatura fría -10 (aspecto "viejo")
+Filtro      : Ninguno — dejar opaco
+Transición  : Hard cut hacia escena 2 (sin transición suave)
+
+TEXTO EN PANTALLA:
+  Texto      : "C'est comme ça que ça ressemblait."
+  Fuente     : cualquier sans-serif blanca
+  Tamaño     : pequeño (max 30-35px equivalente)
+  Posición   : parte inferior de la pantalla, centrado
+  Aparece en : 0:01
+  Desaparece : 0:03
+  Animación  : fade in rápido, sin movimiento
+
+──────────────────────────────────────────
+ESCENA 2 — PROCESO EXCAVADORA (0:04 – 0:07)
+──────────────────────────────────────────
+Archivo     : processus_travaux.jpg
+Duración    : 3 segundos
+Animación   : Ken Burns — zoom in rápido (100% → 108%)
+Color       : Normal (no ajustar)
+Transición  : Hard cut desde escena 1, hard cut hacia escena 3
+
+TEXTO EN PANTALLA:
+  Texto      : "6 jours de travail."
+  Tamaño     : pequeño
+  Posición   : centrado inferior
+  Aparece en : 0:05
+  Desaparece : 0:06
+
+──────────────────────────────────────────
+ESCENA 3 — RÉVÉLATION APRÈS ⭐ (0:07 – 0:14)
+──────────────────────────────────────────
+Archivo     : apres_travaux.jpg
+Duración    : 7 segundos — ES LA ESCENA MÁS LARGA. DEJAR RESPIRAR.
+Animación   : Statique 2s → slow zoom in muy suave (100% → 103%)
+Color       : Saturación +20 | Temperatura cálida +15 | Contraste +10
+              (Contraste intencional vs escena 1 — antes frío/opaco, después cálido/vibrante)
+
+SIN TEXTO los primeros 3 segundos (0:07 – 0:10)
+
+TEXTO EN PANTALLA (aparece a 0:10):
+  Texto      : "Résultat."
+  Fuente     : Georgia o serif equivalente
+  Tamaño     : grande
+  Color      : blanco
+  Posición   : centrado vertical y horizontal
+  Aparece en : 0:10
+  Desaparece : 0:12
+  Animación  : fade in + ligero scale up (llega del 95% al 100%)
+
+MÚSICA — ★ SINCRONIZACIÓN CRÍTICA:
+  El beat principal (drop o percusión fuerte) DEBE caer exactamente en 0:07
+  cuando la imagen après aparece. Este es el momento más importante del reel.
+  Si el beat no cae aquí, cambiar canción.
+
+Transición  : Whip pan hacia la derecha → hacia escena 4
+
+──────────────────────────────────────────
+ESCENA 4 — DÉTAIL BOKEH (0:14 – 0:18)
+──────────────────────────────────────────
+Archivo     : apres_travaux-5.jpg
+Duración    : 4 segundos
+Animación   : Statique — dejar la profundidad de campo hablar sola
+Color       : Saturación +15, cálido +10
+
+TEXTO EN PANTALLA:
+  Línea 1    : "Pavé premium."
+  Línea 2    : "Garanti 5 ans."
+  Fuente     : sans-serif, blanco
+  Tamaño     : pequeño-mediano
+  Posición   : inferior izquierda
+  Aparece en : 0:15
+  Desaparece : 0:17
+
+Transición  : Fade suave → escena 5
+
+──────────────────────────────────────────
+ESCENA 5 — CLIP DE VIDEO (0:18 – 0:23) [OPCIONAL — si el video tiene buena calidad]
+──────────────────────────────────────────
+Archivo     : Vidéo début projet.mp4
+Clip        : Extraer 5 segundos donde se vea claramente el trabajo en curso
+              (buscar el momento más dinámico — excavadora o movimiento de material)
+Duración    : 5 segundos
+Audio       : MUTE (usar solo la música de fondo del reel)
+Color       : Normal
+
+TEXTO EN PANTALLA:
+  Texto      : "Une équipe. Un résultat."
+  Posición   : centrado inferior
+  Aparece en : 0:19
+  Desaparece : 0:22
+
+Transición  : Hard cut → escena CTA
+
+SI EL VIDEO NO TIENE BUENA CALIDAD: saltar esta escena y ir directamente a CTA.
+
+──────────────────────────────────────────
+ESCENA 6 — CTA (0:23 – 0:45) [o 0:18 – 0:45 si no hay video]
+──────────────────────────────────────────
+Archivo     : apres_travaux.jpg (la misma imagen de la révélation)
+Duración    : 22 segundos (o 27s si no hay escena de video)
+Animación   : Muy lento zoom out (104% → 100%)
+Color       : Overlay negro semi-transparente (30% de opacidad)
+              La imagen sigue visible pero el texto se lee bien
+
+TEXTOS EN PANTALLA — en orden de aparición:
+
+  [0:23] Texto 1:
+    "Votre entrée mérite la même transformation."
+    Fuente    : Georgia o serif
+    Tamaño    : grande
+    Color     : blanco
+    Posición  : centrado
+    Animación : slide up desde abajo
+
+  [0:30] Texto 2 (debajo del texto 1):
+    "Soumission gratuite · Sans engagement"
+    Tamaño    : pequeño
+    Color     : blanco 70% opacidad
+    Animación : fade in
+
+  [0:33] Texto 3 — EL MÁS IMPORTANTE:
+    "514-266-2504"
+    Fuente    : cualquier bold
+    Tamaño    : MUY GRANDE (doble del texto normal)
+    Color     : #C8A45A (dorado Jardín Ideal) o amarillo claro
+    Posición  : centrado
+    Animación : scale up (parte del 80% y llega al 100%) + pulse suave x2
+
+  [0:40] Logo Jardín Ideal:
+    Posición  : esquina inferior izquierda
+    Tamaño    : pequeño
+    Animación : fade in
+
+──────────────────────────────────────────
+MÚSICA
+──────────────────────────────────────────
+Buscar en CapCut Library o Meta Sound Collection:
+  Estilo    : Cinematic / Emotional / Instrumental
+  Sin letra en inglés o francés (instrumental puro)
+  Descripción: piano + strings + ligero percusión, crescendo que sube hacia el final
+
+  Palabras clave para buscar en CapCut:
+  - "cinematic emotional"
+  - "piano dramatic reveal"
+  - "transformation music"
+
+  REGLA CRÍTICA: El beat más fuerte de la canción debe caer en 0:07
+  Probar: reproducir la canción en CapCut, marcar el beat principal,
+  alinear ese beat con el inicio de la ESCENA 3 (apres_travaux.jpg)
+
+  Volumen: 70% — lo suficientemente audible pero sin dominar
+
+──────────────────────────────────────────
+EXPORTACIÓN FINAL
+──────────────────────────────────────────
+□ Resolución: 1080 × 1920 (1080p)
+□ Formato: MP4
+□ Frame rate: 30fps
+□ Nombre archivo: JI_REEL_PUSCHAK_AVANTAPRES_v1.mp4
+
+──────────────────────────────────────────
+CHECKLIST FINAL CAPCUT ANTES DE EXPORTAR
+──────────────────────────────────────────
+□ Escena 1 — color frío (contraste con après)
+□ Escena 3 — color cálido (la révélation debe verse "mejor")
+□ Beat de música cae en 0:07 (inicio escena 3)
+□ Teléfono 514-266-2504 en dorado, muy grande, legible
+□ Sin texto durante los primeros 3 segundos de la révélation (escena 3)
+□ Total duración: 45 segundos ± 2 segundos
+□ Formato 9:16 verificado
+□ Audio del video (si se usa) en mute
+
+═══════════════════════════════════════════════════

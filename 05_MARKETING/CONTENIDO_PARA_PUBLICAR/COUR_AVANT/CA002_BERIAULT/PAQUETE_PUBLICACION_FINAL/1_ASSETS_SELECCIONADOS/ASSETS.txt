@@ -1,0 +1,60 @@
+═══════════════════════════════════════════════════
+ASSETS SELECCIONADOS — PROJ CA-002 BÉRIAULT
+Orden exacto de uso en producción
+═══════════════════════════════════════════════════
+
+PROYECTO: Jacques Bériault — Laval
+NOTA ESPECIAL: Contiene la MEJOR FOTO INDIVIDUAL de toda la colección COUR_AVANT (98/100)
+
+SLOT 1 — IMAGEN VEDETTE ⭐⭐⭐ (uso: PRIMERA PUBLICACIÓN, hero de todo)
+───────────────────────────────────────────────────
+Archivo : A7409920.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Jacques Beriault\Photos - après\A7409920.jpg
+Score QC: 98/100
+Rol     : HERO — bollard en heure dorée, bokeh, allée, plantes — QUALITÉ MAGAZINE
+Uso     : Post Instagram inmediato + Meta Ad principal + Hero todas las campañas
+Nota    : NO editar colores — la foto es perfecta tal cual. No superponer texto durante los primeros 2 segundos si se usa en video.
+
+SLOT 2 — ALLÉE PRINCIPAL (uso: reel escena 3 / carrusel slide 3)
+───────────────────────────────────────────────────
+Archivo : A7409842.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Jacques Beriault\Photos - après\A7409842.jpg
+Score QC: 86/100
+Rol     : Vista completa de la allée + escalones + bollard — ángulo ancho
+Uso     : Reel escena 3, carrusel slide 3, Meta Ad A/B test
+Nota    : Muestra el scope completo del proyecto
+
+SLOT 3 — ALLÉE LATERAL (uso: reel escena 2 / carrusel slide 4)
+───────────────────────────────────────────────────
+Archivo : A7409840.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Jacques Beriault\Photos - après\A7409840.jpg
+Score QC: 84/100
+Rol     : Vista lateral de la allée, bollard en primer plano, profundidad
+Uso     : Reel escena 2, slide carrusel
+Nota    : El bollard en primer plano crea interés visual inmediato
+
+SLOT 4 — FACHADA BUNGALOW (uso: carrusel contexto / reel escena 5)
+───────────────────────────────────────────────────
+Archivo : A7409832.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Jacques Beriault\Photos - après\A7409832.jpg
+Score QC: 66/100
+Rol     : Vista amplia de la casa — contexto del proyecto
+Uso     : Solo en carrusel como slide de contexto, nunca como imagen standalone paid
+Nota    : Útil para mostrar "esta es la casa completa"
+
+SLOT 5 — PROCESO CHANTIER (uso: reel escena de proceso)
+───────────────────────────────────────────────────
+Archivo : IMG_3528.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Jacques Beriault\Photos - travaux\IMG_3528.jpg
+Score QC: 69/100
+Rol     : Excavadora mini trabajando — muestra el antes/durante
+Uso     : Reel escena "process", Stories "coulisses"
+Nota    : Calidad teléfono — usar máximo 2-3 segundos en reel
+
+═══════════════════════════════════════════════════
+ARCHIVOS RECHAZADOS — NO USAR
+═══════════════════════════════════════════════════
+❌ A7409843.jpg — plantes en pots de pépinière avec étiquettes de prix visibles
+❌ A7409845.jpg — idem — VETO AUTOMATIQUE QC (C7 < 5/10)
+
+⚠️  IMG_6941.jpg, IMG_6943.jpg — calidad teléfono — usar solo Stories, nunca paid

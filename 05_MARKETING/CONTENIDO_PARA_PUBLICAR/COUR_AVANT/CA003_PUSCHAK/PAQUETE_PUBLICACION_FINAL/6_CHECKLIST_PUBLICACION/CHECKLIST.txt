@@ -1,0 +1,111 @@
+═══════════════════════════════════════════════════
+CHECKLIST DE PUBLICACIÓN — PROJ CA-003 PUSCHAK
+Revisar en orden antes de publicar
+═══════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHECKLIST — REEL AVANT/APRÈS (CapCut)
+Archivo: JI_REEL_PUSCHAK_AVANTAPRES_v1.mp4
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRODUCCIÓN:
+□ Reel montado en CapCut siguiendo GUION_CAPCUT.txt
+□ Duración total: entre 43-47 segundos (no más de 60s)
+□ Formato exportado: 9:16 vertical, 1080×1920, 30fps, MP4
+
+CALIDAD VISUAL:
+□ Escena 1 (avant) — colores fríos, imagen ligeramente desaturada
+□ Escena 3 (après révélation) — colores cálidos, saturación aumentada
+□ Beat de música cae exactamente cuando aparece apres_travaux.jpg
+□ No hay saltos abruptos involuntarios o frames negros entre escenas
+□ El texto se lee bien sobre las imágenes (contraste suficiente)
+
+TEXTO EN PANTALLA:
+□ "C'est comme ça que ça ressemblait." — aparece en escena 1
+□ "Résultat." — aparece en escena 3 (después de 3 segundos sin texto)
+□ "514-266-2504" — en dorado, MUY grande, visible en los últimos 10 segundos
+□ Ningún texto en inglés (todo en francés)
+□ Logo Jardín Ideal visible al final
+
+LEGAL/CONSENTIMIENTO:
+□ No hay trabajadores visibles en el reel sin consentimiento confirmado
+□ No hay dirección exacta de la propiedad visible en las imágenes
+□ No hay información personal de los clientes visible
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHECKLIST — PUBLICACIÓN INSTAGRAM/FACEBOOK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CAPTION:
+□ Copy copiado de COPYS.txt (sección Instagram o Facebook según plataforma)
+□ Hashtags incluidos (Instagram) — mínimo 8, máximo 15
+□ Teléfono 514-266-2504 incluido en el caption
+□ "Soumission gratuite" mencionado
+□ Sin errores de francés (revisar con autocorrector)
+□ Sin emojis excesivos (máximo 3-4 por caption)
+
+IMAGEN/VIDEO:
+□ Imagen seleccionada: apres_travaux.jpg (primera publicación)
+□ O reel montado si ya está listo
+□ La imagen no tiene marcas de agua, logos de otras empresas ni texto superpuesto previo
+□ Resolución mínima 1080×1080 para feed, 1080×1920 para reel
+
+TIMING:
+□ Publicar entre 17:30 y 19:30 (hora de Quebec) — mejor engagement
+□ No publicar durante fin de semana si es una publicación de conversión
+□ Espaciar mínimo 24h entre publicaciones del mismo tipo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHECKLIST — META ADS (publicidad pagada)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Campaña creada en Meta Business Manager
+□ Objetivo: Génération de prospects (Leads) — NO Brand Awareness
+□ Audiencia configurada: propriétaires 40-60 ans, 20km Montréal
+□ Presupuesto diario ingresado: $30-50 CAD/día
+□ Fecha de inicio y fin definidas (test mínimo 7 días)
+□ Pixel de Meta instalado en jardin-ideal.com
+□ Evento de conversión configurado: "Lead" o "Contact"
+□ Anuncio 1 subido: apres_travaux.jpg + copy de META_ADS.txt
+□ Anuncio 2 subido (si hay reel): video + copy
+□ Preview revisado en móvil (no desktop) — así lo verá el usuario
+□ CTA button correcto: "Obtenir un devis" o "Appeler maintenant"
+□ URL de destino funciona y carga rápido
+□ Anuncio enviado a revisión de Meta (puede tardar 24h)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+QUÉ FALTA PARA PUBLICAR HOY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LISTO AHORA MISMO:
+✅ apres_travaux.jpg — lista para publicar como post feed Instagram/Facebook
+✅ Copys en francés — listos en COPYS.txt
+✅ Meta Ads copy — listo en META_ADS.txt
+✅ Slides Canva — instrucciones listas en SLIDES_CANVA.txt
+
+PENDIENTE (bloquea parte de la producción):
+⏳ Montar reel en CapCut — seguir GUION_CAPCUT.txt (tiempo estimado: 1-2 horas)
+⏳ Verificar consentimiento de travailleurs en fotos con personas visibles
+
+PUBLICACIÓN MÍNIMA SIN REEL (hoy mismo):
+1. Publicar apres_travaux.jpg en Instagram con copy corto de COPYS.txt
+2. Publicar en Facebook con copy largo de COPYS.txt
+3. Crear Meta Ad con Annonce 1 de META_ADS.txt
+
+PUBLICACIÓN COMPLETA (con reel, esta semana):
+1. Todo lo anterior
+2. + Publicar reel montado en CapCut
+3. + Activar Meta Ad con video (Annonce 3 de META_ADS.txt)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESPUÉS DE PUBLICAR — SEGUIMIENTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+□ A las 2 horas: revisar número de vistas del reel
+□ A las 24 horas: revisar comentarios y responder todos
+□ A las 48 horas: si reel > 1000 vistas → activar versión paid del reel
+□ A los 7 días: revisar CPL del Meta Ad
+  - Si CPL < $70 → duplicar presupuesto
+  - Si CPL > $100 → pausar y probar con imagen différente
+□ Cada semana: capturar screenshot de métricas para el reporte mensual
+
+═══════════════════════════════════════════════════

@@ -1,0 +1,76 @@
+═══════════════════════════════════════════════════
+META ADS — PROJ CA-002 BÉRIAULT
+Listo para Meta Business Manager
+═══════════════════════════════════════════════════
+
+NOTA: A7409920.jpg es la mejor imagen individual de toda la colección Cour Avant.
+Usar siempre como imagen principal en todas las campañas Bériault.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANNONCE 1 — IMAGEN PRINCIPAL (bollard heure dorée)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Image à utiliser : A7409920.jpg
+Chemin          : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Jacques Beriault\Photos - après\A7409920.jpg
+Format          : 1:1 (Instagram) ou 4:5 (Feed vertical)
+Ángulo creativo : PREMIUM LIFESTYLE — "cette lumière vous accueille chaque soir"
+
+--- COPIER DANS META BUSINESS MANAGER ---
+
+TEXTE PRINCIPAL:
+Cette entrée est à Laval. La vôtre pourrait l'être aussi.
+
+Une allée repensée. Un éclairage intégré. Une maison enfin à la hauteur de ce qu'elle est.
+
+Jardín Ideal — aménagement paysager depuis 15+ ans dans le Grand Montréal.
+Soumission gratuite, sans engagement.
+
+TITRE:
+Cette lumière vous attend chaque soir.
+
+DESCRIPTION:
+Pavé uni · Éclairage · Massifs · Garantie 5 ans
+
+BOUTON CTA: Obtenir un devis
+URL: jardin-ideal.com
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANNONCE 2 — RETARGETING (allée ancho — más informativo)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Image à utiliser : A7409842.jpg
+Chemin          : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Projet Jacques Beriault\Photos - après\A7409842.jpg
+Format          : 1:1
+Ángulo creativo : PROCESO + RESULTADO — para quienes ya vieron el primer anuncio
+
+--- COPIER DANS META BUSINESS MANAGER ---
+
+TEXTE PRINCIPAL:
+Vous y pensez depuis le printemps. C'est le bon moment d'agir.
+
+6 jours. Une allée neuve, des escaliers refaits, de l'éclairage intégré.
+
+Les places pour cet été sont presque comblées.
+
+📞 514-266-2504 · Devis gratuit
+
+TITRE:
+Dernières disponibilités — Juillet 2026
+
+DESCRIPTION:
+Jardín Ideal · Montréal · Laval · Rive-Nord
+
+BOUTON CTA: Appeler maintenant
+TÉLÉPHONE: 514-266-2504
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONFIGURACIÓN TÉCNICA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Objetivo campaña : Génération de prospects
+Presupuesto test : $30 CAD/día × 7 días = $210 CAD
+Audiencia A      : Propriétaires, 40-65 ans, Laval + Montréal-Nord + Rive-Nord
+Audiencia B      : Retargeting visiteurs jardin-ideal.com 30 derniers jours
+KPI objetivo     : CPL < $65 CAD
+Acción si CPL > $100 en 3 días: pausar Annonce 2, mantener Annonce 1 solamente
+
+═══════════════════════════════════════════════════

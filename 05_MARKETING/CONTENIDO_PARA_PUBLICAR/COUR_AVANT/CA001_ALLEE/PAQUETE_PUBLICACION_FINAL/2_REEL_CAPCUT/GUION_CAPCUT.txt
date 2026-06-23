@@ -1,0 +1,122 @@
+═══════════════════════════════════════════════════
+GUION CAPCUT — REEL WALKING REVEAL ALLÉE
+Reel ID: JI-R-20260623-001
+Duración total: 30 segundos | Formato: 9:16 vertical
+═══════════════════════════════════════════════════
+
+CONCEPTO: "Walking reveal" — la cámara se acerca a la propiedad desde la calle.
+SIN avant/après disponible — ángulo: aspiración y FOMO ("tu voisin vient de le faire")
+
+PREPARAR ARCHIVOS:
+1. A7408264.jpg  ← HERO (usar 2 veces: hook + CTA)
+2. A7408417.jpg  ← entrada clásica
+3. A7406477-Edit.jpg ← allée courbée
+4. A7406539.jpg  ← curva en S (opcional si hay tiempo)
+
+──────────────────────────────────────────
+CONFIGURACIÓN CAPCUT
+──────────────────────────────────────────
+□ Formato: 9:16 (1080 × 1920)
+□ Frame rate: 30fps
+□ Duración objetivo: 30 segundos
+
+──────────────────────────────────────────
+ESCENA 1 — HOOK: FACHADA DESDE LA CALLE (0:00 – 0:05)
+──────────────────────────────────────────
+Archivo     : A7408264.jpg
+Duración    : 5 segundos
+Animación   : Slow zoom in muy lento (100% → 105%) — efecto "me acerco a la casa"
+Color       : NO modificar — perfecta tal cual
+Filtro      : Ninguno
+
+TEXTO EN PANTALLA:
+  Texto      : "Votre voisin vient de le faire."
+  Fuente     : sans-serif blanca
+  Tamaño     : mediano
+  Posición   : centrado inferior
+  Aparece en : 0:01
+  Desaparece : 0:04
+  Animación  : fade in rápido
+
+Transición  : Whip pan hacia abajo
+
+──────────────────────────────────────────
+ESCENA 2 — ENTRADA CLÁSICA (0:05 – 0:11)
+──────────────────────────────────────────
+Archivo     : A7408417.jpg
+Duración    : 6 segundos
+Animación   : Tilt up — empieza en el pavé del suelo, sube hacia la fachada
+Color       : Saturación +10, temperatura +5
+Transición  : Fade suave
+
+SIN TEXTO
+
+──────────────────────────────────────────
+ESCENA 3 — ALLÉE COURBÉE (0:11 – 0:18)
+──────────────────────────────────────────
+Archivo     : A7406477-Edit.jpg
+Duración    : 7 segundos — la más larga (muy bella, dejar respirar)
+Animación   : Travelling avant simulado lento (zoom in 100% → 107%)
+              Efecto: "camino por la allée hacia la puerta"
+Color       : Cálido +10 (la foto ya es cálida — reforzar levemente)
+Filtro      : Ninguno
+
+TEXTO EN PANTALLA (aparece a 0:13):
+  Texto      : "Votre entrée, réinventée."
+  Posición   : inferior derecha
+  Tamaño     : pequeño
+  Desaparece : 0:17
+
+Transición  : Coupe directe
+
+──────────────────────────────────────────
+ESCENA 4 — CTA (0:18 – 0:30)
+──────────────────────────────────────────
+Archivo     : A7408264.jpg (de nuevo — la mejor imagen cierra)
+Duración    : 12 segundos
+Animación   : Statique — zoom in muy lento
+Color       : Overlay negro 35%
+
+TEXTOS EN PANTALLA:
+
+  [0:18] Texto 1:
+    "Et si c'était votre tour ?"
+    Georgia / serif, blanco, grande, centrado
+
+  [0:22] Texto 2:
+    "Soumission gratuite · Sans engagement"
+    sans-serif, blanco 70%, pequeño, centrado
+
+  [0:25] Texto 3:
+    "514-266-2504"
+    bold, dorado #C8A45A, muy grande, centrado
+    Animación: scale up 80% → 100% + pulse x2
+
+  [0:28] Logo Jardín Ideal — inferior izquierda, fade in
+
+──────────────────────────────────────────
+MÚSICA
+──────────────────────────────────────────
+Estilo      : Piano acoustique + cordes légères
+Tempo       : 70-80 BPM, lento, cálido
+Sin letra   : instrumental
+Buscar      : "piano warm home" / "acoustic aspirational" en CapCut Library
+Beat        : El primer acorde notable cae en 0:05 (transición escena 2)
+
+──────────────────────────────────────────
+EXPORTACIÓN
+──────────────────────────────────────────
+Nombre: JI_REEL_ALLEE_WALKINGREVEAL_v1.mp4
+Resolución: 1080 × 1920 | MP4 | 30fps
+
+──────────────────────────────────────────
+CHECKLIST ANTES DE EXPORTAR
+──────────────────────────────────────────
+□ 514-266-2504 visible y en dorado en los últimos 7 segundos
+□ Escena 3 (allée courbée) — la más larga: 7 segundos
+□ Duración total: 29-31 segundos
+□ Formato 9:16 verificado
+□ No hay texto en inglés
+□ A7406503-Edit.jpg NO incluido en el reel
+
+═══════════════════════════════════════════════════

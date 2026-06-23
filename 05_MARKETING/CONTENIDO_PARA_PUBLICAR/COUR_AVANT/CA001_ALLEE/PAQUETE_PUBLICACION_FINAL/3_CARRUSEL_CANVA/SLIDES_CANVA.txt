@@ -1,0 +1,97 @@
+═══════════════════════════════════════════════════
+CARRUSEL CANVA — PROJ CA-001 ALLÉE
+7 slides | Format: 1080×1080 ou 1080×1350
+═══════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 1 — PORTADA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7408264.jpg (imagen completa)
+Overlay       : gradiente negro abajo 40%
+Etiqueta top  : "COUR AVANT · PORTFOLIO" — pequeño, dorado
+Título        : "Votre entrée dit tout."
+               (Georgia, blanco, grande, centrado abajo)
+Sous-titre    : "Jardín Ideal · Montréal · Laval · Rive-Nord"
+Logo          : esquina inferior derecha
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 2 — EL PROBLEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Fondo         : #1E3A20 (verde oscuro) — sin imagen
+Pregunta      : "Votre asphalte a quel âge ?"
+               (Georgia, blanco, grande, centrado)
+Sous-texte    : "Chaque hiver, il se fissure un peu plus."
+               "Chaque printemps, vous vous posez la même question."
+               (sans-serif, blanco 70%, cursiva)
+Separador     : línea dorada entre pregunta y sous-texte
+Número deco   : "?" — muy grande, dorado, fondo del slide (decorativo)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 3 — RESULTADO: ENTRADA MODERNA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7408264.jpg (imagen completa, sin overlay)
+Etiqueta      : "RÉSULTAT" — rectángulo verde, texto dorado, sup. izquierda
+Texto         : "La réponse."
+               (Georgia, blanco, grande, inferior)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 4 — ENTRADA CLÁSICA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7408417.jpg
+Overlay       : gradiente izquierda oscuro 40%
+Texto         : "Chaque maison a son style."
+               "Chaque allée est conçue sur mesure."
+               (Georgia, blanco, centrado)
+Détail        : "Pavé grand format · Garde-corps · Végétation" — pequeño, abajo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 5 — ALLÉE COURBÉE (emotional)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7406477-Edit.jpg (allée courbée, imagen completa)
+Overlay       : ninguno (muy bella — no oscurecer)
+Texto         : solo en la parte muy inferior:
+               "Une allée qui accueille avant même d'ouvrir la porte."
+               (Georgia, blanco, mediano, fondo negro suave detrás)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 6 — POR QUÉ JARDÍN IDEAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Fondo         : crema #F5F2EB
+Título        : "Pourquoi Jardín Ideal ?"
+               (Georgia, verde #1E3A20, grande)
+Lista         :
+  ✓ 15+ ans d'expérience
+  ✓ Matériaux certifiés, garantis
+  ✓ Délais respectés
+  ✓ Nettoyage complet inclus
+  ✓ Soumission gratuite, sans engagement
+(sans-serif, verde oscuro, mediano, checks dorados)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 7 — CTA FINAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7408264.jpg — overlay negro 50%
+Texto 1       : "Votre entrée mérite mieux."
+               (Georgia, blanco, grande)
+Teléfono      : "514-266-2504"
+               (bold, dorado, muy grande)
+Texto 2       : "Soumission gratuite · Sans engagement"
+               (blanco 70%, pequeño)
+Texto 3       : "jardin-ideal.com · Montréal · Laval · Rive-Nord"
+               (blanco 40%, muy pequeño)
+Logo          : Jardín Ideal centrado inferior
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CAPTION INSTAGRAM PARA EL CARRUSEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Votre entrée dit tout de votre maison. 🏡
+
+→ Swipe pour voir nos dernières réalisations
+
+Chaque allée est conçue sur mesure — pavé, courbe, matériau, éclairage.
+
+📞 514-266-2504 | Soumission gratuite — lien en bio
+
+#jardinideal #couravan #paveuni #montreal #laval #exterieursmaison #amenagementpaysager #allée
+
+═══════════════════════════════════════════════════

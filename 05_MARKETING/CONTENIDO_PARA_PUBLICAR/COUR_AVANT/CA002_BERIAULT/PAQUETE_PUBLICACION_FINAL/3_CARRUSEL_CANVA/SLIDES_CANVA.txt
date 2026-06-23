@@ -1,0 +1,120 @@
+═══════════════════════════════════════════════════
+CARRUSEL CANVA — PROJ CA-002 BÉRIAULT
+7 slides | Format: 1080×1080 ou 1080×1350
+═══════════════════════════════════════════════════
+
+CONFIGURACIÓN EN CANVA
+□ Paleta: verde #1E3A20, dorado #C8A45A, crema #F5F2EB, blanco #FFF
+□ Fuente display: Georgia
+□ Fuente cuerpo: Montserrat o Open Sans
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 1 — PORTADA ⭐
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7409920.jpg (bollard heure dorée — imagen completa)
+Overlay       : gradiente negro abajo 45%
+Etiqueta top  : "PROJET BÉRIAULT · LAVAL" — pequeño, dorado, centrado arriba
+Título        : "Cette lumière"
+               "vous accueille."
+               (Georgia, blanco, grande, centrado abajo)
+Sous-titre    : "Aménagement cour avant · Laval, Québec"
+               (sans-serif, blanco 65%, pequeño)
+Logo          : Jardín Ideal — esquina inferior derecha
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 2 — EL DESAFÍO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Fondo         : #1E3A20 (verde oscuro)
+NO IMAGEN (fondo de color)
+Texto grande  : "Son entrée n'avait"
+               "pas changé depuis"
+               "30 ans."
+               (Georgia, blanco, grande, centrado)
+Detalle       : Linea dorada horizontal entre el título y el cuerpo
+Cuerpo        : "Les visiteurs entraient par la porte de côté"
+               "pour ne pas voir le devant."
+               (sans-serif, blanco 70%, mediano, cursiva)
+Número        : "30" — muy grande, dorado, esquina superior derecha (decorativo)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 3 — LA TRANSFORMACIÓN — ALLÉE ANCHO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7409842.jpg (allée completa + escalones + bollard)
+Overlay       : ninguno (dejar la imagen limpia)
+Etiqueta      : "APRÈS" — rectángulo verde, texto dorado, esquina sup. izquierda
+Texto         : "6 jours plus tard."
+               (Georgia, blanco, mediano, inferior)
+Détail        : "Allée grand format · Éclairage intégré · Massifs aménagés"
+               (sans-serif, blanco, muy pequeño)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 4 — DÉTAIL LATERAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7409840.jpg (vista lateral, bollard primer plano)
+Overlay       : gradiente derecha oscuro 40%
+Etiqueta      : "DÉTAILS"
+Texto         : "Chaque élément"
+               "a été pensé."
+               (Georgia, blanco)
+Bullets       :
+  · Bollards LED intégrés
+  · Pavé grand format biton
+  · Bordures anthracite
+  · Massifs replantés
+(sans-serif, blanco, pequeño, bullets dorados)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 5 — FOTO VEDETTE (la mejor del lote)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7409920.jpg (bollard heure dorée — imagen completa, sin overlay)
+Texto         : SOLO en la parte inferior — pequeño, con fondo negro 50% detrás
+               "Voilà ce qu'on voit en rentrant chez soi,"
+               "chaque soir."
+               (Georgia, blanco, mediano)
+Nota interna  : Esta slide es la más poderosa — dejar que la foto hable sola
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 6 — CONTEXTO CASA COMPLETA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7409832.jpg (fachada bungalow completa)
+Overlay       : gradiente inferior negro 45%
+Etiqueta      : "LE PROJET COMPLET"
+Texto         : "Un bungalow de Laval."
+               "Transformé de A à Z."
+               (Georgia, blanco)
+Stats         :
+  ⏱ Durée : 6 jours
+  🔨 Équipe : 4 personnes
+  ✅ Garantie : 5 ans
+(sans-serif, blanco, pequeño, íconos dorados)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SLIDE 7 — CTA FINAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Imagen fond   : A7409920.jpg — overlay negro 55% (la imagen de fondo se ve, el texto domina)
+Texto 1       : "Votre entrée mérite ça."
+               (Georgia, blanco, grande, centrado)
+Línea dorada  : separador horizontal
+Teléfono      : "514-266-2504"
+               (bold, dorado #C8A45A, muy grande — lo más visible del slide)
+Texto 2       : "Soumission gratuite · Sans engagement"
+               (sans-serif, blanco 70%, pequeño)
+Texto 3       : "jardin-ideal.com · Montréal · Laval · Rive-Nord"
+               (muy pequeño, blanco 40%, inferior)
+Logo          : Jardín Ideal — centrado inferior
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CAPTION INSTAGRAM PARA EL CARRUSEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Cette lumière n'est pas un accident. 🌟
+
+C'est le résultat de 6 jours de travail, d'une allée repensée, d'un éclairage pensé et positionné à la main.
+
+→ Swipe pour voir le projet complet
+
+Jardín Ideal · Laval · Montréal · Rive-Nord
+📞 514-266-2504 | Lien en bio pour soumission gratuite 🌿
+
+#jardinideal #couravan #laval #amenagementpaysager #paveuni #eclairage #avantapres #bungalowlaval
+
+═══════════════════════════════════════════════════

@@ -1,0 +1,70 @@
+═══════════════════════════════════════════════════
+META ADS — PROJ CA-001 ALLÉE
+Listo para Meta Business Manager
+═══════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANNONCE 1 — FOMO / VOISIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Image         : A7408264.jpg
+Chemin        : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Allé pétitionnaire\A7408264.jpg
+Format        : 1:1 ou 4:5
+Ángulo        : FOMO — "tu voisin vient de le faire"
+
+--- COPIER DANS META BUSINESS MANAGER ---
+
+TEXTE PRINCIPAL:
+Votre voisin vient de refaire son entrée. Et si c'était votre tour ?
+
+Jardín Ideal transforme les cours avant ordinaires en cartes de visite extraordinaires. Pavé uni, allées, escaliers — soumission gratuite, sans engagement.
+
+Service disponible dans tout le Grand Montréal, Laval et Rive-Nord.
+
+TITRE:
+Votre voisin vient de le faire.
+
+DESCRIPTION:
+Pavé uni · Allées sur mesure · Disponibilité limitée juillet 2026
+
+BOUTON CTA: Obtenir un devis
+URL: jardin-ideal.com
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANNONCE 2 — URGENCE ÉTÉ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Image         : A7408417.jpg
+Chemin        : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Allé pétitionnaire\A7408417.jpg
+Format        : 1:1
+Ángulo        : URGENCE — últimas disponibilidades verano
+
+--- COPIER DANS META BUSINESS MANAGER ---
+
+TEXTE PRINCIPAL:
+Dernières disponibilités — juillet 2026.
+
+Si vous pensez à transformer votre entrée depuis le printemps, c'est maintenant ou en 2027.
+
+Jardín Ideal — aménagement de cours avant, allées et escaliers dans le Grand Montréal.
+Délais respectés. Qualité garantie. Soumission gratuite.
+
+TITRE:
+Dernières places — Été 2026
+
+DESCRIPTION:
+Jardín Ideal · Montréal · Laval · Rive-Nord · 514-266-2504
+
+BOUTON CTA: Appeler maintenant
+TÉLÉPHONE: 514-266-2504
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONFIGURACIÓN TÉCNICA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Objetivo      : Génération de prospects
+Presupuesto   : $25 CAD/día × 7 días = $175 CAD
+Audiencia     : Propriétaires, 35-60 ans, Grand Montréal + Laval + Rive-Nord
+KPI objetivo  : CPL < $80 CAD
+Nota          : Este proyecto sin avant/après → CPL esperado más alto que Puschak y Bériault
+
+═══════════════════════════════════════════════════

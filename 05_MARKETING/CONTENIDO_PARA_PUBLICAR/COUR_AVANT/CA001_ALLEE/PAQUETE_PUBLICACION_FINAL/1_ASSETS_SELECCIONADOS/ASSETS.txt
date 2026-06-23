@@ -1,0 +1,63 @@
+═══════════════════════════════════════════════════
+ASSETS SELECCIONADOS — PROJ CA-001 ALLÉE
+Orden exacto de uso en producción
+═══════════════════════════════════════════════════
+
+PROYECTO: Allée pétitionnaire — Collection multi-propriétés
+NOTA: Sin fotos "avant" — solo después. Sin avant/après disponible.
+POTENCIAL: Medio — excelente para portfolio y brand awareness
+
+SLOT 1 — IMAGEN PRINCIPAL ⭐ (uso: Meta Ad + primer post)
+───────────────────────────────────────────────────
+Archivo : A7408264.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Allé pétitionnaire\A7408264.jpg
+Score QC: 93/100
+Rol     : Hero — maison semi-détachée urbaine, allée anthracite, heure dorée
+Uso     : Meta Ad principal, imagen hero todas las campañas Allée
+Nota    : Foto de tarde con sombras largas. NO editar colores. Perfecta tal cual.
+
+SLOT 2 — IMAGEN SECUNDARIA (uso: A/B test / carrusel slide 2)
+───────────────────────────────────────────────────
+Archivo : A7408417.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Allé pétitionnaire\A7408417.jpg
+Score QC: 89/100
+Rol     : Entrada clásica, maison brique, escalones, garde-corps, vegetación
+Uso     : Feed Instagram, A/B test Meta Ads, carrusel slide 2
+Nota    : Complementa A7408264 — ángulo diferente, estilo más clásico
+
+SLOT 3 — ALLÉE COURBÉE CON CASA (uso: reel escena 3 / carrusel slide 3)
+───────────────────────────────────────────────────
+Archivo : A7406477-Edit.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Allé pétitionnaire\A7406477-Edit.jpg
+Score QC: 86/100
+Rol     : Allée courbée vers la porte — accueil, bokeh, chaleur
+Uso     : Reel escena final, carrusel slide 3
+Nota    : Editada profesionalmente. Luz suave. Muy emocional.
+
+SLOT 4 — CURVA EN S (uso: carrusel slide 4 / reel secundario)
+───────────────────────────────────────────────────
+Archivo : A7406539.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Allé pétitionnaire\A7406539.jpg
+Score QC: 78/100
+Rol     : Vista aérea ligera de la curva en S
+Uso     : Carrusel slide 4 (después de retoque de contraste)
+Nota    : Retoque recomendado: contraste +15, saturación hierba +15
+
+SLOT 5 — DETALLE BORDE (uso: carrusel slide 5 únicamente)
+───────────────────────────────────────────────────
+Archivo : A7406503-Edit.jpg
+Ruta    : 05_MARKETING\00_BIBLIOTECA_VISUAL\COUR_AVANT\Allé pétitionnaire\A7406503-Edit.jpg
+Score QC: 66/100
+Rol     : Close-up del borde pavé-gazon
+Uso     : Solo en carrusel como slide de detalle — nunca standalone
+Nota    : No usar en paid ads ni en reel principal
+
+═══════════════════════════════════════════════════
+ORDEN DE PRODUCCIÓN PRIORITARIO
+═══════════════════════════════════════════════════
+Paso 1: Publicar A7408264.jpg en Instagram (hoy)
+Paso 2: Meta Ad con A7408264.jpg (esta semana)
+Paso 3: Carrusel Canva con los 5 slots en orden
+Paso 4: Reel CapCut (cuando haya tiempo — 30s)
+
+═══════════════════════════════════════════════════
