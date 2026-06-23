@@ -20,7 +20,7 @@
 | Sistema de Voz Claude | ✅ Operativo |
 | Memoria Unificada | ✅ Operativa |
 | DAILY_OPERATIONS_ENGINE | ✅ Completo (5 archivos — Start + Lead + Content + Dashboard + Checklist) |
-| Alex — Sistema Unificado (7 archivos) | ✅ Diseñado completo — Fase 1 activa, Fases 2/3 listas para implementar |
+| Alex — Sistema Unificado (8 archivos) | 🔵 FASE 2 EN SPRINT — Zapier + Pipedrive + alertas (5 días, aprobado hoy) |
 | Sistema de Marketing | ✅ Documentado (flujo, canales, KPIs, brechas, Alex) |
 | GitHub sync | ✅ Al día (pending commit DAILY_OPERATIONS_ENGINE) |
 

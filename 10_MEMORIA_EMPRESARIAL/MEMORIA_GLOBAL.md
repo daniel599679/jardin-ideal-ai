@@ -118,7 +118,7 @@ Jardin_Ideal_AI_System/
 - **Home Workflow:** `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md` — qué decirle a cada IA + bloque compacto para móvil
 
 ### ALEX — Sistema Operativo Unificado (3 fases)
-- **Estado:** 🟡 Sistema diseñado — Fase 1 activa (prototipo), Fases 2/3 listas para implementar
+- **Estado:** 🔵 FASE 2 EN IMPLEMENTACIÓN — sprint de 5 días activo (aprobado 2026-06-23)
 - **Carpeta:** `10_MEMORIA_EMPRESARIAL/AGENTES/`
 - **Archivos del sistema (7 documentos):**
   - `ALEX_UNIFIED_AGENT_SYSTEM.md` — sistema completo: 3 fases, scores, continuidad de datos
@@ -129,7 +129,8 @@ Jardin_Ideal_AI_System/
   - `ALEX_PIPEDRIVE_FIELDS.md` — 40+ campos a crear + 3 automatizaciones Zapier diseñadas
   - `ALEX_LEAD_REPORT_TEMPLATE.md` — reporte pre-visita completo (9 secciones) + versión WhatsApp
 - **Principio:** Alex prepara la venta. El vendedor cierra.
-- **Limitación actual:** NO conectado a Pipedrive/Zapier. No asumir integración técnica.
+- **Decisiones aprobadas:** Zapier (no API propia) · Modelo humano asistido · Score interno únicamente · Voiceflow+VAPI en futuro
+- **Roadmap activo:** `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_FASE2_IMPLEMENTATION_ROADMAP.md`
 - **Sistema de marketing completo:** `10_MEMORIA_EMPRESARIAL/SISTEMA_MARKETING.md`
 
 ### DAILY OPERATIONS ENGINE — Motor Ejecutivo Diario

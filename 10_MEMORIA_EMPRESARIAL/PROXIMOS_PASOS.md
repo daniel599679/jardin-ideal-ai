@@ -39,9 +39,12 @@
 
 | Tarea | Por qué es P2 | Fecha objetivo |
 |-------|--------------|----------------|
-| Alex: responder 5 DECISIONES en ALEX_LANDING_PAGE_CONTEXT.md | Desbloquea la implementación | 2026-06-30 |
-| Alex Fase 2: crear 40+ campos en Pipedrive (ver ALEX_PIPEDRIVE_FIELDS.md) | Prerequisito para Zapier | 2026-07-07 |
-| Alex Fase 2: configurar 3 Zaps (formulario → Pipedrive → notif.) | Elimina lag manual en leads | 2026-07-07 |
+| ✅ Decisiones Alex aprobadas (5/5) | Desbloqueado — sprint iniciado | 2026-06-23 HECHO |
+| Alex Fase 2 DÍA 1: confirmar plataforma formulario + crear 8 campos Pipedrive | Prerequisito absoluto | HOY |
+| Alex Fase 2 DÍA 2: Zap 1 — Formulario → Pipedrive + PRE-SCORE calculado | Automatización core | Día 2 |
+| Alex Fase 2 DÍA 3: Zap 2 — Alerta email/WhatsApp a Daniel | Notificación urgente PRE-A | Día 3 |
+| Alex Fase 2 DÍA 4: Test con 4 leads falsos (PRE-A/B/C/incompleto) | Validación antes de go live | Día 4 |
+| Alex Fase 2 DÍA 5: Go live + monitoreo primera semana | Fase 2 operativa | Día 5 |
 | Primer lunes ejecutar el DAILY_IDEA_REVIEW completo | Establecer el ritual | 2026-06-30 |
 | Compartir ICS + Home Workflow con el equipo | Capacitación 30 min | 2026-06-30 |
 | Activar suscripción Epidemic Sound o Artlist | Necesaria para música en reels | 2026-07-07 |

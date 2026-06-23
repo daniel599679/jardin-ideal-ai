@@ -4,6 +4,38 @@
 
 ---
 
+## 2026-06-23 — Sesión 7: Decisiones Alex aprobadas + Roadmap Fase 2
+
+### Sistemas creados
+| Archivo | Descripción |
+|---------|-------------|
+| `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_FASE2_IMPLEMENTATION_ROADMAP.md` | Roadmap completo Fase 2: 5 decisiones aprobadas, sprint 5 días, Zapier JS PRE-SCORE, 4 tests, KPIs éxito |
+
+### Sistemas modificados
+| Archivo | Cambio |
+|---------|--------|
+| `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_LANDING_PAGE_CONTEXT.md` | Estado → FASE 2 EN IMPLEMENTACIÓN; sección 7 decisiones PENDING → ✅ APROBADAS; sección 8 sprint activo |
+| `10_MEMORIA_EMPRESARIAL/MEMORIA_GLOBAL.md` | Alex → 🔵 FASE 2 EN IMPLEMENTACIÓN; añadidas decisiones aprobadas y referencia al roadmap |
+| `10_MEMORIA_EMPRESARIAL/ESTADO_ACTUAL_ECOSISTEMA.md` | Alex sprint activo (8 archivos); GitHub sync actualizado |
+| `10_MEMORIA_EMPRESARIAL/PROXIMOS_PASOS.md` | P2 → tareas Alex sprint día a día (Días 1–5); instrucción única START_DAY_ENGINE |
+| `10_MEMORIA_EMPRESARIAL/SISTEMA_MARKETING.md` | v1.1 — arquitectura de flujo actualizada con Zapier/Pipedrive/alertas + arquitectura futura Voiceflow+VAPI |
+
+### Decisiones estratégicas aprobadas
+| # | Decisión | Aprobado |
+|---|---------|----------|
+| 1 | Plataforma: landing actual hoy → Voiceflow+VAPI en futuro | ✅ |
+| 2 | Integración: Zapier (sin API propia en Fase 2) | ✅ |
+| 3 | Calificación: modelo humano asistido (vendedor llama, Alex guía) | ✅ |
+| 4 | Score: interno únicamente, cliente nunca lo ve | ✅ |
+| 5 | Activación: inmediata — sprint 5 días hábiles | ✅ |
+
+### Git
+| Commit | Descripción |
+|--------|-------------|
+| (este commit) | feat: Alex Fase 2 aprobada — roadmap + decisiones estratégicas |
+
+---
+
 ## 2026-06-23 — Sesión 6: ALEX Sistema Operativo Unificado — 7 archivos
 
 ### Sistemas creados

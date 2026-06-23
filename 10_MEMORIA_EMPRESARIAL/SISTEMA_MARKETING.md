@@ -1,5 +1,5 @@
 # SISTEMA DE MARKETING — JARDÍN IDEAL
-**Versión:** 1.0 | **Fecha:** 2026-06-23
+**Versión:** 1.1 | **Fecha:** 2026-06-23 | **Actualización:** Decisiones Alex aprobadas — Fase 2 en sprint
 **Objetivo:** Documentar el sistema completo de atracción, captura y calificación de leads.
 
 ---
@@ -11,21 +11,33 @@ TRÁFICO
   ↓
 META ADS (Facebook / Instagram)
   ↓
-LANDING PAGE (prototipo) / FORMULARIO FACEBOOK
+LANDING PAGE + ALEX Fase 1 (guía conversacional)
   ↓
-ALEX (agente de guía — Fase 1 activa)
+FORMULARIO DE CONTACTO
+  ↓ webhook (ZAPIER — Fase 2 en sprint)
+LANDING_PRE_SCORE calculado automáticamente (Zap 1)
   ↓
-FORMULARIO DE CONTACTO (4 campos)
+PIPEDRIVE DEAL CREADO AUTOMÁTICAMENTE
+  + PRE-SCORE + PRE-Clasificación + Guía de llamada
   ↓
-PRE-SCORE (automático con datos del formulario)
+ALERTA A DANIEL (email/WhatsApp — Zap 2)
+  PRE-A → <2h | PRE-B → <4h | PRE-C → <24h
   ↓
-PIPEDRIVE (deal creado — manual hoy, automático en Fase 2)
+VENDEDOR LLAMA (modelo humano asistido — aprobado)
+  Con: Guía de llamada Alex + datos del formulario
+  Score: INTERNAL ONLY — el lead nunca ve el score
   ↓
-LLAMADA DE CALIFICACIÓN (manual hoy)
+CALL_QUALIFICATION_SCORE registrado en Pipedrive
   ↓
-ICS COMPLETO → clasificación A/B/C/D
+CLASIFICACIÓN FINAL A/B/C/D
   ↓
-VISITA DEL VENDEDOR
+LEAD_INTELLIGENCE_REPORT → vendedor
+  ↓
+VISITA PREPARADA
+
+ARQUITECTURA FUTURA (post Fase 2):
+  Alex chat → migrar a Voiceflow
+  Fase 3 calificación voz → VAPI
 ```
 
 ---

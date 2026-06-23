@@ -1,7 +1,7 @@
 # ALEX — AGENTE DE LANDING PAGE
 **Jardín Ideal | Documentación de contexto y hoja de ruta**
 **Versión:** 1.0 | **Fecha:** 2026-06-23
-**Estado actual:** PROTOTIPO — no integrado técnicamente al ecosistema
+**Estado actual:** FASE 2 EN IMPLEMENTACIÓN — decisiones estratégicas aprobadas 2026-06-23
 
 ---
 
@@ -261,36 +261,32 @@ CAMPOS DE CALIFICACIÓN (Fase 3 — llamada):
 
 ---
 
-## 7. DECISIONES PENDIENTES — REQUIEREN INPUT DE DANIEL
+## 7. DECISIONES ESTRATÉGICAS — ✅ APROBADAS 2026-06-23
 
-```
-DECISIÓN 1: ¿En qué plataforma vive Alex hoy? (¿Chatbase? ¿Voiceflow? ¿Custom?)
-  → Afecta: cómo se integra con el formulario en Fase 2
+| # | Decisión | Opción aprobada | Estado |
+|---|---------|----------------|--------|
+| 1 | Plataforma de Alex | Landing page actual + chat actual (hoy). Arquitectura futura: **Voiceflow + VAPI** | ✅ Aprobada |
+| 2 | Herramienta de integración | **Zapier** — sin API propia en Fase 2 | ✅ Aprobada |
+| 3 | Modelo de calificación Fase 3 | **Humano asistido** — vendedor llama, Alex genera pre-score + guía de llamada + reporte | ✅ Aprobada |
+| 4 | Visibilidad del Pre-Score | **Interno únicamente** — el lead nunca ve el score ni la clasificación | ✅ Aprobada |
+| 5 | Activación Fase 2 | **Inmediata** — sprint de 5 días hábiles | ✅ Aprobada |
 
-DECISIÓN 2: ¿Usamos Zapier o una integración directa con Pipedrive?
-  → Afecta: velocidad y costo de implementación Fase 2
-
-DECISIÓN 3: ¿Alex en Fase 3 hace llamadas de voz o solo mensajes de texto?
-  → Afecta: selección de plataforma (VAPI vs Twilio vs Bland.AI)
-
-DECISIÓN 4: ¿El Pre-Score se muestra al lead o solo es interno?
-  → Afecta: diseño de la experiencia post-formulario
-
-DECISIÓN 5: ¿Cuándo queremos Fase 2 operativa?
-  → Define el sprint de implementación
-```
+**Roadmap de implementación:** `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_FASE2_IMPLEMENTATION_ROADMAP.md`
 
 ---
 
-## 8. PRÓXIMOS PASOS PARA ACTIVAR FASE 2
+## 8. IMPLEMENTACIÓN FASE 2 — SPRINT ACTIVO
 
 ```
-PASO 1 (30 min): Identificar la plataforma de Alex actual → responder DECISIÓN 1
-PASO 2 (1h):    Crear los campos personalizados en Pipedrive
-PASO 3 (2h):    Configurar Zapier: formulario → Pipedrive deal → notificación Daniel
-PASO 4 (1h):    Probar el flujo completo con un lead falso
-PASO 5 (30min): Documentar el resultado y actualizar este archivo
+PRERREQUISITO (hoy): Confirmar plataforma del formulario actual
+DÍA 1 (45 min):  Crear 8 campos en Pipedrive
+DÍA 2 (2 horas): Configurar Zap 1 — Formulario → Pipedrive + PRE-SCORE
+DÍA 3 (1 hora):  Configurar Zap 2 — Alerta a Daniel por email/WhatsApp
+DÍA 4 (1 hora):  Test completo con 4 leads falsos (PRE-A/B/C + incompleto)
+DÍA 5 (30 min):  Go live + monitoreo
 ```
+
+**Plan detallado día a día:** `10_MEMORIA_EMPRESARIAL/AGENTES/ALEX_FASE2_IMPLEMENTATION_ROADMAP.md`
 
 **Referencia del sistema de calificación completo:** `10_MEMORIA_EMPRESARIAL/SISTEMA_CLIENTE_IDEAL.md`
 **Motor de calificación diaria:** `10_MEMORIA_EMPRESARIAL/OPERACIONES_DIARIAS/LEAD_REVIEW_ENGINE.md`
