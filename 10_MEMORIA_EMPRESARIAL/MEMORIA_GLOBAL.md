@@ -1,5 +1,5 @@
 # MEMORIA GLOBAL — JARDÍN IDEAL AI SYSTEM
-**Versión:** 1.2 | **Última actualización:** 2026-06-23
+**Versión:** 1.3 | **Última actualización:** 2026-06-23
 **Propósito:** Documento maestro de contexto. Cualquier IA debe leer este archivo primero.
 
 ---
@@ -105,6 +105,16 @@ Jardin_Ideal_AI_System/
 - **Estado:** ✅ OPERATIVO
 - **Archivo:** `C:\Users\Daniel\.claude\speak.py`
 - **Función:** Notificaciones de voz en español cuando Claude termina respuesta
+
+### Sistema de Producción Continua Diaria
+- **Estado:** ✅ COMPLETO — 4 módulos operativos
+- **Carpeta:** `05_MARKETING/PRODUCCION_CONTINUA/`
+- **Módulos:**
+  - `DAILY_CONTENT_FACTORY.md` — clasificación de material (HERO / EDUCATIVO / PRUEBA SOCIAL / OFERTA / TESTIMONIO / ANTES-DESPUÉS), árbol de decisión, prioridad de producción
+  - `DAILY_CONTENT_QUEUE.md` — 5 piezas diarias obligatorias: Hero Post + Reel Emocional + Story + Post Educativo + Remarketing; plantilla de cola diaria
+  - `CONTENT_CALENDAR_AUTOMATION.md` — 7 pilares semanales: Lun Autoridad, Mar Educación, Mié Transformación, Jue Prueba Social, Vie Oferta, Sáb BTS, Dom Inspiración
+  - `CONTENT_APPROVAL_DASHBOARD.md` — 6 estados (PENDIENTE → EN PRODUCCIÓN → REVISIÓN HUMANA → APROBADO → PROGRAMADO → PUBLICADO), checklist FLOAT V2 pre-revisión, protocolo de notificación a Daniel
+- **Integrado con:** FLOAT V2 Premium (gate 90/100 en todas las piezas hero)
 
 ### Ecosistema Dual Jardín + Groupe Ideal
 - **Estado:** ✅ ARQUITECTURA COMPLETA
