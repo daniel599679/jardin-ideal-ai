@@ -1,5 +1,5 @@
 # MEMORIA GLOBAL — JARDÍN IDEAL AI SYSTEM
-**Versión:** 1.0 | **Última actualización:** 2026-06-23
+**Versión:** 1.1 | **Última actualización:** 2026-06-23
 **Propósito:** Documento maestro de contexto. Cualquier IA debe leer este archivo primero.
 
 ---
@@ -168,3 +168,22 @@ Lee en este orden:
 4. Archivo específico del sistema en el que vas a trabajar
 
 **Protocolo completo:** `10_MEMORIA_EMPRESARIAL/SESSION_START_PROTOCOL.md`
+
+---
+
+## 11. PROTOCOLOS DIARIOS (añadido 2026-06-23)
+
+| Archivo | Propósito |
+|---------|-----------|
+| `PROTOCOLOS_DIARIOS/START_DAY_PROTOCOL.md` | Protocolo completo de inicio de día (6 checklists + mapa horario) |
+| `PROTOCOLOS_DIARIOS/MORNING_BRIEF_TEMPLATE.md` | Template para generar el resumen diario automático |
+| `KPIS_EMPRESA.md` | Dashboard de KPIs — Meta Ads, ventas, contenido, operaciones |
+| `REUNIONES_DIARIAS.md` | Formato, reglas y actas de la reunión diaria 09:00 AM |
+
+**Cómo generar el Morning Brief:**
+```
+"Claude, genera el Morning Brief de hoy.
+Datos Meta Ads de ayer: [gasto, leads, CPL, CTR]
+Proyectos en campo: [lista]
+Visitas hoy: [nombre + hora]"
+```
