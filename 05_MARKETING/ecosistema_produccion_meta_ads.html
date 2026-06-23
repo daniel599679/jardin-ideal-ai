@@ -1,0 +1,3320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecosistema de Producción Meta Ads — Jardín Ideal</title>
+<style>
+:root {
+  --vf: #1E3A20;
+  --vm: #3D6B42;
+  --or: #C8A45A;
+  --cr: #F5F2EB;
+  --w:  #FFFFFF;
+  --n:  #0D0E0B;
+  --gf: #2A2B28;
+  --g:  #6B6B63;
+  --r:  #B83232;
+  --rc: #F5E8E8;
+  --j:  #C8850A;
+  --jc: #FEF5E4;
+  --vb: #EAF2EB;
+  --or-dim: #9C7D3E;
+  --or-light: #F7EDDA;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cr);
+  color: var(--n);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════
+   STICKY NAVIGATION — phase progress bar
+══════════════════════════════════════════ */
+#nav-top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--vf);
+  border-bottom: 2px solid var(--or);
+  padding: 0;
+}
+.nav-inner {
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.55);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border-right: 1px solid rgba(200,164,90,0.15);
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+}
+.nav-link:last-child { border-right: none; }
+.nav-link .nav-num {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(200,164,90,0.4);
+  line-height: 1;
+  margin-bottom: 2px;
+  transition: color 0.2s;
+}
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(200,164,90,0.12);
+  color: var(--or);
+}
+.nav-link:hover .nav-num,
+.nav-link.active .nav-num { color: var(--or); }
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--or);
+}
+
+/* ══════════════════════════════════════════
+   PORTADA
+══════════════════════════════════════════ */
+.portada {
+  background: var(--vf);
+  color: var(--w);
+  padding: 80px 48px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.portada::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,164,90,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.portada-eyebrow {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.portada-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px; height: 1px;
+  background: var(--or);
+}
+.portada h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: var(--w);
+  max-width: 820px;
+  margin-bottom: 20px;
+}
+.portada h1 span { color: var(--or); }
+.portada-subtitle {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 40px;
+}
+.portada-meta {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 48px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 1px;
+}
+.portada-meta strong { color: var(--or); }
+.portada-divider {
+  width: 64px; height: 1px;
+  background: var(--or);
+  margin-bottom: 40px;
+  opacity: 0.6;
+}
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.stat-badge {
+  background: rgba(200,164,90,0.12);
+  border: 1px solid rgba(200,164,90,0.35);
+  border-radius: 4px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.stat-badge .stat-num {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--or);
+  line-height: 1;
+}
+.stat-badge .stat-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ══════════════════════════════════════════
+   SECTION SHELLS
+══════════════════════════════════════════ */
+.phase {
+  padding: 64px 48px;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.phase:nth-child(even) { background: var(--w); }
+.phase:nth-child(odd)  { background: var(--cr); }
+
+.phase-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 40px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(30,58,32,0.15);
+}
+.phase-num {
+  font-family: Georgia, serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--or);
+  line-height: 1;
+  opacity: 0.6;
+  flex-shrink: 0;
+  margin-top: -4px;
+}
+.phase-title-block {}
+.phase-eyebrow {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--vm);
+  margin-bottom: 6px;
+}
+.phase-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--vf);
+  line-height: 1.15;
+}
+.phase-desc {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--g);
+  max-width: 680px;
+}
+
+/* ══════════════════════════════════════════
+   TABLES
+══════════════════════════════════════════ */
+.tbl-wrap { overflow-x: auto; margin: 24px 0; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead tr { background: var(--vf); color: var(--w); }
+thead th {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 14px;
+  text-align: left;
+  color: var(--or);
+  white-space: nowrap;
+  border-right: 1px solid rgba(200,164,90,0.2);
+}
+thead th:last-child { border-right: none; }
+tbody tr:nth-child(even) { background: rgba(245,242,235,0.5); }
+tbody tr:nth-child(odd)  { background: var(--w); }
+tbody tr:hover { background: var(--vb); }
+tbody td {
+  padding: 10px 14px;
+  border-right: 1px solid rgba(0,0,0,0.04);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  vertical-align: top;
+  line-height: 1.5;
+}
+tbody td:last-child { border-right: none; }
+.td-code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  color: var(--vf);
+  font-weight: 700;
+}
+
+/* ══════════════════════════════════════════
+   STATUS BADGES
+══════════════════════════════════════════ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.badge-ok    { background: var(--vb);  color: var(--vf); border: 1px solid rgba(61,107,66,0.25); }
+.badge-warn  { background: var(--jc);  color: var(--j);  border: 1px solid rgba(200,133,10,0.25); }
+.badge-error { background: var(--rc);  color: var(--r);  border: 1px solid rgba(184,50,50,0.2); }
+.badge-info  { background: #E8F0FE;    color: #1A56DB;   border: 1px solid rgba(26,86,219,0.2); }
+.badge-gray  { background: #EFEFED;    color: var(--g);  border: 1px solid rgba(107,107,99,0.2); }
+
+/* ══════════════════════════════════════════
+   CALLOUT BOXES
+══════════════════════════════════════════ */
+.callout {
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.callout-body {}
+.callout-title {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.callout-text { font-size: 13px; line-height: 1.6; }
+.callout-ok    { background: var(--vb);  border-left: 4px solid var(--vm); }
+.callout-warn  { background: var(--jc);  border-left: 4px solid var(--j); }
+.callout-error { background: var(--rc);  border-left: 4px solid var(--r); }
+.callout-info  { background: #EEF2FF;    border-left: 4px solid #4F6EF7; }
+.callout-dark  { background: var(--vf);  border-left: 4px solid var(--or); color: var(--w); }
+
+/* ══════════════════════════════════════════
+   CODE / PROMPT BLOCKS
+══════════════════════════════════════════ */
+.prompt-block {
+  background: var(--vf);
+  border: 1px solid rgba(200,164,90,0.3);
+  border-radius: 6px;
+  padding: 0;
+  margin: 20px 0;
+  overflow: hidden;
+}
+.prompt-header {
+  background: rgba(0,0,0,0.3);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(200,164,90,0.2);
+}
+.prompt-header-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--or);
+}
+.prompt-body {
+  padding: 20px 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12.5px;
+  color: rgba(200,164,90,0.9);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.prompt-body .pk { color: var(--w); font-weight: 700; }
+.prompt-body .pv { color: rgba(200,164,90,0.85); }
+.prompt-body .pc { color: rgba(255,255,255,0.35); font-style: italic; }
+
+/* ══════════════════════════════════════════
+   CHECKLIST ITEMS
+══════════════════════════════════════════ */
+.checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--w);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 5px;
+  font-size: 13.5px;
+}
+.check-box {
+  width: 20px; height: 20px;
+  border: 2px solid var(--vm);
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.check-box.checked { background: var(--vm); border-color: var(--vm); }
+.check-box.checked::after { content: '✓'; color: var(--w); font-size: 11px; font-weight: 700; }
+.check-num {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  color: var(--g);
+  flex-shrink: 0;
+  width: 20px;
+  margin-top: 3px;
+}
+.check-label { flex: 1; }
+.check-label strong { color: var(--vf); }
+
+/* ══════════════════════════════════════════
+   FLOW DIAGRAM
+══════════════════════════════════════════ */
+.flow-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 32px 0;
+}
+.flow-row {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+}
+.flow-step {
+  background: var(--vf);
+  color: var(--w);
+  border: 1px solid rgba(200,164,90,0.25);
+  border-radius: 6px;
+  padding: 16px 18px;
+  flex: 1;
+  min-width: 160px;
+  position: relative;
+}
+.flow-step-num {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  color: var(--or);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.flow-step-title {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--w);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.flow-step-resp {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 4px;
+}
+.flow-step-resp span { color: var(--or); font-weight: 600; }
+.flow-step-tool {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  color: var(--or);
+  background: rgba(200,164,90,0.12);
+  border: 1px solid rgba(200,164,90,0.2);
+  border-radius: 3px;
+  padding: 2px 6px;
+  display: inline-block;
+  margin-top: 4px;
+}
+.flow-step-deliverable {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 6px;
+  font-style: italic;
+}
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  color: var(--or);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.flow-arrow-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  color: var(--or);
+  font-size: 20px;
+  margin: 0 0 0 32px;
+}
+
+/* ══════════════════════════════════════════
+   CALENDAR GRID
+══════════════════════════════════════════ */
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin: 24px 0;
+}
+.cal-item {
+  border-radius: 5px;
+  padding: 12px 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+  position: relative;
+}
+.cal-item.camp-bal { background: var(--vb); border-color: rgba(61,107,66,0.25); }
+.cal-item.camp-ca  { background: var(--jc); border-color: rgba(200,133,10,0.25); }
+.cal-date {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  color: var(--g);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.cal-id {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vf);
+  margin-bottom: 4px;
+}
+.cal-item.camp-ca .cal-id { color: var(--j); }
+.cal-title { font-size: 12px; color: var(--gf); line-height: 1.3; }
+.cal-format-tag {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 6px;
+  opacity: 0.6;
+}
+
+/* ══════════════════════════════════════════
+   METRICS TABLE SPECIAL
+══════════════════════════════════════════ */
+.metric-highlight {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--vf);
+}
+.metric-sub {
+  font-size: 10px;
+  color: var(--g);
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.5px;
+}
+
+/* ══════════════════════════════════════════
+   RISK TABLE
+══════════════════════════════════════════ */
+.risk-high   { color: var(--r); font-weight: 700; }
+.risk-med    { color: var(--j); font-weight: 700; }
+.risk-low    { color: var(--vm); font-weight: 700; }
+.risk-crit   { background: var(--rc) !important; }
+
+/* ══════════════════════════════════════════
+   NEXT STEPS
+══════════════════════════════════════════ */
+.steps-list { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+.step-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--w);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 6px;
+  padding: 18px 20px;
+  border-left: 4px solid var(--vf);
+}
+.step-card:nth-child(1) { border-left-color: var(--r); }
+.step-card:nth-child(2) { border-left-color: var(--j); }
+.step-card:nth-child(3) { border-left-color: var(--vm); }
+.step-card:nth-child(4) { border-left-color: var(--vf); }
+.step-card:nth-child(5) { border-left-color: var(--or-dim); }
+.step-num {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--or);
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+.step-body {}
+.step-title { font-family: Georgia, serif; font-weight: 700; font-size: 16px; color: var(--vf); margin-bottom: 4px; }
+.step-detail { font-size: 13px; color: var(--g); line-height: 1.5; }
+
+/* ══════════════════════════════════════════
+   GAPS SECTION
+══════════════════════════════════════════ */
+.gaps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.gap-card {
+  background: var(--rc);
+  border: 1px solid rgba(184,50,50,0.2);
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+.gap-card-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--r);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gap-card ul { list-style: none; padding: 0; }
+.gap-card ul li {
+  font-size: 12px;
+  color: var(--gf);
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.4;
+}
+.gap-card ul li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: var(--r);
+}
+
+/* ══════════════════════════════════════════
+   SECTION DIVIDER
+══════════════════════════════════════════ */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0 28px;
+}
+.section-divider-line { flex: 1; height: 1px; background: rgba(30,58,32,0.15); }
+.section-divider-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--g);
+}
+
+/* ══════════════════════════════════════════
+   PRODUCTION PIECE CARDS (Fase 4)
+══════════════════════════════════════════ */
+.piece-card {
+  background: var(--w);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  margin: 24px 0;
+  overflow: hidden;
+}
+.piece-card-header {
+  background: var(--vf);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.piece-card-id {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--or);
+}
+.piece-card-title {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  color: var(--w);
+  flex: 1;
+  margin: 0 16px;
+}
+.piece-card-date {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+}
+.piece-card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.piece-section {
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-right: 1px solid rgba(0,0,0,0.06);
+}
+.piece-section:nth-child(even) { border-right: none; }
+.piece-section-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--vm);
+  margin-bottom: 10px;
+}
+.piece-field { display: flex; gap: 10px; margin-bottom: 7px; align-items: flex-start; }
+.piece-field-key {
+  font-size: 11px;
+  color: var(--g);
+  width: 110px;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+.piece-field-val { font-size: 12px; color: var(--gf); line-height: 1.5; flex: 1; }
+.piece-field-val strong { color: var(--vf); }
+
+/* ══════════════════════════════════════════
+   PRINT STYLES
+══════════════════════════════════════════ */
+@media print {
+  #nav-top { display: none; }
+  .phase { break-inside: avoid; }
+  .portada { background: var(--vf) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-size: 12px; }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .portada { padding: 48px 24px 40px; }
+  .phase { padding: 40px 24px; }
+  .piece-card-body { grid-template-columns: 1fr; }
+  .piece-section { border-right: none; }
+  .flow-row { flex-direction: column; }
+  .flow-arrow { transform: rotate(90deg); }
+  .stats-grid { gap: 8px; }
+  .stat-badge .stat-num { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     STICKY NAVIGATION
+══════════════════════════════════════════ -->
+<nav id="nav-top" aria-label="Fases del sistema">
+  <div class="nav-inner">
+    <a href="#fase1" class="nav-link" data-phase="1"><span class="nav-num">01</span>Inventario</a>
+    <a href="#fase2" class="nav-link" data-phase="2"><span class="nav-num">02</span>Auditoría</a>
+    <a href="#fase3" class="nav-link" data-phase="3"><span class="nav-num">03</span>Estrategia</a>
+    <a href="#fase4" class="nav-link" data-phase="4"><span class="nav-num">04</span>Checklist</a>
+    <a href="#fase5" class="nav-link" data-phase="5"><span class="nav-num">05</span>Matriz</a>
+    <a href="#fase6" class="nav-link" data-phase="6"><span class="nav-num">06</span>Flujo</a>
+    <a href="#fase7" class="nav-link" data-phase="7"><span class="nav-num">07</span>Calidad</a>
+    <a href="#fase8" class="nav-link" data-phase="8"><span class="nav-num">08</span>Manus</a>
+    <a href="#fase9" class="nav-link" data-phase="9"><span class="nav-num">09</span>Métricas</a>
+    <a href="#fase10" class="nav-link" data-phase="10"><span class="nav-num">10</span>Entregable</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     PORTADA
+══════════════════════════════════════════ -->
+<header class="portada">
+  <div class="portada-eyebrow">Sistema Operativo · Jardín Ideal Montréal · Documentación Interna</div>
+  <h1>Ecosistema de Producción<br><span>Meta Ads</span> — Jardín Ideal</h1>
+  <p class="portada-subtitle">Sistema Ejecutable de Producción de Contenido</p>
+  <div class="portada-meta">
+    <span><strong>22 JUNIO 2026</strong></span>
+    <span>·</span>
+    <span>VERSION <strong>1.0</strong></span>
+    <span>·</span>
+    <span>IDIOMA INTERNO <strong>ESPAÑOL</strong></span>
+    <span>·</span>
+    <span>CAMPAÑAS <strong>JULIO 2026</strong></span>
+  </div>
+  <div class="portada-divider"></div>
+  <div class="stats-grid">
+    <div class="stat-badge">
+      <span class="stat-num">2</span>
+      <span class="stat-label">Campañas Activas</span>
+    </div>
+    <div class="stat-badge">
+      <span class="stat-num">7</span>
+      <span class="stat-label">Reels Planificados</span>
+    </div>
+    <div class="stat-badge">
+      <span class="stat-num">7</span>
+      <span class="stat-label">Carruseles</span>
+    </div>
+    <div class="stat-badge">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Blogs</span>
+    </div>
+    <div class="stat-badge">
+      <span class="stat-num">57+</span>
+      <span class="stat-label">Historias</span>
+    </div>
+    <div class="stat-badge">
+      <span class="stat-num">4</span>
+      <span class="stat-label">Testimonios</span>
+    </div>
+    <div class="stat-badge">
+      <span class="stat-num">28</span>
+      <span class="stat-label">Docs Estratégicos</span>
+    </div>
+    <div class="stat-badge">
+      <span class="stat-num">10</span>
+      <span class="stat-label">Fases del Sistema</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     FASE 1 — INVENTARIO GENERAL
+══════════════════════════════════════════ -->
+<section id="fase1" class="phase">
+  <div class="phase-header">
+    <div class="phase-num">01</div>
+    <div class="phase-title-block">
+      <div class="phase-eyebrow">Fase 01 · Base del Sistema</div>
+      <h2 class="phase-title">Inventario General del Sistema</h2>
+      <p class="phase-desc">Catálogo completo de todos los documentos, archivos y carpetas del ecosistema. Estado actual, responsable y dependencias de cada activo.</p>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">materiales/ — 9 archivos</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Archivo</th>
+          <th>Tamaño</th>
+          <th>Objetivo</th>
+          <th>Estado</th>
+          <th>Responsable</th>
+          <th>Prioridad</th>
+          <th>Dependencias</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-code">briefing_campana_jardin_ideal_2026.html</td>
+          <td>40.2 KB</td>
+          <td>Brief estratégico Meta Ads — objetivos, audiencias, servicios, budget 2026</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+          <td>Daniel</td>
+          <td><span class="badge badge-error">CRÍTICA</span></td>
+          <td>Base para todos los briefs de contenido</td>
+        </tr>
+        <tr>
+          <td class="td-code">briefing_general.html</td>
+          <td>46.6 KB</td>
+          <td>Briefing rendimiento general Meta Ads — histórico, benchmarks, análisis</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+          <td>Daniel</td>
+          <td><span class="badge badge-error">CRÍTICA</span></td>
+          <td>Fuente de benchmarks para KPIs</td>
+        </tr>
+        <tr>
+          <td class="td-code">briefing_meta_ads_jardin_ideal_jun2026.html</td>
+          <td>43.4 KB</td>
+          <td>Datos de performance 23 may – 21 jun 2026</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+          <td>Daniel</td>
+          <td><span class="badge badge-error">CRÍTICA</span></td>
+          <td>Informa optimización de campañas julio</td>
+        </tr>
+        <tr>
+          <td class="td-code">briefing_semana_jardin_ideal_22jun2026.pdf</td>
+          <td>19.6 KB</td>
+          <td>Briefing semanal 22 junio — prioridades de la semana</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+          <td>Daniel</td>
+          <td><span class="badge badge-warn">ALTA</span></td>
+          <td>Briefing_general.html</td>
+        </tr>
+        <tr>
+          <td class="td-code">brief_maestro_google_ads.html</td>
+          <td>84.6 KB</td>
+          <td>Auditoría completa + Brief Google Ads — estructura de campañas, palabras clave</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+          <td>Daniel</td>
+          <td><span class="badge badge-warn">ALTA</span></td>
+          <td>resumen_google_ads_jardin_ideal.html</td>
+        </tr>
+        <tr>
+          <td class="td-code">meta_ads_jardin_ideal.html</td>
+          <td>2,229.8 KB</td>
+          <td>Export completo Meta Ads — fuente primaria de datos raw</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+          <td>Meta (auto)</td>
+          <td><span class="badge badge-error">CRÍTICA</span></td>
+          <td>Fuente de verdad para análisis</td>
+        </tr>
+        <tr>
+          <td class="td-code">plan_contenido_balcons_cour_arriere.html</td>
+          <td>54.6 KB</td>
+          <td>Plan de contenido detallado con reels + blogs — calendario y specs</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+          <td>Daniel + Claude</td>
+          <td><span class="badge badge-error">CRÍTICA</span></td>
+          <td>briefing_campana, briefing_meta_ads</td>
+        </tr>
+        <tr>
+          <td class="td-code">prompts_agente_marketing.md</td>
+          <td>20.4 KB</td>
+          <td>Prompts completos del agente marketing — CRM, operaciones, marketing</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+          <td>Daniel + Claude</td>
+          <td><span class="badge badge-warn">ALTA</span></td>
+          <td>Sistema CLAUDE.MD</td>
+        </tr>
+        <tr>
+          <td class="td-code">resumen_google_ads_jardin_ideal.html</td>
+          <td>35.5 KB</td>
+          <td>Resumen ejecutivo Google Ads en español — métricas, recomendaciones</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+          <td>Daniel + Claude</td>
+          <td><span class="badge badge-warn">ALTA</span></td>
+          <td>brief_maestro_google_ads.html</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">05_MARKETING/ — 4 archivos .md</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Archivo</th>
+          <th>Tamaño</th>
+          <th>Objetivo</th>
+          <th>Estado</th>
+          <th>Qué falta</th>
+          <th>Prioridad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-code">contenido_organico.md</td>
+          <td>6.2 KB</td>
+          <td>Estrategia de contenido orgánico — pilares, frecuencia, temas</td>
+          <td><span class="badge badge-warn">🟡 INCOMPLETO</span></td>
+          <td>Estrategia base OK — falta calendario mensual completo</td>
+          <td><span class="badge badge-warn">MEDIA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">estrategia_campanas.md</td>
+          <td>5.5 KB</td>
+          <td>Estrategia de campañas paid — objetivos, segmentación, estructura</td>
+          <td><span class="badge badge-warn">🟡 INCOMPLETO</span></td>
+          <td>Sin presupuesto detallado por campaña ni por semana</td>
+          <td><span class="badge badge-warn">ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">guia_creatividades.md</td>
+          <td>7.7 KB</td>
+          <td>Guía de estilo para creatividades — marca, colores, tipografía</td>
+          <td><span class="badge badge-warn">🟡 INCOMPLETO</span></td>
+          <td>Sin especificaciones técnicas para Manus (prompts, resolución, estilo)</td>
+          <td><span class="badge badge-warn">ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">metricas_kpis.md</td>
+          <td>7.8 KB</td>
+          <td>Definición de KPIs, umbrales de alerta y sistema de reportes</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+          <td>—</td>
+          <td><span class="badge badge-warn">ALTA</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">05_MARKETING/CONTENT_PRODUCTION/ — 13 archivos HTML</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Archivo</th>
+          <th>Campaña</th>
+          <th>Tamaño</th>
+          <th>Contenido</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-code">BALCONES/01_CALENDARIO</td>
+          <td><span class="badge badge-ok">BALCONES</span></td>
+          <td>39.3 KB</td>
+          <td>Calendario completo de publicaciones julio — Balcones &amp; Terrasses</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">BALCONES/02_LISTA_REELS</td>
+          <td><span class="badge badge-ok">BALCONES</span></td>
+          <td>66.7 KB</td>
+          <td>Brief detallado 4 reels: guión, tomas, CTA, audiencia, KPIs</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">BALCONES/03_LISTA_CARRUSELES</td>
+          <td><span class="badge badge-ok">BALCONES</span></td>
+          <td>52.5 KB</td>
+          <td>Brief detallado 4 carruseles: slides, copy, visuales, CTA</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">BALCONES/04_LISTA_BLOGS</td>
+          <td><span class="badge badge-ok">BALCONES</span></td>
+          <td>37.9 KB</td>
+          <td>Brief 3 blogs SEO: estructura, palabras clave, outline completo</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">BALCONES/05_LISTA_HISTORIAS</td>
+          <td><span class="badge badge-ok">BALCONES</span></td>
+          <td>48.5 KB</td>
+          <td>Plan stories: 30+ ideas con copy, CTA, frecuencia diaria</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">BALCONES/06_LISTA_TESTIMONIOS</td>
+          <td><span class="badge badge-ok">BALCONES</span></td>
+          <td>35.8 KB</td>
+          <td>Brief 2 testimonios UGC: script, formato, publicación</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">COUR_AVANT/01_CALENDARIO</td>
+          <td><span class="badge badge-warn">COUR AVANT</span></td>
+          <td>44.7 KB</td>
+          <td>Calendario completo de publicaciones julio — Cours avant &amp; allées</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">COUR_AVANT/02_LISTA_REELS</td>
+          <td><span class="badge badge-warn">COUR AVANT</span></td>
+          <td>71.0 KB</td>
+          <td>Brief detallado 3 reels: guión, tomas, CTA, audiencia, KPIs</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">COUR_AVANT/03_LISTA_CARRUSELES</td>
+          <td><span class="badge badge-warn">COUR AVANT</span></td>
+          <td>69.5 KB</td>
+          <td>Brief detallado 3 carruseles: slides, copy, visuales, CTA</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">COUR_AVANT/04_LISTA_BLOGS</td>
+          <td><span class="badge badge-warn">COUR AVANT</span></td>
+          <td>34.3 KB</td>
+          <td>Brief 2 blogs SEO: estructura, palabras clave, outline completo</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">COUR_AVANT/05_LISTA_HISTORIAS</td>
+          <td><span class="badge badge-warn">COUR AVANT</span></td>
+          <td>42.7 KB</td>
+          <td>Plan stories: 27+ ideas con copy, CTA, frecuencia diaria</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">COUR_AVANT/06_LISTA_TESTIMONIOS</td>
+          <td><span class="badge badge-warn">COUR AVANT</span></td>
+          <td>39.2 KB</td>
+          <td>Brief 2 testimonios UGC: script, formato, publicación</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">MASTER_CONTENT_CALENDAR.html</td>
+          <td><span class="badge badge-info">MASTER</span></td>
+          <td>79.2 KB</td>
+          <td>Calendario maestro unificado — todas las campañas, todos los formatos</td>
+          <td><span class="badge badge-ok">✅ COMPLETO</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">00_DATOS_REALES/ — Archivos JSON de datos en tiempo real</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Archivo JSON</th>
+          <th>Módulo</th>
+          <th>Contenido</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-code">leads_pipeline_2026-06-22.json</td>
+          <td><span class="badge badge-info">CRM</span></td>
+          <td>Pipeline completo de leads activos — etapa, valor, probabilidad de cierre</td>
+          <td><span class="badge badge-ok">✅ ACTIVO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">leads_nuevos_2026-06-22.json</td>
+          <td><span class="badge badge-info">CRM</span></td>
+          <td>Leads nuevos del día — formularios Meta Lead Ads, WhatsApp, web</td>
+          <td><span class="badge badge-ok">✅ ACTIVO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">meta_ads_2026-06-21.json</td>
+          <td><span class="badge badge-warn">META ADS</span></td>
+          <td>Performance Meta Ads — impresiones, clics, CPL, ROAS por campaña</td>
+          <td><span class="badge badge-ok">✅ ACTIVO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">google_ads_2026-06-21.json</td>
+          <td><span class="badge badge-warn">GOOGLE ADS</span></td>
+          <td>Performance Google Ads — keywords, CTR, CPC, conversiones</td>
+          <td><span class="badge badge-ok">✅ ACTIVO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">operaciones_hoy.json</td>
+          <td><span class="badge badge-gray">OPS</span></td>
+          <td>Tareas operativas del día — cuadrillas, rutas, proyectos activos</td>
+          <td><span class="badge badge-ok">✅ ACTIVO</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">proyectos_activos.json</td>
+          <td><span class="badge badge-gray">OPS</span></td>
+          <td>Estado de todos los proyectos en curso — etapa, cliente, facturación</td>
+          <td><span class="badge badge-ok">✅ ACTIVO</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">10_MANUS/ — Guía de producción IA</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Archivo</th>
+          <th>Contenido</th>
+          <th>Estado</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-code">guia_manus.md</td>
+          <td>Guía operativa de uso de Manus para producción de imágenes y videos</td>
+          <td><span class="badge badge-ok">✅ EXISTE</span></td>
+          <td>Ver Fase 8 para prompts completos de producción</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Gaps Críticos — Carpetas vacías del sistema</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="callout callout-error">
+    <div class="callout-icon">🔴</div>
+    <div class="callout-body">
+      <div class="callout-title">5 carpetas críticas completamente vacías</div>
+      <div class="callout-text">Las siguientes carpetas del sistema están vacías y bloquean la operación autónoma de los agentes IA. Sin estos archivos, los agentes no tienen contexto para operar correctamente.</div>
+    </div>
+  </div>
+
+  <div class="gaps-grid">
+    <div class="gap-card">
+      <div class="gap-card-title">🔴 00_EMPRESA/</div>
+      <ul>
+        <li>Ficha de empresa (servicios, precios, zonas)</li>
+        <li>Propuesta de valor diferenciada vs. competencia</li>
+        <li>Fotos y videos del equipo y proyectos</li>
+        <li>Garantías y proceso de trabajo</li>
+        <li>Testimonios en texto con nombre/ciudad</li>
+      </ul>
+    </div>
+    <div class="gap-card">
+      <div class="gap-card-title">🔴 01_AGENTES/</div>
+      <ul>
+        <li>Configuración de los 3 agentes IA</li>
+        <li>Reglas de escalación entre agentes</li>
+        <li>Contexto de sesión persistente</li>
+        <li>Historial de decisiones tomadas</li>
+      </ul>
+    </div>
+    <div class="gap-card">
+      <div class="gap-card-title">🔴 02_PROMPTS/</div>
+      <ul>
+        <li>Prompts de producción de copy (en francés)</li>
+        <li>Prompts de revisión estratégica</li>
+        <li>Templates de respuesta a leads</li>
+        <li>Prompts de análisis de métricas semanales</li>
+      </ul>
+    </div>
+    <div class="gap-card">
+      <div class="gap-card-title">🔴 06_CRM/</div>
+      <ul>
+        <li>Pipeline de ventas y etapas definidas</li>
+        <li>Scripts de seguimiento por canal</li>
+        <li>Criterios de calificación de leads</li>
+        <li>Flujo de cierre de ventas Jardín Ideal</li>
+      </ul>
+    </div>
+    <div class="gap-card">
+      <div class="gap-card-title">🔴 09_CHECKLISTS/</div>
+      <ul>
+        <li>Checklist de publicación de contenido</li>
+        <li>Checklist de configuración de campaña</li>
+        <li>Checklist de revisión semanal</li>
+        <li>Checklist de cierre de proyecto</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FASE 2 — AUDITORÍA DEL CALENDARIO
+══════════════════════════════════════════ -->
+<section id="fase2" class="phase">
+  <div class="phase-header">
+    <div class="phase-num">02</div>
+    <div class="phase-title-block">
+      <div class="phase-eyebrow">Fase 02 · Diagnóstico</div>
+      <h2 class="phase-title">Auditoría del Calendario Meta</h2>
+      <p class="phase-desc">Verificación campo por campo de cada pieza de contenido planificada. Verde = brief completo. Rojo = elemento faltante que bloquea producción.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <div class="callout-title">Hallazgo principal — Sistema al 85% del brief, 0% producción visual</div>
+      <div class="callout-text">Todos los briefs estratégicos están completos: objetivo, servicio, audiencia, plataforma, formato, CTA, audiencia Meta y KPI están definidos para las 31 piezas. Sin embargo, <strong>0 de 31 piezas tienen copy redactado</strong> (texto real del post en francés listo para publicar) y <strong>0 de 31 piezas tienen creatividades producidas</strong> (imágenes o videos generados). El sistema de brief está listo — la producción no ha comenzado.</div>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Campaña Balcones &amp; Terrasses — Auditoría de piezas</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fecha</th>
+          <th>✓ Fecha</th>
+          <th>✓ Objetivo</th>
+          <th>✓ Servicio</th>
+          <th>✓ Plataforma</th>
+          <th>✓ Formato</th>
+          <th>✓ CTA</th>
+          <th>✓ Copy</th>
+          <th>✓ Creatividad</th>
+          <th>✓ Audiencia</th>
+          <th>✓ KPI</th>
+          <th>Estado Global</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-code">B-R01</td>
+          <td>Jul 1</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-R02</td>
+          <td>Jul 14</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-R03</td>
+          <td>Jul 21</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-R04</td>
+          <td>Jul 28</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-C01</td>
+          <td>Jul 7</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-C02</td>
+          <td>Jul 16</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-C03</td>
+          <td>Jul 23</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-C04</td>
+          <td>Jul 30</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-T01</td>
+          <td>Jul 29</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-T02</td>
+          <td>Fin Jul</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Campaña Cour Avant &amp; Allées — Auditoría de piezas</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fecha</th>
+          <th>✓ Fecha</th>
+          <th>✓ Objetivo</th>
+          <th>✓ Servicio</th>
+          <th>✓ Plataforma</th>
+          <th>✓ Formato</th>
+          <th>✓ CTA</th>
+          <th>✓ Copy</th>
+          <th>✓ Creatividad</th>
+          <th>✓ Audiencia</th>
+          <th>✓ KPI</th>
+          <th>Estado Global</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-code">CA-R01</td>
+          <td>Jul 8</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-R02</td>
+          <td>Jul 15</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-R03</td>
+          <td>Jul 23</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-C01</td>
+          <td>Jul 9</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-C02</td>
+          <td>Jul 17</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-C03</td>
+          <td>Jul 24</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-T01</td>
+          <td>Jul 28</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-T02</td>
+          <td>Jul 31</td>
+          <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+          <td>🔴</td><td>🔴</td>
+          <td>✅</td><td>✅</td>
+          <td><span class="badge badge-warn">Brief OK</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-dark">
+    <div class="callout-icon">📋</div>
+    <div class="callout-body">
+      <div class="callout-title" style="color:var(--or)">Conclusión de la Auditoría — Qué falta para poder publicar</div>
+      <div class="callout-text" style="color:rgba(255,255,255,0.8)">
+        <strong style="color:var(--or)">Faltante crítico 1:</strong> Copy redactado — el texto real del post en francés para las 31 piezas. Sin copy no hay publicación.<br><br>
+        <strong style="color:var(--or)">Faltante crítico 2:</strong> Creatividades producidas — 0 imágenes, 0 videos generados de 31 piezas planificadas.<br><br>
+        <strong style="color:var(--or)">Faltante crítico 3:</strong> Aprobación de copy — ningún texto ha pasado por revisión de francés nativo ni aprobación final de Daniel.<br><br>
+        El brief estratégico (columnas ✓Objetivo, ✓Servicio, ✓Plataforma, ✓Formato, ✓CTA, ✓Audiencia, ✓KPI) está completo al 100% para las 18 piezas principales auditadas. El sistema está listo para producción.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FASE 3 — VALIDACIÓN ESTRATÉGICA
+══════════════════════════════════════════ -->
+<section id="fase3" class="phase">
+  <div class="phase-header">
+    <div class="phase-num">03</div>
+    <div class="phase-title-block">
+      <div class="phase-eyebrow">Fase 03 · Estrategia</div>
+      <h2 class="phase-title">Validación Estratégica del Sistema</h2>
+      <p class="phase-desc">Mapa de cobertura de objetivos de negocio por campaña. Identifica qué está cubierto, qué tiene gaps y qué servicios no tienen contenido planificado.</p>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Campaña Balcones &amp; Terrasses — Mapa estratégico</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Objetivo de negocio</th>
+          <th>Etapa embudo</th>
+          <th>Servicio prioritario</th>
+          <th>Piezas asignadas</th>
+          <th>Volumen</th>
+          <th>Cobertura</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Generar leads directos</strong></td>
+          <td><span class="badge badge-error">BOFU</span></td>
+          <td>Balcons composite</td>
+          <td>B-R01, B-R04, B-T01, B-T02</td>
+          <td>4 piezas</td>
+          <td><span class="badge badge-ok">✅ CUBIERTO</span></td>
+        </tr>
+        <tr>
+          <td><strong>Autoridad de marca</strong></td>
+          <td><span class="badge badge-info">TOFU</span></td>
+          <td>Balcons, Terrasses</td>
+          <td>B-R02, B-R03, B-C02, B-C03</td>
+          <td>4 piezas</td>
+          <td><span class="badge badge-ok">✅ CUBIERTO</span></td>
+        </tr>
+        <tr>
+          <td><strong>Educación del cliente</strong></td>
+          <td><span class="badge badge-info">TOFU/MOFU</span></td>
+          <td>Bois vs. composite</td>
+          <td>B-C01, B-B01, B-B02, B-B03</td>
+          <td>4 piezas</td>
+          <td><span class="badge badge-ok">✅ CUBIERTO</span></td>
+        </tr>
+        <tr>
+          <td><strong>Confianza / Social proof</strong></td>
+          <td><span class="badge badge-warn">MOFU</span></td>
+          <td>Testimonios Laval</td>
+          <td>B-T01, B-T02</td>
+          <td>2 piezas</td>
+          <td><span class="badge badge-warn">🟡 LIMITADO</span></td>
+        </tr>
+        <tr>
+          <td><strong>Remarketing</strong></td>
+          <td><span class="badge badge-error">BOFU</span></td>
+          <td>Todos</td>
+          <td><em>Ninguna pieza asignada</em></td>
+          <td>0 piezas</td>
+          <td><span class="badge badge-error">🔴 GAP</span></td>
+        </tr>
+        <tr>
+          <td><strong>Cierre / Urgencia</strong></td>
+          <td><span class="badge badge-error">BOFU</span></td>
+          <td>Todos</td>
+          <td><em>Ninguna pieza asignada</em></td>
+          <td>0 piezas</td>
+          <td><span class="badge badge-error">🔴 GAP</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Campaña Cour Avant &amp; Allées — Mapa estratégico</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Objetivo de negocio</th>
+          <th>Etapa embudo</th>
+          <th>Servicio prioritario</th>
+          <th>Piezas asignadas</th>
+          <th>Volumen</th>
+          <th>Cobertura</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Generar leads directos</strong></td>
+          <td><span class="badge badge-error">BOFU</span></td>
+          <td>Pavé uni, cours avant</td>
+          <td>CA-R01, CA-R03, CA-T01, CA-T02</td>
+          <td>4 piezas</td>
+          <td><span class="badge badge-ok">✅ CUBIERTO</span></td>
+        </tr>
+        <tr>
+          <td><strong>FOMO / Prueba social barrio</strong></td>
+          <td><span class="badge badge-warn">MOFU</span></td>
+          <td>Pavé uni Techo Bloc</td>
+          <td>CA-R03, CA-C03</td>
+          <td>2 piezas</td>
+          <td><span class="badge badge-warn">🟡 LIMITADO</span></td>
+        </tr>
+        <tr>
+          <td><strong>Autoridad / Transformación visual</strong></td>
+          <td><span class="badge badge-info">TOFU</span></td>
+          <td>Cour avant, allées</td>
+          <td>CA-R01, CA-R02, CA-C01, CA-C02</td>
+          <td>4 piezas</td>
+          <td><span class="badge badge-ok">✅ CUBIERTO</span></td>
+        </tr>
+        <tr>
+          <td><strong>Confianza / Testimonio</strong></td>
+          <td><span class="badge badge-warn">MOFU</span></td>
+          <td>Pavé uni, cour avant</td>
+          <td>CA-T01, CA-T02</td>
+          <td>2 piezas</td>
+          <td><span class="badge badge-warn">🟡 LIMITADO</span></td>
+        </tr>
+        <tr>
+          <td><strong>Remarketing</strong></td>
+          <td><span class="badge badge-error">BOFU</span></td>
+          <td>Todos</td>
+          <td><em>Ninguna pieza asignada</em></td>
+          <td>0 piezas</td>
+          <td><span class="badge badge-error">🔴 GAP</span></td>
+        </tr>
+        <tr>
+          <td><strong>Cierre / Urgencia estacional</strong></td>
+          <td><span class="badge badge-error">BOFU</span></td>
+          <td>Todos</td>
+          <td><em>Ninguna pieza asignada</em></td>
+          <td>0 piezas</td>
+          <td><span class="badge badge-error">🔴 GAP</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Servicios sin campaña activa — Gaps de cobertura</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Potencial de ingresos</th>
+          <th>Contenido planificado</th>
+          <th>Estado</th>
+          <th>Recomendación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Escaliers extérieurs</strong></td>
+          <td>Alto — ticket promedio $8,000–$15,000 CAD</td>
+          <td>0 piezas en ninguna campaña</td>
+          <td><span class="badge badge-error">🔴 SIN COBERTURA</span></td>
+          <td>Agregar a Fase 2 del sistema en agosto</td>
+        </tr>
+        <tr>
+          <td><strong>Murs de soutènement</strong></td>
+          <td>Alto — ticket promedio $6,000–$20,000 CAD</td>
+          <td>0 piezas en ninguna campaña</td>
+          <td><span class="badge badge-error">🔴 SIN COBERTURA</span></td>
+          <td>Planificar campaña específica septiembre</td>
+        </tr>
+        <tr>
+          <td><strong>Rénovation générale</strong></td>
+          <td>Muy alto — ticket promedio $15,000–$40,000 CAD</td>
+          <td>0 piezas en ninguna campaña</td>
+          <td><span class="badge badge-error">🔴 SIN COBERTURA</span></td>
+          <td>Campaña de autoridad para temporada otoño</td>
+        </tr>
+        <tr>
+          <td><strong>Entretien saisonnier</strong></td>
+          <td>Medio — recurrente, bajo por visita</td>
+          <td>Mencionado en stories únicamente</td>
+          <td><span class="badge badge-warn">🟡 PARCIAL</span></td>
+          <td>Mantener en historias, no requiere campaña paid</td>
+        </tr>
+        <tr>
+          <td><strong>Gazons / Engazonnement</strong></td>
+          <td>Medio — $2,000–$5,000 CAD</td>
+          <td>Mencionado en blogs únicamente</td>
+          <td><span class="badge badge-warn">🟡 PARCIAL</span></td>
+          <td>Incluir en campaña Cour Avant como servicio complementario</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">⚡</div>
+    <div class="callout-body">
+      <div class="callout-title">Gaps estratégicos prioritarios para julio 2026</div>
+      <div class="callout-text">
+        <strong>Gap 1 — Remarketing (crítico):</strong> No existe ninguna pieza diseñada para audiencias que ya visitaron el sitio web o interactuaron con contenido previo. El remarketing suele generar el CPL más bajo (&lt;$50 CAD) porque la audiencia ya conoce la marca. Requiere: 1 reel de urgencia + 1 carrusel comparativo para cada campaña.<br><br>
+        <strong>Gap 2 — Contenido de cierre BOFU:</strong> No hay piezas diseñadas con ofertas específicas, precios orientativos o urgencia estacional ("proyectos disponibles para agosto"). Sin este contenido, el embudo no cierra con paid media.<br><br>
+        <strong>Gap 3 — Servicios de alto ticket sin campaña:</strong> Escaliers, Murs de soutènement y Rénovation générale representan los tickets más altos pero no tienen ni una pieza de contenido planificada para julio.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FASE 4 — CHECKLIST DE PRODUCCIÓN
+══════════════════════════════════════════ -->
+<section id="fase4" class="phase">
+  <div class="phase-header">
+    <div class="phase-num">04</div>
+    <div class="phase-title-block">
+      <div class="phase-eyebrow">Fase 04 · Producción</div>
+      <h2 class="phase-title">Checklist de Producción por Pieza</h2>
+      <p class="phase-desc">Ficha detallada para las 7 piezas prioritarias de julio. Incluye información estratégica, tipo de producción, requerimientos visuales y estado de cada elemento.</p>
+    </div>
+  </div>
+
+  <!-- B-R01 -->
+  <div class="piece-card">
+    <div class="piece-card-header">
+      <span class="piece-card-id">B-R01</span>
+      <span class="piece-card-title">"Avant/Après 4 jours" — Balcon composite Laval</span>
+      <span class="piece-card-date">Publicación: 1 julio 2026</span>
+    </div>
+    <div class="piece-card-body">
+      <div class="piece-section">
+        <div class="piece-section-title">Información Estratégica</div>
+        <div class="piece-field"><span class="piece-field-key">Objetivo</span><span class="piece-field-val"><strong>Generar leads directos</strong> — formulario Meta Lead Ads</span></div>
+        <div class="piece-field"><span class="piece-field-key">Servicio</span><span class="piece-field-val">Balcons en composite — remplacement complet</span></div>
+        <div class="piece-field"><span class="piece-field-key">Audiencia</span><span class="piece-field-val">Propietarios 38–58 ans, Laval / Rive-Nord, maison unifamiliale, ingresos $80K+ CAD</span></div>
+        <div class="piece-field"><span class="piece-field-key">Etapa embudo</span><span class="piece-field-val"><span class="badge badge-error">BOFU</span> — audiencia caliente, intención de compra</span></div>
+        <div class="piece-field"><span class="piece-field-key">Oferta</span><span class="piece-field-val">Estimación gratuite en 24h — transformation en 4 jours</span></div>
+        <div class="piece-field"><span class="piece-field-key">CTA</span><span class="piece-field-val">"Obtenez votre soumission gratuite" → formulario Lead Ads</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Especificaciones de Producción</div>
+        <div class="piece-field"><span class="piece-field-key">Formato</span><span class="piece-field-val">Reel — 60 segundos — 9:16 (1080×1920px)</span></div>
+        <div class="piece-field"><span class="piece-field-key">Tipo</span><span class="piece-field-val">Antes/Después — montaje comparativo con música</span></div>
+        <div class="piece-field"><span class="piece-field-key">IA responsable</span><span class="piece-field-val"><span class="badge badge-info">CapCut</span> para montaje + <span class="badge badge-info">Manus</span> para frames IA</span></div>
+        <div class="piece-field"><span class="piece-field-key">Música</span><span class="piece-field-val">Trending audio — libre de derechos, energética pero no agresiva</span></div>
+        <div class="piece-field"><span class="piece-field-key">Texto superpuesto</span><span class="piece-field-val">"Avant" / "Après 4 jours" — tipografía blanca bold</span></div>
+        <div class="piece-field"><span class="piece-field-key">Duración gancho</span><span class="piece-field-val">Primeros 3s: mostrar "Après" primero, luego corte a "Avant"</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Requerimientos Visuales</div>
+        <div class="piece-field"><span class="piece-field-key">Frame "Avant"</span><span class="piece-field-val">Balcon bois grisâtre dégradé — ver Prompt 1 Fase 8 <span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Frame "Après"</span><span class="piece-field-val">Balcon composite neuf, luz dorada — ver Prompt 2 Fase 8 <span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Fotos reales</span><span class="piece-field-val">Si disponibles: fotos de proyecto real Laval <span class="badge badge-warn">🟡 VERIFICAR</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Logo final</span><span class="piece-field-val">Jardín Ideal — últimos 3 segundos del Reel <span class="badge badge-warn">🟡 VERIFICAR</span></span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Estado de Elementos</div>
+        <div class="piece-field"><span class="piece-field-key">Brief estratégico</span><span class="piece-field-val"><span class="badge badge-ok">✅ COMPLETO</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Copy francés</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — texto caption + hook verbal 3s</span></div>
+        <div class="piece-field"><span class="piece-field-key">Creatividad visual</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — 0 frames generados</span></div>
+        <div class="piece-field"><span class="piece-field-key">Montaje CapCut</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — pendiente creatividades</span></div>
+        <div class="piece-field"><span class="piece-field-key">Revisión calidad</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — checklist 12 puntos (Fase 7)</span></div>
+        <div class="piece-field"><span class="piece-field-key">Aprobación Daniel</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CA-R01 -->
+  <div class="piece-card">
+    <div class="piece-card-header">
+      <span class="piece-card-id">CA-R01</span>
+      <span class="piece-card-title">"Transformation en 3 jours" — Cour avant pavé uni</span>
+      <span class="piece-card-date">Publicación: 8 julio 2026</span>
+    </div>
+    <div class="piece-card-body">
+      <div class="piece-section">
+        <div class="piece-section-title">Información Estratégica</div>
+        <div class="piece-field"><span class="piece-field-key">Objetivo</span><span class="piece-field-val"><strong>Generar leads directos</strong> + FOMO geográfico</span></div>
+        <div class="piece-field"><span class="piece-field-key">Servicio</span><span class="piece-field-val">Cours avant en pavé uni Techo Bloc — remplacement dalle béton</span></div>
+        <div class="piece-field"><span class="piece-field-key">Audiencia</span><span class="piece-field-val">Propietarios 35–55 ans, Saint-Léonard / Montréal-Nord / Laval, maison 2 étages</span></div>
+        <div class="piece-field"><span class="piece-field-key">Etapa embudo</span><span class="piece-field-val"><span class="badge badge-error">BOFU</span> + <span class="badge badge-warn">MOFU</span> — FOMO barrio</span></div>
+        <div class="piece-field"><span class="piece-field-key">Oferta</span><span class="piece-field-val">Transformation garantie en 3 jours ouvrables</span></div>
+        <div class="piece-field"><span class="piece-field-key">CTA</span><span class="piece-field-val">"Voir nos réalisations" → perfil Instagram → "Soumission gratuite"</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Especificaciones de Producción</div>
+        <div class="piece-field"><span class="piece-field-key">Formato</span><span class="piece-field-val">Reel — 45 segundos — 9:16 (1080×1920px)</span></div>
+        <div class="piece-field"><span class="piece-field-key">Tipo</span><span class="piece-field-val">Antes/Después — misma calle, dos ángulos — crear sensación FOMO "ton voisin l'a déjà fait"</span></div>
+        <div class="piece-field"><span class="piece-field-key">IA responsable</span><span class="piece-field-val"><span class="badge badge-info">Manus</span> para imágenes + <span class="badge badge-info">CapCut</span> para montaje</span></div>
+        <div class="piece-field"><span class="piece-field-key">Hook verbal</span><span class="piece-field-val">"Votre voisin vient de refaire son entrée…" — 0–3 segundos</span></div>
+        <div class="piece-field"><span class="piece-field-key">Continuidad</span><span class="piece-field-val">Misma maison de ville en ambos frames — ver Prompt 3 Fase 8</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Requerimientos Visuales</div>
+        <div class="piece-field"><span class="piece-field-key">Frame "Avant"</span><span class="piece-field-val">Dalle béton fissurée, mauvaises herbes <span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Frame "Après"</span><span class="piece-field-val">Allée pavé uni Techo Bloc Roma, luz dorada <span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Tomas del proceso</span><span class="piece-field-val">3–4 frames del proceso de instalación <span class="badge badge-warn">🟡 OPCIONAL</span></span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Estado de Elementos</div>
+        <div class="piece-field"><span class="piece-field-key">Brief estratégico</span><span class="piece-field-val"><span class="badge badge-ok">✅ COMPLETO</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Copy francés</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Creatividad Manus</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — prompts listos en Fase 8</span></div>
+        <div class="piece-field"><span class="piece-field-key">Montaje CapCut</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Aprobación Daniel</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B-C01 -->
+  <div class="piece-card">
+    <div class="piece-card-header">
+      <span class="piece-card-id">B-C01</span>
+      <span class="piece-card-title">"Bois vs Composite — Ce que personne ne vous dit"</span>
+      <span class="piece-card-date">Publicación: 7 julio 2026</span>
+    </div>
+    <div class="piece-card-body">
+      <div class="piece-section">
+        <div class="piece-section-title">Información Estratégica</div>
+        <div class="piece-field"><span class="piece-field-key">Objetivo</span><span class="piece-field-val"><strong>Educar + autoridad</strong> — posicionar composite como decisión inteligente</span></div>
+        <div class="piece-field"><span class="piece-field-key">Servicio</span><span class="piece-field-val">Balcons composite vs. bois traité — comparativa educativa</span></div>
+        <div class="piece-field"><span class="piece-field-key">Audiencia</span><span class="piece-field-val">Propietarios en fase de investigación — TOFU/MOFU — 35–60 ans</span></div>
+        <div class="piece-field"><span class="piece-field-key">Etapa embudo</span><span class="piece-field-val"><span class="badge badge-info">TOFU/MOFU</span> — consideración de producto</span></div>
+        <div class="piece-field"><span class="piece-field-key">Slides planificados</span><span class="piece-field-val">6 slides: portada + 4 comparativas + CTA final</span></div>
+        <div class="piece-field"><span class="piece-field-key">CTA</span><span class="piece-field-val">"Téléchargez notre guide balcon" → Lead magnet o formulario</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Especificaciones de Producción</div>
+        <div class="piece-field"><span class="piece-field-key">Formato</span><span class="piece-field-val">Carrusel — 6 slides — 4:5 (1080×1350px)</span></div>
+        <div class="piece-field"><span class="piece-field-key">Tipo</span><span class="piece-field-val">Comparativa educativa — tabla visual izquierda/derecha</span></div>
+        <div class="piece-field"><span class="piece-field-key">IA responsable</span><span class="piece-field-val"><span class="badge badge-info">Canva</span> para diseño + <span class="badge badge-info">Manus</span> para slide 1</span></div>
+        <div class="piece-field"><span class="piece-field-key">Slide 1</span><span class="piece-field-val">Portada oscura verde — ver Prompt 5 Fase 8</span></div>
+        <div class="piece-field"><span class="piece-field-key">Slides 2–5</span><span class="piece-field-val">Comparativas: durabilité / entretien / coût total / esthétique</span></div>
+        <div class="piece-field"><span class="piece-field-key">Slide 6</span><span class="piece-field-val">CTA — fondo verde oscuro, botón dorado</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Requerimientos Visuales</div>
+        <div class="piece-field"><span class="piece-field-key">Slide portada (Manus)</span><span class="piece-field-val">Fondo verde #1E3A20, texto "Bois ou composite?" — ver Prompt 5 <span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Slides comparativas (Canva)</span><span class="piece-field-val">Template Canva con colores marca <span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Iconos</span><span class="piece-field-val">Set de iconos coherente (Canva library o SVG) <span class="badge badge-warn">🟡 VERIFICAR</span></span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Estado de Elementos</div>
+        <div class="piece-field"><span class="piece-field-key">Brief estratégico</span><span class="piece-field-val"><span class="badge badge-ok">✅ COMPLETO</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Copy por slide (FR)</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — 6 slides × copy</span></div>
+        <div class="piece-field"><span class="piece-field-key">Diseño Canva</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Portada Manus</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — usar Prompt 5 Fase 8</span></div>
+        <div class="piece-field"><span class="piece-field-key">Aprobación Daniel</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CA-C01 -->
+  <div class="piece-card">
+    <div class="piece-card-header">
+      <span class="piece-card-id">CA-C01</span>
+      <span class="piece-card-title">"Avant/Après — 5 cours avant transformées à Montréal"</span>
+      <span class="piece-card-date">Publicación: 9 julio 2026</span>
+    </div>
+    <div class="piece-card-body">
+      <div class="piece-section">
+        <div class="piece-section-title">Información Estratégica</div>
+        <div class="piece-field"><span class="piece-field-key">Objetivo</span><span class="piece-field-val"><strong>Social proof masivo</strong> — mostrar volumen de trabajo y resultados reales</span></div>
+        <div class="piece-field"><span class="piece-field-key">Servicio</span><span class="piece-field-val">Cours avant — pavé uni, allées, entrées résidentielles</span></div>
+        <div class="piece-field"><span class="piece-field-key">Audiencia</span><span class="piece-field-val">MOFU — ya conocen Jardín Ideal, necesitan ver pruebas de trabajo</span></div>
+        <div class="piece-field"><span class="piece-field-key">Etapa embudo</span><span class="piece-field-val"><span class="badge badge-warn">MOFU</span> — confianza y decisión</span></div>
+        <div class="piece-field"><span class="piece-field-key">Slides planificados</span><span class="piece-field-val">7 slides: portada + 5 pares Avant/Après + CTA</span></div>
+        <div class="piece-field"><span class="piece-field-key">CTA</span><span class="piece-field-val">"Votre cour avant est la prochaine" → formulario Lead Ads</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Especificaciones de Producción</div>
+        <div class="piece-field"><span class="piece-field-key">Formato</span><span class="piece-field-val">Carrusel — 7 slides — 1:1 (1080×1080px)</span></div>
+        <div class="piece-field"><span class="piece-field-key">Tipo</span><span class="piece-field-val">Social proof — galería de transformaciones reales o IA</span></div>
+        <div class="piece-field"><span class="piece-field-key">IA responsable</span><span class="piece-field-val"><span class="badge badge-info">Manus</span> para imágenes + <span class="badge badge-info">Canva</span> para composición</span></div>
+        <div class="piece-field"><span class="piece-field-key">Diseño cada slide</span><span class="piece-field-val">Split: izquierda "Avant" / derecha "Après" — línea dorada central — ver Prompt 4 Fase 8</span></div>
+        <div class="piece-field"><span class="piece-field-key">Diversidad visual</span><span class="piece-field-val">5 quartiers diferentes de Montréal (Saint-Léonard, Rosemont, Laval, etc.)</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Requerimientos Visuales</div>
+        <div class="piece-field"><span class="piece-field-key">5 pares Avant/Après (Manus)</span><span class="piece-field-val">Imágenes IA de cours avant variadas <span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Composición split (Canva)</span><span class="piece-field-val">Template split view con línea dorada <span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Fotos reales proyectos</span><span class="piece-field-val">Sustituyen Manus si disponibles <span class="badge badge-warn">🟡 VERIFICAR</span></span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Estado de Elementos</div>
+        <div class="piece-field"><span class="piece-field-key">Brief estratégico</span><span class="piece-field-val"><span class="badge badge-ok">✅ COMPLETO</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Copy caption (FR)</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Imágenes Manus</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — usar Prompt 4 Fase 8</span></div>
+        <div class="piece-field"><span class="piece-field-key">Diseño Canva</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Aprobación Daniel</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B-T01 / CA-T01 side by side summary -->
+  <div class="piece-card">
+    <div class="piece-card-header">
+      <span class="piece-card-id">B-T01 / CA-T01</span>
+      <span class="piece-card-title">Testimonios Video UGC — Cliente real Laval</span>
+      <span class="piece-card-date">B-T01: 29 jul · CA-T01: 28 jul 2026</span>
+    </div>
+    <div class="piece-card-body">
+      <div class="piece-section">
+        <div class="piece-section-title">B-T01 — Balcones</div>
+        <div class="piece-field"><span class="piece-field-key">Objetivo</span><span class="piece-field-val">Confianza — cierre BOFU — cliente Laval habla de su balcon composite</span></div>
+        <div class="piece-field"><span class="piece-field-key">Formato</span><span class="piece-field-val">Video UGC 30–45s, 9:16, subtítulos en francés</span></div>
+        <div class="piece-field"><span class="piece-field-key">Script</span><span class="piece-field-val">3 partes: problema inicial → proceso Jardín Ideal → resultado + recomendación</span></div>
+        <div class="piece-field"><span class="piece-field-key">IA responsable</span><span class="piece-field-val"><span class="badge badge-info">CapCut</span> para subtítulos automáticos + color grading</span></div>
+        <div class="piece-field"><span class="piece-field-key">Estado</span><span class="piece-field-val"><span class="badge badge-error">🔴 REQUIERE VIDEO REAL</span> — no sustituible por IA</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">CA-T01 — Cour Avant</div>
+        <div class="piece-field"><span class="piece-field-key">Objetivo</span><span class="piece-field-val">Confianza — BOFU — cliente habla del pavé uni y el proceso de instalación</span></div>
+        <div class="piece-field"><span class="piece-field-key">Formato</span><span class="piece-field-val">Video UGC 30–45s, 9:16, subtítulos en francés</span></div>
+        <div class="piece-field"><span class="piece-field-key">Script</span><span class="piece-field-val">3 partes: inquiétude initiale → délai 3 jours → résultat et surprise positive</span></div>
+        <div class="piece-field"><span class="piece-field-key">IA responsable</span><span class="piece-field-val"><span class="badge badge-info">CapCut</span> para edición + subtítulos automáticos</span></div>
+        <div class="piece-field"><span class="piece-field-key">Estado</span><span class="piece-field-val"><span class="badge badge-error">🔴 REQUIERE VIDEO REAL</span> — coordinar con cliente</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Requerimientos de Producción</div>
+        <div class="piece-field"><span class="piece-field-key">Identificar cliente</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — cliente dispuesto a grabar testimonio</span></div>
+        <div class="piece-field"><span class="piece-field-key">Script en francés</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — guía de puntos a cubrir</span></div>
+        <div class="piece-field"><span class="piece-field-key">Grabación</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span> — in situ en el proyecto terminado</span></div>
+        <div class="piece-field"><span class="piece-field-key">Edición CapCut</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Nota importante</div>
+        <div class="piece-field"><span class="piece-field-key">Prioridad</span><span class="piece-field-val">Los testimonios son el formato de <strong>menor CPL</strong> historicamente. Iniciar coordinación cliente esta semana.</span></div>
+        <div class="piece-field"><span class="piece-field-key">Alternativa</span><span class="piece-field-val">Si no hay cliente disponible: carrusel de screenshots de reseñas Google con diseño Canva</span></div>
+        <div class="piece-field"><span class="piece-field-key">Deadline real</span><span class="piece-field-val">Coordinar grabación antes del 20 julio para tener edición lista el 27–28 julio</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CA-R03 -->
+  <div class="piece-card">
+    <div class="piece-card-header">
+      <span class="piece-card-id">CA-R03</span>
+      <span class="piece-card-title">"Ton voisin vient de refaire son entrée…" — Reel FOMO barrio</span>
+      <span class="piece-card-date">Publicación: 23 julio 2026</span>
+    </div>
+    <div class="piece-card-body">
+      <div class="piece-section">
+        <div class="piece-section-title">Información Estratégica</div>
+        <div class="piece-field"><span class="piece-field-key">Objetivo</span><span class="piece-field-val"><strong>FOMO geográfico</strong> — activar deseo por comparación social del barrio</span></div>
+        <div class="piece-field"><span class="piece-field-key">Mecánica psicológica</span><span class="piece-field-val">"Mi vecino ya lo hizo — yo me estoy quedando atrás" — urgencia por pertenencia</span></div>
+        <div class="piece-field"><span class="piece-field-key">Audiencia</span><span class="piece-field-val">Propietarios Montréal-Nord, Saint-Léonard, Laval — barrios densos — 35–55 ans</span></div>
+        <div class="piece-field"><span class="piece-field-key">Etapa embudo</span><span class="piece-field-val"><span class="badge badge-warn">MOFU</span> → <span class="badge badge-error">BOFU</span> — activación por FOMO</span></div>
+        <div class="piece-field"><span class="piece-field-key">Hook 3s</span><span class="piece-field-val">"Ton voisin vient de refaire son entrée… et toi?" — texto en pantalla + voz off</span></div>
+        <div class="piece-field"><span class="piece-field-key">CTA</span><span class="piece-field-val">"Réserve ta date avant la fin de l'été" → formulario urgencia</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Especificaciones de Producción</div>
+        <div class="piece-field"><span class="piece-field-key">Formato</span><span class="piece-field-val">Reel — 40 segundos — 9:16 (1080×1920px)</span></div>
+        <div class="piece-field"><span class="piece-field-key">Estructura</span><span class="piece-field-val">0–3s: hook FOMO | 3–20s: 3 transformaciones rápidas | 20–35s: propuesta | 35–40s: CTA urgencia</span></div>
+        <div class="piece-field"><span class="piece-field-key">IA responsable</span><span class="piece-field-val"><span class="badge badge-info">Manus</span> para 3 frames "Après" + <span class="badge badge-info">CapCut</span> para montaje rápido</span></div>
+        <div class="piece-field"><span class="piece-field-key">Música</span><span class="piece-field-val">Beat energético, trending — tempo rápido que acompañe los cortes rápidos</span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Requerimientos Visuales</div>
+        <div class="piece-field"><span class="piece-field-key">3 frames "Après" variados</span><span class="piece-field-val">3 cours avant diferentes, mismo barrio québécois <span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Texto superpuesto</span><span class="piece-field-val">"Maison #1 — Livraison en 3 jours" (repetir para 2 y 3) <span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Slide de cierre</span><span class="piece-field-val">Fondo verde #1E3A20 + logo + teléfono + CTA urgencia <span class="badge badge-error">🔴 FALTA</span></span></div>
+      </div>
+      <div class="piece-section">
+        <div class="piece-section-title">Estado de Elementos</div>
+        <div class="piece-field"><span class="piece-field-key">Brief estratégico</span><span class="piece-field-val"><span class="badge badge-ok">✅ COMPLETO</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Copy + hook verbal (FR)</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Creatividades Manus</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Montaje CapCut</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+        <div class="piece-field"><span class="piece-field-key">Aprobación Daniel</span><span class="piece-field-val"><span class="badge badge-error">🔴 FALTA</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FASE 5 — MATRIZ DE PRODUCCIÓN
+══════════════════════════════════════════ -->
+<section id="fase5" class="phase">
+  <div class="phase-header">
+    <div class="phase-num">05</div>
+    <div class="phase-title-block">
+      <div class="phase-eyebrow">Fase 05 · Control de Producción</div>
+      <h2 class="phase-title">Matriz de Producción — 31 Piezas</h2>
+      <p class="phase-desc">Inventario completo de todas las piezas de contenido con estado actual, herramienta IA asignada y prioridad de producción para julio 2026.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">ℹ️</div>
+    <div class="callout-body">
+      <div class="callout-title">Estado actual del sistema de producción</div>
+      <div class="callout-text">Las 31 piezas tienen brief estratégico completo. <strong>0 piezas han iniciado producción IA.</strong> La columna "Estado" refleja la situación al 22 junio 2026. La prioridad se define por la fecha de publicación planificada.</div>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Campaña Balcones &amp; Terrasses — 14 piezas</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fecha pub.</th>
+          <th>Servicio</th>
+          <th>Formato</th>
+          <th>Duración / Slides</th>
+          <th>Estado</th>
+          <th>IA Responsable</th>
+          <th>Prioridad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-code">B-R01</td>
+          <td><strong>Jul 1</strong></td>
+          <td>Balcon composite</td>
+          <td>Reel</td>
+          <td>60s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">CapCut + Manus</span></td>
+          <td><span class="badge badge-error">P1 URGENTE</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-C01</td>
+          <td><strong>Jul 7</strong></td>
+          <td>Bois vs. composite</td>
+          <td>Carrusel</td>
+          <td>6 slides</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Canva + Manus</span></td>
+          <td><span class="badge badge-error">P1 URGENTE</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-R02</td>
+          <td>Jul 14</td>
+          <td>Terrasse composite</td>
+          <td>Reel</td>
+          <td>45s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">CapCut + Manus</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-C02</td>
+          <td>Jul 16</td>
+          <td>Balcon aluminium</td>
+          <td>Carrusel</td>
+          <td>5 slides</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Canva</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-B01</td>
+          <td>Jul 17</td>
+          <td>Entretien balcon</td>
+          <td>Blog SEO</td>
+          <td>1,200 palabras</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Claude</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-R03</td>
+          <td>Jul 21</td>
+          <td>Balcon composite couleur</td>
+          <td>Reel</td>
+          <td>50s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">CapCut + Manus</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-C03</td>
+          <td>Jul 23</td>
+          <td>Processus installation</td>
+          <td>Carrusel</td>
+          <td>7 slides</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Canva + Manus</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-B02</td>
+          <td>Jul 24</td>
+          <td>Coût balcon composite</td>
+          <td>Blog SEO</td>
+          <td>1,500 palabras</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Claude</span></td>
+          <td><span class="badge badge-gray">P3 MEDIA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-R04</td>
+          <td>Jul 28</td>
+          <td>Balcon composite résistant</td>
+          <td>Reel</td>
+          <td>40s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">CapCut + Manus</span></td>
+          <td><span class="badge badge-gray">P3 MEDIA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-T01</td>
+          <td>Jul 29</td>
+          <td>Testimonio Laval</td>
+          <td>Video UGC</td>
+          <td>35–45s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">CapCut</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-C04</td>
+          <td>Jul 30</td>
+          <td>Garantie balcon</td>
+          <td>Carrusel</td>
+          <td>5 slides</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Canva</span></td>
+          <td><span class="badge badge-gray">P3 MEDIA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-B03</td>
+          <td>Jul 31</td>
+          <td>Balcon composite hiver</td>
+          <td>Blog SEO</td>
+          <td>1,000 palabras</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Claude</span></td>
+          <td><span class="badge badge-gray">P3 MEDIA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-T02</td>
+          <td>Jul 31</td>
+          <td>Testimonio Rive-Nord</td>
+          <td>Video UGC</td>
+          <td>30–45s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">CapCut</span></td>
+          <td><span class="badge badge-gray">P3 MEDIA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">B-H01 – B-H05</td>
+          <td>Jul (diario)</td>
+          <td>Varios balcones</td>
+          <td>Historias (×5)</td>
+          <td>15s c/u</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Canva</span></td>
+          <td><span class="badge badge-gray">P3 MEDIA</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Campaña Cour Avant &amp; Allées — 17 piezas</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fecha pub.</th>
+          <th>Servicio</th>
+          <th>Formato</th>
+          <th>Duración / Slides</th>
+          <th>Estado</th>
+          <th>IA Responsable</th>
+          <th>Prioridad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-code">CA-R01</td>
+          <td><strong>Jul 8</strong></td>
+          <td>Cour avant pavé uni</td>
+          <td>Reel</td>
+          <td>45s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Manus + CapCut</span></td>
+          <td><span class="badge badge-error">P1 URGENTE</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-C01</td>
+          <td><strong>Jul 9</strong></td>
+          <td>Avant/Après 5 cours</td>
+          <td>Carrusel</td>
+          <td>7 slides</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Manus + Canva</span></td>
+          <td><span class="badge badge-error">P1 URGENTE</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-R02</td>
+          <td>Jul 15</td>
+          <td>Allée Techo Bloc Roma</td>
+          <td>Reel</td>
+          <td>50s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Manus + CapCut</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-C02</td>
+          <td>Jul 17</td>
+          <td>Pavé uni vs béton</td>
+          <td>Carrusel</td>
+          <td>6 slides</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Canva + Manus</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-B01</td>
+          <td>Jul 21</td>
+          <td>Guide pavé uni Mtl</td>
+          <td>Blog SEO</td>
+          <td>1,500 palabras</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Claude</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-R03</td>
+          <td>Jul 23</td>
+          <td>FOMO barrio — voisin</td>
+          <td>Reel</td>
+          <td>40s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Manus + CapCut</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-C03</td>
+          <td>Jul 24</td>
+          <td>Résistance hiver pavé</td>
+          <td>Carrusel</td>
+          <td>5 slides</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Canva</span></td>
+          <td><span class="badge badge-gray">P3 MEDIA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-T01</td>
+          <td>Jul 28</td>
+          <td>Testimonio Laval</td>
+          <td>Video UGC</td>
+          <td>35–45s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">CapCut</span></td>
+          <td><span class="badge badge-warn">P2 ALTA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-B02</td>
+          <td>Jul 29</td>
+          <td>Coût pavé uni Montréal</td>
+          <td>Blog SEO</td>
+          <td>1,200 palabras</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Claude</span></td>
+          <td><span class="badge badge-gray">P3 MEDIA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-T02</td>
+          <td>Jul 31</td>
+          <td>Testimonio Montréal-Nord</td>
+          <td>Video UGC</td>
+          <td>30–45s</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">CapCut</span></td>
+          <td><span class="badge badge-gray">P3 MEDIA</span></td>
+        </tr>
+        <tr>
+          <td class="td-code">CA-H01 – CA-H03</td>
+          <td>Jul (diario)</td>
+          <td>Varios cours avant</td>
+          <td>Historias (×3)</td>
+          <td>15s c/u</td>
+          <td><span class="badge badge-ok">Brief listo ✅</span></td>
+          <td><span class="badge badge-info">Canva</span></td>
+          <td><span class="badge badge-gray">P3 MEDIA</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-ok">
+    <div class="callout-icon">📊</div>
+    <div class="callout-body">
+      <div class="callout-title">Resumen de la Matriz — Leyenda de herramientas IA</div>
+      <div class="callout-text">
+        <strong>CapCut:</strong> Montaje de Reels, edición de video, subtítulos automáticos, color grading, música.<br>
+        <strong>Canva:</strong> Diseño de carruseles, slides, historias, layouts de marca.<br>
+        <strong>Manus:</strong> Generación de imágenes fotorrealistas con IA para frames "Avant/Après", visualizaciones de proyectos.<br>
+        <strong>Claude:</strong> Redacción de blogs SEO, copy de posts en francés, revisión estratégica.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FASE 6 — FLUJO OPERATIVO
+══════════════════════════════════════════ -->
+<section id="fase6" class="phase">
+  <div class="phase-header">
+    <div class="phase-num">06</div>
+    <div class="phase-title-block">
+      <div class="phase-eyebrow">Fase 06 · Proceso</div>
+      <h2 class="phase-title">Flujo Operativo de Producción</h2>
+      <p class="phase-desc">Proceso completo desde el brief hasta la publicación y análisis. 11 pasos con responsable, tiempo estimado, herramienta y entregable de cada etapa.</p>
+    </div>
+  </div>
+
+  <div class="flow-container">
+    <!-- Row 1: Steps 1–3 -->
+    <div class="flow-row">
+      <div class="flow-step">
+        <div class="flow-step-num">PASO 01</div>
+        <div class="flow-step-title">Brief Estratégico</div>
+        <div class="flow-step-resp">Responsable: <span>Daniel</span></div>
+        <div class="flow-step-resp">Tiempo: <span>2 horas</span></div>
+        <div class="flow-step-tool">CLAUDE.MD</div>
+        <div class="flow-step-deliverable">Entregable: Brief aprobado con todos los campos completos</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-step-num">PASO 02</div>
+        <div class="flow-step-title">Revisión Estratégica</div>
+        <div class="flow-step-resp">Responsable: <span>Daniel</span></div>
+        <div class="flow-step-resp">Tiempo: <span>30 min</span></div>
+        <div class="flow-step-tool">Documento maestro</div>
+        <div class="flow-step-deliverable">Entregable: Checklist de producción validada (Fase 4)</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-step-num">PASO 03</div>
+        <div class="flow-step-title">Generación IA</div>
+        <div class="flow-step-resp">Responsable: <span>Manus / Canva / CapCut</span></div>
+        <div class="flow-step-resp">Tiempo: <span>1–2 horas</span></div>
+        <div class="flow-step-tool">IA generativa</div>
+        <div class="flow-step-deliverable">Entregable: Draft visual — imágenes, slides o video</div>
+      </div>
+    </div>
+    <div class="flow-arrow-down">↓</div>
+    <!-- Row 2: Steps 4–6 (reverse direction for snake layout) -->
+    <div class="flow-row">
+      <div class="flow-step" style="background:rgba(30,58,32,0.85)">
+        <div class="flow-step-num">PASO 06</div>
+        <div class="flow-step-title">Aprobación Final</div>
+        <div class="flow-step-resp">Responsable: <span>Daniel</span></div>
+        <div class="flow-step-resp">Tiempo: <span>15 min</span></div>
+        <div class="flow-step-tool">—</div>
+        <div class="flow-step-deliverable">Entregable: OK final — pieza lista para diseño final</div>
+      </div>
+      <div class="flow-arrow">←</div>
+      <div class="flow-step" style="background:rgba(30,58,32,0.85)">
+        <div class="flow-step-num">PASO 05</div>
+        <div class="flow-step-title">Corrección IA</div>
+        <div class="flow-step-resp">Responsable: <span>IA (Manus/Canva)</span></div>
+        <div class="flow-step-resp">Tiempo: <span>30 min</span></div>
+        <div class="flow-step-tool">Prompt de corrección</div>
+        <div class="flow-step-deliverable">Entregable: Versión corregida con feedback aplicado</div>
+      </div>
+      <div class="flow-arrow">←</div>
+      <div class="flow-step" style="background:rgba(30,58,32,0.85)">
+        <div class="flow-step-num">PASO 04</div>
+        <div class="flow-step-title">Control de Calidad</div>
+        <div class="flow-step-resp">Responsable: <span>Daniel</span></div>
+        <div class="flow-step-resp">Tiempo: <span>30 min</span></div>
+        <div class="flow-step-tool">Checklist 12 puntos</div>
+        <div class="flow-step-deliverable">Entregable: Feedback detallado por punto (Fase 7)</div>
+      </div>
+    </div>
+    <div class="flow-arrow-down" style="margin-left:auto; margin-right:32px">↓</div>
+    <!-- Row 3: Steps 7–9 -->
+    <div class="flow-row">
+      <div class="flow-step" style="background:var(--vm)">
+        <div class="flow-step-num">PASO 07</div>
+        <div class="flow-step-title">Diseño Final</div>
+        <div class="flow-step-resp">Responsable: <span>Canva / CapCut</span></div>
+        <div class="flow-step-resp">Tiempo: <span>1 hora</span></div>
+        <div class="flow-step-tool">Canva / CapCut export</div>
+        <div class="flow-step-deliverable">Entregable: Asset final exportado en resolución correcta</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:var(--vm)">
+        <div class="flow-step-num">PASO 08</div>
+        <div class="flow-step-title">Programación Meta</div>
+        <div class="flow-step-resp">Responsable: <span>Daniel</span></div>
+        <div class="flow-step-resp">Tiempo: <span>15 min</span></div>
+        <div class="flow-step-tool">Meta Business Suite</div>
+        <div class="flow-step-deliverable">Entregable: Post programado en fecha y hora correcta</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:var(--vm)">
+        <div class="flow-step-num">PASO 09</div>
+        <div class="flow-step-title">Publicación Automática</div>
+        <div class="flow-step-resp">Responsable: <span>Meta (automatizado)</span></div>
+        <div class="flow-step-resp">Tiempo: <span>Automático</span></div>
+        <div class="flow-step-tool">Meta Ads Manager</div>
+        <div class="flow-step-deliverable">Entregable: Post publicado y activo en plataforma</div>
+      </div>
+    </div>
+    <div class="flow-arrow-down">↓</div>
+    <!-- Row 4: Steps 10–11 -->
+    <div class="flow-row">
+      <div class="flow-step" style="background:var(--or-dim); flex: 0.5">
+        <div class="flow-step-num">PASO 10</div>
+        <div class="flow-step-title">Análisis de Métricas</div>
+        <div class="flow-step-resp">Responsable: <span>Daniel</span></div>
+        <div class="flow-step-resp">Tiempo: <span>1 hora / semana</span></div>
+        <div class="flow-step-tool">Meta Ads Manager</div>
+        <div class="flow-step-deliverable">Entregable: Informe de métricas — CTR, CPL, engagement</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:var(--or-dim); flex: 0.5">
+        <div class="flow-step-num">PASO 11</div>
+        <div class="flow-step-title">Retroalimentación</div>
+        <div class="flow-step-resp">Responsable: <span>Daniel + IA</span></div>
+        <div class="flow-step-resp">Tiempo: <span>30 min</span></div>
+        <div class="flow-step-tool">Claude + brief actualizado</div>
+        <div class="flow-step-deliverable">Entregable: Brief actualizado con aprendizajes para siguiente pieza</div>
+      </div>
+      <div class="flow-arrow" style="opacity:0.3">→</div>
+      <div class="flow-step" style="background:rgba(200,164,90,0.12); border: 2px dashed var(--or); color: var(--n); flex: 0.5">
+        <div class="flow-step-num" style="color:var(--or)">LOOP</div>
+        <div class="flow-step-title" style="color:var(--vf)">Siguiente Pieza</div>
+        <div class="flow-step-resp" style="color:var(--g)">El sistema itera — cada pieza retroalimenta la siguiente</div>
+        <div class="flow-step-tool" style="background:rgba(200,164,90,0.2); color:var(--j)">Volver a Paso 01</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn" style="margin-top:32px">
+    <div class="callout-icon">⏱️</div>
+    <div class="callout-body">
+      <div class="callout-title">Tiempo total por pieza — estimación realista</div>
+      <div class="callout-text">
+        <strong>Reel completo:</strong> Brief (hecho) + Manus 1h + CapCut 2h + revisión 30min + corrección 30min + aprobación 15min + export 15min + programación 15min = <strong>~5 horas de trabajo activo</strong><br><br>
+        <strong>Carrusel completo:</strong> Brief (hecho) + Manus 30min + Canva 1.5h + revisión 30min + corrección 30min + aprobación 15min + export 15min + programación 15min = <strong>~3.5 horas de trabajo activo</strong><br><br>
+        <strong>Blog SEO:</strong> Brief (hecho) + Claude 45min + revisión 30min + publicación web 30min = <strong>~2 horas de trabajo activo</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FASE 7 — CONTROL DE CALIDAD
+══════════════════════════════════════════ -->
+<section id="fase7" class="phase">
+  <div class="phase-header">
+    <div class="phase-num">07</div>
+    <div class="phase-title-block">
+      <div class="phase-eyebrow">Fase 07 · Calidad</div>
+      <h2 class="phase-title">Sistema de Control de Calidad — 12 Puntos</h2>
+      <p class="phase-desc">Checklist obligatoria para cada pieza de contenido antes de aprobación. Una pieza que no pasa todos los puntos no se programa. Sin excepciones.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-dark">
+    <div class="callout-icon">🎯</div>
+    <div class="callout-body">
+      <div class="callout-title" style="color:var(--or)">Benchmark de referencia — Reel K-1815 Terrebonne</div>
+      <div class="callout-text" style="color:rgba(255,255,255,0.8)">
+        El estándar a superar: <strong style="color:var(--or)">2,122 vistas</strong> · <strong style="color:var(--or)">$0.45 CAD/clic</strong> · <strong style="color:var(--or)">14 segundos</strong> de duración promedio de visualización. Este reel cumplió los 12 puntos de la checklist. Úsalo como calibración para evaluar si una pieza nueva está al mismo nivel antes de publicar.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Los 12 puntos obligatorios — aplicar a cada pieza antes de aprobar</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <ul class="checklist">
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">01</span>
+      <div class="check-label">
+        <strong>Stop Scroll — Gancho visual en menos de 3 segundos</strong><br>
+        Los primeros 3 segundos deben obligar al usuario a detenerse. El frame inicial, el movimiento o el texto deben generar una pregunta o una emoción inmediata. Testear: ¿detendrías el scroll si no supieras qué es? Si no, el gancho no funciona.
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">02</span>
+      <div class="check-label">
+        <strong>Claridad del mensaje — Una sola idea por pieza</strong><br>
+        La pieza comunica exactamente un mensaje. Al terminar de ver, el usuario sabe qué servicio es, cuál es el beneficio y qué debe hacer. Si hay más de un mensaje principal, la pieza está sobrecargada.
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">03</span>
+      <div class="check-label">
+        <strong>Adaptación a Montréal — Referencias locales correctas</strong><br>
+        La arquitectura, los barrios mencionados, el clima y el vocabulario son reconocibles para un propietario del Gran Montréal. No hay referencias a otras ciudades canadienses. El estilo visual corresponde a casas québécoises reales (bungalows 1970–1990, duplex, maisons de ville).
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">04</span>
+      <div class="check-label">
+        <strong>Oferta clara — El beneficio es concreto y cuantificable</strong><br>
+        La propuesta de valor es específica: "en 4 jours", "devis gratuit en 24h", "garantie 5 ans". No frases genéricas como "meilleure qualité" o "service exceptionnel". El usuario debe saber exactamente qué recibe.
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">05</span>
+      <div class="check-label">
+        <strong>CTA visible y claro — Una sola acción pedida</strong><br>
+        El Call to Action es visible, legible y pide una sola acción. El botón o texto dice exactamente qué pasa al hacer clic: "Obtenez votre soumission gratuite", "Appelez maintenant", "Voir nos réalisations". No CTAs dobles ni ambiguos.
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">06</span>
+      <div class="check-label">
+        <strong>Branding correcto — Verde <code style="background:var(--vf);color:var(--or);padding:1px 5px;border-radius:2px">#1E3A20</code> y oro <code style="background:var(--or);color:var(--vf);padding:1px 5px;border-radius:2px">#C8A45A</code></strong><br>
+        Los colores de marca están presentes y son exactos. El logo aparece en posición correcta (último frame para Reels, slide final o esquina para carruseles). La tipografía es Georgia para títulos y el sistema sans-serif del sistema para textos de apoyo.
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">07</span>
+      <div class="check-label">
+        <strong>Calidad visual — Mínimo 1080p, bien iluminado, sin artefactos IA</strong><br>
+        La resolución es mínimo 1080px en el eje corto. Las imágenes no tienen bordes difusos, manos mal generadas, texto ilegible incrustado en la imagen ni artefactos típicos de IA. La iluminación es natural o cálida, nunca sobreexpuesta. Verificar especialmente los detalles: bordes del balcón, pavés, plantas.
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">08</span>
+      <div class="check-label">
+        <strong>Coherencia con el brief estratégico</strong><br>
+        La pieza final corresponde al brief de la Fase 4. El objetivo de negocio, el servicio mostrado, la audiencia objetivo y la etapa del embudo son los que se aprobaron en el brief. Si la pieza derivó durante la producción, validar que el cambio es una mejora y actualizarlo en el brief.
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">09</span>
+      <div class="check-label">
+        <strong>Coherencia con la campaña — Balcones vs. Cour Avant sin mezcla</strong><br>
+        Una pieza de la campaña Balcones no muestra cours avant, ni viceversa. El servicio es inequívoco visualmente. Las piezas de una misma campaña tienen coherencia de estilo entre sí (paleta de colores de las imágenes, tipografía, tono del copy).
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">10</span>
+      <div class="check-label">
+        <strong>Formato correcto — Especificaciones técnicas Meta Ads</strong><br>
+        Reels: 9:16 (1080×1920px), máximo 60s para orgánico / 15s para stories paid. Carruseles: 1:1 (1080×1080px) o 4:5 (1080×1350px), máximo 10 slides. Historias: 9:16 (1080×1920px). Verificar con Meta Creative Hub antes de programar.
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">11</span>
+      <div class="check-label">
+        <strong>Idioma francés correcto — Sin errores gramaticales ni calcos del español</strong><br>
+        El copy está redactado en francés québécois estándar. No hay hispanismos, anglicismos innecesarios ni errores gramaticales. La conjugación de verbos es correcta. Validar con corrector nativo o Antidote si hay dudas. Prestar atención especial a: accord du participe passé, subjonctif, negaciones con "ne...pas".
+      </div>
+    </li>
+    <li>
+      <div class="check-box"></div>
+      <span class="check-num">12</span>
+      <div class="check-label">
+        <strong>Cumplimiento de políticas Meta — Sin texto excesivo ni claims falsos</strong><br>
+        El texto superpuesto en imágenes no excede el 20% del área visual (regla Meta). No hay claims falsos de resultados garantizados (ej: "vous économiserez 50%"). No hay comparación directa con competidores. No hay imágenes de "antes" que muestren situaciones de negligencia extrema. Verificar con Meta Ads Policy antes de publicar.
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FASE 8 — PREPARACIÓN PARA MANUS
+══════════════════════════════════════════ -->
+<section id="fase8" class="phase">
+  <div class="phase-header">
+    <div class="phase-num">08</div>
+    <div class="phase-title-block">
+      <div class="phase-eyebrow">Fase 08 · Producción IA</div>
+      <h2 class="phase-title">Preparación para Manus — 5 Prompts Completos</h2>
+      <p class="phase-desc">Prompts listos para ejecutar en Manus. Copiar el prompt exactamente, sin modificaciones. Cada prompt está optimizado para el estilo visual de Jardín Ideal y el mercado québécois.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-icon">⚙️</div>
+    <div class="callout-body">
+      <div class="callout-title">Instrucciones de uso de Manus para estos prompts</div>
+      <div class="callout-text">1. Abrir Manus · 2. Seleccionar modo "Génération d'image" · 3. Copiar el prompt completo · 4. Ajustar resolución según especificación de cada prompt · 5. Generar 3–4 variantes · 6. Seleccionar la mejor con base en el punto 7 de la checklist (Fase 7) · 7. Exportar en PNG o JPG alta calidad.</div>
+    </div>
+  </div>
+
+  <!-- Prompt 1 -->
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-header-label">PROMPT 1 — B-R01 · Frame "Avant" · Balcon bois dégradé</span>
+      <span style="font-family:'Courier New',monospace;font-size:10px;color:rgba(200,164,90,0.6)">1080×1920px · PNG · Style photoréaliste</span>
+    </div>
+    <div class="prompt-body"><span class="pk">OBJETIVO:</span> <span class="pv">Mostrar el estado deteriorado de un balcón de madera tratada — frame "Avant" para Reel B-R01.</span>
+
+<span class="pk">TIPO DE CLIENTE:</span> <span class="pv">Propietario 40–55 ans, maison unifamiliale bungalow, Laval ou Rive-Nord de Montréal.</span>
+
+<span class="pk">CONTEXTO:</span> <span class="pv">Bungalow québécois typique des années 1980–1990, quartier résidentiel calme, rue avec arbres matures.</span>
+
+<span class="pk">STYLE VISUEL:</span> <span class="pv">Photoréaliste. Lumière naturelle du matin (8h–9h), ciel légèrement nuageux, couleurs froides et désaturées pour communiquer l'état "avant" — gris, beige usé, brun terne.</span>
+
+<span class="pk">ÉMOTION RECHERCHÉE:</span> <span class="pv">Inconfort, gêne sociale, urgence de changer. Le spectateur doit ressentir "j'aurais honte d'avoir ça chez moi".</span>
+
+<span class="pk">ÉLÉMENTS OBLIGATOIRES:</span>
+<span class="pv">- Balcon en bois traité grisâtre, planches gondolées ou légèrement fissurées
+- Vis rouillées visibles dans le bois
+- Une chaise de jardin plastique usée et décolorée (blanc ou vert pâle)
+- Garde-corps en bois avec quelques barreaux légèrement inclinés
+- Arrière-plan: façade de maison en brique ou revêtement vinyle typique Laval
+- Gazon légèrement négligé autour de la base du balcon</span>
+
+<span class="pk">ÉLÉMENTS INTERDITS:</span>
+<span class="pv">- Piscine visible dans l'image
+- Logo ou texte dans l'image
+- Personnes ou animaux
+- Neige ou glace
+- Maison en mauvais état (seulement le balcon est dégradé, la maison est correcte)
+- Logos de marques concurrentes</span>
+
+<span class="pk">CADRAGE:</span> <span class="pv">Plan légèrement en contre-plongée depuis le niveau du sol, montrant le balcon au complet avec un peu de façade et de ciel.</span>
+
+<span class="pk">RÉSOLUTION:</span> <span class="pv">1080×1920px (9:16 vertical) — format PNG ou JPG haute qualité.</span>
+
+<span class="pk">NOTE DE CONTINUITÉ:</span> <span class="pv">Cette image sera le "Avant". Garder les mêmes éléments d'architecture (même maison, même porte, même emplacement) pour le Prompt 2 "Après".</span></div>
+  </div>
+
+  <!-- Prompt 2 -->
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-header-label">PROMPT 2 — B-R01 · Frame "Après" · Balcon composite neuf</span>
+      <span style="font-family:'Courier New',monospace;font-size:10px;color:rgba(200,164,90,0.6)">1080×1920px · PNG · Continuidad con Prompt 1</span>
+    </div>
+    <div class="prompt-body"><span class="pk">OBJETIVO:</span> <span class="pv">Mostrar el resultado final del balcón composite instalado — frame "Après" para Reel B-R01. Misma casa que el Prompt 1, transformada.</span>
+
+<span class="pk">CONTINUITÉ AVEC PROMPT 1:</span> <span class="pv">Même maison, même emplacement du balcon, même angle de prise de vue. Seul le balcon a changé. La façade de la maison est identique.</span>
+
+<span class="pk">STYLE VISUEL:</span> <span class="pv">Photoréaliste. Lumière dorée de fin d'après-midi (17h–18h), ciel bleu avec quelques nuages, couleurs chaudes et saturées — bois composite chaud, verdure vive, lumières dorées. Contraste fort avec le Prompt 1.</span>
+
+<span class="pk">ÉMOTION RECHERCHÉE:</span> <span class="pv">Désir, satisfaction, fierté de propriétaire. "Je veux ça chez moi". Sentiment de luxe accessible.</span>
+
+<span class="pk">ÉLÉMENTS OBLIGATOIRES:</span>
+<span class="pv">- Balcon en composite gris anthracite foncé (style Trex ou TimberTech)
+- Garde-corps métallique fin et élégant, noir mat ou acier inoxydable
+- 2–3 plantes en pots modernes (Monstera, ornementales)
+- Éclairage LED sous la rampe, lumière chaude visible
+- Vue sur jardin arrière bien entretenu
+- Chaises de jardin modernes en aluminium noir ou teck</span>
+
+<span class="pk">RÉFÉRENCE ESTHÉTIQUE:</span> <span class="pv">Style Techo Bloc / Permacon — luxueux mais résidentiel, accessible, pas ostentatoire. Quebec suburb upscale.</span>
+
+<span class="pk">ÉLÉMENTS INTERDITS:</span>
+<span class="pv">- Prix visibles dans l'image
+- Personnes, enfants, animaux
+- Neige, automne (saison estivale uniquement)
+- Logo ou texte intégré dans l'image</span>
+
+<span class="pk">CADRAGE:</span> <span class="pv">Même angle que Prompt 1 — légère contre-plongée. Le spectateur doit reconnaître instantanément que c'est la même maison.</span>
+
+<span class="pk">RÉSOLUTION:</span> <span class="pv">1080×1920px (9:16 vertical) — format PNG ou JPG haute qualité.</span></div>
+  </div>
+
+  <!-- Prompt 3 -->
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-header-label">PROMPT 3 — CA-R01 · "Cour avant transformée" · Dalle béton → Pavé uni</span>
+      <span style="font-family:'Courier New',monospace;font-size:10px;color:rgba(200,164,90,0.6)">1080×1920px · PNG · FOMO barrio · Dos imágenes yuxtapuestas</span>
+    </div>
+    <div class="prompt-body"><span class="pk">OBJETIVO:</span> <span class="pv">Entrada transformada — béton fissuré (Avant) → pavé uni Techo Bloc (Après). Dos images juxtaposées en format 9:16, côte à côte.</span>
+
+<span class="pk">COMPOSITION:</span> <span class="pv">Image divisée verticalement en deux: côté GAUCHE = "Avant" (dégradé), côté DROIT = "Après" (neuf). Même maison, même angle, même lumière de base, seule l'entrée change.</span>
+
+<span class="pk">QUARTIER DE RÉFÉRENCE:</span> <span class="pv">Saint-Léonard ou Montréal-Nord — maison de ville de 2 étages, revêtement en brique rouge ou beige, porte de garage intégrée, rue résidentielle dense.</span>
+
+<span class="pk">CÔTÉ GAUCHE — "AVANT":</span>
+<span class="pv">- Dalle de béton fissurée et tachée (taches d'huile, fissures en réseau)
+- Mauvaises herbes dans les fissures
+- Allée légèrement affaissée vers la rue
+- Porte de garage vieillissante
+- Lumière froide et terne</span>
+
+<span class="pk">CÔTÉ DROIT — "APRÈS":</span>
+<span class="pv">- Allée en pavé uni Techo Bloc Roma couleur gris charcoal
+- Bordures droites en pierre naturelle taillée
+- Haies latérales bien taillées
+- Lumière de soirée dorée (18h–19h)
+- Jardinières latérales avec plantes ornementales
+- Porte de garage neuve ou propre</span>
+
+<span class="pk">LIGNE DE SÉPARATION:</span> <span class="pv">Trait fin doré (#C8A45A) au centre entre les deux côtés, fin et élégant (3–4 pixels).</span>
+
+<span class="pk">TEXTE MINIMAL AUTORISÉ:</span>
+<span class="pv">- "AVANT" en haut à gauche, police blanche bold, petite
+- "APRÈS" en haut à droite, même police
+- Rien d'autre</span>
+
+<span class="pk">ÉMOTION:</span> <span class="pv">FOMO ("mes voisins l'ont déjà fait"), orgueil du quartier, désir d'appartenance sociale. Le côté "Après" doit sembler nettement supérieur mais réalisable.</span>
+
+<span class="pk">RÉSOLUTION:</span> <span class="pv">1080×1920px (9:16 vertical) — PNG haute qualité.</span></div>
+  </div>
+
+  <!-- Prompt 4 -->
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-header-label">PROMPT 4 — CA-C01 · Carrusel slide Avant/Après · Social media card 1:1</span>
+      <span style="font-family:'Courier New',monospace;font-size:10px;color:rgba(200,164,90,0.6)">1080×1080px · PNG · Split image · Línea dorada central</span>
+    </div>
+    <div class="prompt-body"><span class="pk">OBJETIVO:</span> <span class="pv">Slide individuel Avant/Après pour carrusel CA-C01. Format carré 1:1, split vertical au centre, ligne dorée séparatrice.</span>
+
+<span class="pk">FORMAT:</span> <span class="pv">1:1 (1080×1080px). Image divisée en deux moitiés égales par une ligne centrale verticale dorée #C8A45A de 4–5 pixels.</span>
+
+<span class="pk">CÔTÉ GAUCHE — "AVANT":</span>
+<span class="pv">- Allée ou cour avant en béton fissuré et sale
+- Couleurs froides et désaturées
+- Mauvaises herbes, taches, usure visible</span>
+
+<span class="pk">CÔTÉ DROIT — "APRÈS":</span>
+<span class="pv">- Allée en pavé uni Techo Bloc, propre et neuve
+- Couleurs chaudes, lumière de soirée
+- Bordures nettes, plantes bien taillées</span>
+
+<span class="pk">TEXTE AUTORISÉ UNIQUEMENT:</span>
+<span class="pv">- "Avant" en police blanche bold sur fond sombre, coin supérieur gauche
+- "Après" en police blanche bold sur fond clair, coin supérieur droit
+- Aucun autre texte, chiffre ou logo dans cette image</span>
+
+<span class="pk">STYLE:</span> <span class="pv">Photoréaliste. Rendu propre et professionnel. Pas de filtres excessifs. Maison québécoise résidentielle standard.</span>
+
+<span class="pk">ÉLÉMENTS INTERDITS:</span>
+<span class="pv">- Logo Jardín Ideal dans l'image (sera ajouté dans Canva)
+- Prix ou chiffres
+- Personnes, enfants, animaux
+- Neige ou feuilles d'automne</span>
+
+<span class="pk">RÉSOLUTION:</span> <span class="pv">1080×1080px — PNG haute qualité.</span>
+
+<span class="pk">USAGE:</span> <span class="pv">Cette image sera le slide 2 du carrusel CA-C01. Canva l'intégrera dans le template avec la typographie de marque autour.</span></div>
+  </div>
+
+  <!-- Prompt 5 -->
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-header-label">PROMPT 5 — B-C01 · Carrusel Slide 1 (Portada) · "Bois ou composite?"</span>
+      <span style="font-family:'Courier New',monospace;font-size:10px;color:rgba(200,164,90,0.6)">1080×1350px · PNG · Tipografía dominant · Sin imágenes de balcón</span>
+    </div>
+    <div class="prompt-body"><span class="pk">OBJETIVO:</span> <span class="pv">Slide de portada pour le carrusel B-C01 "Bois vs Composite". Slide uniquement typographique et textural — aucune photo de balcon.</span>
+
+<span class="pk">FORMAT:</span> <span class="pv">4:5 (1080×1350px). Slide de couverture de carrusel.</span>
+
+<span class="pk">BACKGROUND:</span> <span class="pv">Vert foncé solide #1E3A20 avec une texture subtile de bois composite en arrière-plan — texture visible à 15–20% d'opacité seulement, comme une impression en profondeur.</span>
+
+<span class="pk">TEXTE PRINCIPAL:</span>
+<span class="pv">- "Bois ou composite?" en très grand format, centré, couleur blanc pur #FFFFFF
+- Typographie serif bold, style Georgia ou similaire
+- Corps du texte: environ 90–100px dans le rendu final
+- Légère ombre portée pour la lisibilité</span>
+
+<span class="pk">SOUS-TEXTE:</span>
+<span class="pv">- "Ce que personne ne vous dit" en couleur or #C8A45A
+- Taille plus petite que le titre, environ 30–35px dans le rendu
+- Placé directement sous le titre principal
+- Même alignement centré</span>
+
+<span class="pk">ICÔNE DE NAVIGATION:</span>
+<span class="pv">- Flèche "swiper à droite" →  en blanc, coin inférieur droit
+- Style minimaliste, ligne simple
+- Indique qu'il faut faire défiler le carrusel</span>
+
+<span class="pk">ACCENT DÉCORATIF:</span>
+<span class="pv">- Ligne horizontale fine en or #C8A45A sous le titre, centré
+- Longueur: environ 60–80px
+- Épaisseur: 2px</span>
+
+<span class="pk">ÉLÉMENTS INTERDITS:</span>
+<span class="pv">- Photos de balcon dans ce slide (c'est la couverture, image + texte arrivent ensuite)
+- Logo Jardín Ideal (sera le dernier slide)
+- Trop de texte — seulement les deux lignes décrites
+- Couleurs autres que vert foncé / blanc / or</span>
+
+<span class="pk">RÉSOLUTION:</span> <span class="pv">1080×1350px (4:5) — PNG haute qualité. Ce slide sera importé directement dans Canva.</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FASE 9 — SISTEMA DE MÉTRICAS
+══════════════════════════════════════════ -->
+<section id="fase9" class="phase">
+  <div class="phase-header">
+    <div class="phase-num">09</div>
+    <div class="phase-title-block">
+      <div class="phase-eyebrow">Fase 09 · Medición</div>
+      <h2 class="phase-title">Sistema de Métricas y Alertas</h2>
+      <p class="phase-desc">Objetivos cuantitativos por formato, umbrales de alerta y protocolo de respuesta cuando una pieza no alcanza el rendimiento esperado.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-dark">
+    <div class="callout-icon">📈</div>
+    <div class="callout-body">
+      <div class="callout-title" style="color:var(--or)">Benchmark de referencia — Reel K-1815 Terrebonne</div>
+      <div class="callout-text" style="color:rgba(255,255,255,0.8)">
+        <strong style="color:var(--or)">2,122 vistas</strong> · <strong style="color:var(--or)">$0.45 CAD/clic</strong> · <strong style="color:var(--or)">14 segundos</strong> duración promedio de visualización. Este es el estándar mínimo. Cualquier Reel que supere estos tres indicadores se considera un éxito y debe reutilizarse como paid ad.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Objetivos por tipo de contenido</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo de contenido</th>
+          <th>CTR objetivo</th>
+          <th>CPL objetivo</th>
+          <th>CPC objetivo</th>
+          <th>Hook Rate</th>
+          <th>Hold Rate 3s</th>
+          <th>Hold completo</th>
+          <th>Engagement Rate</th>
+          <th>Umbral "boost con paid"</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Reel orgánico</strong></td>
+          <td>—</td>
+          <td>&lt;$80 CAD</td>
+          <td>—</td>
+          <td class="metric-highlight">&gt;35%</td>
+          <td>&gt;60%</td>
+          <td>&gt;30%</td>
+          <td>&gt;4%</td>
+          <td>Si CTR&gt;3% o Engagement&gt;5% → boost con paid</td>
+        </tr>
+        <tr>
+          <td><strong>Reel paid (campaña)</strong></td>
+          <td class="metric-highlight">&gt;1.5%</td>
+          <td>&lt;$80 CAD</td>
+          <td>&lt;$1.50 CAD</td>
+          <td>&gt;35%</td>
+          <td>&gt;60%</td>
+          <td>&gt;25%</td>
+          <td>&gt;3%</td>
+          <td>Si CPL&lt;$60 → escalar budget</td>
+        </tr>
+        <tr>
+          <td><strong>Carrusel orgánico</strong></td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>&gt;4%</td>
+          <td>Si saves&gt;20 o engagement&gt;4% → boost con paid</td>
+        </tr>
+        <tr>
+          <td><strong>Carrusel paid</strong></td>
+          <td class="metric-highlight">&gt;0.8%</td>
+          <td>&lt;$90 CAD</td>
+          <td>&lt;$1.80 CAD</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>&gt;3%</td>
+          <td>Si CPL&lt;$70 → escalar budget</td>
+        </tr>
+        <tr>
+          <td><strong>Testimonio (Reel UGC)</strong></td>
+          <td class="metric-highlight">&gt;2%</td>
+          <td>&lt;$70 CAD</td>
+          <td>&lt;$1.20 CAD</td>
+          <td>&gt;30%</td>
+          <td>&gt;55%</td>
+          <td>&gt;35%</td>
+          <td>&gt;5%</td>
+          <td>Si CPL&lt;$60 → escalar budget agresivamente</td>
+        </tr>
+        <tr>
+          <td><strong>Blog SEO</strong></td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Tráfico sostenido</td>
+          <td>Avg read time&gt;3min + conversión&gt;2% → amplificar con paid</td>
+        </tr>
+        <tr>
+          <td><strong>Historia / Story</strong></td>
+          <td>Swipe up&gt;5%</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Completion&gt;70%</td>
+          <td>—</td>
+          <td>Replies&gt;2%</td>
+          <td>Si swipe up&gt;8% → replicar en más historias</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Sistema de alertas — Protocolo de respuesta por tiempo</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Momento</th>
+          <th>Condición de alerta</th>
+          <th>Diagnóstico</th>
+          <th>Acción inmediata</th>
+          <th>Plazo de acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="risk-crit">
+          <td><strong>J+3</strong> (3 días después de publicar)</td>
+          <td><span class="risk-high">CTR &lt; 0.5%</span></td>
+          <td>Problema de gancho o creatividad — el contenido no genera interés en los primeros 3 segundos</td>
+          <td>Pausar campaña. Analizar Hook Rate. Revisar audiencia. Considerar nuevo creative.</td>
+          <td>Mismo día de detección</td>
+        </tr>
+        <tr>
+          <td><strong>J+7</strong> (7 días después de publicar)</td>
+          <td><span class="risk-high">CPL &gt; $120 CAD</span></td>
+          <td>Copy o audiencia incorrectos — el lead generation no está funcionando</td>
+          <td>Revisar copy del ad. Cambiar creative (probar versión B). Testear nueva audiencia lookalike.</td>
+          <td>24 horas</td>
+        </tr>
+        <tr>
+          <td><strong>J+7</strong></td>
+          <td><span class="risk-med">CPL entre $80–$120 CAD</span></td>
+          <td>Rendimiento por debajo del objetivo pero no crítico — puede mejorar con optimización</td>
+          <td>Ajustar segmentación de audiencia. Testear headline alternativo. Revisar landing page.</td>
+          <td>72 horas</td>
+        </tr>
+        <tr class="risk-crit">
+          <td><strong>J+14</strong> (14 días después)</td>
+          <td><span class="risk-high">CPL &gt; $100 CAD constante</span></td>
+          <td>Campaña estructuralmente deficiente — no es un problema de optimización menor</td>
+          <td>Pausar campaña completa. Hacer revisión estratégica completa (Fases 1–3). Replantear brief.</td>
+          <td>Antes de invertir más presupuesto</td>
+        </tr>
+        <tr>
+          <td><strong>J+3</strong></td>
+          <td><span class="risk-med">Hook Rate &lt; 20%</span></td>
+          <td>Los primeros 3 segundos no funcionan — el hook visual o verbal es débil</td>
+          <td>Crear versión alternativa del gancho. Testear A/B. Priorizar según benchmark K-1815.</td>
+          <td>48 horas</td>
+        </tr>
+        <tr>
+          <td><strong>J+30</strong></td>
+          <td><span class="risk-med">Engagement &lt; 2% sostenido</span></td>
+          <td>Contenido no resuena con la audiencia a largo plazo</td>
+          <td>Revisar relevancia del tema. Cambiar tipo de contenido (reel → carrusel). Explorar nuevo servicio.</td>
+          <td>Próximo ciclo de producción</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-icon">💡</div>
+    <div class="callout-body">
+      <div class="callout-title">Protocolo de A/B testing desde el día 1</div>
+      <div class="callout-text">
+        Para cada Reel paid, crear dos versiones del anuncio con el mismo creative pero diferente:<br>
+        <strong>Versión A:</strong> Headline enfocado en velocidad — "Transformé en 4 jours"<br>
+        <strong>Versión B:</strong> Headline enfocado en precio — "Devis gratuit — aucun engagement"<br><br>
+        Dejar correr ambas versiones con $5 CAD/día por 5 días. La versión con CPL más bajo recibe el 80% del presupuesto restante. Este proceso debe aplicarse a TODAS las campañas de julio desde el primer día de publicación.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FASE 10 — ENTREGABLE FINAL
+══════════════════════════════════════════ -->
+<section id="fase10" class="phase">
+  <div class="phase-header">
+    <div class="phase-num">10</div>
+    <div class="phase-title-block">
+      <div class="phase-eyebrow">Fase 10 · Entregable Final</div>
+      <h2 class="phase-title">Resumen Ejecutivo del Sistema</h2>
+      <p class="phase-desc">Estado consolidado del sistema, activos disponibles, elementos faltantes críticos, calendario de julio y próximos 5 pasos inmediatos.</p>
+    </div>
+  </div>
+
+  <!-- Executive summary boxes -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:32px">
+    <div style="background:var(--vf);color:var(--w);border-radius:6px;padding:20px 22px;text-align:center">
+      <div style="font-family:Georgia,serif;font-size:48px;font-weight:700;color:var(--or);line-height:1">85%</div>
+      <div style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px">Brief del sistema completo</div>
+    </div>
+    <div style="background:var(--rc);border:1px solid rgba(184,50,50,0.2);border-radius:6px;padding:20px 22px;text-align:center">
+      <div style="font-family:Georgia,serif;font-size:48px;font-weight:700;color:var(--r);line-height:1">0%</div>
+      <div style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--r);margin-top:4px">Producción visual completada</div>
+    </div>
+    <div style="background:var(--vb);border:1px solid rgba(61,107,66,0.2);border-radius:6px;padding:20px 22px;text-align:center">
+      <div style="font-family:Georgia,serif;font-size:48px;font-weight:700;color:var(--vf);line-height:1">28</div>
+      <div style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--vm);margin-top:4px">Documentos estratégicos completos</div>
+    </div>
+    <div style="background:var(--jc);border:1px solid rgba(200,133,10,0.2);border-radius:6px;padding:20px 22px;text-align:center">
+      <div style="font-family:Georgia,serif;font-size:48px;font-weight:700;color:var(--j);line-height:1">31</div>
+      <div style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--j);margin-top:4px">Piezas de contenido en cola</div>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Elementos faltantes críticos — ordenados por prioridad</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Prioridad</th>
+          <th>Elemento faltante</th>
+          <th>Impacto si no se hace</th>
+          <th>Responsable</th>
+          <th>Deadline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="risk-crit">
+          <td><span class="badge badge-error">🔴 CRÍTICO</span></td>
+          <td><strong>Copy redactado para cada pieza</strong> — texto real del post en francés. 31 piezas sin copy, 0 pueden publicarse sin él.</td>
+          <td>Ninguna pieza puede publicarse. Sistema paralizado.</td>
+          <td>Claude + Daniel</td>
+          <td><strong>Esta semana</strong></td>
+        </tr>
+        <tr class="risk-crit">
+          <td><span class="badge badge-error">🔴 CRÍTICO</span></td>
+          <td><strong>Creatividades producidas</strong> — 0 imágenes/videos generados de 31 piezas planificadas. Prompts listos en Fase 8.</td>
+          <td>0 contenido visual disponible para publicar en julio.</td>
+          <td>Manus + Canva + CapCut</td>
+          <td><strong>Semana del 23 jun</strong></td>
+        </tr>
+        <tr class="risk-crit">
+          <td><span class="badge badge-error">🔴 CRÍTICO</span></td>
+          <td><strong>Landing pages específicas por servicio</strong> — Balcones, Cour avant, Escaliers. Sin landing page, el CPL sube 30–50%.</td>
+          <td>CPL elevado, pérdida de conversión post-clic.</td>
+          <td>Daniel + dev</td>
+          <td><strong>25 junio</strong></td>
+        </tr>
+        <tr class="risk-crit">
+          <td><span class="badge badge-error">🔴 CRÍTICO</span></td>
+          <td><strong>Configuración Meta Pixel + eventos de conversión</strong> — sin Pixel no hay remarketing ni optimización para conversiones.</td>
+          <td>Imposible hacer remarketing. Optimización manual únicamente.</td>
+          <td>Daniel + dev</td>
+          <td><strong>25 junio</strong></td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-warn">🟠 ALTO</span></td>
+          <td><strong>Carpetas sistema vacías</strong> — 00_EMPRESA, 01_AGENTES, 02_PROMPTS, 06_CRM, 09_CHECKLISTS sin ningún archivo.</td>
+          <td>Agentes IA sin contexto para operar autónomamente.</td>
+          <td>Daniel + Claude</td>
+          <td>2 semanas</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-warn">🟠 ALTO</span></td>
+          <td><strong>Integración CRM con formularios Meta Lead Ads</strong> — los leads no se capturan automáticamente en el sistema.</td>
+          <td>Pérdida de leads. Respuesta manual demorada (&gt;2h = -60% conversión).</td>
+          <td>Daniel + técnico</td>
+          <td>2 semanas</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-warn">🟠 ALTO</span></td>
+          <td><strong>Coordinar clientes para testimonios B-T01 y CA-T01</strong> — requieren video real, no sustituible por IA.</td>
+          <td>Testimonios no disponibles para fechas 28–29 julio.</td>
+          <td>Daniel</td>
+          <td><strong>22 junio</strong></td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-gray">🟡 MEDIO</span></td>
+          <td><strong>Campañas para servicios sin contenido</strong> — Escaliers ($8–15K ticket), Murs de soutènement, Rénovation générale.</td>
+          <td>Ingresos de alto ticket sin canal de generación de leads.</td>
+          <td>Daniel + Claude</td>
+          <td>Agosto 2026</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-gray">🟡 MEDIO</span></td>
+          <td><strong>Contenido de remarketing y BOFU</strong> — 0 piezas diseñadas para audiencias calientes que ya visitaron el sitio.</td>
+          <td>CPL más alto de lo necesario — se pierde el segmento más convertidor.</td>
+          <td>Daniel + Claude</td>
+          <td>Julio semana 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Calendario julio 2026 — Todas las piezas con fecha</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="cal-grid">
+    <div class="cal-item camp-bal"><div class="cal-date">MARTES 1 JULIO</div><div class="cal-id">B-R01</div><div class="cal-title">"Avant/Après 4 jours" — Balcon composite</div><div class="cal-format-tag">Reel · 60s · BOFU</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">MIÉRCOLES 7 JULIO</div><div class="cal-id">B-C01</div><div class="cal-title">"Bois ou composite?" — Comparativa educativa</div><div class="cal-format-tag">Carrusel · 6 slides · TOFU</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">MIÉRCOLES 8 JULIO</div><div class="cal-id">CA-R01</div><div class="cal-title">"Transformation 3 jours" — Cour avant</div><div class="cal-format-tag">Reel · 45s · BOFU</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">JUEVES 9 JULIO</div><div class="cal-id">CA-C01</div><div class="cal-title">"5 cours avant transformées" — Social proof</div><div class="cal-format-tag">Carrusel · 7 slides · MOFU</div></div>
+    <div class="cal-item camp-bal"><div class="cal-date">LUNES 14 JULIO</div><div class="cal-id">B-R02</div><div class="cal-title">Terrasse composite — Autoridad de marca</div><div class="cal-format-tag">Reel · 45s · TOFU</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">MARTES 15 JULIO</div><div class="cal-id">CA-R02</div><div class="cal-title">Allée Techo Bloc Roma — Showcase producto</div><div class="cal-format-tag">Reel · 50s · TOFU</div></div>
+    <div class="cal-item camp-bal"><div class="cal-date">MIÉRCOLES 16 JULIO</div><div class="cal-id">B-C02</div><div class="cal-title">Balcon aluminium — Comparativa materiales</div><div class="cal-format-tag">Carrusel · 5 slides · MOFU</div></div>
+    <div class="cal-item camp-bal"><div class="cal-date">JUEVES 17 JULIO</div><div class="cal-id">B-B01</div><div class="cal-title">Guide entretien balcon composite Montréal</div><div class="cal-format-tag">Blog SEO · 1,200 palabras</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">VIERNES 17 JULIO</div><div class="cal-id">CA-C02</div><div class="cal-title">Pavé uni vs. béton — Durabilité québec</div><div class="cal-format-tag">Carrusel · 6 slides · MOFU</div></div>
+    <div class="cal-item camp-bal"><div class="cal-date">LUNES 21 JULIO</div><div class="cal-id">B-R03</div><div class="cal-title">Balcon composite couleur — Personnalisation</div><div class="cal-format-tag">Reel · 50s · TOFU</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">LUNES 21 JULIO</div><div class="cal-id">CA-B01</div><div class="cal-title">Guide pavé uni Montréal 2026 — SEO</div><div class="cal-format-tag">Blog SEO · 1,500 palabras</div></div>
+    <div class="cal-item camp-bal"><div class="cal-date">MIÉRCOLES 23 JULIO</div><div class="cal-id">B-C03</div><div class="cal-title">Processus installation balcon — 7 étapes</div><div class="cal-format-tag">Carrusel · 7 slides · MOFU</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">MIÉRCOLES 23 JULIO</div><div class="cal-id">CA-R03</div><div class="cal-title">"Ton voisin vient de refaire…" — FOMO</div><div class="cal-format-tag">Reel · 40s · MOFU→BOFU</div></div>
+    <div class="cal-item camp-bal"><div class="cal-date">JUEVES 24 JULIO</div><div class="cal-id">B-B02</div><div class="cal-title">Coût balcon composite Montréal — Pricing SEO</div><div class="cal-format-tag">Blog SEO · 1,500 palabras</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">JUEVES 24 JULIO</div><div class="cal-id">CA-C03</div><div class="cal-title">Résistance hivernale du pavé — Objections</div><div class="cal-format-tag">Carrusel · 5 slides · MOFU</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">LUNES 28 JULIO</div><div class="cal-id">CA-T01</div><div class="cal-title">Testimonio cliente Laval — Cour avant</div><div class="cal-format-tag">Video UGC · 35–45s · BOFU</div></div>
+    <div class="cal-item camp-bal"><div class="cal-date">MARTES 29 JULIO</div><div class="cal-id">B-R04</div><div class="cal-title">Balcon composite résistant hiver — Urgencia</div><div class="cal-format-tag">Reel · 40s · BOFU</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">MARTES 29 JULIO</div><div class="cal-id">CA-B02</div><div class="cal-title">Coût pavé uni Montréal 2026 — SEO</div><div class="cal-format-tag">Blog SEO · 1,200 palabras</div></div>
+    <div class="cal-item camp-bal"><div class="cal-date">MIÉRCOLES 30 JULIO</div><div class="cal-id">B-T01</div><div class="cal-title">Testimonio cliente Laval — Balcon</div><div class="cal-format-tag">Video UGC · 35–45s · BOFU</div></div>
+    <div class="cal-item camp-bal"><div class="cal-date">MIÉRCOLES 30 JULIO</div><div class="cal-id">B-C04</div><div class="cal-title">Garantie balcon composite 10 ans — Confianza</div><div class="cal-format-tag">Carrusel · 5 slides · BOFU</div></div>
+    <div class="cal-item camp-bal"><div class="cal-date">JUEVES 31 JULIO</div><div class="cal-id">B-B03</div><div class="cal-title">Balcon composite et hiver québécois — SEO</div><div class="cal-format-tag">Blog SEO · 1,000 palabras</div></div>
+    <div class="cal-item camp-ca"><div class="cal-date">JUEVES 31 JULIO</div><div class="cal-id">CA-T02</div><div class="cal-title">Testimonio cliente Montréal-Nord — Cour</div><div class="cal-format-tag">Video UGC · 30–45s · BOFU</div></div>
+  </div>
+
+  <div style="display:flex;gap:16px;margin:16px 0 32px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:16px;height:16px;background:var(--vb);border:1px solid rgba(61,107,66,0.3);border-radius:3px"></div><span style="font-size:12px;color:var(--g)">Campaña Balcones &amp; Terrasses</span></div>
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:16px;height:16px;background:var(--jc);border:1px solid rgba(200,133,10,0.3);border-radius:3px"></div><span style="font-size:12px;color:var(--g)">Campaña Cour Avant &amp; Allées</span></div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Próximos 5 pasos inmediatos — Esta semana</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="steps-list">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Generar copy en francés para B-R01 y CA-R01 — Esta semana</div>
+        <div class="step-detail">Las piezas B-R01 (publicación Jul 1) y CA-R01 (Jul 8) son las primeras en publicarse. Generar el texto completo del caption, el hook verbal de 3 segundos y el texto superpuesto en pantalla para ambas. Herramienta: Claude con el brief de Fase 4 como contexto. Duración estimada: 30 minutos por pieza.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Producir frames "Avant" y "Après" con Manus — Prompts de Fase 8</div>
+        <div class="step-detail">Ejecutar los 5 prompts de la Fase 8 en Manus. Priorizar Prompts 1 y 2 (B-R01) y Prompt 3 (CA-R01). Generar 3–4 variantes por prompt y seleccionar la mejor usando el punto 7 de la checklist (Fase 7). Guardar en carpeta organizada por ID de pieza.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Montar Reels en CapCut con templates de marca</div>
+        <div class="step-detail">Con las imágenes de Manus y el copy redactado, montar B-R01 y CA-R01 en CapCut. Estructura: frame "Après" primero (gancho) → corte a frame "Avant" → proceso → resultado → CTA. Agregar música trending libre de derechos. Exportar en 1080×1920px MP4 H.264.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Revisar con checklist 12 puntos (Fase 7) y aprobar</div>
+        <div class="step-detail">Antes de programar cualquier pieza, pasar por los 12 puntos de la checklist de la Fase 7. Documentar cada punto. Si hay correcciones, ejecutar en CapCut o Canva y revisar nuevamente. Solo aprobar cuando los 12 puntos estén cumplidos. Comparar contra benchmark Reel K-1815.</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-title">Programar B-R01 en Meta Business Suite para el 1 julio 2026</div>
+        <div class="step-detail">Con B-R01 aprobado: subir a Meta Business Suite. Configurar campaña: objetivo Lead Generation, audiencia propietarios Laval/Rive-Nord 40–58 ans, presupuesto $15 CAD/día. Programar publicación para martes 1 julio a las 19h00 (hora pico engagement Montréal). Crear versión A/B del anuncio para test de copy desde día 1.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <div class="section-divider-line"></div>
+    <span class="section-divider-label">Tabla de riesgos del sistema — Mitigaciones activas</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo de riesgo</th>
+          <th>Riesgo específico</th>
+          <th>Probabilidad</th>
+          <th>Impacto</th>
+          <th>Mitigación</th>
+          <th>Responsable</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="risk-crit">
+          <td><span class="badge badge-error">Técnico</span></td>
+          <td><strong>Meta Pixel sin configurar antes del lanzamiento</strong> — ninguna campaña de remarketing funciona sin Pixel instalado y verificado</td>
+          <td><span class="risk-high">ALTA</span></td>
+          <td><span class="risk-high">CRÍTICO</span></td>
+          <td>Configurar Pixel y verificar evento "Lead" antes del 25 junio. Bloquea el inicio de campañas si no está listo.</td>
+          <td>Daniel + dev</td>
+        </tr>
+        <tr class="risk-crit">
+          <td><span class="badge badge-error">Técnico</span></td>
+          <td><strong>Retraso en producción IA</strong> — Manus o CapCut pueden generar resultados que no pasan la checklist, requiriendo múltiples iteraciones</td>
+          <td><span class="risk-high">ALTA</span></td>
+          <td><span class="risk-high">ALTO</span></td>
+          <td>Iniciar producción de B-R01 y CA-R01 inmediatamente — esta semana. Asignar 2 días de buffer antes de la fecha de publicación.</td>
+          <td>Daniel</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-warn">Contenido</span></td>
+          <td><strong>Copy en francés incorrecto</strong> — errores gramaticales o calcos del español que dañan la credibilidad de la marca</td>
+          <td><span class="risk-med">MEDIA</span></td>
+          <td><span class="risk-high">ALTO</span></td>
+          <td>Revisión por hablante nativo de francés québécois antes de publicar. Usar Antidote para corrección gramatical. Nunca publicar copy no revisado.</td>
+          <td>Revisor nativo</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-warn">Presupuesto</span></td>
+          <td><strong>CPL &gt; $100 CAD constante</strong> — las campañas no son rentables y el presupuesto de marketing se agota sin generar leads calificados</td>
+          <td><span class="risk-med">MEDIA</span></td>
+          <td><span class="risk-high">ALTO</span></td>
+          <td>A/B testing desde el día 1 (ver Fase 9). Monitoreo diario la primera semana. Aplicar protocolo de alertas J+3 y J+7 sin excepción.</td>
+          <td>Daniel</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-warn">Operativo</span></td>
+          <td><strong>Carpetas sistema vacías</strong> — sin los archivos de EMPRESA, AGENTES, PROMPTS, CRM y CHECKLISTS los agentes IA no pueden operar autónomamente</td>
+          <td><span class="risk-high">CERTEZA</span></td>
+          <td><span class="risk-med">MEDIO</span></td>
+          <td>Completar las 5 carpetas críticas en las próximas 2 semanas. Priorizar 02_PROMPTS y 06_CRM para el funcionamiento del agente de ventas.</td>
+          <td>Daniel + Claude</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-gray">Contenido</span></td>
+          <td><strong>Sin testimonios reales disponibles</strong> — los clientes identificados para B-T01 y CA-T01 podrían no estar disponibles o no querer grabar</td>
+          <td><span class="risk-med">MEDIA</span></td>
+          <td><span class="risk-med">MEDIO</span></td>
+          <td>Contactar 3–5 clientes satisfechos esta semana. Preparar alternativa: carrusel de screenshots de reseñas Google con diseño Canva si no hay video disponible.</td>
+          <td>Daniel</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-gray">Estratégico</span></td>
+          <td><strong>Audiencia Meta saturada</strong> — el mismo público de Laval/Rive-Nord ve los mismos anuncios repetidamente, frecuencia sube y CTR baja</td>
+          <td><span class="risk-med">MEDIA</span></td>
+          <td><span class="risk-med">MEDIO</span></td>
+          <td>Rotar creatividades cada 2 semanas. Expandir a nuevas audiencias lookalike en semana 3. Activar remarketing desde semana 2 para diversificar segmentos.</td>
+          <td>Daniel</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-dark" style="margin-top:40px">
+    <div class="callout-icon">✅</div>
+    <div class="callout-body">
+      <div class="callout-title" style="color:var(--or)">Estado final del sistema — 22 junio 2026</div>
+      <div class="callout-text" style="color:rgba(255,255,255,0.8)">
+        El ecosistema de producción Meta Ads de Jardín Ideal está <strong style="color:var(--or)">completamente diseñado y listo para iniciar producción</strong>. Los 28 documentos estratégicos están completos, los 31 briefs de contenido están aprobados, las 10 fases del sistema están documentadas, y los 5 prompts de Manus están listos para ejecutar.<br><br>
+        Lo que separa al sistema de su primera publicación del 1 julio es exactamente esto: copy en francés redactado para B-R01, creatividades producidas con Manus (Prompts 1 y 2), montaje en CapCut, y revisión con la checklist de 12 puntos.<br><br>
+        <strong style="color:var(--or)">Tiempo estimado de la primera publicación desde este momento: 4–6 días de trabajo.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Phase navigation active state via IntersectionObserver
+(function() {
+  const links = document.querySelectorAll('.nav-link[data-phase]');
+  const sections = document.querySelectorAll('section[id^="fase"]');
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        links.forEach(function(l) { l.classList.remove('active'); });
+        const match = document.querySelector('.nav-link[href="#' + id + '"]');
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  sections.forEach(function(s) { observer.observe(s); });
+})();
+</script>
+</body>
+</html>
