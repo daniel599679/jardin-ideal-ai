@@ -47,10 +47,12 @@ Ubicación: `07_AUTOMATIZACIONES/`
 
 | Archivo | Función | Empresa | Estado |
 |---------|---------|---------|--------|
-| `automatizacion_crm.md` | Flujo de leads desde Meta Ads → CRM | Jardín Ideal | Activo |
-| `automatizacion_leads.md` | Calificación automática de leads | Jardín Ideal | Activo |
-| `automatizacion_comunicacion.md` | Secuencias de follow-up | Jardín Ideal | Activo |
-| `automatizacion_contenido.md` | Flujo de producción de contenido | Jardín Ideal | Activo |
+| `automatizacion_crm.md` | Flujo de leads desde Meta Ads → CRM | Jardín Ideal | ⬜ DOCUMENTADO — no implementado |
+| `automatizacion_leads.md` | Calificación automática de leads | Jardín Ideal | ⬜ DOCUMENTADO — no implementado |
+| `automatizacion_comunicacion.md` | Secuencias de follow-up | Jardín Ideal | ⬜ DOCUMENTADO — no implementado |
+| `automatizacion_contenido.md` | Flujo de producción de contenido | Jardín Ideal | ⬜ DOCUMENTADO — no implementado |
+
+> ⚠️ NOTA (2026-06-23): Los estados anteriores decían "Activo" incorrectamente. Confirmado en AUTOMATION_AUDIT_REPORT.md: ningún flujo está implementado. Los archivos son diseños de flujos, no implementaciones activas. Actualizar esta tabla cuando se active cada flujo con Zapier/Make.
 
 ---
 
