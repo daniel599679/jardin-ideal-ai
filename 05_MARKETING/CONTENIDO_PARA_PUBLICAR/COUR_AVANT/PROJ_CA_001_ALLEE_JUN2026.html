@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJ CA-001 — Allée pétitionnaire — Juin 2026</title>
+<style>
+  :root {
+    --vf: #1E3A20; --vm: #3D6B42; --or: #C8A45A; --cr: #F5F2EB;
+    --w: #FFF; --n: #0D0E0B; --gf: #2A2B28; --g: #6B6B63;
+    --r: #B83232; --rc: #F5E8E8; --j: #C8850A; --jc: #FEF5E4; --vb: #EAF2EB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: var(--cr); color: var(--n); line-height: 1.6; }
+  .header { background: var(--vf); color: var(--w); padding: 2rem; }
+  .header-badge { background: var(--or); color: var(--vf); display: inline-block; padding: .25rem .75rem; border-radius: 4px; font-size: .75rem; font-weight: 700; letter-spacing: .1em; margin-bottom: .75rem; }
+  .header h1 { font-family: Georgia, serif; font-size: 1.75rem; margin-bottom: .25rem; }
+  .header-meta { color: rgba(255,255,255,.65); font-size: .85rem; display: flex; gap: 2rem; flex-wrap: wrap; margin-top: .5rem; }
+  .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .stage { margin-bottom: 3rem; }
+  .stage-title { background: var(--vf); color: var(--w); padding: .75rem 1.25rem; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; border-left: 4px solid var(--or); margin-bottom: 1.5rem; }
+  .ficha { background: var(--w); border: 1px solid #ddd; border-radius: 6px; margin-bottom: 1.25rem; overflow: hidden; }
+  .ficha-header { background: var(--gf); color: var(--w); padding: .75rem 1.25rem; font-size: .8rem; font-weight: 700; letter-spacing: .08em; }
+  .ficha-body { padding: 1.25rem; }
+  .verdict-badge { display: inline-block; padding: .3rem .9rem; border-radius: 4px; font-size: .8rem; font-weight: 700; margin: .5rem 0 1rem; }
+  .v-aprobado { background: #d4edda; color: #155724; }
+  .v-mejoras { background: var(--jc); color: #7a4f00; }
+  .v-rechazado { background: var(--rc); color: #721c24; }
+  .score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .6rem; margin: 1rem 0; }
+  .score-item { background: var(--cr); padding: .5rem .75rem; border-radius: 4px; font-size: .82rem; }
+  .score-item strong { color: var(--vf); }
+  .score-total { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--vf); padding: .75rem; background: var(--vb); border-radius: 4px; margin: .75rem 0; display: inline-block; }
+  .label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--g); margin-bottom: .25rem; margin-top: .75rem; }
+  .tag { display: inline-block; background: var(--vb); color: var(--vf); padding: .2rem .6rem; border-radius: 3px; font-size: .75rem; margin: .15rem; }
+  .note-box { background: var(--jc); border-left: 3px solid var(--j); padding: .75rem 1rem; font-size: .85rem; margin-top: .75rem; border-radius: 0 4px 4px 0; }
+  .reject-box { background: var(--rc); border-left: 3px solid var(--r); padding: .75rem 1rem; font-size: .85rem; border-radius: 0 4px 4px 0; }
+  .lote-resumen { background: var(--vf); color: var(--w); border-radius: 6px; padding: 1.5rem; margin-bottom: 2rem; }
+  .lote-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; text-align: center; }
+  .lote-stat-num { font-family: Georgia, serif; font-size: 2rem; font-weight: 700; color: var(--or); }
+  .lote-stat-label { font-size: .72rem; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .08em; }
+  .brief-block { background: var(--w); border-radius: 6px; overflow: hidden; margin-bottom: 1.25rem; }
+  .brief-section { border-bottom: 1px solid #eee; }
+  .brief-section:last-child { border-bottom: none; }
+  .brief-section-title { background: var(--cr); padding: .6rem 1.25rem; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--vf); border-left: 3px solid var(--or); }
+  .brief-section-body { padding: 1rem 1.25rem; }
+  .scene-card { background: var(--cr); border-radius: 4px; padding: .9rem 1.1rem; margin-bottom: .75rem; border-left: 3px solid var(--vm); }
+  .scene-title { font-weight: 700; color: var(--vf); font-size: .85rem; margin-bottom: .6rem; }
+  .scene-row { font-size: .82rem; margin-bottom: .25rem; }
+  .scene-row span { color: var(--g); min-width: 80px; display: inline-block; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; }
+  .timecode-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+  .timecode-table th { background: var(--vf); color: var(--w); padding: .5rem .75rem; text-align: left; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+  .timecode-table td { padding: .5rem .75rem; border-bottom: 1px solid #eee; }
+  .timecode-table tr:last-child td { border-bottom: none; }
+  .content-card { background: var(--w); border-radius: 6px; border: 1px solid #ddd; margin-bottom: 1rem; overflow: hidden; }
+  .content-card-header { background: var(--vm); color: var(--w); padding: .6rem 1.25rem; font-size: .78rem; font-weight: 700; letter-spacing: .08em; display: flex; justify-content: space-between; align-items: center; }
+  .content-card-body { padding: 1.25rem; white-space: pre-wrap; font-size: .88rem; line-height: 1.7; }
+  .hook-card { background: var(--w); border-left: 4px solid var(--or); padding: .9rem 1.1rem; margin-bottom: .6rem; border-radius: 0 4px 4px 0; }
+  .hook-num { font-size: .7rem; color: var(--or); font-weight: 700; letter-spacing: .1em; margin-bottom: .3rem; }
+  .hook-text { font-family: Georgia, serif; font-size: 1.05rem; color: var(--n); }
+  .carousel-slide { background: var(--cr); border: 1px solid #ddd; border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: .6rem; display: flex; gap: 1rem; }
+  .slide-num { background: var(--vf); color: var(--or); font-family: Georgia, serif; font-size: 1.1rem; font-weight: 700; min-width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .slide-content { font-size: .85rem; line-height: 1.6; }
+  .slide-content strong { color: var(--vf); display: block; margin-bottom: .25rem; }
+  .cta-final { background: var(--vf); color: var(--w); border-radius: 6px; padding: 1.5rem; text-align: center; }
+  .cta-phone { font-family: Georgia, serif; font-size: 1.8rem; color: var(--or); margin: .5rem 0; }
+  .divider { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+  @media (max-width: 600px) { .lote-stats { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">COUR AVANT — PROJET CA-001</div>
+  <h1>Allée pétitionnaire</h1>
+  <div class="header-meta">
+    <span>Analysé: 23 juin 2026</span>
+    <span>Matériel: 5 photos</span>
+    <span>Service: Cour Avant / Allée</span>
+    <span>Priorité: Niveau 1</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ÉTAPE 1 — CONTRÔLE DE QUALITÉ                             -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="stage">
+<div class="stage-title">ÉTAPE 1 — AGENTE CONTROL DE CALIDAD MAGAZINE</div>
+
+<div class="note-box" style="margin-bottom:1.25rem;">
+  <strong>Note d'analyse:</strong> Ce dossier contient des photos de plusieurs propriétés distinctes. Photos 1-3 = villa bungalow ranch avec allée courbée en pierre. Photos 4-5 = maisons semi-détachées urbaines avec pavé anthracite moderne. Traitement comme collection portfolio multi-projets.
+</div>
+
+<!-- FICHA 1 -->
+<div class="ficha">
+  <div class="ficha-header">PHOTO 1 — A7406477-Edit.jpg</div>
+  <div class="ficha-body">
+    <div class="label">Verdict</div>
+    <div class="verdict-badge v-aprobado">✅ APROBADO</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1 Qualité visuelle:</strong> 9/10<br><small>Photo professionnelle éditée, netteté parfaite, bokeh contrôlé</small></div>
+      <div class="score-item"><strong>C2 Éclairage:</strong> 8/10<br><small>Lumière naturelle douce, voile nuageux, pas de surexposition</small></div>
+      <div class="score-item"><strong>C3 Composition:</strong> 9/10<br><small>Allée courbe guide l'œil vers la porte, premier plan forte présence</small></div>
+      <div class="score-item"><strong>C4 Impact émotionnel:</strong> 9/10<br><small>Accueil, chaleur, fierté, désir immédiat d'habiter ici</small></div>
+      <div class="score-item"><strong>C5 Potentiel publicitaire:</strong> 9/10<br><small>Fonctionne comme hero image, thumbnail et feed</small></div>
+      <div class="score-item"><strong>C6 Transformation visible:</strong> 7/10<br><small>Après seulement — résultat évident sans avant</small></div>
+      <div class="score-item"><strong>C7 Niveau premium:</strong> 9/10<br><small>Qualité Maisons & Décors, comparable à Techo Bloc QC</small></div>
+      <div class="score-item"><strong>C8 Stop scroll:</strong> 9/10<br><small>La courbe + profondeur de champ = arrêt garanti</small></div>
+      <div class="score-item"><strong>C9 Compatibilité marque:</strong> 8/10<br><small>Résidentiel Montréal, matériaux naturels, verdure présente</small></div>
+      <div class="score-item"><strong>C10 Avantage concurrentiel:</strong> 9/10<br><small>Supérieur à la grande majorité des publications des concurrents MTL</small></div>
+    </div>
+    <div class="score-total">86/100</div>
+    <div class="label">Usage recommandé</div>
+    <div><span class="tag">Feed Instagram</span><span class="tag">Carrusel diapo 1</span><span class="tag">Story</span><span class="tag">Anuncio Paid</span></div>
+    <div class="label">Note pour DIRECTOR_VIDEO_IA</div>
+    <div class="note-box">Utiliser comme scène finale du reel — tilt bas vers le chemin qui se courbe vers la porte. Lumière idéale pour plan de clôture émotionnel.</div>
+  </div>
+</div>
+
+<!-- FICHA 2 -->
+<div class="ficha">
+  <div class="ficha-header">PHOTO 2 — A7406503-Edit.jpg</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-mejoras">🟡 APROBADO CON MEJORAS</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1:</strong> 8/10 — Éditée, netteté bonne</div>
+      <div class="score-item"><strong>C2:</strong> 8/10 — Lumière uniforme</div>
+      <div class="score-item"><strong>C3:</strong> 7/10 — Géométrie intéressante mais contexte limité</div>
+      <div class="score-item"><strong>C4:</strong> 5/10 — Peu d'émotion standalone</div>
+      <div class="score-item"><strong>C5:</strong> 5/10 — Détail seul = faible potentiel pub</div>
+      <div class="score-item"><strong>C6:</strong> 6/10 — Montre le travail, pas la transformation</div>
+      <div class="score-item"><strong>C7:</strong> 8/10 — Finition propre, professionnelle</div>
+      <div class="score-item"><strong>C8:</strong> 5/10 — Pas de stop-scroll solo</div>
+      <div class="score-item"><strong>C9:</strong> 7/10 — Contexte résidentiel présent</div>
+      <div class="score-item"><strong>C10:</strong> 7/10 — Bon mais générique</div>
+    </div>
+    <div class="score-total">66/100</div>
+    <div class="label">Actions requises</div>
+    <ol style="font-size:.85rem;padding-left:1.2rem;margin:.5rem 0;">
+      <li>Utiliser uniquement en slide de détail dans un carrusel (diapo 4-5)</li>
+      <li>Ne pas utiliser comme image standalone pour publicité payante</li>
+    </ol>
+    <div class="label">Usage recommandé</div>
+    <div><span class="tag">Carrusel détail</span><span class="tag">Story deuxième plan</span></div>
+  </div>
+</div>
+
+<!-- FICHA 3 -->
+<div class="ficha">
+  <div class="ficha-header">PHOTO 3 — A7406539.jpg</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-mejoras">🟡 APROBADO CON MEJORAS</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1:</strong> 8/10 — Bonne résolution, non éditée</div>
+      <div class="score-item"><strong>C2:</strong> 7/10 — Lumière plate, ciel voilé</div>
+      <div class="score-item"><strong>C3:</strong> 9/10 — Courbe en S = lignes directrices parfaites</div>
+      <div class="score-item"><strong>C4:</strong> 7/10 — Beauté géométrique, aspiration</div>
+      <div class="score-item"><strong>C5:</strong> 8/10 — Fonctionne bien en carrusel hero</div>
+      <div class="score-item"><strong>C6:</strong> 7/10 — Résultat visible, artisanat évident</div>
+      <div class="score-item"><strong>C7:</strong> 8/10 — Qualité professionnelle</div>
+      <div class="score-item"><strong>C8:</strong> 8/10 — La courbe en S attire l'œil</div>
+      <div class="score-item"><strong>C9:</strong> 8/10 — Résidentiel Montréal</div>
+      <div class="score-item"><strong>C10:</strong> 8/10 — Géométrie supérieure aux concurrents</div>
+    </div>
+    <div class="score-total">78/100</div>
+    <div class="label">Actions requises</div>
+    <ol style="font-size:.85rem;padding-left:1.2rem;margin:.5rem 0;">
+      <li>Rehausser légèrement les tons verts en post-traitement (Lightroom: +15 saturation herbe)</li>
+      <li>Couper le ciel nuageux (recadrer pour mettre l'accent sur la courbe)</li>
+    </ol>
+    <div class="label">Usage recommandé</div>
+    <div><span class="tag">Carrusel diapo 2</span><span class="tag">Reel scène intermédiaire</span></div>
+    <div class="note-box">Vue aérienne légère de la courbe idéale pour transition de reel — couper sur le movement de la courbe.</div>
+  </div>
+</div>
+
+<!-- FICHA 4 — STAR -->
+<div class="ficha" style="border:2px solid var(--or);">
+  <div class="ficha-header" style="background:var(--or);color:var(--vf);">⭐ PHOTO 4 — A7408264.jpg — ÉTOILE DU LOT</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-aprobado">✅ APROBADO</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1 Qualité:</strong> 9/10<br><small>Appareil photo professionnel, netteté exceptionnelle</small></div>
+      <div class="score-item"><strong>C2 Éclairage:</strong> 9/10<br><small>Heure dorée, ombres longues dramatiques, ciel bleu parfait</small></div>
+      <div class="score-item"><strong>C3 Composition:</strong> 9/10<br><small>Lignes convergentes vers la porte, perspective parfaite</small></div>
+      <div class="score-item"><strong>C4 Impact:</strong> 9/10<br><small>Fierté, désir, aspiration — "je veux cette entrée"</small></div>
+      <div class="score-item"><strong>C5 Pub:</strong> 10/10<br><small>Image héro parfaite pour Meta Ads, zéro compromis</small></div>
+      <div class="score-item"><strong>C6 Transformation:</strong> 8/10<br><small>Résultat final impeccable, après clairement visible</small></div>
+      <div class="score-item"><strong>C7 Premium:</strong> 10/10<br><small>Niveau Techo Bloc / Permacon — matériel marketing haut de gamme</small></div>
+      <div class="score-item"><strong>C8 Stop scroll:</strong> 10/10<br><small>Arrêterait n'importe quel scroll sur Instagram ou Facebook</small></div>
+      <div class="score-item"><strong>C9 Marque:</strong> 9/10<br><small>Urbain montréalais, brique, contemporain — parfait pour Jardín Ideal</small></div>
+      <div class="score-item"><strong>C10 Concurrence:</strong> 10/10<br><small>Supérieur à tout ce que publient Capia, Verts par Experts et concurrents MTL</small></div>
+    </div>
+    <div class="score-total" style="font-size:1.8rem;">93/100</div>
+    <div class="label">Usage recommandé</div>
+    <div><span class="tag">Anuncio Paid PRIORITÉ 1</span><span class="tag">Hero Image campagne</span><span class="tag">Diapo 1 carrusel</span><span class="tag">Hook visuel reel</span><span class="tag">Thumbnail YouTube</span></div>
+    <div class="note-box">UTILISER comme première image dans toute campagne cour avant. C'est l'image qui génère des clics. Parfait pour le hook du reel — plan d'ouverture qui montre la maison en entier depuis la rue.</div>
+  </div>
+</div>
+
+<!-- FICHA 5 -->
+<div class="ficha">
+  <div class="ficha-header">PHOTO 5 — A7408417.jpg</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-aprobado">✅ APROBADO</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1:</strong> 9/10 — Professionnel, net</div>
+      <div class="score-item"><strong>C2:</strong> 9/10 — Lumière estivale, ombres dynamiques</div>
+      <div class="score-item"><strong>C3:</strong> 9/10 — Symétrie de l'entrée, végétation encadrante</div>
+      <div class="score-item"><strong>C4:</strong> 9/10 — Accueil, classicisme, valeur</div>
+      <div class="score-item"><strong>C5:</strong> 9/10 — Excellent pour publicité payante</div>
+      <div class="score-item"><strong>C6:</strong> 8/10 — Après visible, qualité artisanale évidente</div>
+      <div class="score-item"><strong>C7:</strong> 9/10 — Premium, grand format, finition parfaite</div>
+      <div class="score-item"><strong>C8:</strong> 9/10 — Façade + pavé + verdure = fort visuel</div>
+      <div class="score-item"><strong>C9:</strong> 9/10 — Résidentiel montréalais, brique classique</div>
+      <div class="score-item"><strong>C10:</strong> 9/10 — Supérieur aux concurrents</div>
+    </div>
+    <div class="score-total">89/100</div>
+    <div class="label">Usage recommandé</div>
+    <div><span class="tag">Feed Instagram</span><span class="tag">Anuncio Paid A/B test</span><span class="tag">Carrusel diapo 2</span></div>
+    <div class="note-box">Utiliser en alternance avec A7408264 pour les tests A/B Meta Ads. Les deux styles sont complémentaires: A7408264 = moderne/urbain, A7408417 = classique/traditionnel.</div>
+  </div>
+</div>
+
+<!-- LOTE RESUMEN -->
+<div class="lote-resumen">
+  <div style="font-weight:700;font-size:1rem;letter-spacing:.05em;">RÉSUMÉ DU LOT — ALLÉE PÉTITIONNAIRE</div>
+  <div class="lote-stats">
+    <div><div class="lote-stat-num">5</div><div class="lote-stat-label">Total analysé</div></div>
+    <div><div class="lote-stat-num" style="color:#7bff9e;">3</div><div class="lote-stat-label">Approuvés</div></div>
+    <div><div class="lote-stat-num" style="color:#ffd97d;">2</div><div class="lote-stat-label">Avec améliorations</div></div>
+    <div><div class="lote-stat-num" style="color:#ff7b7b;">0</div><div class="lote-stat-label">Rejetés</div></div>
+  </div>
+  <div style="margin-top:1.25rem;font-size:.85rem;color:rgba(255,255,255,.85);">
+    <strong style="color:var(--or);">Priorité de production:</strong><br>
+    1. A7408264.jpg (93/100) → Hero Image toutes campagnes<br>
+    2. A7408417.jpg (89/100) → Test A/B et carrusel<br>
+    3. A7406477-Edit.jpg (86/100) → Reel scène finale + feed<br>
+    4. A7406539.jpg (78/100) → Carrusel après retouche<br>
+    5. A7406503-Edit.jpg (66/100) → Détail carrusel uniquement
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ÉTAPE 2 — BRIEF DE DIRECTION (DIRECTOR_VIDEO_IA)          -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="stage">
+<div class="stage-title">ÉTAPE 2 — BRIEF DE DIRECTION — DIRECTOR VIDEO IA</div>
+
+<div class="brief-block">
+  <div class="brief-section">
+    <div class="brief-section-title">EN-TÊTE</div>
+    <div class="brief-section-body">
+      <div class="score-grid">
+        <div class="score-item"><strong>Reel ID:</strong> JI-R-20260623-001</div>
+        <div class="score-item"><strong>Service:</strong> Cour Avant / Allée</div>
+        <div class="score-item"><strong>Public cible:</strong> Propriétaires 35-55 ans, Montréal-Nord, Laval, Rive-Nord, maisons semi-détachées et bungalows</div>
+        <div class="score-item"><strong>Durée:</strong> 30 secondes</div>
+        <div class="score-item"><strong>Plateforme:</strong> Instagram Reels (primaire) + Facebook Reels</div>
+        <div class="score-item"><strong>Matériel approuvé:</strong> A7408264.jpg, A7408417.jpg, A7406477-Edit.jpg, A7406539.jpg</div>
+      </div>
+      <div style="margin-top:1rem;font-size:.88rem;">
+        <strong>Objectif du reel:</strong> Le spectateur appelle ou envoie un message dans les 24h pour demander une soumission pour son allée ou cour avant.<br>
+        <strong>Émotion cible:</strong> Désir + urgence légère — "Si les autres l'ont fait, je le veux aussi."
+      </div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">HOOK — PREMIÈRES 3 SECONDES</div>
+    <div class="brief-section-body">
+      <div class="scene-card" style="border-left-color:var(--or);">
+        <div class="scene-title">0:00 — 0:03</div>
+        <div class="scene-row"><span>Visual:</span> Prise depuis la rue — façade complète de la maison moderne semi-détachée (A7408264). L'allée en pavé anthracite occupe 60% du bas du cadre. Ciel bleu.</div>
+        <div class="scene-row"><span>Texte:</span> <strong>"Votre voisin vient de le faire."</strong> (5 mots, blanc, centré, grande taille)</div>
+        <div class="scene-row"><span>Mouvement:</span> Slow zoom in depuis la rue vers la façade — lent, fluide</div>
+        <div class="scene-row"><span>Règle 3s:</span> La phrase provoque le "FOMO" immédiat — le spectateur se reconnaît dans le contexte résidentiel de sa propre rue</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">STRUCTURE DES SCÈNES</div>
+    <div class="brief-section-body">
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 1 — Maison complète (0:00–0:05)</div>
+        <div class="scene-row"><span>Durée:</span> 5s</div>
+        <div class="scene-row"><span>Image:</span> A7408264.jpg — Vue depuis la rue, maison entière visible</div>
+        <div class="scene-row"><span>Mouvement:</span> Slow zoom in (depuis rue → entrée principale)</div>
+        <div class="scene-row"><span>Texte:</span> "Votre voisin vient de le faire."</div>
+        <div class="scene-row"><span>Transition:</span> Whip pan vers le bas</div>
+        <div class="scene-row"><span>Émotion:</span> Curiosité + reconnaissance du contexte ("c'est ma rue")</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 2 — Détail pavé + entrée (0:05–0:10)</div>
+        <div class="scene-row"><span>Durée:</span> 5s</div>
+        <div class="scene-row"><span>Image:</span> A7408417.jpg — Marches + pavé grand format + garde-corps + végétation</div>
+        <div class="scene-row"><span>Mouvement:</span> Tilt up depuis le pavé au sol jusqu'à la façade</div>
+        <div class="scene-row"><span>Texte:</span> Aucun (laisser l'image parler)</div>
+        <div class="scene-row"><span>Transition:</span> Coupe directe</div>
+        <div class="scene-row"><span>Émotion:</span> Admiration, désir — "voilà ce que c'est"</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 3 — Allée courbée (0:10–0:17)</div>
+        <div class="scene-row"><span>Durée:</span> 7s</div>
+        <div class="scene-row"><span>Image:</span> A7406477-Edit.jpg — Allée courbe vers porte, bokeh, accueil</div>
+        <div class="scene-row"><span>Mouvement:</span> Travelling avant lent (marcher sur l'allée vers la porte)</div>
+        <div class="scene-row"><span>Texte:</span> "Votre entrée, réinventée." (petit, coin inférieur droit)</div>
+        <div class="scene-row"><span>Transition:</span> Fade doux</div>
+        <div class="scene-row"><span>Émotion:</span> Aspiration — "j'imagine ma maison comme ça"</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 4 — Courbe en S overhead (0:17–0:23)</div>
+        <div class="scene-row"><span>Durée:</span> 6s</div>
+        <div class="scene-row"><span>Image:</span> A7406539.jpg — Vue légèrement surélevée de la courbe</div>
+        <div class="scene-row"><span>Mouvement:</span> Pan horizontal lent de gauche à droite</div>
+        <div class="scene-row"><span>Texte:</span> Aucun</div>
+        <div class="scene-row"><span>Transition:</span> Coupe au beat</div>
+        <div class="scene-row"><span>Émotion:</span> Sophistication — la géométrie impressionne</div>
+      </div>
+      <div class="scene-card" style="border-left-color:var(--or);">
+        <div class="scene-title">SCÈNE FINALE — CTA (0:23–0:30)</div>
+        <div class="scene-row"><span>Visual:</span> Retour sur A7408264 — maison complète, angle légèrement différent</div>
+        <div class="scene-row"><span>Texte CTA:</span> "Obtenez votre soumission gratuite"</div>
+        <div class="scene-row"><span>Téléphone:</span> 514-266-2504 (grand, centré, couleur or)</div>
+        <div class="scene-row"><span>Animation:</span> Logo Jardín Ideal apparaît coin bas gauche + numéro pulse doucement</div>
+        <div class="scene-row"><span>Émotion:</span> Confiance + action urgente</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">TEXTE EN ÉCRAN — RÉSUMÉ COMPLET</div>
+    <div class="brief-section-body">
+      <table class="timecode-table">
+        <tr><th>Timecode</th><th>Texte</th><th>Style</th></tr>
+        <tr><td>00:00–00:05</td><td>Votre voisin vient de le faire.</td><td>Grande, blanc, centré</td></tr>
+        <tr><td>00:10–00:17</td><td>Votre entrée, réinventée.</td><td>Petit, coin inférieur droit, blanc semi-transparent</td></tr>
+        <tr><td>00:23–00:28</td><td>Obtenez votre soumission gratuite</td><td>Moyen, centré, fond sombre léger</td></tr>
+        <tr><td>00:26–00:30</td><td>514-266-2504</td><td>Grande, or (#C8A45A), centré, pulse</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">MUSIQUE</div>
+    <div class="brief-section-body" style="font-size:.88rem;">
+      <div class="score-grid">
+        <div class="score-item"><strong>Genre:</strong> Piano acoustique + cordes légères</div>
+        <div class="score-item"><strong>Tempo:</strong> 70-80 BPM, lent</div>
+        <div class="score-item"><strong>Énergie:</strong> Émotionnel / Aspirationnel</div>
+        <div class="score-item"><strong>Source:</strong> Meta Sound Collection</div>
+      </div>
+      <div class="note-box" style="margin-top:.75rem;">Musique instrumentale, sans paroles. Ambiance "nouveau départ / fierté résidentielle". Le premier beat notable doit tomber à 0:05 (transition vers scène 2). Volume baisse automatiquement si voix off ajoutée.</div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">NOTES POUR L'ÉDITEUR</div>
+    <div class="brief-section-body" style="font-size:.85rem;">
+      <div class="score-grid">
+        <div class="score-item"><strong>Outil:</strong> CapCut</div>
+        <div class="score-item"><strong>Color grade:</strong> Chaud, légèrement saturé (verts +15%, tons chauds +10)</div>
+        <div class="score-item"><strong>Format:</strong> 9:16 pour Reels / 4:5 pour Feed</div>
+        <div class="score-item"><strong>Sous-titres:</strong> Non (pas de voix off)</div>
+        <div class="score-item"><strong>Logo:</strong> Coin bas gauche, apparaît à 0:23 avec le CTA</div>
+      </div>
+      <div class="reject-box" style="margin-top:.75rem;">⚠️ ATTENTION: Ne pas utiliser A7406503-Edit.jpg (détail sol) comme scène principale — manque de contexte narratif. Réserver pour futurs contenus éducatifs sur la finition.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ÉTAPE 3 — PRODUCTION DE CONTENU (FRANÇAIS)               -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="stage">
+<div class="stage-title">ÉTAPE 3 — PRODUCTION DE CONTENU — PRÊT À PUBLIER</div>
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">5 HOOKS</div>
+<div class="hook-card"><div class="hook-num">HOOK 01 — FOMO</div><div class="hook-text">Votre voisin vient de transformer son entrée. Vous y avez pensé ?</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 02 — PROBLÈME</div><div class="hook-text">Chaque matin vous passez devant la même entrée fatiguée. Depuis combien de temps ?</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 03 — ASPIRATION</div><div class="hook-text">Une allée qui dit "bienvenue" avant même que vous ayez ouvert la porte.</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 04 — VALEUR</div><div class="hook-text">La première chose que voient vos visiteurs, c'est votre entrée. Que leur dit-elle ?</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 05 — URGENCE</div><div class="hook-text">Été 2026. Il reste encore du temps pour transformer votre entrée avant l'automne.</div></div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">3 COPIES FACEBOOK</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>FACEBOOK 01 — Storytelling émotionnel</span><span style="font-size:.72rem;opacity:.8;">Long · Feed</span></div>
+  <div class="content-card-body">Il y a quelques semaines, on a reçu un appel d'un propriétaire de Montréal-Nord.
+
+"Notre entrée fait honte à la maison. On a rénové l'intérieur, mais dehors ça ressemble encore à 1987."
+
+On a passé 4 jours chez lui. On a tout repensé — l'allée, les marches, l'éclairage de jardin, la végétation de bordure.
+
+Résultat ? Regardez ces photos. Sa maison est maintenant celle que tout le quartier remarque en premier.
+
+Votre entrée, c'est la carte de visite de votre maison.
+
+Elle travaille pour vous tous les jours — ou contre vous.
+
+📞 514-266-2504 — Soumission gratuite, sans engagement.
+Jardín Ideal · Montréal · Laval · Rive-Nord</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>FACEBOOK 02 — Éducatif / Valeur</span><span style="font-size:.72rem;opacity:.8;">Moyen · Feed</span></div>
+  <div class="content-card-body">Saviez-vous qu'une entrée bien aménagée augmente la valeur perçue d'une propriété de 10 à 15 % ?
+
+C'est la première chose que voit un acheteur potentiel. C'est aussi la première chose que voient vos voisins, vos invités, vos clients.
+
+Chez Jardín Ideal, on transforme les entrées ordinaires en cartes de visite extraordinaires.
+
+Pavé uni grand format · Allées courbées · Éclairage de jardin · Aménagement paysager
+
+Disponible dans tout le Grand Montréal, Laval et Rive-Nord.
+
+👇 Commentez "SOUMISSION" ou appelez le 514-266-2504</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>FACEBOOK 03 — Urgence estivale</span><span style="font-size:.72rem;opacity:.8;">Court · Ad</span></div>
+  <div class="content-card-body">⏳ On est en juin. L'été part vite.
+
+Si vous pensez à transformer votre cour avant depuis le printemps — c'est maintenant ou en 2027.
+
+Les dernières disponibilités de juillet sont presque comblées.
+
+Jardín Ideal — Installations de pavé uni et aménagement paysager.
+Délais respectés. Qualité garantie. Soumission gratuite.
+
+📞 514-266-2504
+🌐 jardin-ideal.com</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">3 COPIES INSTAGRAM</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>INSTAGRAM 01 — Hero visuel</span><span style="font-size:.72rem;opacity:.8;">Feed · Photo A7408264</span></div>
+  <div class="content-card-body">Votre entrée dit tout. 🏡
+
+Chaque détail compte — le pavé, les marches, la végétation, la lumière.
+
+C'est cette transformation qu'on vient de livrer à Montréal-Nord.
+
+Envie de la même chose ? 👇
+📞 514-266-2504 | Soumission gratuite
+
+#jardinideal #couravan #paveuni #amenagementpaysager #montreal #laval #rivenord #transformationexterieure #avantapres #maisonmontreal</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>INSTAGRAM 02 — Aspirationnel</span><span style="font-size:.72rem;opacity:.8;">Feed · Carousel</span></div>
+  <div class="content-card-body">Une allée, c'est plus qu'un chemin. ✨
+
+C'est l'accueil. C'est la première impression. C'est ce qui fait dire à vos invités "wow" avant même d'entrer.
+
+→ Swipe pour voir le détail du travail
+
+Jardín Ideal · Montréal · Laval · Rive-Nord
+Lien en bio pour votre soumission gratuite 🌿
+
+#couravan #alleepierre #paveuni #exterieursmaison #reno #montreal2026</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>INSTAGRAM 03 — Éducatif</span><span style="font-size:.72rem;opacity:.8;">Feed · Carrousel éducatif</span></div>
+  <div class="content-card-body">3 signes que votre entrée a besoin d'une transformation 👇
+
+1️⃣ L'asphalte craquèle depuis 3+ ans
+2️⃣ L'eau stagne après la pluie
+3️⃣ La première impression de votre maison vous fait soupirer
+
+Si vous avez dit oui à 2 ou 3 — on parle.
+
+📩 DM ou 📞 514-266-2504
+Soumission gratuite dans tout le Grand Montréal
+
+#jardinideal #renovation #cour #pave #montreal</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">GOOGLE BUSINESS POST</div>
+<div class="content-card">
+  <div class="content-card-header"><span>Google Business Profile</span><span style="font-size:.72rem;opacity:.8;">Post mensuel</span></div>
+  <div class="content-card-body">Nouveau projet livré — Cour avant, Montréal-Nord
+
+Nous venons de compléter la transformation d'une entrée résidentielle à Montréal-Nord : nouvelle allée en pavé uni grand format, marches restructurées, et aménagement paysager soigné.
+
+Jardín Ideal offre des soumissions gratuites pour tous travaux d'aménagement extérieur dans le Grand Montréal, Laval et la Rive-Nord.
+
+📞 514-266-2504 | jardin-ideal.com</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">2 META ADS</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>META AD 01 — Conversion</span><span style="font-size:.72rem;opacity:.8;">Image: A7408264 · Objectif: Leads</span></div>
+  <div class="content-card-body">Titre: Votre voisin vient de refaire son entrée.
+Sous-titre: Et si c'était votre tour ?
+Corps: Transformez votre cour avant avec Jardín Ideal. Pavé uni, allées, escaliers — soumission gratuite, sans engagement. Service disponible dans tout le Grand Montréal.
+CTA: Obtenir une soumission</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>META AD 02 — Urgence</span><span style="font-size:.72rem;opacity:.8;">Image: A7408417 · Objectif: Appels</span></div>
+  <div class="content-card-body">Titre: Dernières disponibilités — juillet 2026
+Sous-titre: Jardín Ideal — Aménagement paysager Montréal
+Corps: Les places pour cet été partent vite. Réservez votre soumission gratuite maintenant et transformez votre entrée avant l'automne.
+CTA: Appeler maintenant — 514-266-2504</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">CARRUSEL COMPLET — 7 DIAPOSITIVES</div>
+
+<div class="carousel-slide">
+  <div class="slide-num">1</div>
+  <div class="slide-content"><strong>Titre: "Votre entrée mérite mieux."</strong>Image: A7408264.jpg (hero). Sous-titre: Jardín Ideal — Aménagement paysager Montréal</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">2</div>
+  <div class="slide-content"><strong>Le problème</strong>Votre allée en asphalte craquèle. Vos marches s'effritent. Chaque printemps c'est la même question : "On fait quelque chose cette année ?" Image: photo avant (si disponible) ou fond sombre avec texte.</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">3</div>
+  <div class="slide-content"><strong>Le résultat — Vue complète</strong>Image: A7408417.jpg. Texte: "Pavé uni grand format. Finition professionnelle. Durée de vie : 25+ ans."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">4</div>
+  <div class="slide-content"><strong>Le détail fait la différence</strong>Image: A7406477-Edit.jpg. Texte: "Chaque allée est conçue sur mesure — courbe, largeur, matériau, couleur."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">5</div>
+  <div class="slide-content"><strong>La géométrie qui impressionne</strong>Image: A7406539.jpg (après retouche contraste). Texte: "La courbe n'est pas un hasard — c'est un choix de design."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">6</div>
+  <div class="slide-content"><strong>Pourquoi Jardín Ideal ?</strong>Texte uniquement: ✓ 15+ ans d'expérience · ✓ Matériaux garantis · ✓ Équipe certifiée · ✓ Projets livrés à temps · ✓ Soumission gratuite et sans engagement</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">7</div>
+  <div class="slide-content"><strong>CTA Final</strong>Image: A7408264.jpg en fond assombri. Texte grand: "Votre soumission gratuite vous attend." Téléphone: 514-266-2504 en or. Logo Jardín Ideal centré.</div>
+</div>
+
+<hr class="divider">
+
+<div class="cta-final">
+  <div style="font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.5rem;">CTA FINAL — TOUS FORMATS</div>
+  <div style="font-size:1rem;margin-bottom:.5rem;">📞 Soumission gratuite, sans engagement</div>
+  <div class="cta-phone">514-266-2504</div>
+  <div style="color:rgba(255,255,255,.65);font-size:.85rem;">jardin-ideal.com · Montréal · Laval · Rive-Nord</div>
+  <div style="margin-top:1rem;font-size:.78rem;color:rgba(255,255,255,.5);">Lun–Ven 07:00–18:00</div>
+</div>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>

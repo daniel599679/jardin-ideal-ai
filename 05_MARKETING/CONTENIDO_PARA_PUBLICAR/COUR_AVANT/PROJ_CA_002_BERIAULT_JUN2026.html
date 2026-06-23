@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJ CA-002 — Jacques Bériault — Juin 2026</title>
+<style>
+  :root {
+    --vf: #1E3A20; --vm: #3D6B42; --or: #C8A45A; --cr: #F5F2EB;
+    --w: #FFF; --n: #0D0E0B; --gf: #2A2B28; --g: #6B6B63;
+    --r: #B83232; --rc: #F5E8E8; --j: #C8850A; --jc: #FEF5E4; --vb: #EAF2EB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: var(--cr); color: var(--n); line-height: 1.6; }
+  .header { background: var(--vf); color: var(--w); padding: 2rem; }
+  .header-badge { background: var(--or); color: var(--vf); display: inline-block; padding: .25rem .75rem; border-radius: 4px; font-size: .75rem; font-weight: 700; letter-spacing: .1em; margin-bottom: .75rem; }
+  .header h1 { font-family: Georgia, serif; font-size: 1.75rem; margin-bottom: .25rem; }
+  .header-meta { color: rgba(255,255,255,.65); font-size: .85rem; display: flex; gap: 2rem; flex-wrap: wrap; margin-top: .5rem; }
+  .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .stage { margin-bottom: 3rem; }
+  .stage-title { background: var(--vf); color: var(--w); padding: .75rem 1.25rem; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; border-left: 4px solid var(--or); margin-bottom: 1.5rem; }
+  .ficha { background: var(--w); border: 1px solid #ddd; border-radius: 6px; margin-bottom: 1.25rem; overflow: hidden; }
+  .ficha-header { background: var(--gf); color: var(--w); padding: .75rem 1.25rem; font-size: .8rem; font-weight: 700; letter-spacing: .08em; }
+  .ficha-body { padding: 1.25rem; }
+  .verdict-badge { display: inline-block; padding: .3rem .9rem; border-radius: 4px; font-size: .8rem; font-weight: 700; margin: .5rem 0 1rem; }
+  .v-aprobado { background: #d4edda; color: #155724; }
+  .v-mejoras { background: var(--jc); color: #7a4f00; }
+  .v-rechazado { background: var(--rc); color: #721c24; }
+  .score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .6rem; margin: 1rem 0; }
+  .score-item { background: var(--cr); padding: .5rem .75rem; border-radius: 4px; font-size: .82rem; }
+  .score-item strong { color: var(--vf); }
+  .score-total { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--vf); padding: .75rem; background: var(--vb); border-radius: 4px; margin: .75rem 0; display: inline-block; }
+  .label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--g); margin-bottom: .25rem; margin-top: .75rem; }
+  .tag { display: inline-block; background: var(--vb); color: var(--vf); padding: .2rem .6rem; border-radius: 3px; font-size: .75rem; margin: .15rem; }
+  .note-box { background: var(--jc); border-left: 3px solid var(--j); padding: .75rem 1rem; font-size: .85rem; margin-top: .75rem; border-radius: 0 4px 4px 0; }
+  .reject-box { background: var(--rc); border-left: 3px solid var(--r); padding: .75rem 1rem; font-size: .85rem; border-radius: 0 4px 4px 0; margin-top: .75rem; }
+  .lote-resumen { background: var(--vf); color: var(--w); border-radius: 6px; padding: 1.5rem; margin-bottom: 2rem; }
+  .lote-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; text-align: center; }
+  .lote-stat-num { font-family: Georgia, serif; font-size: 2rem; font-weight: 700; color: var(--or); }
+  .lote-stat-label { font-size: .72rem; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .08em; }
+  .brief-block { background: var(--w); border-radius: 6px; overflow: hidden; margin-bottom: 1.25rem; }
+  .brief-section { border-bottom: 1px solid #eee; }
+  .brief-section:last-child { border-bottom: none; }
+  .brief-section-title { background: var(--cr); padding: .6rem 1.25rem; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--vf); border-left: 3px solid var(--or); }
+  .brief-section-body { padding: 1rem 1.25rem; }
+  .scene-card { background: var(--cr); border-radius: 4px; padding: .9rem 1.1rem; margin-bottom: .75rem; border-left: 3px solid var(--vm); }
+  .scene-title { font-weight: 700; color: var(--vf); font-size: .85rem; margin-bottom: .6rem; }
+  .scene-row { font-size: .82rem; margin-bottom: .25rem; }
+  .scene-row span { color: var(--g); min-width: 80px; display: inline-block; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; }
+  .timecode-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+  .timecode-table th { background: var(--vf); color: var(--w); padding: .5rem .75rem; text-align: left; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+  .timecode-table td { padding: .5rem .75rem; border-bottom: 1px solid #eee; }
+  .timecode-table tr:last-child td { border-bottom: none; }
+  .content-card { background: var(--w); border-radius: 6px; border: 1px solid #ddd; margin-bottom: 1rem; overflow: hidden; }
+  .content-card-header { background: var(--vm); color: var(--w); padding: .6rem 1.25rem; font-size: .78rem; font-weight: 700; letter-spacing: .08em; display: flex; justify-content: space-between; align-items: center; }
+  .content-card-body { padding: 1.25rem; white-space: pre-wrap; font-size: .88rem; line-height: 1.7; }
+  .hook-card { background: var(--w); border-left: 4px solid var(--or); padding: .9rem 1.1rem; margin-bottom: .6rem; border-radius: 0 4px 4px 0; }
+  .hook-num { font-size: .7rem; color: var(--or); font-weight: 700; letter-spacing: .1em; margin-bottom: .3rem; }
+  .hook-text { font-family: Georgia, serif; font-size: 1.05rem; color: var(--n); }
+  .carousel-slide { background: var(--cr); border: 1px solid #ddd; border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: .6rem; display: flex; gap: 1rem; }
+  .slide-num { background: var(--vf); color: var(--or); font-family: Georgia, serif; font-size: 1.1rem; font-weight: 700; min-width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .slide-content { font-size: .85rem; line-height: 1.6; }
+  .slide-content strong { color: var(--vf); display: block; margin-bottom: .25rem; }
+  .cta-final { background: var(--vf); color: var(--w); border-radius: 6px; padding: 1.5rem; text-align: center; }
+  .cta-phone { font-family: Georgia, serif; font-size: 1.8rem; color: var(--or); margin: .5rem 0; }
+  .divider { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+  .star-banner { background: linear-gradient(135deg, var(--or) 0%, #e6b96a 100%); color: var(--vf); padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 1.25rem; font-weight: 700; font-size: .95rem; }
+  @media (max-width: 600px) { .lote-stats { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">COUR AVANT — PROJET CA-002</div>
+  <h1>Projet Jacques Bériault</h1>
+  <div class="header-meta">
+    <span>Analysé: 23 juin 2026</span>
+    <span>Matériel: 14 photos (8 après + 6 travaux)</span>
+    <span>Note vedette: 98/100</span>
+    <span>Priorité: HAUTE</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="star-banner">
+  ⭐ PROJET VEDETTE — Photo A7409920.jpg obtient 98/100 — meilleure note individuelle de toute la collection COUR AVANT. Prioriser pour la première publication.
+</div>
+
+<!-- ÉTAPE 1 -->
+<div class="stage">
+<div class="stage-title">ÉTAPE 1 — AGENTE CONTROL DE CALIDAD MAGAZINE</div>
+
+<!-- STAR PHOTO -->
+<div class="ficha" style="border:2px solid var(--or);">
+  <div class="ficha-header" style="background:linear-gradient(135deg,var(--or),#d4a84f);color:var(--vf);">⭐ PHOTO VEDETTE — A7409920.jpg — MEILLEURE IMAGE DU LOT COMPLET</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-aprobado">✅ APROBADO</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1 Qualité:</strong> 10/10<br><small>Bokeh maîtrisé, piqué parfait, éditée professionnellement</small></div>
+      <div class="score-item"><strong>C2 Éclairage:</strong> 10/10<br><small>Heure dorée — la lanterne allumée + lumière ambrée = cinématographique</small></div>
+      <div class="score-item"><strong>C3 Composition:</strong> 10/10<br><small>Lanterne en premier plan flou → allée en profondeur → maison : profondeur narrative parfaite</small></div>
+      <div class="score-item"><strong>C4 Impact:</strong> 10/10<br><small>Émotion pure : rêve, sérénité, désir d'appartenir à ce monde</small></div>
+      <div class="score-item"><strong>C5 Publicité:</strong> 10/10<br><small>Stoppera n'importe quel scroll. Image de campagne nationale.</small></div>
+      <div class="score-item"><strong>C6 Transformation:</strong> 8/10<br><small>Après clairement évident, sans besoin d'avant</small></div>
+      <div class="score-item"><strong>C7 Premium:</strong> 10/10<br><small>Niveau Architectural Digest, Maisons & Décors — au-delà de tout concurrent MTL</small></div>
+      <div class="score-item"><strong>C8 Stop scroll:</strong> 10/10<br><small>Cette image s'arrête. Partout. Toujours.</small></div>
+      <div class="score-item"><strong>C9 Marque:</strong> 10/10<br><small>Or, vert, brique, nuit dorée — couleurs Jardín Ideal incarnées dans le réel</small></div>
+      <div class="score-item"><strong>C10 Concurrence:</strong> 10/10<br><small>Aucun concurrent MTL ne publie ce niveau de photographie d'extérieur</small></div>
+    </div>
+    <div class="score-total" style="font-size:1.8rem;background:linear-gradient(135deg,var(--or)20,var(--vb));">98/100</div>
+    <div class="label">Usage recommandé</div>
+    <div><span class="tag">Hero Image toutes campagnes</span><span class="tag">Couverture Facebook</span><span class="tag">Profile Instagram</span><span class="tag">Meta Ad premium</span><span class="tag">Billboard numérique</span><span class="tag">Thumbnail YouTube</span></div>
+    <div class="note-box"><strong>Note DIRECTOR_VIDEO_IA:</strong> Cette image doit fermer le reel. Dernière scène avant le CTA. Plein écran. Aucun texte superposé les 2 premières secondes — laisser l'image respirer. La lanterne allumée avec le bokeh de fond crée un arrêt naturel. Synchroniser ce plan avec le dernier accord musical avant le CTA.</div>
+  </div>
+</div>
+
+<!-- A7409840 -->
+<div class="ficha">
+  <div class="ficha-header">PHOTO — A7409840.jpg — Allée + bollard + végétation (vue de côté)</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-aprobado">✅ APROBADO</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1:</strong> 9/10 — Professionnel, net</div>
+      <div class="score-item"><strong>C2:</strong> 8/10 — Lumière printanière, bonne</div>
+      <div class="score-item"><strong>C3:</strong> 8/10 — Bollard crée intérêt au premier plan, allée guide vers le fond</div>
+      <div class="score-item"><strong>C4:</strong> 8/10 — "Je veux cette entrée" — aspiration directe</div>
+      <div class="score-item"><strong>C5:</strong> 9/10 — Excellent pour publicité payante</div>
+      <div class="score-item"><strong>C6:</strong> 8/10 — Résultat clairement lisible</div>
+      <div class="score-item"><strong>C7:</strong> 9/10 — Finition haut de gamme, éclairage intégré</div>
+      <div class="score-item"><strong>C8:</strong> 8/10 — Bollard + perspective = fort visuel</div>
+      <div class="score-item"><strong>C9:</strong> 9/10 — Résidentiel MTL parfait</div>
+      <div class="score-item"><strong>C10:</strong> 8/10 — Supérieur aux concurrents</div>
+    </div>
+    <div class="score-total">84/100</div>
+    <div class="label">Usage</div>
+    <div><span class="tag">Feed Instagram</span><span class="tag">Carrusel diapo 2</span><span class="tag">Meta Ad A/B</span></div>
+    <div class="note-box">Scène 3 du reel — travelling avant sur l'allée, la perspective qui se déploie est cinématographique.</div>
+  </div>
+</div>
+
+<!-- A7409842 -->
+<div class="ficha">
+  <div class="ficha-header">PHOTO — A7409842.jpg — Allée + escaliers + bollard (angle large)</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-aprobado">✅ APROBADO</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1:</strong> 9/10</div>
+      <div class="score-item"><strong>C2:</strong> 8/10 — Lumière printemps</div>
+      <div class="score-item"><strong>C3:</strong> 9/10 — Angle large montre l'ampleur complète du projet</div>
+      <div class="score-item"><strong>C4:</strong> 8/10 — Scope impressionne</div>
+      <div class="score-item"><strong>C5:</strong> 9/10</div>
+      <div class="score-item"><strong>C6:</strong> 8/10 — Après évident</div>
+      <div class="score-item"><strong>C7:</strong> 9/10</div>
+      <div class="score-item"><strong>C8:</strong> 9/10 — L'escalier + allée + bollard = composition forte</div>
+      <div class="score-item"><strong>C9:</strong> 9/10</div>
+      <div class="score-item"><strong>C10:</strong> 8/10</div>
+    </div>
+    <div class="score-total">86/100</div>
+    <div class="label">Usage</div>
+    <div><span class="tag">Carrusel slide 3</span><span class="tag">Reel scène principale</span><span class="tag">Feed Instagram</span></div>
+  </div>
+</div>
+
+<!-- A7409832 -->
+<div class="ficha">
+  <div class="ficha-header">PHOTO — A7409832.jpg — Vue large de la façade bungalow</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-mejoras">🟡 APROBADO CON MEJORAS</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1:</strong> 9/10</div>
+      <div class="score-item"><strong>C2:</strong> 9/10 — Journée parfaite</div>
+      <div class="score-item"><strong>C3:</strong> 7/10 — Pavé non visible, allée hors cadre</div>
+      <div class="score-item"><strong>C4:</strong> 6/10 — Belle maison mais quel service ?</div>
+      <div class="score-item"><strong>C5:</strong> 5/10 — Illisible comme pub de pavé</div>
+      <div class="score-item"><strong>C6:</strong> 4/10 — Transformation non visible</div>
+      <div class="score-item"><strong>C7:</strong> 8/10 — Présentation propre</div>
+      <div class="score-item"><strong>C8:</strong> 5/10 — Pas de stop-scroll</div>
+      <div class="score-item"><strong>C9:</strong> 8/10 — Contexte MTL</div>
+      <div class="score-item"><strong>C10:</strong> 5/10 — Sans les pavés, pas différenciant</div>
+    </div>
+    <div class="score-total">66/100</div>
+    <div class="label">Actions requises</div>
+    <ol style="font-size:.85rem;padding-left:1.2rem;margin:.5rem 0;">
+      <li>Utiliser uniquement comme slide "contexte maison" dans un carrusel avant/après</li>
+      <li>Ne jamais utiliser comme image standalone pour publicité payante</li>
+      <li>Recadrer pour inclure la partie avant gauche si elle montre le pavé</li>
+    </ol>
+    <div class="label">Usage</div>
+    <div><span class="tag">Carrusel contexte seulement</span></div>
+  </div>
+</div>
+
+<!-- RECHAZADOS -->
+<div class="ficha" style="border:2px solid var(--r);">
+  <div class="ficha-header" style="background:var(--r);">🔴 REJETÉS — A7409843.jpg + A7409845.jpg — VETO AUTOMATIQUE</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-rechazado">🔴 RECHAZADO — C7 < 5/10 — VETO AUTOMATIQUE</div>
+    <div class="reject-box">
+      <strong>Raison du rejet :</strong> Les deux photos montrent des plantes en pots de pépinière avec étiquettes de prix visibles, posées dans le massif mais non plantées. Ce détail communique "travail non terminé" et disqualifie l'image du standard premium Jardín Ideal.<br><br>
+      C7 (Niveau Premium) : 3/10 → Veto automatique déclenché (seuil = 5/10 minimum).<br><br>
+      <strong>Action requise :</strong> Retourner photographier le massif une fois les plantes installées, la terre couverte de paillis, et toutes les étiquettes retirées. Photos à prendre idéalement 3-4 semaines après installation quand les plantes ont repris.
+    </div>
+    <div style="margin-top:.75rem;font-size:.85rem;"><strong>Ces photos ne doivent apparaître dans aucune publication, publicité ou portfolio.</strong></div>
+  </div>
+</div>
+
+<!-- TRAVAUX -->
+<div class="ficha">
+  <div class="ficha-header">PHOTOS TRAVAUX — IMG_3528 + série (6 photos de chantier)</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-mejoras">🟡 APROBADO CON MEJORAS — Usage processus uniquement</div>
+    <p style="font-size:.85rem;margin-bottom:.75rem;">Photos de chantier au téléphone : excavatrice mini, base gravière, terrassement. Qualité acceptable pour contenu de processus mais pas pour publicité payante.</p>
+    <div class="label">Usage recommandé</div>
+    <div><span class="tag">Reel processus (milieu)</span><span class="tag">Story "Dans les coulisses"</span><span class="tag">Carrusel avant/pendant/après</span></div>
+    <div class="note-box">Le plan de l'excavatrice rouge en travail a un bon impact visuel pour une transition "avant → pendant → après" dans un reel de processus.</div>
+  </div>
+</div>
+
+<!-- IMG_6941 / IMG_6943 -->
+<div class="ficha">
+  <div class="ficha-header">PHOTOS TÉLÉPHONE — IMG_6941.jpg + IMG_6943.jpg</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-mejoras">🟡 APROBADO CON MEJORAS — Stories et Reels B-roll uniquement</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>Qualité globale:</strong> 65/100 — Acceptable pour usage secondaire</div>
+      <div class="score-item"><strong>Problème principal:</strong> Qualité téléphone évidente, moins de profondeur que les photos A74***</div>
+    </div>
+    <div class="label">Usage</div>
+    <div><span class="tag">Reel B-roll</span><span class="tag">Stories Instagram</span><span class="tag">Ne pas utiliser en pub payante</span></div>
+  </div>
+</div>
+
+<!-- LOTE RESUMEN -->
+<div class="lote-resumen">
+  <div style="font-weight:700;font-size:1rem;letter-spacing:.05em;">RÉSUMÉ DU LOT — PROJET BÉRIAULT</div>
+  <div class="lote-stats">
+    <div><div class="lote-stat-num">14</div><div class="lote-stat-label">Total analysé</div></div>
+    <div><div class="lote-stat-num" style="color:#7bff9e;">3</div><div class="lote-stat-label">Approuvés</div></div>
+    <div><div class="lote-stat-num" style="color:#ffd97d;">5</div><div class="lote-stat-label">Avec améliorations</div></div>
+    <div><div class="lote-stat-num" style="color:#ff7b7b;">2</div><div class="lote-stat-label">Rejetés</div></div>
+  </div>
+  <div style="margin-top:1.25rem;font-size:.85rem;color:rgba(255,255,255,.85);">
+    <strong style="color:var(--or);">Priorité de production:</strong><br>
+    1. A7409920.jpg (98/100) → IMAGE PRINCIPALE — tout format<br>
+    2. A7409842.jpg (86/100) → Reel scène principale + carrusel<br>
+    3. A7409840.jpg (84/100) → Ad A/B test + Instagram feed<br>
+    4. A7409832.jpg (66/100) → Contexte carrusel seulement<br>
+    5. IMG_6941/6943 (65/100) → B-roll et Stories seulement<br><br>
+    <strong style="color:var(--r);">⚠️ Ne jamais publier:</strong> A7409843.jpg · A7409845.jpg
+  </div>
+</div>
+</div>
+
+<!-- ÉTAPE 2 -->
+<div class="stage">
+<div class="stage-title">ÉTAPE 2 — BRIEF DE DIRECTION — DIRECTOR VIDEO IA</div>
+
+<div class="brief-block">
+  <div class="brief-section">
+    <div class="brief-section-title">EN-TÊTE</div>
+    <div class="brief-section-body">
+      <div class="score-grid">
+        <div class="score-item"><strong>Reel ID:</strong> JI-R-20260623-002</div>
+        <div class="score-item"><strong>Service:</strong> Cour Avant</div>
+        <div class="score-item"><strong>Public cible:</strong> Propriétaires bungalows 45-65 ans, banlieue Montréal (Laval, Montréal-Nord, Rive-Nord)</div>
+        <div class="score-item"><strong>Durée:</strong> 45 secondes</div>
+        <div class="score-item"><strong>Plateforme:</strong> Instagram Reels + Facebook Reels</div>
+        <div class="score-item"><strong>Matériel approuvé:</strong> A7409920 ★, A7409842, A7409840, IMG_3528 (travaux), A7409832</div>
+      </div>
+      <div style="margin-top:1rem;font-size:.88rem;">
+        <strong>Objectif:</strong> Le spectateur envoie un message ou appelle pour une soumission pour sa cour avant ou allée.<br>
+        <strong>Émotion cible:</strong> Émerveillement + envie intense ("je n'ai jamais vu quelque chose d'aussi beau pour une entrée de bungalow")
+      </div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">HOOK — PREMIÈRES 3 SECONDES</div>
+    <div class="brief-section-body">
+      <div class="scene-card" style="border-left-color:var(--or);">
+        <div class="scene-title">0:00 — 0:03</div>
+        <div class="scene-row"><span>Visual:</span> A7409920.jpg — Lanterne bollard allumée en heure dorée, bokeh warm en arrière-plan. Le tout remplit l'écran. Pas de texte pendant 2 secondes entières.</div>
+        <div class="scene-row"><span>Texte (2s):</span> <strong>"Regardez ça."</strong> (2 mots, blanc, minuscule, coin inférieur)</div>
+        <div class="scene-row"><span>Mouvement:</span> Complètement statique — laisser l'image magnétiser</div>
+        <div class="scene-row"><span>Règle 3s:</span> La beauté brute de l'image force l'arrêt. Aucune image concurrente dans le secteur n'atteint ce niveau — le contraste avec le feed ordinaire est maximal.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">STRUCTURE DES SCÈNES — 45 SECONDES</div>
+    <div class="brief-section-body">
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 1 — Hook visuel (0:00–0:05)</div>
+        <div class="scene-row"><span>Image:</span> A7409920.jpg — Plan complet, aucune retouche nécessaire</div>
+        <div class="scene-row"><span>Mouvement:</span> Statique — l'image se suffit à elle-même</div>
+        <div class="scene-row"><span>Texte:</span> "Regardez ça." apparaît à 0:02, disparaît à 0:04</div>
+        <div class="scene-row"><span>Transition:</span> Fade to black ultra rapide (0.2s)</div>
+        <div class="scene-row"><span>Émotion:</span> Choc visuel positif, arrêt de scroll garanti</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 2 — Le contexte : avant les travaux (0:05–0:10)</div>
+        <div class="scene-row"><span>Image:</span> IMG_3528.jpg — Chantier en cours, excavatrice, terrassement</div>
+        <div class="scene-row"><span>Mouvement:</span> Léger zoom out pour montrer l'ampleur du chantier</div>
+        <div class="scene-row"><span>Texte:</span> "Voilà d'où on est parti." (bas de l'écran, blanc)</div>
+        <div class="scene-row"><span>Transition:</span> Whip pan vers la droite</div>
+        <div class="scene-row"><span>Émotion:</span> Surprise — "c'est pour ça que la maison était comme ça"</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 3 — Résultat : allée principale (0:10–0:18)</div>
+        <div class="scene-row"><span>Image:</span> A7409842.jpg — Allée grand format, escaliers, bollard</div>
+        <div class="scene-row"><span>Mouvement:</span> Travelling avant lent (simulé en glissement sur photo)</div>
+        <div class="scene-row"><span>Texte:</span> Aucun — laisser le résultat parler</div>
+        <div class="scene-row"><span>Transition:</span> Match cut (alignement sur la position du bollard)</div>
+        <div class="scene-row"><span>Émotion:</span> Admiration, "wow"</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 4 — Détail latéral (0:18–0:26)</div>
+        <div class="scene-row"><span>Image:</span> A7409840.jpg — Vue de côté, bollard au premier plan, profondeur</div>
+        <div class="scene-row"><span>Mouvement:</span> Pan horizontal droit-gauche très lent</div>
+        <div class="scene-row"><span>Texte:</span> "Chaque détail compte." (petit, blanc, coin gauche)</div>
+        <div class="scene-row"><span>Transition:</span> Coupe au beat</div>
+        <div class="scene-row"><span>Émotion:</span> Sophistication — "ils pensent à tout"</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 5 — Contexte maison (0:26–0:32)</div>
+        <div class="scene-row"><span>Image:</span> A7409832.jpg — Vue large de la façade rénovée</div>
+        <div class="scene-row"><span>Mouvement:</span> Léger zoom out depuis la maison vers la rue</div>
+        <div class="scene-row"><span>Texte:</span> "Un bungalow de Laval. Une transformation complète." (deux lignes, centré)</div>
+        <div class="scene-row"><span>Transition:</span> Fade doux</div>
+        <div class="scene-row"><span>Émotion:</span> Reconnexion avec le quartier, identification du spectateur</div>
+      </div>
+      <div class="scene-card" style="border-left-color:var(--or);">
+        <div class="scene-title">SCÈNE 6 — CTA avec image vedette (0:32–0:45)</div>
+        <div class="scene-row"><span>Image:</span> A7409920.jpg à nouveau — plan complet, légèrement assombri (overlay 30%)</div>
+        <div class="scene-row"><span>Texte principal:</span> "Votre tour ?" — grande, Georgia, blanc, centré à 0:33</div>
+        <div class="scene-row"><span>Sous-texte:</span> "Soumission gratuite · Sans engagement"</div>
+        <div class="scene-row"><span>Téléphone:</span> 514-266-2504 (or, grand, pulse à 0:38)</div>
+        <div class="scene-row"><span>Logo:</span> Jardín Ideal, coin bas gauche, apparaît à 0:40</div>
+        <div class="scene-row"><span>Émotion:</span> Envie intense transformée en action</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">TEXTE EN ÉCRAN — RÉSUMÉ COMPLET</div>
+    <div class="brief-section-body">
+      <table class="timecode-table">
+        <tr><th>Timecode</th><th>Texte</th><th>Style</th></tr>
+        <tr><td>00:02–00:04</td><td>Regardez ça.</td><td>Petit, blanc, coin inférieur gauche</td></tr>
+        <tr><td>00:06–00:09</td><td>Voilà d'où on est parti.</td><td>Moyen, blanc, bas de l'écran</td></tr>
+        <tr><td>00:21–00:25</td><td>Chaque détail compte.</td><td>Petit, blanc, coin gauche</td></tr>
+        <tr><td>00:27–00:31</td><td>Un bungalow de Laval. Une transformation complète.</td><td>Moyen, deux lignes, centré</td></tr>
+        <tr><td>00:33–00:37</td><td>Votre tour ?</td><td>Grand, Georgia, blanc, centré</td></tr>
+        <tr><td>00:37–00:40</td><td>Soumission gratuite · Sans engagement</td><td>Petit, blanc semi-transparent, centré</td></tr>
+        <tr><td>00:38–00:45</td><td>514-266-2504</td><td>Grand, or, centré, pulse</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">MUSIQUE</div>
+    <div class="brief-section-body" style="font-size:.88rem;">
+      <div class="score-grid">
+        <div class="score-item"><strong>Genre:</strong> Guitare acoustique fingerstyle + pad atmosphérique</div>
+        <div class="score-item"><strong>Tempo:</strong> 75 BPM, lent mais avec intention</div>
+        <div class="score-item"><strong>Énergie:</strong> Émotionnel — crescendo vers la fin</div>
+        <div class="score-item"><strong>Source:</strong> Meta Sound Collection / CapCut Library</div>
+      </div>
+      <div class="note-box" style="margin-top:.75rem;">La musique commence doucement à 0:00. Le premier beat notable (transition guitare → pad plein) tombe à 0:10 quand le résultat apparaît. Crescendo émotionnel à 0:32 pour le CTA. Pas de paroles — marché québécois francophone.</div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">NOTES POUR L'ÉDITEUR</div>
+    <div class="brief-section-body" style="font-size:.85rem;">
+      <div class="score-grid">
+        <div class="score-item"><strong>Outil:</strong> CapCut (préféré) ou Premiere</div>
+        <div class="score-item"><strong>Color grade:</strong> Warm gold — tons chauds +15, légèrement désaturé les ombres</div>
+        <div class="score-item"><strong>Format:</strong> 9:16 pour Reels</div>
+        <div class="score-item"><strong>Sous-titres:</strong> Non</div>
+        <div class="score-item"><strong>Logo:</strong> Coin bas gauche, scène CTA uniquement</div>
+      </div>
+      <div class="reject-box" style="margin-top:.75rem;">🚫 NE PAS INCLURE dans ce reel : A7409843 et A7409845 (plantes en pots avec étiquettes — rejetées QC). Ne pas modifier l'image A7409920 avec des filtres — sa balance des blancs originale est parfaite.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ÉTAPE 3 -->
+<div class="stage">
+<div class="stage-title">ÉTAPE 3 — PRODUCTION DE CONTENU — PRÊT À PUBLIER</div>
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">5 HOOKS</div>
+<div class="hook-card"><div class="hook-num">HOOK 01 — IMAGE CHOC</div><div class="hook-text">Cette photo a été prise à Laval. C'est une entrée de bungalow. Ça ressemble à quoi votre cour avant ce matin ?</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 02 — QUESTION MIROIR</div><div class="hook-text">Votre bungalow a été construit dans les années 60. Votre entrée aussi — ça se voit encore ?</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 03 — LUMIÈRE</div><div class="hook-text">Imaginez rentrer chez vous le soir et voir cette lumière vous accueillir.</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 04 — INVESTISSEMENT</div><div class="hook-text">Ce projet a coûté moins cher que de refaire la cuisine. Et c'est la première chose que tout le monde voit.</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 05 — VOISINAGE</div><div class="hook-text">Cette transformation est dans un quartier que vous connaissez probablement. Et la liste d'attente grandit.</div></div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">3 COPIES FACEBOOK</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>FACEBOOK 01 — Transformation complète</span><span style="font-size:.72rem;opacity:.8;">Long · Photo A7409920</span></div>
+  <div class="content-card-body">Voilà ce qu'on voit quand on rentre chez M. Bériault, le soir, à Laval.
+
+Une lanterne. Une allée en pavé grand format. Une maison qui a enfin l'air à la hauteur de ce qu'elle est.
+
+Il nous a appelés en avril. Son bungalow était bien entretenu à l'intérieur — mais l'entrée n'avait pas changé depuis 30 ans. "Les visiteurs entrent par la porte de côté pour ne pas voir le devant", nous a-t-il dit.
+
+On a passé 6 jours chez lui. Nouvelle allée, nouveaux escaliers, éclairage de jardin, massifs aménagés.
+
+Maintenant tout le monde entre par l'avant.
+
+C'est ça, transformer une entrée.
+
+📞 514-266-2504 — Soumission gratuite
+Jardín Ideal · Montréal · Laval · Rive-Nord</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>FACEBOOK 02 — Lumière + émotion</span><span style="font-size:.72rem;opacity:.8;">Moyen · Photo A7409920</span></div>
+  <div class="content-card-body">Il y a des maisons qu'on reconnaît dans le noir. Parce que leur entrée est éclairée. Parce qu'on a pensé à chaque détail.
+
+L'éclairage de jardin intégré à l'aménagement paysager — c'est 15 % de plus sur la valeur perçue de votre propriété.
+
+C'est aussi la différence entre "on finit par le faire un jour" et "on est fiers d'arriver chez nous".
+
+Jardín Ideal : aménagement de cours avant, allées, escaliers et éclairage extérieur.
+Grand Montréal · Laval · Rive-Nord
+
+👇 Obtenez votre soumission gratuite — 514-266-2504</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>FACEBOOK 03 — Ad directe</span><span style="font-size:.72rem;opacity:.8;">Court · Conversion</span></div>
+  <div class="content-card-body">Projet livré cette semaine. Laval.
+
+Allée grand format. Escaliers refaits. Éclairage intégré. Massifs aménagés.
+
+Délai : 6 jours. Garantie : 5 ans. Satisfaction : totale.
+
+Votre cour avant mérite la même attention.
+
+📞 514-266-2504 | Soumission gratuite, sans engagement
+Jardín Ideal — Depuis plus de 15 ans dans le Grand Montréal</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">3 COPIES INSTAGRAM</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>INSTAGRAM 01 — Photo vedette</span><span style="font-size:.72rem;opacity:.8;">Feed · A7409920</span></div>
+  <div class="content-card-body">Cette lumière n'est pas un accident. 🌟
+
+C'est le résultat de 6 jours de travail, d'une allée repensée, d'un éclairage pensé et positionné à la main.
+
+C'est Laval. C'est un bungalow. C'est Jardín Ideal.
+
+→ Lien en bio pour votre soumission gratuite
+
+📞 514-266-2504
+
+#jardinideal #couravan #laval #amenagementpaysager #paveuni #eclairagehors #avantapres #bungalowmontreal #exterieursmaison</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>INSTAGRAM 02 — Processus</span><span style="font-size:.72rem;opacity:.8;">Carrusel avant/après</span></div>
+  <div class="content-card-body">De l'asphalte brisé à cette entrée. ↔️
+
+→ Swipe pour voir la transformation complète
+
+6 jours. Une équipe. Un résultat qui dure 25 ans.
+
+Jardín Ideal · Laval · Montréal · Rive-Nord
+📞 514-266-2504 | Soumission gratuite 🌿
+
+#transformation #avantapres #reno #paveuni #jardin #montreal</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>INSTAGRAM 03 — Éclairage</span><span style="font-size:.72rem;opacity:.8;">Feed · Éducatif</span></div>
+  <div class="content-card-body">L'éclairage extérieur, c'est le détail que tout le monde remarque. ✨
+
+Bollards de jardin · Spots encastrés · Guirlandes · Appliques murales
+
+On intègre l'éclairage dès la conception — pas après coup.
+
+Résultat ? Une entrée qui vous accueille même à minuit.
+
+Jardín Ideal · Soumission gratuite → lien en bio
+
+#eclairage #jardin #exterieursmaison #laval #couravan #jardinage #paysagiste</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">GOOGLE BUSINESS POST</div>
+<div class="content-card">
+  <div class="content-card-header"><span>Google Business Profile</span><span style="font-size:.72rem;opacity:.8;">Post mensuel</span></div>
+  <div class="content-card-body">Projet livré — Cour avant et allée, Laval
+
+Transformation complète d'une entrée résidentielle à Laval : nouvelle allée en pavé uni grand format, escaliers refaits, bollards d'éclairage intégrés, massifs aménagés.
+
+Durée du chantier : 6 jours. Matériaux garantis 5 ans.
+
+Jardín Ideal offre des soumissions gratuites pour tous travaux d'aménagement extérieur dans le Grand Montréal, Laval et la Rive-Nord.
+
+📞 514-266-2504 | jardin-ideal.com</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">2 META ADS</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>META AD 01 — Image vedette</span><span style="font-size:.72rem;opacity:.8;">Image: A7409920 · Objectif: Leads</span></div>
+  <div class="content-card-body">Titre: Cette entrée est à Laval. La vôtre pourrait l'être aussi.
+Sous-titre: Jardín Ideal — Aménagement paysager depuis 15+ ans
+Corps: Transformez votre cour avant avec des matériaux premium, une équipe certifiée et une garantie 5 ans. Soumission gratuite, sans engagement.
+CTA: Obtenir une soumission</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>META AD 02 — Retargeting</span><span style="font-size:.72rem;opacity:.8;">Image: A7409842 · Objectif: Appels</span></div>
+  <div class="content-card-body">Titre: Vous y pensez depuis le printemps.
+Sous-titre: C'est le bon moment d'agir.
+Corps: Allées, escaliers, éclairage extérieur — Jardín Ideal transforme les entrées ordinaires en cartes de visite. Devis gratuit cette semaine.
+CTA: Appeler maintenant — 514-266-2504</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">CARRUSEL COMPLET — 7 DIAPOSITIVES</div>
+
+<div class="carousel-slide">
+  <div class="slide-num">1</div>
+  <div class="slide-content"><strong>"Cette lumière vous accueille tous les soirs."</strong>Image hero: A7409920. Fond sombre pour contraste maximum. Logo Jardín Ideal bas gauche.</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">2</div>
+  <div class="slide-content"><strong>Voilà d'où on est parti</strong>Image chantier: IMG_3528 (excavatrice en travail). Texte: "Avril 2026 — début du chantier à Laval. L'ancienne entrée avait 30 ans."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">3</div>
+  <div class="slide-content"><strong>La transformation — Vue complète</strong>Image: A7409842. Texte: "6 jours plus tard. Allée grand format, escaliers, bordures, éclairage."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">4</div>
+  <div class="slide-content"><strong>Chaque détail pensé</strong>Image: A7409840. Texte: "Bollards de jardin intégrés dès la conception — pas une réflexion après coup."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">5</div>
+  <div class="slide-content"><strong>La maison dans son ensemble</strong>Image: A7409832. Texte: "La façade entière bénéficie de la transformation. Valeur perçue +10-15%."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">6</div>
+  <div class="slide-content"><strong>Ce qu'inclut chaque projet</strong>Texte: ✓ Consultation design gratuite · ✓ Matériaux certifiés · ✓ Équipe expérimentée · ✓ Délais respectés · ✓ Garantie 5 ans · ✓ Nettoyage complet inclus</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">7</div>
+  <div class="slide-content"><strong>CTA Final</strong>Image: A7409920 en fond assombri. "Votre entrée mérite ça aussi." — Téléphone 514-266-2504 en or. Logo Jardín Ideal centré. "Soumission gratuite · Sans engagement"</div>
+</div>
+
+<hr class="divider">
+
+<div class="cta-final">
+  <div style="font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.5rem;">CTA FINAL — TOUS FORMATS</div>
+  <div style="font-size:1rem;margin-bottom:.5rem;">Votre entrée mérite cette lumière.</div>
+  <div class="cta-phone">514-266-2504</div>
+  <div style="color:rgba(255,255,255,.65);font-size:.85rem;">Soumission gratuite · Sans engagement · jardin-ideal.com</div>
+  <div style="margin-top:1rem;font-size:.78rem;color:rgba(255,255,255,.5);">Montréal · Laval · Rive-Nord · Lun–Ven 07:00–18:00</div>
+</div>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>

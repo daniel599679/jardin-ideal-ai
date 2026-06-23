@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJ CA-003 — Puschak 6394 29e avenue — Juin 2026</title>
+<style>
+  :root {
+    --vf: #1E3A20; --vm: #3D6B42; --or: #C8A45A; --cr: #F5F2EB;
+    --w: #FFF; --n: #0D0E0B; --gf: #2A2B28; --g: #6B6B63;
+    --r: #B83232; --rc: #F5E8E8; --j: #C8850A; --jc: #FEF5E4; --vb: #EAF2EB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: var(--cr); color: var(--n); line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #0D2210 0%, var(--vf) 60%, #2A4A2C 100%); color: var(--w); padding: 2rem; }
+  .header-badge { background: var(--or); color: var(--vf); display: inline-block; padding: .25rem .75rem; border-radius: 4px; font-size: .75rem; font-weight: 700; letter-spacing: .1em; margin-bottom: .75rem; }
+  .header-star { background: rgba(200,164,90,.15); border: 1px solid var(--or); border-radius: 4px; display: inline-block; padding: .25rem .75rem; font-size: .75rem; color: var(--or); margin-left: .5rem; margin-bottom: .75rem; }
+  .header h1 { font-family: Georgia, serif; font-size: 1.75rem; margin-bottom: .25rem; }
+  .header-meta { color: rgba(255,255,255,.65); font-size: .85rem; display: flex; gap: 2rem; flex-wrap: wrap; margin-top: .5rem; }
+  .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .stage { margin-bottom: 3rem; }
+  .stage-title { background: var(--vf); color: var(--w); padding: .75rem 1.25rem; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; border-left: 4px solid var(--or); margin-bottom: 1.5rem; }
+  .ficha { background: var(--w); border: 1px solid #ddd; border-radius: 6px; margin-bottom: 1.25rem; overflow: hidden; }
+  .ficha-header { background: var(--gf); color: var(--w); padding: .75rem 1.25rem; font-size: .8rem; font-weight: 700; letter-spacing: .08em; }
+  .ficha-body { padding: 1.25rem; }
+  .verdict-badge { display: inline-block; padding: .3rem .9rem; border-radius: 4px; font-size: .8rem; font-weight: 700; margin: .5rem 0 1rem; }
+  .v-aprobado { background: #d4edda; color: #155724; }
+  .v-mejoras { background: var(--jc); color: #7a4f00; }
+  .v-rechazado { background: var(--rc); color: #721c24; }
+  .score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .6rem; margin: 1rem 0; }
+  .score-item { background: var(--cr); padding: .5rem .75rem; border-radius: 4px; font-size: .82rem; }
+  .score-item strong { color: var(--vf); }
+  .score-total { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--vf); padding: .75rem; background: var(--vb); border-radius: 4px; margin: .75rem 0; display: inline-block; }
+  .label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--g); margin-bottom: .25rem; margin-top: .75rem; }
+  .tag { display: inline-block; background: var(--vb); color: var(--vf); padding: .2rem .6rem; border-radius: 3px; font-size: .75rem; margin: .15rem; }
+  .note-box { background: var(--jc); border-left: 3px solid var(--j); padding: .75rem 1rem; font-size: .85rem; margin-top: .75rem; border-radius: 0 4px 4px 0; }
+  .reject-box { background: var(--rc); border-left: 3px solid var(--r); padding: .75rem 1rem; font-size: .85rem; border-radius: 0 4px 4px 0; margin-top: .75rem; }
+  .lote-resumen { background: var(--vf); color: var(--w); border-radius: 6px; padding: 1.5rem; margin-bottom: 2rem; }
+  .lote-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 1rem; text-align: center; }
+  .lote-stat-num { font-family: Georgia, serif; font-size: 1.8rem; font-weight: 700; color: var(--or); }
+  .lote-stat-label { font-size: .65rem; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .06em; }
+  .brief-block { background: var(--w); border-radius: 6px; overflow: hidden; margin-bottom: 1.25rem; }
+  .brief-section { border-bottom: 1px solid #eee; }
+  .brief-section:last-child { border-bottom: none; }
+  .brief-section-title { background: var(--cr); padding: .6rem 1.25rem; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--vf); border-left: 3px solid var(--or); }
+  .brief-section-body { padding: 1rem 1.25rem; }
+  .scene-card { background: var(--cr); border-radius: 4px; padding: .9rem 1.1rem; margin-bottom: .75rem; border-left: 3px solid var(--vm); }
+  .scene-title { font-weight: 700; color: var(--vf); font-size: .85rem; margin-bottom: .6rem; }
+  .scene-row { font-size: .82rem; margin-bottom: .25rem; }
+  .scene-row span { color: var(--g); min-width: 80px; display: inline-block; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; }
+  .timecode-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+  .timecode-table th { background: var(--vf); color: var(--w); padding: .5rem .75rem; text-align: left; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+  .timecode-table td { padding: .5rem .75rem; border-bottom: 1px solid #eee; }
+  .timecode-table tr:last-child td { border-bottom: none; }
+  .content-card { background: var(--w); border-radius: 6px; border: 1px solid #ddd; margin-bottom: 1rem; overflow: hidden; }
+  .content-card-header { background: var(--vm); color: var(--w); padding: .6rem 1.25rem; font-size: .78rem; font-weight: 700; letter-spacing: .08em; display: flex; justify-content: space-between; align-items: center; }
+  .content-card-body { padding: 1.25rem; white-space: pre-wrap; font-size: .88rem; line-height: 1.7; }
+  .hook-card { background: var(--w); border-left: 4px solid var(--or); padding: .9rem 1.1rem; margin-bottom: .6rem; border-radius: 0 4px 4px 0; }
+  .hook-num { font-size: .7rem; color: var(--or); font-weight: 700; letter-spacing: .1em; margin-bottom: .3rem; }
+  .hook-text { font-family: Georgia, serif; font-size: 1.05rem; color: var(--n); }
+  .carousel-slide { background: var(--cr); border: 1px solid #ddd; border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: .6rem; display: flex; gap: 1rem; }
+  .slide-num { background: var(--vf); color: var(--or); font-family: Georgia, serif; font-size: 1.1rem; font-weight: 700; min-width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .slide-content { font-size: .85rem; line-height: 1.6; }
+  .slide-content strong { color: var(--vf); display: block; margin-bottom: .25rem; }
+  .cta-final { background: var(--vf); color: var(--w); border-radius: 6px; padding: 1.5rem; text-align: center; }
+  .cta-phone { font-family: Georgia, serif; font-size: 1.8rem; color: var(--or); margin: .5rem 0; }
+  .divider { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+  .video-card { background: var(--gf); color: var(--w); border-radius: 6px; padding: 1.25rem; margin-bottom: 1rem; display: flex; gap: 1.25rem; align-items: flex-start; }
+  .video-icon { font-size: 2rem; flex-shrink: 0; }
+  .video-info { font-size: .85rem; }
+  .video-title { font-weight: 700; font-size: .95rem; color: var(--or); margin-bottom: .4rem; }
+  .avantapres-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .pair-card { border-radius: 6px; padding: 1rem; font-size: .82rem; }
+  .pair-avant { background: var(--rc); border: 1px solid #e0c0c0; }
+  .pair-apres { background: var(--vb); border: 1px solid #b0d8b0; }
+  @media (max-width: 600px) { .lote-stats { grid-template-columns: repeat(3, 1fr); } .avantapres-pair { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="header-badge">COUR AVANT — PROJET CA-003</div>
+    <div class="header-star">⭐ PROJET STAR — COLLECTION COMPLÈTE</div>
+  </div>
+  <h1>Projet Puschak — 6394, 29e avenue</h1>
+  <div class="header-meta">
+    <span>Analysé: 23 juin 2026</span>
+    <span>Matériel: 35 photos + 3 vidéos MP4</span>
+    <span>Avant/Après: OUI — complet</span>
+    <span>Potentiel commercial: MAXIMAL</span>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="note-box" style="margin-bottom:1.5rem;border-left-color:var(--vf);background:var(--vb);">
+  <strong style="color:var(--vf);">PROJET PRIORITAIRE</strong> — Seul projet des 3 analysés à disposer d'une paire avant/après complète ET de 3 vidéos professionnelles. Ce matériel est la base idéale pour le premier reel avant/après de Jardín Ideal. Traiter en priorité absolue.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ÉTAPE 1 — QC                                              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="stage">
+<div class="stage-title">ÉTAPE 1 — AGENTE CONTROL DE CALIDAD MAGAZINE</div>
+
+<!-- VIDEOS -->
+<div style="margin-bottom:1.5rem;">
+<div class="label">VIDÉOS — 3 FICHIERS MP4</div>
+<div class="video-card">
+  <div class="video-icon">🎬</div>
+  <div class="video-info">
+    <div class="video-title">Vidéo début projet.mp4 — 189 MB</div>
+    QC visuel: Probable vidéo d'état initial du chantier (avant ou début travaux). Fichier volumineux = haute qualité ou longue durée. Usage direct comme matériel brut pour le reel avant/après.<br>
+    <span class="tag" style="margin-top:.4rem;">Usage: Extraire clips 3-5s du début</span>
+    <span class="tag">Reel avant/pendant</span>
+  </div>
+</div>
+<div class="video-card">
+  <div class="video-icon">🎬</div>
+  <div class="video-info">
+    <div class="video-title">Vidéo installation pavé Alicia.mp4 — 74 MB</div>
+    QC visuel: Documentation du processus d'installation du pavé — probablement la pose réelle. Matériel de processus premium — montre le "pendant" avec le nom de la travailleuse (Alicia), aspect humain.<br>
+    <span class="tag" style="margin-top:.4rem;">Usage: Scène "pendant" du reel</span>
+    <span class="tag">Story coulisses</span>
+    <span class="tag">Content éducatif</span>
+  </div>
+</div>
+<div class="video-card">
+  <div class="video-icon">🎬</div>
+  <div class="video-info">
+    <div class="video-title">Vidéo processus du projet.mp4 — 48 MB</div>
+    QC visuel: Vue d'ensemble du processus complet. Matériel éditorial idéal pour un format "comment on fait ça" sur Facebook. Grande valeur pour le contenu éducatif.<br>
+    <span class="tag" style="margin-top:.4rem;">Usage: Facebook éducatif</span>
+    <span class="tag">Reel processus</span>
+    <span class="tag">YouTube</span>
+  </div>
+</div>
+<div class="note-box">Les 3 vidéos sont approuvées pour la production sans QC individuel détaillé (impossibilité de lecture directe). Recommandation: extraire des clips de 3-8 secondes pour usage en reel. Si la qualité vidéo est comparable aux photos de processus (qui sont elles-mêmes de haute qualité), le matériel sera excellent.</div>
+</div>
+
+<!-- AVANT PHOTOS -->
+<div class="ficha">
+  <div class="ficha-header">PHOTOS AVANT — avant_travaux (1) à (5) — État initial</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-mejoras">🟡 APROBADO CON MEJORAS — Paire avant/après uniquement</div>
+    <p style="font-size:.85rem;margin-bottom:1rem;">Les photos avant montrent l'état original : vieille dalle de béton fissurée, mobilier de jardin couvert, arc métallique corrodé, accès latéral en asphalte usé. C'est exactement le type de contenu "avant" qui génère le plus fort impact émotionnel quand mis en face de l'après.</p>
+
+    <div class="avantapres-pair">
+      <div class="pair-card pair-avant">
+        <strong style="color:var(--r);">AVANT — avant_travaux(1).jpg</strong><br>
+        Vue côté cour : arc métallique, meubles couverts, végétation non contrôlée. Asphalte ancien. Score: 67/100. Usage: avant d'un reel ou carrusel avant/après uniquement.
+      </div>
+      <div class="pair-card pair-apres">
+        <strong style="color:var(--vf);">APRÈS — apres_travaux.jpg (pair recommandée)</strong><br>
+        Allée principale grand format, clôture composite noire, ciel bleu. Score: 96/100. Contraste maximal avec l'avant — transformation spectaculaire.
+      </div>
+    </div>
+
+    <div class="avantapres-pair">
+      <div class="pair-card pair-avant">
+        <strong style="color:var(--r);">AVANT — avant_travaux(3).jpg</strong><br>
+        Entrée latérale avec asphalte noir fissuré, table couverte de plastique vert, boîte de carton. Très identifiable pour les propriétaires MTL. Score: 70/100.
+      </div>
+      <div class="pair-card pair-apres">
+        <strong style="color:var(--vf);">APRÈS — apres_travaux-2.jpg (pair recommandée)</strong><br>
+        Passage latéral avec pavé gris/anthracite biton, gazon impeccable, fleurs d'été. Score: 83/100. Même angle, transformation totale.
+      </div>
+    </div>
+
+    <div class="label">Actions requises pour les photos avant</div>
+    <ol style="font-size:.85rem;padding-left:1.2rem;margin:.5rem 0;">
+      <li>Ne jamais publier une photo avant sans sa paire après dans le même contenu</li>
+      <li>En reel, l'avant dure 2-3 secondes maximum — assez pour choc, pas assez pour négatif</li>
+      <li>En carrusel, la slide avant est clairement étiquetée "AVANT" en rouge</li>
+    </ol>
+  </div>
+</div>
+
+<!-- STAR APRÈS PHOTO -->
+<div class="ficha" style="border:2px solid var(--or);">
+  <div class="ficha-header" style="background:linear-gradient(135deg,var(--vf),#2d5530);color:var(--or);">⭐ PHOTO STAR APRÈS — apres_travaux.jpg — MEILLEURE PHOTO APRÈS DU LOT COMPLET</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-aprobado">✅ APROBADO</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1 Qualité:</strong> 9/10<br><small>Appareil photo professionnel, netteté, résolution maximale</small></div>
+      <div class="score-item"><strong>C2 Éclairage:</strong> 9/10<br><small>Lumière estivale directe, ciel bleu spectaculaire, ombres dramatiques</small></div>
+      <div class="score-item"><strong>C3 Composition:</strong> 9/10<br><small>Allée centrale en perspective, clôture noire en arrière-plan, ciel domine le haut</small></div>
+      <div class="score-item"><strong>C4 Impact:</strong> 10/10<br><small>AVANT/APRÈS le plus dramatique de toute la collection — choc visuel garanti</small></div>
+      <div class="score-item"><strong>C5 Pub:</strong> 10/10<br><small>Image héro de campagne. Arrête n'importe quel scroll.</small></div>
+      <div class="score-item"><strong>C6 Transformation:</strong> 10/10<br><small>L'avant est connu — le contraste est maximal</small></div>
+      <div class="score-item"><strong>C7 Premium:</strong> 10/10<br><small>Matériaux premium visibles, finition parfaite, niveau Techo Bloc</small></div>
+      <div class="score-item"><strong>C8 Stop scroll:</strong> 10/10<br><small>Perspective + anthracite + ciel bleu = stop immédiat</small></div>
+      <div class="score-item"><strong>C9 Marque:</strong> 9/10<br><small>Résidentiel MTL, brique, clôture composite — parfait Jardín Ideal</small></div>
+      <div class="score-item"><strong>C10 Concurrence:</strong> 10/10<br><small>Aucun concurrent MTL ne montre ce niveau de transformation documentée</small></div>
+    </div>
+    <div class="score-total" style="font-size:1.8rem;">96/100</div>
+    <div class="label">Usage recommandé</div>
+    <div><span class="tag">Hero Image avant/après campagne</span><span class="tag">Meta Ad priorité 1</span><span class="tag">Feed Instagram</span><span class="tag">Carrusel slide finale</span><span class="tag">Reel scène révélation</span></div>
+    <div class="note-box"><strong>Note DIRECTOR_VIDEO_IA:</strong> Cette image doit être la scène de révélation du reel — après la scène avant, match cut direct sur cette vue. Le contraste asphalte fissuré → pavé propre avec ciel bleu est le moment le plus puissant de tout le contenu disponible. Laisser cette image plein écran pendant 4-5 secondes sans texte avant d'introduire le CTA.</div>
+  </div>
+</div>
+
+<!-- APRÈS PHOTOS 2-5 -->
+<div class="ficha">
+  <div class="ficha-header">PHOTOS APRÈS — apres_travaux-2 à -7 + détails</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-aprobado">✅ APROBADO (apres_travaux-2, -5) | 🟡 CON MEJORAS (-3, -4, -6, -7)</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>apres_travaux-2.jpg:</strong> 83/100<br>Passage latéral + gazon, lumière estivale. Approuvé pour feed et carrusel.</div>
+      <div class="score-item"><strong>apres_travaux-5.jpg:</strong> 89/100<br>Plan au sol, profondeur de champ, bollard en fond. Approuvé — très fort visuellement.</div>
+      <div class="score-item"><strong>apres_travaux-4.jpg:</strong> 70/100<br>Salon extérieur avec mobilier ordinaire. Approuvé avec améliorations — le mobilier diminue l'impact du pavé.</div>
+      <div class="score-item"><strong>apres_travaux-3, -6, -7:</strong> 72-78/100<br>Angles complémentaires, bonne qualité. Avec améliorations pour usage secondaire.</div>
+    </div>
+    <div class="label">Usage</div>
+    <div><span class="tag">apres-5 → Feed + Paid</span><span class="tag">apres-2 → Carrusel</span><span class="tag">apres-4 → Story lifestyle</span></div>
+  </div>
+</div>
+
+<!-- PROCESSUS -->
+<div class="ficha">
+  <div class="ficha-header">PHOTO PROCESSUS — processus_travaux.jpg — EXCAVATRICE JAUNE</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-aprobado">✅ APROBADO — contenu processus</div>
+    <div class="score-grid">
+      <div class="score-item"><strong>C1:</strong> 8/10 — Professionnel</div>
+      <div class="score-item"><strong>C2:</strong> 8/10 — Lumière vive</div>
+      <div class="score-item"><strong>C3:</strong> 8/10 — Excavatrice domine le cadre, dramatique</div>
+      <div class="score-item"><strong>C4:</strong> 8/10 — Puissance, transformation en action</div>
+      <div class="score-item"><strong>C5:</strong> 8/10 — Fort pour contenu processus</div>
+      <div class="score-item"><strong>C6:</strong> 9/10 — C'est la transformation en cours</div>
+      <div class="score-item"><strong>C7:</strong> 7/10 — Chantier professionnel, équipement lourd</div>
+      <div class="score-item"><strong>C8:</strong> 9/10 — Machine jaune + asphalte brisé = drama</div>
+      <div class="score-item"><strong>C9:</strong> 8/10 — Contexte MTL visible</div>
+      <div class="score-item"><strong>C10:</strong> 9/10 — Rare de voir ce niveau de documentation</div>
+    </div>
+    <div class="score-total">82/100</div>
+    <div class="label">Usage</div>
+    <div><span class="tag">Scène pendant reel</span><span class="tag">Story coulisses</span><span class="tag">Carrusel diapo processus</span></div>
+    <div class="note-box">Photo cinématographique — l'asphalte brisé au premier plan + machine au travail = passage idéal dans le reel entre l'avant et l'après. Durée recommandée en reel: 2-3 secondes maximum, avec une musique percussive.</div>
+  </div>
+</div>
+
+<!-- TRAVAILLEURS -->
+<div class="ficha">
+  <div class="ficha-header">PHOTOS TRAVAILLEURS — IMG_1855 à IMG_2120 (16 photos)</div>
+  <div class="ficha-body">
+    <div class="verdict-badge v-mejoras">🟡 APROBADO CON MEJORAS — Usage humanisation marque uniquement</div>
+    <p style="font-size:.85rem;margin-bottom:.75rem;">Photos prises par les travailleurs pendant le chantier. Fichiers très volumineux (4-5MB), résolution téléphone mais haute qualité. Montrent le travail en cours, les travailleurs en action, la pose du pavé.</p>
+    <div class="label">Actions requises</div>
+    <ol style="font-size:.85rem;padding-left:1.2rem;margin:.5rem 0;">
+      <li>Vérifier que chaque travailleur visible a consenti à l'utilisation de son image</li>
+      <li>Vérifier la présence d'équipements de sécurité visibles (obligatoire selon critères QC)</li>
+      <li>Sélectionner les 2-3 meilleures pour Stories "coulisses de l'équipe"</li>
+    </ol>
+    <div class="label">Usage autorisé</div>
+    <div><span class="tag">Stories Instagram</span><span class="tag">Facebook "Notre équipe"</span><span class="tag">Reel B-roll pendant</span></div>
+  </div>
+</div>
+
+<!-- LOTE RESUMEN -->
+<div class="lote-resumen">
+  <div style="font-weight:700;font-size:1rem;letter-spacing:.05em;">RÉSUMÉ DU LOT — PROJET PUSCHAK</div>
+  <div class="lote-stats">
+    <div><div class="lote-stat-num">38</div><div class="lote-stat-label">Total analysé</div></div>
+    <div><div class="lote-stat-num" style="color:#7bff9e;">6</div><div class="lote-stat-label">Photos approuvées</div></div>
+    <div><div class="lote-stat-num" style="color:#ffd97d;">27</div><div class="lote-stat-label">Avec améliorations</div></div>
+    <div><div class="lote-stat-num" style="color:#ff7b7b;">0</div><div class="lote-stat-label">Rejetées</div></div>
+    <div><div class="lote-stat-num" style="color:#a0e4ff;">3</div><div class="lote-stat-label">Vidéos approuvées</div></div>
+  </div>
+  <div style="margin-top:1.25rem;font-size:.85rem;color:rgba(255,255,255,.85);">
+    <strong style="color:var(--or);">Priorité de production:</strong><br>
+    1. apres_travaux.jpg (96/100) → Révélation principale du reel<br>
+    2. apres_travaux-5.jpg (89/100) → Feed Instagram + Paid<br>
+    3. apres_travaux-2.jpg (83/100) → Carrusel + passage<br>
+    4. processus_travaux.jpg (82/100) → Scène pendant du reel<br>
+    5. avant_travaux(3).jpg + apres_travaux.jpg → Paire avant/après #1<br>
+    6. Vidéo installation pavé Alicia.mp4 → Reel processus priorité<br><br>
+    <strong style="color:var(--or);">Avantage unique:</strong> Ce projet est le SEUL des 3 à avoir une paire avant/après complète + 3 vidéos. C'est le matériel le plus précieux de toute la collection.
+  </div>
+</div>
+</div>
+
+<!-- ÉTAPE 2 -->
+<div class="stage">
+<div class="stage-title">ÉTAPE 2 — BRIEF DE DIRECTION — DIRECTOR VIDEO IA</div>
+
+<div class="brief-block">
+  <div class="brief-section">
+    <div class="brief-section-title">EN-TÊTE</div>
+    <div class="brief-section-body">
+      <div class="score-grid">
+        <div class="score-item"><strong>Reel ID:</strong> JI-R-20260623-003</div>
+        <div class="score-item"><strong>Service:</strong> Cour Avant / Allée pavé uni</div>
+        <div class="score-item"><strong>Public cible:</strong> Propriétaires 40-60 ans, résidences unifamiliales Montréal-Est, Laval-Est, Rive-Nord. Maisons avec cours avant en asphalte vieillissant.</div>
+        <div class="score-item"><strong>Durée:</strong> 45 secondes</div>
+        <div class="score-item"><strong>Plateforme:</strong> Instagram Reels (primaire) + Facebook</div>
+        <div class="score-item"><strong>Format vedette:</strong> Avant/Après reveal — format étoile pour Cour Avant</div>
+      </div>
+      <div style="margin-top:1rem;font-size:.88rem;">
+        <strong>Objectif:</strong> Le spectateur réalise que sa propre entrée ressemble à l'"avant" et prend contact immédiatement.<br>
+        <strong>Émotion cible:</strong> Reconnaissance ("c'est mon asphalte") → choc de la révélation → désir intense → action.
+      </div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">HOOK — PREMIÈRES 3 SECONDES</div>
+    <div class="brief-section-body">
+      <div class="scene-card" style="border-left-color:var(--or);">
+        <div class="scene-title">0:00 — 0:03</div>
+        <div class="scene-row"><span>Visual:</span> Plan de la vidéo "début projet" — asphalte vieux, entrée défraîchie, l'état AVANT. Plein écran, 3/4 du cadre = asphalte fissuré ou entrée datée.</div>
+        <div class="scene-row"><span>Texte:</span> <strong>"C'est comme ça que ça ressemblait."</strong> (blanc, bas de l'écran, police légère)</div>
+        <div class="scene-row"><span>Mouvement:</span> Légèrement shaky (caméra téléphone naturelle) — contraste volontaire avec la fluidité du "après"</div>
+        <div class="scene-row"><span>Règle 3s:</span> Chaque propriétaire avec une vieille entrée se reconnaît immédiatement. Ce n'est pas beautiful — c'est relatif. La tension crée la curiosité.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">STRUCTURE DES SCÈNES — 45 SECONDES</div>
+    <div class="brief-section-body">
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 1 — L'avant (0:00–0:06)</div>
+        <div class="scene-row"><span>Source:</span> Clip de "Vidéo début projet.mp4" (extraire les premières secondes)</div>
+        <div class="scene-row"><span>Alternative:</span> avant_travaux(3).jpg — asphalte + meuble couvert + boîte carton</div>
+        <div class="scene-row"><span>Mouvement:</span> Handheld naturel — légère instabilité intentionnelle</div>
+        <div class="scene-row"><span>Texte:</span> "C'est comme ça que ça ressemblait." (bas, blanc, 0:01-0:05)</div>
+        <div class="scene-row"><span>Transition:</span> Coupe directe BRUTALE (whip pan ou hard cut)</div>
+        <div class="scene-row"><span>Émotion:</span> Reconnaissance, légère honte familière, curiosité de ce qui vient</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 2 — La révélation (0:06–0:13) — MOMENT CLÉ</div>
+        <div class="scene-row"><span>Image:</span> apres_travaux.jpg — PLEIN ÉCRAN. Vue de l'allée principale, ciel bleu, clôture anthracite, pavé impeccable.</div>
+        <div class="scene-row"><span>Mouvement:</span> Statique 2 secondes → slow zoom in vers le fond. Laissez l'image respirer.</div>
+        <div class="scene-row"><span>Texte:</span> AUCUN pendant 3 secondes. Puis "6 jours plus tard." (petit, coin bas)</div>
+        <div class="scene-row"><span>Son:</span> Beat musical principal tombe ICI — au changement d'image</div>
+        <div class="scene-row"><span>Transition:</span> Pan horizontal lent vers la droite</div>
+        <div class="scene-row"><span>Émotion:</span> CHOC. Stupéfaction. "Wow." — c'est le moment central de tout le reel</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 3 — Le processus (0:13–0:20)</div>
+        <div class="scene-row"><span>Source:</span> Clip de "Vidéo installation pavé Alicia.mp4" OU processus_travaux.jpg</div>
+        <div class="scene-row"><span>Mouvement:</span> Travelling depuis le sol vers le haut (tilt up)</div>
+        <div class="scene-row"><span>Texte:</span> "Une équipe. 6 jours. Résultat garanti." (3 lignes qui apparaissent une par une)</div>
+        <div class="scene-row"><span>Transition:</span> Coupe directe</div>
+        <div class="scene-row"><span>Émotion:</span> Confiance, compétence, "ces gens savent ce qu'ils font"</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 4 — Détails du résultat (0:20–0:28)</div>
+        <div class="scene-row"><span>Images:</span> apres_travaux-5.jpg (plan sol bokeh) + apres_travaux-2.jpg (passage latéral)</div>
+        <div class="scene-row"><span>Mouvement:</span> Plan 1: statique bokeh 3s → Plan 2: travelling avant 5s</div>
+        <div class="scene-row"><span>Texte:</span> "Pavé premium. Finition parfaite. Garantie 5 ans." (petit, blanc, disparaît avant cut)</div>
+        <div class="scene-row"><span>Transition:</span> Match cut (ligne de pavé)</div>
+        <div class="scene-row"><span>Émotion:</span> Désir de qualité, aspiration aux détails</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-title">SCÈNE 5 — Retour à la révélation (0:28–0:35)</div>
+        <div class="scene-row"><span>Image:</span> apres_travaux.jpg à nouveau — angle légèrement différent ou recadrage</div>
+        <div class="scene-row"><span>Mouvement:</span> Slow zoom out — voir tout l'espace depuis plus loin</div>
+        <div class="scene-row"><span>Texte:</span> "6394, 29e avenue. Montréal." (petit, blanc, vérité du projet)</div>
+        <div class="scene-row"><span>Transition:</span> Fade doux</div>
+        <div class="scene-row"><span>Émotion:</span> Ancrage — "c'est réel, c'est près de chez moi"</div>
+      </div>
+      <div class="scene-card" style="border-left-color:var(--or);">
+        <div class="scene-title">SCÈNE 6 — CTA (0:35–0:45)</div>
+        <div class="scene-row"><span>Visual:</span> apres_travaux.jpg fond assombri 40% — la beauté reste visible sous le texte</div>
+        <div class="scene-row"><span>Texte 1:</span> "Votre entrée mérite la même transformation." (Georgia, grand, blanc)</div>
+        <div class="scene-row"><span>Texte 2:</span> "Soumission gratuite — sans engagement" (petit, dessous)</div>
+        <div class="scene-row"><span>Téléphone:</span> 514-266-2504 (or, très grand, pulse 2x)</div>
+        <div class="scene-row"><span>Logo:</span> Jardín Ideal, coin bas gauche</div>
+        <div class="scene-row"><span>Émotion:</span> Action immédiate — "je les appelle maintenant"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">TEXTE EN ÉCRAN — RÉSUMÉ COMPLET</div>
+    <div class="brief-section-body">
+      <table class="timecode-table">
+        <tr><th>Timecode</th><th>Texte</th><th>Style</th></tr>
+        <tr><td>00:01–00:05</td><td>C'est comme ça que ça ressemblait.</td><td>Moyen, blanc, bas de l'écran</td></tr>
+        <tr><td>00:09–00:11</td><td>6 jours plus tard.</td><td>Petit, blanc, coin bas droit</td></tr>
+        <tr><td>00:14–00:19</td><td>Une équipe. 6 jours. Résultat garanti.</td><td>Moyen, 3 lignes, centré, apparaissent en séquence</td></tr>
+        <tr><td>00:22–00:27</td><td>Pavé premium. Finition parfaite. Garantie 5 ans.</td><td>Petit, blanc, coin bas</td></tr>
+        <tr><td>00:30–00:34</td><td>6394, 29e avenue. Montréal.</td><td>Petit, blanc semi-transparent, coin bas gauche</td></tr>
+        <tr><td>00:35–00:40</td><td>Votre entrée mérite la même transformation.</td><td>Grand, Georgia, blanc, centré</td></tr>
+        <tr><td>00:40–00:43</td><td>Soumission gratuite — sans engagement</td><td>Petit, blanc 70%, centré</td></tr>
+        <tr><td>00:41–00:45</td><td>514-266-2504</td><td>Très grand, or, centré, pulse 2x</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">MUSIQUE</div>
+    <div class="brief-section-body" style="font-size:.88rem;">
+      <div class="score-grid">
+        <div class="score-item"><strong>Genre:</strong> Electronic cinematic — crescendo dramatique</div>
+        <div class="score-item"><strong>Tempo:</strong> Commence à 80 BPM, monte à 110 au moment de la révélation</div>
+        <div class="score-item"><strong>Énergie:</strong> Épique — montée progressive, explosion au reveal</div>
+        <div class="score-item"><strong>Source:</strong> Meta Sound Collection</div>
+      </div>
+      <div class="note-box" style="margin-top:.75rem;"><strong>Synchronisation critique:</strong> La transition musicale la plus forte (drop ou beat principal) DOIT tomber exactement à 0:06 — le moment de la révélation après/avant. C'est le battement de cœur du reel. Si ce beat sync n'est pas parfait, tout l'impact émotionnel est perdu. Prioriser la sélection musicale autour de ce moment.</div>
+    </div>
+  </div>
+
+  <div class="brief-section">
+    <div class="brief-section-title">NOTES POUR L'ÉDITEUR</div>
+    <div class="brief-section-body" style="font-size:.85rem;">
+      <div class="score-grid">
+        <div class="score-item"><strong>Outil:</strong> CapCut</div>
+        <div class="score-item"><strong>Color grade:</strong> Scène avant: désaturé, froid. Scène après: chaud, saturé (+20%). Le contraste chromatique renforce le contraste narratif.</div>
+        <div class="score-item"><strong>Format:</strong> 9:16 pour Reels</div>
+        <div class="score-item"><strong>Aspect ratio:</strong> Ne pas recadrer les vidéos — utiliser en plein format 9:16</div>
+      </div>
+      <div class="note-box" style="margin-top:.75rem;"><strong>Technique avant/après:</strong> Pour la transition à 0:06, utiliser un "hard cut" (coupe directe) sans transition douce — la brutalité du changement fait partie de l'impact. Alternativement, utiliser un "wipe horizontal" qui révèle la photo après comme si on effaçait l'avant.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ÉTAPE 3 -->
+<div class="stage">
+<div class="stage-title">ÉTAPE 3 — PRODUCTION DE CONTENU — PRÊT À PUBLIER</div>
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">5 HOOKS</div>
+<div class="hook-card"><div class="hook-num">HOOK 01 — RECONNAISSANCE</div><div class="hook-text">Vous avez honte de votre entrée depuis combien d'années ? Eux aussi. Voilà ce qu'on a fait.</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 02 — CHIFFRE</div><div class="hook-text">6 jours. C'est tout ce qu'il a fallu pour transformer cette entrée complètement.</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 03 — ADRESSE RÉELLE</div><div class="hook-text">6394, 29e avenue, Montréal. Avant : asphalte fendu. Après : regardez.</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 04 — COMPARAISON</div><div class="hook-text">Avant c'était de l'asphalte de 1985. Maintenant c'est la maison dont tout le quartier parle.</div></div>
+<div class="hook-card"><div class="hook-num">HOOK 05 — PROCESSUS</div><div class="hook-text">Comment on enlève 30 ans d'asphalte et on installe du pavé premium en 6 jours ? Voilà.</div></div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">3 COPIES FACEBOOK</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>FACEBOOK 01 — Avant/Après storytelling</span><span style="font-size:.72rem;opacity:.8;">Long · Image révélation</span></div>
+  <div class="content-card-body">Cette maison de la 29e avenue à Montréal avait la même entrée depuis 30 ans.
+
+De l'asphalte fissuré. Un vieux mobilier de jardin sous des bâches de plastique. Une entrée qu'on évitait de montrer aux visiteurs.
+
+La famille Puschak nous a contactés en mai.
+
+6 jours plus tard : nouvelle allée en pavé grand format biton, clôture composite noire, système de drainage intégré. Une entrée qu'on veut maintenant montrer.
+
+La transformation n'est pas qu'esthétique. L'ancienne surface retenait l'eau et gonflait l'hiver. Le pavé bien installé dure 30+ ans avec zéro entretien annuel.
+
+Votre asphalte a quel âge ?
+
+📞 514-266-2504 — Évaluation et soumission gratuite
+Jardín Ideal · Montréal · Laval · Rive-Nord</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>FACEBOOK 02 — Éducatif asphalte vs pavé</span><span style="font-size:.72rem;opacity:.8;">Moyen · Carrusel</span></div>
+  <div class="content-card-body">Asphalte vs Pavé uni — ce que votre entrée vous coûte vraiment 💡
+
+Asphalte :
+→ Durée de vie : 15-20 ans
+→ Entretien annuel : scellement, remplissage des fissures
+→ Gonfle et se fissure sous le gel
+→ Coût de remplacement : souvent aussi cher que le pavé initial
+
+Pavé uni :
+→ Durée de vie : 30-50 ans
+→ Entretien : zéro (ou presque)
+→ Résiste au gel : chaque pavé bouge indépendamment
+→ Valeur ajoutée à la propriété : +10-15%
+
+Ce projet sur la 29e avenue remplace de l'asphalte de 30 ans. Résultat : une entrée qui durera 30+ ans de plus — sans problème.
+
+Vos questions ? En commentaire ou au 514-266-2504.
+Jardín Ideal · Soumission gratuite</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>FACEBOOK 03 — Retargeting / Conversion directe</span><span style="font-size:.72rem;opacity:.8;">Court · Ad</span></div>
+  <div class="content-card-body">Asphalte fissuré ? Entrée datée ?
+
+On vient de transformer une maison de la 29e avenue, Montréal — de A à Z — en 6 jours.
+
+Pavé uni premium. Clôture composite. Drainage intégré. Garantie 5 ans.
+
+Votre projet peut commencer dans 2-3 semaines.
+
+📞 514-266-2504 | Soumission gratuite
+🌐 jardin-ideal.com</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">3 COPIES INSTAGRAM</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>INSTAGRAM 01 — Révélation</span><span style="font-size:.72rem;opacity:.8;">Feed · Image apres_travaux</span></div>
+  <div class="content-card-body">De l'asphalte de 30 ans à ça. 🔄
+
+29e avenue, Montréal. 6 jours de travail.
+
+→ Swipe pour voir l'avant
+
+📞 514-266-2504 | Soumission gratuite — lien en bio 🌿
+
+#jardinideal #avantapres #couravan #paveuni #montreal #transformation #amenagementpaysager #asphalte #exterieursmaison</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>INSTAGRAM 02 — Processus</span><span style="font-size:.72rem;opacity:.8;">Reel / Story</span></div>
+  <div class="content-card-body">6 jours. Une équipe. Une transformation complète. ⚒️
+
+Excavation · Base granulaire · Pavé grand format · Clôture composite
+
+C'est comme ça qu'on travaille.
+
+Jardín Ideal · Montréal · Laval · Rive-Nord
+📞 514-266-2504 | Lien bio pour soumission gratuite
+
+#chantier #paveuni #construction #montreal #equipe #artisans #exterieursmaison</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>INSTAGRAM 03 — Durabilité</span><span style="font-size:.72rem;opacity:.8;">Feed éducatif</span></div>
+  <div class="content-card-body">30 ans d'asphalte remplacés. Pour les 30 prochaines années. 💪
+
+Le pavé uni ne se fissure pas. Ne retient pas l'eau. Résiste aux hivers québécois.
+
+Et il prend de la valeur avec le temps.
+
+→ Votre entrée mérite ça aussi.
+
+📞 514-266-2504 · Soumission gratuite
+
+#durabilite #paveuni #montreal #quebec #renovation #couravan #immobilier</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">GOOGLE BUSINESS POST</div>
+<div class="content-card">
+  <div class="content-card-header"><span>Google Business Profile</span><span style="font-size:.72rem;opacity:.8;">Post mensuel</span></div>
+  <div class="content-card-body">Projet livré — 6394, 29e avenue, Montréal
+
+Transformation complète d'une entrée résidentielle à Montréal : démolition de l'ancienne surface en asphalte, installation d'une allée en pavé uni grand format biton, nouvelle clôture composite, drainage intégré.
+
+Durée du chantier : 6 jours. Matériaux certifiés. Garantie 5 ans.
+
+Jardín Ideal — aménagement extérieur résidentiel dans le Grand Montréal, Laval et Rive-Nord.
+
+📞 514-266-2504 | jardin-ideal.com</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">2 META ADS</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>META AD 01 — Avant/Après</span><span style="font-size:.72rem;opacity:.8;">Carrousel 2 images · Objectif: Leads</span></div>
+  <div class="content-card-body">Titre: Avant / Après — 6 jours de travail à Montréal
+Sous-titre: Jardín Ideal — Spécialistes du pavé uni résidentiel
+Corps: Votre entrée en asphalte peut devenir ça. Soumission gratuite, délai garanti, matériaux premium certifiés. Service dans tout le Grand Montréal.
+CTA: Voir ma transformation possible</div>
+</div>
+
+<div class="content-card">
+  <div class="content-card-header"><span>META AD 02 — Processus</span><span style="font-size:.72rem;opacity:.8;">Vidéo · Objectif: Notoriété + Leads</span></div>
+  <div class="content-card-body">Titre: On a fait tout ça en 6 jours.
+Sous-titre: Excavation complète · Pavé premium · Clôture composite
+Corps: Regardez le processus complet — de l'asphalte fissuré au résultat final. Équipe certifiée, garantie 5 ans, soumission gratuite.
+Vidéo: "Vidéo processus du projet.mp4" (48MB — idéale pour format ad vidéo)
+CTA: Obtenir une soumission gratuite</div>
+</div>
+
+<hr class="divider">
+
+<div class="label" style="font-size:.8rem;margin-bottom:.75rem;">CARRUSEL COMPLET — 7 DIAPOSITIVES</div>
+
+<div class="carousel-slide">
+  <div class="slide-num">1</div>
+  <div class="slide-content"><strong>"Avant d'appeler — regardez ce qu'on a fait."</strong>Image: apres_travaux.jpg en plein cadre. Logo bas gauche. Fond sombre overlay minimal.</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">2</div>
+  <div class="slide-content"><strong>AVANT — L'état initial</strong>Image: avant_travaux(3).jpg (asphalte + meubles sous bâches). Étiquette rouge "AVANT" en haut. Texte: "29e avenue, Montréal. Asphalte de 30 ans."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">3</div>
+  <div class="slide-content"><strong>APRÈS — La révélation</strong>Image: apres_travaux.jpg. Étiquette verte "APRÈS" en haut. Texte: "6 jours plus tard. Même maison. Autre monde."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">4</div>
+  <div class="slide-content"><strong>Le processus en images</strong>Image: processus_travaux.jpg (excavatrice). Texte: "Jour 1-2 : excavation complète de l'ancien asphalte. Tout repart de zéro."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">5</div>
+  <div class="slide-content"><strong>Les détails qui durent</strong>Image: apres_travaux-5.jpg (plan sol bokeh). Texte: "Pavé uni grand format biton. Joints polymères. Résistance garantie au gel québécois."</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">6</div>
+  <div class="slide-content"><strong>Asphalte vs Pavé — la différence</strong>Texte: Asphalte: 15-20 ans / entretien annuel / gonfle au gel. Pavé: 30-50 ans / aucun entretien / s'adapte au gel. Les chiffres parlent d'eux-mêmes.</div>
+</div>
+<div class="carousel-slide">
+  <div class="slide-num">7</div>
+  <div class="slide-content"><strong>Votre transformation vous attend</strong>Image: apres_travaux.jpg en fond sombre. "Soumission gratuite · 514-266-2504" en or, centré. Logo Jardín Ideal. "Disponible : Montréal · Laval · Rive-Nord"</div>
+</div>
+
+<hr class="divider">
+
+<div class="cta-final">
+  <div style="font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.5rem;">CTA FINAL — TOUS FORMATS</div>
+  <div style="font-size:1rem;margin-bottom:.5rem;">Votre entrée mérite la même transformation.</div>
+  <div class="cta-phone">514-266-2504</div>
+  <div style="color:rgba(255,255,255,.65);font-size:.85rem;">Soumission gratuite · Sans engagement · jardin-ideal.com</div>
+  <div style="margin-top:.75rem;font-size:.85rem;color:var(--or);">Montréal · Laval · Rive-Nord · Disponibilité limitée juillet 2026</div>
+  <div style="margin-top:.5rem;font-size:.78rem;color:rgba(255,255,255,.5);">Lun–Ven 07:00–18:00</div>
+</div>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>

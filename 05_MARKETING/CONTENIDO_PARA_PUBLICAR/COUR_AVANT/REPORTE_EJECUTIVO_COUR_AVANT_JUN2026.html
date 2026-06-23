@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapport Exécutif — Cour Avant — Juin 2026</title>
+<style>
+  :root {
+    --vf: #1E3A20; --vm: #3D6B42; --or: #C8A45A; --cr: #F5F2EB;
+    --w: #FFF; --n: #0D0E0B; --gf: #2A2B28; --g: #6B6B63;
+    --r: #B83232; --rc: #F5E8E8; --j: #C8850A; --jc: #FEF5E4; --vb: #EAF2EB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: var(--cr); color: var(--n); line-height: 1.6; }
+  .header { background: var(--gf); color: var(--w); padding: 2.5rem 2rem; }
+  .header-eyebrow { font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: var(--or); margin-bottom: .75rem; }
+  .header h1 { font-family: Georgia, serif; font-size: 2rem; margin-bottom: .35rem; }
+  .header-subtitle { color: rgba(255,255,255,.6); font-size: .9rem; }
+  .header-date { margin-top: 1.25rem; display: flex; gap: 2rem; font-size: .8rem; color: rgba(255,255,255,.5); flex-wrap: wrap; }
+  .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .section { margin-bottom: 2.5rem; }
+  .section-title { font-family: Georgia, serif; font-size: 1.1rem; color: var(--vf); border-bottom: 2px solid var(--or); padding-bottom: .5rem; margin-bottom: 1.25rem; }
+  /* Stats cards */
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+  .stat-card { background: var(--w); border-radius: 8px; padding: 1.25rem; text-align: center; border-top: 3px solid var(--or); }
+  .stat-num { font-family: Georgia, serif; font-size: 2.25rem; font-weight: 700; color: var(--vf); }
+  .stat-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--g); margin-top: .25rem; }
+  /* Project ranking */
+  .proj-card { background: var(--w); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; border-left: 5px solid var(--vm); display: grid; grid-template-columns: auto 1fr auto; gap: 1.25rem; align-items: start; }
+  .proj-rank { font-family: Georgia, serif; font-size: 2.5rem; font-weight: 700; color: var(--or); min-width: 48px; text-align: center; padding-top: .25rem; }
+  .proj-info h3 { font-family: Georgia, serif; font-size: 1.1rem; color: var(--vf); margin-bottom: .4rem; }
+  .proj-info p { font-size: .85rem; color: var(--g); line-height: 1.5; }
+  .proj-score { text-align: right; }
+  .proj-score-num { font-family: Georgia, serif; font-size: 1.6rem; font-weight: 700; color: var(--vf); }
+  .proj-score-label { font-size: .65rem; text-transform: uppercase; letter-spacing: .1em; color: var(--g); }
+  .potential-badge { display: inline-block; padding: .2rem .6rem; border-radius: 3px; font-size: .72rem; font-weight: 700; letter-spacing: .05em; margin-top: .4rem; }
+  .pot-alto { background: #d4edda; color: #155724; }
+  .pot-medio { background: var(--jc); color: #7a4f00; }
+  /* QC table */
+  .qc-table { width: 100%; border-collapse: collapse; background: var(--w); border-radius: 8px; overflow: hidden; }
+  .qc-table th { background: var(--vf); color: var(--w); padding: .6rem .9rem; text-align: left; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+  .qc-table td { padding: .6rem .9rem; border-bottom: 1px solid #eee; font-size: .82rem; vertical-align: middle; }
+  .qc-table tr:last-child td { border-bottom: none; }
+  .qc-table tr:hover td { background: var(--cr); }
+  .score-chip { display: inline-block; padding: .15rem .5rem; border-radius: 3px; font-weight: 700; font-size: .78rem; }
+  .chip-green { background: #d4edda; color: #155724; }
+  .chip-yellow { background: var(--jc); color: #7a4f00; }
+  .chip-red { background: var(--rc); color: #721c24; }
+  /* Publication calendar */
+  .cal-row { display: grid; grid-template-columns: 100px 1fr 120px 120px; gap: 1rem; padding: .75rem 1rem; background: var(--w); border-radius: 4px; margin-bottom: .4rem; align-items: center; font-size: .83rem; }
+  .cal-row.header { background: var(--vf); color: var(--w); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; border-radius: 4px; }
+  .cal-date { font-weight: 700; color: var(--vf); }
+  .cal-row.header .cal-date { color: var(--w); }
+  /* Alert boxes */
+  .alert { border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: .88rem; }
+  .alert-success { background: var(--vb); border-left: 4px solid var(--vm); }
+  .alert-warning { background: var(--jc); border-left: 4px solid var(--j); }
+  .alert-danger { background: var(--rc); border-left: 4px solid var(--r); }
+  /* Next steps */
+  .step-list { counter-reset: step; list-style: none; padding: 0; }
+  .step-list li { counter-increment: step; display: flex; gap: 1rem; padding: .9rem 1.1rem; background: var(--w); border-radius: 6px; margin-bottom: .6rem; align-items: flex-start; }
+  .step-list li::before { content: counter(step); background: var(--vf); color: var(--or); font-family: Georgia, serif; font-size: 1rem; font-weight: 700; min-width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-content { font-size: .85rem; line-height: 1.6; }
+  .step-content strong { color: var(--vf); display: block; margin-bottom: .2rem; }
+  .missing-table { width: 100%; border-collapse: collapse; background: var(--w); border-radius: 8px; overflow: hidden; }
+  .missing-table th { background: var(--r); color: var(--w); padding: .6rem .9rem; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; text-align: left; }
+  .missing-table td { padding: .6rem .9rem; border-bottom: 1px solid #eee; font-size: .82rem; }
+  .missing-table tr:last-child td { border-bottom: none; }
+  .kpi-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  .kpi-card { background: var(--w); border-radius: 6px; padding: 1rem; text-align: center; }
+  .kpi-val { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--vf); }
+  .kpi-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--g); margin-top: .2rem; }
+  .kpi-target { font-size: .75rem; color: var(--vm); margin-top: .15rem; }
+  @media (max-width: 600px) {
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .proj-card { grid-template-columns: auto 1fr; }
+    .proj-score { grid-column: 1 / -1; text-align: left; }
+    .cal-row { grid-template-columns: 80px 1fr; }
+    .kpi-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-eyebrow">Jardín Ideal — Fábrica de Contenido IA</div>
+  <h1>Rapport Exécutif — Cour Avant</h1>
+  <div class="header-subtitle">Première production réelle — 3 projets analysés — Juin 2026</div>
+  <div class="header-date">
+    <span>Date d'analyse: 23 juin 2026</span>
+    <span>Analysé par: Agente Control de Calidad Magazine + Director Video IA</span>
+    <span>Opérateur: Claude Code — Jardín Ideal AI System</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- STATS GLOBALES -->
+<div class="section">
+<div class="section-title">Résumé global — 3 projets</div>
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-num">57</div>
+    <div class="stat-label">Fichiers analysés<br>(photos + vidéos)</div>
+  </div>
+  <div class="stat-card" style="border-top-color:#2d8a4e;">
+    <div class="stat-num" style="color:#2d8a4e;">12</div>
+    <div class="stat-label">Photos approuvées<br>sans modifications</div>
+  </div>
+  <div class="stat-card" style="border-top-color:var(--j);">
+    <div class="stat-num" style="color:var(--j);">34</div>
+    <div class="stat-label">Approuvées<br>avec améliorations</div>
+  </div>
+  <div class="stat-card" style="border-top-color:var(--r);">
+    <div class="stat-num" style="color:var(--r);">2</div>
+    <div class="stat-label">Rejetées<br>(veto automatique)</div>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-num">3</div>
+    <div class="stat-label">Vidéos MP4<br>approuvées</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">3</div>
+    <div class="stat-label">Briefs de direction<br>générés</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">45</div>
+    <div class="stat-label">Copies produites<br>(FB+IG+Ads+Carrusel)</div>
+  </div>
+  <div class="stat-card" style="border-top-color:var(--or);">
+    <div class="stat-num" style="color:var(--or);">98</div>
+    <div class="stat-label">Meilleure note QC<br>(Bériault A7409920)</div>
+  </div>
+</div>
+</div>
+
+<!-- CLASSEMENT PROJETS -->
+<div class="section">
+<div class="section-title">Classement par potentiel publicitaire</div>
+
+<div class="proj-card" style="border-left-color:var(--or);">
+  <div class="proj-rank">1</div>
+  <div class="proj-info">
+    <h3>Puschak — 6394, 29e avenue</h3>
+    <p>Le seul projet avec avant/après complet + 3 vidéos MP4. Transformation la plus dramatique de la collection — asphalte fissuré des années 80 → allée grand format anthracite avec clôture composite noire. Potentiel viral maximal. Photo principale: 96/100. Paire avant/après idéale pour reel conversion.</p>
+    <div style="margin-top:.5rem;">
+      <span class="potential-badge pot-alto">POTENTIEL: MAXIMAL</span>
+      <span class="potential-badge pot-alto" style="margin-left:.25rem;">CPL CIBLE: &lt;$50</span>
+    </div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--g);">Matériel: 38 fichiers · Avant/Après: OUI · Vidéos: 3 · Note vedette: 96/100</div>
+  </div>
+  <div class="proj-score">
+    <div class="proj-score-num">96</div>
+    <div class="proj-score-label">/100 photo principale</div>
+  </div>
+</div>
+
+<div class="proj-card">
+  <div class="proj-rank">2</div>
+  <div class="proj-info">
+    <h3>Jacques Bériault — Laval</h3>
+    <p>Détient la meilleure photo individuelle de toute la collection (98/100 — bollard heure dorée). Niveau magazine Architectural Digest. Idéal pour campagnes premium Cour Avant. Manque de photos avant, mais la qualité des après compense. 2 photos rejetées (plantes en pots avec étiquettes).</p>
+    <div style="margin-top:.5rem;">
+      <span class="potential-badge pot-alto">POTENTIEL: ÉLEVÉ</span>
+      <span class="potential-badge pot-alto" style="margin-left:.25rem;">CPL CIBLE: &lt;$65</span>
+    </div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--g);">Matériel: 14 fichiers · Avant/Après: Partiel · Vidéos: 0 · Note vedette: 98/100</div>
+  </div>
+  <div class="proj-score">
+    <div class="proj-score-num">98</div>
+    <div class="proj-score-label">/100 photo vedette</div>
+  </div>
+</div>
+
+<div class="proj-card" style="border-left-color:var(--g);">
+  <div class="proj-rank">3</div>
+  <div class="proj-info">
+    <h3>Allée pétitionnaire — Collection multi-propriétés</h3>
+    <p>Collection de photos professionnelles de plusieurs propriétés distinctes. Aucune photo avant — uniquement des après. Très forte qualité individuelle (93/100 max) mais sans transformation documentée, le potentiel avant/après est nul. Idéal pour contenu de portfolio, feed Instagram et carrusels esthétiques.</p>
+    <div style="margin-top:.5rem;">
+      <span class="potential-badge pot-medio">POTENTIEL: MOYEN</span>
+    </div>
+    <div style="margin-top:.5rem;font-size:.78rem;color:var(--g);">Matériel: 5 fichiers · Avant/Après: NON · Vidéos: 0 · Note vedette: 93/100</div>
+  </div>
+  <div class="proj-score">
+    <div class="proj-score-num">93</div>
+    <div class="proj-score-label">/100 photo principale</div>
+  </div>
+</div>
+</div>
+
+<!-- TABLEAU QC COMPLET -->
+<div class="section">
+<div class="section-title">Tableau QC — Toutes les photos analysées</div>
+<div style="overflow-x:auto;">
+<table class="qc-table">
+  <tr>
+    <th>Fichier</th>
+    <th>Projet</th>
+    <th>Score</th>
+    <th>Verdict</th>
+    <th>Usage recommandé</th>
+  </tr>
+  <tr><td>A7409920.jpg ⭐</td><td>Bériault</td><td><span class="score-chip chip-green">98/100</span></td><td>✅ APROBADO</td><td>Hero image toutes campagnes</td></tr>
+  <tr><td>apres_travaux.jpg ⭐</td><td>Puschak</td><td><span class="score-chip chip-green">96/100</span></td><td>✅ APROBADO</td><td>Révélation reel avant/après + Paid</td></tr>
+  <tr><td>A7408264.jpg</td><td>Allée</td><td><span class="score-chip chip-green">93/100</span></td><td>✅ APROBADO</td><td>Hero image campagne Cour Avant</td></tr>
+  <tr><td>A7408417.jpg</td><td>Allée</td><td><span class="score-chip chip-green">89/100</span></td><td>✅ APROBADO</td><td>Feed Instagram + A/B test</td></tr>
+  <tr><td>apres_travaux-5.jpg</td><td>Puschak</td><td><span class="score-chip chip-green">89/100</span></td><td>✅ APROBADO</td><td>Feed + Paid secondaire</td></tr>
+  <tr><td>A7406477-Edit.jpg</td><td>Allée</td><td><span class="score-chip chip-green">86/100</span></td><td>✅ APROBADO</td><td>Reel scène finale + carrusel</td></tr>
+  <tr><td>A7409842.jpg</td><td>Bériault</td><td><span class="score-chip chip-green">86/100</span></td><td>✅ APROBADO</td><td>Reel scène + carrusel</td></tr>
+  <tr><td>A7409840.jpg</td><td>Bériault</td><td><span class="score-chip chip-green">84/100</span></td><td>✅ APROBADO</td><td>Ad A/B + Instagram feed</td></tr>
+  <tr><td>apres_travaux-2.jpg</td><td>Puschak</td><td><span class="score-chip chip-green">83/100</span></td><td>✅ APROBADO</td><td>Carrusel + passage</td></tr>
+  <tr><td>processus_travaux.jpg</td><td>Puschak</td><td><span class="score-chip chip-green">82/100</span></td><td>✅ APROBADO</td><td>Scène pendant reel</td></tr>
+  <tr><td>A7406539.jpg</td><td>Allée</td><td><span class="score-chip chip-yellow">78/100</span></td><td>🟡 CON MEJORAS</td><td>Carrusel après retouche contraste</td></tr>
+  <tr><td>apres_travaux -3,-4,-6,-7</td><td>Puschak</td><td><span class="score-chip chip-yellow">70-78/100</span></td><td>🟡 CON MEJORAS</td><td>Carrusel slides secondaires</td></tr>
+  <tr><td>avant_travaux (1)-(5)</td><td>Puschak</td><td><span class="score-chip chip-yellow">67-70/100</span></td><td>🟡 CON MEJORAS</td><td>Avant uniquement — paire obligatoire</td></tr>
+  <tr><td>A7409832.jpg</td><td>Bériault</td><td><span class="score-chip chip-yellow">66/100</span></td><td>🟡 CON MEJORAS</td><td>Contexte carrusel seulement</td></tr>
+  <tr><td>IMG_6941.jpg, IMG_6943.jpg</td><td>Bériault</td><td><span class="score-chip chip-yellow">65/100</span></td><td>🟡 CON MEJORAS</td><td>Stories + B-roll reel</td></tr>
+  <tr><td>A7406503-Edit.jpg</td><td>Allée</td><td><span class="score-chip chip-yellow">66/100</span></td><td>🟡 CON MEJORAS</td><td>Détail carrusel seulement</td></tr>
+  <tr><td>Photos travailleurs (16)</td><td>Puschak</td><td><span class="score-chip chip-yellow">60-68/100</span></td><td>🟡 CON MEJORAS</td><td>Stories "coulisses" · Vérifier consentement</td></tr>
+  <tr style="background:var(--rc);"><td>A7409843.jpg</td><td>Bériault</td><td><span class="score-chip chip-red">VETO C7</span></td><td>🔴 RECHAZADO</td><td>Ne pas publier</td></tr>
+  <tr style="background:var(--rc);"><td>A7409845.jpg</td><td>Bériault</td><td><span class="score-chip chip-red">VETO C7</span></td><td>🔴 RECHAZADO</td><td>Ne pas publier</td></tr>
+</table>
+</div>
+</div>
+
+<!-- RECOMMANDATION PREMIÈRE PUBLICATION -->
+<div class="section">
+<div class="section-title">Recommandation — Première publication</div>
+
+<div class="alert alert-success">
+  <strong>🚀 PRIORITÉ 1 — PUBLIER CETTE SEMAINE:</strong><br>
+  <strong>Reel avant/après Puschak (JI-R-20260623-003)</strong><br>
+  Seul contenu avec paire avant/après complète + matériel vidéo. Potentiel de CPL le plus bas (cible &lt;$50). Angle "de l'asphalte de 30 ans à ça en 6 jours" est le format qui génère les meilleurs résultats Meta Ads pour les paysagistes.
+</div>
+
+<div class="alert alert-warning">
+  <strong>📅 PRIORITÉ 2 — SEMAINE SUIVANTE:</strong><br>
+  <strong>Post Instagram + Meta Ad avec A7409920.jpg (Bériault)</strong><br>
+  La meilleure image individuelle de la collection. Utiliser comme image principale d'une campagne de notoriété Cour Avant. Note: 98/100 — aucun concurrent MTL n'a ce niveau de photographie.
+</div>
+
+<div class="alert" style="background:var(--cr);border-left:4px solid var(--vm);">
+  <strong>📱 PRIORITÉ 3 — MOIS PROCHAIN:</strong><br>
+  <strong>Carrusel portfolio avec photos Allée pétitionnaire</strong><br>
+  Idéal pour un post de présentation portfolio Cour Avant. Utiliser A7408264 en diapo 1, A7408417 en diapo 2, A7406477-Edit en diapo 3-4. Objectif: notoriété et engagement organique.
+</div>
+</div>
+
+<!-- CALENDRIER DE PUBLICATION RECOMMANDÉ -->
+<div class="section">
+<div class="section-title">Calendrier de publication recommandé — 2 semaines</div>
+
+<div class="cal-row header">
+  <div class="cal-date">Date</div>
+  <div>Contenu</div>
+  <div>Format</div>
+  <div>Objectif</div>
+</div>
+
+<div class="cal-row">
+  <div class="cal-date">Lun 23 juin</div>
+  <div>Post Instagram — A7409920.jpg Bériault — "Cette lumière n'est pas un accident"</div>
+  <div>Feed photo</div>
+  <div>Engagement organique</div>
+</div>
+<div class="cal-row">
+  <div class="cal-date">Mar 24 juin</div>
+  <div>Reel avant/après Puschak — Production CapCut selon brief JI-R-20260623-003</div>
+  <div>Reel 45s</div>
+  <div>Leads / Conversion</div>
+</div>
+<div class="cal-row">
+  <div class="cal-date">Mer 25 juin</div>
+  <div>Meta Ad — apres_travaux.jpg Puschak — Ciblage propriétaires 40-60 Montréal-Est</div>
+  <div>Paid Single Image</div>
+  <div>CPL &lt;$70</div>
+</div>
+<div class="cal-row">
+  <div class="cal-date">Jeu 26 juin</div>
+  <div>Facebook long storytelling Puschak — "Cette maison de la 29e avenue..."</div>
+  <div>Post FB</div>
+  <div>Notoriété + Leads</div>
+</div>
+<div class="cal-row">
+  <div class="cal-date">Ven 27 juin</div>
+  <div>Story Instagram — A7408264.jpg + CTA direct 514-266-2504</div>
+  <div>Story 15s</div>
+  <div>Swipe up / Appels</div>
+</div>
+<div class="cal-row" style="background:var(--vb);">
+  <div class="cal-date">Lun 30 juin</div>
+  <div>Carrusel 7 slides — Allée pétitionnaire + A7408264 en hero</div>
+  <div>Carrusel IG/FB</div>
+  <div>Portfolio + Notoriété</div>
+</div>
+<div class="cal-row" style="background:var(--vb);">
+  <div class="cal-date">Mar 1 juil</div>
+  <div>Meta Ad Bériault — A7409920.jpg — "Votre voisin vient de le faire"</div>
+  <div>Paid Single Image</div>
+  <div>CPL &lt;$65</div>
+</div>
+<div class="cal-row" style="background:var(--vb);">
+  <div class="cal-date">Mer 2 juil</div>
+  <div>Reel portfolio Allée — Selon brief JI-R-20260623-001 (30s)</div>
+  <div>Reel 30s</div>
+  <div>Notoriété + Leads</div>
+</div>
+</div>
+
+<!-- MATERIAL MANQUANT -->
+<div class="section">
+<div class="section-title">Matériel manquant — Retour en chantier requis</div>
+<div style="overflow-x:auto;">
+<table class="missing-table">
+  <tr>
+    <th>Projet</th>
+    <th>Matériel manquant</th>
+    <th>Urgence</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td><strong>Bériault</strong></td>
+    <td>Photo avant de l'entrée (AVANT les travaux)</td>
+    <td><span class="score-chip chip-yellow">HAUTE</span></td>
+    <td>Vérifier dans archives — si inexistant, commencer à photographier l'avant des prochains projets dès la première visite</td>
+  </tr>
+  <tr>
+    <td><strong>Bériault</strong></td>
+    <td>Photos massifs une fois les plantes installées (sans pots de pépinière)</td>
+    <td><span class="score-chip chip-yellow">HAUTE</span></td>
+    <td>Retour sur site dans 3-4 semaines quand les plantes sont en terre et les étiquettes retirées</td>
+  </tr>
+  <tr>
+    <td><strong>Allée pétitionnaire</strong></td>
+    <td>Photos avant de chaque propriété</td>
+    <td><span class="score-chip chip-red">CRITIQUE</span></td>
+    <td>Sans avant, le potentiel est limité à 40% de ce qu'il pourrait être. Identifier les clients de ces projets et vérifier les archives</td>
+  </tr>
+  <tr>
+    <td><strong>Allée pétitionnaire</strong></td>
+    <td>Clarifier si c'est 1 projet ou plusieurs (adresses différentes?)</td>
+    <td><span class="score-chip chip-green">NORMALE</span></td>
+    <td>Identifier le dossier client pour savoir si ces photos sont du même projet ou de projets différents</td>
+  </tr>
+  <tr>
+    <td><strong>Tous projets</strong></td>
+    <td>Photos heure dorée (18h-20h) en été</td>
+    <td><span class="score-chip chip-yellow">HAUTE</span></td>
+    <td>Retourner sur les sites de Bériault et Allée en fin d'après-midi cette semaine — la lumière d'été est disponible jusqu'à 20h30</td>
+  </tr>
+  <tr>
+    <td><strong>Puschak</strong></td>
+    <td>Consentement photographique des travailleurs visibles</td>
+    <td><span class="score-chip chip-yellow">HAUTE</span></td>
+    <td>Vérifier avec l'équipe RH/terrain si les travailleurs sur les photos ont signé un consentement pour utilisation marketing</td>
+  </tr>
+</table>
+</div>
+</div>
+
+<!-- KPIs À SURVEILLER -->
+<div class="section">
+<div class="section-title">KPIs à surveiller — Après publication</div>
+<div class="kpi-row">
+  <div class="kpi-card">
+    <div class="kpi-val">&lt;$70</div>
+    <div class="kpi-label">CPL cible Cour Avant</div>
+    <div class="kpi-target">Actuel: $134.17 (Q1 2026)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-val">&gt;3%</div>
+    <div class="kpi-label">CTR minimum pour booster</div>
+    <div class="kpi-target">Seuil: si CTR &gt;3% en organique → lancer en paid</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-val">48h</div>
+    <div class="kpi-label">Délai premier bilan</div>
+    <div class="kpi-target">Vérifier après 48h si le reel dépasse 500 vues</div>
+  </div>
+</div>
+
+<div class="alert alert-warning" style="margin-top:1rem;">
+  <strong>Indicateur de validation:</strong> Si le reel Puschak (JI-R-20260623-003) obtient &gt;1000 vues organiques dans les 48 premières heures → lancer immédiatement la version payante avec l'audience propriétaires 40-60 ans Montréal-Est / Laval-Est. Budget de test suggéré: $50 CAD/jour pendant 7 jours.
+</div>
+</div>
+
+<!-- PROCHAINES ÉTAPES -->
+<div class="section">
+<div class="section-title">Prochaines étapes — Actions immédiates</div>
+<ol class="step-list">
+  <li>
+    <div class="step-content">
+      <strong>Monter le reel Puschak aujourd'hui (JI-R-20260623-003)</strong>
+      Ouvrir CapCut. Importer les vidéos MP4 du dossier Puschak. Extraire les premiers 5 secondes de "Vidéo début projet.mp4" pour la scène avant. Ajouter "apres_travaux.jpg" comme révélation. Suivre le brief de direction à la lettre.
+    </div>
+  </li>
+  <li>
+    <div class="step-content">
+      <strong>Publier A7409920.jpg sur Instagram dès aujourd'hui</strong>
+      Copier la copy INSTAGRAM 01 du fichier PROJ_CA_002_BERIAULT_JUN2026.html. Publier entre 18h et 20h pour maximiser l'engagement. Cette image ne nécessite aucune retouche — publier en l'état.
+    </div>
+  </li>
+  <li>
+    <div class="step-content">
+      <strong>Configurer Meta Ad Puschak dans Business Manager</strong>
+      Utiliser META AD 01 du fichier PROJ_CA_003_PUSCHAK_JUN2026.html. Image: apres_travaux.jpg. Audience: Propriétaires 40-60 ans, 20km autour de Montréal, intérêts immobilier + rénovation. Budget test: $30 CAD/jour.
+    </div>
+  </li>
+  <li>
+    <div class="step-content">
+      <strong>Retour sur le site Bériault cette semaine (heure dorée)</strong>
+      Y retourner entre 17h30 et 19h30 pour photographier les massifs une fois les plantes installées. Prendre également une photo d'angle large depuis la rue pour documenter la vue complète. Appareil photo, pas téléphone.
+    </div>
+  </li>
+  <li>
+    <div class="step-content">
+      <strong>Charger les nouveaux projets au fur et à mesure</strong>
+      Dès qu'un chantier de Cour Avant se termine, photographier AVANT de partir. Utiliser le protocole défini dans PLAN_PRODUCCION_CONTINUA.md : 3 visites (avant/pendant/après), même angle pour le match cut.
+    </div>
+  </li>
+  <li>
+    <div class="step-content">
+      <strong>Rapport de performance dans 7 jours</strong>
+      Mesurer: vues reels, CTR posts, leads générés, CPL. Comparer avec la cible &lt;$70 CPL Cour Avant. Si le reel Puschak dépasse les seuils → doubler le budget paid.
+    </div>
+  </li>
+</ol>
+</div>
+
+<!-- SIGNATURE -->
+<div style="background:var(--vf);color:var(--w);border-radius:8px;padding:1.5rem;text-align:center;margin-top:2rem;">
+  <div style="font-family:Georgia,serif;font-size:1.1rem;color:var(--or);margin-bottom:.5rem;">Jardín Ideal — Fábrica Continua de Contenido IA</div>
+  <div style="font-size:.8rem;color:rgba(255,255,255,.6);">Rapport généré le 23 juin 2026 · Agente Control de Calidad Magazine v1.0 + Director Video IA v1.0</div>
+  <div style="margin-top:1rem;font-size:.85rem;color:rgba(255,255,255,.8);">
+    Fichiers de production:<br>
+    <span style="color:var(--or);">PROJ_CA_001_ALLEE_JUN2026.html · PROJ_CA_002_BERIAULT_JUN2026.html · PROJ_CA_003_PUSCHAK_JUN2026.html</span>
+  </div>
+  <div style="margin-top:.75rem;font-size:.8rem;color:rgba(255,255,255,.5);">📞 514-266-2504 · jardin-ideal.com · daniel@groupe-ideal.com</div>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>
