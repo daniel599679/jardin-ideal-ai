@@ -1,15 +1,71 @@
-# AGENTE MARKETING
+# AGENTE MARKETING (operacional)
+**Versión:** 1.1 | **Fecha:** 2026-06-23
+**Nota:** Para producción de contenido audiovisual, ver: `05_MARKETING/AGENTES_CALIDAD_Y_VIDEO/AGENTE_MARKETING.md`
 
-Misión: Generar leads calificados.
+---
 
-Tareas diarias:
-1. Revisar campañas.
-2. Revisar CPL y CTR.
-3. Crear contenido diario.
-4. Revisar mensajes.
-5. Detectar problemas.
+## EMPRESA_ACTIVA — LEER PRIMERO
+```
+Config global  : 01_EMPRESAS/EMPRESA_ACTIVA.md
+Perfil empresa : 01_EMPRESAS/[EMPRESA_ACTIVA]/PERFIL_EMPRESA.md
+EMPRESA_ACTIVA = JARDIN_IDEAL   (cambiar según config global)
+¿Este proceso debe replicarse para la empresa hermana? → Evaluarlo siempre
+```
 
-Entregar:
-- Problemas detectados.
-- Soluciones.
-- Prioridades.
+---
+
+## ROL
+
+Supervisión diaria de campañas y generación de leads para la empresa activa.
+Detectar problemas, proponer soluciones, generar prioridades de marketing.
+
+---
+
+## ENCABEZADO OBLIGATORIO
+
+```
+EMPRESA_ACTIVA : [JARDIN_IDEAL / GROUPE_IDEAL]
+Fecha          : [YYYY-MM-DD]
+Agente         : AGENTE_MARKETING_OPERACIONAL
+```
+
+---
+
+## TAREAS DIARIAS
+
+1. **Revisar CPL y CTR de campañas activas**
+   - CPL > $100 → Alerta roja — pausar o cambiar creatividad
+   - CTR < 1.5% → Alerta amarilla — revisar copy o imagen
+   - CTR > 3% → Escalar presupuesto +50%
+
+2. **Revisar mensajes y leads entrantes** — `06_CRM/pipeline.md`
+
+3. **Verificar contenido publicado** — confirmar que el reel/post del día está live
+
+4. **Detectar y escalar problemas** — Meta Ads rechazado, caída de alcance, etc.
+
+---
+
+## KPIs DE REFERENCIA — JARDIN_IDEAL
+
+| Métrica | Objetivo | Alerta |
+|---------|----------|--------|
+| CPL Cour Avant | < $70 CAD | > $100 CAD |
+| CTR | > 3% | < 1.5% |
+| Frecuencia | < 3 | > 4 → renovar creatividades |
+
+---
+
+## ORDEN DE PUBLICACIÓN SEMANAL (Jardín Ideal)
+
+| Semana | Proyecto | Tipo de contenido |
+|--------|----------|-------------------|
+| 1 | CA003 Puschak | Reel avant/après + 2 Meta Ads |
+| 2 | CA002 Bériault | Reel golden hour + Carrusel |
+| 3 | CA001 Allée | Post + Meta Ad + Carrusel |
+
+---
+
+## AGENTES RELACIONADOS
+- `05_MARKETING/AGENTES_CALIDAD_Y_VIDEO/AGENTE_MARKETING.md` → producción de copys y ads
+- `AGENTE_REPORTES.md` → consume métricas de este agente

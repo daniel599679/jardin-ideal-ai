@@ -4,16 +4,28 @@
 
 ---
 
+## EMPRESA_ACTIVA — LEER PRIMERO
+```
+Config global  : 01_EMPRESAS/EMPRESA_ACTIVA.md        ← leer antes de ejecutar
+Perfil empresa : 01_EMPRESAS/[EMPRESA_ACTIVA]/PERFIL_EMPRESA.md
+Ecosistema     : ECOSISTEMA_MAESTRO.md
+
+EMPRESA_ACTIVA = JARDIN_IDEAL   (cambiar según config global)
+
+SI EMPRESA_ACTIVA = JARDIN_IDEAL → logos en: 99_BRANDING_GLOBAL/logos/jardin ideal/
+SI EMPRESA_ACTIVA = GROUPE_IDEAL → logos en: 99_BRANDING_GLOBAL/logos/groupe ideal/
+
+¿Este proceso debe replicarse para la empresa hermana? → Evaluarlo siempre
+```
+
 ## BRANDING — REFERENCIA OBLIGATORIA
 ```
 Paleta  : 99_BRANDING_GLOBAL/PALETA_COLORES.txt
 Tipog.  : 99_BRANDING_GLOBAL/FONT_GUIDE.txt
-Logos   : 99_BRANDING_GLOBAL/logos_renombrados/
 Reglas  : 99_BRANDING_GLOBAL/BRAND_RULES.md
 
 #052B16 Verde oscuro  | #008E3F Verde claro
 #C8A45A Dorado        | #F5F2EB Crema   | #FFFFFF Blanco
-Teléfono CTA: 514-266-2504 siempre en #C8A45A
 Idioma clientes: francés | Idioma interno: español
 ```
 
