@@ -265,11 +265,50 @@ Thumbnail  → 400 × 400 px  | JPEG 85%  | sRGB (preview rápido)
 
 ---
 
+## REFERENCIA OFICIAL — BIBLIOTECA FRANCISCO ⭐
+
+**Actualizado:** 2026-06-23 | **Fuente:** `05_MARKETING/00_BIBLIOTECA_VISUAL/FRANCISCO_VISUAL_STANDARD.md`
+
+La colección de 62 fotografías seleccionadas por Francisco es la **referencia visual primaria de Jardín Ideal**. Es superior a cualquier fuente externa como Techo-Bloc o Architectural Digest porque representa el mercado real de la empresa: barrios de Montreal, casas de ladrillo rojo, clientela québécoise.
+
+### Los 10 criterios Francisco (resumen operativo)
+
+| Criterio | Verificación rápida |
+|---------|-------------------|
+| Cielo azul con nubes blancas | ¿Visible en al menos 30% del cuadro? |
+| Sin personas en el frame | ¿Zero personas, incluso de fondo? |
+| Pavé neutro claro + borde oscuro | ¿El contraste claro/oscuro está presente? |
+| Accentos negros (railing, puerta, poste) | ¿Al menos un elemento negro arquitectónico? |
+| Lawn verde brillante visible | ¿El césped está verde, no marrón ni seco? |
+| Toma amplia (no macro extremo) | ¿La casa/espacio completo es visible? |
+| Saturación elevada, natural, sin HDR | ¿Vibrante pero creíble? |
+| Composición: perspectiva lineal O frontal simétrica | ¿El ojo tiene dirección clara? |
+| Contexto Montreal auténtico (ladrillo, dúplex) | ¿El barrio es reconocible para la clientela? |
+| Sin drone (por defecto) | ¿Es toma terrestre a nivel humano? |
+
+**Pregunta final antes de aprobar cualquier hero:**
+> ¿Esta imagen podría haber sido seleccionada por Francisco para su carpeta premium?
+
+Si la respuesta es **NO** → no publicar como hero.
+
+**Imágenes de referencia rápida para comparar:**
+- Máximo calidad: `piscine_magazine.png` (97/100)
+- Estándar cour avant: `entree_marches_flottantes_pub.png` (94/100)
+- Estándar piscina: `piscine_angle2_pub.png` (91/100)
+
+Ver índice completo: `05_MARKETING/00_BIBLIOTECA_VISUAL/PREMIUM_VISUAL_LIBRARY_INDEX.md`
+
+---
+
 ## REFERENCIAS VISUALES — QUÉ BUSCAR
 
 Estudiar antes de cada sesión de fotografía:
 
 ```
+PRIMERO: Biblioteca Francisco (referencia oficial interna)
+  → 05_MARKETING/00_BIBLIOTECA_VISUAL/Photo selectionné par francisco/
+  → Observar: cielo, ángulos, paleta, black accents, contexto Montreal
+
 Techo-Bloc Instagram (@techobloc)
   → Observar: ángulos de drone, raking light en texturas, limpieza del set
 

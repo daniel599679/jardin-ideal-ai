@@ -212,6 +212,33 @@ TOTAL FINAL: 65/100 → RECHAZADO para feed. Solo referencia interna.
 
 ---
 
+## VALIDACIÓN FRANCISCO STANDARD — BONUS/PENALIZACIÓN
+
+**Actualizado:** 2026-06-23 | **Fuente:** `05_MARKETING/00_BIBLIOTECA_VISUAL/FRANCISCO_VISUAL_STANDARD.md`
+
+Aplicar DESPUÉS de la puntuación base (100 pts). Estos criterios reflejan los patrones de selección de Francisco — el árbitro final del estándar visual de Jardín Ideal.
+
+| Condición positiva | Bonus |
+|-------------------|-------|
+| Cielo azul con nubes blancas visible | +3 pts |
+| Accento negro arquitectónico en cuadro (railing, puerta, poste) | +2 pts |
+| Pavé claro + borde oscuro como elemento principal | +2 pts |
+| Lawn verde brillante visible como marco | +1 pt |
+| Contexto Montreal auténtico (ladrillo, dúplex) | +1 pt |
+
+| Condición negativa | Penalización |
+|-------------------|-------------|
+| Cielo gris o completamente nublado en hero | -5 pts |
+| Persona visible en segundo plano (no prominente) | -8 pts |
+| Toma de drone sin justificación editorial clara | -3 pts |
+| Look HDR artificial visible | -5 pts |
+| Sin elementos negros en el cuadro (todo beige/neutro) | -2 pts |
+
+**Nota:** El bonus máximo acumulable es +9 pts. La penalización no tiene techo.
+**Threshold Francisco:** Una imagen puede tener 88/100 base pero con todos los bonus Francisco llegar a 97 → publicar como hero.
+
+---
+
 ## PARA EL REEL — CRITERIOS ADICIONALES
 
 Sumar a la evaluación del reel:

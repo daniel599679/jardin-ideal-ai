@@ -4,6 +4,42 @@
 
 ---
 
+## 2026-06-23 — Sesión 8: Backtest + Sprint + Test FLOAT V2 + Biblioteca Visual Francisco
+
+### Sistemas creados
+| Archivo | Descripción |
+|---------|-------------|
+| `10_MEMORIA_EMPRESARIAL/ECOSISTEMA_BACKTEST_V1.md` | Auditoría de 10 sistemas — 32% implementación real, tabla de prioridades P0/P1/P2, próximas acciones exactas |
+| `10_MEMORIA_EMPRESARIAL/PROXIMO_SPRINT.md` | Sprint 7 días (2026-06-24 al 2026-06-30) — 5 bloques, tiempos, KPIs, horario semanal |
+| `10_MEMORIA_EMPRESARIAL/TEST_OPERATIVO_FLOAT_V2.md` | Protocolo producción 5 piezas reales: Hero, Reel, Stories, Carrusel, Remarketing — inputs/tiempo/score/checklist |
+| `05_MARKETING/00_BIBLIOTECA_VISUAL/PREMIUM_VISUAL_LIBRARY_INDEX.md` | Índice completo 62 imágenes de Francisco — score, uso, emoción, plano, potencial Meta Ads |
+| `05_MARKETING/00_BIBLIOTECA_VISUAL/FRANCISCO_VISUAL_STANDARD.md` | Estándar visual oficial de Jardín Ideal — 10 leyes, paleta, criterios de selección |
+
+### Sistemas modificados
+| Archivo | Cambio |
+|---------|--------|
+| `01_AGENTES/AGENTE_AUTOMATIZACIONES.md` | Corrección: estados "Activo" → "⬜ DOCUMENTADO — no implementado" + nota de advertencia |
+| `05_MARKETING/FLOAT_V2_PREMIUM/01_HERO_IMAGE_FACTORY.md` | Añadida sección "Referencia Oficial — Biblioteca Francisco" con 10 criterios y referencias a imágenes top |
+| `05_MARKETING/FLOAT_V2_PREMIUM/03_PREMIUM_VISUAL_SCORE.md` | Añadida sección "Validación Francisco Standard" — bonus/penalización basados en patrones de Francisco |
+
+### Decisiones estratégicas
+| Decisión | Detalle |
+|---------|---------|
+| Ecosistema 32% implementado | Veredicto backtest: operación parcial posible hoy con FLOAT V2 + seguimiento Paul Gagné |
+| Francisco = árbitro visual oficial | Sus 62 fotos son la referencia primaria — superior a Techo-Bloc/Architectural Digest como benchmark |
+| Sprint inmediato | Semana 2026-06-24: FLOAT V2 producción real + Alex Fase 2 + Zapier/Pipedrive |
+
+### Git
+| Commit | Descripción |
+|--------|-------------|
+| `426776c` | Alex Fase 2 aprobada — roadmap + decisiones |
+| `779b108` | Backtest + corrección AGENTE_AUTOMATIZACIONES |
+| `a923083` | PROXIMO_SPRINT.md |
+| `7043620` | TEST_OPERATIVO_FLOAT_V2.md |
+| (este commit) | Biblioteca Visual Francisco — índice + estándar + FLOAT V2 actualizado |
+
+---
+
 ## 2026-06-23 — Sesión 7: Decisiones Alex aprobadas + Roadmap Fase 2
 
 ### Sistemas creados
