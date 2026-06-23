@@ -40,3 +40,21 @@ clientes_privado/
 # 08_REPORTES/reporte_2*.md
 # 08_REPORTES/reporte_semana_2*.md
 # 08_REPORTES/reporte_mes_2*.md
+
+# Archivos binarios pesados — GitHub rechaza >100MB
+*.mp4
+*.mov
+*.MOV
+*.avi
+*.zip
+*.ZIP
+
+# Configuración privada del asistente IA
+.claude.json
+.claude.json.backup
+.gitconfig
+
+# Content packages comprimidos (los .md dentro sí se commitean)
+99_EXPORTACIONES/**/*.zip
+99_EXPORTACIONES/**/*.mp4
+99_EXPORTACIONES/**/*.mov
