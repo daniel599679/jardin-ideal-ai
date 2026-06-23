@@ -1,0 +1,125 @@
+═══════════════════════════════════════════════════════════════════
+GUÍA TIPOGRÁFICA OFICIAL — JARDÍN IDEAL / GROUPE IDEAL
+Versión: 1.0 | Aprobado: 2026-06-23
+═══════════════════════════════════════════════════════════════════
+
+FILOSOFÍA TIPOGRÁFICA
+─────────────────────
+La tipografía de Jardín Ideal comunica: profesionalismo francófono + calidad premium.
+Serif para impacto emocional. Sans-serif para claridad funcional. Sin mezclas innecesarias.
+
+═══════════════════════════════════════════════════════════════════
+FUENTE DISPLAY — TÍTULOS Y HEADLINES
+═══════════════════════════════════════════════════════════════════
+
+Nombre      : Georgia
+Tipo        : Serif clásica
+Variantes   : Regular, Bold, Italic, Bold Italic
+Disponible  : Sistema operativo (Windows, Mac, iOS, Android)
+Alternativa : Playfair Display, Times New Roman, Garamond
+
+Uso         :
+  - Títulos principales en slides de carrusel
+  - Headline de portadas
+  - Frases emocionales en reels ("Votre entrée mérite mieux.")
+  - Textos aspiracionales, frases de impacto
+
+Tamaños recomendados:
+  - Hero/portada : 52-72px
+  - Título grande : 36-48px
+  - Subtítulo    : 24-30px
+
+═══════════════════════════════════════════════════════════════════
+FUENTE CUERPO — TEXTOS INFORMATIVOS
+═══════════════════════════════════════════════════════════════════
+
+Nombre      : Montserrat
+Tipo        : Sans-serif geométrica
+Variantes   : Regular (400), Medium (500), SemiBold (600), Bold (700)
+Disponible  : Google Fonts (gratis), Canva
+Alternativa sistema: Arial, system-ui, Helvetica Neue
+
+Uso         :
+  - Cuerpo de texto en slides
+  - Labels y etiquetas (AVANT, APRÈS, etc.)
+  - Información de contacto
+  - Listas y bullets
+  - Copys de redes sociales
+
+Tamaños recomendados:
+  - Cuerpo normal : 14-16px
+  - Labels        : 10-12px (mayúsculas, bold, letter-spacing 0.1em)
+  - Teléfono CTA  : 28-40px bold o black weight
+
+═══════════════════════════════════════════════════════════════════
+FUENTE DATOS / NÚMEROS — KPIs Y ESTADÍSTICAS
+═══════════════════════════════════════════════════════════════════
+
+Nombre      : Courier New (o Courier)
+Tipo        : Monospace
+Variantes   : Regular, Bold
+Disponible  : Sistema operativo
+
+Uso         :
+  - Números de teléfono en documentos internos
+  - Códigos de referencia (IDs de proyecto, fechas técnicas)
+  - Tablas de datos, archivos de texto internos
+  NO usar en contenido visual para el cliente
+
+═══════════════════════════════════════════════════════════════════
+JERARQUÍA TIPOGRÁFICA — CAPCUT / CANVA
+═══════════════════════════════════════════════════════════════════
+
+En CapCut:
+  1. Buscar: "Playfair Display" o usar "Georgia" del sistema
+  2. Para sans-serif: buscar "Montserrat" o usar "Arial"
+  3. Color del texto: siempre de la paleta oficial
+
+En Canva:
+  1. Fuente display: Playfair Display (disponible gratis en Canva)
+  2. Fuente cuerpo: Montserrat (disponible gratis en Canva)
+  3. Configurar Brand Kit con estas fuentes
+
+═══════════════════════════════════════════════════════════════════
+LO QUE NUNCA USAR
+═══════════════════════════════════════════════════════════════════
+  ❌ Comic Sans, Papyrus, Impact — nunca
+  ❌ Fuentes decorativas o de script (excepto casos especiales aprobados)
+  ❌ Más de 2 fuentes distintas en una misma pieza
+  ❌ Texto sin ningún peso (weight 100/200) — ilegible en pantalla
+
+═══════════════════════════════════════════════════════════════════
+APLICACIÓN EN DOCUMENTOS HTML / WEB
+═══════════════════════════════════════════════════════════════════
+
+CSS estándar para todos los documentos HTML del sistema:
+
+:root {
+  --font-display: Georgia, 'Playfair Display', 'Times New Roman', serif;
+  --font-body: Montserrat, 'Arial', system-ui, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+
+  --color-verde-oscuro: #052B16;
+  --color-verde-claro: #008E3F;
+  --color-dorado: #C8A45A;
+  --color-crema: #F5F2EB;
+  --color-blanco: #FFFFFF;
+  --color-gris-logo: #606060;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-verde-oscuro);
+  color: var(--color-blanco);
+}
+
+h1, h2, .display {
+  font-family: var(--font-display);
+}
+
+.phone-cta {
+  color: var(--color-dorado);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+═══════════════════════════════════════════════════════════════════

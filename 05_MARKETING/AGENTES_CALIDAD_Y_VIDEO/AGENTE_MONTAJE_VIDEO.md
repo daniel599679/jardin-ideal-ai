@@ -1,6 +1,21 @@
 # AGENTE_MONTAJE_VIDEO
-**Versión:** 1.1 | **Fecha:** 2026-06-23
+**Versión:** 1.2 | **Fecha:** 2026-06-23
 **Ubicación:** `05_MARKETING/AGENTES_CALIDAD_Y_VIDEO/AGENTE_MONTAJE_VIDEO.md`
+
+---
+
+## BRANDING — REFERENCIA OBLIGATORIA
+```
+Paleta  : 99_BRANDING_GLOBAL/PALETA_COLORES.txt
+Tipog.  : 99_BRANDING_GLOBAL/FONT_GUIDE.txt
+Logos   : 99_BRANDING_GLOBAL/logos_renombrados/
+Reglas  : 99_BRANDING_GLOBAL/BRAND_RULES.md
+
+#052B16 Verde oscuro  | #008E3F Verde claro
+#C8A45A Dorado        | #F5F2EB Crema   | #FFFFFF Blanco
+Teléfono CTA: 514-266-2504 siempre en #C8A45A
+Idioma clientes: francés | Idioma interno: español
+```
 
 ---
 
@@ -78,6 +93,19 @@ apres_travaux.jpg                | 05_CTA.jpg         | Escena 5 | 0:20–0:45  
 El archivo `GUION_CAPCUT.txt` (si existe previamente) se mantiene como referencia adicional.
 
 > **Los archivos en `2_REEL_CAPCUT/` deben referenciar los nombres renombrados** (`01_AVANT.jpg`, `02_PROCESSUS.mp4`, etc.), no los nombres originales. El editor trabaja solo con lo que tiene delante.
+
+### `7_BRANDING/` — Logos e identidad visual (obligatorio en todo paquete)
+
+```
+7_BRANDING/
+├── LOGO_JARDIN_IDEAL_PRINCIPAL.png   ← copiar de 99_BRANDING_GLOBAL/logos_renombrados/
+├── LOGO_JARDIN_IDEAL_SOCIAL.jpg      ← copiar de 99_BRANDING_GLOBAL/logos_renombrados/
+└── BRANDING_INFO.txt                 ← referencia rápida de colores y reglas
+```
+
+**Regla:** Todo paquete de producción debe tener `7_BRANDING/` con los logos copiados desde `99_BRANDING_GLOBAL/logos_renombrados/`. El editor nunca debe buscar el logo fuera del paquete.
+
+**BRANDING_INFO.txt** contiene la paleta de colores completa y las reglas tipográficas en formato de referencia rápida para el editor.
 
 ---
 

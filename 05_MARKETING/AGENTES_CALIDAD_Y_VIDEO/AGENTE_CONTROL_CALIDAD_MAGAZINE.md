@@ -1,6 +1,21 @@
 # AGENTE_CONTROL_CALIDAD_MAGAZINE
 **Jardín Ideal — Sistema de Producción de Contenido**
-**Versión:** 1.0 | **Fecha:** 23 junio 2026
+**Versión:** 1.1 | **Fecha:** 23 junio 2026
+
+---
+
+## BRANDING — REFERENCIA OBLIGATORIA
+```
+Paleta  : 99_BRANDING_GLOBAL/PALETA_COLORES.txt
+Tipog.  : 99_BRANDING_GLOBAL/FONT_GUIDE.txt
+Logos   : 99_BRANDING_GLOBAL/logos_renombrados/
+Reglas  : 99_BRANDING_GLOBAL/BRAND_RULES.md
+
+#052B16 Verde oscuro  | #008E3F Verde claro
+#C8A45A Dorado        | #F5F2EB Crema   | #FFFFFF Blanco
+Teléfono CTA: 514-266-2504 siempre en #C8A45A
+Idioma clientes: francés | Idioma interno: español
+```
 
 ---
 

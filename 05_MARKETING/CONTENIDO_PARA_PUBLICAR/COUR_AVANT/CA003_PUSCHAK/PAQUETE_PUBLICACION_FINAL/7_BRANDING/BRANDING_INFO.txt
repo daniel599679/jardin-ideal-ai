@@ -1,0 +1,52 @@
+═══════════════════════════════════════════════════════════════
+BRANDING — JARDÍN IDEAL / GROUPE IDEAL
+Referencia rápida para editores y diseñadores
+═══════════════════════════════════════════════════════════════
+
+LOGOS EN ESTA CARPETA
+─────────────────────
+LOGO_JARDIN_IDEAL_PRINCIPAL.png  ← usar en reels, carruseles, portadas
+LOGO_JARDIN_IDEAL_SOCIAL.jpg     ← usar en thumbnails y miniaturas sociales
+
+Posición en reels      : inferior-izquierda, aparece en los últimos 5-6 segundos
+Posición en slides     : inferior-derecha o inferior-izquierda
+Tamaño mínimo          : 80px de ancho
+NO distorsionar ni estirar el logo
+
+─────────────────────────────────────────────────────────────
+PALETA OFICIAL
+─────────────────────────────────────────────────────────────
+
+#052B16   Verde Oscuro   → fondos, overlays, headers
+#008E3F   Verde Claro    → logo, checkmarks, etiquetas APRÈS
+#C8A45A   Dorado         → 514-266-2504 (SIEMPRE este color)
+#F5F2EB   Crema          → fondos neutros, slides de texto
+#FFFFFF   Blanco         → texto sobre fondos oscuros
+
+Colores de soporte:
+#606060   Gris logo      → texto "IDÉAL" en el logo
+#CC3333   Rojo AVANT     → solo para etiqueta "Avant" en avant/après
+#0D0E0B   Negro base     → fondos ultra oscuros (no usar #000000 puro)
+
+─────────────────────────────────────────────────────────────
+TIPOGRAFÍA
+─────────────────────────────────────────────────────────────
+Títulos/display : Georgia (sistema) o Playfair Display (Canva/Google Fonts)
+Cuerpo/UI       : Montserrat (Canva/Google Fonts) o Arial (sistema)
+Datos internos  : Courier New (sistema)
+
+─────────────────────────────────────────────────────────────
+INFORMACIÓN DE CONTACTO (para piezas cliente)
+─────────────────────────────────────────────────────────────
+Teléfono  : 514-266-2504          → color DORADO #C8A45A en toda pieza visual
+Web       : jardin-ideal.com
+CTA texto : "Soumission gratuite · Sans engagement"
+Zonas     : Montréal · Laval · Rive-Nord
+
+─────────────────────────────────────────────────────────────
+REFERENCIA COMPLETA
+─────────────────────────────────────────────────────────────
+05_MARKETING/99_BRANDING_GLOBAL/PALETA_COLORES.txt
+05_MARKETING/99_BRANDING_GLOBAL/FONT_GUIDE.txt
+05_MARKETING/99_BRANDING_GLOBAL/BRAND_RULES.md
+═══════════════════════════════════════════════════════════════

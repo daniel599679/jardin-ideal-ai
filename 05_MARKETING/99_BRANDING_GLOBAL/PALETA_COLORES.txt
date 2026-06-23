@@ -1,0 +1,91 @@
+═══════════════════════════════════════════════════════════════════
+PALETA DE COLORES OFICIAL — JARDÍN IDEAL / GROUPE IDEAL
+Versión: 1.0 | Aprobado: 2026-06-23
+═══════════════════════════════════════════════════════════════════
+
+ESTA PALETA ES LA ÚNICA AUTORIZADA. No usar aproximaciones ni variantes.
+Todos los agentes, editores y diseñadores deben importar estos valores exactos.
+
+───────────────────────────────────────────────────────────────────
+COLOR 1 — VERDE OSCURO (fondo premium, headers, overlays)
+───────────────────────────────────────────────────────────────────
+HEX        : #052B16
+RGB        : R:5   G:43  B:22
+CMYK       : C:88  M:0   Y:49  K:83
+HSL        : H:145° S:79% L:9%
+CSS        : --color-verde-oscuro: #052B16;
+Uso        : Fondos oscuros, headers, overlays en reels, slides de texto
+NO usar    : Como color de texto sobre fondo oscuro (poco contraste)
+
+───────────────────────────────────────────────────────────────────
+COLOR 2 — VERDE CLARO (color de marca principal, logos, CTAs activos)
+───────────────────────────────────────────────────────────────────
+HEX        : #008E3F
+RGB        : R:0   G:142 B:63
+CMYK       : C:100 M:0   Y:56  K:44
+HSL        : H:145° S:100% L:28%
+CSS        : --color-verde-claro: #008E3F;
+Uso        : Color primario del logo, iconos activos, checkmarks, etiquetas "Après"
+Referencia : Este verde es el del logotipo "JARDIN" en el logo oficial
+NO usar    : Como fondo de texto (usar verde oscuro)
+
+───────────────────────────────────────────────────────────────────
+COLOR 3 — DORADO (acentos premium, teléfono en CTAs, precio, detalles)
+───────────────────────────────────────────────────────────────────
+HEX        : #C8A45A
+RGB        : R:200 G:164 B:90
+CMYK       : C:0   M:18  Y:55  K:22
+HSL        : H:38° S:49% L:57%
+CSS        : --color-dorado: #C8A45A;
+Uso        : Número de teléfono en todos los CTAs, acentos decorativos, labels premium
+CRÍTICO    : 514-266-2504 SIEMPRE en este color en cualquier video o imagen
+
+───────────────────────────────────────────────────────────────────
+COLOR 4 — CREMA (fondos neutros, slides informativos, fondos de texto)
+───────────────────────────────────────────────────────────────────
+HEX        : #F5F2EB
+RGB        : R:245 G:242 B:235
+CMYK       : C:0   M:1   Y:4   K:4
+HSL        : H:44° S:27% L:94%
+CSS        : --color-crema: #F5F2EB;
+Uso        : Fondos de slides de texto, cards informativas, fondos alternativos al blanco
+NO usar    : En videos sobre imágenes fotográficas
+
+───────────────────────────────────────────────────────────────────
+COLOR 5 — BLANCO (texto sobre fondos oscuros, espacio limpio)
+───────────────────────────────────────────────────────────────────
+HEX        : #FFFFFF
+RGB        : R:255 G:255 B:255
+CSS        : --color-blanco: #FFFFFF;
+Uso        : Texto sobre fondos verdes/oscuros, overlays de texto en reels
+
+───────────────────────────────────────────────────────────────────
+COLORES DE SOPORTE (uso limitado y específico)
+───────────────────────────────────────────────────────────────────
+Gris logo  : #606060  ← color del texto "IDÉAL" en el logotipo
+Rojo AVANT : #CC3333  ← exclusivamente para etiqueta "Avant" en contenido avant/après
+Negro base : #0D0E0B  ← fondos ultra-oscuros, no usar puro #000000
+
+═══════════════════════════════════════════════════════════════════
+PARES DE COLOR APROBADOS
+═══════════════════════════════════════════════════════════════════
+
+Para texto legible:
+  Texto #FFFFFF sobre fondo #052B16  ✓ ratio 14.7:1 (AAA)
+  Texto #FFFFFF sobre fondo #008E3F  ✓ ratio 4.6:1  (AA)
+  Texto #052B16 sobre fondo #F5F2EB  ✓ ratio 13.8:1 (AAA)
+  Texto #052B16 sobre fondo #C8A45A  ✓ ratio 5.2:1  (AA)
+  Texto #C8A45A sobre fondo #052B16  ✓ ratio 5.4:1  (AA) ← CTA telefono
+
+Para slides:
+  Slide premium    : texto #FFFFFF / #C8A45A sobre fondo #052B16
+  Slide neutro     : texto #052B16 sobre fondo #F5F2EB
+  Slide de acción  : texto #FFFFFF sobre fondo #008E3F
+
+═══════════════════════════════════════════════════════════════════
+NOTA IMPORTANTE — CORRECCIÓN DE VERSIONES ANTERIORES
+═══════════════════════════════════════════════════════════════════
+Versiones anteriores del sistema usaban #1E3A20 como verde oscuro.
+El verde oscuro OFICIAL es #052B16.
+Cualquier archivo que referencie #1E3A20 debe actualizarse a #052B16.
+═══════════════════════════════════════════════════════════════════
