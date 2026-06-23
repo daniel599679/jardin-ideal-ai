@@ -1,0 +1,434 @@
+<!doctype html>
+<title>Flujo de Producción — Jardín Ideal</title>
+<style>
+:root{--vf:#1E3A20;--vm:#3D6B42;--or:#C8A45A;--cr:#F5F2EB;--w:#FFF;--n:#0D0E0B;--gf:#2A2B28;--g:#6B6B63;--r:#B83232;--rc:#F5E8E8;--j:#C8850A;--jc:#FEF5E4;--vb:#EAF2EB;--fd:Georgia,serif;--fb:system-ui,sans-serif;--fm:'Courier New',monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cr);color:var(--n);font-family:var(--fb);font-size:14px;line-height:1.7}
+.cover{background:var(--vf);padding:44px 52px 36px;position:relative;overflow:hidden}
+.cover::after{content:"";position:absolute;right:-40px;top:-40px;width:300px;height:300px;border-radius:50%;border:50px solid rgba(200,164,90,.06)}
+.eyebrow{font-family:var(--fm);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--or);margin-bottom:14px}
+.cover h1{font-family:var(--fd);font-size:clamp(22px,3.5vw,38px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:20px}
+.cover h1 em{color:var(--or);font-style:italic}
+.cover-meta{display:flex;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px}
+.cm .lbl{font-family:var(--fm);font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,200,190,.6);display:block;margin-bottom:2px}
+.cm .val{font-size:13px;font-weight:700;color:#fff}
+.container{max-width:900px;margin:0 auto;padding:0 32px 64px}
+.section{padding-top:40px;margin-top:40px;border-top:1.5px solid rgba(61,107,66,.25)}
+.stag{font-family:var(--fm);font-size:8.5px;letter-spacing:4px;text-transform:uppercase;color:var(--or);margin-bottom:5px}
+h2{font-family:var(--fd);font-size:clamp(18px,2.5vw,26px);font-weight:700;color:var(--vf);margin-bottom:14px}
+h3{font-family:var(--fd);font-size:15px;font-style:italic;color:var(--vm);margin:22px 0 10px}
+p{margin-bottom:10px;color:var(--gf)}
+strong{font-weight:700;color:var(--n)}
+
+/* FLUJO VISUAL */
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;margin:32px 0}
+.flow-node{width:100%;max-width:560px;position:relative}
+.fn-box{border:2px solid var(--vf);background:var(--w);padding:18px 24px;position:relative}
+.fn-box.active{background:var(--vf);color:#fff}
+.fn-box.agent{border-color:var(--or);border-width:2px;background:var(--w)}
+.fn-box.gate{background:var(--jc);border-color:var(--j)}
+.fn-box.done{background:var(--vb);border-color:var(--vm)}
+.fn-tag{font-family:var(--fm);font-size:8px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.fn-box.active .fn-tag{color:var(--or)}
+.fn-box.agent .fn-tag{color:var(--or)}
+.fn-box.gate .fn-tag{color:var(--j)}
+.fn-box.done .fn-tag{color:var(--vm)}
+.fn-title{font-family:var(--fd);font-size:17px;font-weight:700}
+.fn-box.active .fn-title{color:#fff}
+.fn-box.agent .fn-title{color:var(--vf)}
+.fn-box.gate .fn-title{color:var(--j)}
+.fn-box.done .fn-title{color:var(--vm)}
+.fn-desc{font-size:12.5px;margin-top:4px}
+.fn-box.active .fn-desc{color:rgba(255,255,255,.75)}
+.fn-tools{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.fn-tool{font-family:var(--fm);font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;background:rgba(0,0,0,.07);color:var(--g)}
+.fn-box.active .fn-tool{background:rgba(255,255,255,.12);color:rgba(255,255,255,.7)}
+.fn-time{font-family:var(--fm);font-size:8px;color:var(--g);position:absolute;top:18px;right:16px}
+.fn-box.active .fn-time{color:rgba(255,255,255,.5)}
+/* arrow */
+.flow-arrow{display:flex;flex-direction:column;align-items:center;padding:4px 0;position:relative}
+.flow-arrow::before{content:"";display:block;width:2px;height:24px;background:var(--vf)}
+.flow-arrow::after{content:"";display:block;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid var(--vf)}
+/* gate special */
+.flow-gate{display:flex;align-items:stretch;width:100%;max-width:560px;gap:2px;margin:0}
+.gate-yes{flex:1;background:var(--vb);border:2px solid var(--vm);padding:10px 14px}
+.gate-no{flex:1;background:var(--rc);border:2px solid var(--r);padding:10px 14px}
+.gate-lbl{font-family:var(--fm);font-size:8px;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:2px}
+.gate-yes .gate-lbl{color:var(--vm)}
+.gate-no .gate-lbl{color:var(--r)}
+.gate-txt{font-size:12.5px;color:var(--gf)}
+
+/* AGENT CARDS */
+.agent-card{border:2px solid var(--or);background:var(--w);margin:16px 0;overflow:hidden}
+.ac-head{background:var(--vf);padding:14px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.ac-id{font-family:var(--fm);font-size:11px;font-weight:700;color:var(--or)}
+.ac-name{font-family:var(--fd);font-size:18px;font-weight:700;color:#fff;margin-top:2px}
+.ac-badge{font-family:var(--fm);font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;background:rgba(200,164,90,.2);color:var(--or);white-space:nowrap;margin-top:4px}
+.ac-body{padding:18px 20px}
+.ac-section{margin-bottom:16px}
+.ac-section:last-child{margin-bottom:0}
+.ac-slabel{font-family:var(--fm);font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:var(--or);margin-bottom:6px}
+.ac-text{font-size:13px;color:var(--gf);line-height:1.65}
+.criteria-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+.crit{background:var(--cr);padding:8px 12px;display:flex;align-items:baseline;gap:8px}
+.crit-num{font-family:var(--fm);font-size:9px;color:var(--or);min-width:18px}
+.crit-txt{font-size:12.5px;color:var(--gf)}
+.verdict-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px}
+.vd{padding:10px 14px;text-align:center}
+.vd-ico{font-size:20px;display:block;margin-bottom:3px}
+.vd-lbl{font-family:var(--fm);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700}
+.vd-range{font-size:11px;color:var(--g);margin-top:2px}
+.vd-ap{background:var(--vb)}
+.vd-ap .vd-lbl{color:var(--vm)}
+.vd-am{background:var(--jc)}
+.vd-am .vd-lbl{color:var(--j)}
+.vd-re{background:var(--rc)}
+.vd-re .vd-lbl{color:var(--r)}
+/* output format preview */
+.code-preview{background:#0D1A0E;border:1px solid rgba(200,164,90,.2);padding:14px 18px;margin-top:8px;font-family:var(--fm);font-size:11px;color:rgba(200,164,90,.85);line-height:1.8;overflow-x:auto}
+
+/* scene table */
+.tw{overflow-x:auto;margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead tr{background:var(--vf)}
+thead th{font-family:var(--fm);font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:#fff;padding:8px 11px;text-align:left}
+tbody tr{border-bottom:1px solid #E8E4DA}
+tbody tr:nth-child(even){background:#F9F7F2}
+tbody td{padding:7px 11px;color:var(--gf)}
+tbody td:first-child{font-family:var(--fm);font-size:10px;font-weight:700;color:var(--vf)}
+
+.footer{margin-top:48px;border-top:2px solid var(--vf);padding:16px 0 4px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer p{font-family:var(--fm);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--g);margin:0}
+@media(max-width:680px){.cover{padding:28px 18px 22px}.container{padding:0 16px 48px}.criteria-grid,.verdict-row{grid-template-columns:1fr}.flow-gate{flex-direction:column}}
+</style>
+
+<div class="cover">
+  <div class="eyebrow">Jardín Ideal — Sistema de Producción</div>
+  <h1>Flujo de Producción<br><em>Material → Publicación</em></h1>
+  <div class="cover-meta">
+    <div class="cm"><span class="lbl">Versión</span><span class="val">1.0</span></div>
+    <div class="cm"><span class="lbl">Fecha</span><span class="val">23 junio 2026</span></div>
+    <div class="cm"><span class="lbl">Agentes activos</span><span class="val">2</span></div>
+    <div class="cm"><span class="lbl">Pasos totales</span><span class="val">5</span></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- FLUJO VISUAL -->
+  <div class="section">
+    <div class="stag">Flujo Operativo</div>
+    <h2>Del Material a la Publicación</h2>
+
+    <div class="flow">
+
+      <!-- PASO 1 -->
+      <div class="flow-node">
+        <div class="fn-box active">
+          <span class="fn-time">Entrada</span>
+          <div class="fn-tag">Paso 1</div>
+          <div class="fn-title">MATERIAL</div>
+          <div class="fn-desc">Fotos y videos del chantier o del cliente listos para evaluar.</div>
+          <div class="fn-tools">
+            <span class="fn-tool">Foto</span>
+            <span class="fn-tool">Video</span>
+            <span class="fn-tool">Antes/Después</span>
+            <span class="fn-tool">Testimonio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-arrow"></div>
+
+      <!-- PASO 2 -->
+      <div class="flow-node">
+        <div class="fn-box agent">
+          <span class="fn-time">5–10 min</span>
+          <div class="fn-tag">Paso 2 — Agente IA</div>
+          <div class="fn-title">AGENTE_CONTROL_CALIDAD_MAGAZINE</div>
+          <div class="fn-desc">Evalúa 10 criterios visuales. Asigna puntuación /100 y veredicto.</div>
+          <div class="fn-tools">
+            <span class="fn-tool">Calidad visual</span>
+            <span class="fn-tool">Iluminación</span>
+            <span class="fn-tool">Composición</span>
+            <span class="fn-tool">Stop scroll</span>
+            <span class="fn-tool">Nivel premium</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-arrow"></div>
+
+      <!-- GATE -->
+      <div class="flow-node">
+        <div class="fn-box gate">
+          <div class="fn-tag">Decisión</div>
+          <div class="fn-title">¿Aprobado?</div>
+        </div>
+      </div>
+      <div class="flow-gate">
+        <div class="gate-yes">
+          <span class="gate-lbl">✅ Aprobado / Con mejoras</span>
+          <div class="gate-txt">Continúa al Paso 3 → DIRECTOR_VIDEO_IA</div>
+        </div>
+        <div class="gate-no">
+          <span class="gate-lbl">🔴 Rechazado</span>
+          <div class="gate-txt">Vuelve a Paso 1. Reshooting o reemplazo de material.</div>
+        </div>
+      </div>
+
+      <div class="flow-arrow"></div>
+
+      <!-- PASO 3 -->
+      <div class="flow-node">
+        <div class="fn-box agent">
+          <span class="fn-time">10–15 min</span>
+          <div class="fn-tag">Paso 3 — Agente IA</div>
+          <div class="fn-title">DIRECTOR_VIDEO_IA</div>
+          <div class="fn-desc">Diseña la arquitectura completa del Reel. Hook, escenas, música, texto, CTA.</div>
+          <div class="fn-tools">
+            <span class="fn-tool">Storytelling</span>
+            <span class="fn-tool">Escenas</span>
+            <span class="fn-tool">Transiciones</span>
+            <span class="fn-tool">Música</span>
+            <span class="fn-tool">Texto en pantalla</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-arrow"></div>
+
+      <!-- PASO 4 -->
+      <div class="flow-node">
+        <div class="fn-box" style="border-color:#7C5CBF;background:#F8F0FF">
+          <span class="fn-time">30–90 min</span>
+          <div class="fn-tag" style="color:#7C5CBF">Paso 4 — Producción</div>
+          <div class="fn-title" style="color:#7C5CBF">EDITOR_IA</div>
+          <div class="fn-desc">Monta el video siguiendo el brief del DIRECTOR_VIDEO_IA al pie de la letra.</div>
+          <div class="fn-tools">
+            <span class="fn-tool">CapCut</span>
+            <span class="fn-tool">DaVinci Resolve</span>
+            <span class="fn-tool">Canva Video</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-arrow"></div>
+
+      <!-- PASO 5 -->
+      <div class="flow-node">
+        <div class="fn-box done">
+          <span class="fn-time">Final</span>
+          <div class="fn-tag">Paso 5</div>
+          <div class="fn-title">LISTO PARA PUBLICAR</div>
+          <div class="fn-desc">Video revisado y aprobado. Listo para cargar en Meta Ads Manager o publicar orgánico.</div>
+          <div class="fn-tools">
+            <span class="fn-tool">Meta Ads</span>
+            <span class="fn-tool">Instagram Reels</span>
+            <span class="fn-tool">Facebook</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AGENTE 1 -->
+  <div class="section">
+    <div class="stag">Agente 1 de 2</div>
+    <h2>AGENTE_CONTROL_CALIDAD_MAGAZINE</h2>
+
+    <div class="agent-card">
+      <div class="ac-head">
+        <div>
+          <div class="ac-id">AGT-QC-001</div>
+          <div class="ac-name">Control de Calidad Magazine</div>
+        </div>
+        <div class="ac-badge">Paso 2 del flujo</div>
+      </div>
+      <div class="ac-body">
+
+        <div class="ac-section">
+          <div class="ac-slabel">Rol</div>
+          <div class="ac-text">Director de Arte de una revista de paisajismo de lujo en Quebec. Estándar de referencia: <strong>AD Architectural Digest Canada, Maisons &amp; Décors, Techo Bloc Quebec.</strong></div>
+        </div>
+
+        <div class="ac-section">
+          <div class="ac-slabel">10 Criterios de Evaluación</div>
+          <div class="criteria-grid">
+            <div class="crit"><span class="crit-num">01</span><span class="crit-txt">Calidad visual (resolución, nitidez)</span></div>
+            <div class="crit"><span class="crit-num">02</span><span class="crit-txt">Iluminación (natural, hora dorada)</span></div>
+            <div class="crit"><span class="crit-num">03</span><span class="crit-txt">Composición (regla de tercios)</span></div>
+            <div class="crit"><span class="crit-num">04</span><span class="crit-txt">Impacto emocional (orgullo, deseo)</span></div>
+            <div class="crit"><span class="crit-num">05</span><span class="crit-txt">Potencial publicitario</span></div>
+            <div class="crit"><span class="crit-num">06</span><span class="crit-txt">Transformación visible</span></div>
+            <div class="crit"><span class="crit-num">07</span><span class="crit-txt">Nivel premium ← veto si &lt;5</span></div>
+            <div class="crit"><span class="crit-num">08</span><span class="crit-txt">Capacidad stop scroll</span></div>
+            <div class="crit"><span class="crit-num">09</span><span class="crit-txt">Compatibilidad marca ← veto si &lt;5</span></div>
+            <div class="crit"><span class="crit-num">10</span><span class="crit-txt">Ventaja vs competencia Montreal</span></div>
+          </div>
+        </div>
+
+        <div class="ac-section">
+          <div class="ac-slabel">Veredictos</div>
+          <div class="verdict-row">
+            <div class="vd vd-ap">
+              <span class="vd-ico">✅</span>
+              <div class="vd-lbl">Aprobado</div>
+              <div class="vd-range">80–100 pts</div>
+            </div>
+            <div class="vd vd-am">
+              <span class="vd-ico">🟡</span>
+              <div class="vd-lbl">Con mejoras</div>
+              <div class="vd-range">60–79 pts</div>
+            </div>
+            <div class="vd vd-re">
+              <span class="vd-ico">🔴</span>
+              <div class="vd-lbl">Rechazado</div>
+              <div class="vd-range">0–59 pts</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ac-section">
+          <div class="ac-slabel">Formato de salida (ejemplo)</div>
+          <div class="code-preview">CONTROL DE CALIDAD — JARDÍN IDEAL
+Material: foto_balcon_laval_01.jpg
+Tipo: Foto | Servicio: Balcons
+─────────────────────────────────
+CRITERIO 1 — CALIDAD VISUAL       [9/10]
+CRITERIO 2 — ILUMINACIÓN          [8/10]
+CRITERIO 3 — COMPOSICIÓN          [7/10]
+...
+─────────────────────────────────
+PUNTUACIÓN TOTAL:    82/100
+VEREDICTO:          ✅ APROBADO
+─────────────────────────────────
+ACCIONES REQUERIDAS: Ninguna
+USO RECOMENDADO: Feed + Reel thumbnail
+NOTA PARA DIRECTOR_VIDEO_IA: Usar como frame de cierre del avant/après</div>
+        </div>
+
+        <div class="ac-section">
+          <div class="ac-slabel">Cómo usar este agente</div>
+          <div class="ac-text">1. Abre Claude (o el sistema de agentes). 2. Pega el contenido del archivo <code style="background:var(--cr);padding:1px 5px;font-family:var(--fm);font-size:11px">AGENTE_CONTROL_CALIDAD_MAGAZINE.md</code> como instrucción del sistema. 3. Envía la foto o video. 4. El agente responde con la ficha completa.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- AGENTE 2 -->
+  <div class="section">
+    <div class="stag">Agente 2 de 2</div>
+    <h2>DIRECTOR_VIDEO_IA</h2>
+
+    <div class="agent-card">
+      <div class="ac-head">
+        <div>
+          <div class="ac-id">AGT-DIR-001</div>
+          <div class="ac-name">Director Video IA</div>
+        </div>
+        <div class="ac-badge">Paso 3 del flujo</div>
+      </div>
+      <div class="ac-body">
+
+        <div class="ac-section">
+          <div class="ac-slabel">Rol</div>
+          <div class="ac-text">Director Creativo de Video especializado en contenido para redes sociales de empresas de construcción y paisajismo en Quebec. <strong>No edita. No produce. Diseña la arquitectura del video.</strong></div>
+        </div>
+
+        <div class="ac-section">
+          <div class="ac-slabel">Condición obligatoria</div>
+          <div class="ac-text" style="background:var(--rc);padding:10px 14px;color:var(--r)">Solo trabaja con material que tenga veredicto ✅ APROBADO o 🟡 APROBADO CON MEJORAS del AGENTE_CONTROL_CALIDAD_MAGAZINE. Sin ficha de QC, el agente rechaza el pedido.</div>
+        </div>
+
+        <div class="ac-section">
+          <div class="ac-slabel">Brief de Dirección — estructura generada</div>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr><th>Bloque</th><th>Contenido</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Hook 0-3s</td><td>Visual de apertura + texto en pantalla + movimiento de cámara</td></tr>
+                <tr><td>Escenas</td><td>Cada escena: duración / toma / movimiento / visual / texto / transición / emoción</td></tr>
+                <tr><td>CTA final</td><td>Texto exacto + posición logo + número 514-266-2504</td></tr>
+                <tr><td>Música</td><td>Género / tempo / energía / fuente (Meta / CapCut / libre)</td></tr>
+                <tr><td>Texto completo</td><td>Todos los textos con timecodes y estilo tipográfico</td></tr>
+                <tr><td>Notas editor</td><td>Herramienta / color grade / aspect ratio / subtítulos</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="ac-section">
+          <div class="ac-slabel">Duraciones por servicio</div>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr><th>Servicio</th><th>Formato estrella</th><th>Duración</th><th>Hook ideal</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Balcons</td><td>Avant/Après reveal</td><td>30-45s</td><td>Close-up madera deteriorada → composite nuevo</td></tr>
+                <tr><td>Cour Avant</td><td>Walking reveal</td><td>30-45s</td><td>Vista calle entrada deteriorada → resultado</td></tr>
+                <tr><td>Cour Arrière</td><td>Time-lapse emocional</td><td>45-60s</td><td>Cour vacío mañana → música → transformación</td></tr>
+                <tr><td>Pavé-Uni</td><td>Proceso completo</td><td>45-60s</td><td>Close-up asfalto agrietado → "Combien ça coûte?"</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="ac-section">
+          <div class="ac-slabel">Cómo usar este agente</div>
+          <div class="ac-text">1. Abre Claude. 2. Pega el contenido del archivo <code style="background:var(--cr);padding:1px 5px;font-family:var(--fm);font-size:11px">DIRECTOR_VIDEO_IA.md</code> como instrucción del sistema. 3. Envía: la ficha QC aprobada + el servicio objetivo + el público. 4. El agente responde con el Brief de Dirección completo listo para el editor.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PASO 4 — EDITOR -->
+  <div class="section">
+    <div class="stag">Paso 4 — Próxima implementación</div>
+    <h2>EDITOR_IA</h2>
+    <p>El agente EDITOR_IA recibirá el Brief de Dirección del DIRECTOR_VIDEO_IA y ejecutará el montaje en CapCut o DaVinci Resolve. <strong>Pendiente de crear</strong> — se activa cuando exista material filmado aprobado.</p>
+    <p style="color:var(--j);font-weight:600">Estado: 🟡 En cola — requiere material visual real del chantier para ser útil.</p>
+  </div>
+
+  <!-- ARCHIVOS -->
+  <div class="section">
+    <div class="stag">Archivos del sistema</div>
+    <h2>Dónde encontrar cada agente</h2>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>Archivo</th><th>Descripción</th><th>Cómo usar</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AGENTE_CONTROL_CALIDAD_MAGAZINE.md</td>
+            <td>Prompt completo del agente de calidad</td>
+            <td>Pegar como system prompt en Claude</td>
+          </tr>
+          <tr>
+            <td>DIRECTOR_VIDEO_IA.md</td>
+            <td>Prompt completo del director de video</td>
+            <td>Pegar como system prompt en Claude</td>
+          </tr>
+          <tr>
+            <td>FLUJO_PRODUCCION.html</td>
+            <td>Este documento — visión del sistema</td>
+            <td>Referencia visual del equipo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Jardín Ideal — Flujo de Producción v1.0</p>
+    <p>05_MARKETING / AGENTES_CALIDAD_Y_VIDEO</p>
+  </div>
+
+</div>
