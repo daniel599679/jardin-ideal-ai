@@ -271,7 +271,24 @@ Lee en este orden:
 
 ---
 
-## 12. PROTOCOLOS DIARIOS (añadido 2026-06-23)
+## 12. PRODUCCIÓN DE MARKETING — ESTADO 2026-06-24
+
+| Elemento | Estado |
+|---------|--------|
+| **Campaña activa ganadora** | cour arrière — $23.72 CPL — escalar a $55/día |
+| **Campaña en producción hoy** | COUR ARRIÈRE — Hero Post + Reel + Story + Remarketing |
+| **Plan de producción** | `05_MARKETING/PRODUCCION_HOY/PLAN_DE_PRODUCCION_HOY.md` |
+| **Imágenes seleccionadas** | `patio_rotin_pub.png` (98/100 HERO), `cour_arriere_facebook_45.png` (96/100 REEL), `patio_arriere_pub.png` (95/100 STORY), `cour_arriere_pave_pub.png` (93/100 REMARKETING) |
+| **Tiempo de producción estimado** | 2h 15min (09:30 → 11:35h) |
+| **Publicación** | 17:30–18:30h hoy |
+| **KPI objetivo** | ≥3 soumissions esta semana, CPL ≤$25 CAD |
+| **COUR_AVANT_TEST_01** | 7 piezas listas en `05_MARKETING/CAMPAGNES_TEST/COUR_AVANT_TEST_01/` — publicación orgánica pendiente |
+
+**Decisión de campaña (dato real):** 100% de producción va a COUR ARRIÈRE. Cour avant (0 leads), BANOS (0 leads), piscines ($146 CPL) no justifican producción creativa hoy.
+
+---
+
+## 13. PROTOCOLOS DIARIOS (añadido 2026-06-23)
 
 | Archivo | Propósito |
 |---------|-----------|
