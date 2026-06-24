@@ -6,667 +6,968 @@
 <title>Ecosistema IA — Jardín Ideal 2026</title>
 <style>
 :root{
-  --dg:#052B16;--mg:#0A4523;--g:#008E3F;
-  --au:#C8A45A;--ap:#E8D5A3;
-  --cr:#F5F2EB;--cm:#EAE5D8;--wh:#FAFAF8;
-  --td:#1C2118;--tm:#4A5546;--tl:#F5F2EB;
-  --fd:Georgia,'Times New Roman',serif;
-  --fb:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --dg:#052B16;--mg:#0A4523;--lg:#1A6635;--g:#008E3F;
+  --au:#C8A45A;--ap:#E8D5A3;--cr:#F5F2EB;--cm:#EAE5D8;--wh:#FAFAF8;
+  --rd:#A03030;--td:#1C2118;--tm:#4A5546;
+  --ff:Georgia,'Times New Roman',serif;
+  --fs:'Helvetica Neue',Helvetica,Arial,sans-serif;
   --fm:'Courier New',Courier,monospace;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:var(--fb)}
-.wrap{width:100%;height:100vh;display:flex;align-items:center;justify-content:center;background:var(--dg)}
-.slide{
-  position:absolute;
-  width:min(100vw,calc(100vh * 16/9));
-  height:min(100vh,calc(100vw * 9/16));
-  display:none;flex-direction:column;overflow:hidden;
-}
-.slide.on{display:flex;animation:fi .22s ease}
-@keyframes fi{from{opacity:0}to{opacity:1}}
-@media(prefers-reduced-motion:reduce){.slide.on{animation:none}}
+html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:var(--fs)}
 
-/* nav */
-.nb{position:fixed;bottom:0;left:0;right:0;height:46px;background:var(--dg);border-top:1px solid rgba(200,164,90,.18);display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:99}
-.nc{font-family:var(--fm);font-size:11px;color:var(--au);letter-spacing:.15em}
-.np{display:flex;gap:4px;align-items:center}
-.nd{width:4px;height:4px;border-radius:50%;background:rgba(200,164,90,.25);cursor:pointer;transition:all .2s}
-.nd.on{background:var(--au);width:14px;border-radius:2px}
-.nbs{display:flex;gap:6px}
-.nb button{background:none;border:1px solid rgba(200,164,90,.28);color:var(--au);padding:5px 14px;font-family:var(--fb);font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .15s}
-.nb button:hover{background:rgba(200,164,90,.1);border-color:var(--au)}
+/* ─── DECK ─── */
+#deck{position:fixed;inset:0 0 48px 0;overflow:hidden}
 
-/* common */
-.tr{width:100%;height:3px;background:linear-gradient(90deg,var(--au) 0%,rgba(200,164,90,.15) 100%);flex-shrink:0}
-.si{flex:1;display:flex;flex-direction:column;padding:36px 56px 18px;position:relative}
-.si.sm{padding:26px 52px 14px}
-.ey{font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--g);margin-bottom:9px}
-.dk .ey{color:var(--ap);opacity:.65}
-.ht{font-family:var(--fd);font-size:40px;font-weight:normal;line-height:1.1;margin-bottom:22px;letter-spacing:-.02em;color:var(--td)}
-.dk .ht{color:var(--tl)}
-.sn{position:absolute;bottom:14px;right:20px;font-family:var(--fm);font-size:10px;color:var(--au);opacity:.45;letter-spacing:.1em}
-.ctl{position:absolute;width:36px;height:36px}
-.ctl.tl{top:16px;left:16px;border-top:1px solid rgba(200,164,90,.28);border-left:1px solid rgba(200,164,90,.28)}
-.ctl.br{bottom:16px;right:16px;border-bottom:1px solid rgba(200,164,90,.28);border-right:1px solid rgba(200,164,90,.28)}
+/* ─── SLIDES ─── */
+.slide{width:100%;height:100%;display:none;flex-direction:column;overflow:hidden}
+.slide.on{display:flex}
+.slide.lk{background:var(--cr);color:var(--td)}
+.slide.dk{background:var(--dg);color:var(--cr)}
+.slide.wk{background:var(--wh);color:var(--td)}
 
-/* slides bg */
-.lk{background:var(--cr);color:var(--td)}
-.dk{background:var(--dg);color:var(--tl)}
-.wk{background:var(--wh);color:var(--td)}
+/* top accent bar */
+.bar{height:4px;background:linear-gradient(90deg,var(--au),rgba(200,164,90,.12));flex-shrink:0}
+.bar.dk{background:linear-gradient(90deg,var(--au),rgba(200,164,90,.08))}
 
-/* ── S01 COVER ── */
-#s01{background:var(--dg);justify-content:center;align-items:flex-start}
-.cv{padding:0 76px;display:flex;flex-direction:column;justify-content:center;height:100%}
-.cv-lab{font-family:var(--fm);font-size:10px;letter-spacing:.28em;color:var(--au);opacity:.65;margin-bottom:38px;text-transform:uppercase}
-.cv-t{font-family:var(--fd);font-size:76px;font-weight:normal;color:var(--cr);line-height:.92;letter-spacing:-.03em;margin-bottom:4px}
-.cv-t em{color:var(--au);font-style:italic}
-.cv-sub{font-size:15px;color:var(--cr);opacity:.5;letter-spacing:.08em;margin-top:26px;margin-bottom:6px}
-.cv-dt{font-family:var(--fm);font-size:11px;color:var(--au);letter-spacing:.2em}
-.cv-stripe{position:absolute;right:56px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--au) 0%,transparent 100%);opacity:.35}
+/* slide header */
+.hd{padding:22px 52px 14px;flex-shrink:0}
+.ew{font-size:9.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--g);margin-bottom:7px}
+.dk .ew{color:var(--ap);opacity:.6}
+.ht{font-family:var(--ff);font-size:34px;font-weight:normal;line-height:1.08;letter-spacing:-.02em;color:var(--td)}
+.dk .ht{color:var(--cr)}
+.ht b{color:var(--au);font-style:italic;font-weight:normal}
 
-/* ── S02 PROBLEMS ── */
-.pg{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;flex:1}
-.pc{background:var(--cm);border:1px solid rgba(5,43,22,.07);border-top:3px solid rgba(5,43,22,.14);padding:18px 14px;display:flex;flex-direction:column}
-.pi{font-size:20px;margin-bottom:9px;opacity:.65}
-.pt{font-family:var(--fd);font-size:14px;font-weight:bold;color:var(--td);margin-bottom:7px;line-height:1.2}
-.pd{font-size:11px;color:var(--tm);line-height:1.5;flex:1}
-.ps{margin-top:10px;font-family:var(--fm);font-size:9px;color:#A04040;letter-spacing:.04em;padding-top:8px;border-top:1px solid rgba(5,43,22,.09)}
+/* slide body */
+.bd{flex:1;padding:0 52px 14px;overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.bd.row{flex-direction:row;gap:14px}
+.bd.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-bottom:14px}
+.bd.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;padding-bottom:14px}
 
-/* ── S03 ECOSYSTEM FLOW ── */
-.ef{display:flex;align-items:center;justify-content:space-between;flex:1;padding-bottom:16px}
-.en{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1}
-.eiw{width:60px;height:60px;border-radius:50%;border:1.5px solid var(--dg);display:flex;align-items:center;justify-content:center;margin-bottom:10px;background:var(--cm);position:relative;flex-shrink:0}
-.eiw::after{content:'';position:absolute;inset:7px;border-radius:50%;border:1px solid rgba(5,43,22,.12)}
-.ei{font-size:20px;z-index:1}
-.el{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--td);margin-bottom:3px}
-.es{font-size:9.5px;color:var(--tm);line-height:1.3}
-.ea{flex:0 0 28px;position:relative;height:2px}
-.ea::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--au);transform:translateY(-50%)}
-.ea::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:0;height:0;border-left:5px solid var(--au);border-top:3px solid transparent;border-bottom:3px solid transparent}
+/* slide number */
+.snum{position:absolute;bottom:56px;right:20px;font-family:var(--fm);font-size:9px;color:var(--au);opacity:.4;letter-spacing:.1em;pointer-events:none}
 
-/* ── S04/S05 HUB ── */
-.hl{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;flex:1}
-.hc{grid-column:2;grid-row:1/span 2;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--dg);color:var(--cr);padding:20px;text-align:center}
-.hct{font-family:var(--fd);font-size:17px;font-style:italic;color:var(--au);margin-bottom:8px}
-.hcd{font-size:10.5px;opacity:.65;line-height:1.4}
-.hi{background:var(--cm);border:1px solid rgba(5,43,22,.09);padding:14px;display:flex;flex-direction:column}
-.hii{font-size:18px;margin-bottom:7px}
-.hit{font-size:11px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.09em;margin-bottom:3px}
-.hid{font-size:10.5px;color:var(--tm);line-height:1.4}
+/* ─── CARDS ─── */
+.card{background:var(--cm);border:1px solid rgba(5,43,22,.08);padding:16px 14px;display:flex;flex-direction:column}
+.dk .card{background:rgba(255,255,255,.05);border-color:rgba(245,242,235,.08)}
+.card.gold{border-top:3px solid var(--au)}
+.card.green{border-top:3px solid var(--g)}
+.card.red{border-top:3px solid var(--rd)}
+.card .ci{font-size:20px;margin-bottom:8px}
+.card .ct{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--g);margin-bottom:4px}
+.dk .card .ct{color:var(--au)}
+.card .cv{font-family:var(--ff);font-size:28px;font-style:italic;color:var(--au);line-height:1;margin-bottom:4px}
+.card .cd{font-size:10.5px;color:var(--tm);line-height:1.45;flex:1}
+.dk .card .cd{color:rgba(245,242,235,.5)}
+.card .cs{margin-top:8px;padding-top:7px;border-top:1px solid rgba(5,43,22,.09);font-family:var(--fm);font-size:8.5px;color:var(--rd);letter-spacing:.05em}
+.dk .card .cs{border-top-color:rgba(245,242,235,.08);color:var(--ap)}
 
-/* ── S06 BLUEPRINT FLOW ── */
-.bc{flex:1;display:flex;align-items:center;justify-content:space-around;padding:8px 0;position:relative}
-.bs{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;position:relative}
-.bci{width:68px;height:68px;border-radius:50%;border:1.5px solid var(--dg);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:10px;background:var(--wh);flex-shrink:0}
-.bci::before{content:'';position:absolute;inset:9px;border-radius:50%;border:1px dashed rgba(5,43,22,.18)}
-.bn{font-family:var(--fm);font-size:17px;color:var(--dg);z-index:1}
-.bcon{position:absolute;top:34px;right:0;width:50%}
-.bcl{height:1px;background:none;border-top:1px dashed var(--au);width:100%;position:relative}
-.bcl::after{content:'▶';position:absolute;right:-5px;top:-9px;font-size:9px;color:var(--au)}
-.bsl{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--td);margin-bottom:5px;line-height:1.2}
-.bsd{font-size:10px;color:var(--tm);line-height:1.4;max-width:110px}
-.bco{font-family:var(--fm);font-size:8px;color:var(--au);opacity:.55;letter-spacing:.1em;margin-top:7px}
+/* ─── TABLES ─── */
+.tbl{width:100%;border-collapse:collapse;font-size:11px}
+.tbl th{background:var(--dg);color:var(--au);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;text-align:left}
+.tbl td{padding:7px 10px;border-bottom:1px solid rgba(5,43,22,.09);vertical-align:top;line-height:1.35;color:var(--td)}
+.dk .tbl th{background:rgba(200,164,90,.12);color:var(--au)}
+.dk .tbl td{color:var(--cr);border-bottom-color:rgba(245,242,235,.07)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl .ok{color:var(--g);font-weight:700}
+.tbl .warn{color:#B06020;font-weight:700}
+.tbl .err{color:var(--rd);font-weight:700}
+.tbl .gold{color:var(--au);font-weight:700}
 
-/* ── S07 PILLARS (dark) ── */
-.pr{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;flex:1}
-.pl{padding:30px 24px;display:flex;flex-direction:column}
-.pl:nth-child(1){background:rgba(255,255,255,.03)}
-.pl:nth-child(2){background:rgba(200,164,90,.07);border-left:2px solid var(--au);border-right:2px solid var(--au)}
-.pl:nth-child(3){background:rgba(255,255,255,.03)}
-.pn{font-family:var(--fd);font-size:52px;font-style:italic;color:var(--au);opacity:.28;line-height:1;margin-bottom:10px}
-.ptt{font-family:var(--fd);font-size:24px;color:var(--cr);line-height:1.1;margin-bottom:12px}
-.pit{list-style:none;margin-top:6px}
-.pit li{font-size:11.5px;color:rgba(245,242,235,.55);padding:4px 0;border-bottom:1px solid rgba(245,242,235,.07);display:flex;align-items:center;gap:7px}
-.pit li::before{content:'·';color:var(--au);font-size:16px}
+/* ─── FLOW NODES ─── */
+.flow{display:flex;align-items:center;justify-content:center;gap:0;flex:1;padding:8px 0}
+.fn{display:flex;flex-direction:column;align-items:center;flex:1;text-align:center}
+.fb{width:62px;height:62px;border-radius:50%;border:2px solid var(--dg);background:var(--cm);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:20px;position:relative}
+.fb::after{content:'';position:absolute;inset:8px;border-radius:50%;border:1px dashed rgba(5,43,22,.15)}
+.fb.hi{background:var(--dg);border-color:var(--dg)}
+.fn .fl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--td)}
+.fn .fd{font-size:9.5px;color:var(--tm);line-height:1.3;max-width:90px}
+.fa{flex:0 0 32px;position:relative;display:flex;align-items:center}
+.fa::before{content:'';position:absolute;left:0;right:5px;height:1px;background:var(--au)}
+.fa::after{content:'';position:absolute;right:0;width:0;height:0;border-left:6px solid var(--au);border-top:4px solid transparent;border-bottom:4px solid transparent}
 
-/* ── S08 FLOAT ── */
-.fg{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;gap:10px;flex:1}
-.fh{grid-column:1/span 4;background:var(--dg);padding:13px 18px;display:flex;align-items:center;gap:16px}
-.fht{font-family:var(--fd);font-style:italic;font-size:18px;color:var(--au)}
-.fhd{font-size:11px;color:var(--cr);opacity:.55}
-.fhs{margin-left:auto;font-family:var(--fm);font-size:10px;color:var(--au);border:1px solid rgba(200,164,90,.5);padding:3px 10px;letter-spacing:.09em;white-space:nowrap}
-.fi2{background:var(--cm);border:1px solid rgba(5,43,22,.08);padding:14px;display:flex;flex-direction:column}
-.fi2 .icon{font-size:18px;margin-bottom:7px}
-.fi2 .tt{font-size:11px;font-weight:700;color:var(--td);text-transform:uppercase;letter-spacing:.09em;margin-bottom:3px}
-.fi2 .dd{font-size:10px;color:var(--tm);line-height:1.4}
+/* ─── FUNNEL ─── */
+.funnel{display:flex;gap:4px;flex:1;align-items:stretch}
+.fs{flex:1;display:flex;flex-direction:column;align-items:center}
+.fbox{width:88%;flex:1;display:flex;align-items:center;justify-content:center;color:var(--cr);font-size:11px;font-weight:600;text-align:center;padding:6px}
+.flbl{padding:6px 0 2px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--tm);text-align:center}
+.fsub{font-size:8.5px;color:var(--tm);text-align:center;line-height:1.3}
 
-/* ── S09 FUNNEL ── */
-.fc{flex:1;display:flex;align-items:stretch;gap:0}
-.fs{flex:1;display:flex;flex-direction:column;align-items:center;position:relative}
-.fb2{width:82%;display:flex;align-items:center;justify-content:center;color:var(--cr);font-size:11.5px;font-weight:600;text-align:center;padding:0 6px;letter-spacing:.04em;flex:1}
-.fs:nth-child(1) .fb2{background:var(--dg)}
-.fs:nth-child(2) .fb2{background:var(--mg);margin-top:14px}
-.fs:nth-child(3) .fb2{background:#1A6635;margin-top:28px}
-.fs:nth-child(4) .fb2{background:var(--g);margin-top:42px}
-.fs:nth-child(5) .fb2{background:var(--au);color:var(--dg);margin-top:56px;font-weight:800}
-.fl{padding:8px 0 3px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--tm);text-align:center}
-.fss{font-size:9px;color:var(--tm);text-align:center;padding:0 3px;line-height:1.3}
+/* ─── PILLARS ─── */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;flex:1}
+.pillar{padding:24px 20px;display:flex;flex-direction:column}
+.pillar:nth-child(2){border-left:2px solid var(--au);border-right:2px solid var(--au);background:rgba(200,164,90,.06)}
+.pnum{font-family:var(--ff);font-size:48px;font-style:italic;color:var(--au);opacity:.25;line-height:1;margin-bottom:8px}
+.ptitle{font-family:var(--ff);font-size:22px;color:var(--cr);line-height:1.1;margin-bottom:10px}
+.plist{list-style:none;margin-top:4px}
+.plist li{font-size:11px;color:rgba(245,242,235,.55);padding:4px 0;border-bottom:1px solid rgba(245,242,235,.07);display:flex;gap:7px;align-items:flex-start}
+.plist li::before{content:'·';color:var(--au);font-size:18px;line-height:1}
 
-/* ── S10/S11 PLAN ── */
-.plg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;flex:1}
-.pi2{border-left:3px solid var(--au);padding:13px 14px;background:var(--cm)}
-.dk .pi2{background:rgba(245,242,235,.05)}
-.pw{font-family:var(--fm);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:5px}
-.dk .pw{color:var(--ap);opacity:.55}
-.pit2{font-size:13px;font-weight:700;color:var(--td);margin-bottom:5px;line-height:1.2}
-.dk .pit2{color:var(--cr)}
-.pid{font-size:10.5px;color:var(--tm);line-height:1.4}
-.dk .pid{color:rgba(245,242,235,.5)}
+/* ─── BEFORE/AFTER ─── */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:3px;flex:1}
+.ba-col{padding:20px 24px;display:flex;flex-direction:column;gap:8px}
+.ba-before{background:rgba(5,43,22,.04)}
+.ba-after{background:var(--dg)}
+.ba-hd{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.22em;margin-bottom:6px}
+.ba-before .ba-hd{color:var(--tm)}
+.ba-after .ba-hd{color:var(--au)}
+.ba-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(5,43,22,.08)}
+.ba-after .ba-row{border-bottom-color:rgba(245,242,235,.07)}
+.ba-icon{font-size:13px;flex-shrink:0;width:20px;text-align:center;margin-top:1px}
+.ba-text{font-size:11.5px;line-height:1.4;color:var(--td)}
+.ba-after .ba-text{color:var(--cr)}
 
-/* ── S12 KPIs ── */
-.kg{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:10px;flex:1}
-.kc{background:var(--cm);border:1px solid rgba(5,43,22,.08);padding:18px 14px;display:flex;flex-direction:column}
-.kv{font-family:var(--fd);font-size:36px;font-style:italic;color:var(--au);line-height:1;margin-bottom:5px}
-.ku{font-size:13px;color:var(--g);font-style:normal;font-family:var(--fb);font-weight:700}
-.kl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.11em;color:var(--td);margin-bottom:3px}
-.kd{font-size:10px;color:var(--tm);line-height:1.4;flex:1}
-.kt{margin-top:8px;padding-top:7px;border-top:1px solid rgba(5,43,22,.09);font-family:var(--fm);font-size:8.5px;color:var(--g);letter-spacing:.07em}
+/* ─── TIMELINE ─── */
+.tl{display:flex;flex-direction:column;gap:10px;flex:1}
+.tlrow{display:flex;align-items:flex-start;gap:16px;padding:10px 14px;background:var(--cm);border-left:3px solid var(--au)}
+.dk .tlrow{background:rgba(255,255,255,.04);border-left-color:var(--au)}
+.tlrow.cr{border-left-color:var(--rd)}
+.tlrow.cg{border-left-color:var(--g)}
+.tlrow.cd{border-left-color:var(--dg)}
+.tlnum{font-family:var(--ff);font-size:26px;font-style:italic;color:var(--au);opacity:.3;line-height:1;flex-shrink:0;width:30px}
+.tlbody{flex:1}
+.tltitle{font-size:13px;font-weight:700;color:var(--td);margin-bottom:2px}
+.dk .tltitle{color:var(--cr)}
+.tldesc{font-size:10.5px;color:var(--tm);line-height:1.4}
+.dk .tldesc{color:rgba(245,242,235,.5)}
+.tltag{font-family:var(--fm);font-size:8.5px;color:var(--g);border:1px solid rgba(0,142,63,.3);padding:2px 8px;align-self:center;flex-shrink:0;letter-spacing:.07em}
+.dk .tltag{color:var(--au);border-color:rgba(200,164,90,.35)}
 
-/* ── S13 BENEFITS ── */
-.bsp{display:grid;grid-template-columns:1fr 1fr;gap:2px;flex:1}
-.bc2,.ac{padding:22px 26px;display:flex;flex-direction:column;gap:10px}
-.bc2{background:rgba(5,43,22,.04)}
-.ac{background:var(--dg)}
-.ch{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.22em;margin-bottom:6px}
-.bc2 .ch{color:var(--tm)}
-.ac .ch{color:var(--au)}
-.br2{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(5,43,22,.08)}
-.ac .br2{border-bottom-color:rgba(245,242,235,.07)}
-.bi{font-size:14px;flex-shrink:0;margin-top:1px;width:22px;text-align:center}
-.bt{font-size:12.5px;line-height:1.4;color:var(--td)}
-.ac .bt{color:var(--cr)}
+/* ─── KPI GRID ─── */
+.kgrid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:10px;flex:1}
+.kcard{background:var(--cm);border:1px solid rgba(5,43,22,.08);padding:14px;display:flex;flex-direction:column}
+.kcard.dark{background:var(--dg);border-color:var(--dg)}
+.kval{font-family:var(--ff);font-size:32px;font-style:italic;color:var(--au);line-height:1;margin-bottom:4px}
+.kval .kunit{font-size:14px;color:var(--g);font-style:normal;font-family:var(--fs);font-weight:700}
+.klbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--td);margin-bottom:3px}
+.kdesc{font-size:9.5px;color:var(--tm);line-height:1.4;flex:1}
+.ktag{margin-top:7px;padding-top:6px;border-top:1px solid rgba(5,43,22,.09);font-family:var(--fm);font-size:8px;color:var(--g);letter-spacing:.07em}
 
-/* ── S14 STEPS ── */
-.sl{display:flex;flex-direction:column;gap:10px;flex:1}
-.sr{display:flex;align-items:flex-start;gap:18px;padding:12px 14px;background:var(--cm);border-left:3px solid var(--au)}
-.sr:nth-child(2){border-left-color:#A04040}
-.sr:nth-child(3){border-left-color:#A04040}
-.sr:nth-child(4){border-left-color:var(--g)}
-.sr:nth-child(5){border-left-color:var(--dg)}
-.sn2{font-family:var(--fd);font-size:28px;font-style:italic;color:var(--au);opacity:.3;line-height:1;flex-shrink:0;width:32px}
-.sc{flex:1}
-.stit{font-size:13.5px;font-weight:700;color:var(--td);margin-bottom:2px}
-.sdesc{font-size:11px;color:var(--tm);line-height:1.4}
-.sw{font-family:var(--fm);font-size:9px;color:var(--g);border:1px solid rgba(0,142,63,.28);padding:3px 8px;flex-shrink:0;align-self:center;letter-spacing:.08em}
+/* ─── COVER SPECIFIC ─── */
+#s01{background:var(--dg);justify-content:center;align-items:flex-start;position:relative}
+.cov{padding:0 72px;display:flex;flex-direction:column;justify-content:center;height:100%}
+.cov-eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:.28em;color:var(--au);opacity:.6;margin-bottom:36px;text-transform:uppercase}
+.cov-title{font-family:var(--ff);font-size:80px;font-weight:normal;color:var(--cr);line-height:.9;letter-spacing:-.035em}
+.cov-title em{color:var(--au);font-style:italic}
+.cov-rule{width:54px;height:2px;background:var(--au);margin:24px 0 18px}
+.cov-sub{font-size:15px;color:var(--cr);opacity:.45;letter-spacing:.08em;margin-bottom:7px}
+.cov-date{font-family:var(--fm);font-size:11px;color:var(--au);letter-spacing:.18em}
+.cov-stripe{position:absolute;right:52px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--au) 0%,transparent 80%);opacity:.3}
+.cov-corner{position:absolute;width:32px;height:32px;border-color:rgba(200,164,90,.3);border-style:solid}
+.tl-corner{top:18px;left:18px;border-width:1px 0 0 1px}
+.br-corner{bottom:18px;right:18px;border-width:0 1px 1px 0}
 
-/* ── S15 CLOSE ── */
-#s15{background:var(--dg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative}
-.cpre{font-family:var(--fm);font-size:10px;letter-spacing:.28em;color:var(--au);opacity:.55;text-transform:uppercase;margin-bottom:28px}
-.cm2{font-family:var(--fd);font-size:44px;color:var(--cr);line-height:1.15;max-width:680px;letter-spacing:-.02em}
-.cm2 em{color:var(--au);font-style:italic}
-.crl{width:56px;height:1px;background:var(--au);margin:32px auto}
-.cph{font-family:var(--fd);font-size:21px;font-style:italic;color:var(--au);letter-spacing:.04em}
-.csb{font-size:11px;color:var(--cr);opacity:.35;letter-spacing:.09em;margin-top:6px}
+/* ─── CLOSE SPECIFIC ─── */
+#s15{background:var(--dg);align-items:center;justify-content:center;position:relative}
+.close-inner{text-align:center;display:flex;flex-direction:column;align-items:center;padding:60px}
+.close-pre{font-family:var(--fm);font-size:10px;letter-spacing:.28em;color:var(--au);opacity:.5;text-transform:uppercase;margin-bottom:28px}
+.close-quote{font-family:var(--ff);font-size:42px;color:var(--cr);line-height:1.18;max-width:640px;letter-spacing:-.02em}
+.close-quote em{color:var(--au);font-style:italic}
+.close-rule{width:52px;height:1px;background:var(--au);margin:30px auto}
+.close-phone{font-family:var(--ff);font-size:20px;font-style:italic;color:var(--au);letter-spacing:.04em}
+.close-email{font-size:11px;color:var(--cr);opacity:.3;letter-spacing:.09em;margin-top:5px}
 
+/* ─── NAV ─── */
+#nav{position:fixed;bottom:0;left:0;right:0;height:48px;background:var(--dg);border-top:1px solid rgba(200,164,90,.16);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:999}
+#nav-counter{font-family:var(--fm);font-size:11px;color:var(--au);letter-spacing:.16em;min-width:60px}
+#nav-dots{display:flex;gap:4px;align-items:center;flex:1;justify-content:center}
+.dot{width:4px;height:4px;border-radius:50%;background:rgba(200,164,90,.2);cursor:pointer;transition:all .18s}
+.dot.on{background:var(--au);width:16px;border-radius:2px}
+#nav-btns{display:flex;gap:6px;min-width:160px;justify-content:flex-end}
+#nav-btns button{background:none;border:1px solid rgba(200,164,90,.25);color:var(--au);padding:5px 16px;font-size:10px;font-family:var(--fs);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .15s}
+#nav-btns button:hover{background:rgba(200,164,90,.1);border-color:var(--au)}
+#nav-btns button:disabled{opacity:.3;cursor:default}
+
+/* ─── PRINT ─── */
 @media print{
   html,body{overflow:visible;height:auto}
-  .wrap{height:auto;position:static;display:block}
-  .slide{position:relative;display:flex!important;page-break-after:always;width:100%;height:100vh}
-  .nb{display:none}
+  #deck{position:static;height:auto;overflow:visible}
+  .slide{display:flex!important;page-break-after:always;height:100vh}
+  #nav{display:none}
+  .snum{display:none}
 }
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<div id="deck">
 
-<!-- 01 PORTADA -->
-<div class="slide dk" id="s01">
-  <div class="ctl tl"></div><div class="ctl br"></div>
-  <div class="cv-stripe"></div>
-  <div class="cv">
-    <div class="cv-lab">Jardín Ideal · Groupe Ideal · Uso interno</div>
-    <div class="cv-t">Ecosistema<br><em>IA</em></div>
-    <div style="width:56px;height:2px;background:var(--au);margin:22px 0 18px"></div>
-    <div class="cv-sub">Plan de implementación 90 · 180 días</div>
-    <div class="cv-dt">Junio 2026</div>
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 01 — PORTADA
+══════════════════════════════════════════════════════ -->
+<div class="slide dk on" id="s01">
+  <div class="cov-corner tl-corner"></div>
+  <div class="cov-corner br-corner"></div>
+  <div class="cov-stripe"></div>
+  <div class="cov">
+    <div class="cov-eyebrow">Jardín Ideal · Groupe Ideal · Confidencial interno</div>
+    <div class="cov-title">Ecosistema<br><em>IA</em></div>
+    <div class="cov-rule"></div>
+    <div class="cov-sub">Plan de implementación · 90 y 180 días</div>
+    <div class="cov-date">Junio 2026</div>
   </div>
-  <div class="sn">01 — 15</div>
+  <div class="snum">01 — 15</div>
 </div>
 
-<!-- 02 PROBLEMA -->
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 02 — SITUACIÓN ACTUAL
+══════════════════════════════════════════════════════ -->
 <div class="slide lk" id="s02">
-  <div class="tr"></div>
-  <div class="si">
-    <div class="ey">Situación actual</div>
-    <div class="ht">Cinco brechas que frenan el crecimiento</div>
-    <div class="pg">
-      <div class="pc">
-        <div class="pi">◎</div>
-        <div class="pt">Leads sin seguimiento</div>
-        <div class="pd">Los leads llegan de Meta Ads pero no existe notificación automática al equipo de ventas.</div>
-        <div class="ps">9 leads vencidos · Emilie Fournelle: 12 días</div>
+  <div class="bar"></div>
+  <div class="hd">
+    <div class="ew">Situación actual · Junio 2026</div>
+    <div class="ht">Jardín Ideal hoy — datos reales</div>
+  </div>
+  <div class="bd">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;flex-shrink:0">
+      <div class="card gold">
+        <div class="ct">Objetivo 2026</div>
+        <div class="cv">$7M <span style="font-size:14px;color:var(--g);font-style:normal;font-family:var(--fs)">CAD</span></div>
+        <div class="cd">Facturación anual combinada Jardín Ideal + Groupe Ideal</div>
       </div>
-      <div class="pc">
-        <div class="pi">◎</div>
-        <div class="pt">Campañas sin datos claros</div>
-        <div class="pd">$155 CAD/día activos. $112 CAD en campañas que no generan ni un lead. Sin análisis diario.</div>
-        <div class="ps">$50/día desperdiciados · cour avant + BANOS</div>
+      <div class="card gold">
+        <div class="ct">Ticket promedio</div>
+        <div class="cv">$30K <span style="font-size:14px;color:var(--g);font-style:normal;font-family:var(--fs)">CAD</span></div>
+        <div class="cd">Proyectos activos: $8K (cour simple) → $80K (piscine + aménagement)</div>
       </div>
-      <div class="pc">
-        <div class="pi">◎</div>
-        <div class="pt">Contenido inconsistente</div>
-        <div class="pd">Sin estándar visual, sin proceso de producción, sin sistema de puntuación para aprobar piezas.</div>
-        <div class="ps">0 piezas premium producidas antes del 24 jun</div>
+      <div class="card red">
+        <div class="ct">Leads vencidos</div>
+        <div class="cv">9 <span style="font-size:14px;color:var(--rd);font-style:normal;font-family:var(--fs)">urgentes</span></div>
+        <div class="cd">Sin contacto hasta 12 días · Emilie Fournelle · $207 CAD en riesgo</div>
+        <div class="cs">Máximo: 12 días sin respuesta</div>
       </div>
-      <div class="pc">
-        <div class="pi">◎</div>
-        <div class="pt">Reportes manuales</div>
-        <div class="pd">Sin resumen diario automático. La información se busca en tres plataformas distintas cada mañana.</div>
-        <div class="ps">Ads Manager + Pipedrive + Outlook · separados</div>
-      </div>
-      <div class="pc">
-        <div class="pi">◎</div>
-        <div class="pt">Información dispersa</div>
-        <div class="pd">No hay memoria central del negocio. Cada sesión con la IA empieza desde cero. Sin continuidad.</div>
-        <div class="ps">5 plataformas activas · 0 % automatizadas</div>
+      <div class="card red">
+        <div class="ct">Presupuesto ineficiente</div>
+        <div class="cv">$50 <span style="font-size:14px;color:var(--rd);font-style:normal;font-family:var(--fs)">CAD/día</span></div>
+        <div class="cd">Desperdiciados en campañas con 0 leads · cour avant + BANOS</div>
+        <div class="cs">$155/día total · solo $30 producen resultados</div>
       </div>
     </div>
+    <table class="tbl" style="flex-shrink:0">
+      <thead><tr><th>Empresa</th><th>Campañas activas</th><th>Leads Jun 2026</th><th>CPL promedio</th><th>Gasto total</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Jardín Ideal</td><td>3 campañas</td><td><b>13</b></td><td class="gold">$52.17</td><td>$678</td><td class="warn">1 pausa urgente</td></tr>
+        <tr><td>Groupe Ideal</td><td>2 campañas</td><td><b>4</b></td><td class="warn">$53.93</td><td>$260</td><td class="err">Zapier roto</td></tr>
+        <tr><td style="font-weight:700">Total consolidado</td><td>5 campañas</td><td class="gold"><b>17</b></td><td class="warn">$55.22</td><td>$938</td><td class="err">2 pausas urgentes</td></tr>
+      </tbody>
+    </table>
+    <div style="background:var(--dg);padding:12px 16px;display:flex;gap:24px;align-items:center;flex-shrink:0">
+      <div style="font-family:var(--fm);font-size:9px;color:var(--au);letter-spacing:.14em">ECOSISTEMA ACTUAL</div>
+      <div style="font-size:10.5px;color:var(--cr);opacity:.6">Meta Ads Manager</div>
+      <div style="color:var(--au);opacity:.4">·</div>
+      <div style="font-size:10.5px;color:var(--cr);opacity:.6">Pipedrive CRM</div>
+      <div style="color:var(--au);opacity:.4">·</div>
+      <div style="font-size:10.5px;color:var(--cr);opacity:.6">Outlook</div>
+      <div style="color:var(--au);opacity:.4">·</div>
+      <div style="font-size:10.5px;color:var(--cr);opacity:.6">Zapier</div>
+      <div style="color:var(--au);opacity:.4">·</div>
+      <div style="font-size:10.5px;color:var(--cr);opacity:.6">Instagram / Meta</div>
+      <div style="margin-left:auto;font-size:10.5px;color:var(--rd);font-weight:700">0% automatizado</div>
+    </div>
   </div>
-  <div class="sn">02 — 15</div>
+  <div class="snum">02 — 15</div>
 </div>
 
-<!-- 03 VISIÓN -->
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 03 — PROBLEMAS DETECTADOS
+══════════════════════════════════════════════════════ -->
 <div class="slide lk" id="s03">
-  <div class="tr"></div>
-  <div class="si">
-    <div class="ey">Arquitectura del sistema</div>
-    <div class="ht">El ecosistema completo</div>
-    <div class="ef">
-      <div class="en">
-        <div class="eiw"><div class="ei">📢</div></div>
-        <div class="el">Meta Ads</div>
-        <div class="es">Google Ads<br>Formularios</div>
-      </div>
-      <div class="ea"></div>
-      <div class="en">
-        <div class="eiw" style="border-color:var(--au)"><div class="ei">⚡</div></div>
-        <div class="el">Zapier</div>
-        <div class="es">Automatización<br>de flujos</div>
-      </div>
-      <div class="ea"></div>
-      <div class="en">
-        <div class="eiw"><div class="ei">📋</div></div>
-        <div class="el">Pipedrive</div>
-        <div class="es">CRM · Pipeline<br>de ventas</div>
-      </div>
-      <div class="ea"></div>
-      <div class="en">
-        <div class="eiw" style="background:var(--dg);border-color:var(--dg)">
-          <div class="ei" style="color:var(--au);font-size:18px">◈</div>
-        </div>
-        <div class="el" style="color:var(--dg);font-weight:800">Ecosistema IA</div>
-        <div class="es">Claude Code<br>+ Cowork</div>
-      </div>
-      <div class="ea"></div>
-      <div class="en">
-        <div class="eiw"><div class="ei">📊</div></div>
-        <div class="el">Reportes</div>
-        <div class="es">KPIs diarios<br>Dashboards</div>
-      </div>
-      <div class="ea"></div>
-      <div class="en">
-        <div class="eiw" style="border-color:var(--g)"><div class="ei">👥</div></div>
-        <div class="el" style="color:var(--g)">Equipo</div>
-        <div class="es">Daniel · Lyes<br>Jonathan</div>
-      </div>
+  <div class="bar"></div>
+  <div class="hd">
+    <div class="ew">Diagnóstico · Datos reales</div>
+    <div class="ht">Cinco problemas que cuestan dinero <b>hoy</b></div>
+  </div>
+  <div class="bd" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding-bottom:14px">
+    <div class="card" style="border-top:3px solid var(--rd)">
+      <div class="ci">🔴</div>
+      <div class="ct" style="color:var(--rd)">Bug Zapier</div>
+      <div class="cd">4 leads de GI_Cuisines jamás llegaron a Lyes. Email configurado con dominio incorrecto.</div>
+      <div class="cs">grupoideal.com → groupe-ideal.com<br>Impacto: $215 CAD desperdiciados</div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--rd)">
+      <div class="ci">🔴</div>
+      <div class="ct" style="color:var(--rd)">$50/día en humo</div>
+      <div class="cd">cour avant: 0 leads en 17 días ($67 gastados). BANOS: 0 leads en 30 días ($44 gastados).</div>
+      <div class="cs">$50 CAD/día × 7 días = $350/semana perdida</div>
+    </div>
+    <div class="card" style="border-top:3px solid #B06020">
+      <div class="ci">⚠️</div>
+      <div class="ct" style="color:#B06020">9 leads olvidados</div>
+      <div class="cd">Actividades vencidas sin contacto. Emilie Fournelle: 12 días sin llamar. Cada día que pasa baja la conversión.</div>
+      <div class="cs">$207 CAD en leads en riesgo de perderse</div>
+    </div>
+    <div class="card" style="border-top:3px solid #B06020">
+      <div class="ci">⚠️</div>
+      <div class="ct" style="color:#B06020">Sin reportes diarios</div>
+      <div class="cd">No existe resumen automático a las 07:00. Daniel busca manualmente en 3 plataformas cada mañana.</div>
+      <div class="cs">30–45 min/día perdidos en búsqueda de datos</div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--tm)">
+      <div class="ci">📵</div>
+      <div class="ct">Sin memoria</div>
+      <div class="cd">Cada sesión con la IA empieza desde cero. Campañas, leads, decisiones — nada se recuerda entre sesiones.</div>
+      <div class="cs">Sistema sin continuidad operativa real</div>
     </div>
   </div>
-  <div class="sn">03 — 15</div>
+  <div class="snum">03 — 15</div>
 </div>
 
-<!-- 04 CLAUDE CODE -->
-<div class="slide lk" id="s04">
-  <div class="tr"></div>
-  <div class="si sm">
-    <div class="ey">Herramienta 1 de 2</div>
-    <div class="ht" style="font-size:34px;margin-bottom:14px">Claude Code — Memoria central del negocio</div>
-    <div class="hl">
-      <div class="hi"><div class="hii">📁</div><div class="hit">Guarda reportes</div><div class="hid">Almacena el START_DAY_ENGINE con datos reales de campañas y pipeline cada mañana.</div></div>
-      <div class="hc">
-        <div style="font-family:var(--fm);font-size:8px;letter-spacing:.2em;color:var(--au);opacity:.55;margin-bottom:8px">NÚCLEO</div>
-        <div class="hct">Claude Code</div>
-        <div class="hcd">Una sola memoria persistente que acumula conocimiento real del negocio. No empieza desde cero cada día.</div>
-        <div style="width:28px;height:1px;background:var(--au);margin:12px auto;opacity:.35"></div>
-        <div style="font-family:var(--fm);font-size:8px;color:var(--au);opacity:.45;letter-spacing:.09em">jardin-ideal-ai.git</div>
-      </div>
-      <div class="hi"><div class="hii">🔄</div><div class="hit">Actualiza datos</div><div class="hid">Sincroniza KPIs, campañas, leads y problemas técnicos automáticamente cada mañana.</div></div>
-      <div class="hi"><div class="hii">🎯</div><div class="hit">Organiza prioridades</div><div class="hid">Genera la lista de acciones ordenada por impacto en ingresos, no por urgencia percibida.</div></div>
-      <div class="hi"><div class="hii">✅</div><div class="hit">Genera tareas</div><div class="hid">Convierte datos reales en acciones para Daniel, Lyes y Jonathan con responsable y horario.</div></div>
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 04 — QUÉ ESTAMOS CONSTRUYENDO
+══════════════════════════════════════════════════════ -->
+<div class="slide dk" id="s04">
+  <div class="bar dk"></div>
+  <div class="hd">
+    <div class="ew">Solución propuesta</div>
+    <div class="ht">Un sistema operativo con <b>IA</b> para Jardín Ideal</div>
+  </div>
+  <div class="bd" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;padding-bottom:14px">
+    <div class="card">
+      <div class="ci">🧠</div>
+      <div class="ct">Memoria central</div>
+      <div class="cd">Claude Code almacena toda la historia del negocio: campañas, leads, decisiones, KPIs. No empieza desde cero.</div>
+      <div class="cs" style="color:var(--au)">jardin-ideal-ai.git</div>
+    </div>
+    <div class="card">
+      <div class="ci">📊</div>
+      <div class="ct">Analista 24/7</div>
+      <div class="cd">Cowork lee Meta Ads + Pipedrive + Outlook cada mañana y genera el START_DAY_ENGINE antes de las 07:00.</div>
+      <div class="cs" style="color:var(--au)">reporte-diario-YYYY-MM-DD.json</div>
+    </div>
+    <div class="card">
+      <div class="ci">🎯</div>
+      <div class="ct">Calificación automática</div>
+      <div class="cd">ICS Score: 100 puntos, 8 factores. Cada lead clasificado PRE-A/B/C con tiempo de respuesta exigido.</div>
+      <div class="cs" style="color:var(--au)">PRE-A ≥75 · Respuesta en &lt;2h</div>
+    </div>
+    <div class="card">
+      <div class="ci">🎨</div>
+      <div class="ct">Fábrica de contenido</div>
+      <div class="cd">FLOAT V2: sistema de producción con score visual. Gate ≥90/100. 5 piezas por semana listas para publicar.</div>
+      <div class="cs" style="color:var(--au)">Francisco Standard · 62 imágenes</div>
     </div>
   </div>
-  <div class="sn">04 — 15</div>
+  <div style="margin:0 52px 14px;background:rgba(200,164,90,.08);border:1px solid rgba(200,164,90,.2);padding:16px 20px;display:flex;gap:28px;align-items:center">
+    <div>
+      <div style="font-family:var(--fm);font-size:9px;letter-spacing:.2em;color:var(--au);margin-bottom:6px">RESULTADO ESPERADO</div>
+      <div style="font-size:12px;color:var(--cr);line-height:1.5">De 5 plataformas desconectadas a <b style="color:var(--au)">un solo sistema</b> que aprende, prioriza y produce sin intervención manual diaria.</div>
+    </div>
+    <div style="display:flex;gap:24px;flex-shrink:0">
+      <div style="text-align:center"><div style="font-family:var(--ff);font-size:28px;font-style:italic;color:var(--au)">90</div><div style="font-size:9px;color:rgba(245,242,235,.4);letter-spacing:.1em;text-transform:uppercase">días fase 1</div></div>
+      <div style="text-align:center"><div style="font-family:var(--ff);font-size:28px;font-style:italic;color:var(--au)">180</div><div style="font-size:9px;color:rgba(245,242,235,.4);letter-spacing:.1em;text-transform:uppercase">días completo</div></div>
+      <div style="text-align:center"><div style="font-family:var(--ff);font-size:28px;font-style:italic;color:var(--au)">$7M</div><div style="font-size:9px;color:rgba(245,242,235,.4);letter-spacing:.1em;text-transform:uppercase">objetivo dic 2026</div></div>
+    </div>
+  </div>
+  <div class="snum" style="color:var(--au)">04 — 15</div>
 </div>
 
-<!-- 05 COWORK -->
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 05 — ARQUITECTURA DEL ECOSISTEMA
+══════════════════════════════════════════════════════ -->
 <div class="slide lk" id="s05">
-  <div class="tr"></div>
-  <div class="si sm">
-    <div class="ey">Herramienta 2 de 2</div>
-    <div class="ht" style="font-size:34px;margin-bottom:14px">Cowork — El analista que no duerme</div>
-    <div class="hl">
-      <div class="hi"><div class="hii">💰</div><div class="hit">Meta Ads</div><div class="hid">Lee las dos cuentas publicitarias. Identifica campañas ganadoras, pausas necesarias y oportunidades de escala.</div></div>
-      <div class="hc">
-        <div style="font-family:var(--fm);font-size:8px;letter-spacing:.2em;color:var(--au);opacity:.55;margin-bottom:8px">ANALISTA</div>
-        <div class="hct">Cowork</div>
-        <div class="hcd">Conectado a Pipedrive, Meta Ads y Outlook. Genera reporte diario con datos reales antes de las 09:00.</div>
-        <div style="width:28px;height:1px;background:var(--au);margin:12px auto;opacity:.35"></div>
-        <div style="font-family:var(--fm);font-size:8px;color:var(--au);opacity:.45;letter-spacing:.09em">reporte-diario-YYYY-MM-DD.json</div>
+  <div class="bar"></div>
+  <div class="hd">
+    <div class="ew">Arquitectura · Vista completa</div>
+    <div class="ht">Cómo se conectan todas las piezas</div>
+  </div>
+  <div class="bd">
+    <div class="flow" style="flex:1">
+      <div class="fn">
+        <div class="fb">📢</div>
+        <div class="fl">Fuentes</div>
+        <div class="fd">Meta Ads · Google · Formularios web</div>
       </div>
-      <div class="hi"><div class="hii">📋</div><div class="hit">Pipedrive</div><div class="hid">Revisa el pipeline, identifica leads vencidos, oportunidades de cierre y actividades pendientes.</div></div>
-      <div class="hi"><div class="hii">👤</div><div class="hit">Leads</div><div class="hid">Detecta quién lleva más días sin contacto, quién tiene RDV esta semana, quién necesita seguimiento urgente.</div></div>
-      <div class="hi"><div class="hii">📬</div><div class="hit">Outlook</div><div class="hid">Monitorea correos de los últimos 7 días. Identifica oportunidades y problemas que requieren acción.</div></div>
+      <div class="fa"></div>
+      <div class="fn">
+        <div class="fb" style="border-color:var(--au)">⚡</div>
+        <div class="fl">Zapier</div>
+        <div class="fd">Automatización · Routing de leads</div>
+      </div>
+      <div class="fa"></div>
+      <div class="fn">
+        <div class="fb">📋</div>
+        <div class="fl">Pipedrive</div>
+        <div class="fd">CRM · Pipeline · Actividades</div>
+      </div>
+      <div class="fa"></div>
+      <div class="fn">
+        <div class="fb hi">◈</div>
+        <div class="fl" style="color:var(--dg);font-weight:800;font-size:10px">ECOSISTEMA IA</div>
+        <div class="fd" style="color:var(--dg)">Cowork + Claude Code · Memoria unificada</div>
+      </div>
+      <div class="fa"></div>
+      <div class="fn">
+        <div class="fb">📊</div>
+        <div class="fl">Reportes</div>
+        <div class="fd">START_DAY_ENGINE · KPIs · Dashboard</div>
+      </div>
+      <div class="fa"></div>
+      <div class="fn">
+        <div class="fb" style="border-color:var(--g)">👥</div>
+        <div class="fl" style="color:var(--g)">Equipo</div>
+        <div class="fd">Daniel · Lyes · Jonathan · Alain</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:2px;flex-shrink:0">
+      <div style="background:rgba(5,43,22,.06);padding:10px;text-align:center"><div style="font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Entrada</div><div style="font-size:9.5px;color:var(--tm)">Leads de anuncios y formularios</div></div>
+      <div style="background:rgba(200,164,90,.06);padding:10px;text-align:center"><div style="font-size:9px;font-weight:700;color:#B06020;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">⚠️ Roto hoy</div><div style="font-size:9.5px;color:var(--tm)">Email incorrecto · 4 leads perdidos</div></div>
+      <div style="background:rgba(5,43,22,.06);padding:10px;text-align:center"><div style="font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Activo</div><div style="font-size:9.5px;color:var(--tm)">34 deals · 9 vencidos sin contacto</div></div>
+      <div style="background:var(--dg);padding:10px;text-align:center"><div style="font-size:9px;font-weight:700;color:var(--au);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Núcleo</div><div style="font-size:9.5px;color:rgba(245,242,235,.55)">Sincronización diaria 07:00</div></div>
+      <div style="background:rgba(5,43,22,.06);padding:10px;text-align:center"><div style="font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Salida</div><div style="font-size:9.5px;color:var(--tm)">Prioridades claras cada mañana</div></div>
+      <div style="background:rgba(0,142,63,.07);padding:10px;text-align:center"><div style="font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Ejecuta</div><div style="font-size:9.5px;color:var(--tm)">Acciones con responsable y horario</div></div>
     </div>
   </div>
-  <div class="sn">05 — 15</div>
+  <div class="snum">05 — 15</div>
 </div>
 
-<!-- 06 FLUJO — BLUEPRINT -->
-<div class="slide wk" id="s06">
-  <div class="tr"></div>
-  <div class="si">
-    <div class="ey">Protocolo de sincronización diaria</div>
-    <div class="ht" style="font-size:34px;margin-bottom:6px">Cómo fluye la información cada día</div>
-    <div style="font-size:9.5px;color:var(--tm);margin-bottom:22px;font-family:var(--fm);letter-spacing:.07em">07:00 AM · Meta Ads Manager + Pipedrive + Outlook</div>
-    <div class="bc">
-      <div class="bs">
-        <div class="bci"><div class="bn">1</div></div>
-        <div class="bcon"><div class="bcl"></div></div>
-        <div class="bsl">Cowork<br>analiza</div>
-        <div class="bsd">Lee las 3 fuentes de datos en tiempo real cada mañana</div>
-        <div class="bco">SRC · 001</div>
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 06 — CLAUDE CODE + COWORK
+══════════════════════════════════════════════════════ -->
+<div class="slide lk" id="s06">
+  <div class="bar"></div>
+  <div class="hd">
+    <div class="ew">Las dos herramientas IA</div>
+    <div class="ht">Claude Code + Cowork — funciones y diferencias</div>
+  </div>
+  <div class="bd row">
+    <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+      <div style="background:var(--dg);padding:14px 16px;display:flex;align-items:center;gap:12px;flex-shrink:0">
+        <div style="font-size:22px">🧠</div>
+        <div>
+          <div style="font-family:var(--ff);font-size:16px;font-style:italic;color:var(--au)">Claude Code</div>
+          <div style="font-size:10px;color:rgba(245,242,235,.5);letter-spacing:.08em">Memoria · Producción · Sistema operativo</div>
+        </div>
       </div>
-      <div class="bs">
-        <div class="bci" style="border-color:var(--au)"><div class="bn" style="color:var(--au)">2</div></div>
-        <div class="bcon"><div class="bcl"></div></div>
-        <div class="bsl">Genera<br>JSON</div>
-        <div class="bsd">reporte-diario + BRIEFING narrativo en texto</div>
-        <div class="bco">OUT · 002</div>
+      <table class="tbl" style="flex:1">
+        <thead><tr><th>Función</th><th>Qué hace exactamente</th></tr></thead>
+        <tbody>
+          <tr><td>📁 Almacena</td><td>Guarda todo en Git: campañas, leads, decisiones, KPIs. Nada se pierde entre sesiones.</td></tr>
+          <tr><td>🔄 Actualiza</td><td>Sincroniza MEMORIA_GLOBAL, ESTADO_ECOSISTEMA, PROXIMO_SPRINT con datos reales cada mañana.</td></tr>
+          <tr><td>🎯 Prioriza</td><td>Genera el START_DAY_ENGINE con acciones ordenadas por impacto en ingresos reales.</td></tr>
+          <tr><td>🎨 Produce</td><td>Crea contenido FLOAT V2 con score visual, copy en francés, specs Canva exactas.</td></tr>
+          <tr><td>📝 Documenta</td><td>Commits automáticos a GitHub. Historia completa del sistema disponible siempre.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="width:2px;background:var(--au);opacity:.15;flex-shrink:0"></div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+      <div style="background:var(--cm);padding:14px 16px;display:flex;align-items:center;gap:12px;border:1px solid rgba(5,43,22,.09);flex-shrink:0">
+        <div style="font-size:22px">📊</div>
+        <div>
+          <div style="font-family:var(--ff);font-size:16px;font-style:italic;color:var(--dg)">Cowork</div>
+          <div style="font-size:10px;color:var(--tm);letter-spacing:.08em">Analista · Reportes · Datos en tiempo real</div>
+        </div>
       </div>
-      <div class="bs">
-        <div class="bci"><div class="bn">3</div></div>
-        <div class="bcon"><div class="bcl"></div></div>
-        <div class="bsl">Claude Code<br>actualiza</div>
-        <div class="bsd">Sincroniza memoria: KPIs, campañas, leads, bugs</div>
-        <div class="bco">MEM · 003</div>
-      </div>
-      <div class="bs">
-        <div class="bci" style="border-color:var(--g)"><div class="bn" style="color:var(--g)">4</div></div>
-        <div class="bcon"><div class="bcl"></div></div>
-        <div class="bsl">Genera<br>tareas</div>
-        <div class="bsd">START_DAY_ENGINE con prioridades reales del día</div>
-        <div class="bco">ENG · 004</div>
-      </div>
-      <div class="bs">
-        <div class="bci" style="background:var(--dg);border-color:var(--dg)"><div class="bn" style="color:var(--au)">5</div></div>
-        <div class="bsl" style="color:var(--dg)">Equipo<br>ejecuta</div>
-        <div class="bsd">Daniel · Lyes · Jonathan reciben su lista exacta de acciones</div>
-        <div class="bco">ACT · 005</div>
-      </div>
+      <table class="tbl" style="flex:1">
+        <thead><tr><th>Fuente</th><th>Qué extrae y entrega</th></tr></thead>
+        <tbody>
+          <tr><td>💰 Meta Ads</td><td>Leads por campaña, CPL, presupuesto, diagnóstico. Identifica pausas y escalas necesarias.</td></tr>
+          <tr><td>📋 Pipedrive</td><td>Leads vencidos, RDV confirmados, propuestas enviadas. Lista exacta ordenada por urgencia.</td></tr>
+          <tr><td>📬 Outlook</td><td>Correos 7 días. Identifica oportunidades, problemas y respuestas pendientes del equipo.</td></tr>
+          <tr><td>📄 JSON output</td><td>reporte-diario-YYYY-MM-DD.json · Structured data listo para Claude Code.</td></tr>
+          <tr><td>📝 Briefing</td><td>Resumen narrativo en texto con contexto, alertas y recomendaciones ejecutivas.</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
-  <div class="sn">06 — 15</div>
+  <div class="snum">06 — 15</div>
 </div>
 
-<!-- 07 TRES PILARES -->
-<div class="slide dk" id="s07">
-  <div style="height:3px;background:linear-gradient(90deg,var(--au) 0%,rgba(200,164,90,.1) 100%);flex-shrink:0"></div>
-  <div style="padding:22px 56px 10px;flex-shrink:0">
-    <div class="ey">Prioridades de marketing</div>
-    <div class="ht" style="font-size:36px">Tres pilares de crecimiento</div>
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 07 — FLUJO COMPLETO DE MARKETING
+══════════════════════════════════════════════════════ -->
+<div class="slide wk" id="s07">
+  <div class="bar"></div>
+  <div class="hd">
+    <div class="ew">Proceso de marketing · End-to-end</div>
+    <div class="ht">Del anuncio al contrato firmado</div>
   </div>
-  <div class="pr">
-    <div class="pl">
-      <div class="pn">01</div>
-      <div class="ptt">Captación<br>de leads</div>
-      <div style="width:28px;height:1px;background:var(--au);opacity:.35;margin:10px 0"></div>
-      <ul class="pit">
-        <li>Campañas Meta Ads activas</li>
-        <li>Cour arrière: $23.72 CPL</li>
-        <li>Contenido orgánico FLOAT V2</li>
-        <li>Lead forms + landing page Alex</li>
-        <li>Audiencias fría y tibia</li>
-      </ul>
+  <div class="bd">
+    <div class="funnel" style="flex:1">
+      <div class="fs">
+        <div class="fbox" style="background:var(--dg)">Campaña<br><span style="font-size:9px;opacity:.7;font-weight:400">Meta Ads · $155/día</span></div>
+        <div class="flbl">Atracción</div><div class="fsub">FLOAT V2 · Score ≥90</div>
+      </div>
+      <div class="fs">
+        <div class="fbox" style="background:var(--mg);margin-top:12px">Lead entra<br><span style="font-size:9px;opacity:.7;font-weight:400">Formulario → Zapier</span></div>
+        <div class="flbl">Captura</div><div class="fsub">Pipedrive automático<br>PRE-score inmediato</div>
+      </div>
+      <div class="fs">
+        <div class="fbox" style="background:var(--lg);margin-top:24px">Llamada<br><span style="font-size:9px;opacity:.7;font-weight:400">&lt;2h si PRE-A</span></div>
+        <div class="flbl">Contacto</div><div class="fsub">Daniel · Lyes<br>Script por perfil A/B/C</div>
+      </div>
+      <div class="fs">
+        <div class="fbox" style="background:var(--g);margin-top:36px">Visita<br><span style="font-size:9px;opacity:.7;font-weight:400">Con 2 decisores</span></div>
+        <div class="flbl">Clasificación</div><div class="fsub">ICS completo 100 pts<br>Reporte pre-visita</div>
+      </div>
+      <div class="fs">
+        <div class="fbox" style="background:#B06020;margin-top:48px">Soumission<br><span style="font-size:9px;opacity:.7;font-weight:400">$15K–$60K CAD</span></div>
+        <div class="flbl">Propuesta</div><div class="fsub">Enviada en 24h<br>Follow-up día 3+5+7</div>
+      </div>
+      <div class="fs">
+        <div class="fbox" style="background:var(--au);color:var(--dg);margin-top:60px;font-weight:800">Contrato<br><span style="font-size:9px;font-weight:600">Tasa objetivo ≥40%</span></div>
+        <div class="flbl" style="color:var(--au);font-weight:800">Cierre</div><div class="fsub">$30K ticket promedio</div>
+      </div>
     </div>
-    <div class="pl">
-      <div class="pn">02</div>
-      <div class="ptt">Calificación<br>de leads</div>
-      <div style="width:28px;height:1px;background:var(--au);margin:10px 0"></div>
-      <ul class="pit">
-        <li>Pre-score automático ICS</li>
-        <li>Clasificación A · B · C</li>
-        <li>Respuesta &lt;2h (A) · &lt;4h (B)</li>
-        <li>Reporte pre-visita completo</li>
-        <li>Scripts de llamada por perfil</li>
-      </ul>
-    </div>
-    <div class="pl">
-      <div class="pn">03</div>
-      <div class="ptt">Contenido<br>premium</div>
-      <div style="width:28px;height:1px;background:var(--au);opacity:.35;margin:10px 0"></div>
-      <ul class="pit">
-        <li>FLOAT V2 — score ≥ 90/100</li>
-        <li>Biblioteca visual Francisco</li>
-        <li>Hero Post + Reel + Story</li>
-        <li>Remarketing A/B test</li>
-        <li>Producción semanal continua</li>
-      </ul>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:2px;flex-shrink:0">
+      <div style="background:var(--cm);padding:9px;text-align:center;font-size:9px;color:var(--tm)"><b style="display:block;color:var(--dg);margin-bottom:2px">CPL objetivo</b>≤$25 CAD</div>
+      <div style="background:var(--cm);padding:9px;text-align:center;font-size:9px;color:var(--tm)"><b style="display:block;color:var(--dg);margin-bottom:2px">Respuesta A+</b>&lt;2 horas</div>
+      <div style="background:var(--cm);padding:9px;text-align:center;font-size:9px;color:var(--tm)"><b style="display:block;color:var(--dg);margin-bottom:2px">ICS Score</b>0–100 pts</div>
+      <div style="background:var(--cm);padding:9px;text-align:center;font-size:9px;color:var(--tm)"><b style="display:block;color:var(--dg);margin-bottom:2px">Propuesta</b>24h post-visita</div>
+      <div style="background:var(--cm);padding:9px;text-align:center;font-size:9px;color:var(--tm)"><b style="display:block;color:var(--dg);margin-bottom:2px">Tasa cierre</b>≥40%</div>
+      <div style="background:var(--dg);padding:9px;text-align:center;font-size:9px;color:var(--au)"><b style="display:block;margin-bottom:2px">Lead→contrato</b>≤14 días</div>
     </div>
   </div>
-  <div class="sn" style="color:var(--au)">07 — 15</div>
+  <div class="snum">07 — 15</div>
 </div>
 
-<!-- 08 FLOAT V2 -->
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 08 — CAPTACIÓN Y CALIFICACIÓN AUTOMÁTICA
+══════════════════════════════════════════════════════ -->
 <div class="slide lk" id="s08">
-  <div class="tr"></div>
-  <div class="si sm">
-    <div class="ey">Sistema de contenido premium</div>
-    <div class="ht" style="font-size:34px;margin-bottom:12px">FLOAT V2 — De la foto al lead</div>
-    <div class="fg">
-      <div class="fh">
-        <div><div class="fht">FLOAT V2 Premium</div><div class="fhd">Fábrica de Leads y Obras a través de Activos Transformados</div></div>
-        <div class="fhs">Gate: ≥ 90 / 100</div>
+  <div class="bar"></div>
+  <div class="hd">
+    <div class="ew">Sistema ICS · Ideal Customer Score</div>
+    <div class="ht">Calificación automática de <b>100 puntos</b></div>
+  </div>
+  <div class="bd row">
+    <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+      <table class="tbl" style="flex-shrink:0">
+        <thead><tr><th>Factor ICS</th><th>Pts</th><th>Criterio</th></tr></thead>
+        <tbody>
+          <tr><td>Tipo de propiedad</td><td class="gold">20</td><td>Casa individual · dúplex · villa</td></tr>
+          <tr><td>Presupuesto declarado</td><td class="gold">20</td><td>≥$15K CAD para máx puntuación</td></tr>
+          <tr><td>Urgencia del proyecto</td><td class="gold">15</td><td>Este verano · este mes · inmediato</td></tr>
+          <tr><td>Zona geográfica</td><td class="gold">15</td><td>Montreal · Laval · Westmount · TMR</td></tr>
+          <tr><td>Decisores en visita</td><td class="gold">12</td><td>Ambos propietarios presentes</td></tr>
+          <tr><td>Servicio solicitado</td><td class="gold">8</td><td>Cour arrière = máx · Piscine = alto</td></tr>
+          <tr><td>Fuente del lead</td><td class="gold">6</td><td>Referencia = máx · Meta Ads = medio</td></tr>
+          <tr><td>Comportamiento digital</td><td class="gold">4</td><td>Visita web + Instagram + formulario</td></tr>
+        </tbody>
+      </table>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;flex-shrink:0">
+        <div style="background:var(--dg);padding:12px;text-align:center"><div style="font-family:var(--ff);font-size:20px;font-style:italic;color:var(--au)">PRE-A</div><div style="font-size:10px;color:rgba(245,242,235,.5);margin:4px 0">≥ 75 puntos</div><div style="font-size:9px;color:var(--au)">Respuesta &lt;2h · Daniel</div></div>
+        <div style="background:var(--cm);padding:12px;text-align:center;border:1px solid rgba(5,43,22,.09)"><div style="font-family:var(--ff);font-size:20px;font-style:italic;color:var(--td)">PRE-B</div><div style="font-size:10px;color:var(--tm);margin:4px 0">55 – 74 pts</div><div style="font-size:9px;color:var(--g)">Respuesta &lt;4h · Lyes</div></div>
+        <div style="background:var(--cm);padding:12px;text-align:center;border:1px solid rgba(5,43,22,.09)"><div style="font-family:var(--ff);font-size:20px;font-style:italic;color:var(--tm)">PRE-C</div><div style="font-size:10px;color:var(--tm);margin:4px 0">&lt; 55 pts</div><div style="font-size:9px;color:var(--tm)">Nutrir · secuencia email</div></div>
       </div>
-      <div class="fi2"><div class="icon">📷</div><div class="tt">Biblioteca Francisco</div><div class="dd">62 imágenes premium. 10 leyes visuales. Estándar fotográfico oficial de la marca.</div></div>
-      <div class="fi2"><div class="icon">⭐</div><div class="tt">Visual Score</div><div class="dd">5 bloques · 100 pts. Bonus Francisco hasta +9. Auto-descalificación automática.</div></div>
-      <div class="fi2"><div class="icon">🖼</div><div class="tt">Hero Post</div><div class="dd">4:5 · Specs Canva exactas · 2 versiones A/B · Meta Ads 40 chars. Score hoy: 100/100.</div></div>
-      <div class="fi2"><div class="icon">▶</div><div class="tt">Reel emocional</div><div class="dd">20 seg · 5 fases · Gancho → Problema → Revelación → Prueba social → CTA.</div></div>
-      <div class="fi2"><div class="icon">📱</div><div class="tt">Stories</div><div class="dd">9:16 · Poll + BTS + CTA · Sticker de contacto directo. Horario óptimo Quebec.</div></div>
-      <div class="fi2"><div class="icon">🎯</div><div class="tt">Remarketing</div><div class="dd">Imagen diferente al Hero · Audiencia tibia · $12/día × 3 días · A/B copy test.</div></div>
-      <div class="fi2"><div class="icon">🔄</div><div class="tt">Carrusel Avant/Après</div><div class="dd">6 slides · BEFORE desaturado → APRÈS premium. Slide final: datos de contacto.</div></div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+      <div style="font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--g);padding-bottom:6px;border-bottom:1px solid rgba(5,43,22,.1)">Leads urgentes hoy — datos reales</div>
+      <table class="tbl" style="flex:1">
+        <thead><tr><th>#</th><th>Lead</th><th>Servicio</th><th>Días vencido</th><th>Responsable</th></tr></thead>
+        <tbody>
+          <tr><td class="err">1</td><td><b>Emilie Fournelle</b></td><td>Cour Arrière</td><td class="err"><b>12 días</b></td><td>Daniel</td></tr>
+          <tr><td class="err">2</td><td>JF Gen Gilbert</td><td>Cour Arrière</td><td class="err">9 días</td><td>Daniel</td></tr>
+          <tr><td class="err">3</td><td>Catherine Archambault</td><td>Aménagement</td><td class="err">8 días</td><td>Jonathan</td></tr>
+          <tr><td class="warn">4</td><td>Michele Boileau</td><td>Cour Arrière</td><td class="warn">5 días</td><td>Daniel</td></tr>
+          <tr><td class="warn">5</td><td>Catherine Dion</td><td>Aménagement</td><td class="warn">5 días</td><td>Daniel</td></tr>
+          <tr><td class="warn">6</td><td>Rehan Sheikh</td><td>Cour Arrière</td><td class="warn">2 días</td><td>Lyes</td></tr>
+          <tr><td class="warn">7</td><td>Colin Maclachlan</td><td>Cour Arrière</td><td class="warn">2 días</td><td>Daniel</td></tr>
+          <tr><td>8</td><td>Amelie Duguay</td><td>Cour Arrière</td><td>1 día</td><td>Lyes</td></tr>
+          <tr><td>9</td><td>Charles-emrik Noel</td><td>Cour Arrière</td><td>1 día</td><td>Lyes</td></tr>
+        </tbody>
+      </table>
+      <div style="background:rgba(160,48,48,.07);border-left:3px solid var(--rd);padding:10px 12px;font-size:10.5px;color:var(--td);flex-shrink:0">
+        Costo de cada lead: ~$23 CAD · 9 leads = $207 en riesgo · A los 12 días conversión &lt;15%
+      </div>
     </div>
   </div>
-  <div class="sn">08 — 15</div>
+  <div class="snum">08 — 15</div>
 </div>
 
-<!-- 09 CALIFICACIÓN -->
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 09 — FÁBRICA DE CONTENIDO FLOAT V2
+══════════════════════════════════════════════════════ -->
 <div class="slide lk" id="s09">
-  <div class="tr"></div>
-  <div class="si">
-    <div class="ey">Sistema de calificación — ICS</div>
-    <div class="ht">Del lead al cierre</div>
-    <div class="fc">
-      <div class="fs">
-        <div class="fb2">Lead entra<br><span style="font-size:9.5px;opacity:.7;font-weight:400">Meta Ads · Formulario</span></div>
-        <div class="fl">Captación</div><div class="fss">Zapier crea el deal<br>en Pipedrive</div>
+  <div class="bar"></div>
+  <div class="hd">
+    <div class="ew">Sistema de contenido premium · FLOAT V2</div>
+    <div class="ht">De la foto al lead — <b>score ≥ 90/100</b></div>
+  </div>
+  <div class="bd">
+    <div style="display:grid;grid-template-columns:3fr 2fr;gap:14px;flex:1">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:var(--dg);padding:12px 16px;display:flex;align-items:center;gap:14px;flex-shrink:0">
+          <div style="font-family:var(--ff);font-style:italic;font-size:17px;color:var(--au)">FLOAT V2 Premium</div>
+          <div style="font-size:10.5px;color:rgba(245,242,235,.5)">Fábrica de Leads y Obras a través de Activos Transformados</div>
+          <div style="margin-left:auto;font-family:var(--fm);font-size:9.5px;color:var(--au);border:1px solid rgba(200,164,90,.4);padding:3px 9px;white-space:nowrap">Gate ≥ 90/100</div>
+        </div>
+        <table class="tbl" style="flex:1">
+          <thead><tr><th>Módulo</th><th>Formato</th><th>Tiempo</th><th>Uso</th></tr></thead>
+          <tbody>
+            <tr><td>📷 Biblioteca Francisco</td><td>62 imágenes · 10 leyes</td><td>—</td><td>Selección con PREMIUM_VISUAL_SCORE</td></tr>
+            <tr><td>🖼 Hero Post</td><td>1080×1350 px · 4:5</td><td>30 min</td><td>Feed Instagram + Meta Ads · 2 versiones A/B</td></tr>
+            <tr><td>▶ Reel emocional</td><td>1080×1920 · 9:16 · 20s</td><td>60 min</td><td>5 fases: Gancho→Problema→Revelación→Prueba→CTA</td></tr>
+            <tr><td>📱 Story CTA</td><td>1080×1920 · 9:16</td><td>15 min</td><td>Poll · Sticker contacto · Horario óptimo Quebec</td></tr>
+            <tr><td>🎯 Remarketing</td><td>4:5 · imagen diferente</td><td>20 min</td><td>Audiencia tibia · $12/día × 3 días · A/B copy</td></tr>
+            <tr><td>🔄 Carrusel Avant/Après</td><td>6 slides · feed</td><td>45 min</td><td>BEFORE desaturado → APRÈS premium · contact final</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="fs">
-        <div class="fb2">Pre-Score<br><span style="font-size:9.5px;opacity:.7;font-weight:400">0 – 100 pts automático</span></div>
-        <div class="fl">Calificación</div><div class="fss">PRE-A ≥75 · PRE-B 55–74<br>PRE-C &lt;55</div>
-      </div>
-      <div class="fs">
-        <div class="fb2">Llamada<br><span style="font-size:9.5px;opacity:.7;font-weight:400">&lt;2h si PRE-A · &lt;4h si PRE-B</span></div>
-        <div class="fl">Contacto</div><div class="fss">Alerta automática<br>Daniel / Lyes</div>
-      </div>
-      <div class="fs">
-        <div class="fb2">Visita<br><span style="font-size:9.5px;opacity:.7;font-weight:400">Con los 2 decisores</span></div>
-        <div class="fl">Clasificación</div><div class="fss">ICS completo: A · B · C<br>Reporte pre-visita</div>
-      </div>
-      <div class="fs">
-        <div class="fb2" style="font-size:13px;font-weight:800">Soumission<br><span style="font-size:10px;font-weight:600">$15K – $60K CAD</span></div>
-        <div class="fl" style="color:var(--au);font-weight:800">Cierre</div>
-        <div class="fss">Tasa objetivo: ≥40%</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--g)">PREMIUM_VISUAL_SCORE</div>
+        <table class="tbl" style="flex-shrink:0">
+          <thead><tr><th>Bloque</th><th>Pts</th></tr></thead>
+          <tbody>
+            <tr><td>Composición</td><td class="gold">25</td></tr>
+            <tr><td>Iluminación</td><td class="gold">25</td></tr>
+            <tr><td>Color</td><td class="gold">20</td></tr>
+            <tr><td>Limpieza visual</td><td class="gold">15</td></tr>
+            <tr><td>Impacto emocional</td><td class="gold">15</td></tr>
+          </tbody>
+        </table>
+        <div style="background:var(--cm);border:1px solid rgba(5,43,22,.08);padding:12px;flex:1">
+          <div style="font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">Francisco Bonus</div>
+          <div style="font-size:10px;color:var(--tm);line-height:1.6">
+            Cielo azul + nubes: <b style="color:var(--au)">+3</b><br>
+            Accents arquitect. negros: <b style="color:var(--au)">+2</b><br>
+            Pavé claro limpio: <b style="color:var(--au)">+2</b><br>
+            Césped verde brillante: <b style="color:var(--au)">+1</b><br>
+            Contexto Montreal: <b style="color:var(--au)">+1</b><br>
+            <span style="color:var(--rd)">Cielo gris: −5 · Personas: −8</span>
+          </div>
+        </div>
+        <div style="background:var(--dg);padding:10px 12px;flex-shrink:0">
+          <div style="font-size:9px;color:var(--au);font-family:var(--fm);letter-spacing:.1em;margin-bottom:4px">HOY · patio_rotin_pub.png</div>
+          <div style="font-size:10px;color:rgba(245,242,235,.6)">Score base: 89 + Francisco: +9 = <b style="color:var(--au);font-size:13px">98/100</b> → capped <b style="color:var(--au)">100/100</b></div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="sn">09 — 15</div>
+  <div class="snum">09 — 15</div>
 </div>
 
-<!-- 10 PLAN 90 -->
-<div class="slide lk" id="s10">
-  <div class="tr"></div>
-  <div class="si sm">
-    <div class="ey">Fase 1 · Junio – Septiembre 2026</div>
-    <div class="ht" style="font-size:34px;margin-bottom:14px">Plan 90 días — Fundamentos operativos</div>
-    <div class="plg">
-      <div class="pi2"><div class="pw">Semana 1–2</div><div class="pit2">Reportes diarios reales</div><div class="pid">START_DAY_ENGINE activo cada mañana. Datos Meta Ads + Pipedrive + Outlook antes de las 09:00.</div></div>
-      <div class="pi2"><div class="pw">Semana 1</div><div class="pit2">Corrección Zapier</div><div class="pid">Email daniel@groupe-ideal.com confirmado. Flujo Cuisine + Balcon funcionando. Test verificado.</div></div>
-      <div class="pi2"><div class="pw">Semana 1–2</div><div class="pit2">Optimización Meta Ads</div><div class="pid">Pausar cour avant + BANOS. Escalar cour arrière a $55/día. CPL objetivo: ≤$25 CAD.</div></div>
-      <div class="pi2"><div class="pw">Semana 2–4</div><div class="pit2">Lead pre-score activo</div><div class="pid">Formulario → Zapier → Pipedrive con score automático. Alerta en &lt;2 min si PRE-A.</div></div>
-      <div class="pi2"><div class="pw">Semanal desde jun 24</div><div class="pit2">Producción FLOAT V2</div><div class="pid">3–5 piezas semanales. Hero + Reel + Story. Cour arrière primero. Score mínimo 90/100.</div></div>
-      <div class="pi2"><div class="pw">Semana 4–8</div><div class="pit2">Dashboard marketing</div><div class="pid">CEO Dashboard completado cada día a las 17:00. KPIs Meta Ads, ventas y contenido unificados.</div></div>
-    </div>
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 10 — SISTEMA DE REPORTES DIARIOS
+══════════════════════════════════════════════════════ -->
+<div class="slide dk" id="s10">
+  <div class="bar dk"></div>
+  <div class="hd">
+    <div class="ew">Protocolo de sincronización diaria</div>
+    <div class="ht">El sistema que <b>arranca</b> el día con datos reales</div>
   </div>
-  <div class="sn">10 — 15</div>
-</div>
-
-<!-- 11 PLAN 180 -->
-<div class="slide dk" id="s11">
-  <div style="height:3px;background:linear-gradient(90deg,var(--au) 0%,rgba(200,164,90,.1) 100%);flex-shrink:0"></div>
-  <div class="si sm">
-    <div class="ey">Fase 2 · Septiembre – Diciembre 2026</div>
-    <div class="ht" style="font-size:34px;margin-bottom:14px">Plan 180 días — Automatización completa</div>
-    <div class="plg">
-      <div class="pi2"><div class="pw">Mes 3–4</div><div class="pit2">Alex — Chatbot activo</div><div class="pid">Formulario inteligente conectado a Pipedrive. Pre-califica leads 24/7. Reporte pre-visita automático.</div></div>
-      <div class="pi2"><div class="pw">Mes 3–4</div><div class="pit2">Seguimiento automático</div><div class="pid">Alerta &gt;2h sin contacto. Pipedrive mueve el lead automáticamente. Reactivación programada +15 días.</div></div>
-      <div class="pi2"><div class="pw">Mes 4–5</div><div class="pit2">Agente telefónico IA</div><div class="pid">VAPI + Voiceflow. Primer contacto con leads PRE-B fuera de horario. Clasifica y transfiere.</div></div>
-      <div class="pi2"><div class="pw">Mes 4</div><div class="pit2">Reportes ejecutivos auto</div><div class="pid">Reporte semanal generado automáticamente cada lunes 07:00. KPIs, leads, cierres, contenido.</div></div>
-      <div class="pi2"><div class="pw">Mes 3 en adelante</div><div class="pit2">Producción continua</div><div class="pid">5 piezas FLOAT V2 semanales sin fricción. Calendario de contenido Q4 planificado en Q3.</div></div>
-      <div class="pi2" style="border-left-color:var(--au)"><div class="pw">Objetivo diciembre</div><div class="pit2">$7M CAD en ruta</div><div class="pid">Pipeline automatizado. 20–25 proyectos/mes. Ticket promedio $30K. Tasa cierre ≥40%.</div></div>
-    </div>
-  </div>
-  <div class="sn" style="color:var(--au)">11 — 15</div>
-</div>
-
-<!-- 12 KPIs -->
-<div class="slide lk" id="s12">
-  <div class="tr"></div>
-  <div class="si sm">
-    <div class="ey">Métricas de éxito</div>
-    <div class="ht" style="font-size:34px;margin-bottom:12px">Las métricas que importan</div>
-    <div class="kg">
-      <div class="kc"><div class="kv">≤$25<div class="ku">CAD</div></div><div class="kl">CPL Objetivo</div><div class="kd">Costo por lead Meta Ads. Hoy: $23.72 en cour arrière. Mantener al escalar.</div><div class="kt">ACTUAL: $23.72 · cour arrière</div></div>
-      <div class="kc"><div class="kv">20–25<div class="ku">proyectos/mes</div></div><div class="kl">Volumen</div><div class="kd">Necesario para alcanzar $7M CAD anual. Requiere pipeline automatizado.</div><div class="kt">META: $583K CAD / mes</div></div>
-      <div class="kc"><div class="kv">&lt;2h<div class="ku">respuesta</div></div><div class="kl">Lead A+</div><div class="kd">Tiempo máximo para contactar PRE-A. Cada hora reduce conversión 20%.</div><div class="kt">HOY: hasta 12 días sin contacto</div></div>
-      <div class="kc"><div class="kv">≥40<div class="ku">%</div></div><div class="kl">Tasa de cierre</div><div class="kd">Propuestas que se convierten en contrato. Requiere calificación correcta.</div><div class="kt">Objetivo Q3 2026</div></div>
-      <div class="kc"><div class="kv">$30K<div class="ku">CAD</div></div><div class="kl">Ticket promedio</div><div class="kd">Valor promedio por proyecto. Rango: $8K (cour simple) → $80K (piscine completo).</div><div class="kt">META: mantener o superar</div></div>
-      <div class="kc"><div class="kv">5<div class="ku">piezas/sem</div></div><div class="kl">Contenido premium</div><div class="kd">Producción mínima semanal FLOAT V2. Score ≥90/100. Hero + Reel + Story + Remarketing.</div><div class="kt">HOY: 0 · Objetivo inmediato</div></div>
-      <div class="kc"><div class="kv">8×<div class="ku">ROAS</div></div><div class="kl">Retorno ad spend</div><div class="kd">Por cada $1 en Meta Ads, generar $8 en pipeline. CPL $25 · ticket $30K = margen amplio.</div><div class="kt">Objetivo campañas activas</div></div>
-      <div class="kc" style="background:var(--dg);border-color:var(--dg)">
-        <div class="kv" style="color:var(--cr);font-size:30px">$7M<div class="ku" style="color:var(--au)">CAD</div></div>
-        <div class="kl" style="color:var(--au)">Objetivo 2026</div>
-        <div class="kd" style="color:rgba(245,242,235,.55)">Facturación anual Jardín Ideal + Groupe Ideal. El ecosistema IA es el habilitador.</div>
-        <div class="kt" style="color:rgba(200,164,90,.55);border-top-color:rgba(200,164,90,.15)">Diciembre 2026</div>
+  <div class="bd">
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:14px;flex:1">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--au);margin-bottom:2px">Fuentes de datos</div>
+        <div class="card"><div class="ct">Meta Ads Manager</div><div class="cd">Leads · CPL · CTR · Presupuesto · Diagnóstico por campaña</div></div>
+        <div class="card"><div class="ct">Pipedrive CRM</div><div class="cd">Actividades vencidas · Pipeline · RDV · Propuestas pendientes</div></div>
+        <div class="card"><div class="ct">Outlook</div><div class="cd">Correos 7 días · Respuestas pendientes · Oportunidades detectadas</div></div>
+        <div style="margin-top:4px;padding:10px 12px;background:rgba(200,164,90,.08);border:1px solid rgba(200,164,90,.2)">
+          <div style="font-family:var(--fm);font-size:9px;color:var(--au);letter-spacing:.12em;margin-bottom:5px">OUTPUT</div>
+          <div style="font-size:10px;color:rgba(245,242,235,.6);line-height:1.5">reporte-diario-YYYY-MM-DD.json<br>BRIEFING-CLAUDE-CODE.md<br>START_DAY_ENGINE.md</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--au);margin-bottom:2px">Flujo de 5 pasos · 07:00 AM</div>
+        <div class="tl" style="flex:1">
+          <div class="tlrow dk" style="border-left-color:var(--au)">
+            <div class="tlnum">1</div>
+            <div class="tlbody">
+              <div class="tltitle">Cowork lee las 3 fuentes</div>
+              <div class="tldesc">Meta Ads Manager + Pipedrive + Outlook · Extrae datos reales · Genera JSON + Briefing</div>
+            </div>
+            <div class="tltag">07:00</div>
+          </div>
+          <div class="tlrow dk">
+            <div class="tlnum">2</div>
+            <div class="tlbody">
+              <div class="tltitle">Claude Code actualiza la memoria</div>
+              <div class="tldesc">Sincroniza MEMORIA_GLOBAL · ESTADO_ECOSISTEMA · PROXIMO_SPRINT · KPIS_EMPRESA</div>
+            </div>
+            <div class="tltag">07:10</div>
+          </div>
+          <div class="tlrow dk">
+            <div class="tlnum">3</div>
+            <div class="tlbody">
+              <div class="tltitle">Genera prioridades del día</div>
+              <div class="tldesc">START_DAY_ENGINE: leads urgentes · campañas a pausar · oportunidades de cierre · bugs técnicos</div>
+            </div>
+            <div class="tltag">07:20</div>
+          </div>
+          <div class="tlrow dk">
+            <div class="tlnum">4</div>
+            <div class="tlbody">
+              <div class="tltitle">Commit + push a GitHub</div>
+              <div class="tldesc">Historia completa preservada · Accesible desde cualquier dispositivo · Sin pérdida de datos</div>
+            </div>
+            <div class="tltag">07:25</div>
+          </div>
+          <div class="tlrow dk" style="border-left-color:var(--g)">
+            <div class="tlnum">5</div>
+            <div class="tlbody">
+              <div class="tltitle">Equipo recibe su lista de acciones</div>
+              <div class="tldesc">Daniel · Lyes · Jonathan ven exactamente qué hacer hoy · Con responsable y horario</div>
+            </div>
+            <div class="tltag" style="color:var(--au);border-color:rgba(200,164,90,.35)">08:30</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="sn">12 — 15</div>
+  <div class="snum" style="color:var(--au)">10 — 15</div>
 </div>
 
-<!-- 13 BENEFICIOS -->
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 11 — ROADMAP 90 DÍAS
+══════════════════════════════════════════════════════ -->
+<div class="slide lk" id="s11">
+  <div class="bar"></div>
+  <div class="hd">
+    <div class="ew">Fase 1 · Junio – Septiembre 2026</div>
+    <div class="ht">Plan 90 días — Fundamentos operativos</div>
+  </div>
+  <div class="bd">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:1">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--rd);margin-bottom:2px">Semana 1 — Apagar incendios</div>
+        <div class="tlrow cr">
+          <div class="tlnum" style="color:var(--rd)">1</div>
+          <div class="tlbody"><div class="tltitle">Corregir Zapier · hoy</div><div class="tldesc">grupo<b>ideal</b>.com → groupe-ideal.com · Recupera 4 leads inmediatamente</div></div>
+          <div class="tltag" style="color:var(--rd);border-color:rgba(160,48,48,.3)">Daniel</div>
+        </div>
+        <div class="tlrow cr">
+          <div class="tlnum" style="color:var(--rd)">2</div>
+          <div class="tlbody"><div class="tltitle">Pausar cour avant + BANOS</div><div class="tldesc">0 leads combinados · Ahorro $50 CAD/día · Reasignar a cour arrière $55/día</div></div>
+          <div class="tltag" style="color:var(--rd);border-color:rgba(160,48,48,.3)">Daniel</div>
+        </div>
+        <div class="tlrow cr">
+          <div class="tlnum" style="color:var(--rd)">3</div>
+          <div class="tlbody"><div class="tltitle">Llamar 9 leads vencidos</div><div class="tldesc">Emilie Fournelle 12 días → JF Gilbert 9 días → Michele Boileau 5 días…</div></div>
+          <div class="tltag" style="color:var(--rd);border-color:rgba(160,48,48,.3)">Todo</div>
+        </div>
+        <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--g);margin:8px 0 2px">Semanas 2–4 — Sistematización</div>
+        <div class="tlrow cg">
+          <div class="tlnum">4</div>
+          <div class="tlbody"><div class="tltitle">Reporte diario activo</div><div class="tldesc">START_DAY_ENGINE cada mañana a las 07:00 · Protocolo en 5 pasos operativo</div></div>
+          <div class="tltag">Diario</div>
+        </div>
+        <div class="tlrow cg">
+          <div class="tlnum">5</div>
+          <div class="tlbody"><div class="tltitle">Lead pre-score automático</div><div class="tldesc">Formulario → Zapier → Pipedrive + score PRE-A/B/C · Alerta &lt;2 min si PRE-A</div></div>
+          <div class="tltag">Sem 3</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--g);margin-bottom:2px">Meses 2–3 — Producción y escala</div>
+        <div class="tlrow">
+          <div class="tlnum">6</div>
+          <div class="tlbody"><div class="tltitle">FLOAT V2 — producción semanal</div><div class="tldesc">5 piezas/semana · Hero + Reel + Story · Score ≥90/100 · Cour arrière primero</div></div>
+          <div class="tltag">Jun 24+</div>
+        </div>
+        <div class="tlrow">
+          <div class="tlnum">7</div>
+          <div class="tlbody"><div class="tltitle">CEO Dashboard operativo</div><div class="tldesc">17:00 cada día · KPIs Meta Ads + ventas + contenido en una sola vista</div></div>
+          <div class="tltag">Mes 2</div>
+        </div>
+        <div class="tlrow">
+          <div class="tlnum">8</div>
+          <div class="tlbody"><div class="tltitle">Limpiar Pipedrive</div><div class="tldesc">Archivar 8 test leads · Pipeline muestra solo deals reales · Datos confiables</div></div>
+          <div class="tltag">Sem 2</div>
+        </div>
+        <div class="tlrow cg">
+          <div class="tlnum">9</div>
+          <div class="tlbody"><div class="tltitle">Alex Fase 1 (post-Zapier)</div><div class="tldesc">Landing page con pre-calificación · Conectar a Pipedrive · Test con leads reales</div></div>
+          <div class="tltag">Mes 3</div>
+        </div>
+        <div style="background:var(--dg);padding:12px 14px;margin-top:auto;flex-shrink:0">
+          <div style="font-family:var(--fm);font-size:9px;color:var(--au);letter-spacing:.1em;margin-bottom:6px">KPI AL DÍA 90</div>
+          <div style="display:flex;gap:16px">
+            <div style="text-align:center"><div style="font-family:var(--ff);font-size:20px;font-style:italic;color:var(--au)">≤$25</div><div style="font-size:8px;color:rgba(245,242,235,.4)">CPL CAD</div></div>
+            <div style="text-align:center"><div style="font-family:var(--ff);font-size:20px;font-style:italic;color:var(--au)">5/sem</div><div style="font-size:8px;color:rgba(245,242,235,.4)">piezas contenido</div></div>
+            <div style="text-align:center"><div style="font-family:var(--ff);font-size:20px;font-style:italic;color:var(--au)">$0</div><div style="font-size:8px;color:rgba(245,242,235,.4)">presupuesto ineficiente</div></div>
+            <div style="text-align:center"><div style="font-family:var(--ff);font-size:20px;font-style:italic;color:var(--au)">&lt;2h</div><div style="font-size:8px;color:rgba(245,242,235,.4)">respuesta PRE-A</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="snum">11 — 15</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 12 — ROADMAP 180 DÍAS
+══════════════════════════════════════════════════════ -->
+<div class="slide dk" id="s12">
+  <div class="bar dk"></div>
+  <div class="hd">
+    <div class="ew">Fase 2 · Septiembre – Diciembre 2026</div>
+    <div class="ht">Plan 180 días — <b>Automatización completa</b></div>
+  </div>
+  <div class="bd" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;padding-bottom:14px">
+    <div class="card" style="border-left:3px solid var(--au);background:rgba(200,164,90,.07)">
+      <div style="font-family:var(--fm);font-size:9px;color:var(--au);letter-spacing:.14em;margin-bottom:8px">MES 3–4</div>
+      <div style="font-family:var(--ff);font-size:16px;color:var(--cr);margin-bottom:8px">Alex — Chatbot activo</div>
+      <div class="cd">Formulario inteligente en landing page. Pre-califica leads 24/7. Genera reporte pre-visita automático antes de que Daniel llegue.</div>
+    </div>
+    <div class="card">
+      <div style="font-family:var(--fm);font-size:9px;color:var(--au);opacity:.6;letter-spacing:.14em;margin-bottom:8px">MES 3–4</div>
+      <div style="font-family:var(--ff);font-size:16px;color:var(--cr);margin-bottom:8px">Seguimiento automático</div>
+      <div class="cd">Alerta si lead PRE-A sin contacto en &gt;2h. Pipedrive mueve el deal automáticamente. Reactivación programada a +15 días.</div>
+    </div>
+    <div class="card">
+      <div style="font-family:var(--fm);font-size:9px;color:var(--au);opacity:.6;letter-spacing:.14em;margin-bottom:8px">MES 4–5</div>
+      <div style="font-family:var(--ff);font-size:16px;color:var(--cr);margin-bottom:8px">Agente telefónico IA</div>
+      <div class="cd">VAPI + Voiceflow. Primer contacto con PRE-B fuera de horario laboral. Clasifica, responde preguntas básicas y transfiere a Lyes.</div>
+    </div>
+    <div class="card">
+      <div style="font-family:var(--fm);font-size:9px;color:var(--au);opacity:.6;letter-spacing:.14em;margin-bottom:8px">MES 4</div>
+      <div style="font-family:var(--ff);font-size:16px;color:var(--cr);margin-bottom:8px">Reportes ejecutivos auto</div>
+      <div class="cd">Reporte semanal generado cada lunes 07:00 sin intervención manual. KPIs, leads, cierres, contenido producido y ROI real.</div>
+    </div>
+    <div class="card">
+      <div style="font-family:var(--fm);font-size:9px;color:var(--au);opacity:.6;letter-spacing:.14em;margin-bottom:8px">MES 3 EN ADELANTE</div>
+      <div style="font-family:var(--ff);font-size:16px;color:var(--cr);margin-bottom:8px">Producción continua</div>
+      <div class="cd">5 piezas FLOAT V2 semanales sin fricción. Calendario de contenido Q4 planificado en Q3. Banco de hooks para toda la temporada.</div>
+    </div>
+    <div class="card" style="border:1px solid rgba(200,164,90,.3);background:rgba(200,164,90,.08)">
+      <div style="font-family:var(--fm);font-size:9px;color:var(--au);letter-spacing:.14em;margin-bottom:8px">OBJETIVO DICIEMBRE</div>
+      <div style="font-family:var(--ff);font-size:22px;color:var(--au);margin-bottom:6px;font-style:italic">$7M CAD</div>
+      <div class="cd">Pipeline automatizado. 20–25 proyectos/mes. Ticket promedio $30K. Tasa de cierre ≥40%. El ecosistema funciona sin depender de Daniel para cada acción.</div>
+    </div>
+  </div>
+  <div class="snum" style="color:var(--au)">12 — 15</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 13 — KPIs OBJETIVO 2026
+══════════════════════════════════════════════════════ -->
 <div class="slide lk" id="s13">
-  <div class="tr"></div>
-  <div class="si sm">
-    <div class="ey">Impacto para el equipo</div>
-    <div class="ht" style="font-size:34px;margin-bottom:12px">Lo que cambia con el ecosistema IA</div>
-    <div class="bsp">
-      <div class="bc2">
-        <div class="ch">Antes — Sin el sistema</div>
-        <div class="br2"><div class="bi">✗</div><div class="bt">Leads perdidos sin notificación. Emilie Fournelle: 12 días sin contacto.</div></div>
-        <div class="br2"><div class="bi">✗</div><div class="bt">$50 CAD/día desperdiciados en campañas que no generan ningún lead.</div></div>
-        <div class="br2"><div class="bi">✗</div><div class="bt">Cada mañana: buscar en Ads Manager + Pipedrive + Outlook por separado.</div></div>
-        <div class="br2"><div class="bi">✗</div><div class="bt">Contenido producido sin estándar visual. Sin score. Sin proceso claro.</div></div>
-        <div class="br2"><div class="bi">✗</div><div class="bt">Sin memoria: cada sesión con la IA empieza desde cero. Sin continuidad.</div></div>
-      </div>
-      <div class="ac">
-        <div class="ch">Con el ecosistema IA</div>
-        <div class="br2"><div class="bi" style="color:var(--au)">✓</div><div class="bt">Alerta automática cuando llega PRE-A. Contacto en menos de 2 horas.</div></div>
-        <div class="br2"><div class="bi" style="color:var(--au)">✓</div><div class="bt">Campañas pausadas automáticamente cuando el CPL supera el umbral.</div></div>
-        <div class="br2"><div class="bi" style="color:var(--au)">✓</div><div class="bt">START_DAY_ENGINE a las 07:00. Todo consolidado en un solo briefing diario.</div></div>
-        <div class="br2"><div class="bi" style="color:var(--au)">✓</div><div class="bt">FLOAT V2 produce piezas con score 90–100/100 en 2 horas. Listas para publicar.</div></div>
-        <div class="br2"><div class="bi" style="color:var(--au)">✓</div><div class="bt">Memoria persistente: el sistema recuerda campañas, leads y decisiones anteriores.</div></div>
-      </div>
+  <div class="bar"></div>
+  <div class="hd">
+    <div class="ew">Métricas de éxito · Dato real vs objetivo</div>
+    <div class="ht">KPIs que miden el <b>impacto real</b> del ecosistema</div>
+  </div>
+  <div class="bd" style="padding-bottom:14px">
+    <div class="kgrid">
+      <div class="kcard"><div class="kval">≤$25<span class="kunit">CAD</span></div><div class="klbl">CPL objetivo</div><div class="kdesc">Costo por lead Meta Ads. Cour arrière hoy: $23.72. Mantener al escalar a $55/día.</div><div class="ktag">ACTUAL: $23.72 · cour arrière ✅</div></div>
+      <div class="kcard"><div class="kval">20–25<span class="kunit">proy/mes</span></div><div class="klbl">Volumen mensual</div><div class="kdesc">Necesario para $7M CAD anual. $583K/mes. Requiere pipeline automatizado y equipo ampliado.</div><div class="ktag">META: $583K CAD / mes</div></div>
+      <div class="kcard"><div class="kval">&lt;2h<span class="kunit" style="color:var(--rd)">actual: 12d</span></div><div class="klbl">Respuesta PRE-A</div><div class="kdesc">Tiempo máximo para contactar. Hoy: Emilie Fournelle lleva 12 días sin contacto. Brecha crítica.</div><div class="ktag" style="color:var(--rd)">HOY: hasta 12 días ⚠️</div></div>
+      <div class="kcard"><div class="kval">≥40<span class="kunit">%</span></div><div class="klbl">Tasa de cierre</div><div class="kdesc">Propuestas que se convierten en contrato firmado. Requiere calificación ICS correcta antes de visita.</div><div class="ktag">Objetivo Q3 2026</div></div>
+      <div class="kcard"><div class="kval">$30K<span class="kunit">CAD</span></div><div class="klbl">Ticket promedio</div><div class="kdesc">Rango: $8K cour simple → $80K piscine + aménagement completo. Mantener o superar con calificación.</div><div class="ktag">Rango: $8K → $80K CAD</div></div>
+      <div class="kcard"><div class="kval">5<span class="kunit">pzas/sem</span></div><div class="klbl">Contenido premium</div><div class="kdesc">FLOAT V2 mínimo semanal. Score ≥90/100. Hero + Reel + Story + Remarketing. Hoy: 0 piezas previas.</div><div class="ktag" style="color:var(--rd)">HOY: 0 · Objetivo inmediato</div></div>
+      <div class="kcard"><div class="kval">8×<span class="kunit">ROAS</span></div><div class="klbl">Retorno ad spend</div><div class="kdesc">CPL $25 · ticket $30K · margen amplio. Por cada $1 en Meta Ads, generar $8 en pipeline calificado.</div><div class="ktag">Objetivo campañas activas</div></div>
+      <div class="kcard dark"><div class="kval" style="color:var(--cr);font-size:28px">$7M<span class="kunit" style="color:var(--au)">CAD</span></div><div class="klbl" style="color:var(--au)">Objetivo anual 2026</div><div class="kdesc" style="color:rgba(245,242,235,.55)">Jardín Ideal + Groupe Ideal. El ecosistema IA es el sistema operativo que lo hace posible.</div><div class="ktag" style="color:rgba(200,164,90,.5);border-top-color:rgba(200,164,90,.15)">Diciembre 2026</div></div>
     </div>
   </div>
-  <div class="sn">13 — 15</div>
+  <div class="snum">13 — 15</div>
 </div>
 
-<!-- 14 PRÓXIMOS PASOS -->
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 14 — BENEFICIOS PARA EL EQUIPO
+══════════════════════════════════════════════════════ -->
 <div class="slide lk" id="s14">
-  <div class="tr"></div>
-  <div class="si sm">
-    <div class="ey">Esta semana</div>
-    <div class="ht" style="font-size:34px;margin-bottom:14px">Cinco acciones inmediatas</div>
-    <div class="sl">
-      <div class="sr"><div class="sn2">1</div><div class="sc"><div class="stit">Corregir Zapier — antes de las 10:00h</div><div class="sdesc">Cambiar email en Zap Cuisine + Balcon: grupoideal.com → groupe-ideal.com. Recupera 4 leads perdidos de inmediato.</div></div><div class="sw">Daniel</div></div>
-      <div class="sr"><div class="sn2">2</div><div class="sc"><div class="stit">Pausar campañas sin resultados</div><div class="sdesc">Meta Ads: pausar cour avant (0 leads / 17 días) y BANOS (0 leads / 30 días). Reasignar $50/día a cour arrière.</div></div><div class="sw">Daniel</div></div>
-      <div class="sr"><div class="sn2">3</div><div class="sc"><div class="stit">Llamar 9 leads vencidos — hoy</div><div class="sdesc">Emilie Fournelle (12 días), JF Gilbert (9 días), Michele Boileau (5 días). Cada lead costó $23 CAD. Recuperables hoy.</div></div><div class="sw">Daniel · Lyes</div></div>
-      <div class="sr"><div class="sn2">4</div><div class="sc"><div class="stit">Publicar Hero Post cour arrière — 17:30h</div><div class="sdesc">patio_rotin_pub.png · Score 100/100. Dos versiones A/B listas. Specs en COUR_ARRIERE_HERO_POST.md.</div></div><div class="sw">Daniel</div></div>
-      <div class="sr"><div class="sn2">5</div><div class="sc"><div class="stit">START_DAY_ENGINE — cada día esta semana</div><div class="sdesc">07:00 AM: ejecutar protocolo. 17:00: CEO Dashboard completo. Establece el hábito en 5 días de trabajo.</div></div><div class="sw">Todo el equipo</div></div>
+  <div class="bar"></div>
+  <div class="hd">
+    <div class="ew">Impacto operativo · Equipo</div>
+    <div class="ht">Lo que cambia para <b>cada persona</b></div>
+  </div>
+  <div class="bd">
+    <div class="ba" style="flex:1">
+      <div class="ba-col ba-before">
+        <div class="ba-hd">Hoy — Sin el ecosistema IA</div>
+        <div class="ba-row"><div class="ba-icon">✗</div><div class="ba-text"><b>Daniel:</b> 30–45 min cada mañana buscando datos en 3 plataformas separadas. Sin prioridades claras.</div></div>
+        <div class="ba-row"><div class="ba-icon">✗</div><div class="ba-text"><b>Lyes:</b> No sabe que llegaron leads de Cuisine. Email de notificación va a dirección incorrecta desde semanas.</div></div>
+        <div class="ba-row"><div class="ba-icon">✗</div><div class="ba-text"><b>Jonathan:</b> Visitas realizadas sin reporte pre-visita. No sabe el perfil del cliente antes de llegar.</div></div>
+        <div class="ba-row"><div class="ba-icon">✗</div><div class="ba-text">$50 CAD/día en campañas sin resultados. Sin alert automática cuando CPL sube o leads caen a cero.</div></div>
+        <div class="ba-row"><div class="ba-icon">✗</div><div class="ba-text">9 leads vencidos sin que nadie lo sepa hasta revisar Pipedrive manualmente. Emilie: 12 días olvidada.</div></div>
+        <div class="ba-row"><div class="ba-icon">✗</div><div class="ba-text">Contenido producido sin estándar. Sin score. Sin proceso. Sin saber si una foto es publicable o no.</div></div>
+      </div>
+      <div class="ba-col ba-after">
+        <div class="ba-hd">Con el ecosistema IA</div>
+        <div class="ba-row"><div class="ba-icon" style="color:var(--au)">✓</div><div class="ba-text"><b>Daniel:</b> START_DAY_ENGINE a las 07:00. Lista exacta de prioridades. Decisiones estratégicas, no búsqueda manual.</div></div>
+        <div class="ba-row"><div class="ba-icon" style="color:var(--au)">✓</div><div class="ba-text"><b>Lyes:</b> Alerta &lt;2 min cuando llega PRE-A. Notificación al email correcto. Nunca más un lead perdido.</div></div>
+        <div class="ba-row"><div class="ba-icon" style="color:var(--au)">✓</div><div class="ba-text"><b>Jonathan:</b> Reporte pre-visita automático antes de cada cita. Perfil ICS completo del cliente.</div></div>
+        <div class="ba-row"><div class="ba-icon" style="color:var(--au)">✓</div><div class="ba-text">Alert automática cuando CPL &gt;$50 o 0 leads en 48h. Campañas pausadas por protocolo, no por olvido.</div></div>
+        <div class="ba-row"><div class="ba-icon" style="color:var(--au)">✓</div><div class="ba-text">Alerta diaria de leads vencidos en el START_DAY_ENGINE. Nunca más de 24h sin que alguien lo sepa.</div></div>
+        <div class="ba-row"><div class="ba-icon" style="color:var(--au)">✓</div><div class="ba-text">FLOAT V2: score visual en 2 min. Si ≥90/100, proceder. Si no, descartada. Proceso sin debate subjetivo.</div></div>
+      </div>
     </div>
   </div>
-  <div class="sn">14 — 15</div>
+  <div class="snum">14 — 15</div>
 </div>
 
-<!-- 15 CIERRE -->
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 15 — VISIÓN Y CIERRE
+══════════════════════════════════════════════════════ -->
 <div class="slide dk" id="s15">
-  <div class="ctl tl"></div><div class="ctl br"></div>
-  <div style="height:3px;background:linear-gradient(90deg,var(--au) 0%,rgba(200,164,90,.1) 100%);flex-shrink:0"></div>
-  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px;text-align:center">
-    <div class="cpre">Jardín Ideal · Ecosistema IA · Junio 2026</div>
-    <div class="cm2">"Una sola <em>memoria</em>,<br>un solo <em>equipo</em>,<br>una sola <em>dirección.</em>"</div>
-    <div class="crl"></div>
-    <div class="cph">514-266-2504</div>
-    <div class="csb">jardin-ideal.com · daniel@groupe-ideal.com</div>
+  <div class="cov-corner tl-corner"></div>
+  <div class="cov-corner br-corner"></div>
+  <div style="height:4px;background:linear-gradient(90deg,var(--au),rgba(200,164,90,.08));flex-shrink:0"></div>
+  <div class="close-inner" style="flex:1">
+    <div class="close-pre">Jardín Ideal · Groupe Ideal · Ecosistema IA · Junio 2026</div>
+    <div class="close-quote">"Una sola <em>memoria</em>,<br>un solo <em>equipo</em>,<br>una sola <em>dirección.</em>"</div>
+    <div class="close-rule"></div>
+    <div style="display:flex;gap:40px;justify-content:center;margin-bottom:28px">
+      <div style="text-align:center"><div style="font-family:var(--ff);font-size:26px;font-style:italic;color:var(--au)">90</div><div style="font-size:9px;color:rgba(245,242,235,.35);text-transform:uppercase;letter-spacing:.14em">días fundamentos</div></div>
+      <div style="width:1px;background:rgba(200,164,90,.2)"></div>
+      <div style="text-align:center"><div style="font-family:var(--ff);font-size:26px;font-style:italic;color:var(--au)">180</div><div style="font-size:9px;color:rgba(245,242,235,.35);text-transform:uppercase;letter-spacing:.14em">días automatización</div></div>
+      <div style="width:1px;background:rgba(200,164,90,.2)"></div>
+      <div style="text-align:center"><div style="font-family:var(--ff);font-size:26px;font-style:italic;color:var(--au)">$7M</div><div style="font-size:9px;color:rgba(245,242,235,.35);text-transform:uppercase;letter-spacing:.14em">CAD · dic 2026</div></div>
+    </div>
+    <div class="close-phone">514-266-2504</div>
+    <div class="close-email">daniel@groupe-ideal.com · jardin-ideal.com</div>
   </div>
-  <div class="sn" style="color:var(--au);opacity:.45">15 — 15</div>
+  <div class="snum" style="color:var(--au);opacity:.35">15 — 15</div>
 </div>
 
-</div>
+</div><!-- /#deck -->
 
-<nav class="nb">
-  <div class="nc" id="nc">01 — 15</div>
-  <div class="np" id="np"></div>
-  <div class="nbs">
-    <button onclick="nav(-1)">&#8592; Anterior</button>
-    <button onclick="nav(1)">Siguiente &#8594;</button>
+<!-- ═══════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════ -->
+<nav id="nav">
+  <div id="nav-counter">01 — 15</div>
+  <div id="nav-dots"></div>
+  <div id="nav-btns">
+    <button id="btn-prev" onclick="go(cur-1)" disabled>&#8592; Anterior</button>
+    <button id="btn-next" onclick="go(cur+1)">Siguiente &#8594;</button>
   </div>
 </nav>
 
 <script>
 (function(){
-  var slides=document.querySelectorAll('.slide'),cur=0,dots=[];
-  var np=document.getElementById('np');
-  slides.forEach(function(_,i){
-    var d=document.createElement('div');d.className='nd';
-    d.onclick=function(){go(i)};np.appendChild(d);dots.push(d);
+  var slides = Array.from(document.querySelectorAll('#deck .slide'));
+  var total = slides.length;
+  var cur = 0;
+
+  /* build dots */
+  var dotsEl = document.getElementById('nav-dots');
+  var dots = slides.map(function(_, i){
+    var d = document.createElement('div');
+    d.className = 'dot';
+    d.title = 'Slide ' + (i+1);
+    d.addEventListener('click', function(){ go(i); });
+    dotsEl.appendChild(d);
+    return d;
   });
+
   function go(n){
-    slides[cur].classList.remove('on');dots[cur].classList.remove('on');
-    cur=Math.max(0,Math.min(n,slides.length-1));
-    slides[cur].classList.add('on');dots[cur].classList.add('on');
-    document.getElementById('nc').textContent=(cur+1<10?'0':'')+(cur+1)+' — '+slides.length;
+    if(n < 0 || n >= total) return;
+    slides[cur].classList.remove('on');
+    dots[cur].classList.remove('on');
+    cur = n;
+    slides[cur].classList.add('on');
+    dots[cur].classList.add('on');
+    var c = cur + 1;
+    document.getElementById('nav-counter').textContent = (c < 10 ? '0' : '') + c + ' — ' + total;
+    document.getElementById('btn-prev').disabled = cur === 0;
+    document.getElementById('btn-next').disabled = cur === total - 1;
   }
-  window.nav=function(d){go(cur+d)};
-  document.addEventListener('keydown',function(e){
-    if(e.key==='ArrowRight'||e.key==='ArrowDown')nav(1);
-    if(e.key==='ArrowLeft'||e.key==='ArrowUp')nav(-1);
-  });
-  var tx=0;
-  document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
-  document.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)nav(dx<0?1:-1)},{passive:true});
+
+  window.go = go;
   go(0);
+
+  /* keyboard */
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') go(cur+1);
+    if(e.key === 'ArrowLeft'  || e.key === 'ArrowUp') go(cur-1);
+  });
+
+  /* touch swipe */
+  var tx = 0;
+  document.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend',   function(e){ var dx = e.changedTouches[0].clientX - tx; if(Math.abs(dx) > 50) go(cur + (dx < 0 ? 1 : -1)); }, {passive:true});
 })();
 </script>
 </body>
