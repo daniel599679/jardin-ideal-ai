@@ -1,5 +1,5 @@
 # ESTADO ACTUAL DEL ECOSISTEMA
-**Última actualización:** 2026-06-23
+**Última actualización:** 2026-06-24 — sincronización con datos reales (reporte-diario-2026-06-24.json)
 **Actualizar:** al final de cada sesión de trabajo
 
 ---
@@ -9,7 +9,8 @@
 | Indicador | Estado |
 |-----------|--------|
 | FLOAT V1 | ✅ Completo |
-| FLOAT V2 Premium | ✅ Completo (5 módulos + guardrails + integrado en 8 agentes) |
+| FLOAT V2 Premium | ✅ Completo (5 módulos + guardrails + Francisco Visual Standard integrado) |
+| Francisco Visual Standard | ✅ Completo (62 imágenes analizadas, 10 leyes, PREMIUM_VISUAL_SCORE + bonus/penalty) |
 | Content Operating System | ✅ Completo |
 | Brand Style Guide V1 | ✅ Completo |
 | Ideal Customer System | ✅ Completo |
@@ -20,9 +21,43 @@
 | Sistema de Voz Claude | ✅ Operativo |
 | Memoria Unificada | ✅ Operativa |
 | DAILY_OPERATIONS_ENGINE | ✅ Completo (5 archivos — Start + Lead + Content + Dashboard + Checklist) |
-| Alex — Sistema Unificado (8 archivos) | 🔵 FASE 2 EN SPRINT — Zapier + Pipedrive + alertas (5 días, aprobado hoy) |
+| Protocolo Sincronización Diaria | ✅ Completo — primer uso 2026-06-24 con datos reales |
+| 08_REPORTES — Sistema de Reportes | ✅ Completo — 6 subcarpetas + README + REPORTING_SYSTEM_MAP |
+| COUR_AVANT_TEST_01 | ✅ Primer test producción FLOAT V2 — 7 piezas listas para publicar |
+| Alex — Sistema Unificado (8 archivos) | 🔵 FASE 2 PENDIENTE — Zapier bug activo bloquea implementación |
 | Sistema de Marketing | ✅ Documentado (flujo, canales, KPIs, brechas, Alex) |
-| GitHub sync | ✅ Al día (pending commit DAILY_OPERATIONS_ENGINE) |
+| Zapier — Integraciones | 🔴 CRÍTICO — email incorrecto: `grupoideal.com` → `groupe-ideal.com` |
+| GitHub sync | ✅ Al día — último commit: `51893be` |
+
+---
+
+## ESTADO OPERATIVO REAL — 2026-06-24
+
+### Campañas activas (dato real — JSON)
+
+| Campaña | Estado | Acción inmediata |
+|---------|--------|-----------------|
+| cour arriere (JI) | ✅ MEJOR — CPL $23.72 | Subir presupuesto $30 → $55/día |
+| cour avant (JI) | 🔴 0 leads / 17 días | **PAUSAR HOY** |
+| piscines (JI) | ⚠️ CPL $146 | Evaluar — no pausar todavía |
+| GI_Cuisines | ⚠️ Activa + Zap roto | Corregir Zap primero — luego evaluar |
+| BANOS (GI) | 🔴 0 leads / 30 días | **PAUSAR HOY** |
+
+### Pipeline (dato real — JSON)
+
+- **9 leads con actividades vencidas** — Emilie Fournelle: 12 días (urgente #1)
+- **34 affaires** en Pipedrive (21 reales + 8 test a limpiar)
+- **3 en RDV confirmé** — oportunidades de cierre esta semana
+
+### Integraciones (estado real)
+
+| Sistema | Estado real |
+|---------|------------|
+| Zapier → Cuisines | 🔴 Email incorrecto — 4 leads perdidos |
+| Zapier → Balcon | 🔴 Mismo email incorrecto |
+| HubSpot bot Teams | 🟡 Instalación manual pendiente |
+| Meta Ads → Pipedrive | 🔴 No automatizado — entrada manual |
+| Pipedrive → WhatsApp alerta | 🔴 No implementado |
 
 ---
 

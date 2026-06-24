@@ -1,6 +1,47 @@
-# KPIs EMPRESA — JARDÍN IDEAL
-**Última actualización:** 2026-06-23
+# KPIs EMPRESA — JARDÍN IDEAL / GROUPE IDEAL
+**Última actualización:** 2026-06-24 — datos reales de Meta Ads Manager + Pipedrive
+**Fuente:** reporte-diario-2026-06-24.json (Agente Director)
 **Frecuencia de actualización:** Diaria (Meta Ads) / Semanal (ventas) / Mensual (finanzas)
+
+---
+
+## ESTADO DE CAMPAÑAS — DATOS REALES 2026-06-24
+
+### Jardín Ideal — Período Jun 1–17, 2026
+
+| Campaña | Estado | Leads | CPL | Presupuesto/día | Gasto total | Diagnóstico |
+|---------|--------|-------|-----|----------------|-------------|-------------|
+| **cour arriere** | ✅ Activa | **12** | **$23.72** | $30 → subir $55 | $284.64 | MEJOR CAMPAÑA — mantener |
+| cour avant | 🔴 Pausar hoy | **0** | — | $25 → $0 | $67.31 | Sin resultados 17 días |
+| piscines | ⚠️ Evaluar | 1 | $146.07 | $25 | $146.07 | CPL inviable — monitorear |
+| **TOTAL JI** | | **13** | **$52.17** | $80/día | $678.22 | |
+
+### Groupe Ideal — Período May 25–Jun 23, 2026
+
+| Campaña | Estado | Leads | CPL | Presupuesto/día | Gasto total | Diagnóstico |
+|---------|--------|-------|-----|----------------|-------------|-------------|
+| **GI_Cuisines_2026** | ⚠️ Activa + falla | **4** | **$53.93** | $50 | $215.73 | Zap email incorrecto → corregir |
+| BANOS | 🔴 Pausar hoy | **0** | — | $25 → $0 | $44.76 | Sin resultados 30 días |
+| **TOTAL GI** | | **4** | **$53.93** | $75/día | $260.49 | |
+
+### Consolidado ambas marcas
+
+| Métrica | Valor real |
+|---------|-----------|
+| Presupuesto activo diario | $155 CAD/día |
+| Gasto sin resultados | **$112.07 CAD** |
+| Ahorro potencial (pausar cour avant + BANOS) | **$50 CAD/día** |
+| Total leads generados | **17** |
+| CPL promedio real | **$55.22 CAD** |
+| Leads con actividades vencidas | **9** |
+| Días máximo sin contacto | **12 días** (Emilie Fournelle) |
+
+### Problema técnico activo — ZAPIER
+
+> ⚠️ Email incorrecto en Zap Cuisine + Balcon: `daniel@grupoideal.com` → corregir a `daniel@groupe-ideal.com`
+> 4 leads de GI_Cuisines jamás recibidos por Lyes. Email Francisco (`fnerlos@groupe-ideal.com`) también inválido.
+
+---
 
 ---
 

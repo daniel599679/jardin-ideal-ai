@@ -206,18 +206,60 @@ Jardin_Ideal_AI_System/
 
 ---
 
-## 9. GIT / GITHUB
+## 9. ESTADO OPERATIVO REAL — 2026-06-24
+**Fuente:** reporte-diario-2026-06-24.json (Agente Director) — datos reales, prevalecen sobre documentación previa
+
+### Campañas Meta Ads (estado real)
+
+| Campaña | Estado | Leads | CPL | Diagnóstico |
+|---------|--------|-------|-----|------------|
+| **cour arriere (JI)** | ✅ Activa — escalar | 12 | $23.72 | MEJOR CAMPAÑA — subir a $55/día |
+| cour avant (JI) | 🔴 Pausar | 0 | — | 0 leads en 17 días — $67 gastados |
+| piscines (JI) | ⚠️ Evaluar | 1 | $146.07 | CPL inviable — monitorear |
+| GI_Cuisines | ⚠️ Activa + bug | 4 | $53.93 | Zap email incorrecto → corregir primero |
+| BANOS (GI) | 🔴 Pausar | 0 | — | 0 leads en 30 días — $44 gastados |
+
+> ⚠️ **NOTA:** Los leads "Paul Gagné" y "François Bergeron" mencionados en versiones previas del sprint NO aparecen en el JSON real del 2026-06-24. Dato real prevalece — no son leads activos confirmados.
+
+### Pipeline Pipedrive (estado real)
+
+| Métrica | Valor |
+|---------|-------|
+| Total affaires | 34 (21 reales + ~8 test a limpiar) |
+| Leads con actividad vencida | **9** (entre 1 y 12 días) |
+| Lead más urgente | **Emilie Fournelle** — 12 días sin contacto |
+| Leads en RDV confirmé | 3 (Anthony Sleiman, Elise Valcourt, Claudy Querette) |
+
+### Problemas técnicos críticos (estado real)
+
+| Problema | Impacto |
+|----------|---------|
+| Zapier email incorrecto: `daniel@grupoideal.com` → `daniel@groupe-ideal.com` | 4 leads Cuisine sin notificación |
+| Email Francisco `fnerlos@groupe-ideal.com` no existe | Confirmar email real |
+| Bot HubSpot–Teams: instalación falló el 23/06 | Instalar manualmente |
+
+### Protocolo de sincronización diaria
+
+Antes de cualquier tarea del día, leer datos reales en:
+- `Claude/Projects/Agente Director/data/BRIEFING-CLAUDE-CODE-YYYY-MM-DD.md`
+- `Claude/Projects/Agente Director/data/reporte-diario-YYYY-MM-DD.json`
+
+Protocolo completo: `10_MEMORIA_EMPRESARIAL/PROTOCOLO_SINCRONIZACION_DIARIA.md`
+
+---
+
+## 10. GIT / GITHUB
 
 | Campo | Dato |
 |-------|------|
-| **Último commit** | `36f3d31` — "Add Ideal Customer System" |
-| **Rama** | main |
+| **Último commit** | `51893be` — "feat: 08_REPORTES reestructurado + REPORTING_SYSTEM_MAP" |
+| **Rama** | master |
 | **Archivos excluidos** | `*.mp4`, `*.mov`, `*.zip`, `.claude.json` |
 | **Frecuencia de sync** | Al finalizar cada bloque de trabajo |
 
 ---
 
-## 10. PARA CUALQUIER IA AL INICIAR SESIÓN
+## 11. PARA CUALQUIER IA AL INICIAR SESIÓN
 
 Lee en este orden:
 1. `10_MEMORIA_EMPRESARIAL/MEMORIA_GLOBAL.md` ← este archivo
@@ -229,7 +271,7 @@ Lee en este orden:
 
 ---
 
-## 11. PROTOCOLOS DIARIOS (añadido 2026-06-23)
+## 12. PROTOCOLOS DIARIOS (añadido 2026-06-23)
 
 | Archivo | Propósito |
 |---------|-----------|
