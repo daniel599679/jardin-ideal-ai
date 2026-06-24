@@ -1,7 +1,17 @@
 # LISTA DE CORRECCIONES — Cour Arrière V1 → V2
 **Basado en:** Auditoría real del archivo HTML local
-**Fecha:** 2026-06-24
+**Fecha:** 2026-06-24 | **Última actualización:** 2026-06-24 (datos confirmados por Daniel)
 **Destino:** Pegar en Manus para generar `2026-06-24_COUR_ARRIERE_V2_HTML.html`
+
+## DATOS CONFIRMADOS POR DANIEL — 2026-06-24
+| Dato | Valor confirmado | Estado |
+|------|-----------------|--------|
+| Courriel oficial (todas las LPs) | `info@jardin-ideal.com` | ✅ CONFIRMADO |
+| Garantie pavé / pavé uni | 5 ans | ✅ CONFIRMADO |
+| Garantie otros servicios | "selon le type de projet, les matériaux et le contrat" | ✅ FÓRMULA CONFIRMADA |
+| Meta Pixel ID | — | ⏳ PENDIENTE |
+| Webhook Zapier | — | ⏳ PENDIENTE |
+| Texto financement | "Estimation indicative. Sujet à l'analyse et à l'approbation du partenaire financier." | ✅ CONFIRMADO |
 
 ---
 
@@ -157,12 +167,21 @@ Eliminar la línea inconsistente y mantener solo los trust pills.
 
 ---
 
-### C9 — Resolver inconsistencia garantie piscine
-**Problema:** En la galería (hotspot piscine): "garantie 10 ans structure". En checklist y trust pills: "garantie 5 ans". Solo una puede ser verdad.
+### C9 — Corregir garantie: usar fórmula confirmada por servicio
+**Problema:** En la galería (hotspot piscine): "garantie 10 ans structure". En checklist y trust pills: "garantie 5 ans". La garantía de 5 ans está confirmada SOLO para pavé/pavé uni.
 
-**Solución:** Confirmar con Daniel cuál es la garantía real. Mientras tanto, usar "5 ans" (dato más conservador, confirmado en checklist) y actualizar el hotspot:
+**Solución confirmada por Daniel (2026-06-24):**
+- **Pavé / pavé uni:** → `Garantie de 5 ans sur les travaux de pavé`
+- **Piscine / terrasse / balcon / clôture / gazon / cuisine extérieure:** → `Garantie selon le type de projet, les matériaux sélectionnés et les conditions du contrat`
+- **Trust pills y checklist generales:** → `Garantie selon le projet` (no especificar años sin confirmación por servicio)
+
+Actualizar el hotspot de piscine:
 ```
-garantie 5 ans structure
+Garantie selon le type de projet et les conditions du contrat
+```
+Mantener en la section pavé uni:
+```
+Garantie de 5 ans sur les travaux de pavé
 ```
 
 ---
@@ -185,13 +204,16 @@ garantie 5 ans structure
 
 ---
 
-### C11 — Corregir courriel de contacto
-**Problema:** Topbar y footer muestran `info@jardin-ideal.com` — el courriel operacional es `daniel@groupe-ideal.com`.
+### C11 — Courriel de contacto — CONFIRMADO
+**Confirmado por Daniel (2026-06-24):** El courriel oficial para TODAS las landing pages es `info@jardin-ideal.com`.
 
-**Solución:** 
-- Si `info@jardin-ideal.com` existe y está redirigido: OK, mantener para el público
-- Si no existe o no funciona: reemplazar por el correcto
-> **Confirmar con Daniel** cuál courriel recibe los leads de la landing
+**Estado:** ✅ El HTML V1 ya usa `info@jardin-ideal.com` en topbar, footer y política de privacidad — **no requiere cambio**.
+
+**Regla permanente:** En cualquier futura LP o plantilla, usar siempre `info@jardin-ideal.com` como:
+- Courriel visible de contacto
+- Courriel emisor en mensajes automáticos
+- Courriel de referencia en politique de confidentialité
+- Courriel general en formularios de soumission y financement
 
 ---
 
