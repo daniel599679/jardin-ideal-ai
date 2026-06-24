@@ -1,6 +1,6 @@
 # REGISTRO DE PROYECTOS MANUS — Jardín Ideal
 **Automation Center — Project Registry**
-**Versión:** 1.0 · **Última actualización:** 2026-06-24
+**Versión:** 1.1 · **Última actualización:** 2026-06-24
 
 ---
 
@@ -142,7 +142,7 @@ Este archivo registra todos los proyectos activos generados con o para Manus. Es
 | LP-005 | Landing Cour Avant | Landing Page | Baja | Por iniciar |
 | LP-006 | Landing Pergola/Gazebo | Landing Page | Media | Por iniciar |
 | LP-007 | Landing Cuisine Extérieure | Landing Page | Baja | Por iniciar |
-| CC-001 | Carrusel Cour Arrière — Meta | Carrusel | Alta | Por iniciar |
+| CC-001 | Carrusel Cour Arrière — Meta | Carrusel | Alta | ✅ TASK-002 ACTIVO — ver abajo |
 | CC-002 | Carrusel Pavé Uni — Meta | Carrusel | Media | Por iniciar |
 | RL-001 | Reel Timelapse Proyecto | Reel | Media | Por iniciar |
 
@@ -161,11 +161,58 @@ Este archivo registra todos los proyectos activos generados con o para Manus. Es
 
 ---
 
+---
+
+### PROYECTO TASK-002 — Test Contenido Calidad Magazine (Carrusel Cour Arrière)
+
+| Campo | Valor |
+|-------|-------|
+| **ID** | TASK-002 / CC-001 |
+| **Nombre** | Test Contenido Calidad Magazine — Cour Arrière |
+| **Tipo** | Carrusel Instagram/Facebook |
+| **Servicio** | Cour Arrière / Pavé Uni |
+| **Idioma** | Français (Québec) |
+| **Generado en** | Manus (test interno) |
+
+#### Rutas de archivos
+
+| Rol | Ruta |
+|-----|------|
+| **Carpeta tarea completa** | `00_OUTBOX_CLAUDE_PARA_MANUS/TAREAS_MANUS/ACTUAL/2026-06-24_TEST_CONTENU_QUALITE_MAGAZINE_COUR_ARRIERE/` |
+| **Brief** | `.../00_BRIEF_TAREA.md` |
+| **Prompt para Manus** | `.../01_PROMPT_MANUS.md` |
+| **Headlines** | `.../02_HEADLINES.md` |
+| **Copy & Captions** | `.../03_COPY_CAPTIONS.md` |
+| **Reglas formato** | `.../04_REGLAS_FORMATO.md` |
+| **Assets (fotos a añadir)** | `.../05_ASSETS/IMAGES/` |
+| **Output requerido** | `.../06_OUTPUT_REQUERIDO.md` |
+| **Checklist revisión** | `.../07_CHECKLIST_REVISION_HUMAINE.md` |
+| **Inbox para recibir resultado** | `00_INBOX_MANUS/CONTENIDO/2026-06-24_CARRUSEL_COUR_ARRIERE_V1/` |
+
+#### Estado
+
+| Campo | Valor |
+|-------|-------|
+| **Versión actual** | — (pendiente de generar en Manus) |
+| **Estado** | 🟡 LISTO — esperando fotos en 05_ASSETS/IMAGES/ |
+| **Blocker actual** | Daniel debe copiar fotos reales en `05_ASSETS/IMAGES/` |
+| **Automatización permitida** | Revisión post-entrega con checklist |
+| **Aprobación humana requerida** | Revisión + publicación (NO publicar sin aprobación) |
+
+#### Contexto
+
+- Landing Cour Arrière V1 pausada por: Meta Pixel ID, Zapier webhook, aprobación legal pendientes
+- Este carrusel es test paralelo para validar calidad visual de Manus
+- Si el test es exitoso → usar la misma metodología para todos los proyectos CC-xxx
+
+---
+
 ## HISTORIAL DE CAMBIOS AL REGISTRO
 
 | Fecha | Cambio |
 |-------|--------|
 | 2026-06-24 | Creación del registro. LP-001 registrada con auditoría V1. |
+| 2026-06-24 v1.1 | LP-001 pausada (blockers pendientes). TASK-002/CC-001 activado: test carrusel magazine. |
 
 ---
 
