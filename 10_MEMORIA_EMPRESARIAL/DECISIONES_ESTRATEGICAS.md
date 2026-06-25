@@ -193,6 +193,21 @@
 
 ---
 
+### DS-020 — Branding Officiel = Fuente Única de Activos de Marca
+**Fecha:** 2026-06-25  
+**Tipo:** Regla permanente — no modificar sin aprobación de Daniel  
+**Decisión:** Todo contenido producido para Jardín Ideal o Groupe Ideal usa exclusivamente los activos almacenados en `05_MARKETING/BRANDING_OFFICIEL/`. Claude no solicita logos, colores, tipografías ni nombres de empresa al usuario.  
+**Protocolo de búsqueda automática:**
+1. Buscar en `05_MARKETING/BRANDING_OFFICIEL/`
+2. Si no existe → buscar en `10_MEMORIA_EMPRESARIAL/` y `05_MARKETING/99_BRANDING_GLOBAL/`
+3. Si no existe en ninguna → generar `⚠️ ALERT_ACTIVO_FALTANTE` — nunca preguntar al usuario
+**Obligatorio en cada paquete Manus:** logos oficiales + PALETA_COLORES.txt + FONT_GUIDE.txt + BRAND_RULES.md (carpeta `/branding/` en el ZIP)  
+**Colores canónicos:** `#052B16` Verde Oscuro · `#008E3F` Verde Claro · `#C8A45A` Dorado · `#F5F2EB` Crema  
+**Alerta activa:** Logos Groupe Ideal son capturas de pantalla — solicitar vectoriales a Daniel  
+**Ruta oficial:** `05_MARKETING/BRANDING_OFFICIEL/README.md`
+
+---
+
 ### DS-018 — Claude Code = Fuente de Verdad / Manus = Editor Visual
 **Fecha:** 2026-06-25
 **Decisión:** Claude Code (GitHub) es la única fuente de verdad del sistema. Manus es exclusivamente el editor visual/prototipador. Ningún cambio técnico en landing pages se aplica primero en Manus.
