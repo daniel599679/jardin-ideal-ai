@@ -27,11 +27,11 @@
 │   │   ├── LOGO_JARDIN_IDEAL_PRINCIPAL.png   ← Logo PNG fondo blanco (USAR ESTE)
 │   │   └── LOGO_JARDIN_IDEAL_SOCIAL.jpg      ← Logo JPEG redes sociales
 │   └── groupe_ideal/
-│       ├── Capture d'écran 2026-06-16 075301.png  ← Logo Groupe Ideal v1
-│       ├── Capture d'écran 2026-06-16 081640.png  ← Logo Groupe Ideal v2
-│       └── Capture d'écran 2026-06-16 081651.png  ← Logo Groupe Ideal v3
+│       ├── LOGO_GROUPE_IDEAL_PRINCIPAL.png  ← "CONSTRUCTION GROUPE IDÉAL" + monograma G (fondo oscuro)
+│       ├── LOGO_GROUPE_IDEAL_COMPACT.png    ← "GROUPE IDEAL" en rectángulo verde (fondo blanco)
+│       └── LOGO_GROUPE_IDEAL_DARK.png       ← Solo monograma G (fondo oscuro — ícono compacto)
 │       ⚠️ ALERTA: Logos Groupe Ideal son capturas de pantalla — calidad limitada
-│       Solicitar archivos vectoriales (SVG/AI/EPS) a Daniel para reemplazar
+│       Solicitar archivos vectoriales (SVG/AI/EPS/PNG transparente) a Daniel
 └── MANUS_PACKAGE_TEMPLATE/            ← Plantilla de branding para paquetes Manus
 ```
 
@@ -68,8 +68,10 @@
 → `logos/jardin_ideal/LOGO_JARDIN_IDEAL_PRINCIPAL.png`
 
 ### Para usar Groupe Ideal:
-→ `logos/groupe_ideal/Capture d'écran 2026-06-16 075301.png` (calidad limitada)
-→ ⚠️ Solicitar vectoriales a Daniel
+→ `logos/groupe_ideal/LOGO_GROUPE_IDEAL_PRINCIPAL.png` — logo completo (fondo oscuro)
+→ `logos/groupe_ideal/LOGO_GROUPE_IDEAL_COMPACT.png` — sobre fondos blancos/claros
+→ `logos/groupe_ideal/LOGO_GROUPE_IDEAL_DARK.png` — ícono compacto solo
+→ ⚠️ Solicitar vectoriales/PNG transparente a Daniel
 
 ### Posición en piezas visuales:
 - **Reels/Video:** inferior-izquierda, fade in últimos 5 segundos
