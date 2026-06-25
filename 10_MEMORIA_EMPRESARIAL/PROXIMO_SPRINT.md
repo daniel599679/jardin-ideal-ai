@@ -1,232 +1,217 @@
-# SPRINT OPERATIVO — SEMANA 2026-06-24 AL 2026-06-30
-**Generado:** 2026-06-24 — sincronización con datos reales (reporte-diario-2026-06-24.json)
-**Principio:** Solo tareas que generan ingresos o eliminan pérdidas confirmadas. Dato real prevalece sobre sprint anterior.
-
-> ⚠️ **Sprint anterior invalidado parcialmente:** Referencias a "Paul Gagné" y "François Bergeron" como urgencias no aparecen en el JSON real. Las urgencias reales son las listadas a continuación.
-
----
-
-## URGENCIAS CRÍTICAS — EJECUTAR HOY ANTES DE 10:00h
-
-Estas no son tareas del sprint — son deudas activas que cuestan dinero o leads ahora mismo.
-
-| # | Acción | Responsable | Impacto |
-|---|--------|------------|---------|
-| 1 | **Corregir email Zapier**: `daniel@grupoideal.com` → `daniel@groupe-ideal.com` | Daniel | 4 leads recuperados + flujo Cuisines reparado |
-| 2 | **Pausar `cour avant`** en Meta Ads Manager (JI) | Daniel | Ahorro $25 CAD/día inmediato |
-| 3 | **Pausar `BANOS`** en Meta Ads Manager (GI) | Daniel | Ahorro $25 CAD/día inmediato |
-| 4 | **Aumentar `cour arriere`** de $30 → $55/día | Daniel | Escalar mejor campaña ($23.72 CPL) |
+# SPRINT OPERATIVO — SEMANA 2026-06-25 AL 2026-06-30
+**Generado:** 2026-06-25
+**Fuente:** `JardinIdeal_Brief_Campanas_25jun2026.md` (Cowork) + datos reales 2026-06-24
+**Principio:** Solo tareas que generan ingresos o eliminan pérdidas confirmadas.
 
 ---
 
-## BLOQUE 1 — RECUPERAR LEADS VENCIDOS (días 1-2)
+## ESTADO DEL SPRINT ANTERIOR (24 jun)
 
-**Objetivo:** Salvar los 9 leads con actividades vencidas antes de que se enfríen definitivamente.
-**Impacto:** Cada lead costó ~$23 CAD generar. 9 leads = ~$207 CAD en riesgo.
+| Tarea | Estado |
+|-------|--------|
+| Pausar cour avant | ⚠️ Confirmar — ¿ejecutado? |
+| Pausar BANOS | ⚠️ Confirmar — ¿ejecutado? |
+| Subir cour arrière a $55/día | ⚠️ Confirmar — ¿ejecutado? |
+| Corregir Zap email `daniel@grupoideal.com` | ⚠️ Confirmar — ¿ejecutado? |
+| Llamar Emilie Fournelle (12 días) | ⚠️ Confirmar |
+| Llamar JF Gilbert (9 días) | ⚠️ Confirmar |
 
-### Día 1 — Daniel llama
-
-| Lead | Servicio | Días vencido | Acción |
-|------|---------|-------------|--------|
-| Emilie Fournelle | Cour Arriere | 12 | Primera llamada — urgencia máxima |
-| JF Gen Gilbert | Cour Arriere | 9 | Llamar — reagendar visita |
-| Michele Boileau | Cour Arriere | 5 | Llamar — calificar |
-| Colin Maclachlan | Cour Arriere | 2 | Llamar hoy |
-| Elise Valcourt | Amenagement | vencida | Agendar fecha de visita |
-
-### Día 1 — Lyes llama
-
-| Lead | Servicio | Estado | Acción |
-|------|---------|--------|--------|
-| Amelie Duguay | Cour Arriere | 1 día vencido | Llamar esta mañana |
-| Charles-emrik Noel | Cour Arriere | 1 día vencido | Llamar esta mañana |
-| Rehan Sheikh | Cour Arriere | 2 días vencido | Llamar hoy |
-| Genevieve Duchesne | Cuisine | Sin notificación recibida | Llamar — no sabe que llegó |
-| Paramjeet Singh | Cuisine | Sin notificación recibida | Llamar — no sabe que llegó |
-| Rudis Merlos Escobar | Cuisine | Sin datos en Zap | Verificar datos + llamar |
-
-### Día 1 — Jonathan confirma
-
-| Lead | Estado | Acción |
-|------|--------|--------|
-| Catherine Archambault | RDV vencido 8 días | Confirmar visita o reagendar |
-| Daniela Everon | Visite réalisée — sin propuesta | Confirmar propuesta enviada |
-
-**KPI:** 9/9 leads contactados o redefinidos (sin contacto = cambiar a "Ne répond pas" + reactivar +15 días)
+> **Acción al inicio del día:** Confirmar cuáles de las urgencias del 24 jun se ejecutaron. Actualizar este sprint con los resultados reales.
 
 ---
 
-## BLOQUE 2 — CIERRES ACTIVOS (días 1-3)
+## URGENCIAS HOY — MIÉRCOLES 25 JUNIO
 
-**Objetivo:** Cerrar las propuestas que ya están en etapa avanzada. Estas no necesitan nutrición — necesitan una acción de cierre.
+### Prioridad 1 — Cierres en pipeline
 
-| Lead | Etapa | Acción urgente | Quién |
-|------|-------|---------------|-------|
-| Anthony Sleiman | RDV mañana 25 jun | Alain Bazinet confirma asistencia | Alain |
-| Elise Valcourt | RDV confirmé sin fecha | Daniel agenda fecha de visita HOY | Daniel |
-| Daniela Everon | Visite réalisée | Confirmar propuesta → seguimiento | Jonathan |
-| Thierry Sicuro | Actividad programada hoy | Ejecutar contacto hoy | Lyes |
-| Claudy Querette | Actividad mañana | Lyes prepara llamada | Lyes |
+| Lead | Estado | Acción | Quién |
+|------|--------|--------|-------|
+| **Anthony Sleiman** | RDV HOY | Alain confirma asistencia y cierra | Alain Bazinet |
+| **Thierry Sicuro** | Actividad programada HOY | Ejecutar contacto | Lyes |
+| **Daniela Everon** | Visite réalisée — sin propuesta | Jonathan confirma propuesta enviada | Jonathan |
 
-**KPI:** ≥2 propuestas enviadas o visitas concretadas esta semana
+### Prioridad 2 — Captura de contenido
 
----
-
-## BLOQUE 3 — REPARACIÓN TÉCNICA (días 1-2)
-
-**Objetivo:** Eliminar pérdidas de leads causadas por bugs técnicos. Mientras no se corrijan, cada lead nuevo de Cuisine/Balcon puede perderse.
-
-### TAREA 3.1 — Corregir Zapier email (prioridad #1 del día)
-
-| Campo | Detalle |
-|-------|---------|
-| **Responsable** | Daniel |
-| **Cuándo** | Día 1, antes de 10:00h |
-| **Acción** | Zapier → Zap "Cuisine" + Zap "Balcon" → editar email de notificación: cambiar `daniel@grupoideal.com` a `daniel@groupe-ideal.com` → guardar → activar → test |
-| **KPI** | Test manual: enviar lead ficticio → email llega a la dirección correcta |
-
-### TAREA 3.2 — Confirmar email de Francisco
-
-| Campo | Detalle |
-|-------|---------|
-| **Responsable** | Daniel |
-| **Cuándo** | Día 1, durante mañana |
-| **Acción** | Preguntar directamente a Francisco su email real — no usar `fnerlos@groupe-ideal.com` (no existe) |
-| **KPI** | Email confirmado → actualizar MEMORIA_GLOBAL |
-
-### TAREA 3.3 — Limpiar test leads en Pipedrive
-
-| Campo | Detalle |
-|-------|---------|
-| **Responsable** | Daniel / Jonathan |
-| **Cuándo** | Día 2-3 |
-| **Acción** | Identificar y archivar los ~8 deals de prueba en pipeline "Leads qualifiés" |
-| **KPI** | Pipeline muestra solo leads reales (≤26 affaires activos) |
-
-### TAREA 3.4 — HubSpot bot Teams
-
-| Campo | Detalle |
-|-------|---------|
-| **Responsable** | Daniel |
-| **Cuándo** | Día 2 |
-| **Acción** | Instalar bot manualmente (falló instalación automática el 23/06). Llamar Connor Starkey: 437-294-4278 para reagendar reunión perdida el 22/06 |
-| **KPI** | Bot visible en Teams + reunión reagendada |
+| Oportunidad | Acción | Urgencia |
+|-------------|--------|---------|
+| **Stéphane Parisien** — 2x Balcon + Tourelle | INICIO HOY — tomar fotos desde día 1 | 🔴 CRÍTICA |
+| Matt confirma recursos | Verificar capacidad equipo (Breault + Parisien simultáneos) | 🔴 CRÍTICA |
 
 ---
 
-## BLOQUE 4 — OPTIMIZACIÓN META ADS (días 2-4)
+## BLOQUE 1 — LEADS VENCIDOS RESTANTES (hoy + mañana)
 
-**Objetivo:** Escalar lo que funciona, eliminar lo que no. Post-pausas y corrección Zapier.
+| Lead | Días vencido | Responsable | Acción |
+|------|------------|------------|--------|
+| Emilie Fournelle | 12+ días | Daniel | ¿Ya contactado el 24 jun? Si no → llamar ahora |
+| JF Gen Gilbert | 9+ días | Daniel | ¿Ya contactado? Si no → llamar hoy |
+| Catherine Archambault | 8+ días | Jonathan | Confirmar visita o "Ne répond pas" |
+| Claudy Querette | Actividad mañana | Lyes | Preparar llamada hoy |
+| Leads Cuisine sin notificación | — | Lyes | ¿Se corrigió el Zap? → Lyes llama a Duguay, Singh, Merlos |
 
-### TAREA 4.1 — Campaña cour arriere: escalar presupuesto
-
-| Campo | Detalle |
-|-------|---------|
-| **Responsable** | Daniel |
-| **Cuándo** | Día 1 (junto con las pausas) |
-| **Acción** | Meta Ads Manager → cour arriere → editar presupuesto diario: $30 → $55 CAD |
-| **KPI** | Presupuesto actualizado visible en Ads Manager |
-
-### TAREA 4.2 — Campaña piscines: evaluar pausa o creatividad nueva
-
-| Campo | Detalle |
-|-------|---------|
-| **Responsable** | Daniel + Claude Code |
-| **Cuándo** | Día 3-4 |
-| **Acción** | Con 1 lead en todo el período, CPL $146.07 — decidir: ¿nuevas creatividades FLOAT V2 o pausa? Si pausa: reasignar $25/día a cour arriere |
-| **KPI** | Decisión tomada y documentada |
-
-### TAREA 4.3 — GI_Cuisines: evaluar resultados post-corrección Zap
-
-| Campo | Detalle |
-|-------|---------|
-| **Responsable** | Daniel |
-| **Cuándo** | Días 3-4 (después de corregir Zap) |
-| **Acción** | Con Zap funcionando correctamente, evaluar si el flujo de leads Cuisine funciona. Si CPL sigue >$80 → revisar creatividades |
-| **KPI** | ≥1 lead Cuisine procesado correctamente end-to-end |
+**KPI:** 9/9 leads con un estado actualizado en Pipedrive antes del viernes 27 jun.
 
 ---
 
-## BLOQUE 5 — PRODUCCIÓN FLOAT V2 (días 3-5)
+## BLOQUE 2 — REPARACIÓN TÉCNICA (hoy si no ejecutado el 24 jun)
 
-**Objetivo:** Publicar contenido con la campaña que funciona (cour arriere). COUR_AVANT_TEST_01 ya está lista — adaptar para cour arriere.
+### TAREA 2.1 — Corregir email Zapier
 
-### TAREA 5.1 — Adaptar COUR_AVANT_TEST_01 a cour arriere
+```
+Zapier → Zap "Cuisine" + Zap "Balcon"
+Email incorrecto: daniel@grupoideal.com
+Email correcto:   daniel@groupe-ideal.com
+Guardar → Activar → Test con lead ficticio
+KPI: Email llega a la dirección correcta
+```
 
-| Campo | Detalle |
-|-------|---------|
-| **Responsable** | Daniel + Claude Code |
-| **Cuándo** | Día 3 |
-| **Tiempo** | 2 horas |
-| **Acción** | Seleccionar imágenes cour arriere de la biblioteca Francisco. Generar copies para publicar Hero Post esta semana. |
-| **KPI** | ≥1 pieza publicada en Instagram antes del viernes |
+### TAREA 2.2 — HubSpot bot Teams
 
-### TAREA 5.2 — Publicar COUR_AVANT_TEST_01 (si Daniel quiere ejecutar la campaña)
+```
+Instalar bot manualmente (falló instalación automática el 23/06)
+Llamar Connor Starkey: 437-294-4278 — reagendar reunión perdida 22/06
+KPI: Bot visible en Teams + reunión reagendada
+```
 
-| Campo | Detalle |
-|-------|---------|
-| **Nota** | La campaña cour avant está pausada en Meta Ads — pero se puede publicar orgánicamente en Instagram. Las 7 piezas están listas en `05_MARKETING/CAMPAGNES_TEST/COUR_AVANT_TEST_01/`. |
-| **Decisión de Daniel** | ¿Publicar orgánico mientras la campaña Meta está pausada? O ¿esperar a reactivar Meta antes de publicar? |
+### TAREA 2.3 — Limpiar test leads Pipedrive
+
+```
+Identificar y archivar ~8 deals de prueba
+KPI: Pipeline muestra ≤26 affaires activos reales
+```
+
+---
+
+## BLOQUE 3 — NUEVA CAMPAÑA BALCON (urgente esta semana)
+
+**Contexto:** 3 proyectos activos en campo. Parisien inicia HOY. Máxima oportunidad de contenido.
+
+### TAREA 3.1 — Captura fotográfica (HOY)
+
+| Proyecto | Contenido a capturar |
+|---------|---------------------|
+| Stéphane Parisien | Inicio de obra, material, estructura — 2x balcon + tourelle |
+| Alain Breault | Avance actual — balcon en fase madura |
+| Vincent Goudreault | Avance actual — balcon + aménagement |
+
+**Quién captura:** Matt / Karim en campo. Instrucciones: fotos verticales + horizontales, buena luz, sin logos de otras marcas visibles.
+
+### TAREA 3.2 — Crear campaña Balcon en Meta Ads
+
+| Parámetro | Valor |
+|-----------|-------|
+| Nombre campaña | `balcon_juin2026_JI` |
+| Budget/día | $25–40 CAD |
+| Audiencia | Propietarios 35–60, Grand Montréal, Laval, Rive-Sud |
+| CPL objetivo | <$35 CAD |
+| ROAS objetivo | >8× |
+| Creatividades | Fotos reales Parisien + Breault + Goudreault |
+| Copy base | Ver `00_OUTBOX_CLAUDE_PARA_MANUS/TAREAS_MANUS/ACTUAL/2026-06-24_TEST_CONTENU_QUALITE.../03_COPY_CAPTIONS.md` |
+
+**Copy recomendado (brief 25/06):**
+> *"Votre espace extérieur mérite une vraie transformation."*
+> *"Du balcon ordinaire au balcon de rêve — on s'en charge."*
+
+### TAREA 3.3 — Carrusel Balcon para Manus
+
+Crear TASK-003 en `00_OUTBOX_CLAUDE_PARA_MANUS/TAREAS_MANUS/ACTUAL/` con brief de carrusel Balcon usando las fotos capturadas de Parisien/Breault/Goudreault.
+
+**Nota:** TASK-002 (Cour Arrière carrusel) sigue pendiente de fotos. Si Daniel tiene fotos de balcon disponibles hoy → TASK-003 puede avanzar antes.
+
+---
+
+## BLOQUE 4 — META ADS: DECISIÓN PISCINES (jueves 26 jun)
+
+| Campaña | CPL actual | Acción si no hay leads en 24h |
+|---------|-----------|-------------------------------|
+| piscines JI | $146.07 | PAUSAR → reasignar $25/día a balcon |
+
+**Opción alternativa:** Crear contenido nuevo con proyecto completado St-Hilaire ($50K) y relanzar en agosto (pre-temporada 2027).
+
+---
+
+## BLOQUE 5 — GI_CUISINES: EVALUAR POST-ZAP (jueves 26 jun)
+
+Con el Zap corregido:
+1. ¿Lyes recibió los 4 leads Cuisine?
+2. ¿El CPL ($53.93) se mantiene o cambia con leads reales?
+3. Si CPL sigue >$80 → revisar creatividades o evaluar pausa.
+
+---
+
+## BLOQUE 6 — PRODUCCIÓN FLOAT V2 (jueves–viernes)
+
+Con las fotos de balcon capturadas hoy:
+
+| Pieza | Formato | Canal | Fecha |
+|-------|---------|-------|-------|
+| Reel obra balcon en curso | 15–30 seg | Instagram + Facebook | 27–28 jun |
+| Post credibilidad: 3 balcons simultáneos | Imagen + caption | Instagram | 28 jun |
+| Carousel: tipos y colores de balcon | 6 slides 1080×1080 | Facebook Ads | 29 jun |
 
 ---
 
 ## CRONOGRAMA CONSOLIDADO
 
 ```
-MARTES 24 JUNIO — "APAGAR INCENDIOS"
-  Antes 10:00  Corregir Zap email (Tarea 3.1)
-  Antes 10:00  Pausar cour avant + BANOS en Meta Ads
-  Antes 10:00  Aumentar cour arriere a $55/día
-  Mañana       Daniel llama: Emilie Fournelle, JF Gilbert, Michele Boileau, Colin Maclachlan
-  Mañana       Lyes llama: Amelie Duguay, Charles-emrik Noel, Rehan Sheikh, Genevieve Duchesne, Paramjeet Singh
-  Mañana       Jonathan: Catherine Archambault (visita), Daniela Everon (propuesta)
-  Durante día  Confirmar email Francisco (Tarea 3.2)
+MIÉRCOLES 25 JUNIO — "CAMPO + CIERRES"
+  07:00  Revisar estado urgencias del 24 jun (¿se ejecutaron?)
+  08:00  Foto en obra Parisien — captura desde día 1
+  09:00  REUNIÓN DIARIA FIJA (inamovible)
+  10:00  Anthony Sleiman — RDV con Alain Bazinet
+  10:30  Lyes: Thierry Sicuro + Claudy Querette
+  11:00  Jonathan: Daniela Everon → confirmar propuesta
+  Durante día: Corregir Zap si no ejecutado ayer
+  Durante día: Foto Breault + Goudreault
 
-MIÉRCOLES 25 JUNIO — "CIERRES"
-  09:00  Anthony Sleiman — RDV con Alain Bazinet
-  10:00  HubSpot bot Teams + llamar Connor Starkey (Tarea 3.4)
-  14:00  Limpiar test leads Pipedrive (Tarea 3.3)
-  Resto  Seguimiento cierres activos (Elise Valcourt, Daniela Everon)
+JUEVES 26 JUNIO — "META ADS + DECISIONES"
+  09:00  REUNIÓN DIARIA FIJA
+  09:30  Evaluar piscines → ¿pausar? (sin leads nuevos = pausar)
+  10:00  Revisar GI_Cuisines post-Zap → ¿Lyes recibió 4 leads?
+  10:30  Crear campaña Balcon en Meta Ads Manager
+  14:00  Limpiar test leads Pipedrive (Tarea 2.3)
+  15:00  HubSpot bot Teams + llamar Connor Starkey (Tarea 2.2)
 
-JUEVES 26 JUNIO — "META ADS + FLOAT"
-  09:00  Evaluar piscines — ¿pausar o nuevas creatividades? (Tarea 4.2)
-  10:00  Iniciar adaptación FLOAT V2 para cour arriere (Tarea 5.1)
-  Tarde  Evaluar resultados GI_Cuisines post-Zap (Tarea 4.3)
-
-VIERNES 27 JUNIO — "PRODUCCIÓN"
-  10:00  Finalizar Hero Post cour arriere (Tarea 5.1)
-  17:30  Publicar en Instagram
+VIERNES 27 JUNIO — "PRODUCCIÓN + PUBLICAR"
+  09:00  REUNIÓN DIARIA FIJA
+  10:00  Generar carrusel Balcon con Manus (fotos de campo)
+  14:00  Editar Reel balcon en curso
+  17:30  Publicar primer contenido de balcon en Instagram
   17:00  Resumen semanal — KPIs reales vs. sprint
+
+LUNES 30 JUNIO — "CIERRE DE SPRINT"
+  09:00  Revisar KPIs del sprint
+  09:30  Confirmar avance: Breault (cierre 1 jul), Cellini (inicio 1 jul)
+  10:00  Actualizar ESTADO_ACTUAL_ECOSISTEMA y PROXIMO_SPRINT
 ```
 
 ---
 
 ## KPIs DE ÉXITO DEL SPRINT
 
-| KPI | Objetivo al viernes 28 | Crítico si... |
-|-----|----------------------|---------------|
-| Zap email corregido | Sí (hoy) | No → más leads Cuisine perdidos |
-| Campañas sin leads pausadas | 2/2 (cour avant + BANOS) | 0 → $50/día desperdiciados |
-| Leads vencidos contactados | 9/9 | <6 → leads fríos irrecuperables |
-| Propuestas enviadas o visitas | ≥2 | 0 → pipeline no avanza |
-| Pieza FLOAT V2 publicada | ≥1 | 0 → sin contenido premium esta semana |
-| Leads Cuisines notificados a Lyes | 4/4 (post-Zap) | 0 → dinero gastado sin retorno |
-| Test leads Pipedrive limpios | 8/8 | 0 → pipeline datos sucios |
+| KPI | Objetivo | Crítico si... |
+|-----|----------|---------------|
+| Campaña Balcon lanzada | Sí (antes del viernes) | No → oportunidad de campo perdida |
+| Zap email corregido | Sí (hoy si pendiente) | No → más leads Cuisine perdidos |
+| Fotos Parisien capturadas | ≥5 fotos (hoy) | No → contenido sin fuente real |
+| Leads vencidos contactados | 9/9 | <6 → leads irrecuperables |
+| Anthony Sleiman — propuesta o cierre | 1 | 0 → cierre perdido |
+| CPL cour arrière post-escala | ≤$35 | >$40 → volver a $30/día |
+| Piscines — decisión tomada | Sí | No → dinero en limbo |
+| Pieza publicada (balcon) | ≥1 | 0 → sin contenido premium esta semana |
 
 ---
 
-## LO QUE NO ESTÁ EN ESTE SPRINT (decisión consciente)
+## LO QUE NO ESTÁ EN ESTE SPRINT
 
 | Excluido | Por qué |
 |----------|---------|
-| Alex Fase 2 — Zapier formulario | El Zapier actual está roto — arreglar primero antes de agregar más Zaps |
-| Nuevos módulos FLOAT V2 | COUR_AVANT_TEST_01 ya tiene 7 piezas listas — ejecutar antes de crear más |
-| Documentación adicional | El sistema tiene suficiente. Lo que falta es implementación. |
-| Google Ads | No tocar — no hay datos de rendimiento en el JSON del 24/06 |
-| BANOS creatividades nuevas | Sin resultados en 30 días — pausar y evaluar en 2 semanas |
+| Alex Fase 2 | Zapier todavía en corrección |
+| Landing Cour Arrière V2 | Bloqueada por Pixel ID y Zapier |
+| Nuevos módulos FLOAT V2 | Ejecutar campo antes de crear más sistema |
+| Google Ads | Sin datos de rendimiento disponibles |
 
 ---
 
-**Referencia START_DAY_ENGINE:** `08_REPORTES/RESUMENES_DIARIOS/START_DAY_ENGINE_2026-06-24.md`
-**Al finalizar el sprint:** Actualizar `ESTADO_ACTUAL_ECOSISTEMA.md` con resultados reales.
-**Objetivo:** Recuperar $50/día desperdiciados + salvar 9 leads en riesgo + reparar Zapier.
+*Sprint operativo 25–30 jun 2026 — Jardín Ideal AI System*
+*Fuente: JardinIdeal_Brief_Campanas_25jun2026.md (Cowork) + datos reales 24 jun*

@@ -1,5 +1,5 @@
 # DECISIONES ESTRATÉGICAS
-**Última actualización:** 2026-06-23
+**Última actualización:** 2026-06-25
 **Propósito:** Registro de decisiones importantes para no repetir debates.
 
 ---
@@ -62,7 +62,7 @@
 ### DS-007 — Forward slashes en rutas de hooks Claude Code (Windows)
 **Fecha:** 2026-06-23
 **Decisión:** Usar `/` en lugar de `\` en las rutas de scripts de hooks en `settings.json`.
-**Motivo:** Claude Code (Node.js) trata las barras invertidas como secuencias de escape JavaScript, corrompiendo la ruta. Python en Windows acepta `/` igual que `\`.
+**Motivo:** Claude Code (Node.js) trata las barras invertidas como secuencias de escape JavaScript, corrompiendo la ruta.
 **Implicación:** Cualquier nuevo hook en Windows debe usar `/` en la ruta.
 **Ejemplo correcto:** `"python C:/Users/Daniel/.claude/speak.py"`
 
@@ -89,3 +89,101 @@
 **Decisión:** Orden de prioridad: Ventas → Eficiencia operativa → Documentación.
 **Motivo:** Sin ventas no hay empresa. La documentación perfecta no compensa las ventas perdidas.
 **Implicación:** Si hay un lead caliente y una tarea de documentación pendiente, el lead va primero.
+
+---
+
+## DECISIONES ESTRATÉGICAS DE CAMPAÑA
+
+### DS-011 — Balcones = Servicio Prioritario
+**Fecha:** 2026-06-25
+**Decisión:** Balcones es el servicio prioritario para contenido y campañas en junio–agosto 2026.
+**Motivo:** Dato de campo confirmado (Cowork brief 25/06): 3 proyectos activos simultáneos ($145,000, 52% del portfolio), inicio de nuevo proyecto hoy (Parisien 2x Balcon + Tourelle $71K). Máximo contenido real disponible ahora mismo.
+**Implicación:**
+- Próxima campaña Meta a lanzar: Balcon (esta semana)
+- Contenido FLOAT: Balcon = prioridad #1 sobre cualquier otro servicio
+- Budget sugerido campaña Balcon: $25–40/día
+- CPL objetivo: <$35 CAD
+**Proyectos fuente de contenido:** Parisien, Breault, Goudreault
+**Revisión:** 2026-08-01 (post temporada alta)
+
+---
+
+### DS-012 — Cour Arrière = Campaña Ganadora Actual
+**Fecha:** 2026-06-25 (confirmado desde datos 24/06)
+**Decisión:** Cour arrière es la campaña activa con mejor rendimiento — mantener y escalar.
+**Dato que la sostiene:** CPL $23.72 — 12 leads en 17 días — mejor resultado de todas las campañas.
+**Acción:** Presupuesto $30/día → $55/día.
+**Implicación:** No pausar esta campaña bajo ninguna circunstancia mientras el CPL esté ≤$35.
+
+---
+
+### DS-013 — Cour Avant = Pausada
+**Fecha:** 2026-06-25 (decisión tomada 24/06)
+**Decisión:** Campaña cour avant pausada hasta reevaluación.
+**Motivo:** 0 leads en 17 días. $67.31 gastados sin resultado. Sin justificación de reactivar ahora.
+**Condición de reactivación:** Nuevas creatividades FLOAT V2 + presencia de material de obra real.
+**Revisión:** 2026-07-15
+
+---
+
+### DS-014 — Baños = Pausada
+**Fecha:** 2026-06-25 (decisión tomada 24/06)
+**Decisión:** Campaña BANOS (Groupe Ideal) pausada hasta reevaluación.
+**Motivo:** 0 leads en 30 días. $44.76 gastados sin resultado. Sin proyectos activos en campo.
+**Condición de reactivación:** Material real de obra + redefinición de audiencia y creatividades.
+**Revisión:** 2026-07-15
+
+---
+
+### DS-015 — Piscinas = Bajo Revisión
+**Fecha:** 2026-06-25
+**Decisión:** Campaña piscines activa pero en observación. No pausar todavía.
+**Motivo:** CPL $146.07 — supera umbral de alerta $100 CAD. Sin embargo, hay 1 proyecto completado (St-Hilaire $50K) que puede servir de contenido.
+**Condición de pausa:** Si no hay nuevos leads en 7 días → pausar y reasignar presupuesto a Balcon.
+**Revisión:** 2026-07-02
+**Alternativa:** Planificar campaña con material real del proyecto St-Hilaire para agosto (pre-temporada 2027).
+
+---
+
+### DS-016 — Obras Reales = Fuente Principal de Contenido
+**Fecha:** 2026-06-25
+**Decisión:** Todo contenido de marketing debe basarse primero en proyectos reales activos o recién completados. No crear contenido genérico cuando hay obras disponibles.
+**Motivo:** Dato de campo (brief 25/06): 6 proyectos activos con material visual disponible. Contenido real convierte mejor y es más auténtico para el mercado de Quebec.
+**Jerarquía de fuentes:**
+1. Proyectos activos en campo hoy (fotos/video en tiempo real)
+2. Proyectos completados esta semana
+3. Proyectos completados este mes
+4. Biblioteca Francisco (archivo)
+5. Stock/recreaciones — ÚLTIMA OPCIÓN
+**Implicación:** Antes de producir cualquier pieza, consultar `PROJECT_REGISTRY/MANUS_PROJECTS.md` y el snapshot operativo del día.
+
+---
+
+### DS-017 — Reglas de Alerta Automática del Sistema
+**Fecha:** 2026-06-25
+**Decisión:** El sistema genera alertas automáticas en las siguientes condiciones. No esperar a la reunión de 09:00 AM para escalar.
+
+| Condición | Umbral | Acción |
+|-----------|--------|--------|
+| Leads estancados "Nouveau lead reçu" | >10 | Escalar a Daniel inmediatamente |
+| CPL de cualquier campaña | >$100 CAD | Revisar o pausar campaña |
+| Campaña sin leads | 48 horas | Verificar status urgente |
+| Contradicción producción real vs. campaña | Cualquiera | Reportar y proponer corrección |
+| Lead A+ sin respuesta | >2 horas | Escalar a Daniel |
+| Proyecto retrasado | >3 días | Comunicar al cliente |
+
+---
+
+### DS-018 — Claude Code = Fuente de Verdad / Manus = Editor Visual
+**Fecha:** 2026-06-25
+**Decisión:** Claude Code (GitHub) es la única fuente de verdad del sistema. Manus es exclusivamente el editor visual/prototipador. Ningún cambio técnico en landing pages se aplica primero en Manus.
+**Motivo:** Evitar pérdida de control sobre el código. Los cambios deben fluir Claude Code → Manus, no al revés.
+**Implicación:**
+- Landing pages: cambios técnicos primero locales → luego Manus regenera si es visual
+- Datos de marca (email, garantías, precios): solo los que Claude Code confirma son válidos
+- Publicación: siempre requiere aprobación humana — Manus no publica directamente
+
+---
+
+*Decisiones Estratégicas — Jardín Ideal AI System · v2.0 · 2026-06-25*
+*Actualizar con cada decisión importante tomada en reunión o sesión de trabajo*

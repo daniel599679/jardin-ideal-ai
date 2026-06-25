@@ -1,5 +1,6 @@
 # ESTADO ACTUAL DEL ECOSISTEMA
-**Última actualización:** 2026-06-24 — sincronización con datos reales (reporte-diario-2026-06-24.json)
+**Última actualización:** 2026-06-25 — sincronización con datos reales Cowork
+**Fuente:** `JardinIdeal_Brief_Campanas_25jun2026.md` + `reporte-diario-2026-06-24.json`
 **Actualizar:** al final de cada sesión de trabajo
 
 ---
@@ -9,159 +10,145 @@
 | Indicador | Estado |
 |-----------|--------|
 | FLOAT V1 | ✅ Completo |
-| FLOAT V2 Premium | ✅ Completo (5 módulos + guardrails + Francisco Visual Standard integrado) |
-| Francisco Visual Standard | ✅ Completo (62 imágenes analizadas, 10 leyes, PREMIUM_VISUAL_SCORE + bonus/penalty) |
+| FLOAT V2 Premium | ✅ Completo (5 módulos + guardrails) |
+| Francisco Visual Standard | ✅ Completo |
 | Content Operating System | ✅ Completo |
 | Brand Style Guide V1 | ✅ Completo |
 | Ideal Customer System | ✅ Completo |
-| Producción Continua Diaria | ✅ Completo (4 módulos — Factory + Queue + Calendar + Dashboard) |
-| Sistema de Captura de Ideas | ✅ Completo (5 archivos — Inbox + Priorizadas + Protocolo + Sync + Review) |
-| Home Workflow Protocol | ✅ Completo (guía por herramienta + sincronización diaria) |
-| Ecosistema Dual Jardín + Groupe | ✅ Arquitectura completa |
-| Sistema de Voz Claude | ✅ Operativo |
-| Memoria Unificada | ✅ Operativa |
-| DAILY_OPERATIONS_ENGINE | ✅ Completo (5 archivos — Start + Lead + Content + Dashboard + Checklist) |
-| Protocolo Sincronización Diaria | ✅ Completo — primer uso 2026-06-24 con datos reales |
-| 08_REPORTES — Sistema de Reportes | ✅ Completo — 6 subcarpetas + README + REPORTING_SYSTEM_MAP |
-| COUR_AVANT_TEST_01 | ✅ Primer test producción FLOAT V2 — 7 piezas listas para publicar |
-| Alex — Sistema Unificado (8 archivos) | 🔵 FASE 2 PENDIENTE — Zapier bug activo bloquea implementación |
-| Sistema de Marketing | ✅ Documentado (flujo, canales, KPIs, brechas, Alex) |
-| Zapier — Integraciones | 🔴 CRÍTICO — email incorrecto: `grupoideal.com` → `groupe-ideal.com` |
-| GitHub sync | ✅ Al día — último commit: `51893be` |
+| Producción Continua Diaria | ✅ Completo |
+| Sistema de Captura de Ideas | ✅ Completo |
+| Home Workflow Protocol | ✅ Completo |
+| DAILY_OPERATIONS_ENGINE | ✅ Completo |
+| Protocolo Sincronización Diaria | ✅ Activo desde 2026-06-24 |
+| 08_REPORTES — Sistema de Reportes | ✅ Completo |
+| Automation Center | ✅ Completo — v1.0 (2026-06-24) |
+| TASK-001 (CMD-001) Comando global email+garantía | ⏳ PENDIENTE ejecutar |
+| TASK-002 Carrusel Magazine Cour Arrière | 🟡 Listo — esperando fotos Daniel |
+| Alex — Sistema Unificado | 🔵 FASE 2 PENDIENTE — Zapier bug bloquea |
+| Landing Cour Arrière V1 | ⏳ PAUSADA — blockers técnicos |
+| Campaña Balcon | 🔴 PENDIENTE LANZAR — máxima prioridad |
+| Zapier — Corrección email | ⚠️ ESTADO DESCONOCIDO — confirmar si ejecutado el 24/06 |
+| GitHub sync | ✅ Al día — último commit: `41aa479` |
 
 ---
 
-## ESTADO OPERATIVO REAL — 2026-06-24
+## ESTADO OPERATIVO REAL — 2026-06-25
 
-### Campañas activas (dato real — JSON)
+### Campañas Meta Ads (estado confirmado)
 
-| Campaña | Estado | Acción inmediata |
-|---------|--------|-----------------|
-| cour arriere (JI) | ✅ MEJOR — CPL $23.72 | Subir presupuesto $30 → $55/día |
-| cour avant (JI) | 🔴 0 leads / 17 días | **PAUSAR HOY** |
-| piscines (JI) | ⚠️ CPL $146 | Evaluar — no pausar todavía |
-| GI_Cuisines | ⚠️ Activa + Zap roto | Corregir Zap primero — luego evaluar |
-| BANOS (GI) | 🔴 0 leads / 30 días | **PAUSAR HOY** |
+| Campaña | Estado | CPL | Acción activa |
+|---------|--------|-----|--------------|
+| **cour arrière (JI)** | ✅ GANADORA | $23.72 | Escalar $30 → $55/día |
+| cour avant (JI) | 🔴 PAUSADA | — | No reactivar hasta nuevas creatividades |
+| piscines (JI) | ⚠️ REVISIÓN | $146.07 | Pausar si no hay leads en 24h |
+| GI_Cuisines | ⚠️ Zap roto | $53.93 | Corregir Zap → reevaluar |
+| BANOS (GI) | 🔴 PAUSADA | — | No reactivar hasta julio |
+| **Balcon (JI)** | 🔴 A LANZAR | — | Esta semana — 3 obras en campo |
 
-### Pipeline (dato real — JSON)
+### Proyectos en campo — fuente real de contenido
 
-- **9 leads con actividades vencidas** — Emilie Fournelle: 12 días (urgente #1)
-- **34 affaires** en Pipedrive (21 reales + 8 test a limpiar)
-- **3 en RDV confirmé** — oportunidades de cierre esta semana
+| Proyecto | Equipo | Valor | Contenido disponible |
+|---------|--------|-------|---------------------|
+| Stéphane Parisien — 2x Balcon + Tourelle | Matt | $71,000 | ⭐ INICIO HOY — capturar |
+| Alain Breault — Balcon + Amen. Ext. | Matt | $38,000 | ✅ Fotos disponibles |
+| Vincent Goudreault — Balcon + Amen. Ext. | Karim | $36,000 | ✅ Fotos disponibles |
+| Karine Rousseau — Amen. Extérieur | Steven | $135,000 | ✅ Semana 4 — resultado visible |
+| Catherine Cellini — Deck Composite | Matt | $49,000 | ⏳ Inicio 1 jul |
+| Entretien (7 clientes) | Entretien | Recurrente | ✅ Evergreen semanal |
+
+**Servicio dominante en campo:** BALCON — 3 proyectos — $145,000 — 52% del portfolio activo.
+
+### Pipeline (estado real)
+
+| Métrica | Valor |
+|---------|-------|
+| Total affaires | 34 (21 reales + ~8 test a limpiar) |
+| Leads con actividad vencida | **9** |
+| Lead más urgente | Emilie Fournelle — 12+ días |
+| RDV hoy | Anthony Sleiman (Alain Bazinet) |
 
 ### Integraciones (estado real)
 
-| Sistema | Estado real |
-|---------|------------|
-| Zapier → Cuisines | 🔴 Email incorrecto — 4 leads perdidos |
-| Zapier → Balcon | 🔴 Mismo email incorrecto |
-| HubSpot bot Teams | 🟡 Instalación manual pendiente |
+| Sistema | Estado |
+|---------|--------|
+| Zapier → Cuisine/Balcon email | ⚠️ Pendiente confirmar corrección |
+| Zapier → LP Cour Arrière | 🔴 No configurado (webhook pendiente) |
+| Meta Pixel → LP Cour Arrière | 🔴 ID pendiente (TU_PIXEL_ID) |
+| HubSpot bot Teams | 🟡 Instalación pendiente |
 | Meta Ads → Pipedrive | 🔴 No automatizado — entrada manual |
 | Pipedrive → WhatsApp alerta | 🔴 No implementado |
 
 ---
 
-## COMPLETADO — FASE 1
+## SISTEMA IA — ESTADO DE PROYECTOS
 
-### FLOAT V1 (Fábrica de Contenido)
+### Landing Pages
 
-**Fecha completado:** 2026-06-23
+| LP | Versión | Estado | Blocker |
+|----|---------|--------|---------|
+| Cour Arrière | V1 auditada (68/100) | ⏳ PAUSADA | Pixel ID + Zapier + aprobación legal |
+| Pavé Uni | Sin crear | ⏳ En pipeline | Post-LP Cour Arrière |
+| Piscine | Sin crear | ⏳ Alta temporada julio | — |
+| Balcon | Sin crear | 🔴 URGENTE crear | 3 obras activas HOY |
 
-| Entregable | Archivo | Descripción |
-|-----------|---------|-------------|
-| Content Operating System | `CONTENT_OPERATING_SYSTEM.md` | Protocolo 60 min × 9 servicios |
-| Brand Style Guide V1 | `JARDIN_IDEAL_BRAND_STYLE_GUIDE_V1.md` | Identidad visual completa |
-| FLOAT V2 Roadmap | `FLOAT_V2_ROADMAP.md` | 7 módulos planificados |
-| Ideal Customer System | `JARDIN_IDEAL_IDEAL_CUSTOMER_SYSTEM.md` | Calificación 0–100 pts |
-| Memoria Empresarial | `10_MEMORIA_EMPRESARIAL/` | Sistema de memoria unificada |
+### Tareas Manus
 
-### Sistemas de Infraestructura
+| Tarea | Estado | Blocker |
+|-------|--------|---------|
+| TASK-002: Carrusel Magazine Cour Arrière | 🟡 Listo para Manus | Daniel debe copiar fotos en 05_ASSETS/IMAGES/ |
+| TASK-003: Carrusel Balcon | 🔴 Pendiente crear | Fotos de campo de hoy |
 
-| Sistema | Estado | Archivo |
-|---------|--------|---------|
-| Agentes CRM / Marketing / Operaciones | ✅ | `01_AGENTES/` |
-| Prompts de los 3 agentes | ✅ | `02_PROMPTS/` |
-| Ecosistema dual empresas | ✅ | `ECOSISTEMA_MAESTRO.md` |
-| Automatizaciones básicas | ✅ | `07_AUTOMATIZACIONES/` |
-| Hook de voz Claude Code | ✅ | `~/.claude/speak.py` |
-| GitHub repository | ✅ | Sincronizado |
+### Automation Center
 
----
-
-## EN PROGRESO — FASE 2
-
-### FLOAT V2 — 7 módulos
-
-| Módulo | Nombre | Prioridad | Fecha objetivo |
-|--------|--------|-----------|----------------|
-| 1 | Hero Image Factory | CRÍTICA | 2026-06-27 |
-| 2 | Protocolo de Captura en Obra | ALTA | 2026-07-04 |
-| 3 | Clasificador Automático de Activos | ALTA | 2026-07-11 |
-| 4 | Biblioteca de Estilos | MEDIA | 2026-07-18 |
-| 5 | Banco de Hooks Premium | ALTA | 2026-07-25 |
-| 6 | Sistema de Scoring FLOAT | MEDIA | 2026-08-01 |
-| 7 | KPI de Producción | MEDIA | 2026-08-08 |
-
-**Referencia:** `FLOAT_V2_ROADMAP.md`
-
-### Expansión Groupe Ideal
-
-| Tarea | Estado | Nota |
-|-------|--------|------|
-| Perfil empresa creado | ✅ | `01_EMPRESAS/GROUPE_IDEAL/` |
-| Servicios específicos | 🔴 Pendiente | Requiere input de Daniel |
-| Campañas propias | 🔴 Pendiente | Post-Jardín Ideal Q3 |
+| Sistema | Estado |
+|---------|--------|
+| CMD-001: UPDATE_GLOBAL_CONTACT_AND_PAVE_WARRANTY | ⏳ En COMMANDS_INBOX — pendiente ejecutar |
+| PROJECT_REGISTRY | ✅ Actualizado v1.1 |
+| CHANGELOG_AUTOMATION | ✅ Actualizado |
+| PATCHES | Vacío — listo para uso |
+| APPROVAL_REQUIRED | Vacío — listo para uso |
 
 ---
 
-## PENDIENTE — FASE 3
+## ALERTAS ACTIVAS (2026-06-25)
 
-| Tarea | Bloqueado por | Prioridad |
-|-------|--------------|-----------|
-| Producción primer contenido COS | Proyecto nuevo completado | ALTA |
-| Lead automation HubSpot | Configuración HubSpot | MEDIA |
-| Campaña Meta Ads con COS | Primer hero image | ALTA |
-| Activación Banco Hooks Premium | FLOAT V2 Módulo 5 | MEDIA |
-| Automatización reportes semanales | Agente Reportes | BAJA |
+| Alerta | Tipo | Acción requerida |
+|--------|------|-----------------|
+| ⚠️ Piscines CPL $146 → supera umbral $100 | CPL | Evaluar pausa hoy |
+| ⚠️ 9 leads vencidos → cerca de umbral 10 | Pipeline | Contactar todos hoy |
+| ⚠️ Zapier email → confirmar corrección | Técnico | Verificar con Daniel |
+| 🔴 No hay campaña Balcon activa | Contradicción | 3 obras en campo sin campaña |
 
 ---
 
-## MÉTRICAS DEL SISTEMA (estado 2026-06-23)
+## COMPLETADO — SESIÓN 2026-06-24/25
+
+| Entregable | Estado |
+|-----------|--------|
+| Automation Center v1.0 (8 carpetas, 9 archivos) | ✅ |
+| TASK-002: Carrusel Magazine Cour Arrière (11 archivos) | ✅ |
+| MANUS Context Pack v1 (4 documentos) | ✅ |
+| CHANGELOG.md sistema | ✅ |
+| PROMPT_CORRECTION_COUR_ARRIERE_V1_SAFE.md | ✅ |
+| Snapshot operativo 2026-06-25 | ✅ |
+| DECISIONES_ESTRATEGICAS.md v2.0 (DS-011 a DS-018) | ✅ |
+
+---
+
+## MÉTRICAS DEL SISTEMA (estado 2026-06-25)
 
 | Métrica | Valor |
 |---------|-------|
-| Archivos `.md` en el sistema | ~45+ |
-| Líneas de documentación | ~6,000+ |
-| Commits en git | 10 |
+| Archivos `.md` en el sistema | ~65+ |
+| Líneas de documentación | ~10,000+ |
+| Commits en git | 14+ |
 | Servicios documentados en COS | 9/9 |
 | Perfiles de clientes definidos | 4 (A+/A/B/C) |
-| Preguntas de calificación | 8 |
-| Scripts de objeción | 5 |
-| Módulos FLOAT V2 planificados | 7 |
-| Módulos FLOAT V2 implementados | 0 |
+| Proyectos Manus registrados | 3 (LP-001, LP-002, LP-003) + 3 pipeline |
+| Tareas Manus activas | 1 (TASK-002) |
+| Decisiones estratégicas registradas | 18 (DS-001 a DS-018) |
 
 ---
 
-## ÚLTIMA SESIÓN — 2026-06-23 (sesión completa — 4 tareas)
-
-**Lo que se hizo:**
-1. Creado `05_MARKETING/FLOAT_V2_PREMIUM/` — 5 módulos + GLOBAL_CONTENT_GUARDRAILS.md
-2. Integrado FLOAT V2 Premium en 8 archivos del ecosistema — umbral 80→90/100
-3. Creado `05_MARKETING/PRODUCCION_CONTINUA/` — 4 módulos de producción diaria
-4. Creado `10_MEMORIA_EMPRESARIAL/CAPTURA_IDEAS/` — 5 archivos del sistema de ideas
-5. Creado `10_MEMORIA_EMPRESARIAL/HOME_WORKFLOW_PROTOCOL.md` — guía multi-herramienta
-6. Creado `10_MEMORIA_EMPRESARIAL/OPERACIONES_DIARIAS/` — 5 archivos DAILY_OPERATIONS_ENGINE
-7. Commits: `861d32d`, `d0aed0a`, `d5bec25`, `37469bc`, `9939299` + (pending)
-
-**Sistema ahora listo para operación diaria completa:**
-- Cada mañana: `ejecutar START_DAY_ENGINE` → DAILY_BRIEF en 5 min
-- Leads: evaluación A/B/C/D con LEAD_REVIEW_ENGINE (100 pts, 8 factores)
-- Contenido: timeline 08:00→16:00 con CONTENT_EXECUTION_ENGINE
-- CEO: CEO_DASHBOARD_TEMPLATE para revisión antes de las 09:00
-- Cierre: CHECKLIST_APERTURA_7AM → commit + push
-
-**Próxima sesión debe:**
-1. Ejecutar `CHECKLIST_APERTURA_7AM.md` a las 07:00 AM
-2. Decir `ejecutar START_DAY_ENGINE` para generar el DAILY_BRIEF del día
-3. Revisar leads en LEAD_REVIEW_ENGINE
-4. Verificar material disponible → si score ≥90/100 → producir las 5 piezas
+*Estado del Ecosistema — Jardín Ideal AI System · 2026-06-25*
+*Próxima actualización: 2026-06-26 al inicio de sesión*

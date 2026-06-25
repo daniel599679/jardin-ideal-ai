@@ -1,5 +1,5 @@
 # MEMORIA GLOBAL — JARDÍN IDEAL AI SYSTEM
-**Versión:** 1.5 | **Última actualización:** 2026-06-23
+**Versión:** 1.6 | **Última actualización:** 2026-06-25
 **Propósito:** Documento maestro de contexto. Cualquier IA debe leer este archivo primero.
 
 ---
@@ -203,30 +203,50 @@ Jardin_Ideal_AI_System/
 6. Antes de visitar un lead: preparar `LEAD_INTELLIGENCE_REPORT` del ICS.
 7. Contenido nuevo: seguir protocolo del `CONTENT_OPERATING_SYSTEM.md`.
 8. Commits a GitHub: al finalizar cada bloque de trabajo del día.
+9. **Todo contenido se basa primero en proyectos reales activos** — no crear contenido genérico cuando hay obras disponibles. (DS-016, 2026-06-25)
+10. **Prioridad de contenido:** Balcones → Cour arrière → Pavé-Uni. (DS-011, 2026-06-25)
+11. **Alerta automática:** si campañas activas ≠ servicios en producción real → reportar inmediatamente. (DS-017)
+12. **Alerta automática:** si >10 leads estancados en "Nouveau lead reçu" → escalar a Daniel. (DS-017)
+13. **Alerta automática:** si CPL de cualquier campaña supera $100 CAD → revisar o pausar. (DS-017)
 
 ---
 
-## 9. ESTADO OPERATIVO REAL — 2026-06-24
-**Fuente:** reporte-diario-2026-06-24.json (Agente Director) — datos reales, prevalecen sobre documentación previa
+## 9. ESTADO OPERATIVO REAL — 2026-06-25
+**Fuente:** `JardinIdeal_Brief_Campanas_25jun2026.md` (Cowork, 07:25h) + `reporte-diario-2026-06-24.json`
+**Regla:** Datos reales prevalecen sobre cualquier documentación previa.
 
 ### Campañas Meta Ads (estado real)
 
-| Campaña | Estado | Leads | CPL | Diagnóstico |
-|---------|--------|-------|-----|------------|
-| **cour arriere (JI)** | ✅ Activa — escalar | 12 | $23.72 | MEJOR CAMPAÑA — subir a $55/día |
-| cour avant (JI) | 🔴 Pausar | 0 | — | 0 leads en 17 días — $67 gastados |
-| piscines (JI) | ⚠️ Evaluar | 1 | $146.07 | CPL inviable — monitorear |
-| GI_Cuisines | ⚠️ Activa + bug | 4 | $53.93 | Zap email incorrecto → corregir primero |
-| BANOS (GI) | 🔴 Pausar | 0 | — | 0 leads en 30 días — $44 gastados |
+| Campaña | Estado | Leads | CPL | Decisión |
+|---------|--------|-------|-----|---------|
+| **cour arrière (JI)** | ✅ GANADORA | 12 | $23.72 | Escalar $30 → $55/día |
+| cour avant (JI) | 🔴 PAUSADA | 0 | — | No reactivar hasta nuevas creatividades |
+| piscines (JI) | ⚠️ REVISIÓN | 1 | $146.07 | Pausar si sin leads hoy |
+| GI_Cuisines | ⚠️ Zap roto | 4 | $53.93 | Corregir email → reevaluar |
+| BANOS (GI) | 🔴 PAUSADA | 0 | — | No reactivar hasta julio |
+| **Balcon (JI)** | 🔴 A LANZAR | — | — | Esta semana — 3 obras activas |
 
-> ⚠️ **NOTA:** Los leads "Paul Gagné" y "François Bergeron" mencionados en versiones previas del sprint NO aparecen en el JSON real del 2026-06-24. Dato real prevalece — no son leads activos confirmados.
+### Proyectos en campo — DATO CLAVE 2026-06-25
+
+| Proyecto | Servicio | Equipo | Valor | Contenido |
+|---------|---------|--------|-------|-----------|
+| **Stéphane Parisien** | 2x Balcon + Tourelle | Matt | $71,000 | ⭐ INICIO HOY |
+| Alain Breault | Balcon + Amen. Ext. | Matt | $38,000 | ✅ Disponible |
+| Vincent Goudreault | Balcon + Amen. Ext. | Karim | $36,000 | ✅ Disponible |
+| Karine Rousseau | Aménagement Extérieur | Steven | $135,000 | ✅ Semana 4 |
+| Catherine Cellini | Deck Composite | Matt | $49,000 | ⏳ Inicio 1 jul |
+| 7+ clientes Entretien | Entretien | Equipo | Recurrente | Evergreen |
+
+**Servicio dominante:** BALCON — 3 proyectos — $145,000 — 52% del portfolio activo.
+
+> ⚠️ **CONTRADICCIÓN ACTIVA:** Balcon = servicio #1 en campo. Pero no hay campaña Balcon en Meta Ads. Lanzar `balcon_juin2026_JI` esta semana.
 
 ### Pipeline Pipedrive (estado real)
 
 | Métrica | Valor |
 |---------|-------|
 | Total affaires | 34 (21 reales + ~8 test a limpiar) |
-| Leads con actividad vencida | **9** (entre 1 y 12 días) |
+| Leads con actividad vencida | **9** (umbral de alerta: 10) |
 | Lead más urgente | **Emilie Fournelle** — 12 días sin contacto |
 | Leads en RDV confirmé | 3 (Anthony Sleiman, Elise Valcourt, Claudy Querette) |
 
@@ -235,16 +255,19 @@ Jardin_Ideal_AI_System/
 | Problema | Impacto |
 |----------|---------|
 | Zapier email incorrecto: `daniel@grupoideal.com` → `daniel@groupe-ideal.com` | 4 leads Cuisine sin notificación |
+| Meta Pixel LP Cour Arrière: `TU_PIXEL_ID` sin configurar | Sin tracking de conversiones |
+| Zapier webhook LP Cour Arrière: no configurado | Formulario LP no envía datos |
 | Email Francisco `fnerlos@groupe-ideal.com` no existe | Confirmar email real |
 | Bot HubSpot–Teams: instalación falló el 23/06 | Instalar manualmente |
 
 ### Protocolo de sincronización diaria
 
 Antes de cualquier tarea del día, leer datos reales en:
-- `Claude/Projects/Agente Director/data/BRIEFING-CLAUDE-CODE-YYYY-MM-DD.md`
+- `Claude/Projects/Agente Director/data/JardinIdeal_Brief_Campanas_YYYY-MM-DD.md`
 - `Claude/Projects/Agente Director/data/reporte-diario-YYYY-MM-DD.json`
 
 Protocolo completo: `10_MEMORIA_EMPRESARIAL/PROTOCOLO_SINCRONIZACION_DIARIA.md`
+Snapshot completo: `10_MEMORIA_EMPRESARIAL/DATOS_REALES/2026-06-25_SNAPSHOT_OPERATIVO.md`
 
 ---
 
@@ -252,7 +275,7 @@ Protocolo completo: `10_MEMORIA_EMPRESARIAL/PROTOCOLO_SINCRONIZACION_DIARIA.md`
 
 | Campo | Dato |
 |-------|------|
-| **Último commit** | `51893be` — "feat: 08_REPORTES reestructurado + REPORTING_SYSTEM_MAP" |
+| **Último commit** | Task D sincronización datos reales 2026-06-25 |
 | **Rama** | master |
 | **Archivos excluidos** | `*.mp4`, `*.mov`, `*.zip`, `.claude.json` |
 | **Frecuencia de sync** | Al finalizar cada bloque de trabajo |

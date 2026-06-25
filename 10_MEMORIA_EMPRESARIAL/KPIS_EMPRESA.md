@@ -1,58 +1,108 @@
 # KPIs EMPRESA — JARDÍN IDEAL / GROUPE IDEAL
-**Última actualización:** 2026-06-24 — datos reales de Meta Ads Manager + Pipedrive
-**Fuente:** reporte-diario-2026-06-24.json (Agente Director)
+**Última actualización:** 2026-06-25 — datos reales Cowork + Meta Ads + campo
+**Fuente:** `JardinIdeal_Brief_Campanas_25jun2026.md` + `reporte-diario-2026-06-24.json`
 **Frecuencia de actualización:** Diaria (Meta Ads) / Semanal (ventas) / Mensual (finanzas)
 
 ---
 
-## ESTADO DE CAMPAÑAS — DATOS REALES 2026-06-24
+## ⚠️ ALERTAS DEL SISTEMA (activas)
 
-### Jardín Ideal — Período Jun 1–17, 2026
+| Alerta | Condición | Estado |
+|--------|-----------|--------|
+| 🔴 Piscines CPL alto | $146.07 — supera umbral $100 | EVALUAR PAUSA HOY |
+| 🟠 Leads vencidos | 9 leads — umbral alerta: 10 | ACCIÓN INMEDIATA |
+| 🔴 Sin campaña Balcon | 3 obras en campo, 0 campañas activas | LANZAR ESTA SEMANA |
+| 🔴 Zapier email roto | daniel@grupoideal.com → corregir | CONFIRMAR CORRECCIÓN |
 
-| Campaña | Estado | Leads | CPL | Presupuesto/día | Gasto total | Diagnóstico |
-|---------|--------|-------|-----|----------------|-------------|-------------|
-| **cour arriere** | ✅ Activa | **12** | **$23.72** | $30 → subir $55 | $284.64 | MEJOR CAMPAÑA — mantener |
-| cour avant | 🔴 Pausar hoy | **0** | — | $25 → $0 | $67.31 | Sin resultados 17 días |
-| piscines | ⚠️ Evaluar | 1 | $146.07 | $25 | $146.07 | CPL inviable — monitorear |
-| **TOTAL JI** | | **13** | **$52.17** | $80/día | $678.22 | |
+**Reglas de alerta del sistema (DS-017):**
+- CPL cualquier campaña > $100 CAD → pausar o revisar
+- >10 leads estancados "Nouveau lead reçu" → escalar a Daniel
+- Contradicción producción real vs. campaña activa → reportar
+- Campaña sin leads 48h → verificar urgente
 
-### Groupe Ideal — Período May 25–Jun 23, 2026
+---
 
-| Campaña | Estado | Leads | CPL | Presupuesto/día | Gasto total | Diagnóstico |
-|---------|--------|-------|-----|----------------|-------------|-------------|
-| **GI_Cuisines_2026** | ⚠️ Activa + falla | **4** | **$53.93** | $50 | $215.73 | Zap email incorrecto → corregir |
-| BANOS | 🔴 Pausar hoy | **0** | — | $25 → $0 | $44.76 | Sin resultados 30 días |
-| **TOTAL GI** | | **4** | **$53.93** | $75/día | $260.49 | |
+## ESTADO DE CAMPAÑAS — DATOS REALES 2026-06-25
 
-### Consolidado ambas marcas
+### Jardín Ideal — Estado actual
+
+| Campaña | Estado | Leads (período) | CPL | Budget/día | Gasto | Decisión |
+|---------|--------|----------------|-----|-----------|-------|---------|
+| **cour arrière** | ✅ ACTIVA — GANADORA | **12** | **$23.72** | $30 → **$55** | $284.64 | ESCALAR |
+| cour avant | 🔴 PAUSADA | 0 | — | $0 | $67.31 (período) | No reactivar hasta creatividades nuevas |
+| piscines | ⚠️ REVISIÓN | 1 | **$146.07** 🔴 | $25 | $146.07 | Pausar si sin leads hoy |
+| **Balcon** | 🔴 A LANZAR | — | — | $25–40 | — | Esta semana — 3 obras disponibles |
+| **TOTAL JI** | | **13** | **$22.20 avg** | ~$80→$110/día | $498 | |
+
+### Groupe Ideal — Estado actual
+
+| Campaña | Estado | Leads (período) | CPL | Budget/día | Gasto | Decisión |
+|---------|--------|----------------|-----|-----------|-------|---------|
+| GI_Cuisines_2026 | ⚠️ Zap roto | **4** | **$53.93** | $50 | $215.73 | Corregir Zap → reevaluar |
+| BANOS | 🔴 PAUSADA | 0 | — | $0 | $44.76 (período) | No reactivar hasta creatividades nuevas |
+| **TOTAL GI** | | **4** | **$53.93** | $50/día | $260 | |
+
+### Consolidado Meta Ads
 
 | Métrica | Valor real |
 |---------|-----------|
-| Presupuesto activo diario | $155 CAD/día |
-| Gasto sin resultados | **$112.07 CAD** |
-| Ahorro potencial (pausar cour avant + BANOS) | **$50 CAD/día** |
-| Total leads generados | **17** |
-| CPL promedio real | **$55.22 CAD** |
-| Leads con actividades vencidas | **9** |
-| Días máximo sin contacto | **12 días** (Emilie Fournelle) |
-
-### Problema técnico activo — ZAPIER
-
-> ⚠️ Email incorrecto en Zap Cuisine + Balcon: `daniel@grupoideal.com` → corregir a `daniel@groupe-ideal.com`
-> 4 leads de GI_Cuisines jamás recibidos por Lyes. Email Francisco (`fnerlos@groupe-ideal.com`) también inválido.
+| Presupuesto activo diario (actual) | ~$105 CAD/día |
+| Ahorro por pausas (cour avant + BANOS) | $50 CAD/día recuperados |
+| CPL mejor campaña | **$23.72** (cour arrière) |
+| Total leads generados (período Jun 1–25) | **17** |
+| Leads en riesgo (vencidos) | 9 |
 
 ---
 
+## PROYECTOS EN CAMPO — KPI PRODUCCIÓN REAL
+
+**Fuente:** `JardinIdeal_Brief_Campanas_25jun2026.md`
+
+| Proyecto | Servicio | Equipo | Valor | Estado | Contenido |
+|---------|---------|--------|-------|--------|-----------|
+| Stéphane Parisien | 2x Balcon + Tourelle | Matt | **$71,000** | 🔴 Inicio HOY | ⭐ PRIORIDAD |
+| Alain Breault | Balcon + Amen. Ext. | Matt | **$38,000** | Activo — cierre 1 jul | ✅ Disponible |
+| Vincent Goudreault | Balcon + Amen. Ext. | Karim | **$36,000** | Activo — cierre ~8 jul | ✅ Disponible |
+| Karine Rousseau | Aménagement Extérieur | Steven | **$135,000** | Semana 4 | ✅ Disponible |
+| Catherine Cellini | Deck Composite | Matt | **$49,000** | Inicio 1 jul | Julio |
+| 7+ clientes Entretien | Entretien / Pelouse | Equipo | Recurrente | Permanente | Evergreen |
+
+**Total valor activo en campo:** ~$329,000 CAD
+**Clientes en Entretien:** Jean Charland, Lise Claes, Michel Vallée, Harold Nguyen, Rolande Binette, Suzane Rapos, Lise Desaulniers Lebrun
+
+### Ranking de servicios por valor en campo
+
+| Rank | Servicio | Proyectos activos | Valor activo | % portfolio |
+|------|---------|------------------|--------------|-----------| 
+| 🥇 1 | **Balcon** | **3** | **$145,000** | **52 %** |
+| 🥈 2 | **Aménagement Extérieur** | **3** | **$185,000** | **66 %** |
+| 🥉 3 | **Deck Composite** | 1 (julio) | **$49,000** | 17 % |
+| 4 | Piscine | 1 completado | $50,000 | ref. |
+| 5 | **Entretien** | 7+ | Recurrente | Evergreen |
+
+> ⚠️ **CONTRADICCIÓN DETECTADA:** Servicio #1 en campo = Balcon ($145K, 3 obras) — sin campaña activa en Meta Ads. Servicio con campaña activa = Cour Arrière — sin obras activas en campo. Acción: lanzar campaña Balcon esta semana.
+
 ---
 
-## OBJETIVO ANUAL 2026
+## KPIs PIPELINE PIPEDRIVE (semana del 25 jun)
 
-| Métrica | Objetivo | Actual | % |
-|---------|----------|--------|---|
-| Facturación anual | $7,000,000 CAD | — | — |
-| Facturación mensual promedio | $583,333 CAD | — | — |
-| Proyectos/mes | ~20–25 | — | — |
-| Ticket promedio | ~$30,000 CAD | — | — |
+| Métrica | Semana actual | Objetivo/sem |
+|---------|---------------|--------------|
+| Total leads activos | 21 (reales) | — |
+| Leads con actividad vencida | **9** | 0 |
+| RDV realizados | 1+ (Sleiman hoy) | 5–8 |
+| Propuestas enviadas | — confirmar | 5–8 |
+| Propuestas cerradas | — confirmar | 2–3 |
+| Pipeline "en riesgo" (<48h sin contacto) | 9 | 0 |
+
+### Cuellos de botella detectados
+
+| Botella | Impacto | Acción |
+|---------|---------|--------|
+| 9 leads con actividad vencida | Pérdida de leads ya pagados ($207 CAD riesgo) | Contactar todos hoy/mañana |
+| Zapier email roto Cuisine/Balcon | 4 leads Cuisine sin notificación | Corregir email inmediatamente |
+| ~8 test leads en pipeline | Datos sucios → reportes incorrectos | Limpiar esta semana |
+| Sin campaña Balcon activa | Dejar dinero en la mesa | Lanzar campaña esta semana |
 
 ---
 
@@ -60,9 +110,9 @@
 
 | Métrica | Semana actual | Semana anterior | Objetivo/sem |
 |---------|---------------|-----------------|--------------|
-| Leads nuevos | — | — | 15–20 |
+| Leads nuevos | — | 13 total período | 15–20 |
 | Leads calificados (score ≥70) | — | — | 8–10 |
-| Visitas realizadas | — | — | 5–8 |
+| Visitas realizadas | 1 (Sleiman 25 jun) | — | 5–8 |
 | Propuestas enviadas | — | — | 5–8 |
 | Propuestas cerradas | — | — | 2–3 |
 | Tasa de cierre visita→propuesta | — | — | ≥80% |
@@ -72,67 +122,57 @@
 
 ---
 
-## KPIs DE MARKETING — META ADS (actualizar diariamente)
+## KPIs DE MARKETING — META ADS (diario)
 
-| Métrica | Ayer | Esta semana | Objetivo |
-|---------|------|-------------|---------|
-| Gasto total ($CAD) | — | — | — |
-| Impresiones | — | — | — |
-| Alcance | — | — | — |
-| CPM (costo/1000 impresiones) | — | — | ≤$15 |
-| CTR (click-through rate) | — | — | ≥2.5% |
-| CPC (costo por clic) | — | — | ≤$1.50 |
-| Leads generados | — | — | — |
-| CPL (costo por lead) | — | — | ≤$25 |
-| Leads calificados de Meta | — | — | — |
-| ROAS (retorno sobre inversión) | — | — | ≥8× |
+| Métrica | Estado actual | Objetivo |
+|---------|--------------|---------|
+| Gasto total diario activo | ~$105 CAD/día | Eficiente |
+| CPL cour arrière | **$23.72** ✅ | ≤$25 |
+| CPL piscines | **$146.07** 🔴 | — evaluar pausa |
+| CPL GI Cuisines | $53.93 ⚠️ | ≤$50 |
+| Campaña Balcon — CPL objetivo | — a lanzar | <$35 |
+| ROAS objetivo todas las campañas | — | ≥8× |
 
 ---
 
-## KPIs DE CONTENIDO — FLOAT (actualizar semanalmente)
+## KPIs OPERACIONALES (semana 25 jun)
 
-| Métrica | Esta semana | Objetivo |
-|---------|-------------|---------|
-| Proyectos completados disponibles | — | — |
-| Proyectos con contenido producido | — | ≥90% de los disponibles |
-| Tiempo promedio de producción (min) | — | ≤60 min |
-| Piezas publicadas (posts + reels) | — | ≥3/semana |
-| FLOAT Score promedio | — | ≥75/100 |
-| Seguidores Instagram | — | +50/semana |
-| Alcance orgánico promedio/post | — | — |
-| Tasa de engagement | — | ≥4% |
+| Métrica | Estado | Objetivo |
+|---------|--------|---------|
+| Proyectos activos en campo | **6** (incluye Entretien) | — |
+| Proyectos con contenido capturado | 0 esta semana | ≥4 |
+| Valor total en producción | ~$329,000 | — |
+| Servicio dominante | **Balcon** (52%) | — |
+| NPS clientes | — confirmar | ≥9 |
+| Equipo campo activo | Matt, Steven, Karim | — |
 
 ---
 
-## KPIs OPERACIONALES (actualizar semanalmente)
+## CALENDRIER DE CONTENIDO SUGERIDO (Cowork brief)
 
-| Métrica | Esta semana | Objetivo |
-|---------|-------------|---------|
-| Proyectos en ejecución | — | — |
-| Proyectos terminados | — | — |
-| Proyectos retrasados | — | 0 |
-| NPS clientes (satisfacción 0–10) | — | ≥9 |
-| Quejas/incidentes | — | 0 |
-| Equipo disponible (personas) | — | — |
-
----
-
-## ALERTAS AUTOMÁTICAS
-
-Condiciones que requieren atención inmediata:
-
-| Condición | Acción |
-|-----------|--------|
-| CPL >$50 | Pausar campaña — revisar creatividades |
-| CTR <1% | Cambiar creatividades — posible fatiga |
-| 0 leads en 48h | Verificar estado de campañas urgente |
-| Lead A+ sin respuesta >2h | Escalar a Daniel |
-| Propuesta enviada hace >5 días sin respuesta | Follow-up automático |
-| Proyecto retrasado >3 días | Comunicar al cliente |
+| Fecha | Tipo | Servicio | Canal |
+|-------|------|---------|-------|
+| 25–27 jun | Reel: obra balcon en curso (Parisien) | Balcon | Instagram + Facebook |
+| 28–30 jun | Carousel: tipos/colores de balcon | Balcon | Facebook Ads |
+| 1–3 jul | Post credibilidad: 3 balcons simultáneos | Balcon | Instagram + Facebook |
+| 4–6 jul | Reel: aménagement extérieur (Rousseau) | Amen. Ext. | Instagram |
+| 7–10 jul | Fotos deck composite — primeras Cellini | Deck | Facebook Ads |
+| Permanente | Entretien: pelouse semanal | Entretien | Facebook + Instagram |
 
 ---
 
-## HISTÓRICO MENSUAL (completar al cierre de cada mes)
+## OBJETIVO ANUAL 2026
+
+| Métrica | Objetivo | Actual | % |
+|---------|----------|--------|---|
+| Facturación anual | $7,000,000 CAD | — | — |
+| Facturación mensual promedio | $583,333 CAD | — | — |
+| Proyectos/mes | ~20–25 | 6 activos + completados | — |
+| Ticket promedio | ~$30,000 CAD | ~$65,750 (campo actual) | ✅ |
+
+---
+
+## HISTÓRICO MENSUAL
 
 | Mes | Facturación | Leads | Cierres | Tasa cierre | Gasto Meta |
 |-----|-------------|-------|---------|-------------|------------|
@@ -141,21 +181,9 @@ Condiciones que requieren atención inmediata:
 | Marzo 2026 | — | — | — | — | — |
 | Abril 2026 | — | — | — | — | — |
 | Mayo 2026 | — | — | — | — | — |
-| Junio 2026 | — | — | — | — | — |
+| Junio 2026 | — | 17+ | — | — | ~$758 CAD |
 
 ---
 
-## CÓMO ACTUALIZAR ESTE ARCHIVO
-
-```
-Diariamente (07:00 AM):
-  → Llenar KPIs Meta Ads con datos del día anterior
-
-Semanalmente (lunes 09:00 AM):
-  → Llenar KPIs de ventas con datos de la semana anterior
-  → Llenar KPIs FLOAT
-
-Mensualmente (primer día hábil):
-  → Llenar fila del mes anterior en el histórico
-  → Comparar vs. objetivo anual
-```
+*KPIs Empresa — Jardín Ideal · v2.0 · 2026-06-25*
+*Actualizar diariamente con datos Meta Ads + semanalmente con ventas + mensualmente con finanzas*
