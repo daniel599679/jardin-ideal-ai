@@ -223,7 +223,14 @@ Jardin_Ideal_AI_System/
 | 🥉 3 | Biblioteca general del proyecto | Solo si no hay imagen real disponible |
 | ❌ PROHIBIDA | Stock / imágenes IA | Nunca si existe imagen real equivalente |
 
+**Alias semántico permanente — BALCON:**
+`BALCON = TERRASSE + DECK + PERGOLA + PATIO ÉLEVÉ`
+Prefijos incluidos en pool BALCON: `terrasse_*`, `deck_*`, `pergola_*`, `patio_deck_*`, `terrasse_store_*`, `terrasse_composite_*`, `terrasse_bois_*`, `patio_salon_*`, `patio_balancoire_*`, `balcon_*`
+
+**Cobertura actual BALCON:** 11 imágenes — ✅ CUBIERTO (v1.1 — 2026-06-25)
+
 **Protocolo completo:** `10_MEMORIA_EMPRESARIAL/PROTOCOLO_ACTIVOS_VISUALES.md`
+**Inventario detallado:** `05_MARKETING/00_BIBLIOTECA_VISUAL/COBERTURA_SERVICIOS.md`
 
 ---
 

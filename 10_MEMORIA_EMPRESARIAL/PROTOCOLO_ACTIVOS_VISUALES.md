@@ -66,23 +66,41 @@ Claude debe aplicar el sistema de puntuación `03_PREMIUM_VISUAL_SCORE.md` (100 
 
 ## 3. IDENTIFICACIÓN DE SERVICIO POR NOMBRE DE ARCHIVO
 
-Claude identifica el servicio usando palabras clave en el nombre del archivo:
+Claude identifica el servicio usando palabras clave en el nombre del archivo.
+
+### ALIAS SEMÁNTICO PERMANENTE — BALCON
+
+> **BALCON = TERRASSE + DECK + PERGOLA + PATIO ÉLEVÉ**
+>
+> Cualquier archivo que coincida con los patrones de esta familia se clasifica como BALCON.
+> No existe "Terrasse" o "Deck Composite" como servicio independiente en el sistema de clasificación.
 
 | Palabras clave en filename | Servicio identificado |
 |---------------------------|----------------------|
-| `balcon`, `balcone`, `balcons`, `terrasse_balcon` | Balcon |
-| `cour_arriere`, `cour-arriere`, `patio_arriere`, `backyard` | Cour Arrière |
-| `cour_avant`, `cour-avant`, `patio_avant`, `frontyard` | Cour Avant |
-| `pave`, `pave_uni`, `pave-uni`, `pavé`, `interlock` | Pavé-Uni |
+| `balcon`, `balcone`, `balcons`, `terrasse_balcon` | **BALCON** |
+| `terrasse_` (cualquier sufijo) | **BALCON** |
+| `deck_`, `patio_deck_` | **BALCON** |
+| `pergola_` | **BALCON** |
+| `terrasse_store_` | **BALCON** |
+| `terrasse_composite_` | **BALCON** |
+| `terrasse_bois_` | **BALCON** |
+| `patio_salon_` | **BALCON** |
+| `patio_balancoire_` | **BALCON** |
+| `patio deck` (con espacio), `deck et pergola` | **BALCON** |
+| `cour_arriere`, `cour-arriere`, `patio_arriere`, `patio_rotin`, `patio_triplex`, `backyard` | Cour Arrière |
+| `cour_avant`, `cour-avant`, `patio_avant`, `frontyard`, `entree_`, `facade_` | Cour Avant |
+| `pave`, `pave_uni`, `pave-uni`, `pavé`, `interlock`, `allee_`, `stationnement_` | Pavé-Uni |
 | `piscine`, `pool`, `spa` | Piscine |
-| `deck`, `composite`, `terrasse_composite` | Deck Composite |
-| `escalier`, `stairs`, `marche` | Escaliers |
-| `mur`, `beton`, `retaining`, `gabion` | Murs de béton |
-| `amenagement`, `amen_ext`, `aménagement`, `landscaping` | Aménagement Extérieur |
+| `escalier`, `stairs`, `marche`, `entree_escalier`, `entree_marches` | Escaliers |
+| `mur`, `beton`, `retaining`, `gabion`, `asphalte_mur` | Murs de béton |
+| `amenagement`, `amen_ext`, `aménagement`, `landscaping`, `jardin_`, `cuisine_exterieure` | Aménagement Extérieur |
 | `entretien`, `gazon`, `pelouse`, `tonte` | Entretien |
+| `cloture`, `clôture`, `portail` | Clôtures |
 | Nombre no reconocido | → Clasificar como "GENERAL" y alertar a Daniel |
 
-**Regla de empate:** Si el filename contiene múltiples servicios (ej: `balcon_pave_2024.jpg`), clasificar por el primer término encontrado.
+**Regla de alias:** Si el filename contiene `terrasse_`, `deck_`, `pergola_`, `terrasse_store_`, `terrasse_composite_`, `terrasse_bois_`, `patio_salon_` o `patio_balancoire_` → clasificar siempre como BALCON, independientemente de otros términos en el nombre.
+
+**Regla de empate (otros servicios):** Si el filename contiene múltiples servicios (ej: `balcon_pave_2024.jpg`), clasificar por el primer término encontrado.
 
 ---
 

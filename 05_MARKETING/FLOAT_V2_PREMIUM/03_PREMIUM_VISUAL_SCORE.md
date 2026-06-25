@@ -252,5 +252,50 @@ Sumar a la evaluación del reel:
 
 ---
 
-*PREMIUM VISUAL SCORE v1.0 — FLOAT V2 Premium — Jardín Ideal*
+---
+
+## CLASIFICACIÓN DE SERVICIOS — ALIAS SEMÁNTICOS
+
+> Esta sección define cómo agrupar imágenes por servicio al aplicar el scoring. Actualizado 2026-06-25.
+
+### BALCON = TERRASSE + DECK + PERGOLA + PATIO ÉLEVÉ
+
+Cuando se solicite scoring o selección para **BALCON**, incluir automáticamente todos los archivos con estos prefijos:
+
+| Prefijo de archivo | Incluir en BALCON |
+|-------------------|------------------|
+| `balcon_*` | ✅ Siempre |
+| `terrasse_*` | ✅ Siempre |
+| `deck_*` | ✅ Siempre |
+| `patio_deck_*` | ✅ Siempre |
+| `pergola_*` | ✅ Siempre |
+| `terrasse_store_*` | ✅ Siempre |
+| `terrasse_composite_*` | ✅ Siempre |
+| `terrasse_bois_*` | ✅ Siempre |
+| `patio_salon_*` | ✅ Siempre |
+| `patio_balancoire_*` | ✅ Siempre |
+| `patio deck` / `deck et pergola` (con espacio) | ✅ Siempre |
+
+**Justificación:** En el mercado de Quebec, "balcon", "terrasse" y "deck" son variantes del mismo espacio exterior elevado que el cliente desea. Separarlos reduce artificialmente la cobertura visual y fragmenta campañas que compiten por el mismo perfil de cliente.
+
+**Regla de selección automática:** Al solicitar activos para campaña BALCON, Claude analiza el conjunto completo (todos los prefijos anteriores) como un único pool visual y aplica el FLOAT Visual Score para seleccionar el top.
+
+### Otros alias activos
+
+| Servicio | Prefijos incluidos |
+|---------|-------------------|
+| Cour Arrière | `cour_arriere_*`, `patio_arriere_*`, `patio_rotin_*`, `patio_triplex_*`, `cour_verandah_*`, `gazebo_*` |
+| Cour Avant | `cour_avant_*`, `entree_*`, `facade_*`, `stationnement_*` |
+| Pavé-Uni | `pave_*`, `allee_*`, `duplex_pave_*`, `garage_pave_*` |
+| Escaliers | `escalier_*`, `marche_*`, `entree_escalier_*`, `entree_marches_*` |
+| Murs de béton | `mur_*`, `asphalte_mur_*` |
+| Aménagement Ext. | `jardin_*`, `cuisine_exterieure_*`, `amenagement_*` |
+| Clôtures | `cloture_*`, `portail_*` |
+
+*Referencia completa: `10_MEMORIA_EMPRESARIAL/PROTOCOLO_ACTIVOS_VISUALES.md` sección 3*
+
+---
+
+*PREMIUM VISUAL SCORE v1.1 — FLOAT V2 Premium — Jardín Ideal*
+*Actualizado 2026-06-25: alias semánticos BALCON añadidos*
 *05_MARKETING/FLOAT_V2_PREMIUM/03_PREMIUM_VISUAL_SCORE.md*
