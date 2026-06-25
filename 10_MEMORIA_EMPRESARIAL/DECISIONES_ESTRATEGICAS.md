@@ -94,16 +94,18 @@
 
 ## DECISIONES ESTRATÉGICAS DE CAMPAÑA
 
-### DS-011 — Balcones = Servicio Prioritario
-**Fecha:** 2026-06-25
-**Decisión:** Balcones es el servicio prioritario para contenido y campañas en junio–agosto 2026.
-**Motivo:** Dato de campo confirmado (Cowork brief 25/06): 3 proyectos activos simultáneos ($145,000, 52% del portfolio), inicio de nuevo proyecto hoy (Parisien 2x Balcon + Tourelle $71K). Máximo contenido real disponible ahora mismo.
+### DS-011 — Balcones = Servicio Prioritario — Optimización de Campaña Activa
+**Fecha:** 2026-06-25 | **Actualizado:** 2026-06-25
+**Decisión:** Balcones es el servicio prioritario para contenido y campañas en junio–agosto 2026. Campaña Balcon existente — requiere optimización, no creación desde cero.
+**Motivo:** Dato de campo confirmado (Cowork brief 25/06): 3 proyectos activos simultáneos ($145,000, 52% del portfolio), inicio de nuevo proyecto hoy (Parisien 2x Balcon + Tourelle $71K). Campaña activa pero con rendimiento insuficiente — los creativos actuales no reflejan la calidad real de las obras.
 **Implicación:**
-- Próxima campaña Meta a lanzar: Balcon (esta semana)
+- Campaña Balcon: **existente — optimizar**, no crear nueva
+- Acción inmediata: crear 5 nuevos creativos con fotos reales del proyecto Parisien
 - Contenido FLOAT: Balcon = prioridad #1 sobre cualquier otro servicio
-- Budget sugerido campaña Balcon: $25–40/día
+- Budget sugerido: $25–40/día
 - CPL objetivo: <$35 CAD
-**Proyectos fuente de contenido:** Parisien, Breault, Goudreault
+- Prioridad: **ALTA**
+**Proyectos fuente de creativos:** Parisien (inicio hoy — capturar desde día 1), Breault, Goudreault
 **Revisión:** 2026-08-01 (post temporada alta)
 
 ---

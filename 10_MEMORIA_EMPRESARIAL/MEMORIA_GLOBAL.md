@@ -224,7 +224,7 @@ Jardin_Ideal_AI_System/
 | piscines (JI) | ⚠️ REVISIÓN | 1 | $146.07 | Pausar si sin leads hoy |
 | GI_Cuisines | ⚠️ Zap roto | 4 | $53.93 | Corregir email → reevaluar |
 | BANOS (GI) | 🔴 PAUSADA | 0 | — | No reactivar hasta julio |
-| **Balcon (JI)** | 🔴 A LANZAR | — | — | Esta semana — 3 obras activas |
+| **Balcon (JI)** | 🟠 OPTIMIZAR | insuficiente | 5 creativos con fotos reales Parisien |
 
 ### Proyectos en campo — DATO CLAVE 2026-06-25
 
@@ -239,7 +239,7 @@ Jardin_Ideal_AI_System/
 
 **Servicio dominante:** BALCON — 3 proyectos — $145,000 — 52% del portfolio activo.
 
-> ⚠️ **CONTRADICCIÓN ACTIVA:** Balcon = servicio #1 en campo. Pero no hay campaña Balcon en Meta Ads. Lanzar `balcon_juin2026_JI` esta semana.
+> 🟠 **ACCIÓN ACTIVA:** Campaña Balcon existente — rendimiento insuficiente. Optimizar con 5 nuevos creativos usando fotos reales del proyecto Parisien (inicio hoy). CPL objetivo <$35.
 
 ### Pipeline Pipedrive (estado real)
 

@@ -43,7 +43,18 @@
 | piscines (JI) | ⚠️ REVISIÓN | $146.07 | Pausar si no hay leads en 24h |
 | GI_Cuisines | ⚠️ Zap roto | $53.93 | Corregir Zap → reevaluar |
 | BANOS (GI) | 🔴 PAUSADA | — | No reactivar hasta julio |
-| **Balcon (JI)** | 🔴 A LANZAR | — | Esta semana — 3 obras en campo |
+| **Balcon (JI)** | 🟠 OPTIMIZACIÓN | insuficiente | 5 nuevos creativos con fotos reales Parisien |
+
+### Estado Balcon — detalle
+
+| Campo | Valor |
+|-------|-------|
+| Estado campaña | Existente — rendimiento insuficiente |
+| Prioridad | **ALTA** |
+| Acción esta semana | Crear 5 nuevos creativos |
+| Fuente de imágenes | Fotos reales proyecto Stéphane Parisien |
+| CPL objetivo | <$35 CAD |
+| Budget/día | $25–40 CAD |
 
 ### Proyectos en campo — fuente real de contenido
 
@@ -57,6 +68,7 @@
 | Entretien (7 clientes) | Entretien | Recurrente | ✅ Evergreen semanal |
 
 **Servicio dominante en campo:** BALCON — 3 proyectos — $145,000 — 52% del portfolio activo.
+**Contenido prioritario esta semana:** Fotos reales Parisien (inicio hoy) → 5 creativos campaña Balcon.
 
 ### Pipeline (estado real)
 
@@ -117,7 +129,7 @@
 | ⚠️ Piscines CPL $146 → supera umbral $100 | CPL | Evaluar pausa hoy |
 | ⚠️ 9 leads vencidos → cerca de umbral 10 | Pipeline | Contactar todos hoy |
 | ⚠️ Zapier email → confirmar corrección | Técnico | Verificar con Daniel |
-| 🔴 No hay campaña Balcon activa | Contradicción | 3 obras en campo sin campaña |
+| 🟠 Campaña Balcon con rendimiento insuficiente | Optimización | Crear 5 nuevos creativos con fotos reales Parisien |
 
 ---
 
