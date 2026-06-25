@@ -176,6 +176,23 @@
 
 ---
 
+### DS-019 — Biblioteca Francisco = Fuente Oficial de Activos Visuales
+**Fecha:** 2026-06-25
+**Tipo:** Regla permanente — no modificar sin aprobación de Daniel
+**Decisión:** La carpeta Premium de Francisco (`05_MARKETING/00_BIBLIOTECA_VISUAL/Photo selectionné par francisco/`) es la fuente oficial y absoluta de activos visuales de Jardín Ideal. Las imágenes reales de proyectos tienen prioridad absoluta sobre imágenes IA o stock.
+**Las 6 reglas operativas de Claude:**
+1. Priorizar siempre imágenes de la carpeta Francisco
+2. Seleccionar automáticamente las mejores imágenes según FLOAT_VISUAL_SCORE (gate ≥90/100 para Meta Ads)
+3. Ignorar imágenes externas cuando existan imágenes reales equivalentes
+4. Identificar el servicio usando palabras clave en el nombre del archivo
+5. Generar ranking de calidad de cada activo antes de usarlo
+6. Detectar servicios con poco contenido (<5 imágenes ≥75/100) y generar alerta
+**Protocolo completo:** `10_MEMORIA_EMPRESARIAL/PROTOCOLO_ACTIVOS_VISUALES.md`
+**Jerarquía de fuentes:** Francisco library → Campo activo → Biblioteca general → Stock (solo si nada real existe)
+**Regla absoluta:** Imagen real > imagen IA — siempre, sin excepción.
+
+---
+
 ### DS-018 — Claude Code = Fuente de Verdad / Manus = Editor Visual
 **Fecha:** 2026-06-25
 **Decisión:** Claude Code (GitHub) es la única fuente de verdad del sistema. Manus es exclusivamente el editor visual/prototipador. Ningún cambio técnico en landing pages se aplica primero en Manus.

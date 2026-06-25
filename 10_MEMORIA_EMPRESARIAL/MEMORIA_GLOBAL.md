@@ -208,6 +208,18 @@ Jardin_Ideal_AI_System/
 11. **Alerta automática:** si campañas activas ≠ servicios en producción real → reportar inmediatamente. (DS-017)
 12. **Alerta automática:** si >10 leads estancados en "Nouveau lead reçu" → escalar a Daniel. (DS-017)
 13. **Alerta automática:** si CPL de cualquier campaña supera $100 CAD → revisar o pausar. (DS-017)
+14. **Biblioteca Francisco = fuente oficial de activos visuales.** Imagen real > imagen IA. Siempre aplicar FLOAT_VISUAL_SCORE. Alertar si servicio tiene <5 imágenes con score ≥75. (DS-019 — regla permanente)
+
+### ACTIVOS VISUALES — fuente oficial
+
+| Prioridad | Fuente | Condición |
+|-----------|--------|-----------|
+| 🥇 1 — OBLIGATORIA | `05_MARKETING/00_BIBLIOTECA_VISUAL/Photo selectionné par francisco/` | Siempre que exista imagen del servicio |
+| 🥈 2 | Fotos de campo en tiempo real (proyectos activos) | Cuando Francisco no cubre el servicio |
+| 🥉 3 | Biblioteca general del proyecto | Solo si no hay imagen real disponible |
+| ❌ PROHIBIDA | Stock / imágenes IA | Nunca si existe imagen real equivalente |
+
+**Protocolo completo:** `10_MEMORIA_EMPRESARIAL/PROTOCOLO_ACTIVOS_VISUALES.md`
 
 ---
 
