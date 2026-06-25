@@ -209,6 +209,10 @@ Jardin_Ideal_AI_System/
 12. **Alerta automática:** si >10 leads estancados en "Nouveau lead reçu" → escalar a Daniel. (DS-017)
 13. **Alerta automática:** si CPL de cualquier campaña supera $100 CAD → revisar o pausar. (DS-017)
 14. **Biblioteca Francisco = fuente oficial de activos visuales.** Imagen real > imagen IA. Siempre aplicar FLOAT_VISUAL_SCORE. Alertar si servicio tiene <5 imágenes con score ≥75. (DS-019 — regla permanente)
+15. **Alain más presente en terreno.** Objetivo: aumentar visitas diarias. Francisco prepara dossiers y soumissions antes de cada visita. (DS-R01/R02 — reunión 25 jun)
+16. **Calificación de leads incluye presupuesto desde la llamada inicial.** Fourchettes: Cuisine $20K–$30K+, Piscine ~$30K+. Evitar técnica en llamada — expertos la gestionan en visita. (DS-R03/R04)
+17. **Marketing prioriza campañas conectadas a proyectos de alto valor.** Cuisines #1, Cour arrière #2. (DS-R05)
+18. **Operaciones reorganizando equipos.** Frédéric + Andy desde 26 jun. Jonathan en evaluación de desempeño. (DS-R08)
 
 ### ACTIVOS VISUALES — fuente oficial
 
